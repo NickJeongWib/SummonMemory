@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Title_Manager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -15,5 +16,4 @@ public class Title_Manager : MonoBehaviour
     {
         SceneManager.LoadScene("LobbyScene");
     }
-
 }
