@@ -20,10 +20,14 @@ public class Character_List : MonoBehaviour
             CHAR_TYPE.TryParse(GoogleSheetSORef.Character_DBList[i].CHAR_TYPE, out CHAR_TYPE charType);
             CHAR_ELE.TryParse(GoogleSheetSORef.Character_DBList[i].CHAR_ELEMENT, out CHAR_ELE charEle);
 
+            //TODO ## Character_List 캐릭터 데이터 저장
             Character Node = new Character(GoogleSheetSORef.Character_DBList[i].CHAR_ID, GoogleSheetSORef.Character_DBList[i].CHAR_NAME,
-               charGrade, charType, charEle, GoogleSheetSORef.Character_DBList[i].CHAR_HP, GoogleSheetSORef.Character_DBList[i].CHAR_ATK, GoogleSheetSORef.Character_DBList[i].CHAR_DEF,
-               GoogleSheetSORef.Character_DBList[i].CHAR_CRI_DAMAGE, GoogleSheetSORef.Character_DBList[i].CHAR_CRI_RATE, GoogleSheetSORef.Character_DBList[i].CHAR_ILLUST,
-               GoogleSheetSORef.Character_DBList[i].CHAR_NORMAL_IMAGE, GoogleSheetSORef.Character_DBList[i].CHAR_GRADE_UP_IMAGE, GoogleSheetSORef.Character_DBList[i].CHAR_PROFILE_IMAGE);
+               charGrade, charType, charEle, GoogleSheetSORef.Character_DBList[i].CHAR_STAR, GoogleSheetSORef.Character_DBList[i].CHAR_HP, GoogleSheetSORef.Character_DBList[i].CHAR_ATK, GoogleSheetSORef.Character_DBList[i].CHAR_DEF,
+               GoogleSheetSORef.Character_DBList[i].CHAR_CRI_DAMAGE, GoogleSheetSORef.Character_DBList[i].CHAR_CRI_RATE);
+
+            // TODO ## Character_List 이미지 리소스 저장
+            Node.Load_Resources(GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST,
+               GoogleSheetSORef.Character_Image_AddressList[i].CHAR_NORMAL_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_GRADE_UP_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PROFILE_IMAGE);
 
             #region 이미지 누락 경고
             if (Node.Get_Grade_Up_Img == null)
@@ -38,7 +42,7 @@ public class Character_List : MonoBehaviour
             {
                 Debug.Log($"{GoogleSheetSORef.Character_DBList[i].CHAR_NAME}의 노말 이미지가 없습니다");
             }
-            else if(Node.Get_Profile_Img == null)
+            else if (Node.Get_Profile_Img == null)
             {
                 Debug.Log($"{GoogleSheetSORef.Character_DBList[i].CHAR_NAME}의 프로필 이미지가 없습니다");
             }

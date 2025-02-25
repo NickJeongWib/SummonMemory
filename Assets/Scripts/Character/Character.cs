@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Define;
 
+// TODO ## Character 데이터 저장 클래스
 public class Character
 {
     int CharacterID;
@@ -20,6 +21,9 @@ public class Character
     CHAR_ELE CharElement;
     public CHAR_ELE Get_CharElement { get => CharElement; }
 
+    int CharStar;
+    public int Get_CharStar { get => CharStar; set => CharStar = value; }
+
     float CharHP;
     public float Get_CharHP { get => CharHP; }
 
@@ -34,6 +38,9 @@ public class Character
 
     float Char_CRT_RATE;
     public float Get_Char_CRT_Rate { get => Char_CRT_RATE; }
+
+
+    // -----------------------Image Resources Variable----------------------
 
     string Illust_Address;
     public string Get_Illust_Address { get => Illust_Address; }
@@ -59,8 +66,8 @@ public class Character
     Sprite Profile_Img;
     public Sprite Get_Profile_Img { get => Profile_Img; }
 
-    public Character(int _id, string _name, CHAR_GRADE _grade, CHAR_TYPE _type, CHAR_ELE _ele,
-       float _hp, float _atk, float _def, float _crtDamage, float _crtRate, string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd)
+    public Character(int _id, string _name, CHAR_GRADE _grade, CHAR_TYPE _type, CHAR_ELE _ele, int _star,
+       float _hp, float _atk, float _def, float _crtDamage, float _crtRate, string _illustAdd = "", string _normalImageAdd = "", string _gradeUpAdd = "", string _profileAdd = "")
     {
         // 캐릭터 능력치
         CharacterID = _id;
@@ -68,6 +75,7 @@ public class Character
         CharGrade = _grade;
         CharType = _type;
         CharElement = _ele;
+        CharStar = _star;
         CharHP = _hp;
         CharATK = _atk;
         CharDEF = _def;
@@ -84,14 +92,19 @@ public class Character
         Normal_Img = Resources.Load<Sprite>(Normal_Image_Address);
         Grade_Up_Img = Resources.Load<Sprite>(Grade_Up_Image_Address);
         Profile_Img = Resources.Load<Sprite>(Profile_Address);
+    }
 
-        //if (Illust_Img == null)
-        //{
-        //    Debug.Log("빔");
-        //}
-        //else
-        //{
-        //    Debug.Log("성공");    
-        //}
+    public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd)
+    {
+        // 이미지 주소
+        Illust_Address = _illustAdd;
+        Normal_Image_Address = _normalImageAdd;
+        Grade_Up_Image_Address = _gradeUpAdd;
+        Profile_Address = _profileAdd;
+
+        Illust_Img = Resources.Load<Sprite>(Illust_Address);
+        Normal_Img = Resources.Load<Sprite>(Normal_Image_Address);
+        Grade_Up_Img = Resources.Load<Sprite>(Grade_Up_Image_Address);
+        Profile_Img = Resources.Load<Sprite>(Profile_Address);
     }
 }

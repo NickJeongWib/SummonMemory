@@ -6,15 +6,12 @@
       "CHAR_ELEMENT": "FIRE",
       "CHAR_TYPE": "ATTACK",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_UpGrade",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_UpGrade.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10002,
@@ -22,15 +19,12 @@
       "CHAR_ELEMENT": "FIRE",
       "CHAR_TYPE": "ATTACK",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/1_Tana_F/Tana_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10003,
@@ -38,15 +32,12 @@
       "CHAR_ELEMENT": "FIRE",
       "CHAR_TYPE": "MAGE",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/1_Tania_F/Tania_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10004,
@@ -54,15 +45,12 @@
       "CHAR_ELEMENT": "WATER",
       "CHAR_TYPE": "MAGE",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10005,
@@ -70,15 +58,12 @@
       "CHAR_ELEMENT": "WATER",
       "CHAR_TYPE": "SUPPORT",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10006,
@@ -86,15 +71,12 @@
       "CHAR_ELEMENT": "WATER",
       "CHAR_TYPE": "ATTACK",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/3_Adri_W/Adri_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10007,
@@ -102,15 +84,12 @@
       "CHAR_ELEMENT": "WIND",
       "CHAR_TYPE": "ATTACK",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/3_Melia_T/Melia_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10008,
@@ -118,15 +97,12 @@
       "CHAR_ELEMENT": "WIND",
       "CHAR_TYPE": "SUPPORT",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10009,
@@ -134,15 +110,12 @@
       "CHAR_ELEMENT": "WIND",
       "CHAR_TYPE": "ATTACK",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10010,
@@ -150,15 +123,12 @@
       "CHAR_ELEMENT": "GROUND",
       "CHAR_TYPE": "MAGE",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Bera_G/Bera_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10011,
@@ -166,15 +136,12 @@
       "CHAR_ELEMENT": "GROUND",
       "CHAR_TYPE": "DEFEND",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Dena_G/Dena_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 10012,
@@ -182,15 +149,12 @@
       "CHAR_ELEMENT": "GROUND",
       "CHAR_TYPE": "MAGE",
       "CHAR_GRADE": "R",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Normal.",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 20001,
@@ -198,15 +162,12 @@
       "CHAR_ELEMENT": "FIRE",
       "CHAR_TYPE": "DEFEND",
       "CHAR_GRADE": "SR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 20002,
@@ -214,15 +175,12 @@
       "CHAR_ELEMENT": "FIRE",
       "CHAR_TYPE": "MAGE",
       "CHAR_GRADE": "SR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 20003,
@@ -230,15 +188,12 @@
       "CHAR_ELEMENT": "WATER",
       "CHAR_TYPE": "SUPPORT",
       "CHAR_GRADE": "SR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 20004,
@@ -246,15 +201,12 @@
       "CHAR_ELEMENT": "WATER",
       "CHAR_TYPE": "DEFEND",
       "CHAR_GRADE": "SR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 20005,
@@ -262,15 +214,12 @@
       "CHAR_ELEMENT": "WIND",
       "CHAR_TYPE": "MAGE",
       "CHAR_GRADE": "SR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 20006,
@@ -278,15 +227,12 @@
       "CHAR_ELEMENT": "WIND",
       "CHAR_TYPE": "SUPPORT",
       "CHAR_GRADE": "SR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 20007,
@@ -294,15 +240,12 @@
       "CHAR_ELEMENT": "GROUND",
       "CHAR_TYPE": "DEFEND",
       "CHAR_GRADE": "SR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 20008,
@@ -310,15 +253,12 @@
       "CHAR_ELEMENT": "GROUND",
       "CHAR_TYPE": "MAGE",
       "CHAR_GRADE": "SR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 30001,
@@ -326,15 +266,12 @@
       "CHAR_ELEMENT": "FIRE",
       "CHAR_TYPE": "ATTACK",
       "CHAR_GRADE": "SSR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 30002,
@@ -342,15 +279,12 @@
       "CHAR_ELEMENT": "WATER",
       "CHAR_TYPE": "MAGE",
       "CHAR_GRADE": "SSR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 30003,
@@ -358,15 +292,12 @@
       "CHAR_ELEMENT": "WIND",
       "CHAR_TYPE": "SUPPORT",
       "CHAR_GRADE": "SSR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
-      "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Illust",
-      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Normal",
-      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_CRI_DAMAGE": 0.5
     },
     {
       "CHAR_ID": 30004,
@@ -374,15 +305,158 @@
       "CHAR_ELEMENT": "GROUND",
       "CHAR_TYPE": "MAGE",
       "CHAR_GRADE": "SSR",
+      "CHAR_STAR": 0,
       "CHAR_HP": 1000,
       "CHAR_ATK": 100,
       "CHAR_DEF": 50,
       "CHAR_CRI_RATE": 0.1,
-      "CHAR_CRI_DAMAGE": 0.5,
+      "CHAR_CRI_DAMAGE": 0.5
+    }
+  ],
+  "Character_Image_Address": [
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_UpGrade",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Profile"
+    },
+    {
+      "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Illust",
+      "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Normal",
+      "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Grade_Up",
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Profile"
+    },
+    {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Illust",
       "CHAR_NORMAL_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Normal",
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Grade_Up",
-      "CHAR_PROFILE_IMAGE": "Assets/Resources/Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up.png"
+      "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Profile"
     }
   ]
 }

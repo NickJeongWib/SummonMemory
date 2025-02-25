@@ -441,7 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAccessGoogleSheet: 1
   googleSheetUrl: https://script.google.com/macros/s/AKfycbw0PV0azD1a-ogn3qHjjYhth4aAEQRqyNge1JdSJ0FTl8JHzJ-fqVyAXC2j9gUAvXR_/exec
-  availSheets: Character_DB
+  availSheets: Character_DB/Character_Image_Address
   generateFolderPath: /GenerateGoogleSheet
   googleSheetSO: {fileID: 11400000, guid: 3e3846e2bbbd87d4388ef03d8979f93f, type: 2}
 --- !u!4 &321992810

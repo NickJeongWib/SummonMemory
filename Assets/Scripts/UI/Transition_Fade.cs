@@ -13,7 +13,7 @@ public class Transition_Fade : MonoBehaviour
         NotTouch_Raycast.SetActive(false);
     }
 
-    public void Title_Transition()
+    public void Transition_Off()
     {
         this.gameObject.SetActive(false);
     }

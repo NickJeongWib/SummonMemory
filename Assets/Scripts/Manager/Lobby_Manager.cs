@@ -30,4 +30,9 @@ public class Lobby_Manager : MonoBehaviour
         ShaderTransition.SetActive(true);
         _obj.SetActive(false);
     }
+
+    public void On_Click_Back(GameObject _obj)
+    {
+        _obj.SetActive(false);
+    }
 }
