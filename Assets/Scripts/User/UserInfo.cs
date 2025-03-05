@@ -7,15 +7,12 @@ public class UserInfo : MonoBehaviour
     // string 캐릭터 이름 / Character 캐릭터 데이터
     public static Dictionary<string, Character> UserCharDict = new Dictionary<string, Character>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("---Currency---")]
+    public static int Money;
+    public static int Dia;
+    public static int EnterHealth;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static int R_Book;
+    public static int SR_Book;
+    public static int SSR_Book;
 }

@@ -9,4 +9,5 @@ public class CharacterSlot : MonoBehaviour
     public Image Char_Porfile;
     public Image Element_Image;
     public Image Star_Image;
+    public Image Grade_Image;
 }

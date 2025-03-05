@@ -9,12 +9,7 @@ public class CharacterList_UI : MonoBehaviour
     public List<CharacterSlot> Slots = new List<CharacterSlot>();
     public Sprite[] Elements;
     public Sprite[] Elements_BG;
-
-
-    private void Start()
-    {
-        
-    }
+    public Sprite[] Grades;
 
     // TODO ## CharacterList_UI 캐릭터창 Refresh
     public void Refresh_CharacterList()
@@ -40,13 +35,21 @@ public class CharacterList_UI : MonoBehaviour
             {
                 Slots[SlotNum].Star_Image.gameObject.SetActive(true);
             }
+            if (!Slots[SlotNum].Grade_Image.IsActive())
+            {
+                Slots[SlotNum].Grade_Image.gameObject.SetActive(true);
+            }
 
+            Slots[SlotNum].Grade_Image.sprite = Grades[(int)Dict.Value.Get_CharGrade];
             Slots[SlotNum].Element_BG.sprite = Elements_BG[(int)Dict.Value.Get_CharElement];
             Slots[SlotNum].Element_Image.sprite = Elements[(int)Dict.Value.Get_CharElement];
+
             Slots[SlotNum].Char_Porfile.sprite = Dict.Value.Get_Profile_Img;
             Slots[SlotNum].Star_Image.rectTransform.sizeDelta = new Vector2(20 * Dict.Value.Get_CharStar, 20.0f);
 
-            SlotNum++;
+            // Debug.Log(SlotNum + " " + Dict.Value.Get_CharName + " " + Dict.Value.Get_CharStar);
+
+           SlotNum++;
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class Gacha_Manager : MonoBehaviour
 {
@@ -9,13 +10,35 @@ public class Gacha_Manager : MonoBehaviour
 
     [SerializeField] GameObject GachaEnter_Transition;
     [SerializeField] GameObject GachaCharacterList;
+    [SerializeField] GameObject GachaInfo_Panel;
 
+    // 연속 뽑기 횟수 
+    [SerializeField] int Gacha_Count;
+    // 뽑기를 했을 떄 올라가는 카운트
+    [SerializeField] int Gacha_Num;
+
+    public List<Character> Gacha_Characters = new List<Character>();
+
+    [Header("----Gacha_Image----")]
+    [SerializeField] Image[] Gacha_10_CharImages;
+    [SerializeField] Image Gacha_CharImage;
+    [SerializeField] GameObject Gacha_10;
+    [SerializeField] GameObject Gacha_1;
+    [SerializeField] GameObject[] Gacha_New_Images;
+    [SerializeField] GameObject Gacha_New_Image;
+
+    [SerializeField] GameObject[] Book_Images;
+    [SerializeField] GameObject Book_Image;
+    [SerializeField] Sprite[] Books;
+
+    [Header("----SummonRate----")]
     [SerializeField] float R_Summon_Rate; // 0.8
     [SerializeField] float SR_Summon_Rate; // 0.16
     [SerializeField] float SSR_Summon_Rate; // 0.04
 
-    [SerializeField] static int SR_Set_Count;
-    [SerializeField] static int SSR_Set_Count;
+    // TODO ## Build Fix Static 변경 
+    [SerializeField] public int SR_Set_Count;
+    [SerializeField] public int SSR_Set_Count;
 
     [Header("----Gacha_Video----")]
     [SerializeField] GameObject Gacha_Video;
@@ -32,94 +55,144 @@ public class Gacha_Manager : MonoBehaviour
         return RandomRate;
     }
 
-    // TODO ## Gacha_Manager 가차 시스템
-    public void Summon(int _count)
+    public void GachaInfo_Open(int _num)
     {
-        for (int i = 0; i < _count; i++)
+        Gacha_Count = _num;
+        GachaInfo_Panel.SetActive(true);
+    }
+
+    public void GachaInfo_Close()
+    {
+        Gacha_Count = 0;
+        GachaInfo_Panel.SetActive(false);
+    }
+
+    // TODO ## Gacha_Manager 가차 시스템
+    public void Summon()
+    {
+        // 새로 뽑는 친구들을 채우기 위해 리스트 초기화
+        Gacha_Characters.Clear();
+
+        GachaInfo_Panel.SetActive(false);
+
+        Gacha_Num = 0;
+
+
+        while (Gacha_Num < Gacha_Count)
         {
             float RandomRate = Summon_Rate();
 
             SSR_Set_Count++;
             SR_Set_Count++;
 
-            // SSR 확정 뽑기 스택
             if (SSR_Set_Count >= 80)
             {
-                SSR_Summon();
-                SSR_Set_Count = 0;
-                isSSR_Summon = true;
-                continue;
-            }
-
-            // SR 확정 뽑기
-            if (SR_Set_Count >= 10)
-            {
-                SR_Summon();
-                SR_Set_Count = 0;
-                isSR_Summon = true;
-                continue;
-            }
-
-            // 일반 SSR 확률
-            if (SSR_Summon_Rate >= RandomRate)
-            {
+                // Debug.Log(i + " ssr 확정");
                 SSR_Summon();
                 SSR_Set_Count = 0;
                 isSSR_Summon = true;
             }
-            // 0.04 < @ && 0.16 <= @@ (SR_Summon_Rate - SSR_Summon_Rate)%
-            else if (SSR_Summon_Rate < RandomRate && RandomRate <= SR_Summon_Rate)
+            else if (SR_Set_Count >= 10)
             {
+                // Debug.Log(i + " sr 확정");
                 SR_Summon();
                 SR_Set_Count = 0;
                 isSR_Summon = true;
             }
-            else if (SR_Summon_Rate + SSR_Summon_Rate < RandomRate)
+            else
             {
-                R_Summon();
-                isR_Summon = true;
+                if (SSR_Summon_Rate >= RandomRate)
+                {
+                    // Debug.Log(i + " ssr");
+                    SSR_Summon();
+                    SSR_Set_Count = 0;
+                    isSSR_Summon = true;
+                }
+                else if (SSR_Summon_Rate < RandomRate && RandomRate <= SR_Summon_Rate)
+                {
+                    // Debug.Log(i + " sr");
+                    SR_Summon();
+                    SR_Set_Count = 0;
+                    isSR_Summon = true;
+                }
+                else
+                {
+                    // Debug.Log(i + " r");
+                    R_Summon();
+                    isR_Summon = true;
+                }
             }
+            Gacha_Num++;
+        }
+
+        Debug.Log(Gacha_Characters.Count);
+
+        if (Gacha_Count == 10)
+        {
+            Gacha_10.SetActive(true);
+
+            for (int i = 0; i < Gacha_Characters.Count; i++)
+            {
+                Gacha_10_CharImages[i].sprite = Gacha_Characters[i].Get_Normal_Img;
+
+                //if (UserInfo.UserCharDict.ContainsKey($"{Gacha_Characters[i].Get_CharName}"))
+                //{
+                //    Gacha_New_Images[i].gameObject.SetActive(false);
+                //}
+            }
+        }
+        else
+        {
+            Gacha_1.SetActive(true);
+
+            Gacha_CharImage.sprite = Gacha_Characters[0].Get_Normal_Img;
         }
 
         // 캐릭터 인벤토리 Refresh
         CharListRef.Refresh_CharacterList();
 
         Gacha_Video_Play();
-
     }
 
+    #region SummonRate
     void SSR_Summon()
     {
         int RandomSSR = Random.Range(0, Character_List.SSR_Char.Count);
 
         #region SSR 목록 검사
-        if (Character_List.SSR_Char == null)
-        {
-            Debug.Log("SSR리스트 찾을수 없음");
-            return;
-        }
+        //if (Character_List.SSR_Char == null)
+        //{
+        //    Debug.Log("SSR리스트 찾을수 없음");
+        //    return;
+        //}
         #endregion
 
         Character character = Character_List.SSR_Char[RandomSSR];
 
+        Gacha_Characters.Add(character);
+        // Debug.Log(character.Get_CharName);
+
         // SSR 캐릭터가 없다면
         if (!UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName))
         {
+            Gacha_New_Images[Gacha_Num].SetActive(true);
             UserInfo.UserCharDict.Add(Character_List.SSR_Char[RandomSSR].Get_CharName, character);
         }
         // 등급이 아직 덜 올랐다면
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar < 5) 
         {
+            New_PopUp_Active();
             UserInfo.UserCharDict[character.Get_CharName].Get_CharStar++;
-            Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
-            return;
+            // Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
         }
         // 등급이 다 올랐다면
-        else if (UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar == 5)
+        else if (UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar >= 5)
         {
+            New_PopUp_Active();
+            Book_PopUp_Active(Books[2]);
+            UserInfo.SSR_Book++;
             Debug.Log("금색 코인 획득");
-        }
-        
+        }  
     }
 
     void SR_Summon()
@@ -127,30 +200,37 @@ public class Gacha_Manager : MonoBehaviour
         int RandomSR = Random.Range(0, Character_List.SR_Char.Count);
 
         #region SR 목록 검사
-        if (Character_List.SR_Char == null)
-        {
-            Debug.Log("SR리스트 찾을수 없음");
-            return;
-        }
+        //if (Character_List.SR_Char == null)
+        //{
+        //    Debug.Log("SR리스트 찾을수 없음");
+        //    return;
+        //}
         #endregion
 
         Character character = Character_List.SR_Char[RandomSR];
 
-        // SSR 캐릭터가 없다면
+        Gacha_Characters.Add(character);
+        // Debug.Log(character.Get_CharName);
+
+        // SR 캐릭터가 없다면
         if (!UserInfo.UserCharDict.ContainsKey(Character_List.SR_Char[RandomSR].Get_CharName))
         {
+            Gacha_New_Images[Gacha_Num].SetActive(true);
             UserInfo.UserCharDict.Add(Character_List.SR_Char[RandomSR].Get_CharName, character);
         }
         // 등급이 아직 덜 올랐다면
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.SR_Char[RandomSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar < 5)
         {
+            New_PopUp_Active();
             UserInfo.UserCharDict[character.Get_CharName].Get_CharStar++;
-            Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
-            return;
+            // Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
         }
         // 등급이 다 올랐다면
-        else if (UserInfo.UserCharDict.ContainsKey(Character_List.SR_Char[RandomSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar == 5)
+        else if (UserInfo.UserCharDict.ContainsKey(Character_List.SR_Char[RandomSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar >= 5)
         {
+            New_PopUp_Active();
+            Book_PopUp_Active(Books[1]);
+            UserInfo.SR_Book++;
             Debug.Log("은색 코인 획득");
         }
     }
@@ -160,32 +240,69 @@ public class Gacha_Manager : MonoBehaviour
         int RandomR = Random.Range(0, Character_List.R_Char.Count);
 
         #region R 목록 검사
-        if (Character_List.R_Char == null)
-        {
-            Debug.Log("SR리스트 찾을수 없음");
-            return;
-        }
+        //if (Character_List.R_Char == null)
+        //{
+        //    Debug.Log("SR리스트 찾을수 없음");
+        //    return;
+        //}
         #endregion
 
         Character character = Character_List.R_Char[RandomR];
-        // SSR 캐릭터가 없다면
+
+        Gacha_Characters.Add(character);
+        // Debug.Log(character.Get_CharName);
+
+        // R 캐릭터가 없다면
         if (!UserInfo.UserCharDict.ContainsKey(Character_List.R_Char[RandomR].Get_CharName))
         {
+            Gacha_New_Images[Gacha_Num].SetActive(true);
             UserInfo.UserCharDict.Add(Character_List.R_Char[RandomR].Get_CharName, character);
         }
         // 등급이 아직 덜 올랐다면
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.R_Char[RandomR].Get_CharName) &&  UserInfo.UserCharDict[character.Get_CharName].Get_CharStar < 5)
         {
+            New_PopUp_Active();
             UserInfo.UserCharDict[character.Get_CharName].Get_CharStar++;
-            Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
-            return;
+            // Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
         }
         // 등급이 다 올랐다면
-        else if (UserInfo.UserCharDict.ContainsKey(Character_List.R_Char[RandomR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar == 5)
+        else if (UserInfo.UserCharDict.ContainsKey(Character_List.R_Char[RandomR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar >= 5)
         {
+            New_PopUp_Active();
+            Book_PopUp_Active(Books[0]);
+            UserInfo.R_Book++;
             Debug.Log("동색 코인 획득");
         }
     }
+
+    // 새로운 캐릭터 뽑았을 때 New 팝업 표시
+    void New_PopUp_Active()
+    {
+        if (Gacha_Count == 10)
+        {
+            Gacha_New_Images[Gacha_Num].SetActive(false);
+        }
+        else
+        {
+            Gacha_New_Image.SetActive(false);
+        }
+    }
+
+    void Book_PopUp_Active(Sprite _sprite)
+    {
+        if (Gacha_Count == 10)
+        {
+            Book_Images[Gacha_Num].SetActive(true);
+            Book_Images[Gacha_Num].transform.GetChild(0).GetComponent<Image>().sprite = _sprite;
+
+        }
+        else
+        {
+            Book_Image.SetActive(true);
+            Book_Image.transform.GetChild(0).GetComponent<Image>().sprite = _sprite;
+        }
+    }
+    #endregion
 
     // TODO ## Gacha_Manager 가차연출 구현
     void Gacha_Video_Play()
@@ -227,8 +344,6 @@ public class Gacha_Manager : MonoBehaviour
             isSSR_Summon = false;
 
             return;
-        }
-
-       
+        } 
     }
 }
