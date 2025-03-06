@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Lobby_Manager : MonoBehaviour
 {
+    //test
+    
     [SerializeField] GameObject ShaderTransition;
     [SerializeField] GameObject NotTouch_RayCast;
     [SerializeField] GachaVideo gachaVideo;
