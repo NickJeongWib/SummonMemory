@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class Lobby_Manager : MonoBehaviour
 {
-    //test
-    
+    [Header("---Transition---")]
     [SerializeField] GameObject ShaderTransition;
     [SerializeField] GameObject NotTouch_RayCast;
+
+    [Header("---GachaMovie---")]
     [SerializeField] GachaVideo gachaVideo;
 
     [Header("---Gacha_CharacterList---")]
@@ -17,6 +18,9 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] GameObject Gacha_1;
     [SerializeField] GameObject[] Book_Images;
     [SerializeField] GameObject Book_Image;
+
+    [Header("---CharacterList---")]
+    [SerializeField] GameObject CharacterInfo_Panel;
 
     // 상점, 도감, 업적 등 여러 창으로 이동
     public void On_Click_OnPanel(GameObject _obj)
@@ -70,6 +74,13 @@ public class Lobby_Manager : MonoBehaviour
         Book_Image.SetActive(false);
 
         _obj.SetActive(false);
+    }
+    #endregion
+
+    #region CharacterList
+    public void On_Click_CharInfo()
+    {
+
     }
     #endregion
 }
