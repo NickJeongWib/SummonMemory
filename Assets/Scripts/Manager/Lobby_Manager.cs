@@ -20,7 +20,12 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] GameObject Book_Image;
 
     [Header("---CharacterList---")]
+    [SerializeField] CharacterList_UI CharacterList_UI_Ref;
+    [SerializeField] Image Transition_Element_BG;
     [SerializeField] GameObject CharacterInfo_Panel;
+    [SerializeField] Text Transition_Char_Name;
+    [SerializeField] Image Transition_Grade;
+    [SerializeField] Color[] colors;
 
     // 상점, 도감, 업적 등 여러 창으로 이동
     public void On_Click_OnPanel(GameObject _obj)
@@ -77,10 +82,32 @@ public class Lobby_Manager : MonoBehaviour
     }
     #endregion
 
-    #region CharacterList
-    public void On_Click_CharInfo()
+    #region CharacterList_UI
+    public void On_Click_CharInfo(CharacterSlot _slot)
     {
+        CharacterInfo_Panel.SetActive(true);
 
+        // 화면 전환 화면의 UI 선택한 캐릭터 속성 색으로 변경
+        Transition_Char_Name.color = colors[(int)_slot.character.Get_CharElement];
+        Transition_Grade.color = colors[(int)_slot.character.Get_CharElement];
+        Transition_Element_BG.sprite = CharacterList_UI_Ref.Elements_BG[(int)_slot.character.Get_CharElement];
+
+        // 캐릭터의 영문 이름 표시
+        Transition_Char_Name.text = _slot.character.Get_CharEngName;
+
+        // 등급에 따른 이미지 차별화
+        if (_slot.character.Get_CharGrade == Define.CHAR_GRADE.R)
+        {
+            Transition_Grade.rectTransform.sizeDelta = new Vector2(96.0f, 30.0f);
+        }
+        else if (_slot.character.Get_CharGrade == Define.CHAR_GRADE.SR)
+        {
+            Transition_Grade.rectTransform.sizeDelta = new Vector2(128.0f, 30.0f);
+        }
+        else
+        {
+            Transition_Grade.rectTransform.sizeDelta = new Vector2(160.0f, 30.0f);
+        }
     }
     #endregion
 }

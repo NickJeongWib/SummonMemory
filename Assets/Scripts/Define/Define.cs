@@ -1,5 +1,6 @@
 public static class Define
 {
+    // 캐릭터 타입
     public enum CHAR_TYPE
     {
         ATTACK,
@@ -8,6 +9,7 @@ public static class Define
         SUPPORT,
     }
 
+    // 캐릭터 속성
     public enum CHAR_ELE
     {
         FIRE,
@@ -16,6 +18,7 @@ public static class Define
         GROUND,
     }
 
+    // 캐릭터 등급
     public enum CHAR_GRADE
     {
         R,

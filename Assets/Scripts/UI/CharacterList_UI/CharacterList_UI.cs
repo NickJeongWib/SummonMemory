@@ -39,14 +39,18 @@ public class CharacterList_UI : MonoBehaviour
             {
                 Slots[SlotNum].Grade_Image.gameObject.SetActive(true);
             }
+            if(!Slots[SlotNum].Select_Btn.IsActive())
+            {
+                Slots[SlotNum].Select_Btn.gameObject.SetActive(true);
+            }
 
+            Slots[SlotNum].character = Dict.Value;
             Slots[SlotNum].Grade_Image.sprite = Grades[(int)Dict.Value.Get_CharGrade];
             Slots[SlotNum].Element_BG.sprite = Elements_BG[(int)Dict.Value.Get_CharElement];
             Slots[SlotNum].Element_Image.sprite = Elements[(int)Dict.Value.Get_CharElement];
 
             Slots[SlotNum].Char_Porfile.sprite = Dict.Value.Get_Profile_Img;
             Slots[SlotNum].Star_Image.rectTransform.sizeDelta = new Vector2(20 * Dict.Value.Get_CharStar, 20.0f);
-
             // Debug.Log(SlotNum + " " + Dict.Value.Get_CharName + " " + Dict.Value.Get_CharStar);
 
            SlotNum++;

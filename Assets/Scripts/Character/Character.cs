@@ -12,6 +12,9 @@ public class Character
     string CharName;
     public string Get_CharName { get => CharName; }
 
+    string CharEngName;
+    public string Get_CharEngName { get => CharEngName; }
+
     CHAR_GRADE CharGrade;
     public CHAR_GRADE Get_CharGrade { get => CharGrade; }
 
@@ -66,12 +69,13 @@ public class Character
     Sprite Profile_Img;
     public Sprite Get_Profile_Img { get => Profile_Img; }
 
-    public Character(int _id, string _name, CHAR_GRADE _grade, CHAR_TYPE _type, CHAR_ELE _ele, int _star,
+    public Character(int _id, string _name, string _engName, CHAR_GRADE _grade, CHAR_TYPE _type, CHAR_ELE _ele, int _star,
        float _hp, float _atk, float _def, float _crtDamage, float _crtRate, string _illustAdd = "", string _normalImageAdd = "", string _gradeUpAdd = "", string _profileAdd = "")
     {
         // 캐릭터 능력치
         CharacterID = _id;
         CharName = _name;
+        CharEngName = _engName;
         CharGrade = _grade;
         CharType = _type;
         CharElement = _ele;

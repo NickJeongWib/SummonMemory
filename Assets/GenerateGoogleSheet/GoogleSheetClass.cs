@@ -14,6 +14,7 @@ public class Character_DB
 {
 	public int CHAR_ID;
 	public string CHAR_NAME;
+	public string CHAR_ENG_NAME;
 	public string CHAR_ELEMENT;
 	public string CHAR_TYPE;
 	public string CHAR_GRADE;

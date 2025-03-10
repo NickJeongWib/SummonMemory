@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class CharacterSlot : MonoBehaviour
 {
+    public Character character;
+
     public Image Element_BG;
     public Image Char_Porfile;
     public Image Element_Image;
     public Image Star_Image;
     public Image Grade_Image;
+    public Button Select_Btn;
 }

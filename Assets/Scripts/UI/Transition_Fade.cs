@@ -6,7 +6,8 @@ public class Transition_Fade : MonoBehaviour
 {
     [SerializeField] GameObject NotTouch_Raycast;
 
-    // Fade Out
+    #region Base
+    // TODO ## Transition_Fade 기본 Fade Out
     public void Transition_ActiveF()
     {
         this.gameObject.SetActive(false);
@@ -17,4 +18,10 @@ public class Transition_Fade : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+    #endregion
+
+    #region Character_Transition
+    // TODO ## Transition_Fade 캐릭터 정보 Transition
+
+    #endregion
 }

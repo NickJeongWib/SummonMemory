@@ -18,6 +18,7 @@ public class GachaVideo : MonoBehaviour
         videoPlayer.loopPointReached += OnVideoEnd;
     }
 
+    // 비디오 끝났을 떄 호출되는 함수
     void OnVideoEnd(VideoPlayer vp)
     {
         GachaVideo_Renderer.SetActive(false);
