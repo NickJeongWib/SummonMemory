@@ -8,6 +8,7 @@ public class CharacterList_UI : MonoBehaviour
 {
     public List<CharacterSlot> Slots = new List<CharacterSlot>();
     public Sprite[] Elements;
+    public Sprite[] ElementColors;
     public Sprite[] Elements_BG;
     public Sprite[] Grades;
 

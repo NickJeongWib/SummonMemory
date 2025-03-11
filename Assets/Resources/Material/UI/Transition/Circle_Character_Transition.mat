@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Circle_Transition
+  m_Name: Circle_Character_Transition
   m_Shader: {fileID: -6465566751694194690, guid: 7a70e835d67f5584db5118d5a17858fe, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

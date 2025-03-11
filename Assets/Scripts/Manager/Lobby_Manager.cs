@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Lobby_Manager : MonoBehaviour
 {
     [Header("---Transition---")]
+    [SerializeField] GameObject CircleTransition;
     [SerializeField] GameObject ShaderTransition;
     [SerializeField] GameObject NotTouch_RayCast;
 
@@ -22,11 +23,19 @@ public class Lobby_Manager : MonoBehaviour
     [Header("---CharacterList---")]
     [SerializeField] CharacterList_UI CharacterList_UI_Ref;
     [SerializeField] Image Transition_Element_BG;
-    [SerializeField] GameObject CharacterInfo_Panel;
+    [SerializeField] Image Transition_ElementCol;
     [SerializeField] Text Transition_Char_Name;
     [SerializeField] Image Transition_Grade;
+    [SerializeField] Image Transition_Grade_Deco;
+    [SerializeField] GameObject CharacterInfo_Panel;
+    [SerializeField] GameObject CharacterInfo_Transition;
     [SerializeField] Color[] colors;
 
+    // 캐릭터 정보 관련
+    [SerializeField] Image CharInfo_Img;
+    [SerializeField] Text CharInfo_Name;
+
+    #region Shader_Graph_Transition
     // 상점, 도감, 업적 등 여러 창으로 이동
     public void On_Click_OnPanel(GameObject _obj)
     {
@@ -42,6 +51,24 @@ public class Lobby_Manager : MonoBehaviour
         ShaderTransition.SetActive(true);
         _obj.SetActive(false);
     }
+    #endregion
+
+    #region Circle_Transition
+    public void On_Click_OnPanel_Circle(GameObject _obj)
+    {
+        NotTouch_RayCast.SetActive(true); // 이동 중 버튼 클릭 방지
+        CircleTransition.SetActive(true);
+        _obj.SetActive(true);
+    }
+
+    // 현재 열려 있는 창을 닫고 로비로 이동
+    public void On_Click_OffPanel_Circle(GameObject _obj)
+    {
+        NotTouch_RayCast.SetActive(true); // 화면전환 중 버튼 클릭 방지
+        CircleTransition.SetActive(true);
+        _obj.SetActive(false);
+    }
+    #endregion
 
     public void On_Click_Back(GameObject _obj)
     {
@@ -85,15 +112,23 @@ public class Lobby_Manager : MonoBehaviour
     #region CharacterList_UI
     public void On_Click_CharInfo(CharacterSlot _slot)
     {
+        NotTouch_RayCast.SetActive(true); // 화면전환 중 버튼 클릭 방지
         CharacterInfo_Panel.SetActive(true);
+        // MeshRenderer의 머티리얼에 접근해 Color변수의 레퍼타입에 접근해서 색상 변경
+        CharacterInfo_Transition.GetComponent<MeshRenderer>().material.SetColor("_Color", colors[(int)_slot.character.Get_CharElement]);
 
         // 화면 전환 화면의 UI 선택한 캐릭터 속성 색으로 변경
         Transition_Char_Name.color = colors[(int)_slot.character.Get_CharElement];
         Transition_Grade.color = colors[(int)_slot.character.Get_CharElement];
+        Transition_Grade_Deco.color = colors[(int)_slot.character.Get_CharElement];
+        Transition_ElementCol.sprite = CharacterList_UI_Ref.ElementColors[(int)_slot.character.Get_CharElement];
         Transition_Element_BG.sprite = CharacterList_UI_Ref.Elements_BG[(int)_slot.character.Get_CharElement];
 
         // 캐릭터의 영문 이름 표시
         Transition_Char_Name.text = _slot.character.Get_CharEngName;
+
+        CharInfo_Img.sprite = _slot.character.Get_Normal_Img;
+        CharInfo_Name.text = _slot.character.Get_CharName;
 
         // 등급에 따른 이미지 차별화
         if (_slot.character.Get_CharGrade == Define.CHAR_GRADE.R)
