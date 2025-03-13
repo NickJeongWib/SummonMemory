@@ -27,7 +27,8 @@ public class Character_List : MonoBehaviour
 
             // TODO ## Character_List 이미지 리소스 저장
             Node.Load_Resources(GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST,
-               GoogleSheetSORef.Character_Image_AddressList[i].CHAR_NORMAL_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_GRADE_UP_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PROFILE_IMAGE);
+               GoogleSheetSORef.Character_Image_AddressList[i].CHAR_NORMAL_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_GRADE_UP_IMAGE,
+               GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PROFILE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_WHITE_IMAGE);
 
             #region 이미지 누락 경고
             if (Node.Get_Grade_Up_Img == null)

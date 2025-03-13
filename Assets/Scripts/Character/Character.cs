@@ -57,6 +57,9 @@ public class Character
     string Profile_Address;
     public string Get_Profile_Address { get => Profile_Address; }
 
+    string White_Illust_Address;
+    public string Get_White_Illust_Address { get => White_Illust_Address; }
+
     Sprite Illust_Img;
     public Sprite Get_Illust_Img { get => Illust_Img; }
 
@@ -68,6 +71,9 @@ public class Character
 
     Sprite Profile_Img;
     public Sprite Get_Profile_Img { get => Profile_Img; }
+
+    Sprite WhiteIllust_Img;
+    public Sprite Get_WhiteIllust_Img { get => WhiteIllust_Img; }
 
     public Character(int _id, string _name, string _engName, CHAR_GRADE _grade, CHAR_TYPE _type, CHAR_ELE _ele, int _star,
        float _hp, float _atk, float _def, float _crtDamage, float _crtRate, string _illustAdd = "", string _normalImageAdd = "", string _gradeUpAdd = "", string _profileAdd = "")
@@ -98,17 +104,19 @@ public class Character
         Profile_Img = Resources.Load<Sprite>(Profile_Address);
     }
 
-    public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd)
+    public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd, string _whiteIllustAdd)
     {
         // 이미지 주소
         Illust_Address = _illustAdd;
         Normal_Image_Address = _normalImageAdd;
         Grade_Up_Image_Address = _gradeUpAdd;
         Profile_Address = _profileAdd;
+        White_Illust_Address = _whiteIllustAdd;
 
         Illust_Img = Resources.Load<Sprite>(Illust_Address);
         Normal_Img = Resources.Load<Sprite>(Normal_Image_Address);
         Grade_Up_Img = Resources.Load<Sprite>(Grade_Up_Image_Address);
         Profile_Img = Resources.Load<Sprite>(Profile_Address);
+        WhiteIllust_Img = Resources.Load<Sprite>(White_Illust_Address);
     }
 }

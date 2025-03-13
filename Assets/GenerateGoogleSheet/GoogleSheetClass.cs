@@ -33,5 +33,6 @@ public class Character_Image_Address
 	public string CHAR_NORMAL_IMAGE;
 	public string CHAR_GRADE_UP_IMAGE;
 	public string CHAR_PROFILE_IMAGE;
+	public string CHAR_WHITE_IMAGE;
 }
 

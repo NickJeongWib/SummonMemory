@@ -24,12 +24,14 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] CharacterList_UI CharacterList_UI_Ref;
     [SerializeField] Image Transition_Element_BG;
     [SerializeField] Image Transition_ElementCol;
+    [SerializeField] Image Transition_White_Char;
     [SerializeField] Text Transition_Char_Name;
     [SerializeField] Image Transition_Grade;
     [SerializeField] Image Transition_Grade_Deco;
     [SerializeField] GameObject CharacterInfo_Panel;
     [SerializeField] GameObject CharacterInfo_Transition;
     [SerializeField] Color[] colors;
+    [SerializeField] Color[] Transition_colors;
 
     // 캐릭터 정보 관련
     [SerializeField] Image CharInfo_Img;
@@ -121,8 +123,12 @@ public class Lobby_Manager : MonoBehaviour
         Transition_Char_Name.color = colors[(int)_slot.character.Get_CharElement];
         Transition_Grade.color = colors[(int)_slot.character.Get_CharElement];
         Transition_Grade_Deco.color = colors[(int)_slot.character.Get_CharElement];
+
+        Transition_White_Char.color = Transition_colors[(int)_slot.character.Get_CharElement];
+
         Transition_ElementCol.sprite = CharacterList_UI_Ref.ElementColors[(int)_slot.character.Get_CharElement];
         Transition_Element_BG.sprite = CharacterList_UI_Ref.Elements_BG[(int)_slot.character.Get_CharElement];
+        Transition_White_Char.sprite = _slot.character.Get_WhiteIllust_Img;
 
         // 캐릭터의 영문 이름 표시
         Transition_Char_Name.text = _slot.character.Get_CharEngName;
