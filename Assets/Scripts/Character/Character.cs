@@ -6,6 +6,10 @@ using static Define;
 // TODO ## Character 데이터 저장 클래스
 public class Character
 {
+    int Character_Lv;
+    public int Get_Character_Lv { get => Character_Lv; set => Character_Lv = value; }
+
+    // google_Sheet 연동 변수들
     int CharacterID;
     public int Get_CharacterID { get => CharacterID; }
 
@@ -60,6 +64,11 @@ public class Character
     string White_Illust_Address;
     public string Get_White_Illust_Address { get => White_Illust_Address; }
 
+    string Square_Illust_Address;
+    public string Get_Square_Illust_Address { get => Square_Illust_Address; }
+
+
+    // 이미지들 
     Sprite Illust_Img;
     public Sprite Get_Illust_Img { get => Illust_Img; }
 
@@ -75,9 +84,14 @@ public class Character
     Sprite WhiteIllust_Img;
     public Sprite Get_WhiteIllust_Img { get => WhiteIllust_Img; }
 
+    Sprite SquareIllust_Img;
+    public Sprite Get_SquareIllust_Img { get => SquareIllust_Img; }
+
     public Character(int _id, string _name, string _engName, CHAR_GRADE _grade, CHAR_TYPE _type, CHAR_ELE _ele, int _star,
-       float _hp, float _atk, float _def, float _crtDamage, float _crtRate, string _illustAdd = "", string _normalImageAdd = "", string _gradeUpAdd = "", string _profileAdd = "")
+       float _hp, float _atk, float _def, float _crtDamage, float _crtRate, string _illustAdd = "", string _normalImageAdd = "", string _gradeUpAdd = "", string _profileAdd = "", int _lv = 1)
     {
+        Character_Lv = _lv;
+
         // 캐릭터 능력치
         CharacterID = _id;
         CharName = _name;
@@ -104,7 +118,7 @@ public class Character
         Profile_Img = Resources.Load<Sprite>(Profile_Address);
     }
 
-    public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd, string _whiteIllustAdd)
+    public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd, string _whiteIllustAdd, string _squareIllustAdd = null)
     {
         // 이미지 주소
         Illust_Address = _illustAdd;
@@ -112,11 +126,14 @@ public class Character
         Grade_Up_Image_Address = _gradeUpAdd;
         Profile_Address = _profileAdd;
         White_Illust_Address = _whiteIllustAdd;
+        Square_Illust_Address = _squareIllustAdd;
 
+        // 이미지 로드
         Illust_Img = Resources.Load<Sprite>(Illust_Address);
         Normal_Img = Resources.Load<Sprite>(Normal_Image_Address);
         Grade_Up_Img = Resources.Load<Sprite>(Grade_Up_Image_Address);
         Profile_Img = Resources.Load<Sprite>(Profile_Address);
         WhiteIllust_Img = Resources.Load<Sprite>(White_Illust_Address);
+        SquareIllust_Img = Resources.Load<Sprite>(Square_Illust_Address);
     }
 }

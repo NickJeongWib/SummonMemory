@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -18,5 +19,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    private void Start()
+    {
+
     }
 }

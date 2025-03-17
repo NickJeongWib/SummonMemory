@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Define;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Character_List : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Character_List : MonoBehaviour
     public static List<Character> SR_Char = new List<Character>();
     public static List<Character> SSR_Char = new List<Character>();
 
-    private void Start()
+    private void Awake()
     {
         for (int i = 0; i < GoogleSheetSORef.Character_DBList.Count; i++)
         {
@@ -28,7 +29,7 @@ public class Character_List : MonoBehaviour
             // TODO ## Character_List 이미지 리소스 저장
             Node.Load_Resources(GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST,
                GoogleSheetSORef.Character_Image_AddressList[i].CHAR_NORMAL_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_GRADE_UP_IMAGE,
-               GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PROFILE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_WHITE_IMAGE);
+               GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PROFILE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_WHITE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST_SQUARE);
 
             #region 이미지 누락 경고
             if (Node.Get_Grade_Up_Img == null)
@@ -61,6 +62,18 @@ public class Character_List : MonoBehaviour
             {
                 SSR_Char.Add(Node);
             }
+        }
+
+
+        // TODO ## 초기 테스트 값
+        if (UserInfo.UserCharDict.Count <= 0)
+        { 
+            // TODO ## 시작 캐릭터 설정 Character_List "레제" 초반 스타트 캐릭
+            UserInfo.UserCharDict.Add($"{Character_List.SR_Char[0].Get_CharName}", Character_List.SR_Char[0]);
+            UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToList();
+
+            UserInfo.Equip_Characters.Add(UserInfo.UserCharDict_Copy[0].Value);
+            UserInfo.UserCharDict_Copy.RemoveAt(0);
         }
     }
 

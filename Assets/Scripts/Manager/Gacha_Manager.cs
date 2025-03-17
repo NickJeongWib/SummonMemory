@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Gacha_Manager : MonoBehaviour
 {
@@ -59,12 +60,14 @@ public class Gacha_Manager : MonoBehaviour
     {
         Gacha_Count = _num;
         GachaInfo_Panel.SetActive(true);
+        // GachaInfo_Panel.transform.GetChild(0).GetComponent<Pop_UpDown>().Pop_Up();
     }
 
     public void GachaInfo_Close()
     {
         Gacha_Count = 0;
-        GachaInfo_Panel.SetActive(false);
+        GachaInfo_Panel.transform.GetChild(0).GetComponent<Pop_UpDown>().Pop_Down();
+        // GachaInfo_Panel.SetActive(false);
     }
 
     // TODO ## Gacha_Manager 가차 시스템
@@ -122,10 +125,9 @@ public class Gacha_Manager : MonoBehaviour
                     isR_Summon = true;
                 }
             }
+
             Gacha_Num++;
         }
-
-        Debug.Log(Gacha_Characters.Count);
 
         if (Gacha_Count == 10)
         {
@@ -134,11 +136,6 @@ public class Gacha_Manager : MonoBehaviour
             for (int i = 0; i < Gacha_Characters.Count; i++)
             {
                 Gacha_10_CharImages[i].sprite = Gacha_Characters[i].Get_Normal_Img;
-
-                //if (UserInfo.UserCharDict.ContainsKey($"{Gacha_Characters[i].Get_CharName}"))
-                //{
-                //    Gacha_New_Images[i].gameObject.SetActive(false);
-                //}
             }
         }
         else
@@ -148,9 +145,27 @@ public class Gacha_Manager : MonoBehaviour
             Gacha_CharImage.sprite = Gacha_Characters[0].Get_Normal_Img;
         }
 
+        // UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToDictionary(entry => entry.Key, entry => entry.Value); // 유저가 지닌 캐릭터 풀 복사
+        UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToList();
+
+        // 장착된 캐릭터는 캐릭터 리스트에 추가하지 않기 위해 제거
+        for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        {
+            if (UserInfo.UserCharDict_Copy.Contains(new KeyValuePair<string, Character>(UserInfo.Equip_Characters[i].Get_CharName, UserInfo.Equip_Characters[i])))
+            {
+                UserInfo.UserCharDict_Copy.Remove(new KeyValuePair<string, Character>(UserInfo.Equip_Characters[i].Get_CharName, UserInfo.Equip_Characters[i]));
+            }
+
+            // 뽑은 캐릭터나 중복으로 뽑은 캐릭터가 장착 중 일 시 장착 중인 캐릭터의 데이터를 바꿔준다.
+            if(UserInfo.UserCharDict.Contains(new KeyValuePair<string, Character>(UserInfo.Equip_Characters[i].Get_CharName, UserInfo.Equip_Characters[i])))
+            {
+                UserInfo.Equip_Characters[i] = UserInfo.UserCharDict[$"{UserInfo.Equip_Characters[i].Get_CharName}"];
+            }
+        }
+
         // 캐릭터 인벤토리 Refresh
         CharListRef.Refresh_CharacterList();
-
+        
         Gacha_Video_Play();
     }
 
@@ -305,6 +320,7 @@ public class Gacha_Manager : MonoBehaviour
     #endregion
 
     // TODO ## Gacha_Manager 가차연출 구현
+    #region Gacha_Movie
     void Gacha_Video_Play()
     {
         GachaEnter_Transition.SetActive(true);
@@ -346,4 +362,5 @@ public class Gacha_Manager : MonoBehaviour
             return;
         } 
     }
+    #endregion
 }
