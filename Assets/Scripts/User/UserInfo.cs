@@ -48,6 +48,19 @@ public class UserInfo : MonoBehaviour
             _image.sprite = UserInfo.Equip_Characters[_equipIndex].Get_Illust_Img;
         }
     }
+
+    public static void Get_Square_Image(Image _image, Character _character)
+    {
+        // R등급과 SR, SSR은 정사각형으로 된 이미지가 달라서 이용
+        if (_character.Get_CharGrade != Define.CHAR_GRADE.R)
+        {
+            _image.sprite = _character.Get_SquareIllust_Img;
+        }
+        else
+        {
+            _image.sprite = _character.Get_Illust_Img;
+        }
+    }
     #endregion
 
     #region Test

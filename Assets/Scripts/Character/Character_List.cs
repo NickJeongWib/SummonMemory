@@ -76,5 +76,4 @@ public class Character_List : MonoBehaviour
             UserInfo.UserCharDict_Copy.RemoveAt(0);
         }
     }
-
 }
