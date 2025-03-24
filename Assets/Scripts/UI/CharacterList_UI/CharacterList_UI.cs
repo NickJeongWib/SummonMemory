@@ -28,6 +28,8 @@ public class CharacterList_UI : MonoBehaviour
     [SerializeField] Color[] Transition_colors;
 
     [Header("---CharacterList_Equip---")]
+    [SerializeField] List<Equip_Slot> EquipSlot_List;
+    [SerializeField] Button[] EquipChar_Select_Btn;
     [SerializeField] int MaxEquip_Count;
     [SerializeField] GameObject Change_Char_Btn;    // 캐릭터 교체 창 버튼
     [SerializeField] GameObject Equip_Info_Btn;     // 캐릭터 교체 취소, 확인 버튼 모음
@@ -168,24 +170,6 @@ public class CharacterList_UI : MonoBehaviour
     }
     #endregion
 
-    #region 교체 버튼 클릭 시 장착버튼 활성화
-    // 캐릭터 교체 버튼 활성화
-    public void Refresh_Equip_Btn()
-    {
-        int SlotNum = 0;
-
-        foreach (KeyValuePair<string, Character> Dict in UserInfo.UserCharDict_Copy)
-        {
-            if (!Slots[SlotNum].Equip_Btn.IsActive())
-            {
-                Slots[SlotNum].Equip_Btn.gameObject.SetActive(true);
-            }
-
-            SlotNum++;
-        }
-    }
-    #endregion
-
     #region Character Equip_UnEquip
     // TODO ## Lobby_Manager 캐릭터 해제 작동 부분
     public void On_Click_UnEquip_Char(int _equipNum)
@@ -221,6 +205,7 @@ public class CharacterList_UI : MonoBehaviour
         Refresh_CharacterList();
         Refresh_Equip_Btn();
         Equip_Image_Refresh(true);
+        Interact_EquipSlot_Btn();
     }
 
     // TODO ## Lobby_Manager 캐릭터 장착 작동 부분
@@ -234,6 +219,13 @@ public class CharacterList_UI : MonoBehaviour
 
         // 캐릭터 장착 리스트에 추가
         UserInfo.Equip_Characters.Add(_slot.character);
+        
+        // 장착 캐릭터 슬롯 초기화
+        for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        {
+            EquipSlot_List[i].EquipCharacter = UserInfo.Equip_Characters[i];
+        }
+
         UserInfo.UserCharDict_Copy.RemoveAt(_slot.Slot_Num);
 
         CharImg_Anim_Ref.Get_ImageIndex = 0;
@@ -244,10 +236,12 @@ public class CharacterList_UI : MonoBehaviour
         // 장착 캐릭터 슬롯 초기화
         Refresh_CharacterList();
         Equip_Image_Refresh(true);
+        Interact_EquipSlot_Btn();
     }
     #endregion
 
     #region CharacterList_Equip_Btn
+    // 캐릭터 교체 버튼 활성화
     // TODO ## Lobby_Manager 캐릭터 교체를 위한 버튼 작동
     public void On_Click_Change()
     {
@@ -275,21 +269,26 @@ public class CharacterList_UI : MonoBehaviour
     // 캐릭터 장착 버튼 활성화
     void Equip_Char_Btn(bool _bool)
     {
+        // 캐릭터가 없다면 return
         if (UserInfo.UserCharDict.Count <= 0)
             return;
 
+        // 캐릭터 장착 버튼 활성 비활성 전환
         for (int i = 0; i < UserInfo.UserCharDict_Copy.Count; i++)
         {
             Slots[i].Equip_Btn.gameObject.SetActive(_bool);
             Slots[i].Select_Btn.interactable = !_bool;
         }
 
-        // 장착 시 장착 캐릭터칸 위에 캐릭터를 뺄 수 있게 
+        // 장착 시 장착 캐릭터 칸 위에 캐릭터를 뺄 수 있게 
         Equip_Count = 0;
         for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
         {
             Equip_Count = i;
+            // 캐릭터 해제버튼 활성화
             UnEquip_Btn[i].SetActive(_bool);
+            // 캐릭터 선택버튼 비활성화
+            EquipChar_Select_Btn[i].interactable = !_bool;
         }
     }
 
@@ -322,9 +321,43 @@ public class CharacterList_UI : MonoBehaviour
             Equip_Char_Img[off].sprite = null;
         }
     }
+
+    // 캐릭터교체 버튼 클릭 시 장착버튼 활성화
+    public void Refresh_Equip_Btn()
+    {
+        int SlotNum = 0;
+
+        foreach (KeyValuePair<string, Character> Dict in UserInfo.UserCharDict_Copy)
+        {
+            if (!Slots[SlotNum].Equip_Btn.IsActive())
+            {
+                Slots[SlotNum].Equip_Btn.gameObject.SetActive(true);
+            }
+
+            SlotNum++;
+        }
+    }
     #endregion
 
     #region CharacterList_UI
+    void Interact_EquipSlot_Btn()
+    {
+        int count = 0;
+
+        for (int on = 0; on < UserInfo.Equip_Characters.Count; on++)
+        {
+            EquipSlot_List[on].SelectBtn.gameObject.SetActive(true);
+            EquipSlot_List[on].SelectBtn.interactable = false;
+            count = on;
+        }
+
+        for (int off = count + 1; off < EquipSlot_List.Count; off++)
+        {
+            EquipSlot_List[off].SelectBtn.gameObject.SetActive(false);
+        }
+    }
+
+
     public void On_Click_CharInfo(CharacterSlot _slot)
     {
         #region Character_Transition_Set
@@ -377,6 +410,60 @@ public class CharacterList_UI : MonoBehaviour
         CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.character.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
         #endregion
     }
+
+    public void On_Click_CharInfo(Equip_Slot _slot)
+    {
+        #region Character_Transition_Set
+        // TODO ## Lobby_Manager 캐릭터 정보 창 이동 트랜지션 이미지 초기화 구문
+        // 화면전환 중 버튼 클릭 방지
+        LobbyMgr_Ref.Get_NotTouch_RayCast.SetActive(true);
+        CharacterInfo_Panel.SetActive(true);
+        // MeshRenderer의 머티리얼에 접근해 Color변수의 레퍼타입에 접근해서 색상 변경
+        CharacterInfo_Transition.GetComponent<MeshRenderer>().material.SetColor("_Color", colors[(int)_slot.EquipCharacter.Get_CharElement]);
+
+        // 화면 전환 화면의 UI 선택한 캐릭터 속성 색으로 변경
+        Transition_Char_Name.color = colors[(int)_slot.EquipCharacter.Get_CharElement];
+        Transition_Grade.color = colors[(int)_slot.EquipCharacter.Get_CharElement];
+        Transition_Grade_Deco.color = colors[(int)_slot.EquipCharacter.Get_CharElement];
+        Transition_White_Char.color = Transition_colors[(int)_slot.EquipCharacter.Get_CharElement];
+
+        Transition_ElementCol.sprite = ElementColors[(int)_slot.EquipCharacter.Get_CharElement];
+        Transition_Element_BG.sprite = Elements_BG[(int)_slot.EquipCharacter.Get_CharElement];
+        Transition_White_Char.sprite = _slot.EquipCharacter.Get_WhiteIllust_Img;
+
+        // 캐릭터의 영문 이름 표시
+        Transition_Char_Name.text = _slot.EquipCharacter.Get_CharEngName;
+        CharStar_Refresh(_slot.EquipCharacter, Transition_Grade);
+        #endregion
+
+        #region Character_Info_Change
+        // 캐릭터 정보창 이미지 변경
+        UserInfo.Get_Square_Image(CharInfo_Img, _slot.EquipCharacter);
+        CharInfo_Ele_BG.sprite = Elements_BG[(int)_slot.EquipCharacter.Get_CharElement];
+        CharInfo_Frame.material.color = FrameColors[(int)_slot.EquipCharacter.Get_CharElement];
+        CharElement_Img.sprite = ElementColors[(int)_slot.EquipCharacter.Get_CharElement];
+        CharInfo_name.text = $"{_slot.EquipCharacter.Get_CharName}  Lv.{_slot.EquipCharacter.Get_Character_Lv}";
+        // 등급에 따른 다이아 이미지 차별화
+        CharStar_Refresh(_slot.EquipCharacter, CharStar_Img);
+        CharStar_Img.color = colors[(int)_slot.EquipCharacter.Get_CharElement];
+        #endregion
+
+        #region Character_Info_Text_Refresh
+        // TODO ## Lobby_Manager 캐릭터 정보 창 캐릭터 정보 초기화
+        CharInfo_Name_Txt.text = $"이름 : {_slot.EquipCharacter.Get_CharName}";
+        CharInfo_Lv_Txt.text = $"레벨 : {_slot.EquipCharacter.Get_Character_Lv}";
+        CharInfo_Star_Txt.text = $"성급 : {_slot.EquipCharacter.Get_CharStar}성";
+        CharInfo_Type_Txt.text = $"타입 : {Type_Kor_Str[(int)_slot.EquipCharacter.Get_CharType]}";
+        CharInfo_Element_Txt.text = $"속성 : {Element_Kor_Str[(int)_slot.EquipCharacter.Get_CharElement]}";
+        CharInfo_MaxHP_Txt.text = $"체력 : {_slot.EquipCharacter.Get_CharHP}";
+        CharInfo_Atk_Txt.text = $"공격력 : {_slot.EquipCharacter.Get_CharATK}";
+        CharInfo_Def_Txt.text = $"방어력 : {_slot.EquipCharacter.Get_CharDEF}";
+        CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.EquipCharacter.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
+        CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.EquipCharacter.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
+        #endregion
+    }
+
+
     #endregion
 
     #region 성급 숫자 변경

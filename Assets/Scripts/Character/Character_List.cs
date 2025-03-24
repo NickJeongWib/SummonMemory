@@ -63,17 +63,9 @@ public class Character_List : MonoBehaviour
                 SSR_Char.Add(Node);
             }
         }
+    }
 
-
-        // TODO ## 초기 테스트 값
-        if (UserInfo.UserCharDict.Count <= 0)
-        { 
-            // TODO ## 시작 캐릭터 설정 Character_List "레제" 초반 스타트 캐릭
-            UserInfo.UserCharDict.Add($"{Character_List.SR_Char[0].Get_CharName}", Character_List.SR_Char[0]);
-            UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToList();
-
-            UserInfo.Equip_Characters.Add(UserInfo.UserCharDict_Copy[0].Value);
-            UserInfo.UserCharDict_Copy.RemoveAt(0);
-        }
+    private void Start()
+    {
     }
 }
