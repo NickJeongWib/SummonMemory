@@ -32,9 +32,10 @@ public class Lobby_Manager : MonoBehaviour
             // TODO ## 시작 캐릭터 설정 Character_List "레제" 초반 스타트 캐릭
             UserInfo.UserCharDict.Add($"{Character_List.SR_Char[0].Get_CharName}", Character_List.SR_Char[0]);
             UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToList();
+            UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
 
-            EquipSlot_List.EquipCharacter = UserInfo.UserCharDict_Copy[0].Value;
             UserInfo.Equip_Characters.Add(UserInfo.UserCharDict_Copy[0].Value);
+            EquipSlot_List.EquipCharacter = UserInfo.UserCharDict_Copy[0].Value;
 
             UserInfo.UserCharDict_Copy.RemoveAt(0);
         }
@@ -113,4 +114,19 @@ public class Lobby_Manager : MonoBehaviour
         _obj.SetActive(false);
     }
     #endregion
+
+    public void Test()
+    {
+        for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        {
+            Debug.Log("Equip " + UserInfo.Equip_Characters[i].Get_CharName);
+        }
+
+        for (int i = 0; i < UserInfo.UserCharDict_Copy_2.Count; i++)
+        {
+            Debug.Log("Dict2 " + UserInfo.UserCharDict_Copy_2[i].Value.Get_CharName);
+        }
+
+        Debug.Log("5" + EquipSlot_List.EquipCharacter.Get_CharName);
+    }
 }

@@ -147,6 +147,7 @@ public class Gacha_Manager : MonoBehaviour
 
         // UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToDictionary(entry => entry.Key, entry => entry.Value); // 유저가 지닌 캐릭터 풀 복사
         UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToList();
+        UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
 
         // 장착된 캐릭터는 캐릭터 리스트에 추가하지 않기 위해 제거
         for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
