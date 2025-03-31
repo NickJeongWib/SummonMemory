@@ -8,6 +8,7 @@ public class Inventory_UI : MonoBehaviour
     // 소비, 장비 인벤토리 게임오브젝트
     [SerializeField] GameObject Spend_Inventory_Slot;
     [SerializeField] GameObject Equip_Inventory_Slot;
+    [SerializeField] GameObject Cook_Inventory_Slot;
 
     [Header("Spend_Item_UI")]
     [SerializeField] GameObject Spend_Btn_PopUp;
@@ -17,6 +18,11 @@ public class Inventory_UI : MonoBehaviour
     [SerializeField] GameObject Equip_Btn_PopUp;
     [SerializeField] GameObject Equip_Select_Shine_BG;
 
+    [Header("Cook_Item_UI")]
+    [SerializeField] GameObject Cook_Btn_PopUp;
+    [SerializeField] GameObject Cook_Select_Shine_BG;
+
+    #region Spend_Item_Inventory_Click
     public void On_Click_Spend_Item_Btn()
     {
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
@@ -24,6 +30,7 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Inventory_Slot.SetActive(true);
             Equip_Inventory_Slot.SetActive(false);
+            Cook_Inventory_Slot.SetActive(false);
         }
 
         // Spend_Btn_PopUp 비활성화 상태에 연결이 잘 되어있다면
@@ -31,6 +38,7 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Btn_PopUp.SetActive(true);
             Equip_Btn_PopUp.SetActive(false);
+            Cook_Btn_PopUp.SetActive(false);
         }
 
         // Spend_Select_Shine_BG 비활성화 상태에 연결이 잘 되어있다면
@@ -38,9 +46,12 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Select_Shine_BG.SetActive(true);
             Equip_Select_Shine_BG.SetActive(false);
+            Cook_Select_Shine_BG.SetActive(false);
         }
     }
+    #endregion
 
+    #region Equip_Item_Inventory_Click
     public void On_Click_Equip_Item_Btn()
     {
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
@@ -48,6 +59,7 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Inventory_Slot.SetActive(false);
             Equip_Inventory_Slot.SetActive(true);
+            Cook_Inventory_Slot.SetActive(false);
         }
 
         // Spend_Btn_PopUp 비활성화 상태에 연결이 잘 되어있다면
@@ -55,6 +67,7 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Btn_PopUp.SetActive(false);
             Equip_Btn_PopUp.SetActive(true);
+            Cook_Btn_PopUp.SetActive(false);
         }
 
         // Spend_Select_Shine_BG 비활성화 상태에 연결이 잘 되어있다면
@@ -62,7 +75,37 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Select_Shine_BG.SetActive(false);
             Equip_Select_Shine_BG.SetActive(true);
+            Cook_Select_Shine_BG.SetActive(false);
         }
     }
+    #endregion
 
+    #region Cook_Item_Inventory_Click
+    public void On_Click_Cook_Item_Btn()
+    {
+        // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
+        if (Cook_Inventory_Slot.activeSelf == false && Cook_Inventory_Slot != null)
+        {
+            Spend_Inventory_Slot.SetActive(false);
+            Equip_Inventory_Slot.SetActive(false);
+            Cook_Inventory_Slot.SetActive(true);
+        }
+
+        // Spend_Btn_PopUp 비활성화 상태에 연결이 잘 되어있다면
+        if (Cook_Btn_PopUp.activeSelf == false && Cook_Btn_PopUp != null)
+        {
+            Spend_Btn_PopUp.SetActive(false);
+            Equip_Btn_PopUp.SetActive(false);
+            Cook_Btn_PopUp.SetActive(true);
+        }
+
+        // Spend_Select_Shine_BG 비활성화 상태에 연결이 잘 되어있다면
+        if (Cook_Select_Shine_BG.activeSelf == false && Cook_Select_Shine_BG != null)
+        {
+            Spend_Select_Shine_BG.SetActive(false);
+            Equip_Select_Shine_BG.SetActive(false);
+            Cook_Select_Shine_BG.SetActive(true);
+        }
+    }
+    #endregion
 }

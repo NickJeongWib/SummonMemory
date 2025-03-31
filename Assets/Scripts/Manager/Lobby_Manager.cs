@@ -7,6 +7,9 @@ using System.Linq;
 
 public class Lobby_Manager : MonoBehaviour
 {
+    [Header("---UI_Scripts_Ref")]
+    [SerializeField] Inventory_UI Inventory_UI_Ref;
+
     [Header("---Transition---")]
     [SerializeField] GameObject CircleTransition;
     [SerializeField] GameObject ShaderTransition;
@@ -45,6 +48,11 @@ public class Lobby_Manager : MonoBehaviour
     // 상점, 도감, 업적 등 여러 창으로 이동
     public void On_Click_OnPanel(GameObject _obj)
     {
+        if (_obj.name == "MyBag_Panel")
+        {
+            Inventory_UI_Ref.On_Click_Spend_Item_Btn();
+        }
+
         NotTouch_RayCast.SetActive(true); // 이동 중 버튼 클릭 방지
         ShaderTransition.SetActive(true);
         _obj.SetActive(true);
