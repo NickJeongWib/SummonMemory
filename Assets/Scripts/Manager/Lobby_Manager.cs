@@ -9,6 +9,7 @@ public class Lobby_Manager : MonoBehaviour
 {
     [Header("---UI_Scripts_Ref")]
     [SerializeField] Inventory_UI Inventory_UI_Ref;
+    [SerializeField] Store_Manager StoreManager_Ref;
 
     [Header("---Transition---")]
     [SerializeField] GameObject CircleTransition;
@@ -48,9 +49,14 @@ public class Lobby_Manager : MonoBehaviour
     // 상점, 도감, 업적 등 여러 창으로 이동
     public void On_Click_OnPanel(GameObject _obj)
     {
+        // 로비 이동 후 다시 재입장, 처음 입장 시 첫번째 목록으로 초기화
         if (_obj.name == "MyBag_Panel")
         {
             Inventory_UI_Ref.On_Click_Spend_Item_Btn();
+        }
+        else if(_obj.name == "Store_Panel")
+        {
+            StoreManager_Ref.On_Click_Spend_Store_Btn();
         }
 
         NotTouch_RayCast.SetActive(true); // 이동 중 버튼 클릭 방지
