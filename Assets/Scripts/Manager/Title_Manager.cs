@@ -8,6 +8,7 @@ public class Title_Manager : MonoBehaviour
 {
     public void OnClick_GameStart()
     {
+        
         SceneManager.LoadScene("LobbyScene");
     }
 }

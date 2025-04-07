@@ -6,6 +6,7 @@ using static Define;
 // TODO ## Character 데이터 저장 클래스
 public class Character
 {
+    #region Character_State
     int Character_Lv;
     public int Get_Character_Lv { get => Character_Lv; set => Character_Lv = value; }
 
@@ -45,8 +46,24 @@ public class Character
 
     float Char_CRT_RATE;
     public float Get_Char_CRT_Rate { get => Char_CRT_RATE; }
+    #endregion
 
+    #region Character_Growing_State
+    // 성장 관련 파라미터
+    float linearFactor;     // 선형 성장 계수
+    public float Get_linearFactor { get => linearFactor; }
 
+    float expFactor;        // 지수 성장 계수
+    public float Get_expFactor { get => expFactor; }
+
+    float expMultiplier;    // 지수 성장 가중치
+    public float Get_expMultiplier { get => expMultiplier; }
+
+    int transitionLevel;  // 성장 방식 전환 레벨
+    public int Get_transitionLevel { get => transitionLevel; }
+    #endregion
+
+    #region Image_Resource
     // -----------------------Image Resources Variable----------------------
 
     string Illust_Address;
@@ -86,7 +103,9 @@ public class Character
 
     Sprite SquareIllust_Img;
     public Sprite Get_SquareIllust_Img { get => SquareIllust_Img; }
+    #endregion
 
+    #region Constructor
     public Character(int _id, string _name, string _engName, CHAR_GRADE _grade, CHAR_TYPE _type, CHAR_ELE _ele, int _star,
        float _hp, float _atk, float _def, float _crtDamage, float _crtRate, string _illustAdd = "", string _normalImageAdd = "", string _gradeUpAdd = "", string _profileAdd = "", int _lv = 1)
     {
@@ -117,7 +136,9 @@ public class Character
         Grade_Up_Img = Resources.Load<Sprite>(Grade_Up_Image_Address);
         Profile_Img = Resources.Load<Sprite>(Profile_Address);
     }
+    #endregion
 
+    #region Load_Resources
     public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd, string _whiteIllustAdd, string _squareIllustAdd = null)
     {
         // 이미지 주소
@@ -135,5 +156,51 @@ public class Character
         Profile_Img = Resources.Load<Sprite>(Profile_Address);
         WhiteIllust_Img = Resources.Load<Sprite>(White_Illust_Address);
         SquareIllust_Img = Resources.Load<Sprite>(Square_Illust_Address);
+    }
+    #endregion
+
+    #region Load_Growing_State
+    public void Load_Growing_State(float _linearFactor, float _expFactor, float _expMultiplier, int _transitionLevel)
+    {
+        linearFactor = (_linearFactor * 100);
+        expFactor = (_expFactor * 100);
+        expMultiplier = (_expMultiplier * 100);
+        transitionLevel = _transitionLevel;
+    }
+    #endregion
+
+
+    // 혼합형 성장 공식
+    public float Calculate_State(int level)
+    {
+        if (level > 50) level = 50; // 최대 레벨 제한
+
+        float attack;
+        if (level < transitionLevel)
+        {
+            // 초반: 선형 성장
+            attack = CharATK + (level * linearFactor);
+        }
+        else
+        {
+            // 후반: 지수 성장 추가
+            attack = CharATK + (transitionLevel * linearFactor) + ((level - transitionLevel) * linearFactor * 0.5f) + (Mathf.Pow(level, expFactor) * expMultiplier);
+        }
+
+        return attack;
+    }
+
+    // 레벨업 함수
+    public void LevelUp()
+    {
+        if (Character_Lv < 50)
+        {
+            Character_Lv++;
+            Calculate_State(Character_Lv);
+        }
+        else
+        {
+            
+        }
     }
 }

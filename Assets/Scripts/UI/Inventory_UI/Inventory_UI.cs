@@ -2,13 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory_UI : MonoBehaviour
 {
+    //---- Var
+    #region Panel_UI_GameObject_Var
     // 소비, 장비 인벤토리 게임오브젝트
-    [SerializeField] GameObject Spend_Inventory_Slot;
-    [SerializeField] GameObject Equip_Inventory_Slot;
-    [SerializeField] GameObject Cook_Inventory_Slot;
+    [SerializeField] ScrollRect Spend_Inventory_Slot;
+    [SerializeField] ScrollRect Equip_Inventory_Slot;
+    [SerializeField] ScrollRect Cook_Inventory_Slot;
 
     [Header("Spend_Item_UI")]
     [SerializeField] GameObject Spend_Btn_PopUp;
@@ -21,16 +24,22 @@ public class Inventory_UI : MonoBehaviour
     [Header("Cook_Item_UI")]
     [SerializeField] GameObject Cook_Btn_PopUp;
     [SerializeField] GameObject Cook_Select_Shine_BG;
+    #endregion
+
+
+    //---- Function
 
     #region Spend_Item_Inventory_Click
     public void On_Click_Spend_Item_Btn()
     {
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
-        if (Spend_Inventory_Slot.activeSelf == false && Spend_Inventory_Slot != null)
+        if (Spend_Inventory_Slot.gameObject.activeSelf == false && Spend_Inventory_Slot != null)
         {
-            Spend_Inventory_Slot.SetActive(true);
-            Equip_Inventory_Slot.SetActive(false);
-            Cook_Inventory_Slot.SetActive(false);
+            Spend_Inventory_Slot.gameObject.SetActive(true);
+            Equip_Inventory_Slot.gameObject.SetActive(false);
+            Cook_Inventory_Slot.gameObject.SetActive(false);
+
+            Spend_Inventory_Slot.verticalNormalizedPosition = 1.0f;
         }
 
         // Spend_Btn_PopUp 비활성화 상태에 연결이 잘 되어있다면
@@ -55,11 +64,13 @@ public class Inventory_UI : MonoBehaviour
     public void On_Click_Equip_Item_Btn()
     {
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
-        if (Equip_Inventory_Slot.activeSelf == false && Equip_Inventory_Slot != null)
+        if (Equip_Inventory_Slot.gameObject.activeSelf == false && Equip_Inventory_Slot != null)
         {
-            Spend_Inventory_Slot.SetActive(false);
-            Equip_Inventory_Slot.SetActive(true);
-            Cook_Inventory_Slot.SetActive(false);
+            Spend_Inventory_Slot.gameObject.SetActive(false);
+            Equip_Inventory_Slot.gameObject.SetActive(true);
+            Cook_Inventory_Slot.gameObject.SetActive(false);
+
+            Equip_Inventory_Slot.verticalNormalizedPosition = 1.0f;
         }
 
         // Spend_Btn_PopUp 비활성화 상태에 연결이 잘 되어있다면
@@ -84,11 +95,13 @@ public class Inventory_UI : MonoBehaviour
     public void On_Click_Cook_Item_Btn()
     {
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
-        if (Cook_Inventory_Slot.activeSelf == false && Cook_Inventory_Slot != null)
+        if (Cook_Inventory_Slot.gameObject.activeSelf == false && Cook_Inventory_Slot != null)
         {
-            Spend_Inventory_Slot.SetActive(false);
-            Equip_Inventory_Slot.SetActive(false);
-            Cook_Inventory_Slot.SetActive(true);
+            Spend_Inventory_Slot.gameObject.SetActive(false);
+            Equip_Inventory_Slot.gameObject.SetActive(false);
+            Cook_Inventory_Slot.gameObject.SetActive(true);
+
+            Cook_Inventory_Slot.verticalNormalizedPosition = 1.0f;
         }
 
         // Spend_Btn_PopUp 비활성화 상태에 연결이 잘 되어있다면

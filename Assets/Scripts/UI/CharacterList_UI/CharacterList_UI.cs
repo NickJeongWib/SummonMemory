@@ -573,7 +573,7 @@ public class CharacterList_UI : MonoBehaviour
     }
     #endregion
 
-    #region 성급 숫자 변경
+    #region Change_Star_UI
     void CharStar_Refresh(Character _char, Image _image)
     {
         if (_char.Get_CharGrade == Define.CHAR_GRADE.R)

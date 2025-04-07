@@ -10,6 +10,8 @@ public class Lobby_Manager : MonoBehaviour
     [Header("---UI_Scripts_Ref")]
     [SerializeField] Inventory_UI Inventory_UI_Ref;
     [SerializeField] Store_Manager StoreManager_Ref;
+    [SerializeField] Gacha_UI Gacha_UI_Ref;
+    [SerializeField] CharacterList_UI CharacterList_UI_Ref;
 
     [Header("---Transition---")]
     [SerializeField] GameObject CircleTransition;
@@ -57,6 +59,14 @@ public class Lobby_Manager : MonoBehaviour
         else if(_obj.name == "Store_Panel")
         {
             StoreManager_Ref.On_Click_Spend_Store_Btn();
+        }
+        else if (_obj.name == "Gacha_Panel")
+        {
+            Gacha_UI_Ref.On_Click_Summon_Btn();
+        }
+        else if (_obj.name == "Character_Panel")
+        {
+            // Gacha_UI_Ref.On_Click_Summon_Btn();
         }
 
         NotTouch_RayCast.SetActive(true); // 이동 중 버튼 클릭 방지
@@ -110,6 +120,7 @@ public class Lobby_Manager : MonoBehaviour
         _obj.transform.parent.gameObject.SetActive(false);
 
         gachaVideo.Get_VideoPlayer.Stop();
+        // gachaVideo.Get_VideoPlayer.time = 0.0f;
     }
 
     public void On_Click_Back_GachaList(GameObject _obj)

@@ -31,6 +31,9 @@ public class Character_List : MonoBehaviour
                GoogleSheetSORef.Character_Image_AddressList[i].CHAR_NORMAL_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_GRADE_UP_IMAGE,
                GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PROFILE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_WHITE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST_SQUARE);
 
+            Node.Load_Growing_State(GoogleSheetSORef.Character_Growing_StateList[i].LINEAR_FACTOR, GoogleSheetSORef.Character_Growing_StateList[i].EXP_FACTOR, GoogleSheetSORef.Character_Growing_StateList[i].EXP_MULTIPLIER,
+                 GoogleSheetSORef.Character_Growing_StateList[i].TRANSITION_LEVEL);
+
             #region 이미지 누락 경고
             if (Node.Get_Grade_Up_Img == null)
             {
@@ -63,9 +66,5 @@ public class Character_List : MonoBehaviour
                 SSR_Char.Add(Node);
             }
         }
-    }
-
-    private void Start()
-    {
     }
 }
