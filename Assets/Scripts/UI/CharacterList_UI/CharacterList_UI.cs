@@ -65,7 +65,7 @@ public class CharacterList_UI : MonoBehaviour
     [SerializeField] Image CharStar_Img;            // 캐릭터 창 성급
     [SerializeField] Text CharInfo_name;            // 캐릭터 창 이름
 
-
+    [SerializeField] ScrollRect Character_Scroll;
     [SerializeField] ScrollRect scrollRect; // ScrollRect 참조
     [SerializeField] RectTransform content; // 캐릭터 리스트(Content)
     [SerializeField] GridLayoutGroup gridLayoutGroup; // GridLayoutGroup 참조
@@ -74,6 +74,11 @@ public class CharacterList_UI : MonoBehaviour
     {
         // TODO ## 초기 테스트 값
         Equip_Image_Refresh(false);
+    }
+
+    public void On_Click_EnterCharacter_Inven()
+    {
+        Character_Scroll.verticalNormalizedPosition = 1.0f;
     }
 
     #region 보유 Character창 Refresh

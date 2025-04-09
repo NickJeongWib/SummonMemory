@@ -1,5 +1,12 @@
 public static class Define
 {
+    public enum INVENTORY_TYPE
+    {
+        SPEND,
+        EQUIPMENT,
+        COOK,
+    }
+
     public enum ITEM_TYPE
     {
         NONE,

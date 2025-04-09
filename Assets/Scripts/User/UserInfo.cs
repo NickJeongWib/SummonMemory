@@ -18,6 +18,8 @@ public class UserInfo : MonoBehaviour
 
     #region Inventory
     public static List<Item> Equip_Inventory = new List<Item>();
+    public static List<Item> Spend_Inventory = new List<Item>();
+    public static List<Item> Cook_Inventory = new List<Item>();
     #endregion
 
     [Header("---Currency---")]

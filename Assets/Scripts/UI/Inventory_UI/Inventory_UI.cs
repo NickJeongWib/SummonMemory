@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Define;
 
 public class Inventory_UI : MonoBehaviour
 {
+    [SerializeField] INVENTORY_TYPE Inventory_Type;
+
     //---- Var
     #region Panel_UI_GameObject_Var
     // 소비, 장비 인벤토리 게임오브젝트
@@ -24,14 +27,18 @@ public class Inventory_UI : MonoBehaviour
     [Header("Cook_Item_UI")]
     [SerializeField] GameObject Cook_Btn_PopUp;
     [SerializeField] GameObject Cook_Select_Shine_BG;
-    #endregion
 
+    [Header("Item_Info_Panel")]
+    [SerializeField] Item_Info_Panel Item_Info;
+    #endregion
 
     //---- Function
 
     #region Spend_Item_Inventory_Click
     public void On_Click_Spend_Item_Btn()
     {
+        Inventory_Type = INVENTORY_TYPE.SPEND;
+
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
         if (Spend_Inventory_Slot.gameObject.activeSelf == false && Spend_Inventory_Slot != null)
         {
@@ -63,6 +70,8 @@ public class Inventory_UI : MonoBehaviour
     #region Equip_Item_Inventory_Click
     public void On_Click_Equip_Item_Btn()
     {
+        Inventory_Type = INVENTORY_TYPE.EQUIPMENT;
+
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
         if (Equip_Inventory_Slot.gameObject.activeSelf == false && Equip_Inventory_Slot != null)
         {
@@ -94,6 +103,8 @@ public class Inventory_UI : MonoBehaviour
     #region Cook_Item_Inventory_Click
     public void On_Click_Cook_Item_Btn()
     {
+        Inventory_Type = INVENTORY_TYPE.COOK;
+
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
         if (Cook_Inventory_Slot.gameObject.activeSelf == false && Cook_Inventory_Slot != null)
         {
@@ -121,4 +132,16 @@ public class Inventory_UI : MonoBehaviour
         }
     }
     #endregion
+
+    public void On_Click_Open_ItemInfo(int _slotNum)
+    {
+        // 장비가 빈 슬롯을 클릭했을때 return
+        if ((UserInfo.Equip_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.EQUIPMENT) ||
+            (UserInfo.Spend_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.SPEND) ||
+            (UserInfo.Cook_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.COOK))
+            return;
+
+        Item_Info.ItemInfo_Refresh(Inventory_Type, _slotNum);
+        Item_Info.gameObject.SetActive(true);
+    }
 }

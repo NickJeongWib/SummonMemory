@@ -66,7 +66,7 @@ public class Lobby_Manager : MonoBehaviour
         }
         else if (_obj.name == "Character_Panel")
         {
-            // Gacha_UI_Ref.On_Click_Summon_Btn();
+            CharacterList_UI_Ref.On_Click_EnterCharacter_Inven();
         }
 
         NotTouch_RayCast.SetActive(true); // 이동 중 버튼 클릭 방지
