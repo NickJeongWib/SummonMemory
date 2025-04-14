@@ -40,7 +40,9 @@ public class Item
     public float Get_Item_HP { get => Item_HP; }
 
     float ValueMinRange;
+    public float Get_ValueMinRange { get => ValueMinRange; }
     float ValueMaxRange;
+    public float Get_ValueMaxRange { get => ValueMaxRange; }
 
     #region Constructor
     public Item(int _itemID, string _itemName, float _itemAtk, float _itemDef, float _itemCriRate, float _itemCriDMG, float _itemHp, float _itemValueMin, float _itemValueMax,
@@ -66,6 +68,11 @@ public class Item
     {
         Item_Image = Resources.Load<Sprite>(_add);
     }
+
+    public void Image_Set(Sprite _sprite)
+    {
+        Item_Image = _sprite;
+    }
     #endregion
 
     #region Grading
@@ -76,19 +83,19 @@ public class Item
 
         if (ValueMinRange <= randValue && randValue < ValueMaxRange * 0.25f)
         {
-            this.Equipment_Grade = EQUIPMENT_GRADE.N;
+            this.Equipment_Grade = EQUIPMENT_GRADE.C;
         }
         else if (ValueMaxRange * 0.25f <= randValue && randValue < ValueMaxRange * 0.5f)
         {
-            this.Equipment_Grade = EQUIPMENT_GRADE.R;
+            this.Equipment_Grade = EQUIPMENT_GRADE.B;
         }
         else if (ValueMaxRange * 0.5f <= randValue && randValue < ValueMaxRange * 0.75f)
         {
-            this.Equipment_Grade = EQUIPMENT_GRADE.U;
+            this.Equipment_Grade = EQUIPMENT_GRADE.A;
         }
         else if (ValueMaxRange * 0.75f <= randValue && randValue < ValueMaxRange)
         {
-            this.Equipment_Grade = EQUIPMENT_GRADE.L;
+            this.Equipment_Grade = EQUIPMENT_GRADE.S;
         }
 
         Item_ATK += (Item_ATK * randValue);

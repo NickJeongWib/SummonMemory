@@ -17,12 +17,24 @@ public class Inventory_UI : MonoBehaviour
     [SerializeField] ScrollRect Cook_Inventory_Slot;
 
     [Header("Spend_Item_UI")]
+    [SerializeField] int SpendSlotCount;
+    public int Get_SpendSlotCount { get => SpendSlotCount; }
+
     [SerializeField] GameObject Spend_Btn_PopUp;
     [SerializeField] GameObject Spend_Select_Shine_BG;
+    [SerializeField] List<Spend_Slot> SpendSlot_List = new List<Spend_Slot>();
+    public List<Spend_Slot> Get_SpendSlot_List { get => SpendSlot_List; }
 
     [Header("Equip_Item_UI")]
+    [SerializeField] Color[] Grade_Colors;
+    public Color[] Get_Colors { get => Grade_Colors; }
+ 
+    [SerializeField] int EquipmentCount;
+    public int Get_EquipmentCount { get => EquipmentCount; }
     [SerializeField] GameObject Equip_Btn_PopUp;
     [SerializeField] GameObject Equip_Select_Shine_BG;
+    [SerializeField] List<Equipment_Slot> EquipmentSlot_List = new List<Equipment_Slot>();
+    public List<Equipment_Slot> Get_EquipmentSlot_List { get => EquipmentSlot_List; }
 
     [Header("Cook_Item_UI")]
     [SerializeField] GameObject Cook_Btn_PopUp;

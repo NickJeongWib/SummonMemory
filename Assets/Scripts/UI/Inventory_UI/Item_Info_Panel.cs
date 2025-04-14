@@ -7,11 +7,13 @@ using static Define;
 public class Item_Info_Panel : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    [SerializeField] Inventory_UI Inventory_UI_Ref;
 
     [SerializeField] Image Item_Image;
-
     [SerializeField] Image Item_Back;
-    [SerializeField] Color[] Item_Grade_Colors;
+
+    // [SerializeField] Color[] Item_Grade_Colors;
+    [SerializeField] Sprite[] Grade_Sprites;
 
     [Header("---Spend_Item---")]
     [SerializeField] GameObject Spend_Item_Root;
@@ -22,10 +24,10 @@ public class Item_Info_Panel : MonoBehaviour
     [SerializeField] Text Spend_Item_Des;
 
     [Header("---Equipment_Item---")]
+    [SerializeField] Image Item_Grade;
     [SerializeField] GameObject Equipment_Item_Root;
     public GameObject Get_Equipment_Item_Root { get => Equipment_Item_Root; }
     [SerializeField] Text Equipment_Item_Name;
-    [SerializeField] Text Equipment_Item_Grade;
     [SerializeField] Text Equipment_Base_Option;
 
     [SerializeField] Text Equipment_Random_Option_1;
@@ -74,10 +76,21 @@ public class Item_Info_Panel : MonoBehaviour
     {
         Equipment_Item_Name.text = UserInfo.Equip_Inventory[_num].Get_Item_Name;
 
+        /*
+        Debug.Log($"{UserInfo.Equip_Inventory[_num].Get_Item_Atk}, {UserInfo.Equip_Inventory[_num].Get_Item_DEF}," +
+            $"{UserInfo.Equip_Inventory[_num].Get_Item_HP}, {UserInfo.Equip_Inventory[_num].Get_Item_CRI_RATE}," +
+            $"{UserInfo.Equip_Inventory[_num].Get_Item_CRI_DMG}");
+        */
+
         Item_Back.gameObject.SetActive(true);
-        
+        // 등급에 따른 UI 효과 차별
+        Item_Back.color = Inventory_UI_Ref.Get_Colors[(int)UserInfo.Equip_Inventory[_num].Get_Equipment_Grade];
+        Item_Grade.sprite = Grade_Sprites[(int)UserInfo.Equip_Inventory[_num].Get_Equipment_Grade];
+
+        // 아이템 이미지 교체
         Item_Image.sprite = UserInfo.Equip_Inventory[_num].Get_Item_Image;
 
+        // UI Text 효과 텍스트 출력
         Base_Option(UserInfo.Equip_Inventory[_num].Get_Item_Atk, UserInfo.Equip_Inventory[_num].Get_Item_DEF,
             UserInfo.Equip_Inventory[_num].Get_Item_HP, UserInfo.Equip_Inventory[_num].Get_Item_CRI_RATE,
             UserInfo.Equip_Inventory[_num].Get_Item_CRI_DMG);
@@ -85,31 +98,32 @@ public class Item_Info_Panel : MonoBehaviour
 
     void Base_Option(float _atk, float _def, float _hp, float _criR, float _criD)
     {
+        // 텍스트 초기화
         Equipment_Base_Option.text = "";
 
         if (_atk != 0)
         {
-            Equipment_Base_Option.text = $"<color=orange>공격력</color> +{_atk.ToString("N0")}\n";
+            Equipment_Base_Option.text = $"공격력 +{_atk.ToString("N0")}\n";
         }
         
         if (_def != 0)
         {
-            Equipment_Base_Option.text += $"<color=orange>방어력</color> +{_def.ToString("N0")}\n";
+            Equipment_Base_Option.text += $"방어력 +{_def.ToString("N0")}\n";
         }
 
         if (_hp != 0)
         {
-            Equipment_Base_Option.text += $"<color=orange>체력</color> +{_hp.ToString("N0")}\n";
+            Equipment_Base_Option.text += $"체력 +{_hp.ToString("N0")}\n";
         }
 
         if (_criR != 0)
         {
-            Equipment_Base_Option.text += $"<color=orange>크리티컬 확률</color> +{(_criR * 100.0f).ToString("N1")}%\n";
+            Equipment_Base_Option.text += $"크리티컬 확률 +{(_criR * 100.0f).ToString("N1")}%\n";
         }
 
         if (_criD != 0)
         {
-            Equipment_Base_Option.text += $"<color=orange>크리티컬 데미지</color> +{(_criD * 100.0f).ToString("N1")}%\n";
+            Equipment_Base_Option.text += $"크리티컬 데미지 +{(_criD * 100.0f).ToString("N1")}%\n";
         }
     }
 }

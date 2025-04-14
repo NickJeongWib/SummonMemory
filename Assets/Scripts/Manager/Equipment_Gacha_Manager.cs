@@ -10,7 +10,8 @@ public class Equipment_Gacha_Manager : MonoBehaviour
     int Gacha_Count;
 
     [SerializeField] GameObject Equip_GachaInfo_Panel;
-    [SerializeField] List<Equipment_Slot> EquipmentSlot_List;
+    [SerializeField] Inventory_UI Inventory_UI_Ref;
+    // [SerializeField] List<Equipment_Slot> EquipmentSlot_List;
 
     #region EquipGacha_Info_Pop
     public void EquipGachaInfo_Open(int _num)
@@ -31,13 +32,21 @@ public class Equipment_Gacha_Manager : MonoBehaviour
     Item EquipItem_Spawn()
     {
         Item rand = Item_List.Equipment_Item_List[Random.Range(0, Item_List.Equipment_Item_List.Count)];
-        rand.Spawn_Grading();
-        return rand;
+        
+        // 리스트에서 뽑은 캐릭터의 기초 능력치를 넘겨줌 리스트에서 뽑아쓰면 같은 ref타입 때문에 능력치가 같아짐
+        Item newItem = new Item(rand.Get_Item_ID, rand.Get_Item_Name, rand.Get_Item_Atk, rand.Get_Item_DEF, 
+            rand.Get_Item_CRI_RATE, rand.Get_Item_CRI_DMG, rand.Get_Item_HP, rand.Get_ValueMinRange, rand.Get_ValueMaxRange,
+            rand.Get_ItemType, rand.Get_EquipType);
+        // 이미지 넘겨주기
+        newItem.Image_Set(rand.Get_Item_Image);
+
+        newItem.Spawn_Grading();
+        return newItem;
     }
 
     public void Equip_Gacha()
     {
-        if (EquipmentSlot_List.Count < UserInfo.Equip_Inventory.Count + Gacha_Count)
+        if (Inventory_UI_Ref.Get_EquipmentSlot_List.Count < UserInfo.Equip_Inventory.Count + Gacha_Count)
         {
             Debug.LogWarning("인벤토리 부족");
             return;
@@ -60,12 +69,12 @@ public class Equipment_Gacha_Manager : MonoBehaviour
         for (int i = 0; i < UserInfo.Equip_Inventory.Count; i++)
         {
             count = i;
-            EquipmentSlot_List[i].Set_Image(UserInfo.Equip_Inventory[i].Get_Item_Image);
+            Inventory_UI_Ref.Get_EquipmentSlot_List[i].Set_Image(UserInfo.Equip_Inventory[i].Get_Item_Image, UserInfo.Equip_Inventory[i].Get_Equipment_Grade);
         }
 
-        for (int i = count + 1; i < EquipmentSlot_List.Count; i++)
+        for (int i = count + 1; i < Inventory_UI_Ref.Get_EquipmentSlot_List.Count; i++)
         {
-            EquipmentSlot_List[i].Off_Image();
+            Inventory_UI_Ref.Get_EquipmentSlot_List[i].Off_Image();
         }
     }
     #endregion

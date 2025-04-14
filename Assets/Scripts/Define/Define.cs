@@ -16,21 +16,21 @@ public static class Define
 
     public enum EQUIP_TYPE
     {
-        NONE,
         WEAPON,
         HELMET,
         UPPER,
         ACCESSORY,
         GLOVE,
+        NONE,
     }
 
     public enum EQUIPMENT_GRADE
     {
+        C,
+        B,
+        A,
+        S,
         NONE,
-        N,
-        R,
-        U,
-        L
     }
         
 
