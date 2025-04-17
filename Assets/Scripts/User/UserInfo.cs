@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UserInfo : MonoBehaviour
+public class UserInfo
 {
     #region Character
     // string 캐릭터 이름 / Character 캐릭터 데이터

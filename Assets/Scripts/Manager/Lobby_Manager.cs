@@ -30,6 +30,11 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] GameObject[] Book_Images;
     [SerializeField] GameObject Book_Image;
 
+    [Header("---UI---")]
+    [SerializeField] Text[] DiaCount_Texts;
+    [SerializeField] Text[] GoldCount_Texts;
+
+
     private void Awake()
     {
         // TODO ## 초기 테스트 값
@@ -45,6 +50,8 @@ public class Lobby_Manager : MonoBehaviour
 
             UserInfo.UserCharDict_Copy.RemoveAt(0);
         }
+
+        InitData();
     }
 
     #region Shader_Graph_Transition
@@ -100,6 +107,8 @@ public class Lobby_Manager : MonoBehaviour
     }
     #endregion
 
+    #region Pop_ONOFF
+    // TODO ## Lobby_Manager 로비화면에서 팝업 온 오프
     public void On_Click_Back(GameObject _obj)
     {
         _obj.SetActive(false);
@@ -109,7 +118,7 @@ public class Lobby_Manager : MonoBehaviour
     {
         _obj.SetActive(true);
     }
-
+    #endregion
 
     #region Gacha_UI_Active
 
@@ -140,6 +149,34 @@ public class Lobby_Manager : MonoBehaviour
     }
     #endregion
 
+    #region Lobby_Currency_Text_Refresh
+    public void Refresh_UI_Gold()
+    {
+        // 골드 값 초기화
+        for (int i = 0; i < GoldCount_Texts.Length; i++)
+        {
+            GoldCount_Texts[i].text = $"{UserInfo.Money.ToString("N0")}";
+        }
+    }
+
+    public void Refresh_UI_Dia()
+    {
+        // 다이아 값 초기화
+        for (int i = 0; i < DiaCount_Texts.Length; i++)
+        {
+            DiaCount_Texts[i].text = $"{UserInfo.Dia.ToString("N0")}";
+        }
+    }
+    #endregion
+
+    void InitData()
+    {
+        Refresh_UI_Gold();
+        Refresh_UI_Dia();
+    }
+
+    #region Test
+    // TODO ## Lobby_Manager_Test
     public void Test()
     {
         for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
@@ -154,4 +191,5 @@ public class Lobby_Manager : MonoBehaviour
 
         Debug.Log("5" + EquipSlot_List.EquipCharacter.Get_CharName);
     }
+    #endregion
 }

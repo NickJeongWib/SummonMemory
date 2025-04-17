@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Lobby_ObjPool : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class Lobby_ObjPool : MonoBehaviour
     [SerializeField] GameObject Equipment_Slot_Prefab;
     [SerializeField] Transform Equipment_SlotTr;
 
-
     [Header("Inventory_Spend_Slot")]
     [SerializeField] GameObject Spend_Slot_Prefab;
     [SerializeField] Transform Spend_SlotTr;
@@ -18,6 +18,7 @@ public class Lobby_ObjPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 인벤토리 장비슬롯 오브젝트 풀 생성
         for (int i = 0; i < Inventory_UI_Ref.Get_EquipmentCount; i++)
         {
             GameObject equipSlot = Instantiate(Equipment_Slot_Prefab);
@@ -31,6 +32,7 @@ public class Lobby_ObjPool : MonoBehaviour
             Inventory_UI_Ref.Get_EquipmentSlot_List.Add(equipSlot.GetComponent<Equipment_Slot>());
         }
 
+        // 인벤토리 소비슬롯 오브젝트 풀 생성
         for (int i = 0; i < Inventory_UI_Ref.Get_SpendSlotCount; i++)
         {
             GameObject spendSlot = Instantiate(Spend_Slot_Prefab);

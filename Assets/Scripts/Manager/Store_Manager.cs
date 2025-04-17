@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Store_Manager : MonoBehaviour
 {
+    #region UI_Variable
     // 소모아이템, 성장아이템, 소환 티켓 상점 게임오브젝트
     [Header("Spend_Store_UI")]
     [SerializeField] GameObject Store_Spend_Panel;
@@ -23,6 +24,16 @@ public class Store_Manager : MonoBehaviour
     [SerializeField] ScrollRect Level_Store_Slot;
     [SerializeField] GameObject Level_Btn_PopUp;
     [SerializeField] GameObject Level_Select_Shine_BG;
+
+    [Header("---Info---")]
+    [SerializeField] GameObject Buying_Info;
+    #endregion
+
+    #region Variable
+    [SerializeField] Lobby_Manager LobbyMgr_Ref;
+    int Dia_SelectCount;
+    #endregion
+    ///---------------------------------------------------------
 
     #region Spend_Store_Click
     public void On_Click_Spend_Store_Btn()
@@ -114,6 +125,33 @@ public class Store_Manager : MonoBehaviour
             Ticket_Select_Shine_BG.SetActive(false);
             Level_Select_Shine_BG.SetActive(true);
         }
+    }
+    #endregion
+
+    #region Dia_Buy
+    public void On_Click_Buy_Dia(int _count)
+    {
+        Dia_SelectCount = _count;
+        Buying_Info.SetActive(true);
+    }
+    #endregion
+
+    #region Buying_Info
+    public void On_Click_Buy()
+    {
+        // TODO ## Store_Manager Dia획득
+        UserInfo.Dia += Dia_SelectCount;
+        Dia_SelectCount = 0;
+        Buying_Info.SetActive(false);
+
+        LobbyMgr_Ref.Refresh_UI_Dia();
+    }
+
+    public void On_Click_Cancel()
+    {
+        Dia_SelectCount = 0;
+        Buying_Info.GetComponent<Animator>().Play("PopDown");
+
     }
     #endregion
 }

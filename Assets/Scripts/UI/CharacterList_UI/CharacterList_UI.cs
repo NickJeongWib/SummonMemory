@@ -76,9 +76,12 @@ public class CharacterList_UI : MonoBehaviour
         Equip_Image_Refresh(false);
     }
 
+    
     public void On_Click_EnterCharacter_Inven()
     {
         Character_Scroll.verticalNormalizedPosition = 1.0f;
+
+        On_Click_ChangeCancel();
     }
 
     #region ∫∏¿Ø Character√¢ Refresh
