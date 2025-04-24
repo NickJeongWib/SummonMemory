@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using System.Linq;
+using static Define;
 
 public class Equipment_Gacha_Manager : MonoBehaviour
 {
@@ -39,8 +40,19 @@ public class Equipment_Gacha_Manager : MonoBehaviour
             rand.Get_ItemType, rand.Get_EquipType);
         // 이미지 넘겨주기
         newItem.Image_Set(rand.Get_Item_Image);
-
         newItem.Spawn_Grading();
+
+        if (newItem.Get_EquipType == EQUIP_TYPE.WEAPON)
+            UserInfo.Weapon_Equipment.Add(newItem);
+        else if (newItem.Get_EquipType == EQUIP_TYPE.HELMET)
+            UserInfo.Helmet_Equipment.Add(newItem);
+        else if (newItem.Get_EquipType == EQUIP_TYPE.UPPER)
+            UserInfo.Upper_Equipment.Add(newItem);
+        else if (newItem.Get_EquipType == EQUIP_TYPE.ACCESSORY)
+            UserInfo.Accessory_Equipment.Add(newItem);
+        else
+            UserInfo.Glove_Equipment.Add(newItem);
+
         return newItem;
     }
 

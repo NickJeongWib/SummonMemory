@@ -12,18 +12,29 @@ public class UserInfo
     public static List<KeyValuePair<string, Character>> UserCharDict_Copy;
     // 캐릭터 정보창에 캐릭터 정보를 나열하기 위한 원본 복사체
     public static List<KeyValuePair<string, Character>> UserCharDict_Copy_2;
+    public static List<KeyValuePair<string, Character>> Old_UserCharDict_Copy;
     // 캐릭터 장착 시 인벤토리에서 제거한 캐릭터 값을 받기위한 리스트
     public static List<Character> Equip_Characters = new List<Character>();
     #endregion
 
-    #region Inventory
+    #region Equip_Inventory
     public static List<Item> Equip_Inventory = new List<Item>();
+
+    public static List<Item> Weapon_Equipment = new List<Item>();
+    public static List<Item> Helmet_Equipment = new List<Item>();
+    public static List<Item> Upper_Equipment = new List<Item>();
+    public static List<Item> Accessory_Equipment = new List<Item>();
+    public static List<Item> Glove_Equipment = new List<Item>();
+
+    #endregion
+
+    #region Inventory
     public static List<Item> Spend_Inventory = new List<Item>();
     public static List<Item> Cook_Inventory = new List<Item>();
     #endregion
 
     [Header("---Currency---")]
-    public static int Money;
+    public static int Money = 10000000;
     public static int Dia;
     public static int EnterHealth;
 
@@ -31,6 +42,8 @@ public class UserInfo
     public static int SR_Book;
     public static int SSR_Book;
 
+    public static int SummonTicket;
+    public static int EquipmentTicket;
 
     #region R등급과 SR,SSR등급의 이미지 차별 적용
     public static void Get_Square_Image(Image[] _image, int _equipIndex)

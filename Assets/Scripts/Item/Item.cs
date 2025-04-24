@@ -5,6 +5,10 @@ using static Define;
 
 public class Item
 {
+    // 장착 여부
+    bool isEquip;
+    public bool Get_isEquip { get => isEquip; set => isEquip = value; }
+
     ITEM_TYPE ItemType;
     public ITEM_TYPE Get_ItemType { get => ItemType; }
     // 아이템 타입
@@ -12,7 +16,6 @@ public class Item
     public EQUIP_TYPE Get_EquipType { get => EquipType; set => EquipType = value; }
     EQUIPMENT_GRADE Equipment_Grade;
     public EQUIPMENT_GRADE Get_Equipment_Grade { get => Equipment_Grade; set => Equipment_Grade = value; }
-
 
     // 아이템 이미지 
     Sprite Item_Image;

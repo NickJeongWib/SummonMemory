@@ -46,9 +46,11 @@ public class Lobby_Manager : MonoBehaviour
             UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
 
             UserInfo.Equip_Characters.Add(UserInfo.UserCharDict_Copy[0].Value);
-            EquipSlot_List.EquipCharacter = UserInfo.UserCharDict_Copy[0].Value;
+            CharacterList_UI_Ref.Get_Old_Equip_Characters = UserInfo.Equip_Characters.ToList();
 
+            EquipSlot_List.EquipCharacter = UserInfo.UserCharDict_Copy[0].Value;
             UserInfo.UserCharDict_Copy.RemoveAt(0);
+            UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
         }
 
         InitData();
@@ -175,6 +177,10 @@ public class Lobby_Manager : MonoBehaviour
         Refresh_UI_Dia();
     }
 
+    public void Reset_SelectChar()
+    {
+        GameManager.Instance.Get_SelectChar = null;
+    }
     #region Test
     // TODO ## Lobby_Manager_Test
     public void Test()

@@ -148,7 +148,7 @@ public class Gacha_Manager : MonoBehaviour
         // UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToDictionary(entry => entry.Key, entry => entry.Value); // 유저가 지닌 캐릭터 풀 복사
         UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToList();
         UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
-
+      
         // 장착된 캐릭터는 캐릭터 리스트에 추가하지 않기 위해 제거
         for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
         {
@@ -157,7 +157,7 @@ public class Gacha_Manager : MonoBehaviour
                 UserInfo.UserCharDict_Copy.Remove(new KeyValuePair<string, Character>(UserInfo.Equip_Characters[i].Get_CharName, UserInfo.Equip_Characters[i]));
             }
 
-            // 뽑은 캐릭터나 중복으로 뽑은 캐릭터가 장착 중 일 시 장착 중인 캐릭터의 데이터를 바꿔준다.
+            // 뽑은 캐릭터나 중복으로 뽑은 캐릭터가 장착 중일 시 장착 중인 캐릭터의 데이터를 바꿔준다.
             if(UserInfo.UserCharDict.Contains(new KeyValuePair<string, Character>(UserInfo.Equip_Characters[i].Get_CharName, UserInfo.Equip_Characters[i])))
             {
                 UserInfo.Equip_Characters[i] = UserInfo.UserCharDict[$"{UserInfo.Equip_Characters[i].Get_CharName}"];
@@ -166,7 +166,10 @@ public class Gacha_Manager : MonoBehaviour
 
         // 캐릭터 인벤토리 Refresh
         CharListRef.Refresh_CharacterList();
-        
+
+        // 바로 위 장착 캐릭터 예외 처리 후 저장이 필요함
+        UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
+
         Gacha_Video_Play();
     }
 

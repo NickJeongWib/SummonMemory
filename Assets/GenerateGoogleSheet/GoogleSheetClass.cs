@@ -9,6 +9,7 @@ public class GoogleSheetSO : ScriptableObject
 	public List<Character_Image_Address> Character_Image_AddressList;
 	public List<Character_Growing_State> Character_Growing_StateList;
 	public List<Item_DB> Item_DBList;
+	public List<Store_Item_DB> Store_Item_DBList;
 }
 
 [Serializable]
@@ -63,5 +64,17 @@ public class Item_DB
 	public int ITEM_VALUE_MIN_RANGE;
 	public float ITEM_VALUE_MAX_RANGE;
 	public string ITEM_IMAGE_ADDRESS;
+}
+
+[Serializable]
+public class Store_Item_DB
+{
+	public string STORE_ITEM_NAME;
+	public string STORE_TYPE;
+	public int STORE_ITEM_EX;
+	public string STORE_ITEM_CONSUME_TYPE;
+	public int STORE_ITEM_CONSUME_COUNT;
+	public string STORE_ITEM_ICON;
+	public string STORE_ITEM_DESC;
 }
 

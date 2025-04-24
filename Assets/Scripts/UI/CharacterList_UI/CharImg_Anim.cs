@@ -48,13 +48,15 @@ public class CharImg_Anim : MonoBehaviour
     {
         if (UserInfo.Equip_Characters[Get_NextIndex()].Get_CharGrade != Define.CHAR_GRADE.R)
         {
+            UserInfo.Get_Square_Image(CharacterImage, ImageIndex);
             // 캐릭터 이미지 교체
-            CharacterImage.sprite = UserInfo.Equip_Characters[ImageIndex].Get_SquareIllust_Img;
+            // CharacterImage.sprite = UserInfo.Equip_Characters[ImageIndex].Get_SquareIllust_Img;
         }
         else
         {
+            UserInfo.Get_Square_Image(CharacterImage, ImageIndex);
             // 캐릭터 이미지 교체
-            CharacterImage.sprite = UserInfo.Equip_Characters[ImageIndex].Get_Illust_Img;
+            //CharacterImage.sprite = UserInfo.Equip_Characters[ImageIndex].Get_Illust_Img;
         }
     }
 
@@ -75,14 +77,17 @@ public class CharImg_Anim : MonoBehaviour
     
     public void R_SR_Image_Change(int _index)
     {
-        if (UserInfo.Equip_Characters.Count <= 1)
+        if (UserInfo.Equip_Characters.Count < 2)
         {
             // R등급과 SR, SSR은 정사각형으로 된 이미지가 달라서 이용
             UserInfo.Get_Square_Image(CharacterImage, _index);
 
-            CharChange_animator.enabled = false;
+            if (CharChange_animator.enabled == true)
+            {
+                CharChange_animator.enabled = false;
+            }
         }
-        else if (1 < UserInfo.Equip_Characters.Count)
+        else if (2 <= UserInfo.Equip_Characters.Count)
         {
             //R등급과 SR, SSR은 정사각형으로 된 이미지가 달라서 이용
             UserInfo.Get_Square_Image(CharacterImage, _index);

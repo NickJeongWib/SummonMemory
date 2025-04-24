@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static Define;
+using System.Linq;
 
 public class CharacterList_UI : MonoBehaviour
 {
@@ -28,13 +29,18 @@ public class CharacterList_UI : MonoBehaviour
     [SerializeField] Color[] Transition_colors;
 
     [Header("---CharacterList_Equip---")]
+    [SerializeField] Character_Equipment[] CharEquipment_Btns;
+    [SerializeField] Sprite[] ItemEquipType;
     [SerializeField] List<Equip_Slot> EquipSlot_List;
     [SerializeField] Button[] EquipChar_Select_Btn;
     [SerializeField] int MaxEquip_Count;
     [SerializeField] GameObject Change_Char_Btn;    // 캐릭터 교체 창 버튼
     [SerializeField] GameObject Equip_Info_Btn;     // 캐릭터 교체 취소, 확인 버튼 모음
+    [SerializeField] Button Save_Change_Char;
     [SerializeField] Image[] Equip_Char_Img;
     [SerializeField] GameObject[] UnEquip_Btn;
+    [SerializeField] List<Character> Old_Equip_Characters = new List<Character>();
+    public List<Character> Get_Old_Equip_Characters { get => Old_Equip_Characters; set => Old_Equip_Characters = value; }
 
     [Header("---CharacterList_Info---")]
     [SerializeField] Scrollbar Select_Scroll;
@@ -76,7 +82,6 @@ public class CharacterList_UI : MonoBehaviour
         Equip_Image_Refresh(false);
     }
 
-    
     public void On_Click_EnterCharacter_Inven()
     {
         Character_Scroll.verticalNormalizedPosition = 1.0f;
@@ -92,7 +97,6 @@ public class CharacterList_UI : MonoBehaviour
     public void Refresh_CharacterList()
     {
         int SlotNum = 0;
-
         foreach(KeyValuePair<string, Character> Dict in UserInfo.UserCharDict_Copy)
         {
             // 이미지들 꺼져 있다면 켜주기
@@ -131,41 +135,44 @@ public class CharacterList_UI : MonoBehaviour
             Slots[SlotNum].Star_Image.rectTransform.sizeDelta = new Vector2(20 * Dict.Value.Get_CharStar, 20.0f);
             // Debug.Log(SlotNum + " " + Dict.Value.Get_CharName + " " + Dict.Value.Get_CharStar);
 
-           SlotNum++;
+            SlotNum++;
         }
 
         for (int i = SlotNum; i < Slots.Count; i++)
         {
-            Slots[SlotNum].character = null;
+            if (Slots[i].character != null)
+            {
+                Slots[i].character = null;
+            }
 
             // 이미지들 켜져 있다면 꺼주기
-            if (Slots[SlotNum].Element_BG.IsActive())
+            if (Slots[i].Element_BG.IsActive())
             {
-                Slots[SlotNum].Element_BG.gameObject.SetActive(false);
+                Slots[i].Element_BG.gameObject.SetActive(false);
             }
-            if (Slots[SlotNum].Element_Image.IsActive())
+            if (Slots[i].Element_Image.IsActive())
             {
-                Slots[SlotNum].Element_Image.gameObject.SetActive(false);
+                Slots[i].Element_Image.gameObject.SetActive(false);
             }
-            if (Slots[SlotNum].Char_Porfile.IsActive())
+            if (Slots[i].Char_Porfile.IsActive())
             {
-                Slots[SlotNum].Char_Porfile.gameObject.SetActive(false);
+                Slots[i].Char_Porfile.gameObject.SetActive(false);
             }
-            if (Slots[SlotNum].Star_Image.IsActive())
+            if (Slots[i].Star_Image.IsActive())
             {
-                Slots[SlotNum].Star_Image.gameObject.SetActive(false);
+                Slots[i].Star_Image.gameObject.SetActive(false);
             }
-            if (Slots[SlotNum].Grade_Image.IsActive())
+            if (Slots[i].Grade_Image.IsActive())
             {
-                Slots[SlotNum].Grade_Image.gameObject.SetActive(false);
+                Slots[i].Grade_Image.gameObject.SetActive(false);
             }
-            if (Slots[SlotNum].Select_Btn.IsActive())
+            if (Slots[i].Select_Btn.IsActive())
             {
-                Slots[SlotNum].Select_Btn.gameObject.SetActive(false);
+                Slots[i].Select_Btn.gameObject.SetActive(false);
             }
-            if (Slots[SlotNum].Equip_Btn.IsActive())
+            if (Slots[i].Equip_Btn.IsActive())
             {
-                Slots[SlotNum].Equip_Btn.gameObject.SetActive(false);
+                Slots[i].Equip_Btn.gameObject.SetActive(false);
             }
         }
     }
@@ -195,10 +202,12 @@ public class CharacterList_UI : MonoBehaviour
             return;
         }
 
+        // 제거된 캐릭터 현재 캐릭터 인벤토리에 추가
         UserInfo.UserCharDict_Copy.Add(
             new KeyValuePair<string, Character>(UserInfo.Equip_Characters[_equipNum].Get_CharName, UserInfo.Equip_Characters[_equipNum]));
 
         UserInfo.Equip_Characters.RemoveAt(_equipNum);
+        Check_EquipCount();
 
         // 장착해제 버튼 비활성화
         for (int i = 0; i < MaxEquip_Count; i++)
@@ -217,6 +226,8 @@ public class CharacterList_UI : MonoBehaviour
         CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex);
         // 장착한 캐릭터에 따라 이미지 교체 함수
         CharImg_Anim_Ref.CharImage_ChangeAnimF();
+
+
         Refresh_CharacterList();
         Refresh_Equip_Btn();
         Equip_Image_Refresh(true);
@@ -234,7 +245,8 @@ public class CharacterList_UI : MonoBehaviour
 
         // 캐릭터 장착 리스트에 추가
         UserInfo.Equip_Characters.Add(_slot.character);
-        
+        Check_EquipCount();
+
         // 장착 캐릭터 슬롯 초기화
         for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
         {
@@ -253,6 +265,50 @@ public class CharacterList_UI : MonoBehaviour
         Equip_Image_Refresh(true);
         Interact_EquipSlot_Btn();
     }
+
+    void Check_EquipCount()
+    {
+        for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        {
+            // 캐릭터 장착 리스트의 수가 기존 캐릭터 장착리스트와 다르면 확인버튼 활성화
+            if (Old_Equip_Characters.Count != UserInfo.Equip_Characters.Count)
+            {
+                Save_Change_Char.interactable = true;
+                break;
+            }
+
+            // 변경점이 있다면
+            if (Old_Equip_Characters[i].Get_CharName != UserInfo.Equip_Characters[i].Get_CharName)
+            {
+                Save_Change_Char.interactable = true;
+                break;
+            }
+            else
+            {
+                Save_Change_Char.interactable = false;
+            }
+        }
+    }
+
+    public void On_Click_CharacterSave()
+    {
+        // 장착해제 버튼 비활성화
+        for (int i = 0; i < UnEquip_Btn.Length; i++)
+        {
+            UnEquip_Btn[i].SetActive(false);
+        }
+
+        // 기존 캐릭터 장착 리스트를 새 장착 캐릭터들로 저장
+        Old_Equip_Characters = UserInfo.Equip_Characters.ToList();
+        //UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
+        // 확인버튼 비활성화
+        Save_Change_Char.interactable = false;
+
+        // 캐릭터 교체버튼 활성화, 교체 자동배치 버튼 비활성화
+        Equip_Char_Btn(false);
+        Change_Char_Btn.SetActive(true);
+        Equip_Info_Btn.SetActive(false);
+    }
     #endregion
 
     #region CharacterList_Equip_Btn
@@ -260,24 +316,41 @@ public class CharacterList_UI : MonoBehaviour
     // TODO ## Lobby_Manager 캐릭터 교체를 위한 버튼 작동
     public void On_Click_Change()
     {
+        UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
+
         Change_Char_Btn.SetActive(false);
         Equip_Info_Btn.SetActive(true);
-
         Equip_Char_Btn(true);
+
+        // Interact_EquipSlot_Btn();
+
+        CharImg_Anim_Ref.Get_ImageIndex = 0;
+        CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex);
+        // 장착한 캐릭터에 따라 이미지 교체 함수
+        CharImg_Anim_Ref.CharImage_ChangeAnimF();
     }
 
     public void On_Click_ChangeCancel()
     {
+        UserInfo.Equip_Characters = Old_Equip_Characters.ToList();
+        UserInfo.UserCharDict_Copy = UserInfo.Old_UserCharDict_Copy.ToList();
+
+        // 장착 캐릭터 슬롯 초기화
+        Equip_Image_Refresh(true);
+        Interact_EquipSlot_Btn();
+        Refresh_CharacterList();
+
         // 장착해제 버튼 비활성화
         for (int i = 0; i < UnEquip_Btn.Length; i++)
         {
             UnEquip_Btn[i].SetActive(false);
         }
-        // 캐릭터 교체버튼 활성화, 교체 자동배치 버튼 비활성화
 
+        // 캐릭터 교체버튼 활성화, 교체 자동배치 버튼 비활성화
         Equip_Char_Btn(false);
         Change_Char_Btn.SetActive(true);
         Equip_Info_Btn.SetActive(false);
+
     }
 
     [SerializeField] int Equip_Count;
@@ -379,6 +452,11 @@ public class CharacterList_UI : MonoBehaviour
     // 캐릭터 슬롯에서 클릭 시 캐릭터 정보 창으로 이동
     public void On_Click_CharInfo(CharacterSlot _slot)
     {
+        GameManager.Instance.Get_SelectChar = _slot.character;
+        Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
+
+        Refresh_EquipItem_Image();
+
         #region Character_Transition_Set
         // TODO ## Lobby_Manager 캐릭터 정보 창 이동 트랜지션 이미지 초기화 구문
         // 화면전환 중 버튼 클릭 방지
@@ -437,6 +515,11 @@ public class CharacterList_UI : MonoBehaviour
     // 장착 캐릭터 클릭 시 이동 오버로딩
     public void On_Click_CharInfo(Equip_Slot _slot)
     {
+        GameManager.Instance.Get_SelectChar = _slot.EquipCharacter;
+        // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
+
+        Refresh_EquipItem_Image();
+
         #region Character_Transition_Set
         // TODO ## Lobby_Manager 캐릭터 정보 창 이동 트랜지션 이미지 초기화 구문
         // 화면전환 중 버튼 클릭 방지
@@ -494,6 +577,10 @@ public class CharacterList_UI : MonoBehaviour
     // 장착 캐릭터 클릭 시 이동 오버로딩
     public void On_Click_CharInfo(CharInfo_CharSelect_Btn _slot)
     {
+        GameManager.Instance.Get_SelectChar = _slot.character;
+        // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
+
+        Refresh_EquipItem_Image();
 
         Refresh_Select_Img(_slot.character);
 
@@ -522,6 +609,21 @@ public class CharacterList_UI : MonoBehaviour
         CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.character.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
         CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.character.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
         #endregion
+    }
+
+    public void Refresh_EquipItem_Image()
+    {
+        for (int i = 0; i < CharEquipment_Btns.Length; i++)
+        {
+            if (GameManager.Instance.Get_SelectChar.Get_EquipItems[i] == null)
+            {
+                CharEquipment_Btns[i].Refresh_EquipItem(ItemEquipType[i], false, GameManager.Instance.Get_SelectChar.Get_EquipItems[i]);
+                continue;
+            }
+
+            CharEquipment_Btns[i].Refresh_EquipItem(GameManager.Instance.Get_SelectChar.Get_EquipItems[i].Get_Item_Image, true,
+                GameManager.Instance.Get_SelectChar.Get_EquipItems[i]);
+        }
     }
 
     void Refresh_Select_Img(Character _char, bool _isInfoScene = true)

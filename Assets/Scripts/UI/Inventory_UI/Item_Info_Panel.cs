@@ -40,11 +40,13 @@ public class Item_Info_Panel : MonoBehaviour
         animator.Play("Pop_Down_Item_Info");
     }
 
+    // 오브젝트 비활성화
     public void ActiveF_Panel()
     {
         this.gameObject.SetActive(false);
     }
     
+    // 아이템 정보 UI 초기화
     public void ItemInfo_Refresh(INVENTORY_TYPE _invenType, int _num)
     {
         if (_invenType == INVENTORY_TYPE.EQUIPMENT)

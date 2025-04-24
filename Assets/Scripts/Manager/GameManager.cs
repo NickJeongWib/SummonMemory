@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    Character SelectCharacter;
+    public Character Get_SelectChar { get => SelectCharacter; set => SelectCharacter = value; }
     public static GameManager Instance;
-    
+
     // Start is called before the first frame update
     void Awake()
     {

@@ -6,6 +6,7 @@ using static Define;
 // TODO ## Character 데이터 저장 클래스
 public class Character
 {
+    ///------- Var
     #region Character_State
     int Character_Lv;
     public int Get_Character_Lv { get => Character_Lv; set => Character_Lv = value; }
@@ -62,6 +63,12 @@ public class Character
     int transitionLevel;  // 성장 방식 전환 레벨
     public int Get_transitionLevel { get => transitionLevel; }
     #endregion
+
+    #region Character_EquipItem
+    Item[] EquipItems = new Item[5];
+    public Item[] Get_EquipItems { get => EquipItems; set => EquipItems = value; }
+    #endregion
+    ///------- Func
 
     #region Image_Resource
     // -----------------------Image Resources Variable----------------------
@@ -169,7 +176,7 @@ public class Character
     }
     #endregion
 
-
+    #region Character_Growing
     // 혼합형 성장 공식
     public float Calculate_State(int level)
     {
@@ -203,4 +210,29 @@ public class Character
             
         }
     }
+    #endregion
+
+    #region Character_Equipment_State_Refresh
+    // TODO ## Character 장비 아이템 장착 시 캐릭터 능력치 계산
+    public void Refresh_Char_Equipment_State()
+    {
+        for (int i = 0; i < EquipItems.Length; i++)
+        {
+            // 아이템이 장착 되어 있지 않다면 다음으로 넘어감
+            if (EquipItems[i] == null)
+                continue;
+
+            // 장비의 능력치만큼 캐릭터 능력치 증가
+            CharATK += EquipItems[i].Get_Item_Atk;
+            CharDEF += EquipItems[i].Get_Item_DEF;
+            CharHP += EquipItems[i].Get_Item_HP;
+            Char_CRT_DAMAGE += EquipItems[i].Get_Item_CRI_DMG;
+            Char_CRT_RATE += EquipItems[i].Get_Item_CRI_RATE;
+
+            if (Char_CRT_RATE >= 1.0f)
+                Char_CRT_RATE = 1.0f;
+        }
+    }
+
+    #endregion
 }

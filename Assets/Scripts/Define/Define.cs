@@ -1,5 +1,24 @@
 public static class Define
 {
+    public enum STORE_TYPE
+    {
+        CURRENCY,
+        TICKET,
+        R_BOOK,
+        SR_BOOK,
+        SSR_BOOK
+    }
+
+    public enum CONSUME_TYPE
+    {
+        DIA,
+        MONEY,
+        R_BOOK,
+        SR_BOOK,
+        SSR_BOOK,
+    }
+
+    // 선택된 인벤토리
     public enum INVENTORY_TYPE
     {
         SPEND,
@@ -7,6 +26,7 @@ public static class Define
         COOK,
     }
 
+    // 아이템 타입
     public enum ITEM_TYPE
     {
         NONE,
@@ -14,6 +34,7 @@ public static class Define
         EQUIPMENT,
     }
 
+    // 장비 아이템 타입
     public enum EQUIP_TYPE
     {
         WEAPON,

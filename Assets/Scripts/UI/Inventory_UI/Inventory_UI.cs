@@ -26,6 +26,7 @@ public class Inventory_UI : MonoBehaviour
     public List<Spend_Slot> Get_SpendSlot_List { get => SpendSlot_List; }
 
     [Header("Equip_Item_UI")]
+    public GameObject EquipSlots;
     [SerializeField] Color[] Grade_Colors;
     public Color[] Get_Colors { get => Grade_Colors; }
  
@@ -35,6 +36,13 @@ public class Inventory_UI : MonoBehaviour
     [SerializeField] GameObject Equip_Select_Shine_BG;
     [SerializeField] List<Equipment_Slot> EquipmentSlot_List = new List<Equipment_Slot>();
     public List<Equipment_Slot> Get_EquipmentSlot_List { get => EquipmentSlot_List; }
+
+    /// <summary>
+    /// if Character Info Scene click equip ItemType Button
+    /// 캐릭터 정보창에서 장비장착 버튼을 클릭 시 나타나게 될 아이템 슬롯
+    /// </summary>
+    [SerializeField] List<EquipSlot> EquipSlot_List = new List<EquipSlot>();
+    public List<EquipSlot> Get_EquipSlot_List { get => EquipSlot_List; }
 
     [Header("Cook_Item_UI")]
     [SerializeField] GameObject Cook_Btn_PopUp;

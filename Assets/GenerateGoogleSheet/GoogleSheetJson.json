@@ -1728,5 +1728,88 @@
       "ITEM_VALUE_MAX_RANGE": 0.2,
       "ITEM_IMAGE_ADDRESS": "Image_Resources/Item_Resources/Gloves/brown_leather_gloves"
     }
+  ],
+  "Store_Item_DB": [
+    {
+      "STORE_ITEM_NAME": "다이아",
+      "STORE_TYPE": "CURRENCY",
+      "STORE_ITEM_EX": 11000,
+      "STORE_ITEM_CONSUME_TYPE": "MONEY",
+      "STORE_ITEM_CONSUME_COUNT": 10000000,
+      "STORE_ITEM_ICON": "Image_Resources/UI/icon_resource/icon_resource60011_94",
+      "STORE_ITEM_DESC": "다양한 물건을 거래할 수 있는 특별한 보석. \\\\n이 반짝임을 싫어하는 사람은 없다."
+    },
+    {
+      "STORE_ITEM_NAME": "다이아",
+      "STORE_TYPE": "CURRENCY",
+      "STORE_ITEM_EX": 5000,
+      "STORE_ITEM_CONSUME_TYPE": "MONEY",
+      "STORE_ITEM_CONSUME_COUNT": 5000000,
+      "STORE_ITEM_ICON": "Image_Resources/UI/icon_resource/icon_resource60012_95",
+      "STORE_ITEM_DESC": "다양한 물건을 거래할 수 있는 특별한 보석. \\\\n이 반짝임을 싫어하는 사람은 없다."
+    },
+    {
+      "STORE_ITEM_NAME": "다이아",
+      "STORE_TYPE": "CURRENCY",
+      "STORE_ITEM_EX": 2400,
+      "STORE_ITEM_CONSUME_TYPE": "MONEY",
+      "STORE_ITEM_CONSUME_COUNT": 2500000,
+      "STORE_ITEM_ICON": "Image_Resources/UI/icon_resource/icon_resource60013_96",
+      "STORE_ITEM_DESC": "다양한 물건을 거래할 수 있는 특별한 보석. \\\\n이 반짝임을 싫어하는 사람은 없다."
+    },
+    {
+      "STORE_ITEM_NAME": "다이아",
+      "STORE_TYPE": "CURRENCY",
+      "STORE_ITEM_EX": 1100,
+      "STORE_ITEM_CONSUME_TYPE": "MONEY",
+      "STORE_ITEM_CONSUME_COUNT": 1250000,
+      "STORE_ITEM_ICON": "Image_Resources/UI/icon_resource/icon_resource60014_97",
+      "STORE_ITEM_DESC": "다양한 물건을 거래할 수 있는 특별한 보석. \\\\n이 반짝임을 싫어하는 사람은 없다."
+    },
+    {
+      "STORE_ITEM_NAME": "다이아",
+      "STORE_TYPE": "CURRENCY",
+      "STORE_ITEM_EX": 500,
+      "STORE_ITEM_CONSUME_TYPE": "MONEY",
+      "STORE_ITEM_CONSUME_COUNT": 625000,
+      "STORE_ITEM_ICON": "Image_Resources/UI/icon_resource/icon_resource60015_98",
+      "STORE_ITEM_DESC": "다양한 물건을 거래할 수 있는 특별한 보석. \\\\n이 반짝임을 싫어하는 사람은 없다."
+    },
+    {
+      "STORE_ITEM_NAME": "다이아",
+      "STORE_TYPE": "CURRENCY",
+      "STORE_ITEM_EX": 200,
+      "STORE_ITEM_CONSUME_TYPE": "MONEY",
+      "STORE_ITEM_CONSUME_COUNT": 300000,
+      "STORE_ITEM_ICON": "Image_Resources/UI/icon_resource/icon_resource60016_99",
+      "STORE_ITEM_DESC": "다양한 물건을 거래할 수 있는 특별한 보석. \\\\n이 반짝임을 싫어하는 사람은 없다."
+    },
+    {
+      "STORE_ITEM_NAME": "다이아",
+      "STORE_TYPE": "CURRENCY",
+      "STORE_ITEM_EX": 100,
+      "STORE_ITEM_CONSUME_TYPE": "MONEY",
+      "STORE_ITEM_CONSUME_COUNT": 150000,
+      "STORE_ITEM_ICON": "Image_Resources/UI/icon_resource/icon_resource60017_100",
+      "STORE_ITEM_DESC": "다양한 물건을 거래할 수 있는 특별한 보석. \\\\n이 반짝임을 싫어하는 사람은 없다."
+    },
+    {
+      "STORE_ITEM_NAME": "캐릭터 티켓",
+      "STORE_TYPE": "TICKET",
+      "STORE_ITEM_EX": 1,
+      "STORE_ITEM_CONSUME_TYPE": "DIA",
+      "STORE_ITEM_CONSUME_COUNT": 200,
+      "STORE_ITEM_ICON": "Image_Resources/Currency_Resources/Ticket_Resource",
+      "STORE_ITEM_DESC": "캐릭터를 소환할 수 있는 행운이 깃든 \\\\n티켓이다."
+    },
+    {
+      "STORE_ITEM_NAME": "장비 티켓",
+      "STORE_TYPE": "TICKET",
+      "STORE_ITEM_EX": 1,
+      "STORE_ITEM_CONSUME_TYPE": "DIA",
+      "STORE_ITEM_CONSUME_COUNT": 200,
+      "STORE_ITEM_ICON": "Image_Resources/Currency_Resources/Equipment_Ticket_Resource",
+      "STORE_ITEM_DESC": "장비를 소환할 수 있는 행운이 깃든 \\\\n티켓이다."
+    }
   ]
 }

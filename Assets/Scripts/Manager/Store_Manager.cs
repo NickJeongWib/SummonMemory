@@ -27,9 +27,12 @@ public class Store_Manager : MonoBehaviour
 
     [Header("---Info---")]
     [SerializeField] GameObject Buying_Info;
+    [SerializeField] ItemInfo_Pop ItemInfo_Pop;
     #endregion
 
     #region Variable
+    public Sprite[] Consume_Icons;
+
     [SerializeField] Lobby_Manager LobbyMgr_Ref;
     int Dia_SelectCount;
     #endregion
@@ -147,11 +150,34 @@ public class Store_Manager : MonoBehaviour
         LobbyMgr_Ref.Refresh_UI_Dia();
     }
 
-    public void On_Click_Cancel()
+    public void On_Click_Cancel(Animator _animator)
     {
-        Dia_SelectCount = 0;
-        Buying_Info.GetComponent<Animator>().Play("PopDown");
+        if (Dia_SelectCount != 0)
+            Dia_SelectCount = 0;
 
+        _animator.Play("PopDown");
+
+    }
+    #endregion
+
+    #region Item_Info
+    public void On_ItemInfo_Pop(Store_Item _storeInfo)
+    {
+        ItemInfo_Pop.gameObject.SetActive(true);
+        ItemInfo_Pop.Set_StoreItem(_storeInfo);
+        ItemInfo_Pop.Init_ItemInfo_UI(Get_UserItem_Count(_storeInfo));
+    }
+
+    int Get_UserItem_Count(Store_Item _storeInfo)
+    {
+        if (_storeInfo.Get_Item_Name == "다이아")
+            return UserInfo.Dia;
+        if (_storeInfo.Get_Item_Name == "캐릭터 티켓")
+            return UserInfo.SummonTicket;
+        if (_storeInfo.Get_Item_Name == "장비 티켓")
+            return UserInfo.EquipmentTicket;
+
+        return 0;
     }
     #endregion
 }
