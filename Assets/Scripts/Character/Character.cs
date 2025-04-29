@@ -214,25 +214,41 @@ public class Character
 
     #region Character_Equipment_State_Refresh
     // TODO ## Character 장비 아이템 장착 시 캐릭터 능력치 계산
-    public void Refresh_Char_Equipment_State()
+    public void Refresh_Char_Equipment_State(bool _isEquip, EQUIP_TYPE _equipType = EQUIP_TYPE.NONE)
     {
-        for (int i = 0; i < EquipItems.Length; i++)
+        // 아이템을 착용 했다면
+        if (_isEquip)
         {
-            // 아이템이 장착 되어 있지 않다면 다음으로 넘어감
-            if (EquipItems[i] == null)
-                continue;
-
             // 장비의 능력치만큼 캐릭터 능력치 증가
-            CharATK += EquipItems[i].Get_Item_Atk;
-            CharDEF += EquipItems[i].Get_Item_DEF;
-            CharHP += EquipItems[i].Get_Item_HP;
-            Char_CRT_DAMAGE += EquipItems[i].Get_Item_CRI_DMG;
-            Char_CRT_RATE += EquipItems[i].Get_Item_CRI_RATE;
+            CharATK += EquipItems[(int)_equipType].Get_Item_Atk;
+            CharDEF += EquipItems[(int)_equipType].Get_Item_DEF;
+            CharHP += EquipItems[(int)_equipType].Get_Item_HP;
+            Char_CRT_DAMAGE += EquipItems[(int)_equipType].Get_Item_CRI_DMG;
+            Char_CRT_RATE += EquipItems[(int)_equipType].Get_Item_CRI_RATE;
 
             if (Char_CRT_RATE >= 1.0f)
                 Char_CRT_RATE = 1.0f;
         }
-    }
+        else // 아이템 해제 시
+        {
+            // 아이템 능력치 빼기
+            CharATK -= EquipItems[(int)_equipType].Get_Item_Atk;
+            CharDEF -= EquipItems[(int)_equipType].Get_Item_DEF;
+            CharHP -= EquipItems[(int)_equipType].Get_Item_HP;
+            Char_CRT_DAMAGE -= EquipItems[(int)_equipType].Get_Item_CRI_DMG;
+            Char_CRT_RATE -= EquipItems[(int)_equipType].Get_Item_CRI_RATE;
 
+            // 아이템 해제
+            EquipItems[(int)_equipType].Get_OwnCharacter = null;
+            EquipItems[(int)_equipType] = null;
+        }
+    }
     #endregion
+
+
+
+    public void TestState()
+    {
+        Debug.Log($"공격력 : {CharATK}\n방어력 : {CharDEF}\n체력 : {CharHP}\n크뎀 : {Char_CRT_DAMAGE}\n크확 : {Char_CRT_RATE}");
+    }
 }

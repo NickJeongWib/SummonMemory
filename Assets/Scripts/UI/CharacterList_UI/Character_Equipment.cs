@@ -16,7 +16,17 @@ public class Character_Equipment : MonoBehaviour
 
     public void On_Click_OpenEquipSlot(int _num)
     {
-        InventoryUI_Ref.EquipSlots.SetActive(true);
+        if(GameManager.Instance.Get_SelectChar.Get_EquipItems[_num] == null)
+        {
+            InventoryUI_Ref.EquipSlots.SetActive(true);
+        }
+        else
+        {
+            // 동일 타입의 장비를 착용하고 있다면
+            InventoryUI_Ref.Item_Info.gameObject.SetActive(true);
+            InventoryUI_Ref.Item_Info.Get_CurrentItem = GameManager.Instance.Get_SelectChar.Get_EquipItems[_num];
+            InventoryUI_Ref.Item_Info.Open_Equip_Info(GameManager.Instance.Get_SelectChar.Get_EquipItems[_num], true);
+        }
 
         switch (_num)
         {
@@ -44,9 +54,14 @@ public class Character_Equipment : MonoBehaviour
     void On_WeaponList()
     {
         int num = -1;
+
+        // 착용중인 아이템은 뒤로 정렬
+        UserInfo.Weapon_Equipment.Sort((a, b) => a.Get_isEquip.CompareTo(b.Get_isEquip));
+
         for (int i = 0; i < UserInfo.Weapon_Equipment.Count; i++)
         {
             num = i;
+            // Debug.Log(UserInfo.Weapon_Equipment[i].Get_Item_Name);
             InventoryUI_Ref.Get_EquipSlot_List[i].Init_UI(UserInfo.Weapon_Equipment[i]);
         }
         num++;
@@ -62,6 +77,10 @@ public class Character_Equipment : MonoBehaviour
     void On_HelmetList()
     {
         int num = -1;
+
+        // 착용중인 아이템은 뒤로 정렬
+        UserInfo.Helmet_Equipment.Sort((a, b) => a.Get_isEquip.CompareTo(b.Get_isEquip));
+
         for (int i = 0; i < UserInfo.Helmet_Equipment.Count; i++)
         {
             num = i;
@@ -80,6 +99,10 @@ public class Character_Equipment : MonoBehaviour
     void On_UpperList()
     {
         int num = -1;
+
+        // 착용중인 아이템은 뒤로 정렬
+        UserInfo.Upper_Equipment.Sort((a, b) => a.Get_isEquip.CompareTo(b.Get_isEquip));
+
         for (int i = 0; i < UserInfo.Upper_Equipment.Count; i++)
         {
             num = i;
@@ -98,6 +121,10 @@ public class Character_Equipment : MonoBehaviour
     void On_AccessoryList()
     {
         int num = -1;
+
+        // 착용중인 아이템은 뒤로 정렬
+        UserInfo.Accessory_Equipment.Sort((a, b) => a.Get_isEquip.CompareTo(b.Get_isEquip));
+
         for (int i = 0; i < UserInfo.Accessory_Equipment.Count; i++)
         {
             num = i;
@@ -116,6 +143,10 @@ public class Character_Equipment : MonoBehaviour
     void On_GloveList()
     {
         int num = -1;
+
+        // 착용중인 아이템은 뒤로 정렬
+        UserInfo.Glove_Equipment.Sort((a, b) => a.Get_isEquip.CompareTo(b.Get_isEquip));
+
         for (int i = 0; i < UserInfo.Glove_Equipment.Count; i++)
         {
             num = i;
@@ -130,6 +161,8 @@ public class Character_Equipment : MonoBehaviour
     }
     #endregion
 
+    #region ItemGrade_Image
+    // 장착 아이템 이미지 설정
     public void Refresh_EquipItem(Sprite _sprite, bool _bool, Item _item)
     {
         ItemIcon.sprite = _sprite;
@@ -137,5 +170,12 @@ public class Character_Equipment : MonoBehaviour
 
         if (_item != null)
             ItemGradeColor.color = InventoryUI_Ref.Get_Colors[(int)_item.Get_Equipment_Grade];
+    }
+    #endregion
+
+    public void On_Click_ChangeEquip()
+    {
+        InventoryUI_Ref.Item_Info.gameObject.SetActive(false);
+        InventoryUI_Ref.EquipSlots.SetActive(true);
     }
 }

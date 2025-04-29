@@ -5,6 +5,9 @@ using static Define;
 
 public class Item
 {
+    Character OwnCharacter;
+    public Character Get_OwnCharacter { get => OwnCharacter; set => OwnCharacter = value; }
+
     // ÀåÂø ¿©ºÎ
     bool isEquip;
     public bool Get_isEquip { get => isEquip; set => isEquip = value; }

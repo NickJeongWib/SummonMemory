@@ -49,7 +49,7 @@ public class Inventory_UI : MonoBehaviour
     [SerializeField] GameObject Cook_Select_Shine_BG;
 
     [Header("Item_Info_Panel")]
-    [SerializeField] Item_Info_Panel Item_Info;
+    public Item_Info_Panel Item_Info;
     #endregion
 
     //---- Function
