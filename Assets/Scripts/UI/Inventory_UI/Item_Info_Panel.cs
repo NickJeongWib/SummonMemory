@@ -6,6 +6,7 @@ using static Define;
 
 public class Item_Info_Panel : MonoBehaviour
 {
+    #region Variable
     [SerializeField] Animator animator;
     [SerializeField] Inventory_UI Inventory_UI_Ref;
     [SerializeField] CharacterList_UI CharacterListUI_Ref;
@@ -15,6 +16,7 @@ public class Item_Info_Panel : MonoBehaviour
 
     // [SerializeField] Color[] Item_Grade_Colors;
     [SerializeField] Sprite[] Grade_Sprites;
+    public Sprite[] Get_Grade_Sprites { get => Grade_Sprites; set => Grade_Sprites = value; }
 
     [Header("---Spend_Item---")]
     [SerializeField] GameObject Spend_Item_Root;
@@ -47,6 +49,15 @@ public class Item_Info_Panel : MonoBehaviour
     Item CurrentItem;
     public Item Get_CurrentItem { get => CurrentItem; set => CurrentItem = value; }
 
+    [Header("---UpGrading---")]
+    [SerializeField] ItemUpGrade ItemUpGrade_Ref;
+    [SerializeField] GameObject InventoryListRoot;
+    [SerializeField] GameObject UpgradePanel;
+    [SerializeField] Transition_Fade Transition;
+
+#endregion
+    // -------------
+
     public void On_Click_Close_ItemInfo()
     {
         if (CurrentItem != null)
@@ -59,6 +70,27 @@ public class Item_Info_Panel : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
+    #region Upgrade_PopUP
+    public void On_Click_UpgradePanel()
+    {
+        if (this.gameObject.activeSelf)
+        {
+            this.gameObject.SetActive(false);
+        }
+
+        if (InventoryListRoot.activeSelf)
+        {
+            InventoryListRoot.SetActive(false);
+        }
+
+        ItemUpGrade_Ref.Get_SelectItem = CurrentItem;
+
+        Transition.gameObject.SetActive(true);
+        UpgradePanel.SetActive(true);
+    }
+
+    #endregion
 
     #region Iventory_PopUP
     // 아이템 정보 UI 초기화
@@ -108,6 +140,17 @@ public class Item_Info_Panel : MonoBehaviour
         // 아이템 이미지 교체
         Item_Image.sprite = UserInfo.Equip_Inventory[_num].Get_Item_Image;
 
+        // 아이템을 장착한 캐릭터가 존재한다면
+        if (UserInfo.Equip_Inventory[_num].Get_OwnCharacter != null)
+        {
+            OwnCharRoot.SetActive(true);
+            UserInfo.Get_Square_Image(Character_Illust, UserInfo.Equip_Inventory[_num].Get_OwnCharacter);
+        }
+        else
+        {
+            OwnCharRoot.SetActive(false);
+        }
+
         // UI Text 효과 텍스트 출력
         Base_Option(UserInfo.Equip_Inventory[_num].Get_Item_Atk, UserInfo.Equip_Inventory[_num].Get_Item_DEF,
             UserInfo.Equip_Inventory[_num].Get_Item_HP, UserInfo.Equip_Inventory[_num].Get_Item_CRI_RATE,
@@ -116,21 +159,33 @@ public class Item_Info_Panel : MonoBehaviour
     #endregion
 
     #region EquipItemInfo
+    // 장비 정보 열람
     public void Open_Equip_Info(Item _item, bool _isChange = false)
     {
         Equipment_Item_Root.SetActive(true);
         EquipBtn_Obj.SetActive(true);
         Spend_Item_Root.SetActive(false);
-        Chanage_Equipment(_isChange);
-
+        // Chanage_Equipment(_isChange, _item);
+        Chanage_Equipment(_item);
         Refresh_Equipment(_item);
     }
 
-    void Chanage_Equipment(bool _isChange)
+    // void Chanage_Equipment(bool _isChange, Item _item)
+    void Chanage_Equipment(Item _item)
     {
-        Change_Btn.SetActive(_isChange);
-        UnEquip_Btn.SetActive(_isChange);
-        Equip_Btn.SetActive(!_isChange);
+        // 장착 캐릭터가 없다면
+        if (_item.Get_OwnCharacter == null)
+        {
+            Change_Btn.SetActive(false);
+            UnEquip_Btn.SetActive(false);
+            Equip_Btn.SetActive(true);
+        }
+        else // 장착된 캐릭터가 있다면
+        {
+            Change_Btn.SetActive(true);
+            UnEquip_Btn.SetActive(true);
+            Equip_Btn.SetActive(false);
+        }
     }
 
     void Refresh_Equipment(Item _item)
@@ -144,6 +199,17 @@ public class Item_Info_Panel : MonoBehaviour
 
         // 아이템 이미지 교체
         Item_Image.sprite = _item.Get_Item_Image;
+
+        // 아이템을 장착한 캐릭터가 존재한다면
+        if (_item.Get_OwnCharacter != null)
+        {
+            OwnCharRoot.SetActive(true);
+            UserInfo.Get_Square_Image(Character_Illust, _item.Get_OwnCharacter);
+        }
+        else
+        {
+            OwnCharRoot.SetActive(false);
+        }
 
         // UI Text 효과 텍스트 출력
         Base_Option(_item.Get_Item_Atk, _item.Get_Item_DEF,
@@ -175,12 +241,12 @@ public class Item_Info_Panel : MonoBehaviour
 
         if (_criR != 0)
         {
-            Equipment_Base_Option.text += $"크리티컬 확률 +{(_criR * 100.0f).ToString("N1")}%\n";
+            Equipment_Base_Option.text += $"치명확률 +{(_criR * 100.0f).ToString("N1")}%\n";
         }
 
         if (_criD != 0)
         {
-            Equipment_Base_Option.text += $"크리티컬 데미지 +{(_criD * 100.0f).ToString("N1")}%\n";
+            Equipment_Base_Option.text += $"치명피해 +{(_criD * 100.0f).ToString("N1")}%\n";
         }
     }
     #endregion

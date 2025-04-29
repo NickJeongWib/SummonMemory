@@ -68,6 +68,7 @@ public class Character_Equipment : MonoBehaviour
 
         for (int i = num; i < InventoryUI_Ref.Get_EquipSlot_List.Count; i++)
         {
+            InventoryUI_Ref.Get_EquipSlot_List[i].Get_SlotItemInfo = null;
             InventoryUI_Ref.Get_EquipSlot_List[i].ActiveF_UI();
         }
     }
@@ -90,6 +91,7 @@ public class Character_Equipment : MonoBehaviour
 
         for (int i = num; i < InventoryUI_Ref.Get_EquipSlot_List.Count; i++)
         {
+            InventoryUI_Ref.Get_EquipSlot_List[i].Get_SlotItemInfo = null;
             InventoryUI_Ref.Get_EquipSlot_List[i].ActiveF_UI();
         }
     }
@@ -112,6 +114,7 @@ public class Character_Equipment : MonoBehaviour
 
         for (int i = num; i < InventoryUI_Ref.Get_EquipSlot_List.Count; i++)
         {
+            InventoryUI_Ref.Get_EquipSlot_List[i].Get_SlotItemInfo = null;
             InventoryUI_Ref.Get_EquipSlot_List[i].ActiveF_UI();
         }
     }
@@ -134,6 +137,7 @@ public class Character_Equipment : MonoBehaviour
 
         for (int i = num; i < InventoryUI_Ref.Get_EquipSlot_List.Count; i++)
         {
+            InventoryUI_Ref.Get_EquipSlot_List[i].Get_SlotItemInfo = null;
             InventoryUI_Ref.Get_EquipSlot_List[i].ActiveF_UI();
         }
     }
@@ -156,6 +160,7 @@ public class Character_Equipment : MonoBehaviour
 
         for (int i = num; i < InventoryUI_Ref.Get_EquipSlot_List.Count; i++)
         {
+            InventoryUI_Ref.Get_EquipSlot_List[i].Get_SlotItemInfo = null;
             InventoryUI_Ref.Get_EquipSlot_List[i].ActiveF_UI();
         }
     }

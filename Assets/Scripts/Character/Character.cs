@@ -243,6 +243,32 @@ public class Character
             EquipItems[(int)_equipType] = null;
         }
     }
+
+    // 착용중인 장비를 강화 했을 때 캐릭터 능력치 변동
+    public void EquipmentUpgrade_State_Refresh(EQUIP_TYPE _equipType, bool isAfter)
+    {
+        if (isAfter == false)
+        {
+            // 아이템 능력치 빼기
+            CharATK -= EquipItems[(int)_equipType].Get_Item_Atk;
+            CharDEF -= EquipItems[(int)_equipType].Get_Item_DEF;
+            CharHP -= EquipItems[(int)_equipType].Get_Item_HP;
+            Char_CRT_DAMAGE -= EquipItems[(int)_equipType].Get_Item_CRI_DMG;
+            Char_CRT_RATE -= EquipItems[(int)_equipType].Get_Item_CRI_RATE;
+        }
+        else
+        {
+            // 장비의 능력치만큼 캐릭터 능력치 증가
+            CharATK += EquipItems[(int)_equipType].Get_Item_Atk;
+            CharDEF += EquipItems[(int)_equipType].Get_Item_DEF;
+            CharHP += EquipItems[(int)_equipType].Get_Item_HP;
+            Char_CRT_DAMAGE += EquipItems[(int)_equipType].Get_Item_CRI_DMG;
+            Char_CRT_RATE += EquipItems[(int)_equipType].Get_Item_CRI_RATE;
+
+            if (Char_CRT_RATE >= 1.0f)
+                Char_CRT_RATE = 1.0f;
+        }
+    }
     #endregion
 
 

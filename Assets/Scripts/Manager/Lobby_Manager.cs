@@ -103,9 +103,9 @@ public class Lobby_Manager : MonoBehaviour
     // 현재 열려 있는 창을 닫고 로비로 이동
     public void On_Click_OffPanel_Circle(GameObject _obj)
     {
+        _obj.SetActive(false);
         NotTouch_RayCast.SetActive(true); // 화면전환 중 버튼 클릭 방지
         CircleTransition.SetActive(true);
-        _obj.SetActive(false);
     }
     #endregion
 

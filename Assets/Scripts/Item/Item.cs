@@ -24,6 +24,9 @@ public class Item
     Sprite Item_Image;
     public Sprite Get_Item_Image { get => Item_Image; set => Item_Image = value; }
 
+    int Item_Lv;
+    public int Get_Item_Lv { get => Item_Lv; set => Item_Lv = value; }
+
     int Item_ID; // ¾ÆÀÌÅÛ ID
     public int Get_Item_ID { get => Item_ID; }
 
@@ -66,6 +69,8 @@ public class Item
 
         ItemType = _itemType;
         EquipType = _equipType;
+
+        Item_Lv = 0;
     }
     #endregion
 
@@ -114,4 +119,34 @@ public class Item
             $" CRIR:{Item_CRI_RATE.ToString("N1")} CRID:{Item_CRI_DMG.ToString("N1")} HP:{Item_HP.ToString("N1")} GRADE:{Equipment_Grade}");
     }
     #endregion
+
+    public void UpGrade_Success(float _rate)
+    {
+        if (Item_ATK != 0)
+        {
+            Item_ATK += Item_ATK * _rate;
+        }
+
+        if (Item_DEF != 0)
+        {
+            Item_DEF += Item_DEF * _rate;
+        }
+
+        if (Item_HP != 0)
+        {
+            Item_HP += Item_HP * _rate;
+        }
+
+        if (Item_CRI_RATE != 0)
+        {
+            Item_CRI_RATE += Item_CRI_RATE * _rate;
+        }
+
+        if (Item_CRI_DMG != 0)
+        {
+            Item_CRI_DMG += Item_CRI_DMG * _rate;
+        }
+
+        Item_Lv++;
+    }
 }

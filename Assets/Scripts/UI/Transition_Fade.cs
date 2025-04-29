@@ -10,6 +10,7 @@ public class Transition_Fade : MonoBehaviour
     [Header("---Character_Transition---")]
     [SerializeField] GameObject Character_Transition_Panel;
     [SerializeField] GameObject NotTouch_RayCast;
+
     #region Base
     // TODO ## Transition_Fade ±âº» Fade Out
     public void Transition_ActiveF()
