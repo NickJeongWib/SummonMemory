@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class Character_Equipment : MonoBehaviour
 {
     [SerializeField] Inventory_UI InventoryUI_Ref;
-    Item EquipItem;
-    public Item Get_EquipItem { get => EquipItem; set => EquipItem = value; }
+    Item SelectEquipItem;
+    public Item Get_SelectEquipItem { get => SelectEquipItem; set => SelectEquipItem = value; }
 
     [SerializeField] Image ItemIcon;
     [SerializeField] Image ItemGradeColor;
     [SerializeField] Mask ItemGradeMask;
-
+    
+    //Image ItemIcon;
+    //Image ItemGradeColor;
+    //Mask ItemGradeMask;
 
     public void On_Click_OpenEquipSlot(int _num)
     {
@@ -28,6 +31,30 @@ public class Character_Equipment : MonoBehaviour
             InventoryUI_Ref.Item_Info.Open_Equip_Info(GameManager.Instance.Get_SelectChar.Get_EquipItems[_num], true);
         }
 
+        switch (_num)
+        {
+            case 0:
+                On_WeaponList();
+                break;
+            case 1:
+                On_HelmetList();
+                break;
+            case 2:
+                On_UpperList();
+                break;
+            case 3:
+                On_AccessoryList();
+                break;
+            case 4:
+                On_GloveList();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void Refresh_List_UI(int _num)
+    {
         switch (_num)
         {
             case 0:
@@ -180,6 +207,7 @@ public class Character_Equipment : MonoBehaviour
 
     public void On_Click_ChangeEquip()
     {
+        Refresh_List_UI((int)InventoryUI_Ref.Item_Info.Get_CurrentItem.Get_EquipType);
         InventoryUI_Ref.Item_Info.gameObject.SetActive(false);
         InventoryUI_Ref.EquipSlots.SetActive(true);
     }

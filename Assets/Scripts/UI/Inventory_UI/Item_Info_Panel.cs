@@ -27,6 +27,7 @@ public class Item_Info_Panel : MonoBehaviour
     [SerializeField] Text Spend_Item_Des;
 
     [Header("---Equipment_Item---")]
+    [SerializeField] Character_Equipment Character_Equipment_Ref;
     [SerializeField] Image Item_Grade;
     [SerializeField] GameObject Equipment_Item_Root;
     public GameObject Get_Equipment_Item_Root { get => Equipment_Item_Root; }
@@ -216,6 +217,12 @@ public class Item_Info_Panel : MonoBehaviour
             _item.Get_Item_HP, _item.Get_Item_CRI_RATE,
             _item.Get_Item_CRI_DMG);
     }
+
+
+    public void Set_ChangeBtn(bool _isOn)
+    {
+        Change_Btn.SetActive(_isOn);
+    }
     #endregion
 
     #region Text_Refresh
@@ -307,9 +314,10 @@ public class Item_Info_Panel : MonoBehaviour
     {
         if (CurrentItem.Get_OwnCharacter == null)
             return;
-
+       
         // GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] = null;
         GameManager.Instance.Get_SelectChar.Refresh_Char_Equipment_State(false, CurrentItem.Get_EquipType);
+        Character_Equipment_Ref.Refresh_List_UI((int)CurrentItem.Get_EquipType);
         On_Click_Close_ItemInfo();
         CharacterListUI_Ref.Refresh_EquipItem_Image();
 

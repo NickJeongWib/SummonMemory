@@ -240,6 +240,7 @@ public class Character
 
             // 아이템 해제
             EquipItems[(int)_equipType].Get_OwnCharacter = null;
+            EquipItems[(int)_equipType].Get_isEquip = false;
             EquipItems[(int)_equipType] = null;
         }
     }

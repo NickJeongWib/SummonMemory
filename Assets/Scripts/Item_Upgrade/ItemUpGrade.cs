@@ -18,6 +18,17 @@ public class ItemUpGrade : MonoBehaviour
     [SerializeField] int[] UpGrade_Rate;
     [SerializeField] float ItemState_Rate;
 
+    [Header("ChainUpgrade_Root")]
+    int MaxCost;
+    [SerializeField] int Cost;
+    bool isSlider;
+    [SerializeField] Animator ChainAnimator;
+    [SerializeField] Slider CountSlider;
+    int MaxCount = 100;
+    [SerializeField] int Count;
+    [SerializeField] Text ChainCountText;
+
+
     [Header("---Item_UI---")]
     [SerializeField] Image ItemImage;
     [SerializeField] Image ItemGradeBack;
@@ -26,21 +37,26 @@ public class ItemUpGrade : MonoBehaviour
     [SerializeField] Text ItemOption;
     [SerializeField] Image[] UpgradeImage;
 
+    #region Init
     private void OnEnable()
     {
+        // 선택된 아이템이 없으면 return
         if (SelectItem == null)
             return;
 
+        // 선택된 아이템 강화레벨이 9이상이면, 바로 잠재능력치 설정화면
         if (SelectItem.Get_Item_Lv >= 9)
         {
             UpgradeRoot.SetActive(false);
         }
         else
         {
+            // 아이템이 기본옵션이 하나인 장비를 위해 
             for (int i = 0; i < UpgradeImage.Length; i++)
             {
                 UpgradeImage[i].gameObject.SetActive(false);
             }
+
             UpgradeRoot.SetActive(true);
             Refresh_Upgrade_Option();
         }
@@ -50,58 +66,57 @@ public class ItemUpGrade : MonoBehaviour
         ItemGradeBack.color = Inventory_UI_Ref.Get_Colors[(int)SelectItem.Get_Equipment_Grade];
         ItemName.text = SelectItem.Get_Item_Name;
     }
+    #endregion
 
     #region Item_Upgrade
+    int OptionNum;
     void Refresh_Upgrade_Option()
     {
-        // ItemOption.text = 
         // 텍스트 초기화
         ItemOption.text = "";
+        OptionNum = 0;
 
+        // UI 초기화
         if (SelectItem.Get_Item_Atk != 0)
         {
             ItemOption.text += $"공격력            {SelectItem.Get_Item_Atk.ToString("N0")}             <color=orange>{(SelectItem.Get_Item_Atk + SelectItem.Get_Item_Atk * ItemState_Rate).ToString("N0")}</color>\n\n";
-            NextImage_Refresh();
+            OptionNum++;
         }
 
         if (SelectItem.Get_Item_DEF != 0)
         {
             ItemOption.text += $"방어력            {SelectItem.Get_Item_DEF.ToString("N0")}             <color=orange>{(SelectItem.Get_Item_DEF + SelectItem.Get_Item_DEF * ItemState_Rate).ToString("N0")}</color>\n\n";
-            NextImage_Refresh();
+            OptionNum++;
         }
 
         if (SelectItem.Get_Item_HP != 0)
         {
             ItemOption.text += $"체력                {SelectItem.Get_Item_HP.ToString("N0")}             <color=orange>{(SelectItem.Get_Item_HP + SelectItem.Get_Item_HP * ItemState_Rate).ToString("N0")}</color>\n\n";
-            NextImage_Refresh();
+            OptionNum++;
         }
 
         if (SelectItem.Get_Item_CRI_RATE != 0)
         {
             ItemOption.text += $"치명확률        {(SelectItem.Get_Item_CRI_RATE * 100).ToString("N0")}%            <color=orange>{((SelectItem.Get_Item_CRI_RATE * 100) + ((SelectItem.Get_Item_CRI_RATE * 100) * ItemState_Rate)).ToString("N1")}%</color>\n\n";
-            NextImage_Refresh();
+            OptionNum++;
         }
 
         if (SelectItem.Get_Item_CRI_DMG != 0)
         {
             ItemOption.text += $"치명피해        {(SelectItem.Get_Item_CRI_DMG * 100).ToString("N0")}%             <color=orange>{((SelectItem.Get_Item_CRI_DMG * 100) + ((SelectItem.Get_Item_CRI_DMG * 100) * ItemState_Rate)).ToString("N1")}%</color>\n\n";
-            NextImage_Refresh();
+            OptionNum++;
         }
 
+        NextImage_Refresh(OptionNum);
     }
 
-    void NextImage_Refresh()
+    void NextImage_Refresh(int _num)
     {
-        for (int i = 0; i < UpgradeImage.Length; i++)
+        for (int i = 0; i < _num; i++)
         {
            if(UpgradeImage[i].gameObject.activeSelf == false)
            {
                 UpgradeImage[i].gameObject.SetActive(true);
-                break;
-           }
-           else
-           {
-                continue;
            }
         }
     }
@@ -125,9 +140,9 @@ public class ItemUpGrade : MonoBehaviour
             return;
         }
 
-        Debug.Log(SelectItem.Get_Item_Lv);
+        // Debug.Log(SelectItem.Get_Item_Lv);
         int Rate = Random.Range(1, 101);
-        Debug.Log(Rate);
+        // Debug.Log(Rate);
 
         // 성공 공식
         if (UpGrade_Rate[SelectItem.Get_Item_Lv] >= Rate)
@@ -141,12 +156,128 @@ public class ItemUpGrade : MonoBehaviour
                 SelectItem.Get_OwnCharacter.EquipmentUpgrade_State_Refresh(SelectItem.Get_EquipType, true);
             }
         }
-        else // 실패
-        {
-
-        }
 
         Refresh_Upgrade_Option();
     }
+    #endregion
+
+    #region Item_Chain_Upgrade_Btn
+    // 연속강화 창 오픈
+    public void On_Click_ChainUp(GameObject _obj)
+    {
+        _obj.SetActive(true);
+
+        CountSlider.value = 0;
+        SliderValue();
+    }
+
+    // 연속강화 창 오프
+    public void On_Click_ChainBack()
+    {
+        ChainAnimator.Play("ChainUp_Close");
+    }
+
+    // 슬라이더 값 변동마다 호출되는 함수
+    public void SliderValue()
+    {
+        Count = Mathf.RoundToInt(MaxCount * CountSlider.value);
+        ChainCountText.text = $"{Count}회";
+    }
+
+    // 1 +,- 반복횟수 설정
+    public void On_Click_Count_1(bool _isPlus)
+    {
+        if (_isPlus)
+        {
+            Count++;
+
+            if (Count >= 100)
+                Count = 100;
+        }
+        else
+        {
+            Count--;
+            if (Count <= 1)
+                Count = 0;
+        }
+
+        SliderValue_Calculator();
+    }
+
+    // 10 +,- 반복횟수 카운드 설정
+    public void On_Click_Count_10(bool _isPlus)
+    {
+        if (_isPlus)
+        {
+            Count += 10;
+
+            if (Count >= 100)
+                Count = 100;
+        }
+        else
+        {
+            Count -= 10;
+            if (Count <= 1)
+                Count = 0;
+        }
+
+        SliderValue_Calculator();
+    }
+
+    // 반복횟수 최대,최소 설정
+    public void On_Click_Count_MinMax(bool _isMax)
+    {
+        if (_isMax)
+        {
+            Count = 100;
+        }
+        else
+        {
+            Count = 0;
+        }
+
+        SliderValue_Calculator();
+    }
+
+    void SliderValue_Calculator()
+    {
+        CountSlider.value = (float)Count / MaxCount;
+        ChainCountText.text = $"{Count}회";
+    }
+
+
+    int CostSum;
+    public void On_Click_ChainUpgrade()
+    {
+        if (SelectItem.Get_Item_Lv >= 9)
+        {
+            return;
+        }
+
+        MaxCost = Cost * Count;
+
+        // 아이템 강화 골드보다 보유골드가 적으면
+        if (MaxCost > UserInfo.Money)
+        {
+
+            return;
+        }
+
+        CostSum = 0;
+        for (int i = 0; i < Count; i++)
+        {
+            CostSum += Cost;
+            On_Click_UpgradeBtn();
+
+            if (SelectItem.Get_Item_Lv >= 9)
+            {
+                Debug.Log($"{CostSum.ToString("N0")}원 사용");
+                break;
+            }
+        }
+        Debug.Log($"{CostSum.ToString("N0")}원 사용");
+        ChainAnimator.Play("ChainUp_Close");
+    }
+
     #endregion
 }
