@@ -53,6 +53,19 @@ public class Item
     float ValueMaxRange;
     public float Get_ValueMaxRange { get => ValueMaxRange; }
 
+    EQUIPMENT_OPTION[] EquipmentOption = new EQUIPMENT_OPTION[3];
+    public EQUIPMENT_OPTION[] Get_EquipmentOption { get => EquipmentOption; set => EquipmentOption = value; }
+
+    EQUIPMENT_OPTION_GRADE[] EquipmentOptionGrade = new EQUIPMENT_OPTION_GRADE[3];
+    public EQUIPMENT_OPTION_GRADE[] Get_EquipmentOptionGrade { get => EquipmentOptionGrade; set => EquipmentOptionGrade = value; }
+
+    float[] OptionValue = new float[3];
+    public float[] Get_OptionValue { get => OptionValue; set => OptionValue = value; }
+
+    public List<EquipmentOption> OptionList = new List<EquipmentOption>();
+
+
+
     #region Constructor
     public Item(int _itemID, string _itemName, float _itemAtk, float _itemDef, float _itemCriRate, float _itemCriDMG, float _itemHp, float _itemValueMin, float _itemValueMax,
         ITEM_TYPE _itemType = ITEM_TYPE.NONE, EQUIP_TYPE _equipType = EQUIP_TYPE.NONE)
@@ -71,6 +84,12 @@ public class Item
         EquipType = _equipType;
 
         Item_Lv = 0;
+
+        for(int i = 0; i < EquipmentOption.Length; i++)
+        {
+            EquipmentOption[i] = EQUIPMENT_OPTION.NONE;
+            EquipmentOptionGrade[i] = EQUIPMENT_OPTION_GRADE.NONE;
+        }
     }
     #endregion
 
@@ -115,11 +134,114 @@ public class Item
         Item_CRI_DMG += (Item_CRI_DMG * randValue);
         Item_HP += (Item_HP * randValue);
 
-        Debug.Log($"{Item_Name} : ATK:{Item_ATK.ToString("N1")} DEF:{Item_DEF.ToString("N1")}" +
-            $" CRIR:{Item_CRI_RATE.ToString("N1")} CRID:{Item_CRI_DMG.ToString("N1")} HP:{Item_HP.ToString("N1")} GRADE:{Equipment_Grade}");
+        #region DebugTest
+        //Debug.Log($"{Item_Name} : ATK:{Item_ATK.ToString("N1")} DEF:{Item_DEF.ToString("N1")}" +
+        //    $" CRIR:{Item_CRI_RATE.ToString("N1")} CRID:{Item_CRI_DMG.ToString("N1")} HP:{Item_HP.ToString("N1")} GRADE:{Equipment_Grade}");
+        #endregion
     }
     #endregion
 
+    #region Option
+    public void Set_OptionList(List<EquipmentOption> _OptionList)
+    {
+        OptionList = _OptionList;
+    }
+
+    // 아이템 랜덤 능력 설정
+    public void Set_UpgradeOption()
+    {
+        int count = (int)(Item_Lv / 3);
+
+        for (int i = 0; i < count; i++)
+        {
+            // 옵션이 이미 설정이 되어 있다면
+            if (EquipmentOption[i] != EQUIPMENT_OPTION.NONE)
+            {
+                continue;
+            }
+
+            int RandOption = Random.Range(0, OptionList.Count);
+            EquipmentOption[i] = OptionList[RandOption].EquipmentRandomOption;
+            OptionValue[i] = OptionList[RandOption].Get_OptionValue(ref EquipmentOptionGrade[i]);
+
+            if (OwnCharacter != null) 
+                OwnCharacter.EquipmentOption_State_Calc(EquipmentOption[i], i, this, true);
+        }
+
+        #region Test_Debug
+        for (int i = 0; i < EquipmentOption.Length; i++)
+        {
+            // Debug.Log(EquipmentOption[i]);
+        }
+
+        //if (OwnCharacter != null)
+        //    OwnCharacter.TestState();
+        #endregion
+    }
+
+    public void Set_ResetOption()
+    {
+        if (OwnCharacter != null)
+        {
+            for(int i = 0; i < EquipmentOption.Length; i++)
+            {
+                OwnCharacter.EquipmentOption_State_Calc(EquipmentOption[i], i, this, false);
+            }
+        }
+
+        for (int i = 0; i < EquipmentOption.Length; i++)
+        {
+            Debug.Log(i);
+            for (int ii = 0; ii < OptionList.Count; ii++)
+            {
+                if (EquipmentOption[i] == OptionList[ii].EquipmentRandomOption)
+                {
+                    OptionValue[i] = OptionList[ii].Get_OptionValue(ref EquipmentOptionGrade[i]);
+                    break;
+                }
+            }
+        }
+
+        if (OwnCharacter != null)
+        {
+            for (int i = 0; i < EquipmentOption.Length; i++)
+            {
+                OwnCharacter.EquipmentOption_State_Calc(EquipmentOption[i], i, this, true);
+            }
+        }
+    }
+
+    public void EquipOption_Stat_Calc(bool _isEquip)
+    {
+        if (OwnCharacter == null)
+            return;
+
+        //Debug.Log(OwnCharacter.Get_CharName);
+        int count = (int)(Item_Lv / 3);
+
+        for (int i = 0; i < count; i++)
+        {
+            //Debug.Log($"for{i}");
+            OwnCharacter.EquipmentOption_State_Calc(EquipmentOption[i], i, this, _isEquip);
+        }
+    }
+
+    public string Get_Option_KorString(EQUIPMENT_OPTION _option)
+    {
+        if (_option == EQUIPMENT_OPTION.ATK_INT || _option == EQUIPMENT_OPTION.ATK_PERCENT)
+            return "공격력";
+        else if (_option == EQUIPMENT_OPTION.DEF_INT || _option == EQUIPMENT_OPTION.DEF_PERCENT)
+            return "방어력";
+        else if (_option == EQUIPMENT_OPTION.HP_INT || _option == EQUIPMENT_OPTION.HP_PERCENT)
+            return "체력";
+        else if (_option == EQUIPMENT_OPTION.CRIR_PERCENT)
+            return "치명확률";
+        else
+            return "치명피해";
+    }
+    #endregion
+
+    #region Item_State_Up
     public void UpGrade_Success(float _rate)
     {
         if (Item_ATK != 0)
@@ -149,4 +271,6 @@ public class Item
 
         Item_Lv++;
     }
+    #endregion
+
 }

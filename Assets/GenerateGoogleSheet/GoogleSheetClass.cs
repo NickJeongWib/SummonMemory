@@ -10,6 +10,7 @@ public class GoogleSheetSO : ScriptableObject
 	public List<Character_Growing_State> Character_Growing_StateList;
 	public List<Item_DB> Item_DBList;
 	public List<Store_Item_DB> Store_Item_DBList;
+	public List<EquipOption_DB> EquipOption_DBList;
 }
 
 [Serializable]
@@ -76,5 +77,13 @@ public class Store_Item_DB
 	public int STORE_ITEM_CONSUME_COUNT;
 	public string STORE_ITEM_ICON;
 	public string STORE_ITEM_DESC;
+}
+
+[Serializable]
+public class EquipOption_DB
+{
+	public string OPTION_NAME;
+	public float OPTION_MIN;
+	public float OPTION_MAX;
 }
 

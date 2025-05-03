@@ -15,6 +15,7 @@ public class EquipSlot : MonoBehaviour
     CharacterList_UI CharacterListUI_Ref;
     public CharacterList_UI Set_CharacterListUI_Ref { set => CharacterListUI_Ref = value; }
 
+    [SerializeField] Text Item_Lv;
     [SerializeField] Mask GradeMask;
     [SerializeField] Image GradeColor;
     [SerializeField] Mask ItemMask;
@@ -31,6 +32,8 @@ public class EquipSlot : MonoBehaviour
             GradeMask.showMaskGraphic = true;
             ItemMask.showMaskGraphic = true;
             ItemIcon.sprite = _item.Get_Item_Image;
+
+            Item_Lv.text = $"+{_item.Get_Item_Lv}";
 
             if (SlotItemInfo.Get_OwnCharacter == null)
             {
@@ -53,6 +56,7 @@ public class EquipSlot : MonoBehaviour
         ItemMask.showMaskGraphic = false;
         GradeMask.showMaskGraphic = false;
         EquipMask.showMaskGraphic = false;
+        Item_Lv.text = "";
     }
 
     // æ∆¿Ã≈€ ¿Â¬¯ 
@@ -83,6 +87,12 @@ public class EquipSlot : MonoBehaviour
         if (GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)SlotItemInfo.Get_EquipType] == SlotItemInfo)
         {
             InventoryUI_Ref.Item_Info.Set_ChangeBtn(false);
+        }
+
+        if (GameManager.Instance.Get_SelectChar != SlotItemInfo.Get_OwnCharacter)
+        {
+            InventoryUI_Ref.Item_Info.Set_ChangeBtn(false);
+            InventoryUI_Ref.Item_Info.Set_EquipBtn(true);
         }
     }
 }

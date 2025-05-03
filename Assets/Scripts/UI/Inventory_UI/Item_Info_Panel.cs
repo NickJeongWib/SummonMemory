@@ -33,10 +33,8 @@ public class Item_Info_Panel : MonoBehaviour
     public GameObject Get_Equipment_Item_Root { get => Equipment_Item_Root; }
     [SerializeField] Text Equipment_Item_Name;
     [SerializeField] Text Equipment_Base_Option;
-
-    [SerializeField] Text Equipment_Random_Option_1;
-    [SerializeField] Text Equipment_Random_Option_2;
-    [SerializeField] Text Equipment_Random_Option_3;
+    // 캐릭터 랜덤 옵션
+    [SerializeField] Text[] Equipment_Random_Options;
 
     [SerializeField] GameObject EquipBtn_Obj;
     [SerializeField] GameObject Change_Btn;
@@ -46,6 +44,7 @@ public class Item_Info_Panel : MonoBehaviour
     [SerializeField] GameObject OwnCharRoot;
     [SerializeField] Image Character_Illust;
     [SerializeField] Text OwnChar_Text;
+    [SerializeField] Image[] ItemOptionGradeImage;
 
     Item CurrentItem;
     public Item Get_CurrentItem { get => CurrentItem; set => CurrentItem = value; }
@@ -124,14 +123,7 @@ public class Item_Info_Panel : MonoBehaviour
 
     void Refresh_Equipment(int _num)
     {
-        Equipment_Item_Name.text = UserInfo.Equip_Inventory[_num].Get_Item_Name;
-
-        /*
-        Debug.Log($"{UserInfo.Equip_Inventory[_num].Get_Item_Atk}, {UserInfo.Equip_Inventory[_num].Get_Item_DEF}," +
-            $"{UserInfo.Equip_Inventory[_num].Get_Item_HP}, {UserInfo.Equip_Inventory[_num].Get_Item_CRI_RATE}," +
-            $"{UserInfo.Equip_Inventory[_num].Get_Item_CRI_DMG}");
-        */
-        
+        Equipment_Item_Name.text = $"{UserInfo.Equip_Inventory[_num].Get_Item_Name} +{UserInfo.Equip_Inventory[_num].Get_Item_Lv}";
 
         Item_Back.gameObject.SetActive(true);
         // 등급에 따른 UI 효과 차별
@@ -151,6 +143,8 @@ public class Item_Info_Panel : MonoBehaviour
         {
             OwnCharRoot.SetActive(false);
         }
+
+        Refresh_EquipmentOption_Refresh(UserInfo.Equip_Inventory[_num]);
 
         // UI Text 효과 텍스트 출력
         Base_Option(UserInfo.Equip_Inventory[_num].Get_Item_Atk, UserInfo.Equip_Inventory[_num].Get_Item_DEF,
@@ -191,7 +185,7 @@ public class Item_Info_Panel : MonoBehaviour
 
     void Refresh_Equipment(Item _item)
     {
-        Equipment_Item_Name.text = _item.Get_Item_Name;
+        Equipment_Item_Name.text = $"{_item.Get_Item_Name} +{_item.Get_Item_Lv}";
 
         Item_Back.gameObject.SetActive(true);
         // 등급에 따른 UI 효과 차별
@@ -212,16 +206,50 @@ public class Item_Info_Panel : MonoBehaviour
             OwnCharRoot.SetActive(false);
         }
 
+        Refresh_EquipmentOption_Refresh(CurrentItem);
+
+        for (int i = 0; i < CurrentItem.Get_EquipmentOption.Length; i++)
+        {
+            ItemOptionGradeImage[i].sprite = Grade_Sprites[(int)CurrentItem.Get_EquipmentOptionGrade[i]];
+        }
+
         // UI Text 효과 텍스트 출력
         Base_Option(_item.Get_Item_Atk, _item.Get_Item_DEF,
             _item.Get_Item_HP, _item.Get_Item_CRI_RATE,
             _item.Get_Item_CRI_DMG);
     }
-
+    #region ItemInfo_POP_UP_Text_Refresh
+    void Refresh_EquipmentOption_Refresh(Item _item)
+    {
+        int OptionLv = 0;
+        for (int i = 0; i < Equipment_Random_Options.Length; i++)
+        {
+            OptionLv += 3;
+            if (_item.Get_EquipmentOption[i] == EQUIPMENT_OPTION.NONE)
+            {
+                Equipment_Random_Options[i].text = $"강화 {OptionLv} 달성 시 무작위 능력치 추가";
+            }
+            else if (_item.Get_EquipmentOption[i] == EQUIPMENT_OPTION.ATK_INT || _item.Get_EquipmentOption[i] == EQUIPMENT_OPTION.DEF_INT ||
+                _item.Get_EquipmentOption[i] == EQUIPMENT_OPTION.HP_INT)
+            {
+                Equipment_Random_Options[i].text = $"{_item.Get_Option_KorString(_item.Get_EquipmentOption[i])} +{_item.Get_OptionValue[i].ToString("N0")}";
+            }
+            else
+            {
+                Equipment_Random_Options[i].text = $"{_item.Get_Option_KorString(_item.Get_EquipmentOption[i])} +{(_item.Get_OptionValue[i] * 100).ToString("N1")}%";
+            }
+        }
+    }
+    #endregion
 
     public void Set_ChangeBtn(bool _isOn)
     {
         Change_Btn.SetActive(_isOn);
+    }
+
+    public void Set_EquipBtn(bool _isOn)
+    {
+        Equip_Btn.SetActive(_isOn);
     }
     #endregion
 
@@ -269,6 +297,8 @@ public class Item_Info_Panel : MonoBehaviour
 
         if (CurrentItem.Get_OwnCharacter != null)
         {
+            // 선택된 아이템을 장착하고 있는 캐릭터의 능력치를 뺴줌
+            CurrentItem.EquipOption_Stat_Calc(false);
             CurrentItem.Get_OwnCharacter.Refresh_Char_Equipment_State(false, CurrentItem.Get_EquipType);
             // SlotItemInfo.Get_OwnCharacter.Get_EquipItems[(int)SlotItemInfo.Get_EquipType] = null;
         }
@@ -281,6 +311,7 @@ public class Item_Info_Panel : MonoBehaviour
             {
                 // 장착해제
                 GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType].Get_isEquip = false;
+                GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType].EquipOption_Stat_Calc(false);
                 GameManager.Instance.Get_SelectChar.Refresh_Char_Equipment_State(false, CurrentItem.Get_EquipType);
                 // 선택된 캐릭터에서 해제
                 // GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)SlotItemInfo.Get_EquipType].Get_OwnCharacter = null;
@@ -290,6 +321,8 @@ public class Item_Info_Panel : MonoBehaviour
             GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] = CurrentItem;
             CurrentItem.Get_OwnCharacter = GameManager.Instance.Get_SelectChar;
 
+            // 장비 옵션값 전달 
+            CurrentItem.EquipOption_Stat_Calc(true);
             // 능력치 전달
             GameManager.Instance.Get_SelectChar.Refresh_Char_Equipment_State(true, CurrentItem.Get_EquipType);
         }
@@ -314,9 +347,15 @@ public class Item_Info_Panel : MonoBehaviour
     {
         if (CurrentItem.Get_OwnCharacter == null)
             return;
-       
+
         // GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] = null;
-        GameManager.Instance.Get_SelectChar.Refresh_Char_Equipment_State(false, CurrentItem.Get_EquipType);
+        CurrentItem.EquipOption_Stat_Calc(false);
+
+        if (CurrentItem.Get_OwnCharacter.Get_EquipItems[(int)CurrentItem.Get_EquipType] != null)
+        {
+            CurrentItem.Get_OwnCharacter.Refresh_Char_Equipment_State(false, CurrentItem.Get_EquipType);
+        }
+
         Character_Equipment_Ref.Refresh_List_UI((int)CurrentItem.Get_EquipType);
         On_Click_Close_ItemInfo();
         CharacterListUI_Ref.Refresh_EquipItem_Image();

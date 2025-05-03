@@ -45,6 +45,15 @@ public static class Define
         NONE,
     }
 
+    public enum EQUIPMENT_OPTION_GRADE
+    {
+        C,
+        B,
+        A,
+        S,
+        NONE,
+    }
+
     public enum EQUIPMENT_GRADE
     {
         C,
@@ -53,7 +62,19 @@ public static class Define
         S,
         NONE,
     }
-        
+
+    public enum EQUIPMENT_OPTION
+    {
+        ATK_INT,
+        ATK_PERCENT,
+        DEF_INT,
+        DEF_PERCENT,
+        HP_INT,
+        HP_PERCENT,
+        CRIR_PERCENT,
+        CRID_PERCENT,
+        NONE,
+    }
 
     // 캐릭터 타입
     public enum CHAR_TYPE

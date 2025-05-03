@@ -1811,5 +1811,47 @@
       "STORE_ITEM_ICON": "Image_Resources/Currency_Resources/Equipment_Ticket_Resource",
       "STORE_ITEM_DESC": "장비를 소환할 수 있는 행운이 깃든 \\\\n티켓이다."
     }
+  ],
+  "EquipOption_DB": [
+    {
+      "OPTION_NAME": "ATK_INT",
+      "OPTION_MIN": 100,
+      "OPTION_MAX": 200
+    },
+    {
+      "OPTION_NAME": "ATK_PERCENT",
+      "OPTION_MIN": 0.2,
+      "OPTION_MAX": 0.4
+    },
+    {
+      "OPTION_NAME": "DEF_INT",
+      "OPTION_MIN": 100,
+      "OPTION_MAX": 200
+    },
+    {
+      "OPTION_NAME": "DEF_PERCENT",
+      "OPTION_MIN": 0.2,
+      "OPTION_MAX": 0.4
+    },
+    {
+      "OPTION_NAME": "HP_INT",
+      "OPTION_MIN": 500,
+      "OPTION_MAX": 1000
+    },
+    {
+      "OPTION_NAME": "HP_PERCENT",
+      "OPTION_MIN": 0.3,
+      "OPTION_MAX": 0.5
+    },
+    {
+      "OPTION_NAME": "CRIR_PERCENT",
+      "OPTION_MIN": 0.02,
+      "OPTION_MAX": 0.1
+    },
+    {
+      "OPTION_NAME": "CRID_PERCENT",
+      "OPTION_MIN": 0.1,
+      "OPTION_MAX": 0.3
+    }
   ]
 }

@@ -18,6 +18,7 @@ public class Item_List : MonoBehaviour
         {
             ITEM_TYPE.TryParse(GoogleSheetSORef.Item_DBList[i].ITEM_TYPE, out ITEM_TYPE itemType);
             EQUIP_TYPE.TryParse(GoogleSheetSORef.Item_DBList[i].EQUIP_TYPE, out EQUIP_TYPE equipType);
+            
 
             //TODO ## Equipment_Item_List 아이템 데이터 저장
             Item Node = new Item(GoogleSheetSORef.Item_DBList[i].ITEM_ID, GoogleSheetSORef.Item_DBList[i].ITEM_NAME, GoogleSheetSORef.Item_DBList[i].ITEM_ATK, GoogleSheetSORef.Item_DBList[i].ITEM_DEF,
@@ -26,6 +27,17 @@ public class Item_List : MonoBehaviour
 
             // TODO ## Item_List 아이템 이미지 리소스 저장
             Node.Load_Item_Icon(GoogleSheetSORef.Item_DBList[i].ITEM_IMAGE_ADDRESS);
+
+            // 아이템 랜덤 옵션을 계산하기 위해 변수들 저장
+            for (int index = 0; index < 8; index++)
+            {
+                EQUIPMENT_OPTION.TryParse(GoogleSheetSORef.EquipOption_DBList[index].OPTION_NAME, out EQUIPMENT_OPTION OptionType);
+
+                EquipmentOption equipmentOption = new EquipmentOption();
+                //Debug.Log($"{OptionType} : {GoogleSheetSORef.EquipOption_DBList[index].OPTION_MIN} / {GoogleSheetSORef.EquipOption_DBList[index].OPTION_MAX}");
+                equipmentOption.Set_MinMax(GoogleSheetSORef.EquipOption_DBList[index].OPTION_MIN, GoogleSheetSORef.EquipOption_DBList[index].OPTION_MAX, OptionType);
+                Node.OptionList.Add(equipmentOption);
+            }
 
             // 이미지 누락 경고
             #region Image_Null_Warning

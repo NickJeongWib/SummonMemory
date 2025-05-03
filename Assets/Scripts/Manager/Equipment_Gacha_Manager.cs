@@ -40,6 +40,9 @@ public class Equipment_Gacha_Manager : MonoBehaviour
             rand.Get_ItemType, rand.Get_EquipType);
         // 이미지 넘겨주기
         newItem.Image_Set(rand.Get_Item_Image);
+        // 아이템 랜덤 옵션 능력치 넘겨주기
+        newItem.Set_OptionList(rand.OptionList);
+
         newItem.Spawn_Grading();
 
         if (newItem.Get_EquipType == EQUIP_TYPE.WEAPON)

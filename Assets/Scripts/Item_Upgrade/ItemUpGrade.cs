@@ -6,6 +6,7 @@ using static Define;
 
 public class ItemUpGrade : MonoBehaviour
 {
+    #region Var
     Item SelectItem;
     public Item Get_SelectItem { get => SelectItem; set => SelectItem = value; }
 
@@ -15,12 +16,22 @@ public class ItemUpGrade : MonoBehaviour
 
     [Header("Upgrade_Root")]
     [SerializeField] GameObject UpgradeRoot;
+    [SerializeField] Image[] OptionGrade_Image;
+    [SerializeField] Mask[] OptionGradeMask;
     [SerializeField] int[] UpGrade_Rate;
     [SerializeField] float ItemState_Rate;
 
+    [Header("RandomOption_Root")]
+    [SerializeField] int ResetOptionCost;
+    [SerializeField] Text ResetOptionCostText;
+    [SerializeField] Image[] Re_OptionGrade_Image;
+    [SerializeField] GameObject RandomOptionRoot;
+    [SerializeField] Text[] Re_OptionText;
+    [SerializeField] Text Re_Option_ItemOption;
+
     [Header("ChainUpgrade_Root")]
-    int MaxCost;
     [SerializeField] int Cost;
+    int MaxCost;
     bool isSlider;
     [SerializeField] Animator ChainAnimator;
     [SerializeField] Slider CountSlider;
@@ -30,6 +41,8 @@ public class ItemUpGrade : MonoBehaviour
 
 
     [Header("---Item_UI---")]
+    [SerializeField] Sprite[] ItemOption_Grade_Sprite;
+    [SerializeField] Text[] OptionText;
     [SerializeField] Image ItemImage;
     [SerializeField] Image ItemGradeBack;
     [SerializeField] Image ItemGrade;
@@ -37,7 +50,20 @@ public class ItemUpGrade : MonoBehaviour
     [SerializeField] Text ItemOption;
     [SerializeField] Image[] UpgradeImage;
 
+    [SerializeField] Text[] UpgradeCost;
+    #endregion
+    // -------------------------------------------
+
     #region Init
+    private void Start()
+    {
+        for (int i = 0; i < UpgradeCost.Length; i++)
+        {
+            UpgradeCost[i].text = $"{Cost.ToString("N0")}";
+        }
+        ResetOptionCostText.text = $"{ResetOptionCost.ToString("N0")}";
+    }
+
     private void OnEnable()
     {
         // 선택된 아이템이 없으면 return
@@ -48,6 +74,7 @@ public class ItemUpGrade : MonoBehaviour
         if (SelectItem.Get_Item_Lv >= 9)
         {
             UpgradeRoot.SetActive(false);
+            RandomOptionRoot.SetActive(true);
         }
         else
         {
@@ -58,13 +85,54 @@ public class ItemUpGrade : MonoBehaviour
             }
 
             UpgradeRoot.SetActive(true);
+            RandomOptionRoot.SetActive(false);
             Refresh_Upgrade_Option();
         }
+
+        Refresh_OptionText();
 
         ItemImage.sprite = SelectItem.Get_Item_Image;
         ItemGrade.sprite = Item_Info_Panel_Ref.Get_Grade_Sprites[(int)SelectItem.Get_Equipment_Grade];
         ItemGradeBack.color = Inventory_UI_Ref.Get_Colors[(int)SelectItem.Get_Equipment_Grade];
-        ItemName.text = SelectItem.Get_Item_Name;
+        ItemName.text = $"{SelectItem.Get_Item_Name} +{SelectItem.Get_Item_Lv}";
+    }
+    #endregion
+
+    #region Item_UI_Refresh
+    void Refresh_OptionText()
+    {
+        int OptionLv = 0;
+        for (int i = 0; i < OptionText.Length; i++)
+        {
+            OptionLv += 3;
+            if (SelectItem.Get_EquipmentOption[i] == EQUIPMENT_OPTION.NONE)
+            {
+                OptionText[i].text = $"<color=#606060>강화 {OptionLv} 달성 시 무작위 능력치 추가</color>";
+                Re_OptionText[i].text = $"<color=#606060>강화 {OptionLv} 달성 시 무작위 능력치 추가</color>";
+                OptionGradeMask[i].showMaskGraphic = false;
+            }
+            else if (SelectItem.Get_EquipmentOption[i] == EQUIPMENT_OPTION.ATK_INT || SelectItem.Get_EquipmentOption[i] == EQUIPMENT_OPTION.DEF_INT ||
+                 SelectItem.Get_EquipmentOption[i] == EQUIPMENT_OPTION.HP_INT)
+            {
+                OptionText[i].text = $"<color=orange>{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[i])} +{SelectItem.Get_OptionValue[i].ToString("N0")}</color>";
+                Re_OptionText[i].text = $"<color=orange>{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[i])} +{SelectItem.Get_OptionValue[i].ToString("N0")}</color>";
+                OptionGradeMask[i].showMaskGraphic = true;
+
+                // 옵션 능력치에 따라 이미지 변경
+                OptionGrade_Image[i].sprite = ItemOption_Grade_Sprite[(int)SelectItem.Get_EquipmentOptionGrade[i]];
+                Re_OptionGrade_Image[i].sprite = ItemOption_Grade_Sprite[(int)SelectItem.Get_EquipmentOptionGrade[i]];
+            }
+            else
+            {
+                OptionText[i].text = $"<color=orange>{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[i])} +{(SelectItem.Get_OptionValue[i] * 100).ToString("N1")}%</color>";
+                Re_OptionText[i].text = $"<color=orange>{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[i])} +{(SelectItem.Get_OptionValue[i] * 100).ToString("N1")}%</color>";
+                OptionGradeMask[i].showMaskGraphic = true;
+
+                // 옵션 능력치에 따라 이미지 변경
+                OptionGrade_Image[i].sprite = ItemOption_Grade_Sprite[(int)SelectItem.Get_EquipmentOptionGrade[i]];
+                Re_OptionGrade_Image[i].sprite = ItemOption_Grade_Sprite[(int)SelectItem.Get_EquipmentOptionGrade[i]];
+            }
+        }
     }
     #endregion
 
@@ -74,40 +142,47 @@ public class ItemUpGrade : MonoBehaviour
     {
         // 텍스트 초기화
         ItemOption.text = "";
+        Re_Option_ItemOption.text = "";
         OptionNum = 0;
 
         // UI 초기화
         if (SelectItem.Get_Item_Atk != 0)
         {
+            Re_Option_ItemOption.text += $"공격력                      {SelectItem.Get_Item_Atk.ToString("N0")}\n\n";
             ItemOption.text += $"공격력            {SelectItem.Get_Item_Atk.ToString("N0")}             <color=orange>{(SelectItem.Get_Item_Atk + SelectItem.Get_Item_Atk * ItemState_Rate).ToString("N0")}</color>\n\n";
             OptionNum++;
         }
 
         if (SelectItem.Get_Item_DEF != 0)
         {
+            Re_Option_ItemOption.text += $"방어력                      {SelectItem.Get_Item_DEF.ToString("N0")}\n\n";
             ItemOption.text += $"방어력            {SelectItem.Get_Item_DEF.ToString("N0")}             <color=orange>{(SelectItem.Get_Item_DEF + SelectItem.Get_Item_DEF * ItemState_Rate).ToString("N0")}</color>\n\n";
             OptionNum++;
         }
 
         if (SelectItem.Get_Item_HP != 0)
         {
+            Re_Option_ItemOption.text += $"체력                          {SelectItem.Get_Item_HP.ToString("N0")}\n\n";
             ItemOption.text += $"체력                {SelectItem.Get_Item_HP.ToString("N0")}             <color=orange>{(SelectItem.Get_Item_HP + SelectItem.Get_Item_HP * ItemState_Rate).ToString("N0")}</color>\n\n";
             OptionNum++;
         }
 
         if (SelectItem.Get_Item_CRI_RATE != 0)
         {
+            Re_Option_ItemOption.text += $"치명확률                  {(SelectItem.Get_Item_CRI_RATE * 100).ToString("N1")}%\n\n";
             ItemOption.text += $"치명확률        {(SelectItem.Get_Item_CRI_RATE * 100).ToString("N0")}%            <color=orange>{((SelectItem.Get_Item_CRI_RATE * 100) + ((SelectItem.Get_Item_CRI_RATE * 100) * ItemState_Rate)).ToString("N1")}%</color>\n\n";
             OptionNum++;
         }
 
         if (SelectItem.Get_Item_CRI_DMG != 0)
         {
+            Re_Option_ItemOption.text += $"치명피해                  {(SelectItem.Get_Item_CRI_DMG * 100).ToString("N1")}%\n\n";
             ItemOption.text += $"치명피해        {(SelectItem.Get_Item_CRI_DMG * 100).ToString("N0")}%             <color=orange>{((SelectItem.Get_Item_CRI_DMG * 100) + ((SelectItem.Get_Item_CRI_DMG * 100) * ItemState_Rate)).ToString("N1")}%</color>\n\n";
             OptionNum++;
         }
 
         NextImage_Refresh(OptionNum);
+        ItemName.text = $"{SelectItem.Get_Item_Name} +{SelectItem.Get_Item_Lv}";
     }
 
     void NextImage_Refresh(int _num)
@@ -157,7 +232,18 @@ public class ItemUpGrade : MonoBehaviour
             }
         }
 
+
         Refresh_Upgrade_Option();
+        // 랜덤 능력 부여
+        SelectItem.Set_UpgradeOption();
+        Refresh_OptionText();
+
+
+        if (SelectItem.Get_Item_Lv >= 9)
+        {
+            UpgradeRoot.SetActive(false);
+            RandomOptionRoot.SetActive(true);
+        }
     }
     #endregion
 
@@ -270,14 +356,25 @@ public class ItemUpGrade : MonoBehaviour
             On_Click_UpgradeBtn();
 
             if (SelectItem.Get_Item_Lv >= 9)
-            {
-                Debug.Log($"{CostSum.ToString("N0")}원 사용");
+            {   
                 break;
             }
         }
-        Debug.Log($"{CostSum.ToString("N0")}원 사용");
+
+        // Debug.Log($"{CostSum.ToString("N0")}원 사용");
         ChainAnimator.Play("ChainUp_Close");
     }
 
+
+
+    #endregion
+
+    #region OptionReset
+    public void On_Click_Reset_Item_Option()
+    {
+        SelectItem.Set_ResetOption();
+
+        Refresh_OptionText();
+    }
     #endregion
 }

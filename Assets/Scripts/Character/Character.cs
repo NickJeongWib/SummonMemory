@@ -33,18 +33,23 @@ public class Character
     int CharStar;
     public int Get_CharStar { get => CharStar; set => CharStar = value; }
 
+    float BaseHP;
     float CharHP;
     public float Get_CharHP { get => CharHP; }
 
+    float BaseAtk;
     float CharATK;
     public float Get_CharATK { get => CharATK; }
 
+    float BaseDef;
     float CharDEF;
     public float Get_CharDEF { get => CharDEF; }
 
+    float BaseCRID;
     float Char_CRT_DAMAGE;
     public float Get_Char_CRT_Damage { get => Char_CRT_DAMAGE; }
 
+    float BaseCRIR;
     float Char_CRT_RATE;
     public float Get_Char_CRT_Rate { get => Char_CRT_RATE; }
     #endregion
@@ -132,6 +137,8 @@ public class Character
         Char_CRT_DAMAGE = _crtDamage;
         Char_CRT_RATE = _crtRate;
 
+        BaseSet(CharATK, CharDEF, CharHP, Char_CRT_RATE, Char_CRT_DAMAGE);
+
         // 이미지 주소
         Illust_Address = _illustAdd;
         Normal_Image_Address = _normalImageAdd;
@@ -142,6 +149,15 @@ public class Character
         Normal_Img = Resources.Load<Sprite>(Normal_Image_Address);
         Grade_Up_Img = Resources.Load<Sprite>(Grade_Up_Image_Address);
         Profile_Img = Resources.Load<Sprite>(Profile_Address);
+    }
+
+    void BaseSet(float _atk, float _def, float _hp, float criR, float criD)
+    {
+        BaseAtk = _atk;
+        BaseDef = _def;
+        BaseHP = _hp;
+        BaseCRIR = criR;
+        BaseCRID = criD;
     }
     #endregion
 
@@ -270,12 +286,131 @@ public class Character
                 Char_CRT_RATE = 1.0f;
         }
     }
+
+    public void EquipmentOption_State_Calc(EQUIPMENT_OPTION _equipOption, int _num, Item _item, bool _isEquip)
+    {
+        #region ATK_INT
+        if (_equipOption == EQUIPMENT_OPTION.ATK_INT)
+        {
+            if (_isEquip)
+            {
+                CharATK += _item.Get_OptionValue[_num];
+            }
+            else
+            {
+                CharATK -= _item.Get_OptionValue[_num];
+            }
+        }
+        #endregion
+        #region ATK_Percent
+        if (_equipOption == EQUIPMENT_OPTION.ATK_PERCENT)
+        {
+            float rate = BaseAtk * _item.Get_OptionValue[_num];
+            if (_isEquip)
+            {
+                CharATK += rate;
+            }
+            else
+            {
+                CharATK -= rate;
+            }
+        }
+        #endregion
+        #region DEF_INT
+        if (_equipOption == EQUIPMENT_OPTION.DEF_INT)
+        {
+            if (_isEquip)
+            {
+                CharDEF += _item.Get_OptionValue[_num];
+            }
+            else
+            {
+                CharDEF -= _item.Get_OptionValue[_num];
+            }
+        }
+        #endregion
+        #region DEF_Percent
+        if (_equipOption == EQUIPMENT_OPTION.DEF_PERCENT)
+        {
+            float rate = BaseDef * _item.Get_OptionValue[_num];
+            if (_isEquip)
+            {
+                CharDEF += rate;
+            }
+            else
+            {
+                CharDEF -= rate;
+            }
+        }
+        #endregion
+        #region HP_INT
+        if (_equipOption == EQUIPMENT_OPTION.HP_INT)
+        {
+            if (_isEquip)
+            {
+                CharHP += _item.Get_OptionValue[_num];
+            }
+            else
+            {
+                CharHP -= _item.Get_OptionValue[_num];
+            }
+        }
+        #endregion
+        #region HP_Percent
+        if (_equipOption == EQUIPMENT_OPTION.HP_PERCENT)
+        {
+            float rate = BaseHP * _item.Get_OptionValue[_num];
+            if (_isEquip)
+            {
+                CharHP += rate;
+            }
+            else
+            {
+                CharHP -= rate;
+            }
+        }
+        #endregion
+        #region CRIR
+        if (_equipOption == EQUIPMENT_OPTION.CRIR_PERCENT)
+        {
+            if (_isEquip)
+            {
+                Char_CRT_RATE += _item.Get_OptionValue[_num];
+            }
+            else
+            {
+                Char_CRT_RATE -= _item.Get_OptionValue[_num];
+
+                if (BaseCRIR > Char_CRT_RATE)
+                    Char_CRT_RATE = BaseCRIR;
+            }
+        }
+        #endregion
+        #region CRID
+        if (_equipOption == EQUIPMENT_OPTION.CRID_PERCENT)
+        {
+            if (_isEquip)
+            {
+                Char_CRT_DAMAGE += _item.Get_OptionValue[_num];
+            }
+            else
+            {
+                Char_CRT_DAMAGE -= _item.Get_OptionValue[_num];
+
+                if (BaseCRID > Char_CRT_DAMAGE)
+                    Char_CRT_DAMAGE = BaseCRID;
+            }
+        }
+        #endregion
+
+        // TestState();
+    }
     #endregion
 
 
 
     public void TestState()
     {
-        Debug.Log($"공격력 : {CharATK}\n방어력 : {CharDEF}\n체력 : {CharHP}\n크뎀 : {Char_CRT_DAMAGE}\n크확 : {Char_CRT_RATE}");
+        Debug.Log($"{CharName}: 공격력 : {CharATK}\n방어력 : {CharDEF}\n체력 : {CharHP}\n크뎀 : {Char_CRT_DAMAGE}\n크확 : {Char_CRT_RATE}");
     }
 }
