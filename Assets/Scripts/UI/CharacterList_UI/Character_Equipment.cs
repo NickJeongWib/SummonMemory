@@ -19,6 +19,7 @@ public class Character_Equipment : MonoBehaviour
 
     public void On_Click_OpenEquipSlot(int _num)
     {
+        // 캐릭터가 장비를 장착하고 있지않다면
         if(GameManager.Instance.Get_SelectChar.Get_EquipItems[_num] == null)
         {
             InventoryUI_Ref.EquipSlots.SetActive(true);
