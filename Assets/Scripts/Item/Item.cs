@@ -179,33 +179,86 @@ public class Item
         #endregion
     }
 
-    public void Set_ResetOption()
+    // 아이템 옵션 수치 변경
+    public void Set_ResetOptionValue(bool[] _bool)
     {
+        // 장착 캐릭터가 존재한다면
         if (OwnCharacter != null)
         {
+            // 옵션 만큼 반복
             for(int i = 0; i < EquipmentOption.Length; i++)
             {
+                // 옵션이 설정안되어있으면 for문 빠져나감
+                if (EquipmentOption[i] == EQUIPMENT_OPTION.NONE)
+                    break;
+
+                // 장착중인 캐릭터 능력치 계산
                 OwnCharacter.EquipmentOption_State_Calc(EquipmentOption[i], i, this, false);
             }
         }
 
+        // 아이템에 부여된 옵션만큼 
         for (int i = 0; i < EquipmentOption.Length; i++)
         {
-            Debug.Log(i);
+            if (_bool[i] == true)
+                continue;
+
+            // 설정가능한 옵션만큼 반복
             for (int ii = 0; ii < OptionList.Count; ii++)
             {
+                // 만약 현재 옵션이 OptionList에 저장된옵션과 같다면
                 if (EquipmentOption[i] == OptionList[ii].EquipmentRandomOption)
                 {
+                    // 옵션 수치 재설정
                     OptionValue[i] = OptionList[ii].Get_OptionValue(ref EquipmentOptionGrade[i]);
                     break;
                 }
             }
         }
 
+        // 장착캐릭터가 존재한다면
         if (OwnCharacter != null)
         {
             for (int i = 0; i < EquipmentOption.Length; i++)
             {
+                // 장착 캐릭터에 능력치를 다시 더해줌
+                OwnCharacter.EquipmentOption_State_Calc(EquipmentOption[i], i, this, true);
+            }
+        }
+    }
+
+    // 아이템 옵션 변경
+    public void Set_ResetOption(bool[] _bool)
+    {
+        // 장착 캐릭터가 존재한다면
+        if (OwnCharacter != null)
+        {
+            // 옵션 만큼 반복
+            for (int i = 0; i < EquipmentOption.Length; i++)
+            {
+                // 장착중인 캐릭터 능력치 계산
+                OwnCharacter.EquipmentOption_State_Calc(EquipmentOption[i], i, this, false);
+            }
+        }
+
+        // 아이템에 부여된 옵션만큼 
+        for (int i = 0; i < EquipmentOption.Length; i++)
+        {
+            // 잠금이 되었다면 패스
+            if (_bool[i] == true)
+                continue;
+
+            int RandOption = Random.Range(0, OptionList.Count);
+            EquipmentOption[i] = OptionList[RandOption].EquipmentRandomOption;
+            OptionValue[i] = OptionList[RandOption].Get_OptionValue(ref EquipmentOptionGrade[i]);
+        }
+
+        // 장착캐릭터가 존재한다면
+        if (OwnCharacter != null)
+        {
+            for (int i = 0; i < EquipmentOption.Length; i++)
+            {
+                // 장착 캐릭터에 능력치를 다시 더해줌
                 OwnCharacter.EquipmentOption_State_Calc(EquipmentOption[i], i, this, true);
             }
         }

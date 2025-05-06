@@ -14,6 +14,15 @@ public class ItemUpGrade : MonoBehaviour
     [SerializeField] Item_Info_Panel Item_Info_Panel_Ref;
     [SerializeField] Inventory_UI Inventory_UI_Ref;
 
+    [Header("All_UI_Root")]
+    [SerializeField] GameObject AllUpgradeRoot;
+    [SerializeField] Mask UpGradeShine_Mask;
+    [SerializeField] Mask OptionReset_Mask;
+    [SerializeField] Button Upgrade_Btn;
+    [SerializeField] Button ResetOption_Btn;
+    [SerializeField] Mask UpgradeWhite_Back;
+    [SerializeField] Mask ResetWhite_Back;
+
     [Header("Upgrade_Root")]
     [SerializeField] GameObject UpgradeRoot;
     [SerializeField] Image[] OptionGrade_Image;
@@ -28,6 +37,9 @@ public class ItemUpGrade : MonoBehaviour
     [SerializeField] GameObject RandomOptionRoot;
     [SerializeField] Text[] Re_OptionText;
     [SerializeField] Text Re_Option_ItemOption;
+    [SerializeField] Mask[] LockBG;
+    [SerializeField] Toggle[] OptionLock_Toggle;
+    bool[] OpValue_Locks = new bool[3];
 
     [Header("ChainUpgrade_Root")]
     [SerializeField] int Cost;
@@ -39,6 +51,14 @@ public class ItemUpGrade : MonoBehaviour
     [SerializeField] int Count;
     [SerializeField] Text ChainCountText;
 
+    [Header("---ItemOption_Reset_Root---")]
+    [SerializeField] GameObject ResetOptionRoot;
+    [SerializeField] Text[] ResetOptionRoot_text;
+    [SerializeField] Mask[] ResetOption_Mask;
+    [SerializeField] Image[] ResetOption_Img;
+    [SerializeField] Mask[] OPLockBG;
+    [SerializeField] Toggle[] OPRELock_Toggle;
+    bool[] Op_Locks = new bool[3];
 
     [Header("---Item_UI---")]
     [SerializeField] Sprite[] ItemOption_Grade_Sprite;
@@ -104,33 +124,44 @@ public class ItemUpGrade : MonoBehaviour
         int OptionLv = 0;
         for (int i = 0; i < OptionText.Length; i++)
         {
+            if (OpValue_Locks[i] || Op_Locks[i])
+                continue;
+
             OptionLv += 3;
             if (SelectItem.Get_EquipmentOption[i] == EQUIPMENT_OPTION.NONE)
             {
                 OptionText[i].text = $"<color=#606060>강화 {OptionLv} 달성 시 무작위 능력치 추가</color>";
                 Re_OptionText[i].text = $"<color=#606060>강화 {OptionLv} 달성 시 무작위 능력치 추가</color>";
+                ResetOptionRoot_text[i].text = $"<color=#606060>강화 {OptionLv} 달성 시 무작위 능력치 추가</color>";
                 OptionGradeMask[i].showMaskGraphic = false;
+                ResetOption_Mask[i].showMaskGraphic = false;
             }
             else if (SelectItem.Get_EquipmentOption[i] == EQUIPMENT_OPTION.ATK_INT || SelectItem.Get_EquipmentOption[i] == EQUIPMENT_OPTION.DEF_INT ||
                  SelectItem.Get_EquipmentOption[i] == EQUIPMENT_OPTION.HP_INT)
             {
                 OptionText[i].text = $"<color=orange>{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[i])} +{SelectItem.Get_OptionValue[i].ToString("N0")}</color>";
                 Re_OptionText[i].text = $"<color=orange>{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[i])} +{SelectItem.Get_OptionValue[i].ToString("N0")}</color>";
+                ResetOptionRoot_text[i].text = $"<color=orange>{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[i])} +{SelectItem.Get_OptionValue[i].ToString("N0")}</color>";
                 OptionGradeMask[i].showMaskGraphic = true;
+                ResetOption_Mask[i].showMaskGraphic = true;
 
                 // 옵션 능력치에 따라 이미지 변경
                 OptionGrade_Image[i].sprite = ItemOption_Grade_Sprite[(int)SelectItem.Get_EquipmentOptionGrade[i]];
                 Re_OptionGrade_Image[i].sprite = ItemOption_Grade_Sprite[(int)SelectItem.Get_EquipmentOptionGrade[i]];
+                ResetOption_Img[i].sprite = ItemOption_Grade_Sprite[(int)SelectItem.Get_EquipmentOptionGrade[i]];
             }
             else
             {
                 OptionText[i].text = $"<color=orange>{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[i])} +{(SelectItem.Get_OptionValue[i] * 100).ToString("N1")}%</color>";
                 Re_OptionText[i].text = $"<color=orange>{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[i])} +{(SelectItem.Get_OptionValue[i] * 100).ToString("N1")}%</color>";
+                ResetOptionRoot_text[i].text = $"<color=orange>{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[i])} +{(SelectItem.Get_OptionValue[i] * 100).ToString("N1")}%</color>";
                 OptionGradeMask[i].showMaskGraphic = true;
+                ResetOption_Mask[i].showMaskGraphic = true;
 
                 // 옵션 능력치에 따라 이미지 변경
                 OptionGrade_Image[i].sprite = ItemOption_Grade_Sprite[(int)SelectItem.Get_EquipmentOptionGrade[i]];
                 Re_OptionGrade_Image[i].sprite = ItemOption_Grade_Sprite[(int)SelectItem.Get_EquipmentOptionGrade[i]];
+                ResetOption_Img[i].sprite = ItemOption_Grade_Sprite[(int)SelectItem.Get_EquipmentOptionGrade[i]];
             }
         }
     }
@@ -242,6 +273,7 @@ public class ItemUpGrade : MonoBehaviour
         if (SelectItem.Get_Item_Lv >= 9)
         {
             UpgradeRoot.SetActive(false);
+            Item_Info_Panel_Ref.ButtonRoot_Active(true);
             RandomOptionRoot.SetActive(true);
         }
     }
@@ -369,12 +401,129 @@ public class ItemUpGrade : MonoBehaviour
 
     #endregion
 
+    #region OptionValueReset
+    public void On_Click_Reset_Item_Option_Value()
+    {
+        // 옵션 다 잠궜으면
+        if (OpValue_Locks[0] && OpValue_Locks[1] && OpValue_Locks[2])
+            return;
+
+        SelectItem.Set_ResetOptionValue(OpValue_Locks);
+        Refresh_OptionText();
+    }
+    #endregion
+
     #region OptionReset
     public void On_Click_Reset_Item_Option()
     {
-        SelectItem.Set_ResetOption();
-
+        // 옵션 다 잠궜으면
+        if (Op_Locks[0] && Op_Locks[1] && Op_Locks[2])
+            return;
+        
+        SelectItem.Set_ResetOption(Op_Locks);
         Refresh_OptionText();
+
+        if (SelectItem.Get_OwnCharacter != null)
+            SelectItem.Get_OwnCharacter.TestState();
+    }
+    #endregion
+
+    #region RootClick
+    public void On_Click_UpgradeRoot()
+    {
+        for (int i = 0; i < OPRELock_Toggle.Length; i++)
+        {
+            OPRELock_Toggle[i].isOn = false;
+        }
+
+        AllUpgradeRoot.SetActive(true);
+        ResetOptionRoot.SetActive(false);
+        OptionReset_Mask.showMaskGraphic = false;
+        UpGradeShine_Mask.showMaskGraphic = true;
+        Upgrade_Btn.interactable = false;
+        ResetOption_Btn.interactable = true;
+        UpgradeWhite_Back.showMaskGraphic = true;
+        ResetWhite_Back.showMaskGraphic = false;
+
+    }
+
+    public void On_Click_ResetOptionRoot()
+    {
+        for(int i = 0; i < OptionLock_Toggle.Length; i++)
+        {
+            OptionLock_Toggle[i].isOn = false;
+        }
+
+        AllUpgradeRoot.SetActive(false);
+        ResetOptionRoot.SetActive(true);
+        OptionReset_Mask.showMaskGraphic = true;
+        UpGradeShine_Mask.showMaskGraphic = false;
+        Upgrade_Btn.interactable = true;
+        ResetOption_Btn.interactable = false;
+        UpgradeWhite_Back.showMaskGraphic = false;
+        ResetWhite_Back.showMaskGraphic = true;
+    }
+    #endregion
+
+    #region OptionValue_Lock_Toggle
+    public void On_Click_Option_Lock(int _num)
+    {
+        if (OptionLock_Toggle[_num].isOn)
+        {
+            Refresh_ResetOptionValueColor(_num, "<color=#80807F>");
+        }
+        else
+        {
+            Refresh_ResetOptionValueColor(_num, "<color=orange>");
+        }
+
+
+        LockBG[_num].showMaskGraphic = !OptionLock_Toggle[_num].isOn;
+        OpValue_Locks[_num] = OptionLock_Toggle[_num].isOn;
+    }
+
+    void Refresh_ResetOptionValueColor(int _num, string _color)
+    {
+        if (SelectItem.Get_EquipmentOption[_num] == EQUIPMENT_OPTION.ATK_INT || SelectItem.Get_EquipmentOption[_num] == EQUIPMENT_OPTION.DEF_INT ||
+             SelectItem.Get_EquipmentOption[_num] == EQUIPMENT_OPTION.HP_INT)
+        {
+            Re_OptionText[_num].text = $"{_color}{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[_num])} +{SelectItem.Get_OptionValue[_num].ToString("N0")}</color>";
+        }
+        else
+        {
+            Re_OptionText[_num].text = $"{_color}{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[_num])} +{(SelectItem.Get_OptionValue[_num] * 100).ToString("N1")}%</color>";
+        }
+    }
+    #endregion
+
+    #region Option_Lock_Toggle
+    public void On_Click_OptionRe_Lock(int _num)
+    {
+        if (OPRELock_Toggle[_num].isOn)
+        {
+            Refresh_ResetOptionColor(_num, "<color=#80807F>");
+        }
+        else
+        {
+            Refresh_ResetOptionColor(_num, "<color=orange>");
+        }
+
+
+        OPLockBG[_num].showMaskGraphic = !OPRELock_Toggle[_num].isOn;
+        Op_Locks[_num] = OPRELock_Toggle[_num].isOn;
+    }
+
+    void Refresh_ResetOptionColor(int _num, string _color)
+    {
+        if (SelectItem.Get_EquipmentOption[_num] == EQUIPMENT_OPTION.ATK_INT || SelectItem.Get_EquipmentOption[_num] == EQUIPMENT_OPTION.DEF_INT ||
+             SelectItem.Get_EquipmentOption[_num] == EQUIPMENT_OPTION.HP_INT)
+        {
+            ResetOptionRoot_text[_num].text = $"{_color}{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[_num])} +{SelectItem.Get_OptionValue[_num].ToString("N0")}</color>";
+        }
+        else
+        {
+            ResetOptionRoot_text[_num].text = $"{_color}{SelectItem.Get_Option_KorString(SelectItem.Get_EquipmentOption[_num])} +{(SelectItem.Get_OptionValue[_num] * 100).ToString("N1")}%</color>";
+        }
     }
     #endregion
 }

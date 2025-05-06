@@ -50,6 +50,7 @@ public class Item_Info_Panel : MonoBehaviour
     public Item Get_CurrentItem { get => CurrentItem; set => CurrentItem = value; }
 
     [Header("---UpGrading---")]
+    [SerializeField] GameObject ButtonRoot;
     [SerializeField] ItemUpGrade ItemUpGrade_Ref;
     [SerializeField] GameObject InventoryListRoot;
     [SerializeField] GameObject UpgradePanel;
@@ -86,8 +87,24 @@ public class Item_Info_Panel : MonoBehaviour
 
         ItemUpGrade_Ref.Get_SelectItem = CurrentItem;
 
+        // 장착아이템 강화단계가 9라면
+        if (ItemUpGrade_Ref.Get_SelectItem.Get_Item_Lv >= 9)
+        {
+            ButtonRoot.SetActive(true);
+        }
+        else
+        {
+            ButtonRoot.SetActive(false);
+        }
+
+        ItemUpGrade_Ref.On_Click_UpgradeRoot();
         Transition.gameObject.SetActive(true);
         UpgradePanel.SetActive(true);
+    }
+
+    public void ButtonRoot_Active(bool _isOn)
+    {
+        ButtonRoot.SetActive(_isOn);
     }
 
     #endregion
@@ -364,6 +381,13 @@ public class Item_Info_Panel : MonoBehaviour
         CurrentItem = null;
 
         GameManager.Instance.Get_SelectChar.TestState();
+    }
+    #endregion
+
+    #region Upgrade_Scene_First_Enter
+    public void UpgradeScene_Enter_Init()
+    {
+        ItemUpGrade_Ref.On_Click_UpgradeRoot();
     }
     #endregion
 }
