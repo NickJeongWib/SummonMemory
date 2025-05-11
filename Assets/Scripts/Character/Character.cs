@@ -34,24 +34,32 @@ public class Character
     public int Get_CharStar { get => CharStar; set => CharStar = value; }
 
     float BaseHP;
+    public float Get_BaseHP { get => BaseHP; }
     float CharHP;
     public float Get_CharHP { get => CharHP; }
 
     float BaseAtk;
+    public float Get_BaseAtk { get => BaseAtk; }
     float CharATK;
     public float Get_CharATK { get => CharATK; }
 
     float BaseDef;
+    public float Get_BaseDef { get => BaseDef; }
     float CharDEF;
     public float Get_CharDEF { get => CharDEF; }
 
     float BaseCRID;
+    public float Get_BaseCRID { get => BaseCRID; }
     float Char_CRT_DAMAGE;
     public float Get_Char_CRT_Damage { get => Char_CRT_DAMAGE; }
 
     float BaseCRIR;
+    public float Get_BaseCRIR { get => BaseCRIR; }
     float Char_CRT_RATE;
     public float Get_Char_CRT_Rate { get => Char_CRT_RATE; }
+
+    float CombatPower;
+    public float Get_CombatPower { get => CombatPower; }
     #endregion
 
     #region Character_Growing_State
@@ -407,8 +415,15 @@ public class Character
     }
     #endregion
 
+    #region CombatPower
+    public string Calc_CombatPower()
+    {
+        CombatPower = (CharATK * 2.0f) + (CharDEF * 0.5f) + (CharHP * 0.2f) +
+            (Char_CRT_DAMAGE * 100 * 10.0f) + (Char_CRT_RATE * 100 * 3.0f);
 
-
+        return CombatPower.ToString("N0");
+    }
+    #endregion
     public void TestState()
     {
         Debug.Log($"{CharName}: 공격력 : {CharATK}\n방어력 : {CharDEF}\n체력 : {CharHP}\n크뎀 : {Char_CRT_DAMAGE}\n크확 : {Char_CRT_RATE}");

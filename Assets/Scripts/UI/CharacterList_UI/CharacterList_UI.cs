@@ -47,11 +47,24 @@ public class CharacterList_UI : MonoBehaviour
     public string[] Type_Kor_Str;                   // 한글로 타입 표기 위한 string타입 배열
     public string[] Element_Kor_Str;                // 한글로 속성 표기 위한 string타입 배열
 
+    [Header("---Character_Info---")]
+    [SerializeField] Color[] FrameColors;
+    // TODO ## 캐릭터 정보창 안쓰는 코드 일단 주석
+    [SerializeField] List<CharInfo_CharSelect_Btn> Info_Char_Slot;
+    [SerializeField] Image CharInfo_Frame;          // 캐릭터 창 프레임 이미지
+    [SerializeField] Image CharInfo_Ele_BG;         // 캐릭터 창 속성 배경
+    [SerializeField] Image CharElement_Img;         // 캐릭터 창 속성
+    [SerializeField] Image CharInfo_Img;            // 캐릭터 창 캐릭터 이미지
+    [SerializeField] Image CharStar_Img;            // 캐릭터 창 성급
+    [SerializeField] Text CharInfo_name;            // 캐릭터 창 이름
+
     #region 정보 관련
-    // 캐릭터 정보 관련
-    [SerializeField] Text CharInfo_Name_Txt;        // 캐릭터 정보 창 캐릭터 이름 텍스트
-    [SerializeField] Text CharInfo_Lv_Txt;          // 캐릭터 정보 창 캐릭터 레벨 텍스트 
-    [SerializeField] Text CharInfo_Star_Txt;        // 캐릭터 정보 창 캐릭터 성급 텍스트
+    [Header("---Character_State_Info---")]
+    [SerializeField] GameObject CharInfoPanel;
+    [SerializeField] Text Char_CombatTxt;
+    //[SerializeField] Text CharInfo_Name_Txt;        // 캐릭터 정보 창 캐릭터 이름 텍스트
+    //[SerializeField] Text CharInfo_Lv_Txt;          // 캐릭터 정보 창 캐릭터 레벨 텍스트 
+    //[SerializeField] Text CharInfo_Star_Txt;        // 캐릭터 정보 창 캐릭터 성급 텍스트
     [SerializeField] Text CharInfo_Type_Txt;        // 캐릭터 정보 창 캐릭터 타입 텍스트
     [SerializeField] Text CharInfo_Element_Txt;     // 캐릭터 정보 창 캐릭터 속성 텍스트
     [SerializeField] Text CharInfo_MaxHP_Txt;       // 캐릭터 정보 창 캐릭터 최대체력 텍스트
@@ -60,16 +73,6 @@ public class CharacterList_UI : MonoBehaviour
     [SerializeField] Text CharInfo_CrtDmg_Txt;      // 캐릭터 정보 창 캐릭터 치피 텍스트
     [SerializeField] Text CharInfo_CrtRate_Txt;     // 캐릭터 정보 창 캐릭터 치확 텍스트
     #endregion
-
-    [Header("---Character_Info---")]
-    [SerializeField] Color[] FrameColors;
-    [SerializeField] List<CharInfo_CharSelect_Btn> Info_Char_Slot;
-    [SerializeField] Image CharInfo_Frame;          // 캐릭터 창 프레임 이미지
-    [SerializeField] Image CharInfo_Ele_BG;         // 캐릭터 창 속성 배경
-    [SerializeField] Image CharElement_Img;         // 캐릭터 창 속성
-    [SerializeField] Image CharInfo_Img;            // 캐릭터 창 캐릭터 이미지
-    [SerializeField] Image CharStar_Img;            // 캐릭터 창 성급
-    [SerializeField] Text CharInfo_name;            // 캐릭터 창 이름
 
     [SerializeField] ScrollRect Character_Scroll;
     [SerializeField] ScrollRect scrollRect; // ScrollRect 참조
@@ -498,17 +501,18 @@ public class CharacterList_UI : MonoBehaviour
         Refresh_Select_Img(_slot.character, false);
 
         #region Character_Info_Text_Refresh
+        // TODO ## 캐릭터 정보창 안쓰는 코드 일단 주석
         // TODO ## Lobby_Manager 캐릭터 정보 창 캐릭터 정보 초기화
-        CharInfo_Name_Txt.text = $"이름 : {_slot.character.Get_CharName}";
-        CharInfo_Lv_Txt.text = $"레벨 : {_slot.character.Get_Character_Lv}";
-        CharInfo_Star_Txt.text = $"성급 : {_slot.character.Get_CharStar}성";
-        CharInfo_Type_Txt.text = $"타입 : {Type_Kor_Str[(int)_slot.character.Get_CharType]}";
-        CharInfo_Element_Txt.text = $"속성 : {Element_Kor_Str[(int)_slot.character.Get_CharElement]}";
-        CharInfo_MaxHP_Txt.text = $"체력 : {_slot.character.Get_CharHP}";
-        CharInfo_Atk_Txt.text = $"공격력 : {_slot.character.Get_CharATK}";
-        CharInfo_Def_Txt.text = $"방어력 : {_slot.character.Get_CharDEF}";
-        CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.character.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
-        CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.character.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
+        //CharInfo_Name_Txt.text = $"이름 : {_slot.character.Get_CharName}";
+        //CharInfo_Lv_Txt.text = $"레벨 : {_slot.character.Get_Character_Lv}";
+        //CharInfo_Star_Txt.text = $"성급 : {_slot.character.Get_CharStar}성";
+        //CharInfo_Type_Txt.text = $"타입 : {Type_Kor_Str[(int)_slot.character.Get_CharType]}";
+        //CharInfo_Element_Txt.text = $"속성 : {Element_Kor_Str[(int)_slot.character.Get_CharElement]}";
+        //CharInfo_MaxHP_Txt.text = $"체력 : {_slot.character.Get_CharHP}";
+        //CharInfo_Atk_Txt.text = $"공격력 : {_slot.character.Get_CharATK}";
+        //CharInfo_Def_Txt.text = $"방어력 : {_slot.character.Get_CharDEF}";
+        //CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.character.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
+        //CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.character.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
         #endregion
     }
 
@@ -560,17 +564,18 @@ public class CharacterList_UI : MonoBehaviour
         Refresh_Select_Img(_slot.EquipCharacter, false);
 
         #region Character_Info_Text_Refresh
+        // TODO ## 캐릭터 정보창 안쓰는 코드 일단 주석
         // TODO ## Lobby_Manager 캐릭터 정보 창 캐릭터 정보 초기화
-        CharInfo_Name_Txt.text = $"이름 : {_slot.EquipCharacter.Get_CharName}";
-        CharInfo_Lv_Txt.text = $"레벨 : {_slot.EquipCharacter.Get_Character_Lv}";
-        CharInfo_Star_Txt.text = $"성급 : {_slot.EquipCharacter.Get_CharStar}성";
-        CharInfo_Type_Txt.text = $"타입 : {Type_Kor_Str[(int)_slot.EquipCharacter.Get_CharType]}";
-        CharInfo_Element_Txt.text = $"속성 : {Element_Kor_Str[(int)_slot.EquipCharacter.Get_CharElement]}";
-        CharInfo_MaxHP_Txt.text = $"체력 : {_slot.EquipCharacter.Get_CharHP}";
-        CharInfo_Atk_Txt.text = $"공격력 : {_slot.EquipCharacter.Get_CharATK}";
-        CharInfo_Def_Txt.text = $"방어력 : {_slot.EquipCharacter.Get_CharDEF}";
-        CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.EquipCharacter.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
-        CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.EquipCharacter.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
+        //CharInfo_Name_Txt.text = $"이름 : {_slot.EquipCharacter.Get_CharName}";
+        //CharInfo_Lv_Txt.text = $"레벨 : {_slot.EquipCharacter.Get_Character_Lv}";
+        //CharInfo_Star_Txt.text = $"성급 : {_slot.EquipCharacter.Get_CharStar}성";
+        //CharInfo_Type_Txt.text = $"타입 : {Type_Kor_Str[(int)_slot.EquipCharacter.Get_CharType]}";
+        //CharInfo_Element_Txt.text = $"속성 : {Element_Kor_Str[(int)_slot.EquipCharacter.Get_CharElement]}";
+        //CharInfo_MaxHP_Txt.text = $"체력 : {_slot.EquipCharacter.Get_CharHP}";
+        //CharInfo_Atk_Txt.text = $"공격력 : {_slot.EquipCharacter.Get_CharATK}";
+        //CharInfo_Def_Txt.text = $"방어력 : {_slot.EquipCharacter.Get_CharDEF}";
+        //CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.EquipCharacter.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
+        //CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.EquipCharacter.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
         #endregion
     }
 
@@ -597,17 +602,18 @@ public class CharacterList_UI : MonoBehaviour
         #endregion
 
         #region Character_Info_Text_Refresh
+        // TODO ## 캐릭터 정보창 안쓰는 코드 일단 주석
         // TODO ## Lobby_Manager 캐릭터 정보 창 캐릭터 정보 초기화
-        CharInfo_Name_Txt.text = $"이름 : {_slot.character.Get_CharName}";
-        CharInfo_Lv_Txt.text = $"레벨 : {_slot.character.Get_Character_Lv}";
-        CharInfo_Star_Txt.text = $"성급 : {_slot.character.Get_CharStar}성";
-        CharInfo_Type_Txt.text = $"타입 : {Type_Kor_Str[(int)_slot.character.Get_CharType]}";
-        CharInfo_Element_Txt.text = $"속성 : {Element_Kor_Str[(int)_slot.character.Get_CharElement]}";
-        CharInfo_MaxHP_Txt.text = $"체력 : {_slot.character.Get_CharHP}";
-        CharInfo_Atk_Txt.text = $"공격력 : {_slot.character.Get_CharATK}";
-        CharInfo_Def_Txt.text = $"방어력 : {_slot.character.Get_CharDEF}";
-        CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.character.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
-        CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.character.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
+        //CharInfo_Name_Txt.text = $"이름 : {_slot.character.Get_CharName}";
+        //CharInfo_Lv_Txt.text = $"레벨 : {_slot.character.Get_Character_Lv}";
+        //CharInfo_Star_Txt.text = $"성급 : {_slot.character.Get_CharStar}성";
+        //CharInfo_Type_Txt.text = $"타입 : {Type_Kor_Str[(int)_slot.character.Get_CharType]}";
+        //CharInfo_Element_Txt.text = $"속성 : {Element_Kor_Str[(int)_slot.character.Get_CharElement]}";
+        //CharInfo_MaxHP_Txt.text = $"체력 : {_slot.character.Get_CharHP}";
+        //CharInfo_Atk_Txt.text = $"공격력 : {_slot.character.Get_CharATK}";
+        //CharInfo_Def_Txt.text = $"방어력 : {_slot.character.Get_CharDEF}";
+        //CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.character.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
+        //CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.character.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
         #endregion
     }
 
@@ -699,5 +705,32 @@ public class CharacterList_UI : MonoBehaviour
             _image.rectTransform.sizeDelta = new Vector2(160.0f, 30.0f);
         }
     }
+    #endregion
+
+    #region Char_ComabatPower_UI
+    public void CharCombat_Text_Refresh()
+    {
+        Char_CombatTxt.text = $"{GameManager.Instance.Get_SelectChar.Calc_CombatPower()}";
+
+        CharInfo_MaxHP_Txt.text = $"{GameManager.Instance.Get_SelectChar.Get_CharHP.ToString("N0")} " +
+            $"<color=orange>(+{(GameManager.Instance.Get_SelectChar.Get_CharHP - GameManager.Instance.Get_SelectChar.Get_BaseHP).ToString("N0")})</color>";
+
+        CharInfo_Atk_Txt.text = $"{GameManager.Instance.Get_SelectChar.Get_CharATK.ToString("N0")} " +
+            $"<color=orange>(+{(GameManager.Instance.Get_SelectChar.Get_CharATK - GameManager.Instance.Get_SelectChar.Get_BaseAtk).ToString("N0")})</color>";
+
+        CharInfo_Def_Txt.text = $"{GameManager.Instance.Get_SelectChar.Get_CharDEF.ToString("N0")} " +
+            $"<color=orange>(+{(GameManager.Instance.Get_SelectChar.Get_CharDEF - GameManager.Instance.Get_SelectChar.Get_BaseDef).ToString("N0")})</color>";
+
+        CharInfo_CrtDmg_Txt.text = $"{(GameManager.Instance.Get_SelectChar.Get_Char_CRT_Damage * 100).ToString("N1")}% " +
+            $"<color=orange>(+{((GameManager.Instance.Get_SelectChar.Get_Char_CRT_Damage - GameManager.Instance.Get_SelectChar.Get_BaseCRID) * 100).ToString("N1")}%)</color>";
+
+        CharInfo_CrtRate_Txt.text = $"{(GameManager.Instance.Get_SelectChar.Get_Char_CRT_Rate * 100).ToString("N1")}% " +
+            $"<color=orange>(+{((GameManager.Instance.Get_SelectChar.Get_Char_CRT_Rate - GameManager.Instance.Get_SelectChar.Get_BaseCRIR) * 100).ToString("N1")}%)</color>";
+
+        CharInfo_Element_Txt.text = $"<color=orange>{Element_Kor_Str[(int)GameManager.Instance.Get_SelectChar.Get_CharElement]}</color>";
+
+        CharInfo_Type_Txt.text = $"<color=orange>{Type_Kor_Str[(int)GameManager.Instance.Get_SelectChar.Get_CharType]}</color>";
+    }
+
     #endregion
 }
