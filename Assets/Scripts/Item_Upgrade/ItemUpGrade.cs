@@ -526,4 +526,19 @@ public class ItemUpGrade : MonoBehaviour
         }
     }
     #endregion
+
+    #region Lock_Off
+    public void Lock_Off()
+    {
+        for (int i = 0; i < OPRELock_Toggle.Length; i++)
+        {
+            OPRELock_Toggle[i].isOn = false;
+        }
+
+        for (int i = 0; i < OptionLock_Toggle.Length; i++)
+        {
+            OptionLock_Toggle[i].isOn = false;
+        }
+    }
+    #endregion
 }
