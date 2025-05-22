@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Define;
 
 public class UserInfo
 {
@@ -19,28 +20,24 @@ public class UserInfo
 
     #region Equip_Inventory
     public static List<Item> Equip_Inventory = new List<Item>();
-
     public static List<Item> Weapon_Equipment = new List<Item>();
     public static List<Item> Helmet_Equipment = new List<Item>();
     public static List<Item> Upper_Equipment = new List<Item>();
     public static List<Item> Accessory_Equipment = new List<Item>();
     public static List<Item> Glove_Equipment = new List<Item>();
-
     #endregion
 
     #region Inventory
-    public static List<Item> Spend_Inventory = new List<Item>();
-    public static List<Item> Cook_Inventory = new List<Item>();
+    public static Dictionary<string, Inventory_Item> InventoryDict = new Dictionary<string, Inventory_Item>();
+
+    public static List<Inventory_Item> Spend_Inventory = new List<Inventory_Item>(); // 소모품
+    public static List<Inventory_Item> Upgrade_Inventory = new List<Inventory_Item>();  // 요리 아이템
     #endregion
 
     [Header("---Currency---")]
     public static int Money = 10000000;
     public static int Dia;
     public static int EnterHealth;
-
-    public static int R_Book;
-    public static int SR_Book;
-    public static int SSR_Book;
 
     public static int SummonTicket;
     public static int EquipmentTicket;
@@ -85,6 +82,64 @@ public class UserInfo
         }
     }
     #endregion
+
+    public static void Add_Inventory_Item(Inventory_Item _item, int _add = 1)
+    {
+        // 아이템이 Dictionary에 없다면 추가
+        if (InventoryDict.ContainsKey(_item.Get_Item_Name) == false)
+        {
+            InventoryDict.Add(_item.Get_Item_Name, _item);
+            _item.Get_Amount = 1;
+        }
+        else // 이미 존재한다면
+        {
+            InventoryDict[_item.Get_Item_Name].Get_Amount += _add;
+        }
+
+        // Debug.Log(_item.Get_Amount);
+
+        #region Inventory_List_Add
+        // 유저가 리스트에 들고 있기 하기 위한 코드
+        Spend_Inventory.Clear();
+        Upgrade_Inventory.Clear();
+
+        foreach (Inventory_Item item in InventoryDict.Values)
+        {
+            if (item.Get_InventoryType == INVENTORY_TYPE.SPEND)
+            {
+                for (int i = 0; i < Spend_Inventory.Count; i++)
+                {
+                    if (Spend_Inventory[i].Get_Item_Name == item.Get_Item_Name)
+                        return;         
+                }
+                Spend_Inventory.Add(item);
+            }
+            else if (item.Get_InventoryType == INVENTORY_TYPE.UPGRADE)
+            {
+                for (int i = 0; i < Upgrade_Inventory.Count; i++)
+                {
+                    if (Upgrade_Inventory[i].Get_Item_Name == item.Get_Item_Name)
+                        return;                     
+                }
+
+                Upgrade_Inventory.Add(item);
+            }
+        }
+
+        #region Test
+        //for (int i = 0; i < Spend_Inventory.Count; i++)
+        //{
+        //    Debug.Log($"{i}/{Spend_Inventory[i].Get_Item_Name}/{Spend_Inventory[i].Get_Amount}");
+        //}
+
+        //for (int i = 0; i < Upgrade_Inventory.Count; i++)
+        //{
+        //    Debug.Log($"{i}/{Upgrade_Inventory[i].Get_Item_Name}/{Upgrade_Inventory[i].Get_Amount}");
+        //}
+        #endregion
+        #endregion
+    }
+
 
     #region Test
     public static void Test()

@@ -23,7 +23,7 @@ public static class Define
     {
         SPEND,
         EQUIPMENT,
-        COOK,
+        UPGRADE,
     }
 
     // 아이템 타입

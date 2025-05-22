@@ -14,7 +14,15 @@ public class Inventory_UI : MonoBehaviour
     // 소비, 장비 인벤토리 게임오브젝트
     [SerializeField] ScrollRect Spend_Inventory_Slot;
     [SerializeField] ScrollRect Equip_Inventory_Slot;
-    [SerializeField] ScrollRect Cook_Inventory_Slot;
+    [SerializeField] ScrollRect Upgrade_Inventory_Slot;
+
+    [Header("Upgrade_Item_UI")]
+    [SerializeField] int UpgradeSlotCount;
+    public int Get_UpgradeSlotCount { get => UpgradeSlotCount; }
+    [SerializeField] GameObject Upgrade_Btn_PopUp;
+    [SerializeField] GameObject Upgrade_Select_Shine_BG;
+    [SerializeField] List<Upgrade_Slot> UpgradeSlot_List = new List<Upgrade_Slot>();
+    public List<Upgrade_Slot> Get_UpgradeSlot_List { get => UpgradeSlot_List; }
 
     [Header("Spend_Item_UI")]
     [SerializeField] int SpendSlotCount;
@@ -44,10 +52,6 @@ public class Inventory_UI : MonoBehaviour
     [SerializeField] List<EquipSlot> EquipSlot_List = new List<EquipSlot>();
     public List<EquipSlot> Get_EquipSlot_List { get => EquipSlot_List; }
 
-    [Header("Cook_Item_UI")]
-    [SerializeField] GameObject Cook_Btn_PopUp;
-    [SerializeField] GameObject Cook_Select_Shine_BG;
-
     [Header("Item_Info_Panel")]
     public Item_Info_Panel Item_Info;
     #endregion
@@ -64,7 +68,7 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Inventory_Slot.gameObject.SetActive(true);
             Equip_Inventory_Slot.gameObject.SetActive(false);
-            Cook_Inventory_Slot.gameObject.SetActive(false);
+            Upgrade_Inventory_Slot.gameObject.SetActive(false);
 
             Spend_Inventory_Slot.verticalNormalizedPosition = 1.0f;
         }
@@ -74,7 +78,7 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Btn_PopUp.SetActive(true);
             Equip_Btn_PopUp.SetActive(false);
-            Cook_Btn_PopUp.SetActive(false);
+            Upgrade_Btn_PopUp.SetActive(false);
         }
 
         // Spend_Select_Shine_BG 비활성화 상태에 연결이 잘 되어있다면
@@ -82,7 +86,7 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Select_Shine_BG.SetActive(true);
             Equip_Select_Shine_BG.SetActive(false);
-            Cook_Select_Shine_BG.SetActive(false);
+            Upgrade_Select_Shine_BG.SetActive(false);
         }
     }
     #endregion
@@ -97,7 +101,7 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Inventory_Slot.gameObject.SetActive(false);
             Equip_Inventory_Slot.gameObject.SetActive(true);
-            Cook_Inventory_Slot.gameObject.SetActive(false);
+            Upgrade_Inventory_Slot.gameObject.SetActive(false);
 
             Equip_Inventory_Slot.verticalNormalizedPosition = 1.0f;
         }
@@ -107,7 +111,7 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Btn_PopUp.SetActive(false);
             Equip_Btn_PopUp.SetActive(true);
-            Cook_Btn_PopUp.SetActive(false);
+            Upgrade_Btn_PopUp.SetActive(false);
         }
 
         // Spend_Select_Shine_BG 비활성화 상태에 연결이 잘 되어있다면
@@ -115,40 +119,40 @@ public class Inventory_UI : MonoBehaviour
         {
             Spend_Select_Shine_BG.SetActive(false);
             Equip_Select_Shine_BG.SetActive(true);
-            Cook_Select_Shine_BG.SetActive(false);
+            Upgrade_Select_Shine_BG.SetActive(false);
         }
     }
     #endregion
 
-    #region Cook_Item_Inventory_Click
-    public void On_Click_Cook_Item_Btn()
+    #region Upgrade_Item_Inventory_Click
+    public void On_Click_Upgrade_Item_Btn()
     {
-        Inventory_Type = INVENTORY_TYPE.COOK;
+        Inventory_Type = INVENTORY_TYPE.UPGRADE;
 
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
-        if (Cook_Inventory_Slot.gameObject.activeSelf == false && Cook_Inventory_Slot != null)
+        if (Upgrade_Inventory_Slot.gameObject.activeSelf == false && Upgrade_Inventory_Slot != null)
         {
             Spend_Inventory_Slot.gameObject.SetActive(false);
             Equip_Inventory_Slot.gameObject.SetActive(false);
-            Cook_Inventory_Slot.gameObject.SetActive(true);
+            Upgrade_Inventory_Slot.gameObject.SetActive(true);
 
-            Cook_Inventory_Slot.verticalNormalizedPosition = 1.0f;
+            Upgrade_Inventory_Slot.verticalNormalizedPosition = 1.0f;
         }
 
         // Spend_Btn_PopUp 비활성화 상태에 연결이 잘 되어있다면
-        if (Cook_Btn_PopUp.activeSelf == false && Cook_Btn_PopUp != null)
+        if (Upgrade_Btn_PopUp.activeSelf == false && Upgrade_Btn_PopUp != null)
         {
             Spend_Btn_PopUp.SetActive(false);
             Equip_Btn_PopUp.SetActive(false);
-            Cook_Btn_PopUp.SetActive(true);
+            Upgrade_Btn_PopUp.SetActive(true);
         }
 
         // Spend_Select_Shine_BG 비활성화 상태에 연결이 잘 되어있다면
-        if (Cook_Select_Shine_BG.activeSelf == false && Cook_Select_Shine_BG != null)
+        if (Upgrade_Select_Shine_BG.activeSelf == false && Upgrade_Select_Shine_BG != null)
         {
             Spend_Select_Shine_BG.SetActive(false);
             Equip_Select_Shine_BG.SetActive(false);
-            Cook_Select_Shine_BG.SetActive(true);
+            Upgrade_Select_Shine_BG.SetActive(true);
         }
     }
     #endregion
@@ -158,7 +162,7 @@ public class Inventory_UI : MonoBehaviour
         // 장비가 빈 슬롯을 클릭했을때 return
         if ((UserInfo.Equip_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.EQUIPMENT) ||
             (UserInfo.Spend_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.SPEND) ||
-            (UserInfo.Cook_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.COOK))
+            (UserInfo.Upgrade_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.UPGRADE))
             return;
 
         Item_Info.ItemInfo_Refresh(Inventory_Type, _slotNum);

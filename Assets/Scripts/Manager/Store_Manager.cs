@@ -25,6 +25,12 @@ public class Store_Manager : MonoBehaviour
     [SerializeField] GameObject Level_Btn_PopUp;
     [SerializeField] GameObject Level_Select_Shine_BG;
 
+    [SerializeField] GameObject Book_List;
+    [SerializeField] string[] BookNames;
+    [SerializeField] GameObject[] BookShine_BG;
+    [SerializeField] Text[] Book_Texts;
+    [SerializeField] GameObject[] Book_Store_Info;
+
     [Header("---Info---")]
     [SerializeField] GameObject Buying_Info;
     [SerializeField] ItemInfo_Pop ItemInfo_Pop;
@@ -49,6 +55,11 @@ public class Store_Manager : MonoBehaviour
             Store_Level_Panel.gameObject.SetActive(false);
 
             Spend_Store_Slot.verticalNormalizedPosition = 1.0f;
+
+            if (Book_List.activeSelf == true)
+            {
+                Book_List.SetActive(false);
+            }
         }
 
         // Spend_Btn_PopUp 비활성화 상태에 연결이 잘 되어있다면
@@ -80,6 +91,11 @@ public class Store_Manager : MonoBehaviour
             Store_Level_Panel.gameObject.SetActive(false);
 
             Ticket_Store_Slot.verticalNormalizedPosition = 1.0f;
+
+            if (Book_List.activeSelf == true)
+            {
+                Book_List.SetActive(false);
+            }
         }
 
         // Spend_Btn_PopUp 비활성화 상태에 연결이 잘 되어있다면
@@ -108,9 +124,14 @@ public class Store_Manager : MonoBehaviour
         {
             Store_Spend_Panel.gameObject.SetActive(false);
             Store_Ticket_Panel.gameObject.SetActive(false);
-            Store_Level_Panel.gameObject.SetActive(true);
-
+            Store_Level_Panel.gameObject.SetActive(true); 
             Level_Store_Slot.verticalNormalizedPosition = 1.0f;
+            On_Click_Book(0);
+
+            if (Book_List.activeSelf == false)
+            {
+                Book_List.SetActive(true);
+            }
         }
 
         // Spend_Btn_PopUp 비활성화 상태에 연결이 잘 되어있다면
@@ -178,6 +199,34 @@ public class Store_Manager : MonoBehaviour
             return UserInfo.EquipmentTicket;
 
         return 0;
+    }
+    #endregion
+
+    #region Book_List
+    public void On_Click_Book(int _num)
+    {
+        Book_UI_Refresh(BookNames[_num], _num);
+    }
+
+    void Book_UI_Refresh(string _bookname, int _index)
+    {
+        for (int i = 0; i < Book_Texts.Length; i++)
+        {
+            if (i == _index)
+            {
+                Book_Texts[i].text = $"<color=white>{_bookname}</color>";
+                BookShine_BG[i].SetActive(true);
+                Book_Store_Info[i].SetActive(true);
+                Book_Store_Info[i].SetActive(true);
+            }
+            else
+            {
+                Book_Store_Info[i].SetActive(false);
+                BookShine_BG[i].SetActive(false);
+                Book_Store_Info[i].SetActive(false);
+                Book_Texts[i].text = $"<color=#959595>{BookNames[i]}</color>";
+            }
+        }
     }
     #endregion
 }

@@ -13,8 +13,19 @@ public class Character_List : MonoBehaviour
     public static List<Character> SR_Char = new List<Character>();
     public static List<Character> SSR_Char = new List<Character>();
 
+    public static List<int> Level = new List<int>();
+    public static List<int> Require_Exp = new List<int>();
+    public static List<int> Cumulative_Exp = new List<int>();
+
     private void Awake()
     {
+        for(int i = 0; i < GoogleSheetSORef.Level_DBList.Count; i++)
+        {
+            Level.Add(GoogleSheetSORef.Level_DBList[i].LEVEL);
+            Require_Exp.Add(GoogleSheetSORef.Level_DBList[i].REQUIRE_EXP);
+            Cumulative_Exp.Add(GoogleSheetSORef.Level_DBList[i].CUMULATIVE_EXP);
+        }
+
         for (int i = 0; i < GoogleSheetSORef.Character_DBList.Count; i++)
         {
             CHAR_GRADE.TryParse(GoogleSheetSORef.Character_DBList[i].CHAR_GRADE, out CHAR_GRADE charGrade);

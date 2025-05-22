@@ -209,8 +209,15 @@ public class Gacha_Manager : MonoBehaviour
         {
             New_PopUp_Active();
             Book_PopUp_Active(Books[2]);
-            UserInfo.SSR_Book++;
-            Debug.Log("금색 코인 획득");
+
+            for (int i = 0; i < Item_List.Spend_Item_List.Count; i++)
+            {
+                if(Item_List.Spend_Item_List[i].Get_Item_Name == "고급 소환서")
+                {
+                    UserInfo.Add_Inventory_Item(Item_List.Spend_Item_List[i]);
+                    break;
+                }
+            }
         }  
     }
 
@@ -249,8 +256,15 @@ public class Gacha_Manager : MonoBehaviour
         {
             New_PopUp_Active();
             Book_PopUp_Active(Books[1]);
-            UserInfo.SR_Book++;
-            Debug.Log("은색 코인 획득");
+
+            for (int i = 0; i < Item_List.Spend_Item_List.Count; i++)
+            {
+                if (Item_List.Spend_Item_List[i].Get_Item_Name == "중급 소환서")
+                {
+                    UserInfo.Add_Inventory_Item(Item_List.Spend_Item_List[i]);
+                    break;
+                }
+            }
         }
     }
 
@@ -289,8 +303,15 @@ public class Gacha_Manager : MonoBehaviour
         {
             New_PopUp_Active();
             Book_PopUp_Active(Books[0]);
-            UserInfo.R_Book++;
-            Debug.Log("동색 코인 획득");
+
+            for (int i = 0; i < Item_List.Spend_Item_List.Count; i++)
+            {
+                if (Item_List.Spend_Item_List[i].Get_Item_Name == "하급 소환서")
+                {
+                    UserInfo.Add_Inventory_Item(Item_List.Spend_Item_List[i]);
+                    break;
+                }
+            }
         }
     }
 

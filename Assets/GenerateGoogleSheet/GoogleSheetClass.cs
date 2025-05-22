@@ -11,6 +11,8 @@ public class GoogleSheetSO : ScriptableObject
 	public List<Item_DB> Item_DBList;
 	public List<Store_Item_DB> Store_Item_DBList;
 	public List<EquipOption_DB> EquipOption_DBList;
+	public List<Level_DB> Level_DBList;
+	public List<Inventory_Item_DB> Inventory_Item_DBList;
 }
 
 [Serializable]
@@ -85,5 +87,23 @@ public class EquipOption_DB
 	public string OPTION_NAME;
 	public float OPTION_MIN;
 	public float OPTION_MAX;
+}
+
+[Serializable]
+public class Level_DB
+{
+	public int LEVEL;
+	public int REQUIRE_EXP;
+	public int CUMULATIVE_EXP;
+}
+
+[Serializable]
+public class Inventory_Item_DB
+{
+	public string ITEM_NAME;
+	public string INVENTORY_TYPE;
+	public int ITEM_AMOUNT;
+	public string ITEM_DESC;
+	public string ITEM_IMAGE;
 }
 

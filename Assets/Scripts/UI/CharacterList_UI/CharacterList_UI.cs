@@ -49,6 +49,7 @@ public class CharacterList_UI : MonoBehaviour
 
     [Header("---Character_Info---")]
     [SerializeField] Color[] FrameColors;
+    [SerializeField] Image Star_Image;
     // TODO ## 캐릭터 정보창 안쓰는 코드 일단 주석
     [SerializeField] List<CharInfo_CharSelect_Btn> Info_Char_Slot;
     [SerializeField] Image CharInfo_Frame;          // 캐릭터 창 프레임 이미지
@@ -488,6 +489,7 @@ public class CharacterList_UI : MonoBehaviour
 
         #region Character_Info_Change
         // 캐릭터 정보창 이미지 변경
+        Star_Image.rectTransform.sizeDelta = new Vector3(20 * _slot.character.Get_CharStar, 20.0f, 0.0f);
         UserInfo.Get_Square_Image(CharInfo_Img, _slot.character);
         CharInfo_Ele_BG.sprite = Elements_BG[(int)_slot.character.Get_CharElement];
         CharInfo_Frame.material.color = FrameColors[(int)_slot.character.Get_CharElement];
@@ -552,6 +554,7 @@ public class CharacterList_UI : MonoBehaviour
         #region Character_Info_Change
         // 캐릭터 정보창 이미지 변경
         UserInfo.Get_Square_Image(CharInfo_Img, _slot.EquipCharacter);
+        Star_Image.rectTransform.sizeDelta = new Vector3(20 * _slot.EquipCharacter.Get_CharStar, 20.0f, 0.0f);
         CharInfo_Ele_BG.sprite = Elements_BG[(int)_slot.EquipCharacter.Get_CharElement];
         CharInfo_Frame.material.color = FrameColors[(int)_slot.EquipCharacter.Get_CharElement];
         CharElement_Img.sprite = ElementColors[(int)_slot.EquipCharacter.Get_CharElement];
@@ -592,6 +595,7 @@ public class CharacterList_UI : MonoBehaviour
         #region Character_Info_Change
         // 캐릭터 정보창 이미지 변경
         UserInfo.Get_Square_Image(CharInfo_Img, _slot.character);
+        Star_Image.rectTransform.sizeDelta = new Vector3(20 * _slot.character.Get_CharStar, 20.0f, 0.0f);
         CharInfo_Ele_BG.sprite = Elements_BG[(int)_slot.character.Get_CharElement];
         CharInfo_Frame.material.color = FrameColors[(int)_slot.character.Get_CharElement];
         CharElement_Img.sprite = ElementColors[(int)_slot.character.Get_CharElement];

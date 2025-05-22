@@ -204,7 +204,11 @@ public class Character
     // 혼합형 성장 공식
     public float Calculate_State(int level)
     {
-        if (level > 50) level = 50; // 최대 레벨 제한
+        if (level > 70)
+        {
+            level = 70; // 최대 레벨 제한
+            return CharATK;
+        }
 
         float attack;
         if (level < transitionLevel)
@@ -424,8 +428,11 @@ public class Character
         return CombatPower.ToString("N0");
     }
     #endregion
+
+    #region Test
     public void TestState()
     {
         Debug.Log($"{CharName}: 공격력 : {CharATK}\n방어력 : {CharDEF}\n체력 : {CharHP}\n크뎀 : {Char_CRT_DAMAGE}\n크확 : {Char_CRT_RATE}");
     }
+    #endregion
 }

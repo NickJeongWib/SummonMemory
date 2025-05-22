@@ -30,9 +30,12 @@ public class GoogleSheetManager : MonoBehaviour
     string[] availSheetArray;
     string json;
     bool refeshTrigger;
-    static GoogleSheetManager instance;
+    public static GoogleSheetManager instance;
 
-
+    private void Awake()
+    {
+        instance = GetInstance();
+    }
 
     public static T SO<T>() where T : ScriptableObject
     {

@@ -1810,6 +1810,141 @@
       "STORE_ITEM_CONSUME_COUNT": 200,
       "STORE_ITEM_ICON": "Image_Resources/Currency_Resources/Equipment_Ticket_Resource",
       "STORE_ITEM_DESC": "장비를 소환할 수 있는 행운이 깃든 \\\\n티켓이다."
+    },
+    {
+      "STORE_ITEM_NAME": "옐로우 슬라임",
+      "STORE_TYPE": "R_BOOK",
+      "STORE_ITEM_EX": 1,
+      "STORE_ITEM_CONSUME_TYPE": "R_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/Slime_Low",
+      "STORE_ITEM_DESC": "지식과 경험을 먹이로 삼는 슬라임.\\\\n교감하면 경험치를 올릴 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "블루 슬라임",
+      "STORE_TYPE": "R_BOOK",
+      "STORE_ITEM_EX": 1,
+      "STORE_ITEM_CONSUME_TYPE": "R_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/Slime_Middle",
+      "STORE_ITEM_DESC": "오래 살며 많은 지식과 경험을 축적한 슬라임.\\\\n교감하면 상당한 양의 경험치를 올릴 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "레드 슬라임",
+      "STORE_TYPE": "R_BOOK",
+      "STORE_ITEM_EX": 1,
+      "STORE_ITEM_CONSUME_TYPE": "R_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/Slime_High",
+      "STORE_ITEM_DESC": "엄청난 양의 지식과 경험을 먹으며\\\\n장수해 온 거대한 슬라임.\\\\n교감하면 막대한 양의 경험치를 올릴 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "재련 수정",
+      "STORE_TYPE": "R_BOOK",
+      "STORE_ITEM_EX": 1,
+      "STORE_ITEM_CONSUME_TYPE": "R_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/ItemCrystal",
+      "STORE_ITEM_DESC": "변화무쌍하고 강력한 마력을\\\\n품고 있는 특별한 수정. 장비의 능력을\\\\n재련해 새로운 능력을 부여할 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "재련 가루",
+      "STORE_TYPE": "R_BOOK",
+      "STORE_ITEM_EX": 1,
+      "STORE_ITEM_CONSUME_TYPE": "R_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/ItemPowder",
+      "STORE_ITEM_DESC": "은은한 마력을 품고 있는 고운 가루.\\\\n장비를 재련할 때에 사용해 특별한 힘을\\\\n부여할 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "옐로우 슬라임",
+      "STORE_TYPE": "SR_BOOK",
+      "STORE_ITEM_EX": 5,
+      "STORE_ITEM_CONSUME_TYPE": "SR_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/Slime_Low",
+      "STORE_ITEM_DESC": "지식과 경험을 먹이로 삼는 슬라임.\\\\n교감하면 경험치를 올릴 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "블루 슬라임",
+      "STORE_TYPE": "SR_BOOK",
+      "STORE_ITEM_EX": 5,
+      "STORE_ITEM_CONSUME_TYPE": "SR_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/Slime_Middle",
+      "STORE_ITEM_DESC": "오래 살며 많은 지식과 경험을 축적한 슬라임.\\\\n교감하면 상당한 양의 경험치를 올릴 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "레드 슬라임",
+      "STORE_TYPE": "SR_BOOK",
+      "STORE_ITEM_EX": 5,
+      "STORE_ITEM_CONSUME_TYPE": "SR_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/Slime_High",
+      "STORE_ITEM_DESC": "엄청난 양의 지식과 경험을 먹으며\\\\n장수해 온 거대한 슬라임.\\\\n교감하면 막대한 양의 경험치를 올릴 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "재련 수정",
+      "STORE_TYPE": "SR_BOOK",
+      "STORE_ITEM_EX": 5,
+      "STORE_ITEM_CONSUME_TYPE": "SR_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/ItemCrystal",
+      "STORE_ITEM_DESC": "변화무쌍하고 강력한 마력을\\\\n품고 있는 특별한 수정. 장비의 능력을\\\\n재련해 새로운 능력을 부여할 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "재련 가루",
+      "STORE_TYPE": "SR_BOOK",
+      "STORE_ITEM_EX": 5,
+      "STORE_ITEM_CONSUME_TYPE": "SR_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/ItemPowder",
+      "STORE_ITEM_DESC": "은은한 마력을 품고 있는 고운 가루.\\\\n장비를 재련할 때에 사용해 특별한 힘을\\\\n부여할 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "옐로우 슬라임",
+      "STORE_TYPE": "SSR_BOOK",
+      "STORE_ITEM_EX": 20,
+      "STORE_ITEM_CONSUME_TYPE": "SSR_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/Slime_Low",
+      "STORE_ITEM_DESC": "지식과 경험을 먹이로 삼는 슬라임.\\\\n교감하면 경험치를 올릴 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "블루 슬라임",
+      "STORE_TYPE": "SSR_BOOK",
+      "STORE_ITEM_EX": 20,
+      "STORE_ITEM_CONSUME_TYPE": "SSR_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/Slime_Middle",
+      "STORE_ITEM_DESC": "오래 살며 많은 지식과 경험을 축적한 슬라임.\\\\n교감하면 상당한 양의 경험치를 올릴 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "레드 슬라임",
+      "STORE_TYPE": "SSR_BOOK",
+      "STORE_ITEM_EX": 20,
+      "STORE_ITEM_CONSUME_TYPE": "SSR_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/Slime_High",
+      "STORE_ITEM_DESC": "엄청난 양의 지식과 경험을 먹으며\\\\n장수해 온 거대한 슬라임.\\\\n교감하면 막대한 양의 경험치를 올릴 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "재련 수정",
+      "STORE_TYPE": "SSR_BOOK",
+      "STORE_ITEM_EX": 20,
+      "STORE_ITEM_CONSUME_TYPE": "SSR_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/ItemCrystal",
+      "STORE_ITEM_DESC": "변화무쌍하고 강력한 마력을\\\\n품고 있는 특별한 수정. 장비의 능력을\\\\n재련해 새로운 능력을 부여할 수 있다."
+    },
+    {
+      "STORE_ITEM_NAME": "재련 가루",
+      "STORE_TYPE": "SSR_BOOK",
+      "STORE_ITEM_EX": 20,
+      "STORE_ITEM_CONSUME_TYPE": "SSR_BOOK",
+      "STORE_ITEM_CONSUME_COUNT": 1,
+      "STORE_ITEM_ICON": "Image_Resources/Store_List/ItemPowder",
+      "STORE_ITEM_DESC": "은은한 마력을 품고 있는 고운 가루.\\\\n장비를 재련할 때에 사용해 특별한 힘을\\\\n부여할 수 있다."
     }
   ],
   "EquipOption_DB": [
@@ -1852,6 +1987,430 @@
       "OPTION_NAME": "CRID_PERCENT",
       "OPTION_MIN": 0.1,
       "OPTION_MAX": 0.3
+    }
+  ],
+  "Level_DB": [
+    {
+      "LEVEL": 1,
+      "REQUIRE_EXP": 120,
+      "CUMULATIVE_EXP": 120
+    },
+    {
+      "LEVEL": 2,
+      "REQUIRE_EXP": 144,
+      "CUMULATIVE_EXP": 264
+    },
+    {
+      "LEVEL": 3,
+      "REQUIRE_EXP": 173,
+      "CUMULATIVE_EXP": 437
+    },
+    {
+      "LEVEL": 4,
+      "REQUIRE_EXP": 207,
+      "CUMULATIVE_EXP": 644
+    },
+    {
+      "LEVEL": 5,
+      "REQUIRE_EXP": 249,
+      "CUMULATIVE_EXP": 893
+    },
+    {
+      "LEVEL": 6,
+      "REQUIRE_EXP": 299,
+      "CUMULATIVE_EXP": 1192
+    },
+    {
+      "LEVEL": 7,
+      "REQUIRE_EXP": 358,
+      "CUMULATIVE_EXP": 1550
+    },
+    {
+      "LEVEL": 8,
+      "REQUIRE_EXP": 430,
+      "CUMULATIVE_EXP": 1980
+    },
+    {
+      "LEVEL": 9,
+      "REQUIRE_EXP": 516,
+      "CUMULATIVE_EXP": 2496
+    },
+    {
+      "LEVEL": 10,
+      "REQUIRE_EXP": 619,
+      "CUMULATIVE_EXP": 3115
+    },
+    {
+      "LEVEL": 11,
+      "REQUIRE_EXP": 743,
+      "CUMULATIVE_EXP": 3858
+    },
+    {
+      "LEVEL": 12,
+      "REQUIRE_EXP": 892,
+      "CUMULATIVE_EXP": 4750
+    },
+    {
+      "LEVEL": 13,
+      "REQUIRE_EXP": 1070,
+      "CUMULATIVE_EXP": 5820
+    },
+    {
+      "LEVEL": 14,
+      "REQUIRE_EXP": 1284,
+      "CUMULATIVE_EXP": 7104
+    },
+    {
+      "LEVEL": 15,
+      "REQUIRE_EXP": 1541,
+      "CUMULATIVE_EXP": 8645
+    },
+    {
+      "LEVEL": 16,
+      "REQUIRE_EXP": 1849,
+      "CUMULATIVE_EXP": 10494
+    },
+    {
+      "LEVEL": 17,
+      "REQUIRE_EXP": 2219,
+      "CUMULATIVE_EXP": 12713
+    },
+    {
+      "LEVEL": 18,
+      "REQUIRE_EXP": 2662,
+      "CUMULATIVE_EXP": 15375
+    },
+    {
+      "LEVEL": 19,
+      "REQUIRE_EXP": 3195,
+      "CUMULATIVE_EXP": 18570
+    },
+    {
+      "LEVEL": 20,
+      "REQUIRE_EXP": 3834,
+      "CUMULATIVE_EXP": 22404
+    },
+    {
+      "LEVEL": 21,
+      "REQUIRE_EXP": 4601,
+      "CUMULATIVE_EXP": 27005
+    },
+    {
+      "LEVEL": 22,
+      "REQUIRE_EXP": 5521,
+      "CUMULATIVE_EXP": 32526
+    },
+    {
+      "LEVEL": 23,
+      "REQUIRE_EXP": 6625,
+      "CUMULATIVE_EXP": 39151
+    },
+    {
+      "LEVEL": 24,
+      "REQUIRE_EXP": 7950,
+      "CUMULATIVE_EXP": 47101
+    },
+    {
+      "LEVEL": 25,
+      "REQUIRE_EXP": 9540,
+      "CUMULATIVE_EXP": 56641
+    },
+    {
+      "LEVEL": 26,
+      "REQUIRE_EXP": 11448,
+      "CUMULATIVE_EXP": 68089
+    },
+    {
+      "LEVEL": 27,
+      "REQUIRE_EXP": 13737,
+      "CUMULATIVE_EXP": 81826
+    },
+    {
+      "LEVEL": 28,
+      "REQUIRE_EXP": 16484,
+      "CUMULATIVE_EXP": 98310
+    },
+    {
+      "LEVEL": 29,
+      "REQUIRE_EXP": 19781,
+      "CUMULATIVE_EXP": 118091
+    },
+    {
+      "LEVEL": 30,
+      "REQUIRE_EXP": 23738,
+      "CUMULATIVE_EXP": 141829
+    },
+    {
+      "LEVEL": 31,
+      "REQUIRE_EXP": 28485,
+      "CUMULATIVE_EXP": 170314
+    },
+    {
+      "LEVEL": 32,
+      "REQUIRE_EXP": 34182,
+      "CUMULATIVE_EXP": 204496
+    },
+    {
+      "LEVEL": 33,
+      "REQUIRE_EXP": 41019,
+      "CUMULATIVE_EXP": 245515
+    },
+    {
+      "LEVEL": 34,
+      "REQUIRE_EXP": 49222,
+      "CUMULATIVE_EXP": 294737
+    },
+    {
+      "LEVEL": 35,
+      "REQUIRE_EXP": 59067,
+      "CUMULATIVE_EXP": 353804
+    },
+    {
+      "LEVEL": 36,
+      "REQUIRE_EXP": 70880,
+      "CUMULATIVE_EXP": 424684
+    },
+    {
+      "LEVEL": 37,
+      "REQUIRE_EXP": 85056,
+      "CUMULATIVE_EXP": 509740
+    },
+    {
+      "LEVEL": 38,
+      "REQUIRE_EXP": 102067,
+      "CUMULATIVE_EXP": 611807
+    },
+    {
+      "LEVEL": 39,
+      "REQUIRE_EXP": 122481,
+      "CUMULATIVE_EXP": 734288
+    },
+    {
+      "LEVEL": 40,
+      "REQUIRE_EXP": 146977,
+      "CUMULATIVE_EXP": 881265
+    },
+    {
+      "LEVEL": 41,
+      "REQUIRE_EXP": 176373,
+      "CUMULATIVE_EXP": 1057638
+    },
+    {
+      "LEVEL": 42,
+      "REQUIRE_EXP": 211647,
+      "CUMULATIVE_EXP": 1269285
+    },
+    {
+      "LEVEL": 43,
+      "REQUIRE_EXP": 253977,
+      "CUMULATIVE_EXP": 1523262
+    },
+    {
+      "LEVEL": 44,
+      "REQUIRE_EXP": 304772,
+      "CUMULATIVE_EXP": 1828034
+    },
+    {
+      "LEVEL": 45,
+      "REQUIRE_EXP": 365726,
+      "CUMULATIVE_EXP": 2193760
+    },
+    {
+      "LEVEL": 46,
+      "REQUIRE_EXP": 438871,
+      "CUMULATIVE_EXP": 2632631
+    },
+    {
+      "LEVEL": 47,
+      "REQUIRE_EXP": 526646,
+      "CUMULATIVE_EXP": 3159277
+    },
+    {
+      "LEVEL": 48,
+      "REQUIRE_EXP": 631975,
+      "CUMULATIVE_EXP": 3791252
+    },
+    {
+      "LEVEL": 49,
+      "REQUIRE_EXP": 758370,
+      "CUMULATIVE_EXP": 4549622
+    },
+    {
+      "LEVEL": 50,
+      "REQUIRE_EXP": 500000,
+      "CUMULATIVE_EXP": 5049622
+    },
+    {
+      "LEVEL": 51,
+      "REQUIRE_EXP": 510000,
+      "CUMULATIVE_EXP": 5559622
+    },
+    {
+      "LEVEL": 52,
+      "REQUIRE_EXP": 528284,
+      "CUMULATIVE_EXP": 6087906
+    },
+    {
+      "LEVEL": 53,
+      "REQUIRE_EXP": 551962,
+      "CUMULATIVE_EXP": 6639868
+    },
+    {
+      "LEVEL": 54,
+      "REQUIRE_EXP": 580000,
+      "CUMULATIVE_EXP": 7219868
+    },
+    {
+      "LEVEL": 55,
+      "REQUIRE_EXP": 611803,
+      "CUMULATIVE_EXP": 7831671
+    },
+    {
+      "LEVEL": 56,
+      "REQUIRE_EXP": 646969,
+      "CUMULATIVE_EXP": 8478640
+    },
+    {
+      "LEVEL": 57,
+      "REQUIRE_EXP": 685203,
+      "CUMULATIVE_EXP": 9163843
+    },
+    {
+      "LEVEL": 58,
+      "REQUIRE_EXP": 726274,
+      "CUMULATIVE_EXP": 9890117
+    },
+    {
+      "LEVEL": 59,
+      "REQUIRE_EXP": 770000,
+      "CUMULATIVE_EXP": 10660117
+    },
+    {
+      "LEVEL": 60,
+      "REQUIRE_EXP": 816228,
+      "CUMULATIVE_EXP": 11476345
+    },
+    {
+      "LEVEL": 61,
+      "REQUIRE_EXP": 864829,
+      "CUMULATIVE_EXP": 12341174
+    },
+    {
+      "LEVEL": 62,
+      "REQUIRE_EXP": 915692,
+      "CUMULATIVE_EXP": 13256866
+    },
+    {
+      "LEVEL": 63,
+      "REQUIRE_EXP": 968722,
+      "CUMULATIVE_EXP": 14225588
+    },
+    {
+      "LEVEL": 64,
+      "REQUIRE_EXP": 1023832,
+      "CUMULATIVE_EXP": 15249420
+    },
+    {
+      "LEVEL": 65,
+      "REQUIRE_EXP": 1080948,
+      "CUMULATIVE_EXP": 16330368
+    },
+    {
+      "LEVEL": 66,
+      "REQUIRE_EXP": 1140000,
+      "CUMULATIVE_EXP": 17470368
+    },
+    {
+      "LEVEL": 67,
+      "REQUIRE_EXP": 1200928,
+      "CUMULATIVE_EXP": 18671296
+    },
+    {
+      "LEVEL": 68,
+      "REQUIRE_EXP": 1263675,
+      "CUMULATIVE_EXP": 19934971
+    },
+    {
+      "LEVEL": 69,
+      "REQUIRE_EXP": 1328191,
+      "CUMULATIVE_EXP": 21263162
+    },
+    {
+      "LEVEL": 70,
+      "REQUIRE_EXP": 0,
+      "CUMULATIVE_EXP": 21263162
+    }
+  ],
+  "Inventory_Item_DB": [
+    {
+      "ITEM_NAME": "캐릭터 티켓",
+      "INVENTORY_TYPE": "SPEND",
+      "ITEM_AMOUNT": 0,
+      "ITEM_DESC": "캐릭터를 소환할 수 있는 행운이 깃든 \\\\n티켓이다.",
+      "ITEM_IMAGE": "Image_Resources/Currency_Resources/Ticket_Resource"
+    },
+    {
+      "ITEM_NAME": "장비 티켓",
+      "INVENTORY_TYPE": "SPEND",
+      "ITEM_AMOUNT": 0,
+      "ITEM_DESC": "장비를 소환할 수 있는 행운이 깃든 \\\\n티켓이다.",
+      "ITEM_IMAGE": "Image_Resources/Currency_Resources/Equipment_Ticket_Resource"
+    },
+    {
+      "ITEM_NAME": "옐로우 슬라임",
+      "INVENTORY_TYPE": "UPGRADE",
+      "ITEM_AMOUNT": 0,
+      "ITEM_DESC": "지식과 경험을 먹이로 삼는 슬라임.\\\\n교감하면 경험치를 올릴 수 있다.",
+      "ITEM_IMAGE": "Image_Resources/Store_List/Slime_Low"
+    },
+    {
+      "ITEM_NAME": "블루 슬라임",
+      "INVENTORY_TYPE": "UPGRADE",
+      "ITEM_AMOUNT": 0,
+      "ITEM_DESC": "오래 살며 많은 지식과 경험을 축적한 슬라임.\\\\n교감하면 상당한 양의 경험치를 올릴 수 있다.",
+      "ITEM_IMAGE": "Image_Resources/Store_List/Slime_Middle"
+    },
+    {
+      "ITEM_NAME": "레드 슬라임",
+      "INVENTORY_TYPE": "UPGRADE",
+      "ITEM_AMOUNT": 0,
+      "ITEM_DESC": "엄청난 양의 지식과 경험을 먹으며\\\\n장수해 온 거대한 슬라임.\\\\n교감하면 막대한 양의 경험치를 올릴 수 있다.",
+      "ITEM_IMAGE": "Image_Resources/Store_List/Slime_High"
+    },
+    {
+      "ITEM_NAME": "재련 수정",
+      "INVENTORY_TYPE": "UPGRADE",
+      "ITEM_AMOUNT": 0,
+      "ITEM_DESC": "변화무쌍하고 강력한 마력을\\\\n품고 있는 특별한 수정. 장비의 능력을\\\\n재련해 새로운 능력을 부여할 수 있다.",
+      "ITEM_IMAGE": "Image_Resources/Store_List/ItemCrystal"
+    },
+    {
+      "ITEM_NAME": "재련 가루",
+      "INVENTORY_TYPE": "UPGRADE",
+      "ITEM_AMOUNT": 0,
+      "ITEM_DESC": "은은한 마력을 품고 있는 고운 가루.\\\\n장비를 재련할 때에 사용해 특별한 힘을\\\\n부여할 수 있다.",
+      "ITEM_IMAGE": "Image_Resources/Store_List/ItemPowder"
+    },
+    {
+      "ITEM_NAME": "하급 소환서",
+      "INVENTORY_TYPE": "SPEND",
+      "ITEM_AMOUNT": 0,
+      "ITEM_DESC": "소환사에게 주어지는 마법의 소환서.\\\\n 미약하지만 잠재력을 지녀\\\\n상점에서 거래할 수 있다.",
+      "ITEM_IMAGE": "Image_Resources/Currency_Resources/R_Book_Resources"
+    },
+    {
+      "ITEM_NAME": "중급 소환서",
+      "INVENTORY_TYPE": "SPEND",
+      "ITEM_AMOUNT": 0,
+      "ITEM_DESC": "일정 수준 이상의 소환사만이 다룰 수 있는 중급 소환서.\\\\n이 것의 가치는 시장에서도 높은 평가를 받는다.",
+      "ITEM_IMAGE": "Image_Resources/Currency_Resources/SR_Book_Resources"
+    },
+    {
+      "ITEM_NAME": "고급 소환서",
+      "INVENTORY_TYPE": "SPEND",
+      "ITEM_AMOUNT": 0,
+      "ITEM_DESC": "숙련된 소환사만이 다룰 수 있는 고대의 마법 소환서.\\\\n이 것의 존재는 극히 드물며\\\\n상점에서 고가에 거래된다.",
+      "ITEM_IMAGE": "Image_Resources/Currency_Resources/SSR_Book_Resources"
     }
   ]
 }
