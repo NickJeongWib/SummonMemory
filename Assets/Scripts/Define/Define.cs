@@ -24,6 +24,7 @@ public static class Define
         SPEND,
         EQUIPMENT,
         UPGRADE,
+        CURRENCY,
     }
 
     // 아이템 타입

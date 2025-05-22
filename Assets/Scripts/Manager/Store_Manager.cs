@@ -39,7 +39,10 @@ public class Store_Manager : MonoBehaviour
     #region Variable
     public Sprite[] Consume_Icons;
 
+    [SerializeField] Inventory_UI InventoryUI_Ref;
     [SerializeField] Lobby_Manager LobbyMgr_Ref;
+
+    Store_Item StoreItem_Info;
     int Dia_SelectCount;
     #endregion
     ///---------------------------------------------------------
@@ -152,6 +155,7 @@ public class Store_Manager : MonoBehaviour
     }
     #endregion
 
+    // Currency_Store
     #region Dia_Buy
     public void On_Click_Buy_Dia(int _count)
     {
@@ -159,16 +163,36 @@ public class Store_Manager : MonoBehaviour
         Buying_Info.SetActive(true);
     }
     #endregion
-
     #region Buying_Info
     public void On_Click_Buy()
     {
         // TODO ## Store_Manager Dia획득
-        UserInfo.Dia += Dia_SelectCount;
-        Dia_SelectCount = 0;
-        Buying_Info.SetActive(false);
+        if (Dia_SelectCount != 0)
+        {
+            UserInfo.Dia += Dia_SelectCount;
+            Dia_SelectCount = 0;
+            Buying_Info.SetActive(false);
+            LobbyMgr_Ref.Refresh_UI_Dia();
+        }
+        else
+        {
+            // 선택한 아이템이 있다면
+            if (StoreItem_Info != null)
+            {
+                // 이미 보유 하고 있다면
+                if (UserInfo.InventoryDict.ContainsKey(StoreItem_Info.Get_Item_Name))
+                {
+                    // 수량 증가
+                    UserInfo.InventoryDict[StoreItem_Info.Get_Item_Name].Get_Amount += StoreItem_Info.Get_Item_Ex;
+                }
+                else // 보유 하고 있지 않다면
+                {
+                
+                }
+            }
 
-        LobbyMgr_Ref.Refresh_UI_Dia();
+            Buying_Info.SetActive(false);
+        }
     }
 
     public void On_Click_Cancel(Animator _animator)
@@ -177,7 +201,15 @@ public class Store_Manager : MonoBehaviour
             Dia_SelectCount = 0;
 
         _animator.Play("PopDown");
+    }
+    #endregion
 
+    // Ticket_Store
+    #region Ticket_Buy
+    public void On_Click_Buy_Item(Store_Item _storeItem)
+    {
+        StoreItem_Info = _storeItem;
+        Buying_Info.SetActive(true);
     }
     #endregion
 

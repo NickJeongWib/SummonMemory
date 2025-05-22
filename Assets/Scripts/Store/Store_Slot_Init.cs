@@ -46,6 +46,16 @@ public class Store_Slot_Init : MonoBehaviour
         {
             StoreManager_Ref.On_Click_Buy_Dia(StoreItemInfo.Get_Item_Ex);
         }
+        else if (StoreItemInfo.Get_StoreType == STORE_TYPE.TICKET &&
+            StoreManager_Ref != null)
+        {
+            StoreManager_Ref.On_Click_Buy_Item(StoreItemInfo);
+        }
+        else
+        {
+            StoreManager_Ref.On_Click_Buy_Item(StoreItemInfo);
+        }
+
     }
 
     // 아이템 정보 버튼 클릭 시

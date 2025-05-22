@@ -127,15 +127,15 @@ public class UserInfo
         }
 
         #region Test
-        //for (int i = 0; i < Spend_Inventory.Count; i++)
-        //{
-        //    Debug.Log($"{i}/{Spend_Inventory[i].Get_Item_Name}/{Spend_Inventory[i].Get_Amount}");
-        //}
+        for (int i = 0; i < Spend_Inventory.Count; i++)
+        {
+            Debug.Log($"{i}/{Spend_Inventory[i].Get_Item_Name}/{Spend_Inventory[i].Get_Amount}");
+        }
 
-        //for (int i = 0; i < Upgrade_Inventory.Count; i++)
-        //{
-        //    Debug.Log($"{i}/{Upgrade_Inventory[i].Get_Item_Name}/{Upgrade_Inventory[i].Get_Amount}");
-        //}
+        for (int i = 0; i < Upgrade_Inventory.Count; i++)
+        {
+            Debug.Log($"{i}/{Upgrade_Inventory[i].Get_Item_Name}/{Upgrade_Inventory[i].Get_Amount}");
+        }
         #endregion
         #endregion
     }

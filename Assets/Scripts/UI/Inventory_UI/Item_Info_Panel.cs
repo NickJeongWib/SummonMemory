@@ -120,14 +120,14 @@ public class Item_Info_Panel : MonoBehaviour
             EquipBtn_Obj.SetActive(false);
             Refresh_Equipment(_num);
         }
-        else if (_invenType == INVENTORY_TYPE.SPEND)
+        else if (_invenType == INVENTORY_TYPE.SPEND) // 소모 아이템
         {
             Equipment_Item_Root.SetActive(false);
             Spend_Item_Root.SetActive(true);
 
             Refresh_Spend();
         }
-        else
+        else // 강화아이템
         {
 
         }

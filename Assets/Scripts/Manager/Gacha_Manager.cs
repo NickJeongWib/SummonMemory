@@ -46,6 +46,9 @@ public class Gacha_Manager : MonoBehaviour
     [SerializeField] VideoClip[] Gacha_Scenes;
     [SerializeField] VideoPlayer Videoplayer;
 
+    [Header("Inventory_UI")]
+    [SerializeField] Inventory_UI InventoryUI_Ref;
+
     bool isR_Summon;
     bool isSR_Summon;
     bool isSSR_Summon;
@@ -218,6 +221,8 @@ public class Gacha_Manager : MonoBehaviour
                     break;
                 }
             }
+
+            InventoryUI_Ref.Spend_Slot_Refresh();
         }  
     }
 
@@ -265,6 +270,8 @@ public class Gacha_Manager : MonoBehaviour
                     break;
                 }
             }
+
+            InventoryUI_Ref.Spend_Slot_Refresh();
         }
     }
 
@@ -312,6 +319,7 @@ public class Gacha_Manager : MonoBehaviour
                     break;
                 }
             }
+            InventoryUI_Ref.Spend_Slot_Refresh();
         }
     }
 

@@ -157,6 +157,53 @@ public class Inventory_UI : MonoBehaviour
     }
     #endregion
 
+    #region Slot_Refresh
+    public void Spend_Slot_Refresh()
+    {
+        int index = 0;
+        for (int i = 0; i < UserInfo.Spend_Inventory.Count; i++)
+        {
+            // 아이템을 보유하지 않을 경우 
+            if (UserInfo.Spend_Inventory[i].Get_Amount <= 0)
+            {
+                continue;
+            }
+
+            // 아이템을 보유 한 경우
+            if (UserInfo.Spend_Inventory[i].Get_Amount >= 1)
+            {
+                // 유저가 들고 있는 아이템 정보 세팅
+                SpendSlot_List[index].Set_Info(UserInfo.Spend_Inventory[i]);
+                // 슬롯 숫자 증가
+                index++;
+            }
+        }
+    }
+
+    public void Upgrade_Slot_Refresh()
+    {
+        int index = 0;
+        for (int i = 0; i < UserInfo.Upgrade_Inventory.Count; i++)
+        {
+            // 아이템을 보유하지 않을 경우 
+            if (UserInfo.Upgrade_Inventory[i].Get_Amount <= 0)
+            {
+                continue;
+            }
+
+            // 아이템을 보유 한 경우
+            if (UserInfo.Upgrade_Inventory[i].Get_Amount >= 1)
+            {
+                // 유저가 들고 있는 아이템 정보 세팅
+                UpgradeSlot_List[index].Set_Info(UserInfo.Upgrade_Inventory[i]);
+                // 슬롯 숫자 증가
+                index++;
+            }
+        }
+    }
+    #endregion
+
+    #region ItemInfo_Panel
     public void On_Click_Open_ItemInfo(int _slotNum)
     {
         // 장비가 빈 슬롯을 클릭했을때 return
@@ -168,4 +215,5 @@ public class Inventory_UI : MonoBehaviour
         Item_Info.ItemInfo_Refresh(Inventory_Type, _slotNum);
         Item_Info.gameObject.SetActive(true);
     }
+    #endregion
 }
