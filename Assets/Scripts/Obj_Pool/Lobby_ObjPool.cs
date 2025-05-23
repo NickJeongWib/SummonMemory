@@ -60,6 +60,7 @@ public class Lobby_ObjPool : MonoBehaviour
 
             spendSlot.transform.SetParent(Spend_SlotTr, false);
             spendSlot.GetComponent<Spend_Slot>().SlotNum = i;
+            spendSlot.GetComponent<Spend_Slot>().Set_Inventory_UI = Inventory_UI_Ref;
             Inventory_UI_Ref.Get_SpendSlot_List.Add(spendSlot.GetComponent<Spend_Slot>());
         }
         // 인벤토리 장비 슬롯 오브젝트 풀 생성
@@ -79,6 +80,7 @@ public class Lobby_ObjPool : MonoBehaviour
 
             upgradeSlot.transform.SetParent(Upgrad_SlotTr, false);
             upgradeSlot.GetComponent<Upgrade_Slot>().SlotNum = i;
+            upgradeSlot.GetComponent<Upgrade_Slot>().Set_Inventory_UI = Inventory_UI_Ref;
             Inventory_UI_Ref.Get_UpgradeSlot_List.Add(upgradeSlot.GetComponent<Upgrade_Slot>());
         }
         #endregion

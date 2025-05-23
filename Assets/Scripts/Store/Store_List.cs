@@ -21,8 +21,9 @@ public class Store_List : MonoBehaviour
         {
             STORE_TYPE.TryParse(GoogleSheetSORef.Store_Item_DBList[i].STORE_TYPE, out STORE_TYPE storeType);
             CONSUME_TYPE.TryParse(GoogleSheetSORef.Store_Item_DBList[i].STORE_ITEM_CONSUME_TYPE, out CONSUME_TYPE consumeType);
+            INVENTORY_TYPE.TryParse(GoogleSheetSORef.Store_Item_DBList[i].INVENTORY_TYPE, out INVENTORY_TYPE invenType);
 
-            Store_Item node = new Store_Item(GoogleSheetSORef.Store_Item_DBList[i].STORE_ITEM_NAME, storeType, GoogleSheetSORef.Store_Item_DBList[i].STORE_ITEM_EX,
+            Store_Item node = new Store_Item(GoogleSheetSORef.Store_Item_DBList[i].STORE_ITEM_NAME, invenType, storeType, GoogleSheetSORef.Store_Item_DBList[i].STORE_ITEM_EX,
                 consumeType, GoogleSheetSORef.Store_Item_DBList[i].STORE_ITEM_CONSUME_COUNT, GoogleSheetSORef.Store_Item_DBList[i].STORE_ITEM_ICON,
                 GoogleSheetSORef.Store_Item_DBList[i].STORE_ITEM_DESC);
 

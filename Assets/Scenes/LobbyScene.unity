@@ -12554,7 +12554,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1951963918}
+          m_TargetAssemblyTypeName: CharGrowUp_Mgr, Assembly-CSharp
+          m_MethodName: On_Click_Slime
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &279057239
 GameObject:
   m_ObjectHideFlags: 0
@@ -13552,7 +13568,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 296095991}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1951963918}
+        m_TargetAssemblyTypeName: CharGrowUp_Mgr, Assembly-CSharp
+        m_MethodName: On_Click_SlimeCount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &296095991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15914,7 +15942,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.000061035156}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &359611318
 MonoBehaviour:
@@ -17867,7 +17895,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 390366994}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1951963918}
+        m_TargetAssemblyTypeName: CharGrowUp_Mgr, Assembly-CSharp
+        m_MethodName: Char_Leveling
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &390366994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18394,7 +18434,7 @@ GameObject:
   - component: {fileID: 418532457}
   - component: {fileID: 418532456}
   m_Layer: 5
-  m_Name: Middle_Use_Ex
+  m_Name: High_Use_Ex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26438,7 +26478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9221556, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.8745098, g: 0.9137255, b: 0.41960785, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -26882,7 +26922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9221556, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.8745098, g: 0.9137255, b: 0.41960785, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -36373,7 +36413,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1951963918}
+          m_TargetAssemblyTypeName: CharGrowUp_Mgr, Assembly-CSharp
+          m_MethodName: On_Click_Slime
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &796626403
 GameObject:
   m_ObjectHideFlags: 0
@@ -43511,7 +43567,7 @@ GameObject:
   - component: {fileID: 947418442}
   - component: {fileID: 947418441}
   m_Layer: 5
-  m_Name: Middle_Have_Ex
+  m_Name: High_Have_Ex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45164,7 +45220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9221556, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.87616134, g: 0.9150943, b: 0.41869882, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -46397,7 +46453,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1951963918}
+        m_TargetAssemblyTypeName: CharGrowUp_Mgr, Assembly-CSharp
+        m_MethodName: Refresh_Slider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1001215219
 GameObject:
   m_ObjectHideFlags: 0
@@ -46614,7 +46682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1010131895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58918,7 +58986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1242971116
 RectTransform:
   m_ObjectHideFlags: 0
@@ -61956,7 +62024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1306161566
 RectTransform:
   m_ObjectHideFlags: 0
@@ -89405,13 +89473,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CombatPower: {fileID: 361725256}
-  Char_Star: {fileID: 1839789196}
   Level_Text: {fileID: 1744979317}
   HP_Value_Text: {fileID: 543805228}
   ATK_Value_Text: {fileID: 42976422}
   DEF_Value_Text: {fileID: 384718152}
   CRIR_Value_Text: {fileID: 640958469}
   CRID_Value_Text: {fileID: 1543366240}
+  Low_Slime_Amout: {fileID: 1352215061}
+  Middle_Slime_Amout: {fileID: 226791970}
+  High_Slime_Amout: {fileID: 947418441}
+  Slime_Use:
+  - {fileID: 1409207503}
+  - {fileID: 1221326337}
+  - {fileID: 418532456}
+  Char_Star: {fileID: 1839789196}
+  SelectMask:
+  - {fileID: 979710544}
+  - {fileID: 591847237}
+  - {fileID: 599882065}
+  Slime_Use_Btns:
+  - {fileID: 296095990}
+  - {fileID: 2114046226}
+  LevelUP_Btn: {fileID: 390366993}
+  Slime_Use_Slider: {fileID: 1000743699}
+  ExpSlider: {fileID: 519365672}
+  ExpBack: {fileID: 1490332157}
+  Use_Exp: 10270000a861000050c30000
+  Exp_Sum: 0
+  SlimeMaxCount: 0
+  UseCount: 0
+  selectNum: 0
 --- !u!1 &1952322284
 GameObject:
   m_ObjectHideFlags: 0
@@ -89730,7 +89821,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1951963918}
+          m_TargetAssemblyTypeName: CharGrowUp_Mgr, Assembly-CSharp
+          m_MethodName: On_Click_Slime
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1962010133
 GameObject:
   m_ObjectHideFlags: 0
@@ -96958,7 +97065,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2114046227}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1951963918}
+        m_TargetAssemblyTypeName: CharGrowUp_Mgr, Assembly-CSharp
+        m_MethodName: On_Click_SlimeCount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2114046227
 MonoBehaviour:
   m_ObjectHideFlags: 0

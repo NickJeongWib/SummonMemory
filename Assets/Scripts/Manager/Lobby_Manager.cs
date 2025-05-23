@@ -42,6 +42,7 @@ public class Lobby_Manager : MonoBehaviour
         {
             // TODO ## 시작 캐릭터 설정 Character_List "레제" 초반 스타트 캐릭
             UserInfo.UserCharDict.Add($"{Character_List.SR_Char[0].Get_CharName}", Character_List.SR_Char[0]);
+            UserInfo.UserCharDict[Character_List.SR_Char[0].Get_CharName].Get_Max_Lv = 20;
             UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToList();
             UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
 

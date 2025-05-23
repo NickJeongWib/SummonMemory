@@ -1733,6 +1733,7 @@
     {
       "STORE_ITEM_NAME": "다이아",
       "STORE_TYPE": "CURRENCY",
+      "INVENTORY_TYPE": "CURRENCY",
       "STORE_ITEM_EX": 11000,
       "STORE_ITEM_CONSUME_TYPE": "MONEY",
       "STORE_ITEM_CONSUME_COUNT": 10000000,
@@ -1742,6 +1743,7 @@
     {
       "STORE_ITEM_NAME": "다이아",
       "STORE_TYPE": "CURRENCY",
+      "INVENTORY_TYPE": "CURRENCY",
       "STORE_ITEM_EX": 5000,
       "STORE_ITEM_CONSUME_TYPE": "MONEY",
       "STORE_ITEM_CONSUME_COUNT": 5000000,
@@ -1751,6 +1753,7 @@
     {
       "STORE_ITEM_NAME": "다이아",
       "STORE_TYPE": "CURRENCY",
+      "INVENTORY_TYPE": "CURRENCY",
       "STORE_ITEM_EX": 2400,
       "STORE_ITEM_CONSUME_TYPE": "MONEY",
       "STORE_ITEM_CONSUME_COUNT": 2500000,
@@ -1760,6 +1763,7 @@
     {
       "STORE_ITEM_NAME": "다이아",
       "STORE_TYPE": "CURRENCY",
+      "INVENTORY_TYPE": "CURRENCY",
       "STORE_ITEM_EX": 1100,
       "STORE_ITEM_CONSUME_TYPE": "MONEY",
       "STORE_ITEM_CONSUME_COUNT": 1250000,
@@ -1769,6 +1773,7 @@
     {
       "STORE_ITEM_NAME": "다이아",
       "STORE_TYPE": "CURRENCY",
+      "INVENTORY_TYPE": "CURRENCY",
       "STORE_ITEM_EX": 500,
       "STORE_ITEM_CONSUME_TYPE": "MONEY",
       "STORE_ITEM_CONSUME_COUNT": 625000,
@@ -1778,6 +1783,7 @@
     {
       "STORE_ITEM_NAME": "다이아",
       "STORE_TYPE": "CURRENCY",
+      "INVENTORY_TYPE": "CURRENCY",
       "STORE_ITEM_EX": 200,
       "STORE_ITEM_CONSUME_TYPE": "MONEY",
       "STORE_ITEM_CONSUME_COUNT": 300000,
@@ -1787,6 +1793,7 @@
     {
       "STORE_ITEM_NAME": "다이아",
       "STORE_TYPE": "CURRENCY",
+      "INVENTORY_TYPE": "CURRENCY",
       "STORE_ITEM_EX": 100,
       "STORE_ITEM_CONSUME_TYPE": "MONEY",
       "STORE_ITEM_CONSUME_COUNT": 150000,
@@ -1796,6 +1803,7 @@
     {
       "STORE_ITEM_NAME": "캐릭터 티켓",
       "STORE_TYPE": "TICKET",
+      "INVENTORY_TYPE": "SPEND",
       "STORE_ITEM_EX": 1,
       "STORE_ITEM_CONSUME_TYPE": "DIA",
       "STORE_ITEM_CONSUME_COUNT": 200,
@@ -1805,6 +1813,7 @@
     {
       "STORE_ITEM_NAME": "장비 티켓",
       "STORE_TYPE": "TICKET",
+      "INVENTORY_TYPE": "SPEND",
       "STORE_ITEM_EX": 1,
       "STORE_ITEM_CONSUME_TYPE": "DIA",
       "STORE_ITEM_CONSUME_COUNT": 200,
@@ -1814,6 +1823,7 @@
     {
       "STORE_ITEM_NAME": "옐로우 슬라임",
       "STORE_TYPE": "R_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 1,
       "STORE_ITEM_CONSUME_TYPE": "R_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1823,6 +1833,7 @@
     {
       "STORE_ITEM_NAME": "블루 슬라임",
       "STORE_TYPE": "R_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 1,
       "STORE_ITEM_CONSUME_TYPE": "R_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1832,6 +1843,7 @@
     {
       "STORE_ITEM_NAME": "레드 슬라임",
       "STORE_TYPE": "R_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 1,
       "STORE_ITEM_CONSUME_TYPE": "R_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1841,6 +1853,7 @@
     {
       "STORE_ITEM_NAME": "재련 수정",
       "STORE_TYPE": "R_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 1,
       "STORE_ITEM_CONSUME_TYPE": "R_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1850,6 +1863,7 @@
     {
       "STORE_ITEM_NAME": "재련 가루",
       "STORE_TYPE": "R_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 1,
       "STORE_ITEM_CONSUME_TYPE": "R_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1859,6 +1873,7 @@
     {
       "STORE_ITEM_NAME": "옐로우 슬라임",
       "STORE_TYPE": "SR_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 5,
       "STORE_ITEM_CONSUME_TYPE": "SR_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1868,6 +1883,7 @@
     {
       "STORE_ITEM_NAME": "블루 슬라임",
       "STORE_TYPE": "SR_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 5,
       "STORE_ITEM_CONSUME_TYPE": "SR_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1877,6 +1893,7 @@
     {
       "STORE_ITEM_NAME": "레드 슬라임",
       "STORE_TYPE": "SR_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 5,
       "STORE_ITEM_CONSUME_TYPE": "SR_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1886,6 +1903,7 @@
     {
       "STORE_ITEM_NAME": "재련 수정",
       "STORE_TYPE": "SR_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 5,
       "STORE_ITEM_CONSUME_TYPE": "SR_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1895,6 +1913,7 @@
     {
       "STORE_ITEM_NAME": "재련 가루",
       "STORE_TYPE": "SR_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 5,
       "STORE_ITEM_CONSUME_TYPE": "SR_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1904,6 +1923,7 @@
     {
       "STORE_ITEM_NAME": "옐로우 슬라임",
       "STORE_TYPE": "SSR_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 20,
       "STORE_ITEM_CONSUME_TYPE": "SSR_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1913,6 +1933,7 @@
     {
       "STORE_ITEM_NAME": "블루 슬라임",
       "STORE_TYPE": "SSR_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 20,
       "STORE_ITEM_CONSUME_TYPE": "SSR_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1922,6 +1943,7 @@
     {
       "STORE_ITEM_NAME": "레드 슬라임",
       "STORE_TYPE": "SSR_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 20,
       "STORE_ITEM_CONSUME_TYPE": "SSR_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1931,6 +1953,7 @@
     {
       "STORE_ITEM_NAME": "재련 수정",
       "STORE_TYPE": "SSR_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 20,
       "STORE_ITEM_CONSUME_TYPE": "SSR_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,
@@ -1940,6 +1963,7 @@
     {
       "STORE_ITEM_NAME": "재련 가루",
       "STORE_TYPE": "SSR_BOOK",
+      "INVENTORY_TYPE": "UPGRADE",
       "STORE_ITEM_EX": 20,
       "STORE_ITEM_CONSUME_TYPE": "SSR_BOOK",
       "STORE_ITEM_CONSUME_COUNT": 1,

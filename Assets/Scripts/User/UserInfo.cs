@@ -89,7 +89,7 @@ public class UserInfo
         if (InventoryDict.ContainsKey(_item.Get_Item_Name) == false)
         {
             InventoryDict.Add(_item.Get_Item_Name, _item);
-            _item.Get_Amount = 1;
+            _item.Get_Amount += _add;
         }
         else // 이미 존재한다면
         {
@@ -103,10 +103,13 @@ public class UserInfo
         Spend_Inventory.Clear();
         Upgrade_Inventory.Clear();
 
+        // Dictionary 탐색
         foreach (Inventory_Item item in InventoryDict.Values)
         {
+            // 소모 아이템
             if (item.Get_InventoryType == INVENTORY_TYPE.SPEND)
             {
+                // 리스트 추가
                 for (int i = 0; i < Spend_Inventory.Count; i++)
                 {
                     if (Spend_Inventory[i].Get_Item_Name == item.Get_Item_Name)
@@ -114,8 +117,10 @@ public class UserInfo
                 }
                 Spend_Inventory.Add(item);
             }
+            // 강화 아이템
             else if (item.Get_InventoryType == INVENTORY_TYPE.UPGRADE)
             {
+                // 리스트 추가
                 for (int i = 0; i < Upgrade_Inventory.Count; i++)
                 {
                     if (Upgrade_Inventory[i].Get_Item_Name == item.Get_Item_Name)
@@ -127,19 +132,18 @@ public class UserInfo
         }
 
         #region Test
-        for (int i = 0; i < Spend_Inventory.Count; i++)
-        {
-            Debug.Log($"{i}/{Spend_Inventory[i].Get_Item_Name}/{Spend_Inventory[i].Get_Amount}");
-        }
+        //for (int i = 0; i < Spend_Inventory.Count; i++)
+        //{
+        //    Debug.Log($"{i}/{Spend_Inventory[i].Get_Item_Name}/{Spend_Inventory[i].Get_Amount}");
+        //}
 
-        for (int i = 0; i < Upgrade_Inventory.Count; i++)
-        {
-            Debug.Log($"{i}/{Upgrade_Inventory[i].Get_Item_Name}/{Upgrade_Inventory[i].Get_Amount}");
-        }
+        //for (int i = 0; i < Upgrade_Inventory.Count; i++)
+        //{
+        //    Debug.Log($"{i}/{Upgrade_Inventory[i].Get_Item_Name}/{Upgrade_Inventory[i].Get_Amount}");
+        //}
         #endregion
         #endregion
     }
-
 
     #region Test
     public static void Test()

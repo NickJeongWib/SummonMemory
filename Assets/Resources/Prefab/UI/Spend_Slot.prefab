@@ -218,6 +218,7 @@ MonoBehaviour:
   Item_Mask: {fileID: 6786930221107248651}
   Item_Image: {fileID: 8977661851503850336}
   Amount_Text: {fileID: 1443961570951010389}
+  Open_Item_Info: {fileID: 3212998883124617079}
 --- !u!1 &2460665584354036827
 GameObject:
   m_ObjectHideFlags: 0

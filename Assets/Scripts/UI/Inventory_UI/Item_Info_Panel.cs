@@ -116,26 +116,57 @@ public class Item_Info_Panel : MonoBehaviour
         if (_invenType == INVENTORY_TYPE.EQUIPMENT)
         {
             Equipment_Item_Root.SetActive(true);
+            OwnCharRoot.SetActive(true);
             Spend_Item_Root.SetActive(false);
             EquipBtn_Obj.SetActive(false);
             Refresh_Equipment(_num);
         }
         else if (_invenType == INVENTORY_TYPE.SPEND) // 소모 아이템
         {
-            Equipment_Item_Root.SetActive(false);
             Spend_Item_Root.SetActive(true);
-
-            Refresh_Spend();
+            EquipBtn_Obj.SetActive(false);
+            Equipment_Item_Root.SetActive(false);
+            OwnCharRoot.SetActive(false);
+            Refresh_Spend(_num);
         }
         else // 강화아이템
         {
-
+            Spend_Item_Root.SetActive(true);
+            EquipBtn_Obj.SetActive(false);
+            Equipment_Item_Root.SetActive(false);
+            OwnCharRoot.SetActive(false);
+            Refresh_Upgrade(_num);
         }
     }
 
-    void Refresh_Spend()
+    void Refresh_Upgrade(int _num)
     {
         Item_Back.gameObject.SetActive(false);
+
+        Spend_Item_Name.text = $"{UserInfo.Upgrade_Inventory[_num].Get_Item_Name}";
+        Spend_Item_Ex.text = $"{UserInfo.InventoryDict[UserInfo.Upgrade_Inventory[_num].Get_Item_Name].Get_Amount}개 보유";
+        Spend_Item_Type.text = $"강화아이템";
+        Item_Image.sprite = UserInfo.Upgrade_Inventory[_num].Get_Item_Image;
+
+        UserInfo.Upgrade_Inventory[_num].Get_Item_Desc = UserInfo.Upgrade_Inventory[_num].Get_Item_Desc.Replace("\\n", "\n");
+        UserInfo.Upgrade_Inventory[_num].Get_Item_Desc = UserInfo.Upgrade_Inventory[_num].Get_Item_Desc.Replace("\\", "");
+
+        Spend_Item_Des.text = UserInfo.Upgrade_Inventory[_num].Get_Item_Desc;
+    }
+
+    void Refresh_Spend(int _num)
+    {
+        Item_Back.gameObject.SetActive(false);
+
+        Spend_Item_Name.text = $"{UserInfo.Spend_Inventory[_num].Get_Item_Name}";
+        Spend_Item_Ex.text = $"{UserInfo.InventoryDict[UserInfo.Spend_Inventory[_num].Get_Item_Name].Get_Amount}개 보유";
+        Spend_Item_Type.text = $"소모아이템";
+        Item_Image.sprite = UserInfo.Spend_Inventory[_num].Get_Item_Image;
+
+        UserInfo.Spend_Inventory[_num].Get_Item_Desc = UserInfo.Spend_Inventory[_num].Get_Item_Desc.Replace("\\n", "\n");
+        UserInfo.Spend_Inventory[_num].Get_Item_Desc = UserInfo.Spend_Inventory[_num].Get_Item_Desc.Replace("\\", "");
+
+        Spend_Item_Des.text = UserInfo.Spend_Inventory[_num].Get_Item_Desc;
     }
 
     void Refresh_Equipment(int _num)

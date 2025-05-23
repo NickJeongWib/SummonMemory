@@ -19,13 +19,17 @@ public class Character_List : MonoBehaviour
 
     private void Awake()
     {
-        for(int i = 0; i < GoogleSheetSORef.Level_DBList.Count; i++)
+
+        #region Character_Level
+        for (int i = 0; i < GoogleSheetSORef.Level_DBList.Count; i++)
         {
             Level.Add(GoogleSheetSORef.Level_DBList[i].LEVEL);
             Require_Exp.Add(GoogleSheetSORef.Level_DBList[i].REQUIRE_EXP);
             Cumulative_Exp.Add(GoogleSheetSORef.Level_DBList[i].CUMULATIVE_EXP);
         }
+        #endregion
 
+        #region Character_Data
         for (int i = 0; i < GoogleSheetSORef.Character_DBList.Count; i++)
         {
             CHAR_GRADE.TryParse(GoogleSheetSORef.Character_DBList[i].CHAR_GRADE, out CHAR_GRADE charGrade);
@@ -77,5 +81,6 @@ public class Character_List : MonoBehaviour
                 SSR_Char.Add(Node);
             }
         }
+        #endregion
     }
 }

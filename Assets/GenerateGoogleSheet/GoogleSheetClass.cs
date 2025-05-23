@@ -74,6 +74,7 @@ public class Store_Item_DB
 {
 	public string STORE_ITEM_NAME;
 	public string STORE_TYPE;
+	public string INVENTORY_TYPE;
 	public int STORE_ITEM_EX;
 	public string STORE_ITEM_CONSUME_TYPE;
 	public int STORE_ITEM_CONSUME_COUNT;

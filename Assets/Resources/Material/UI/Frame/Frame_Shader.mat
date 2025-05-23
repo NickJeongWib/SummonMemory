@@ -40,7 +40,7 @@ Material:
     - _BoxSize: 0.98
     - _Emission: 1.5
     m_Colors:
-    - _Color: {r: 1, g: 0.831176, b: 0.6, a: 1}
+    - _Color: {r: 1, g: 0.61977357, b: 0.6, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2552369306566206188
 MonoBehaviour:

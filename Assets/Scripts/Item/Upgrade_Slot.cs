@@ -11,7 +11,16 @@ public class Upgrade_Slot : MonoBehaviour
     [SerializeField] Mask Item_Mask;
     [SerializeField] Image Item_Image;
     [SerializeField] Text Amount_Text;
-   
+
+    [SerializeField] Button Open_Item_Info;
+    Inventory_UI Inventory_UI_Ref;
+    public Inventory_UI Set_Inventory_UI { set => Inventory_UI_Ref = value; }
+
+    private void Start()
+    {
+        // 버튼 호출 대기
+        Open_Item_Info.onClick.AddListener(Item_Info);
+    }
 
     public void Set_Info(Inventory_Item _itemInfo)
     {
@@ -28,5 +37,10 @@ public class Upgrade_Slot : MonoBehaviour
     public void Off_Image()
     {
         Item_Mask.showMaskGraphic = false;
+    }
+
+    void Item_Info()
+    {
+        Inventory_UI_Ref.On_Click_Open_ItemInfo(SlotNum);
     }
 }

@@ -315,7 +315,7 @@ public class ItemUpGrade : MonoBehaviour
         else
         {
             Count--;
-            if (Count <= 1)
+            if (Count <= 0)
                 Count = 0;
         }
 
@@ -396,9 +396,6 @@ public class ItemUpGrade : MonoBehaviour
         // Debug.Log($"{CostSum.ToString("N0")}¿ø »ç¿ë");
         ChainAnimator.Play("ChainUp_Close");
     }
-
-
-
     #endregion
 
     #region OptionValueReset

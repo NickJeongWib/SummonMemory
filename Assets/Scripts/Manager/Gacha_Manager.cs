@@ -199,12 +199,14 @@ public class Gacha_Manager : MonoBehaviour
         {
             Gacha_New_Images[Gacha_Num].SetActive(true);
             UserInfo.UserCharDict.Add(Character_List.SSR_Char[RandomSSR].Get_CharName, character);
+            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20;
         }
         // 등급이 아직 덜 올랐다면
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar < 5) 
         {
             New_PopUp_Active();
             UserInfo.UserCharDict[character.Get_CharName].Get_CharStar++;
+            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20 + (0 * UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
             // Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
         }
         // 등급이 다 올랐다면
@@ -248,12 +250,14 @@ public class Gacha_Manager : MonoBehaviour
         {
             Gacha_New_Images[Gacha_Num].SetActive(true);
             UserInfo.UserCharDict.Add(Character_List.SR_Char[RandomSR].Get_CharName, character);
+            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20;
         }
         // 등급이 아직 덜 올랐다면
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.SR_Char[RandomSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar < 5)
         {
             New_PopUp_Active();
             UserInfo.UserCharDict[character.Get_CharName].Get_CharStar++;
+            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20 + (0 * UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
             // Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
         }
         // 등급이 다 올랐다면
@@ -297,12 +301,14 @@ public class Gacha_Manager : MonoBehaviour
         {
             Gacha_New_Images[Gacha_Num].SetActive(true);
             UserInfo.UserCharDict.Add(Character_List.R_Char[RandomR].Get_CharName, character);
+            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20;
         }
         // 등급이 아직 덜 올랐다면
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.R_Char[RandomR].Get_CharName) &&  UserInfo.UserCharDict[character.Get_CharName].Get_CharStar < 5)
         {
             New_PopUp_Active();
             UserInfo.UserCharDict[character.Get_CharName].Get_CharStar++;
+            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20 + (0 * UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
             // Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
         }
         // 등급이 다 올랐다면

@@ -15,7 +15,7 @@ public class Inventory_Item
     public int Get_Amount { get => Amount; set => Amount = value; }
 
     string Item_Desc;
-    public string Get_Item_Desc { get => Item_Desc; }
+    public string Get_Item_Desc { get => Item_Desc; set => Item_Desc = value; }
 
     // 아이템 이미지 
     Sprite Item_Image;

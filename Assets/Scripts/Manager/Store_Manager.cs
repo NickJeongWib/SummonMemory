@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Define;
 
 public class Store_Manager : MonoBehaviour
 {
@@ -163,6 +164,7 @@ public class Store_Manager : MonoBehaviour
         Buying_Info.SetActive(true);
     }
     #endregion
+
     #region Buying_Info
     public void On_Click_Buy()
     {
@@ -179,15 +181,31 @@ public class Store_Manager : MonoBehaviour
             // 선택한 아이템이 있다면
             if (StoreItem_Info != null)
             {
-                // 이미 보유 하고 있다면
-                if (UserInfo.InventoryDict.ContainsKey(StoreItem_Info.Get_Item_Name))
+                // 소모 아이템
+                if (StoreItem_Info.Get_InvenType == INVENTORY_TYPE.SPEND)
                 {
-                    // 수량 증가
-                    UserInfo.InventoryDict[StoreItem_Info.Get_Item_Name].Get_Amount += StoreItem_Info.Get_Item_Ex;
+                    for (int i = 0; i < Item_List.Spend_Item_List.Count; i++)
+                    {
+                        if (Item_List.Spend_Item_List[i].Get_Item_Name == StoreItem_Info.Get_Item_Name)
+                        {
+                            UserInfo.Add_Inventory_Item(Item_List.Spend_Item_List[i], StoreItem_Info.Get_Item_Ex);
+                            InventoryUI_Ref.Spend_Slot_Refresh();
+                            break;
+                        }
+                    }
                 }
-                else // 보유 하고 있지 않다면
+                // 강화 아이템
+                else if (StoreItem_Info.Get_InvenType == INVENTORY_TYPE.UPGRADE)
                 {
-                
+                    for (int i = 0; i < Item_List.Upgrade_Item_List.Count; i++)
+                    {
+                        if (Item_List.Upgrade_Item_List[i].Get_Item_Name == StoreItem_Info.Get_Item_Name)
+                        {
+                            UserInfo.Add_Inventory_Item(Item_List.Upgrade_Item_List[i], StoreItem_Info.Get_Item_Ex);
+                            InventoryUI_Ref.Upgrade_Slot_Refresh();
+                            break;
+                        }
+                    }
                 }
             }
 
