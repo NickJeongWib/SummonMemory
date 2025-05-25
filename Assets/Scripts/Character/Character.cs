@@ -8,11 +8,17 @@ public class Character
 {
     ///------- Var
     #region Character_State
+    #region Level
     int Character_Lv;
     public int Get_Character_Lv { get => Character_Lv; set => Character_Lv = value; }
     int Max_Lv;
     public int Get_Max_Lv { get => Max_Lv; set => Max_Lv = value; }
+    int CurrentExp;
+    public int Get_CurrentExp { get => CurrentExp; set => CurrentExp = value; }
+    int Cumulative_Exp;
+    public int Get_Cumulative_Exp { get => Cumulative_Exp; set => Cumulative_Exp = value; }
 
+    #endregion
     // google_Sheet 연동 변수들
     int CharacterID;
     public int Get_CharacterID { get => CharacterID; }
@@ -65,11 +71,6 @@ public class Character
     #endregion
 
     #region Character_Growing_State
-    int CurrentExp;
-    public int Get_CurrentExp { get => CurrentExp; set => CurrentExp = value; }
-
-    int Cumulative_Exp;
-    public int Get_Cumulative_Exp { get => Cumulative_Exp; set => Cumulative_Exp = value; }
 
     // 성장 관련 파라미터
     float linearFactor;     // 선형 성장 계수

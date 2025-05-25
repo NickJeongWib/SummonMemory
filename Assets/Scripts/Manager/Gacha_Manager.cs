@@ -206,7 +206,7 @@ public class Gacha_Manager : MonoBehaviour
         {
             New_PopUp_Active();
             UserInfo.UserCharDict[character.Get_CharName].Get_CharStar++;
-            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20 + (0 * UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
+            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20 + (10 * UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
             // Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
         }
         // 등급이 다 올랐다면
@@ -257,7 +257,7 @@ public class Gacha_Manager : MonoBehaviour
         {
             New_PopUp_Active();
             UserInfo.UserCharDict[character.Get_CharName].Get_CharStar++;
-            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20 + (0 * UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
+            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20 + (10 * UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
             // Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
         }
         // 등급이 다 올랐다면
@@ -308,7 +308,7 @@ public class Gacha_Manager : MonoBehaviour
         {
             New_PopUp_Active();
             UserInfo.UserCharDict[character.Get_CharName].Get_CharStar++;
-            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20 + (0 * UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
+            UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20 + (10 * UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
             // Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
         }
         // 등급이 다 올랐다면
