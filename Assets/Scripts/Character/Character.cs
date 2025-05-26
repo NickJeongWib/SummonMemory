@@ -254,20 +254,27 @@ public class Character
             _criDText.text = $"{(GameManager.Instance.Get_SelectChar.BaseCRID * 100).ToString("N1")}%";
         }
 
-        Debug.Log($"Lv{level} : Atk : {attack} / Def : {def} / HP : {hp} / CriR : {criR} / CriD : {criD}");
-        Debug.Log($"Lv{level} : CharATK : {CharATK} / CharDEF : {CharDEF} / CharHP : {CharHP} / Char_CRT_RATE : {Char_CRT_RATE} / Char_CRT_DAMAGE : {Char_CRT_DAMAGE}");
-        Debug.Log($"Lv{level} : BaseAtk : {BaseAtk - Before_Atk} / BaseDef : {BaseDef - Before_Def} / BaseHP : {BaseHP - Before_Hp} / BaseCRIR : {BaseCRIR - Before_criR} / BaseCRID : {BaseCRID - Before_criD}");
+        // Debug.Log($"Lv{level} : Atk : {attack} / Def : {def} / HP : {hp} / CriR : {criR} / CriD : {criD}");
+        // Debug.Log($"Lv{level} : CharATK : {CharATK} / CharDEF : {CharDEF} / CharHP : {CharHP} / Char_CRT_RATE : {Char_CRT_RATE} / Char_CRT_DAMAGE : {Char_CRT_DAMAGE}");
+        // Debug.Log($"Lv{level} : BaseAtk : {BaseAtk - Before_Atk} / BaseDef : {BaseDef - Before_Def} / BaseHP : {BaseHP - Before_Hp} / BaseCRIR : {BaseCRIR - Before_criR} / BaseCRID : {BaseCRID - Before_criD}");
         // Debug.Log($"Lv{level} : Before_Atk : {Before_Atk} / Before_Def : {Before_Def} / Before_Hp : {Before_Hp} / Before_criR : {Before_criR} / Before_criD : {Before_criD}");
     }
 
     // 레벨업 함수
     public void LevelUp()
     {
+        // 기본 공격력 저장
         BaseAtk = (BaseAtk - Before_Atk);
         BaseDef = (BaseDef - Before_Def);
         BaseHP = (BaseHP - Before_Hp);
         BaseCRIR = (BaseCRIR - Before_criR);
         BaseCRID = (BaseCRID - Before_criD);
+        // 다시 계산하기 위해 기존 before값 빼기
+        CharATK -= Before_Atk;
+        CharDEF -= Before_Def;
+        CharHP -= Before_Hp;
+        Char_CRT_RATE -= Before_criR;
+        Char_CRT_DAMAGE -= Before_criD;
 
         // 이전 값 저장
         Before_Atk = attack;
@@ -276,15 +283,21 @@ public class Character
         Before_criR = criR;
         Before_criD = criD;
 
+        CharATK += Before_Atk;
+        CharDEF += Before_Def;
+        CharHP += Before_Hp;
+        Char_CRT_RATE += Before_criR;
+        Char_CRT_DAMAGE += Before_criD;
+
         BaseAtk += attack;
         BaseDef += def;
         BaseHP += hp;
         BaseCRIR += criR;
         BaseCRID += criD;
 
-        Debug.Log($"BaseCRIR {BaseCRIR} / BaseCRID {BaseCRID}");
-        Debug.Log($"Before criR {Before_criR} / Before criD {Before_criD}");
-        Debug.Log($"criR {criR} / criD {criD}");
+        // Debug.Log($"BaseCRIR {BaseCRIR} / BaseCRID {BaseCRID}");
+        // Debug.Log($"Before criR {Before_criR} / Before criD {Before_criD}");
+        // Debug.Log($"criR {criR} / criD {criD}");
     }
     #endregion
 
