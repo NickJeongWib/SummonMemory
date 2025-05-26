@@ -58,7 +58,6 @@ public class CharGrowUp_Mgr : MonoBehaviour
     public void Open_Growing_Panel()
     {
         maxLv = GameManager.Instance.Get_SelectChar.Get_Max_Lv;
-
         // 캐릭터 세부 사항 Text_UI
         Exp_Percent.text = $"{((((float)GameManager.Instance.Get_SelectChar.Get_CurrentExp / (float)Character_List.Require_Exp[GameManager.Instance.Get_SelectChar.Get_Character_Lv - 1]) * 100).ToString("N2"))}%";
         Level_Text.text = $"LV.{GameManager.Instance.Get_SelectChar.Get_Character_Lv}" +
@@ -260,7 +259,6 @@ public class CharGrowUp_Mgr : MonoBehaviour
             else if (!UserInfo.InventoryDict.ContainsKey("레드 슬라임") || UserInfo.InventoryDict["레드 슬라임"].Get_Amount <= 0)
             {
                 SlimeMaxCount = 0;
-                Debug.Log(0);
                 Set_Active_UI(false);
             }
         }
@@ -293,25 +291,66 @@ public class CharGrowUp_Mgr : MonoBehaviour
         // 슬라이더 변화에 따라 호출되는 함수
         UseCount = Mathf.RoundToInt(SlimeMaxCount * Slime_Use_Slider.value);
         Exp_Sum = Use_Exp[selectNum] * UseCount;
+        // Debug.Log("0 " + Exp_Sum);
 
         // 만약 사용할 수 있는 슬라임의 최대치를 입력했다면
-        if (Character_List.Cumulative_Exp[maxLv - 2] <= Exp_Sum)
+        //if (Character_List.Cumulative_Exp[maxLv - 2] <= Exp_Sum)
+        //{
+        //    // 사용횟수를 초기화
+        //    UseCount = Exp_Sum / Use_Exp[selectNum];
+        //    // 사용된 exp 다시 계산하기 위해 0
+        //    Exp_Sum = 0;
+
+        //    // 사용된 값만큼 반복
+        //    for (int i = 0; i < UseCount; i++)
+        //    {
+        //        // 다시 총합 계산
+        //        Exp_Sum += Use_Exp[selectNum];
+        //        Debug.Log("1 " + Exp_Sum);
+        //        if (Character_List.Cumulative_Exp[maxLv - 2] <= Exp_Sum)
+        //        {
+        //            // 사용개수 초기화
+        //            UseCount = i + 1;
+        //            // 슬라이더 값 초기화
+        //            Slime_Use_Slider.value = (float)UseCount / (float)SlimeMaxCount;
+        //            break;
+        //        }
+        //    }
+        //}
+        
+        if (Character_List.Cumulative_Exp[maxLv - 2] <= GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + Exp_Sum)
         {
             // 사용횟수를 초기화
             UseCount = Exp_Sum / Use_Exp[selectNum];
+
             // 사용된 exp 다시 계산하기 위해 0
             Exp_Sum = 0;
+
+            Slime_Use_Btns[0].interactable = false;
+            Slime_Use_Slider.interactable = false;
 
             // 사용된 값만큼 반복
             for (int i = 0; i < UseCount; i++)
             {
                 // 다시 총합 계산
                 Exp_Sum += Use_Exp[selectNum];
-                if (Character_List.Cumulative_Exp[maxLv - 2] <= Exp_Sum)
+
+                if (Character_List.Cumulative_Exp[maxLv - 2] <= GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + Exp_Sum)
                 {
+                    //Debug.Log("2 " + GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + " / " + Exp_Sum);
                     // 사용개수 초기화
                     UseCount = i + 1;
+                    //Debug.Log("Use : " + UseCount);
                     // 슬라이더 값 초기화
+                    Set_Level = 70;
+
+                    ExpSlider.value = 1;
+                    Exp_Percent.text = $"100%";
+
+                    Level_Text.text = $"LV.{maxLv}" +
+                       $"<sprite=0><color=orange>{maxLv}</color>";
+
+                    // Debug.Log((GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + Exp_Sum - Character_List.Cumulative_Exp[67]) / (Character_List.Cumulative_Exp[68] - Character_List.Cumulative_Exp[67]));
                     Slime_Use_Slider.value = (float)UseCount / (float)SlimeMaxCount;
                     break;
                 }
@@ -329,6 +368,7 @@ public class CharGrowUp_Mgr : MonoBehaviour
     {
         UseCount += _num;
         Exp_Sum = Use_Exp[selectNum] * UseCount;
+        // Debug.Log("3 " + Exp_Sum);
 
         if (Exp_Sum <= 0)
             Exp_Sum = 0;
@@ -384,28 +424,6 @@ public class CharGrowUp_Mgr : MonoBehaviour
         Exp_Sum = Use_Exp[selectNum] * UseCount;
     }
     #endregion
-
-    void Show_Up_Stat(bool _isUp)
-    {
-        if (_isUp)
-        {
-            HP_Value_Text.text = $"{GameManager.Instance.Get_SelectChar.Get_BaseHP}<sprite=0><color=#389D37></color>";
-            ATK_Value_Text.text = $"{GameManager.Instance.Get_SelectChar.Get_BaseAtk}<sprite=0><color=#389D37></color>";
-            DEF_Value_Text.text = $"{GameManager.Instance.Get_SelectChar.Get_BaseDef}<sprite=0><color=#389D37></color>";
-            CRIR_Value_Text.text = $"{(GameManager.Instance.Get_SelectChar.Get_BaseCRIR * 100).ToString("N1")}%<sprite=0><color=#389D37></color>";
-            CRID_Value_Text.text = $"{(GameManager.Instance.Get_SelectChar.Get_BaseCRID * 100).ToString("N1")}%<sprite=0><color=#389D37></color>";
-
-        }
-        else
-        {
-            HP_Value_Text.text = $"{GameManager.Instance.Get_SelectChar.Get_BaseHP}";
-            ATK_Value_Text.text = $"{GameManager.Instance.Get_SelectChar.Get_BaseAtk}";
-            DEF_Value_Text.text = $"{GameManager.Instance.Get_SelectChar.Get_BaseDef}";
-            CRIR_Value_Text.text = $"{(GameManager.Instance.Get_SelectChar.Get_BaseCRIR * 100).ToString("N1")}%";
-            CRID_Value_Text.text = $"{(GameManager.Instance.Get_SelectChar.Get_BaseCRID * 100).ToString("N1")}%";
-        }
-    }
-
     #region Exp_UI_Refresh
     void Exp_UI_Refresh()
     {
@@ -421,7 +439,8 @@ public class CharGrowUp_Mgr : MonoBehaviour
             ExpBack.showMaskGraphic = false;
             // Show_Up_Stat(false);
         }
-
+        // Debug.Log("69. " + Character_List.Cumulative_Exp[69]);
+        // Debug.Log("68. " + Character_List.Cumulative_Exp[68]);
         // 남은 경험치
         Remove_Exp = 0;
         Left_Exp = 0;
@@ -432,32 +451,24 @@ public class CharGrowUp_Mgr : MonoBehaviour
             // 최대 레벨 도달 시
             if (Character_List.Cumulative_Exp[maxLv - 2] <= Exp_Sum)
             {
-                // 최대 레벨 도달 시
-                // 경험치는 버린다
-                ExpSlider.value = 0;
-                Level_Text.text = $"LV.{maxLv}" +
-                    $"<sprite=0><color=orange>{maxLv}</color>";
-                Set_Level = maxLv;
-                Cumulative_Exp = Character_List.Cumulative_Exp[maxLv - 2];
-
-                // 최대레벨을 초과 시 제거되는 경험치
-                Remove_Exp = Exp_Sum - Character_List.Cumulative_Exp[maxLv - 2];
-
-                Slime_Use_Btns[0].interactable = false;
-                Slime_Use_Slider.interactable = false;
-
-                ExpSlider.value = 1;
-                Exp_Percent.text = $"100%";
-                GameManager.Instance.Get_SelectChar.Calculate_State(maxLv, HP_Value_Text, ATK_Value_Text, DEF_Value_Text, CRIR_Value_Text, CRID_Value_Text);
-                // Remove_Exp = 0; // 혹시 다른 곳에서 필요하면 0으로 초기화
-                break;
-            }
-
-            // 사용 exp가 맞춰진 레벨의 누적 경험치보다 작으면 캐릭터 레벨 설정
-            if (Character_List.Cumulative_Exp[i] - GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp >= Exp_Sum)
-            {
-                // 최대레벨 달성 시
-                if (Character_List.Cumulative_Exp[maxLv - 2] <= GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + Exp_Sum)
+                if (maxLv == 70)
+                {
+                    Set_Level = 70;
+                    ExpSlider.value = 1;
+                    Level_Text.text = $"LV.{maxLv}" +
+                        $"<sprite=0><color=orange>{maxLv}</color>";
+                    Cumulative_Exp = Character_List.Cumulative_Exp[maxLv - 2];
+                    // 최대레벨을 초과 시 제거되는 경험치
+                    Remove_Exp = Exp_Sum - Character_List.Cumulative_Exp[maxLv - 2];
+                    Slime_Use_Btns[0].interactable = false;
+                    Slime_Use_Slider.interactable = false;
+                    ExpSlider.value = 1;
+                    Exp_Percent.text = $"100%";
+                    GameManager.Instance.Get_SelectChar.Calculate_State(maxLv, HP_Value_Text, ATK_Value_Text, DEF_Value_Text, CRIR_Value_Text, CRID_Value_Text);
+                    // Remove_Exp = 0; // 혹시 다른 곳에서 필요하면 0으로 초기화
+                    break;
+                }
+                else
                 {
                     // 최대 레벨 도달 시
                     // 경험치는 버린다
@@ -474,13 +485,63 @@ public class CharGrowUp_Mgr : MonoBehaviour
                     Slime_Use_Slider.interactable = false;
 
                     ExpSlider.value = 1;
-                    Debug.Log(100);
+                    Exp_Percent.text = $"100%";
+                    GameManager.Instance.Get_SelectChar.Calculate_State(maxLv, HP_Value_Text, ATK_Value_Text, DEF_Value_Text, CRIR_Value_Text, CRID_Value_Text);
+                    // Remove_Exp = 0; // 혹시 다른 곳에서 필요하면 0으로 초기화
+                    break;
+                }
+            }
+
+            // 사용 exp가 맞춰진 레벨의 누적 경험치보다 작으면 캐릭터 레벨 설정
+            if (Character_List.Cumulative_Exp[i] - GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp >= Exp_Sum)
+            {
+                // 최대레벨 달성 시
+                if (Character_List.Cumulative_Exp[maxLv - 2] <= GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + Exp_Sum)
+                {
+                    // Debug.Log("1. " + Character_List.Cumulative_Exp[69]);
+                    // 최대 레벨 도달 시
+                    // 경험치는 버린다
+                    ExpSlider.value = 0;
+                    Level_Text.text = $"LV.{maxLv}" +
+                        $"<sprite=0><color=orange>{maxLv}</color>";
+                    Set_Level = maxLv;
+                    Cumulative_Exp = Character_List.Cumulative_Exp[maxLv - 2];
+
+                    // 최대레벨을 초과 시 제거되는 경험치
+                    Remove_Exp = Exp_Sum - Character_List.Cumulative_Exp[maxLv - 2];
+
+                    Slime_Use_Btns[0].interactable = false;
+                    Slime_Use_Slider.interactable = false;
+
+                    ExpSlider.value = 1;
+                    Exp_Percent.text = $"100%";
+
+                    GameManager.Instance.Get_SelectChar.Calculate_State(maxLv, HP_Value_Text, ATK_Value_Text, DEF_Value_Text, CRIR_Value_Text, CRID_Value_Text);
+                    // Remove_Exp = 0; // 혹시 다른 곳에서 필요하면 0으로 초기화
+                    break;
+                }
+
+                // Debug.Log("CharExp + SUM : " + (GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + Exp_Sum));
+
+                if (Character_List.Cumulative_Exp[68] <= GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + Exp_Sum)
+                {
+                    Set_Level = 70;
+                    ExpSlider.value = 1;
+                    Level_Text.text = $"LV.{maxLv}" +
+                        $"<sprite=0><color=orange>{maxLv}</color>";
+                    Cumulative_Exp = Character_List.Cumulative_Exp[maxLv - 2];
+                    // 최대레벨을 초과 시 제거되는 경험치
+                    Remove_Exp = Exp_Sum - Character_List.Cumulative_Exp[maxLv - 2];
+                    Slime_Use_Btns[0].interactable = false;
+                    Slime_Use_Slider.interactable = false;
+                    ExpSlider.value = 1;
                     Exp_Percent.text = $"100%";
                     GameManager.Instance.Get_SelectChar.Calculate_State(maxLv, HP_Value_Text, ATK_Value_Text, DEF_Value_Text, CRIR_Value_Text, CRID_Value_Text);
                     // Remove_Exp = 0; // 혹시 다른 곳에서 필요하면 0으로 초기화
                     break;
                 }
 
+                
                 // 남는 경험치를 계산하기 위한 코드
                 if (i - 1 <= 0)
                 {
@@ -495,7 +556,8 @@ public class CharGrowUp_Mgr : MonoBehaviour
                 // 누적 경험치는 사용된 슬라임의 경험치 양
                 Cumulative_Exp = Exp_Sum;
 
-                //Debug.Log("사용 누적 경험치 : " + Character_List.Cumulative_Exp[i] + "\n사용 exp 합 : " + Exp_Sum + "\n현재 캐릭터 누적 경험치 : " +
+                
+                //Debug.Log("i : " + i + "\n사용 누적 경험치 : " + Character_List.Cumulative_Exp[i] + "\n사용 exp 합 : " + Exp_Sum + "\n현재 캐릭터 누적 경험치 : " +
                 //    GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + "\nLeftExp : " + Left_Exp + "\nLv : " + Character_List.Level[i]);
 
                 // 남는 경험치가 현재레벨의 요구치랑 값이 똑같지 않다면
@@ -544,15 +606,9 @@ public class CharGrowUp_Mgr : MonoBehaviour
         Left_Exp = 0;
         ExpBack.showMaskGraphic = false;
 
+        // Debug.Log(Set_Level);
         GameManager.Instance.Get_SelectChar.Get_Character_Lv = Set_Level;
         GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp += Cumulative_Exp;
-       
-        if (GameManager.Instance.Get_SelectChar.Get_Character_Lv == GameManager.Instance.Get_SelectChar.Get_Max_Lv)
-        {
-            Set_Active_UI(false);
-            ExpSlider.value = 1;
-            Exp_Percent.text = $"100%";
-        }
 
         Slime_Use_Slider.value = 0;
         Info_Char_Lv.text = $"{GameManager.Instance.Get_SelectChar.Get_CharName} Lv.{GameManager.Instance.Get_SelectChar.Get_Character_Lv}";
@@ -560,6 +616,15 @@ public class CharGrowUp_Mgr : MonoBehaviour
         // 스탯 적용
         GameManager.Instance.Get_SelectChar.LevelUp();
         GameManager.Instance.Get_SelectChar.Calculate_State(GameManager.Instance.Get_SelectChar.Get_Character_Lv, HP_Value_Text, ATK_Value_Text, DEF_Value_Text, CRIR_Value_Text, CRID_Value_Text);
+
+        CombatPower.text = $"{GameManager.Instance.Get_SelectChar.Calc_CombatPower()}";
+
+        if (GameManager.Instance.Get_SelectChar.Get_Character_Lv == GameManager.Instance.Get_SelectChar.Get_Max_Lv)
+        {
+            Set_Active_UI(false);
+            ExpSlider.value = 1;
+            Exp_Percent.text = "100%";
+        }
 
         // Debug.Log("Lv : " + GameManager.Instance.Get_SelectChar.Get_Character_Lv);
         // Debug.Log("CurExp : " + GameManager.Instance.Get_SelectChar.Get_CurrentExp);
