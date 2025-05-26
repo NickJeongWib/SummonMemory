@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Define;
+using TMPro;
 
 // TODO ## Character 데이터 저장 클래스
 public class Character
@@ -210,42 +211,80 @@ public class Character
     #endregion
 
     #region Character_Growing
+    float attack = 0;
+    float def = 0;
+    float hp = 0;
+    float criR = 0;
+    float criD = 0;
+
+    float Before_Atk;
+    float Before_Def;
+    float Before_Hp;
+    float Before_criR;
+    float Before_criD;
     // 혼합형 성장 공식
-    public float Calculate_State(int level)
+    public void Calculate_State(int level, TextMeshProUGUI _hpText, TextMeshProUGUI _atkText, TextMeshProUGUI _defText, TextMeshProUGUI _criRText, TextMeshProUGUI _criDText)
     {
         if (level > 70)
         {
             level = 70; // 최대 레벨 제한
-            return CharATK;
         }
 
-        float attack;
-        if (level < transitionLevel)
+        // 초반: 선형 성장
+        attack = (BaseAtk - Before_Atk) + (level * linearFactor);
+        def = (BaseDef - Before_Def) + (level * linearFactor);
+        hp = (BaseHP - Before_Hp)+ (level * linearFactor);
+        criR = (BaseCRIR - Before_criR) + ((level * linearFactor) / 1500);
+        criD = (BaseCRID - Before_criD) + ((level * linearFactor) / 200);
+
+        if (level != Character_Lv)
         {
-            // 초반: 선형 성장
-            attack = CharATK + (level * linearFactor);
+            _hpText.text = $"{GameManager.Instance.Get_SelectChar.BaseHP}<sprite=0><color=#389D37>{(hp - Before_Hp).ToString("N0")}</color>";
+            _atkText.text = $"{GameManager.Instance.Get_SelectChar.BaseAtk}<sprite=0><color=#389D37>{(attack - Before_Atk).ToString("N0")}</color>";
+            _defText.text = $"{GameManager.Instance.Get_SelectChar.BaseDef}<sprite=0><color=#389D37>{(def - Before_Def).ToString("N0")}</color>";
+            _criRText.text = $"{(GameManager.Instance.Get_SelectChar.BaseCRIR * 100).ToString("N1")}%<sprite=0><color=#389D37>{((criR - Before_criR) * 100).ToString("N1")}%</color>";
+            _criDText.text = $"{(GameManager.Instance.Get_SelectChar.BaseCRID * 100).ToString("N1")}%<sprite=0><color=#389D37>{((criD - Before_criD) * 100).ToString("N1")}%</color>";
         }
         else
         {
-            // 후반: 지수 성장 추가
-            attack = CharATK + (transitionLevel * linearFactor) + ((level - transitionLevel) * linearFactor * 0.5f) + (Mathf.Pow(level, expFactor) * expMultiplier);
+            _hpText.text = $"{GameManager.Instance.Get_SelectChar.BaseHP.ToString("N0")}";
+            _atkText.text = $"{GameManager.Instance.Get_SelectChar.BaseAtk.ToString("N0")}";
+            _defText.text = $"{GameManager.Instance.Get_SelectChar.BaseDef.ToString("N0")}";
+            _criRText.text = $"{(GameManager.Instance.Get_SelectChar.BaseCRIR * 100).ToString("N1")}%";
+            _criDText.text = $"{(GameManager.Instance.Get_SelectChar.BaseCRID * 100).ToString("N1")}%";
         }
 
-        return attack;
+        Debug.Log($"Lv{level} : Atk : {attack} / Def : {def} / HP : {hp} / CriR : {criR} / CriD : {criD}");
+        Debug.Log($"Lv{level} : CharATK : {CharATK} / CharDEF : {CharDEF} / CharHP : {CharHP} / Char_CRT_RATE : {Char_CRT_RATE} / Char_CRT_DAMAGE : {Char_CRT_DAMAGE}");
+        Debug.Log($"Lv{level} : BaseAtk : {BaseAtk - Before_Atk} / BaseDef : {BaseDef - Before_Def} / BaseHP : {BaseHP - Before_Hp} / BaseCRIR : {BaseCRIR - Before_criR} / BaseCRID : {BaseCRID - Before_criD}");
+        // Debug.Log($"Lv{level} : Before_Atk : {Before_Atk} / Before_Def : {Before_Def} / Before_Hp : {Before_Hp} / Before_criR : {Before_criR} / Before_criD : {Before_criD}");
     }
 
     // 레벨업 함수
     public void LevelUp()
     {
-        if (Character_Lv < 50)
-        {
-            Character_Lv++;
-            Calculate_State(Character_Lv);
-        }
-        else
-        {
-            
-        }
+        BaseAtk = (BaseAtk - Before_Atk);
+        BaseDef = (BaseDef - Before_Def);
+        BaseHP = (BaseHP - Before_Hp);
+        BaseCRIR = (BaseCRIR - Before_criR);
+        BaseCRID = (BaseCRID - Before_criD);
+
+        // 이전 값 저장
+        Before_Atk = attack;
+        Before_Def = def;
+        Before_Hp = hp;
+        Before_criR = criR;
+        Before_criD = criD;
+
+        BaseAtk += attack;
+        BaseDef += def;
+        BaseHP += hp;
+        BaseCRIR += criR;
+        BaseCRID += criD;
+
+        Debug.Log($"BaseCRIR {BaseCRIR} / BaseCRID {BaseCRID}");
+        Debug.Log($"Before criR {Before_criR} / Before criD {Before_criD}");
+        Debug.Log($"criR {criR} / criD {criD}");
     }
     #endregion
 

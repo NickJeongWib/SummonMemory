@@ -29390,7 +29390,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -91.12597, y: 0, z: 0, w: 0}
+  m_margin: {x: -165.1881, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -62036,7 +62036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1306161566
 RectTransform:
   m_ObjectHideFlags: 0
@@ -71566,7 +71566,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -91.12597, y: 0, z: 0, w: 0}
+  m_margin: {x: -149.8177, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -89491,6 +89491,7 @@ MonoBehaviour:
   DEF_Value_Text: {fileID: 384718152}
   CRIR_Value_Text: {fileID: 640958469}
   CRID_Value_Text: {fileID: 1543366240}
+  Info_Char_Lv: {fileID: 2031820446}
   Exp_Percent: {fileID: 1309620068}
   Low_Slime_Amout: {fileID: 1352215061}
   Middle_Slime_Amout: {fileID: 226791970}
