@@ -8,6 +8,7 @@ using System.Linq;
 public class Gacha_Manager : MonoBehaviour
 {
     [SerializeField] CharacterList_UI CharListRef;
+    [SerializeField] Dictionary_Ctrl DictionaryCtrl_Ref;
 
     [SerializeField] GameObject GachaEnter_Transition;
     [SerializeField] GameObject GachaCharacterList;
@@ -73,6 +74,7 @@ public class Gacha_Manager : MonoBehaviour
         // GachaInfo_Panel.SetActive(false);
     }
 
+    #region Summon_System
     // TODO ## Gacha_Manager 가차 시스템
     public void Summon()
     {
@@ -175,6 +177,7 @@ public class Gacha_Manager : MonoBehaviour
 
         Gacha_Video_Play();
     }
+    #endregion
 
     #region SummonRate
     void SSR_Summon()
@@ -195,11 +198,22 @@ public class Gacha_Manager : MonoBehaviour
         // Debug.Log(character.Get_CharName);
 
         // SSR 캐릭터가 없다면
-        if (!UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName))
+        //if (!UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName))
+        if (!UserInfo.UserCharDict.ContainsKey(character.Get_CharName))
         {
             Gacha_New_Images[Gacha_Num].SetActive(true);
-            UserInfo.UserCharDict.Add(Character_List.SSR_Char[RandomSSR].Get_CharName, character);
+            //UserInfo.UserCharDict.Add(Character_List.SSR_Char[RandomSSR].Get_CharName, character);
+            UserInfo.UserCharDict.Add(character.Get_CharName, character);
             UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20;
+
+            for (int i = 0; i < DictionaryCtrl_Ref.SSR_Slot.Count; i++)
+            {
+                if (DictionaryCtrl_Ref.SSR_Slot[i].Get_Slot_Char.Get_CharName == character.Get_CharName)
+                {
+                    DictionaryCtrl_Ref.SSR_Slot[i].Set_UI_Refresh(true);
+                    break;
+                }
+            }
         }
         // 등급이 아직 덜 올랐다면
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar < 5) 
@@ -246,11 +260,22 @@ public class Gacha_Manager : MonoBehaviour
         // Debug.Log(character.Get_CharName);
 
         // SR 캐릭터가 없다면
-        if (!UserInfo.UserCharDict.ContainsKey(Character_List.SR_Char[RandomSR].Get_CharName))
+        // if (!UserInfo.UserCharDict.ContainsKey(Character_List.SR_Char[RandomSR].Get_CharName))
+        if (!UserInfo.UserCharDict.ContainsKey(character.Get_CharName))
         {
             Gacha_New_Images[Gacha_Num].SetActive(true);
-            UserInfo.UserCharDict.Add(Character_List.SR_Char[RandomSR].Get_CharName, character);
+            //UserInfo.UserCharDict.Add(Character_List.SR_Char[RandomSR].Get_CharName, character);
+            UserInfo.UserCharDict.Add(character.Get_CharName, character);
             UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20;
+
+            for (int i = 0; i < DictionaryCtrl_Ref.SR_Slot.Count; i++)
+            {
+                if (DictionaryCtrl_Ref.SR_Slot[i].Get_Slot_Char.Get_CharName == character.Get_CharName)
+                {
+                    DictionaryCtrl_Ref.SR_Slot[i].Set_UI_Refresh(true);
+                    break;
+                }
+            }
         }
         // 등급이 아직 덜 올랐다면
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.SR_Char[RandomSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar < 5)
@@ -297,11 +322,22 @@ public class Gacha_Manager : MonoBehaviour
         // Debug.Log(character.Get_CharName);
 
         // R 캐릭터가 없다면
-        if (!UserInfo.UserCharDict.ContainsKey(Character_List.R_Char[RandomR].Get_CharName))
+        //if (!UserInfo.UserCharDict.ContainsKey(Character_List.R_Char[RandomR].Get_CharName))
+        if (!UserInfo.UserCharDict.ContainsKey(character.Get_CharName))
         {
             Gacha_New_Images[Gacha_Num].SetActive(true);
-            UserInfo.UserCharDict.Add(Character_List.R_Char[RandomR].Get_CharName, character);
+            // UserInfo.UserCharDict.Add(Character_List.R_Char[RandomR].Get_CharName, character);
+            UserInfo.UserCharDict.Add(character.Get_CharName, character);
             UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20;
+
+            for (int i = 0; i < DictionaryCtrl_Ref.R_Slot.Count; i++)
+            {
+                if (DictionaryCtrl_Ref.R_Slot[i].Get_Slot_Char.Get_CharName == character.Get_CharName)
+                {
+                    DictionaryCtrl_Ref.R_Slot[i].Set_UI_Refresh(true);
+                    break;
+                }
+            }
         }
         // 등급이 아직 덜 올랐다면
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.R_Char[RandomR].Get_CharName) &&  UserInfo.UserCharDict[character.Get_CharName].Get_CharStar < 5)

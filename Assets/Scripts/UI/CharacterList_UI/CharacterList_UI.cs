@@ -9,11 +9,17 @@ public class CharacterList_UI : MonoBehaviour
 {
     [SerializeField] Lobby_Manager LobbyMgr_Ref;
 
+    #region UI
     public List<CharacterSlot> Slots = new List<CharacterSlot>();
     public Sprite[] Elements;
     public Sprite[] ElementColors;
     public Sprite[] Elements_BG;
     public Sprite[] Grades;
+
+    [SerializeField] GameObject Character_Panel;
+    [SerializeField] GameObject Info_Back;
+    [SerializeField] GameObject Dict_Back;
+    [SerializeField] GameObject Circle_Transition;
 
     [Header("---CharacterList---")]
     [SerializeField] CharImg_Anim CharImg_Anim_Ref;
@@ -58,8 +64,9 @@ public class CharacterList_UI : MonoBehaviour
     [SerializeField] Image CharInfo_Img;            // 캐릭터 창 캐릭터 이미지
     [SerializeField] Image CharStar_Img;            // 캐릭터 창 성급
     [SerializeField] Text CharInfo_name;            // 캐릭터 창 이름
+    #endregion
 
-    #region 정보 관련
+    #region Data
     [Header("---Character_State_Info---")]
     [SerializeField] GameObject CharInfoPanel;
     [SerializeField] Text Char_CombatTxt;
@@ -456,6 +463,7 @@ public class CharacterList_UI : MonoBehaviour
     // 캐릭터 슬롯에서 클릭 시 캐릭터 정보 창으로 이동
     public void On_Click_CharInfo(CharacterSlot _slot)
     {
+        CharacterInfo_Transition.SetActive(true);
         GameManager.Instance.Get_SelectChar = _slot.character;
         Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
 
@@ -501,26 +509,12 @@ public class CharacterList_UI : MonoBehaviour
         #endregion
 
         Refresh_Select_Img(_slot.character, false);
-
-        #region Character_Info_Text_Refresh
-        // TODO ## 캐릭터 정보창 안쓰는 코드 일단 주석
-        // TODO ## Lobby_Manager 캐릭터 정보 창 캐릭터 정보 초기화
-        //CharInfo_Name_Txt.text = $"이름 : {_slot.character.Get_CharName}";
-        //CharInfo_Lv_Txt.text = $"레벨 : {_slot.character.Get_Character_Lv}";
-        //CharInfo_Star_Txt.text = $"성급 : {_slot.character.Get_CharStar}성";
-        //CharInfo_Type_Txt.text = $"타입 : {Type_Kor_Str[(int)_slot.character.Get_CharType]}";
-        //CharInfo_Element_Txt.text = $"속성 : {Element_Kor_Str[(int)_slot.character.Get_CharElement]}";
-        //CharInfo_MaxHP_Txt.text = $"체력 : {_slot.character.Get_CharHP}";
-        //CharInfo_Atk_Txt.text = $"공격력 : {_slot.character.Get_CharATK}";
-        //CharInfo_Def_Txt.text = $"방어력 : {_slot.character.Get_CharDEF}";
-        //CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.character.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
-        //CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.character.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
-        #endregion
     }
 
     // 장착 캐릭터 클릭 시 이동 오버로딩
     public void On_Click_CharInfo(Equip_Slot _slot)
     {
+        CharacterInfo_Transition.SetActive(true);
         GameManager.Instance.Get_SelectChar = _slot.EquipCharacter;
         // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
 
@@ -565,22 +559,87 @@ public class CharacterList_UI : MonoBehaviour
         #endregion
 
         Refresh_Select_Img(_slot.EquipCharacter, false);
-
-        #region Character_Info_Text_Refresh
-        // TODO ## 캐릭터 정보창 안쓰는 코드 일단 주석
-        // TODO ## Lobby_Manager 캐릭터 정보 창 캐릭터 정보 초기화
-        //CharInfo_Name_Txt.text = $"이름 : {_slot.EquipCharacter.Get_CharName}";
-        //CharInfo_Lv_Txt.text = $"레벨 : {_slot.EquipCharacter.Get_Character_Lv}";
-        //CharInfo_Star_Txt.text = $"성급 : {_slot.EquipCharacter.Get_CharStar}성";
-        //CharInfo_Type_Txt.text = $"타입 : {Type_Kor_Str[(int)_slot.EquipCharacter.Get_CharType]}";
-        //CharInfo_Element_Txt.text = $"속성 : {Element_Kor_Str[(int)_slot.EquipCharacter.Get_CharElement]}";
-        //CharInfo_MaxHP_Txt.text = $"체력 : {_slot.EquipCharacter.Get_CharHP}";
-        //CharInfo_Atk_Txt.text = $"공격력 : {_slot.EquipCharacter.Get_CharATK}";
-        //CharInfo_Def_Txt.text = $"방어력 : {_slot.EquipCharacter.Get_CharDEF}";
-        //CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.EquipCharacter.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
-        //CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.EquipCharacter.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
-        #endregion
     }
+
+    // TODO ## 캐릭터 도감에서 이동 시 오픈
+    #region Open_from_Dictionary
+    // 장착 캐릭터 클릭 시 이동 오버로딩
+    public void On_Click_CharInfo(Character _char)
+    {
+        CharacterInfo_Transition.SetActive(false);
+
+        Character character = null;
+
+        if (UserInfo.UserCharDict.ContainsKey(_char.Get_CharName) == true)
+        {
+            character = UserInfo.UserCharDict[_char.Get_CharName];
+        }
+        else
+        {
+            return;
+        }
+
+        GameManager.Instance.Get_SelectChar = character;
+        // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
+
+        Refresh_EquipItem_Image();
+
+        #region Character_Transition_Set
+        // TODO ## Lobby_Manager 캐릭터 정보 창 이동 트랜지션 이미지 초기화 구문
+        // 화면전환 중 버튼 클릭 방지
+        LobbyMgr_Ref.Get_NotTouch_RayCast.SetActive(true);
+        CharacterInfo_Panel.SetActive(true);
+        // MeshRenderer의 머티리얼에 접근해 Color변수의 레퍼타입에 접근해서 색상 변경
+        CharacterInfo_Transition.GetComponent<MeshRenderer>().material.SetColor("_Color", colors[(int)character.Get_CharElement]);
+
+        // 화면 전환 화면의 UI 선택한 캐릭터 속성 색으로 변경
+        Transition_Char_Name.color = colors[(int)character.Get_CharElement];
+        Transition_Grade.color = colors[(int)character.Get_CharElement];
+        Transition_Grade_Deco.color = colors[(int)character.Get_CharElement];
+        Transition_White_Char.color = Transition_colors[(int)character.Get_CharElement];
+
+        Transition_ElementCol.sprite = ElementColors[(int)character.Get_CharElement];
+        Transition_Element_BG.sprite = Elements_BG[(int)character.Get_CharElement];
+        Transition_White_Char.sprite = character.Get_WhiteIllust_Img;
+
+        // 캐릭터의 영문 이름 표시
+        Transition_Char_Name.text = character.Get_CharEngName;
+        CharStar_Refresh(character, Transition_Grade);
+
+        CharInfo_Select_Btn(character);
+        #endregion
+
+        #region Character_Info_Change
+        // 캐릭터 정보창 이미지 변경
+        UserInfo.Get_Square_Image(CharInfo_Img, character);
+        Star_Image.rectTransform.sizeDelta = new Vector3(20 * character.Get_CharStar, 20.0f, 0.0f);
+        CharInfo_Ele_BG.sprite = Elements_BG[(int)character.Get_CharElement];
+        CharInfo_Frame.material.color = FrameColors[(int)character.Get_CharElement];
+        CharElement_Img.sprite = ElementColors[(int)character.Get_CharElement];
+        CharInfo_name.text = $"{character.Get_CharName}  Lv.{character.Get_Character_Lv}";
+        // 등급에 따른 다이아 이미지 차별화
+        CharStar_Refresh(character, CharStar_Img);
+        CharStar_Img.color = colors[(int)character.Get_CharElement];
+        #endregion
+
+        Refresh_Select_Img(character, false);
+    }
+
+    public void CharInfo_From_Dict(bool _isDict)
+    {
+        Dict_Back.SetActive(_isDict);
+        Info_Back.SetActive(!_isDict);
+    }
+
+    public void On_Click_Go_Dict(GameObject _dictPanel)
+    {
+        LobbyMgr_Ref.On_Click_OnPanel_Circle(_dictPanel);
+
+        CharacterInfo_Panel.SetActive(false);
+        Character_Panel.SetActive(false);
+        CharInfo_From_Dict(false);
+    }
+    #endregion
 
     // 장착 캐릭터 클릭 시 이동 오버로딩
     public void On_Click_CharInfo(CharInfo_CharSelect_Btn _slot)
@@ -605,20 +664,6 @@ public class CharacterList_UI : MonoBehaviour
         CharStar_Img.color = colors[(int)_slot.character.Get_CharElement];
         #endregion
 
-        #region Character_Info_Text_Refresh
-        // TODO ## 캐릭터 정보창 안쓰는 코드 일단 주석
-        // TODO ## Lobby_Manager 캐릭터 정보 창 캐릭터 정보 초기화
-        //CharInfo_Name_Txt.text = $"이름 : {_slot.character.Get_CharName}";
-        //CharInfo_Lv_Txt.text = $"레벨 : {_slot.character.Get_Character_Lv}";
-        //CharInfo_Star_Txt.text = $"성급 : {_slot.character.Get_CharStar}성";
-        //CharInfo_Type_Txt.text = $"타입 : {Type_Kor_Str[(int)_slot.character.Get_CharType]}";
-        //CharInfo_Element_Txt.text = $"속성 : {Element_Kor_Str[(int)_slot.character.Get_CharElement]}";
-        //CharInfo_MaxHP_Txt.text = $"체력 : {_slot.character.Get_CharHP}";
-        //CharInfo_Atk_Txt.text = $"공격력 : {_slot.character.Get_CharATK}";
-        //CharInfo_Def_Txt.text = $"방어력 : {_slot.character.Get_CharDEF}";
-        //CharInfo_CrtDmg_Txt.text = $"치명타피해 : {(_slot.character.Get_Char_CRT_Damage * 100.0f).ToString("N1")}%";
-        //CharInfo_CrtRate_Txt.text = $"치명타확률 : {(_slot.character.Get_Char_CRT_Rate * 100.0f).ToString("N1")}%";
-        #endregion
     }
 
     public void Refresh_EquipItem_Image()

@@ -349,7 +349,7 @@ public class CharGrowUp_Mgr : MonoBehaviour
 
                     Level_Text.text = $"LV.{maxLv}" +
                        $"<sprite=0><color=orange>{maxLv}</color>";
-
+                    GameManager.Instance.Get_SelectChar.Calculate_State(70, HP_Value_Text, ATK_Value_Text, DEF_Value_Text, CRIR_Value_Text, CRID_Value_Text);
                     // Debug.Log((GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + Exp_Sum - Character_List.Cumulative_Exp[67]) / (Character_List.Cumulative_Exp[68] - Character_List.Cumulative_Exp[67]));
                     Slime_Use_Slider.value = (float)UseCount / (float)SlimeMaxCount;
                     break;

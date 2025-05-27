@@ -55,7 +55,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 0.99
-    - _Lerp: 1
+    - _Lerp: 0.793
     - _QueueControl: 0
     - _QueueOffset: 50
     m_Colors:

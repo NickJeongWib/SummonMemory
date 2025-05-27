@@ -9,6 +9,7 @@ public class Lobby_ObjPool : MonoBehaviour
     [SerializeField] Lobby_Manager LobbyManagerRef;
     [SerializeField] Store_Manager StoreManagerRef;
     [SerializeField] Inventory_UI Inventory_UI_Ref;
+    [SerializeField] Dictionary_Ctrl DictionaryCtrl_Ref;
 
     [Header("Inventory_Equipment_Slot")]
     [SerializeField] GameObject Equipment_Slot_Prefab;
@@ -37,6 +38,12 @@ public class Lobby_ObjPool : MonoBehaviour
     [SerializeField] Transform SR_BookTr;
     [SerializeField] GameObject SSR_Book_Prefab;
     [SerializeField] Transform SSR_BookTr;
+
+    [Header("---Dictionary_Slot---")]
+    [SerializeField] GameObject DictSlot_Prefab;
+    [SerializeField] Transform R_Dict_Tr;
+    [SerializeField] Transform SR_Dict_Tr;
+    [SerializeField] Transform SSR_Dict_Tr;
 
     // Start is called before the first frame update
     void Start()
@@ -100,6 +107,66 @@ public class Lobby_ObjPool : MonoBehaviour
 
         // 상점 SR_Book 슬롯 오브젝트 풀 생성
         Create_Slot(SSR_Book_Prefab, Store_List.SSR_BookList, SSR_BookTr);
+        #endregion
+
+        #region Dictionary_Slot
+        // R 슬롯
+        for (int i = 0; i < Character_List.R_Char.Count; i++)
+        {
+            GameObject dictSlot = Instantiate(DictSlot_Prefab);
+            dictSlot.transform.SetParent(R_Dict_Tr, false);
+            dictSlot.GetComponent<Dict_Slot>().Set_DictionaryCtrl_Ref = this.DictionaryCtrl_Ref;
+
+            // 캐릭터가 이미 존재하는지 여부에 따라 슬롯 초기화
+            if (UserInfo.UserCharDict.ContainsKey(Character_List.R_Char[i].Get_CharName))
+            {
+                dictSlot.GetComponent<Dict_Slot>().Set_UI_Refresh(true, Character_List.R_Char[i]);
+            }
+            else
+            {
+                dictSlot.GetComponent<Dict_Slot>().Set_UI_Refresh(false, Character_List.R_Char[i]);
+            }
+
+            DictionaryCtrl_Ref.R_Slot.Add(dictSlot.GetComponent<Dict_Slot>());
+        }
+
+        for (int i = 0; i < Character_List.SR_Char.Count; i++)
+        {
+            GameObject dictSlot = Instantiate(DictSlot_Prefab);
+            dictSlot.transform.SetParent(SR_Dict_Tr, false);
+            dictSlot.GetComponent<Dict_Slot>().Set_DictionaryCtrl_Ref = this.DictionaryCtrl_Ref;
+
+            // 캐릭터가 이미 존재하는지 여부에 따라 슬롯 초기화
+            if (UserInfo.UserCharDict.ContainsKey(Character_List.SR_Char[i].Get_CharName))
+            {
+                dictSlot.GetComponent<Dict_Slot>().Set_UI_Refresh(true, Character_List.SR_Char[i]);
+            }
+            else
+            {
+                dictSlot.GetComponent<Dict_Slot>().Set_UI_Refresh(false, Character_List.SR_Char[i]);
+            }
+
+            DictionaryCtrl_Ref.SR_Slot.Add(dictSlot.GetComponent<Dict_Slot>());
+        }
+
+        for (int i = 0; i < Character_List.SSR_Char.Count; i++)
+        {
+            GameObject dictSlot = Instantiate(DictSlot_Prefab);
+            dictSlot.transform.SetParent(SSR_Dict_Tr, false);
+            dictSlot.GetComponent<Dict_Slot>().Set_DictionaryCtrl_Ref = this.DictionaryCtrl_Ref;
+
+            // 캐릭터가 이미 존재하는지 여부에 따라 슬롯 초기화
+            if (UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[i].Get_CharName))
+            {
+                dictSlot.GetComponent<Dict_Slot>().Set_UI_Refresh(true, Character_List.SSR_Char[i]);
+            }
+            else
+            {
+                dictSlot.GetComponent<Dict_Slot>().Set_UI_Refresh(false, Character_List.SSR_Char[i]);
+            }
+
+            DictionaryCtrl_Ref.SSR_Slot.Add(dictSlot.GetComponent<Dict_Slot>());
+        }
         #endregion
     }
 
