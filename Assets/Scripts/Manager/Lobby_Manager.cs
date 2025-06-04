@@ -54,6 +54,8 @@ public class Lobby_Manager : MonoBehaviour
             UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
         }
 
+        // Debug.Log(UserInfo.Equip_Characters[0].Get_CharName);
+
         InitData();
     }
 

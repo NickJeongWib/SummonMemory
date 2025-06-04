@@ -91,13 +91,25 @@ public class CharacterList_UI : MonoBehaviour
     {
         // TODO ## 초기 테스트 값
         Equip_Image_Refresh(false);
+
+        InitData();
+    }
+
+    void InitData()
+    {
+        for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        {
+            EquipSlot_List[i].EquipCharacter = UserInfo.Equip_Characters[i];
+        }
+
+        Refresh_CharacterList();
     }
 
     public void On_Click_EnterCharacter_Inven()
     {
         Character_Scroll.verticalNormalizedPosition = 1.0f;
 
-        On_Click_ChangeCancel();
+        // On_Click_ChangeCancel();
     }
 
     #region 보유 Character창 Refresh
@@ -668,6 +680,8 @@ public class CharacterList_UI : MonoBehaviour
 
     public void Refresh_EquipItem_Image()
     {
+        Debug.Log(GameManager.Instance.Get_SelectChar);
+
         for (int i = 0; i < CharEquipment_Btns.Length; i++)
         {
             if (GameManager.Instance.Get_SelectChar.Get_EquipItems[i] == null)

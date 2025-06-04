@@ -14,17 +14,14 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null)
         {
+            // Debug.Log(1);
             Instance = this;
             DontDestroyOnLoad(this);
         }
         else
         {
+            // Debug.Log(2);
             Destroy(this);
         }
-    }
-
-    private void Start()
-    {
-
     }
 }
