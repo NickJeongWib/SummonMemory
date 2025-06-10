@@ -2426,7 +2426,7 @@
       "ITEM_NAME": "중급 소환서",
       "INVENTORY_TYPE": "SPEND",
       "ITEM_AMOUNT": 0,
-      "ITEM_DESC": "일정 수준 이상의 소환사만이 다룰 수 있는 중급 소환서.\\\\n이 것의 가치는 시장에서도 높은 평가를 받는다.",
+      "ITEM_DESC": "일정 수준 이상의 소환사만이\\\\n다룰 수 있는 중급 소환서.\\\\n이 것의 가치는 시장에서도 높은 평가를 받는다.",
       "ITEM_IMAGE": "Image_Resources/Currency_Resources/SR_Book_Resources"
     },
     {
@@ -2435,6 +2435,64 @@
       "ITEM_AMOUNT": 0,
       "ITEM_DESC": "숙련된 소환사만이 다룰 수 있는 고대의 마법 소환서.\\\\n이 것의 존재는 극히 드물며\\\\n상점에서 고가에 거래된다.",
       "ITEM_IMAGE": "Image_Resources/Currency_Resources/SSR_Book_Resources"
+    }
+  ],
+  "Quest_DB": [
+    {
+      "QUEST_NAME": "스테이지 1 클리어",
+      "REWARD_TYPE": "DIA",
+      "REWARD_AMOUNT": 200,
+      "QUEST_DESC": "스테이지 1을 클리어 하세요.",
+      "REWARD_IMAGE": "Image_Resources/Currency_Resources/Dia_Resources"
+    },
+    {
+      "QUEST_NAME": "스테이지 2 클리어",
+      "REWARD_TYPE": "DIA",
+      "REWARD_AMOUNT": 200,
+      "QUEST_DESC": "스테이지 2을 클리어 하세요.",
+      "REWARD_IMAGE": "Image_Resources/Currency_Resources/Dia_Resources"
+    },
+    {
+      "QUEST_NAME": "스테이지 3 클리어",
+      "REWARD_TYPE": "DIA",
+      "REWARD_AMOUNT": 200,
+      "QUEST_DESC": "스테이지 3을 클리어 하세요.",
+      "REWARD_IMAGE": "Image_Resources/Currency_Resources/Dia_Resources"
+    },
+    {
+      "QUEST_NAME": "스테이지 4 클리어",
+      "REWARD_TYPE": "DIA",
+      "REWARD_AMOUNT": 200,
+      "QUEST_DESC": "스테이지 4을 클리어 하세요.",
+      "REWARD_IMAGE": "Image_Resources/Currency_Resources/Dia_Resources"
+    },
+    {
+      "QUEST_NAME": "스테이지 5 클리어",
+      "REWARD_TYPE": "DIA",
+      "REWARD_AMOUNT": 200,
+      "QUEST_DESC": "스테이지 5을 클리어 하세요.",
+      "REWARD_IMAGE": "Image_Resources/Currency_Resources/Dia_Resources"
+    },
+    {
+      "QUEST_NAME": "스테이지 6 클리어",
+      "REWARD_TYPE": "DIA",
+      "REWARD_AMOUNT": 200,
+      "QUEST_DESC": "스테이지 6을 클리어 하세요.",
+      "REWARD_IMAGE": "Image_Resources/Currency_Resources/Dia_Resources"
+    },
+    {
+      "QUEST_NAME": "스테이지 7 클리어",
+      "REWARD_TYPE": "DIA",
+      "REWARD_AMOUNT": 200,
+      "QUEST_DESC": "스테이지 7을 클리어 하세요.",
+      "REWARD_IMAGE": "Image_Resources/Currency_Resources/Dia_Resources"
+    },
+    {
+      "QUEST_NAME": "스테이지 8 클리어",
+      "REWARD_TYPE": "DIA",
+      "REWARD_AMOUNT": 200,
+      "QUEST_DESC": "스테이지 8을 클리어 하세요.",
+      "REWARD_IMAGE": "Image_Resources/Currency_Resources/Dia_Resources"
     }
   ]
 }

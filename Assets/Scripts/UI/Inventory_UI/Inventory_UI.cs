@@ -158,9 +158,17 @@ public class Inventory_UI : MonoBehaviour
     #endregion
 
     #region Slot_Refresh
+    public void Reset_Spend_Inventory()
+    {
+        for (int i = 0; i < SpendSlot_List.Count; i++)
+        {
+            SpendSlot_List[i].Reset_Info();
+        }
+    }
     public void Spend_Slot_Refresh()
     {
         int index = 0;
+
         for (int i = 0; i < UserInfo.Spend_Inventory.Count; i++)
         {
             // 아이템을 보유하지 않을 경우 

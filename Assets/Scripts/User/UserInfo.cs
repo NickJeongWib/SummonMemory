@@ -34,6 +34,11 @@ public class UserInfo
     public static List<Inventory_Item> Upgrade_Inventory = new List<Inventory_Item>();  // 요리 아이템
     #endregion
 
+    #region Quest
+    public static List<Quest_Slot> QuestSlot_List = new List<Quest_Slot>();
+    #endregion
+
+
     [Header("---Currency---")]
     public static int Money = 10000000;
     public static int Dia;
@@ -42,6 +47,9 @@ public class UserInfo
     public static int SummonTicket;
     public static int EquipmentTicket;
 
+    [Header("---Gacha---")]
+    public static int SR_Set_Count;
+    public static int SSR_Set_Count;
     #region R등급과 SR,SSR등급의 이미지 차별 적용
     public static void Get_Square_Image(Image[] _image, int _equipIndex)
     {
@@ -144,6 +152,67 @@ public class UserInfo
         #endregion
         #endregion
     }
+
+    public static void Remove_Inventory_Item()
+    {
+        List<string> removeList = new List<string>();
+
+        #region Inventory_List_Add
+        // 유저가 리스트에 들고 있기 하기 위한 코드
+        Spend_Inventory.Clear();
+        Upgrade_Inventory.Clear();
+
+        // Dictionary 탐색
+        foreach (Inventory_Item item in InventoryDict.Values)
+        {
+            if (item.Get_Amount <= 0)
+            {
+                removeList.Add(item.Get_Item_Name);
+            }
+        }
+
+        for (int i = 0; i < removeList.Count; i++)
+        {
+            InventoryDict.Remove(removeList[i]);
+        }
+
+        removeList.Clear();
+
+        foreach (Inventory_Item item in InventoryDict.Values)
+        {
+            // 소모 아이템
+            if (item.Get_InventoryType == INVENTORY_TYPE.SPEND)
+            {
+                Spend_Inventory.Add(item);
+            }
+            // 강화 아이템
+            else if (item.Get_InventoryType == INVENTORY_TYPE.UPGRADE)
+            {
+                Upgrade_Inventory.Add(item);
+            }
+        }
+
+
+
+        #region Test
+        //foreach(Inventory_Item item in InventoryDict.Values)
+        //{
+        //    Debug.Log($"Dict : {item.Get_Item_Name}");
+        //}
+
+        //for (int i = 0; i < Spend_Inventory.Count; i++)
+        //{
+        //    Debug.Log($"{i}/{Spend_Inventory[i].Get_Item_Name}/{Spend_Inventory[i].Get_Amount}");
+        //}
+
+        //for (int i = 0; i < Upgrade_Inventory.Count; i++)
+        //{
+        //    Debug.Log($"{i}/{Upgrade_Inventory[i].Get_Item_Name}/{Upgrade_Inventory[i].Get_Amount}");
+        //}
+        #endregion
+        #endregion
+    }
+
 
     #region Test
     public static void Test()

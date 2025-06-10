@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Lobby_ObjPool : MonoBehaviour
 {
+    [SerializeField] Quest_UI QuestUI_Ref;
     [SerializeField] CharacterList_UI CharacterListUI_Ref;
     [SerializeField] Lobby_Manager LobbyManagerRef;
     [SerializeField] Store_Manager StoreManagerRef;
@@ -38,6 +39,10 @@ public class Lobby_ObjPool : MonoBehaviour
     [SerializeField] Transform SR_BookTr;
     [SerializeField] GameObject SSR_Book_Prefab;
     [SerializeField] Transform SSR_BookTr;
+
+    [Header("---Quest_Slot---")]
+    [SerializeField] GameObject QuestSlot_Prefab;
+    [SerializeField] Transform QuestSlot_Tr;
 
     [Header("---Dictionary_Slot---")]
     [SerializeField] GameObject DictSlot_Prefab;
@@ -166,6 +171,19 @@ public class Lobby_ObjPool : MonoBehaviour
             }
 
             DictionaryCtrl_Ref.SSR_Slot.Add(dictSlot.GetComponent<Dict_Slot>());
+        }
+        #endregion
+
+        #region Quest_Slot
+        // Äù½ºÆ® ½½·Ô »ý¼º
+        for (int i = 0; i < Quest_List.QuestList.Count; i++)
+        {
+            GameObject questSlot = Instantiate(QuestSlot_Prefab);
+
+            questSlot.transform.SetParent(QuestSlot_Tr, false);
+            questSlot.GetComponent<Quest_Slot>().Set_QuestUI_Ref = QuestUI_Ref;
+            questSlot.GetComponent<Quest_Slot>().Set_UI(Quest_List.QuestList[i].Get_RewardType, Quest_List.QuestList[i].Get_Reward_Img,
+                Quest_List.QuestList[i].Get_QuestTitle, Quest_List.QuestList[i].Get_QuestDesc, Quest_List.QuestList[i].Get_RewardAmount);
         }
         #endregion
     }

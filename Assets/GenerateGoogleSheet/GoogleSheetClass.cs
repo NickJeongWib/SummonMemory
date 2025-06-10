@@ -13,6 +13,7 @@ public class GoogleSheetSO : ScriptableObject
 	public List<EquipOption_DB> EquipOption_DBList;
 	public List<Level_DB> Level_DBList;
 	public List<Inventory_Item_DB> Inventory_Item_DBList;
+	public List<Quest_DB> Quest_DBList;
 }
 
 [Serializable]
@@ -106,5 +107,15 @@ public class Inventory_Item_DB
 	public int ITEM_AMOUNT;
 	public string ITEM_DESC;
 	public string ITEM_IMAGE;
+}
+
+[Serializable]
+public class Quest_DB
+{
+	public string QUEST_NAME;
+	public string REWARD_TYPE;
+	public int REWARD_AMOUNT;
+	public string QUEST_DESC;
+	public string REWARD_IMAGE;
 }
 

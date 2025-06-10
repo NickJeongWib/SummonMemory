@@ -1,5 +1,12 @@
 public static class Define
 {
+    public enum QUEST_REWARD_TYPE
+    {
+        DIA,
+        GOLD,
+    }
+
+
     public enum STORE_TYPE
     {
         CURRENCY,

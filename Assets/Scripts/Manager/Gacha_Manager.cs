@@ -4,25 +4,35 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 public class Gacha_Manager : MonoBehaviour
 {
+
     [SerializeField] CharacterList_UI CharListRef;
     [SerializeField] Dictionary_Ctrl DictionaryCtrl_Ref;
 
     [SerializeField] GameObject GachaEnter_Transition;
     [SerializeField] GameObject GachaCharacterList;
     [SerializeField] GameObject GachaInfo_Panel;
+    [SerializeField] GameObject GachaFail_Info_Panel;
 
-    // 연속 뽑기 횟수 
+    // 연속 뽑기 횟수
+    [SerializeField] Text Gacha_Count_Text;
     [SerializeField] int Gacha_Count;
     // 뽑기를 했을 떄 올라가는 카운트
     [SerializeField] int Gacha_Num;
 
     public List<Character> Gacha_Characters = new List<Character>();
 
+    [Header("----Gacha_Frame_Shader----")]
+    [SerializeField] Material SR_Frame;
+    [SerializeField] Material SSR_Frame;
+
     [Header("----Gacha_Image----")]
     [SerializeField] Image[] Gacha_10_CharImages;
+    [SerializeField] GameObject[] Gacha_Frame;
+    [SerializeField] GameObject SingleGacha_Frame;
     [SerializeField] Image Gacha_CharImage;
     [SerializeField] GameObject Gacha_10;
     [SerializeField] GameObject Gacha_1;
@@ -38,10 +48,6 @@ public class Gacha_Manager : MonoBehaviour
     [SerializeField] float SR_Summon_Rate; // 0.16
     [SerializeField] float SSR_Summon_Rate; // 0.04
 
-    // TODO ## Build Fix Static 변경 
-    [SerializeField] public int SR_Set_Count;
-    [SerializeField] public int SSR_Set_Count;
-
     [Header("----Gacha_Video----")]
     [SerializeField] GameObject Gacha_Video;
     [SerializeField] VideoClip[] Gacha_Scenes;
@@ -49,6 +55,10 @@ public class Gacha_Manager : MonoBehaviour
 
     [Header("Inventory_UI")]
     [SerializeField] Inventory_UI InventoryUI_Ref;
+
+    [Header("Gacha_Info")]
+    [SerializeField] TextMeshProUGUI UserTicket;
+    [SerializeField] Text FailInfoCount;
 
     bool isR_Summon;
     bool isSR_Summon;
@@ -62,11 +72,30 @@ public class Gacha_Manager : MonoBehaviour
 
     public void GachaInfo_Open(int _num)
     {
+        if (UserInfo.InventoryDict.ContainsKey("캐릭터 티켓") == false)
+        {
+            GachaFail_Info_Panel.SetActive(true);
+            FailInfoCount.text = $"<color=red>{Mathf.Abs(_num)}</color>개 부족합니다.";
+            return;
+        }
+           
+
+        if (UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount < _num)
+        {
+            GachaFail_Info_Panel.SetActive(true);
+            FailInfoCount.text = $"<color=red>{Mathf.Abs(_num - UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount)}</color>개 부족합니다.";
+            return;
+        }
+
+        UserTicket.text = $"<color=orange>{UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount}</color> <sprite=0> " +
+            $"<color=red>{UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount - _num}</color>";
+
         Gacha_Count = _num;
         GachaInfo_Panel.SetActive(true);
         // GachaInfo_Panel.transform.GetChild(0).GetComponent<Pop_UpDown>().Pop_Up();
     }
 
+    #region Info_Close
     public void GachaInfo_Close()
     {
         Gacha_Count = 0;
@@ -74,10 +103,24 @@ public class Gacha_Manager : MonoBehaviour
         // GachaInfo_Panel.SetActive(false);
     }
 
+    public void GachaFailInfo_Close()
+    {
+        Gacha_Count = 0;
+        GachaFail_Info_Panel.transform.GetChild(0).GetComponent<Pop_UpDown>().Pop_Down();
+        // GachaInfo_Panel.SetActive(false);
+    }
+    #endregion
+
     #region Summon_System
     // TODO ## Gacha_Manager 가차 시스템
     public void Summon()
     {
+        // 티켓 감소, 슬롯 초기화
+        UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount -= Gacha_Count;
+        UserInfo.Remove_Inventory_Item();
+        InventoryUI_Ref.Reset_Spend_Inventory();
+        InventoryUI_Ref.Spend_Slot_Refresh();
+
         // 새로 뽑는 친구들을 채우기 위해 리스트 초기화
         Gacha_Characters.Clear();
 
@@ -90,21 +133,21 @@ public class Gacha_Manager : MonoBehaviour
         {
             float RandomRate = Summon_Rate();
 
-            SSR_Set_Count++;
-            SR_Set_Count++;
+            UserInfo.SSR_Set_Count++;
+            UserInfo.SR_Set_Count++;
 
-            if (SSR_Set_Count >= 80)
+            if (UserInfo.SSR_Set_Count >= 80)
             {
                 // Debug.Log(i + " ssr 확정");
                 SSR_Summon();
-                SSR_Set_Count = 0;
+                UserInfo.SSR_Set_Count = 0;
                 isSSR_Summon = true;
             }
-            else if (SR_Set_Count >= 10)
+            else if (UserInfo.SR_Set_Count >= 10)
             {
                 // Debug.Log(i + " sr 확정");
                 SR_Summon();
-                SR_Set_Count = 0;
+                UserInfo.SR_Set_Count = 0;
                 isSR_Summon = true;
             }
             else
@@ -113,14 +156,14 @@ public class Gacha_Manager : MonoBehaviour
                 {
                     // Debug.Log(i + " ssr");
                     SSR_Summon();
-                    SSR_Set_Count = 0;
+                    UserInfo.SSR_Set_Count = 0;
                     isSSR_Summon = true;
                 }
                 else if (SSR_Summon_Rate < RandomRate && RandomRate <= SR_Summon_Rate)
                 {
                     // Debug.Log(i + " sr");
                     SR_Summon();
-                    SR_Set_Count = 0;
+                    UserInfo.SR_Set_Count = 0;
                     isSR_Summon = true;
                 }
                 else
@@ -141,6 +184,24 @@ public class Gacha_Manager : MonoBehaviour
             for (int i = 0; i < Gacha_Characters.Count; i++)
             {
                 Gacha_10_CharImages[i].sprite = Gacha_Characters[i].Get_Normal_Img;
+
+                // 가차 프레임 머티리얼 변경
+                #region Gacha_Frame
+                if (Gacha_Characters[i].Get_CharGrade == Define.CHAR_GRADE.SSR)
+                {
+                    Gacha_Frame[i].GetComponent<Image>().enabled = true;
+                    Gacha_Frame[i].GetComponent<Image>().material = SSR_Frame;
+                }
+                else if (Gacha_Characters[i].Get_CharGrade == Define.CHAR_GRADE.SR)
+                {
+                    Gacha_Frame[i].GetComponent<Image>().enabled = true;
+                    Gacha_Frame[i].GetComponent<Image>().material = SR_Frame;
+                }
+                else
+                {
+                    Gacha_Frame[i].GetComponent<Image>().enabled = false;
+                }
+                #endregion
             }
         }
         else
@@ -148,7 +209,26 @@ public class Gacha_Manager : MonoBehaviour
             Gacha_1.SetActive(true);
 
             Gacha_CharImage.sprite = Gacha_Characters[0].Get_Normal_Img;
+            SingleGacha_Frame.GetComponent<Image>().enabled = true;
+
+            // 가차 프레임 머티리얼 변경
+            #region Gacha_Frame
+            if (Gacha_Characters[0].Get_CharGrade == Define.CHAR_GRADE.SSR)
+            {
+                SingleGacha_Frame.GetComponent<Image>().material = SSR_Frame;
+            }
+            else if (Gacha_Characters[0].Get_CharGrade == Define.CHAR_GRADE.SR)
+            {
+                SingleGacha_Frame.GetComponent<Image>().material = SR_Frame;
+            }
+            else
+            {
+                SingleGacha_Frame.GetComponent<Image>().enabled = false;
+            }
+            #endregion
         }
+
+        Gacha_Count_Text.text = $"{UserInfo.SSR_Set_Count} / 80";
 
         // UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToDictionary(entry => entry.Key, entry => entry.Value); // 유저가 지닌 캐릭터 풀 복사
         UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToList();
@@ -438,4 +518,5 @@ public class Gacha_Manager : MonoBehaviour
         } 
     }
     #endregion
+
 }
