@@ -12,9 +12,13 @@ public class ItemUpGrade : MonoBehaviour
 
     [Header("Ref")]
     [SerializeField] Item_Info_Panel Item_Info_Panel_Ref;
-    [SerializeField] Inventory_UI Inventory_UI_Ref;
+    [SerializeField] Inventory_UI InventoryUI_Ref;
+    [SerializeField] Lobby_Manager LobbyManager_Ref;
 
     [Header("All_UI_Root")]
+    [SerializeField] Text UserItemCrystal_Text;
+    [SerializeField] Text[] UserPowerText;
+    [SerializeField] GameObject Fail_Info_Panel;
     [SerializeField] GameObject AllUpgradeRoot;
     [SerializeField] Mask UpGradeShine_Mask;
     [SerializeField] Mask OptionReset_Mask;
@@ -32,6 +36,7 @@ public class ItemUpGrade : MonoBehaviour
 
     [Header("RandomOption_Root")]
     [SerializeField] int ResetOptionCost;
+    [SerializeField] int ResetOptionItem_Cost;
     [SerializeField] Text ResetOptionCostText;
     [SerializeField] Image[] Re_OptionGrade_Image;
     [SerializeField] GameObject RandomOptionRoot;
@@ -43,6 +48,7 @@ public class ItemUpGrade : MonoBehaviour
 
     [Header("ChainUpgrade_Root")]
     [SerializeField] int Cost;
+    [SerializeField] int UpgradeItem_Cost;
     int MaxCost;
     bool isSlider;
     [SerializeField] Animator ChainAnimator;
@@ -50,8 +56,11 @@ public class ItemUpGrade : MonoBehaviour
     int MaxCount = 100;
     [SerializeField] int Count;
     [SerializeField] Text ChainCountText;
+    [SerializeField] Button[] ChainButtons;
 
-    [Header("---ItemOption_Reset_Root---")]
+    [Header("---ItemOption_ResetValue_Root---")]
+    [SerializeField] int ResetOptionValue_Cost;
+    [SerializeField] int ResetOptionValue_Item_Cost;
     [SerializeField] GameObject ResetOptionRoot;
     [SerializeField] Text[] ResetOptionRoot_text;
     [SerializeField] Mask[] ResetOption_Mask;
@@ -110,15 +119,42 @@ public class ItemUpGrade : MonoBehaviour
         }
 
         Refresh_OptionText();
+        Refresh_UserPowder();
+        Refresh_UserItemCrystal();
 
         ItemImage.sprite = SelectItem.Get_Item_Image;
         ItemGrade.sprite = Item_Info_Panel_Ref.Get_Grade_Sprites[(int)SelectItem.Get_Equipment_Grade];
-        ItemGradeBack.color = Inventory_UI_Ref.Get_Colors[(int)SelectItem.Get_Equipment_Grade];
+        ItemGradeBack.color = InventoryUI_Ref.Get_Colors[(int)SelectItem.Get_Equipment_Grade];
         ItemName.text = $"{SelectItem.Get_Item_Name} +{SelectItem.Get_Item_Lv}";
     }
     #endregion
 
     #region Item_UI_Refresh
+    public void Refresh_UserPowder()
+    {
+        for (int i = 0; i < UserPowerText.Length; i++)
+        {
+            if (!UserInfo.InventoryDict.ContainsKey("재련 가루"))
+            {
+                UserPowerText[i].text = "0개 보유";
+                return;
+            }
+
+            UserPowerText[i].text = $"{UserInfo.InventoryDict["재련 가루"].Get_Amount}개 보유";
+        }
+    }
+
+    void Refresh_UserItemCrystal()
+    {
+        if (!UserInfo.InventoryDict.ContainsKey("재련 수정"))
+        {
+            UserItemCrystal_Text.text = "0개 보유";
+            return;
+        }
+
+        UserItemCrystal_Text.text = $"{UserInfo.InventoryDict["재련 수정"].Get_Amount}개 보유";
+    }
+
     void Refresh_OptionText()
     {
         int OptionLv = 0;
@@ -246,6 +282,27 @@ public class ItemUpGrade : MonoBehaviour
             return;
         }
 
+        if (!GameManager.Instance.TestMode)
+        {
+            if (UserInfo.Money < Cost || !UserInfo.InventoryDict.ContainsKey("재련 가루") || UserInfo.InventoryDict["재련 가루"].Get_Amount < UpgradeItem_Cost)
+            {
+                Fail_Info_Panel.SetActive(true);
+                return;
+            }
+
+            // 재화 소모
+            UserInfo.Money -= Cost;
+            UserInfo.InventoryDict["재련 가루"].Get_Amount -= UpgradeItem_Cost;
+
+            // 인벤토리 초기화
+            UserInfo.Remove_Inventory_Item();
+            InventoryUI_Ref.Reset_Upgrade_Inventory();
+            InventoryUI_Ref.Upgrade_Slot_Refresh();
+
+            // 보유 재련 가루 표시
+            Refresh_UserPowder();
+        }
+
         // Debug.Log(SelectItem.Get_Item_Lv);
         int Rate = Random.Range(1, 101);
         // Debug.Log(Rate);
@@ -300,6 +357,43 @@ public class ItemUpGrade : MonoBehaviour
     {
         Count = Mathf.RoundToInt(MaxCount * CountSlider.value);
         ChainCountText.text = $"{Count}회";
+
+        if (!GameManager.Instance.TestMode)
+        {
+            // 재화가 없다면
+            if (UserInfo.Money < Count * Cost || !UserInfo.InventoryDict.ContainsKey("재련 가루") ||
+            UserInfo.InventoryDict["재련 가루"].Get_Amount < UpgradeItem_Cost * Count)
+            {
+                // 재화 소모 증가 ui 비활성화
+                CountSlider.interactable = false;
+
+                for (int i = 0; i < ChainButtons.Length; i++)
+                {
+                    ChainButtons[i].interactable = false;
+                }
+
+                // 인벤토리에 재련가루가 없다면 
+                if (!UserInfo.InventoryDict.ContainsKey("재련 가루"))
+                {
+                    Count = 0;
+                }
+                else // 인벤토리에 재련가루가 존재한다면
+                {
+                    Count = UserInfo.InventoryDict["재련 가루"].Get_Amount;
+                }
+               
+                ChainCountText.text = $"{Count}회";
+            }
+            else // 재화가 인벤토리에 있다면
+            {
+                CountSlider.interactable = true;
+
+                for (int i = 0; i < ChainButtons.Length; i++)
+                {
+                    ChainButtons[i].interactable = true;
+                }
+            }
+        }
     }
 
     // 1 +,- 반복횟수 설정
@@ -325,6 +419,7 @@ public class ItemUpGrade : MonoBehaviour
     // 10 +,- 반복횟수 카운드 설정
     public void On_Click_Count_10(bool _isPlus)
     {
+        // +면 카운터 증가
         if (_isPlus)
         {
             Count += 10;
@@ -332,7 +427,7 @@ public class ItemUpGrade : MonoBehaviour
             if (Count >= 100)
                 Count = 100;
         }
-        else
+        else // -면 카운터 감소
         {
             Count -= 10;
             if (Count <= 1)
@@ -377,7 +472,6 @@ public class ItemUpGrade : MonoBehaviour
         // 아이템 강화 골드보다 보유골드가 적으면
         if (MaxCost > UserInfo.Money)
         {
-
             return;
         }
 
@@ -388,10 +482,12 @@ public class ItemUpGrade : MonoBehaviour
             On_Click_UpgradeBtn();
 
             if (SelectItem.Get_Item_Lv >= 9)
-            {   
+            {
                 break;
             }
         }
+
+        LobbyManager_Ref.Refresh_UI_Gold();
 
         // Debug.Log($"{CostSum.ToString("N0")}원 사용");
         ChainAnimator.Play("ChainUp_Close");
@@ -405,6 +501,29 @@ public class ItemUpGrade : MonoBehaviour
         if (OpValue_Locks[0] && OpValue_Locks[1] && OpValue_Locks[2])
             return;
 
+        if (!GameManager.Instance.TestMode)
+        {
+            if (UserInfo.Money < ResetOptionValue_Cost || !UserInfo.InventoryDict.ContainsKey("재련 가루") || UserInfo.InventoryDict["재련 가루"].Get_Amount < ResetOptionValue_Item_Cost)
+            {
+                Fail_Info_Panel.SetActive(true);
+                return;
+            }
+
+            UserInfo.Money -= ResetOptionValue_Cost;
+            UserInfo.InventoryDict["재련 가루"].Get_Amount -= ResetOptionValue_Item_Cost;
+
+            LobbyManager_Ref.Refresh_UI_Gold();
+
+            // 인벤토리 초기화
+            UserInfo.Remove_Inventory_Item();
+            InventoryUI_Ref.Reset_Upgrade_Inventory();
+            InventoryUI_Ref.Upgrade_Slot_Refresh();
+
+            // 보유 재련 가루 표시
+            Refresh_UserPowder();
+        }
+
+
         SelectItem.Set_ResetOptionValue(OpValue_Locks);
         Refresh_OptionText();
     }
@@ -417,6 +536,28 @@ public class ItemUpGrade : MonoBehaviour
         if (Op_Locks[0] && Op_Locks[1] && Op_Locks[2])
             return;
         
+        if(!GameManager.Instance.TestMode)
+        {
+            if (UserInfo.Money < ResetOptionCost || !UserInfo.InventoryDict.ContainsKey("재련 수정") || UserInfo.InventoryDict["재련 수정"].Get_Amount < ResetOptionItem_Cost)
+            {
+                Fail_Info_Panel.SetActive(true);
+                return;
+            }
+
+            UserInfo.Money -= ResetOptionValue_Cost;
+            UserInfo.InventoryDict["재련 수정"].Get_Amount -= ResetOptionItem_Cost;
+
+            LobbyManager_Ref.Refresh_UI_Gold();
+
+            // 인벤토리 초기화
+            UserInfo.Remove_Inventory_Item();
+            InventoryUI_Ref.Reset_Upgrade_Inventory();
+            InventoryUI_Ref.Upgrade_Slot_Refresh();
+
+            // 보유 재련 가루 표시
+            Refresh_UserItemCrystal();
+        }
+
         SelectItem.Set_ResetOption(Op_Locks);
         Refresh_OptionText();
 

@@ -165,6 +165,15 @@ public class Inventory_UI : MonoBehaviour
             SpendSlot_List[i].Reset_Info();
         }
     }
+
+    public void Reset_Upgrade_Inventory()
+    {
+        for (int i = 0; i < SpendSlot_List.Count; i++)
+        {
+            UpgradeSlot_List[i].Reset_Info();
+        }
+    }
+
     public void Spend_Slot_Refresh()
     {
         int index = 0;
@@ -220,6 +229,7 @@ public class Inventory_UI : MonoBehaviour
             (UserInfo.Upgrade_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.UPGRADE))
             return;
 
+        // 아이템 정보 표기
         Item_Info.ItemInfo_Refresh(Inventory_Type, _slotNum);
         Item_Info.gameObject.SetActive(true);
     }

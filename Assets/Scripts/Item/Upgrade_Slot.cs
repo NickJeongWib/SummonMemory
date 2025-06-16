@@ -34,6 +34,17 @@ public class Upgrade_Slot : MonoBehaviour
         }
     }
 
+    public void Reset_Info()
+    {
+        InventoryItem_Info = null;
+
+        if (InventoryItem_Info == null)
+        {
+            Amount_Text.text = $"";
+            Item_Mask.showMaskGraphic = false;
+        }
+    }
+
     public void Off_Image()
     {
         Item_Mask.showMaskGraphic = false;

@@ -29,8 +29,6 @@ public class ItemInfo_Pop : MonoBehaviour
         }
     }
 
-
-
     // StoreItem_Info 받아오기
     public void Set_StoreItem(Store_Item _storeInfo)
     {

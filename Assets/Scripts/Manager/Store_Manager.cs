@@ -28,18 +28,24 @@ public class Store_Manager : MonoBehaviour
 
     [SerializeField] GameObject Book_List;
     [SerializeField] string[] BookNames;
+    public string[] Get_BookNames { get => BookNames; }
     [SerializeField] GameObject[] BookShine_BG;
     [SerializeField] Text[] Book_Texts;
     [SerializeField] GameObject[] Book_Store_Info;
 
     [Header("---Info---")]
+    [SerializeField] GameObject FailInfo_Panel;
     [SerializeField] GameObject Buying_Info;
     [SerializeField] ItemInfo_Pop ItemInfo_Pop;
+    [SerializeField] Text[] BookCount_Texts;
+    [SerializeField] GameObject Slider_Root;
+    [SerializeField] Slider AmountSlider;
+    [SerializeField] Text AmountText;
     #endregion
 
     #region Variable
     public Sprite[] Consume_Icons;
-
+    public int Buy_Count;
     [SerializeField] Inventory_UI InventoryUI_Ref;
     [SerializeField] Lobby_Manager LobbyMgr_Ref;
 
@@ -158,37 +164,183 @@ public class Store_Manager : MonoBehaviour
 
     // Currency_Store
     #region Dia_Buy
-    public void On_Click_Buy_Dia(int _count)
+    public void On_Click_Buy_Dia(int _count, Store_Item _storeInfo)
     {
         Dia_SelectCount = _count;
+        StoreItem_Info = _storeInfo;
         Buying_Info.SetActive(true);
     }
     #endregion
 
     #region Buying_Info
+    public void SliderRoot_OnOff(bool _isOn)
+    {
+        Slider_Root.SetActive(_isOn);
+
+        // 구매하려고 선택한 아이템 소모재료가 다이아라면
+        if (StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.DIA)
+        {
+            // 판넬을 열었을 때 보유 다이아가 적을 때 슬라이더 비활성화
+            if (UserInfo.Dia < StoreItem_Info.Get_ConsumeCount)
+            {
+                AmountSlider.interactable = false;
+                AmountSlider.value = 0.0f;
+            }
+            else
+            {
+                int maxQuantity = Mathf.FloorToInt(UserInfo.Dia / (float)StoreItem_Info.Get_ConsumeCount);
+                maxQuantity = Mathf.Max(1, maxQuantity); // 최소 1개는 구매 가능하게
+                AmountSlider.minValue = 1;
+                AmountSlider.maxValue = maxQuantity;
+                AmountSlider.value = 1;
+
+                AmountSlider.interactable = true;
+            }
+        }
+        else if (StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.R_BOOK || StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.SR_BOOK || StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.SSR_BOOK)
+        {
+            if (!UserInfo.InventoryDict.ContainsKey(BookNames[(int)StoreItem_Info.Get_ConsumeType - 2]))
+            {
+                AmountSlider.interactable = false;
+                AmountSlider.value = 0.0f;
+                return;
+            }
+            else
+            {
+                int maxQuantity = Mathf.FloorToInt(UserInfo.InventoryDict[BookNames[(int)StoreItem_Info.Get_ConsumeType - 2]].Get_Amount / (float)StoreItem_Info.Get_ConsumeCount);
+                maxQuantity = Mathf.Max(1, maxQuantity); // 최소 1개는 구매 가능하게
+                AmountSlider.minValue = 1;
+                AmountSlider.maxValue = maxQuantity;
+                AmountSlider.value = 1;
+
+                AmountSlider.interactable = true;
+            }
+
+            // 판넬을 열었을 때 보유 소환서가 적을 때 슬라이더 비활성화
+            if (UserInfo.InventoryDict[BookNames[(int)StoreItem_Info.Get_ConsumeType - 2]].Get_Amount < StoreItem_Info.Get_ConsumeCount)
+            {
+                AmountSlider.interactable = false;
+            }
+            else
+            {
+                AmountSlider.interactable = true;
+            }
+        }
+        
+    }
+
+    public void Amount_Slider()
+    {
+        AmountText.text = $"{AmountSlider.value}개";
+        Buy_Count = (int)AmountSlider.value;
+    }
+
     public void On_Click_Buy()
     {
-        // TODO ## Store_Manager Dia획득
+        // TODO ## Store_Manager Dia획득 다이아 구매
         if (Dia_SelectCount != 0)
         {
+            if (!GameManager.Instance.TestMode)
+            {
+                if (UserInfo.Money - StoreItem_Info.Get_ConsumeCount < 0)
+                {
+                    FailInfo_Panel.SetActive(true);
+                    Buying_Info.SetActive(false);
+                    return;
+                }
+
+                UserInfo.Money -= StoreItem_Info.Get_ConsumeCount;
+                LobbyMgr_Ref.Refresh_UI_Gold();
+            }
+                
             UserInfo.Dia += Dia_SelectCount;
             Dia_SelectCount = 0;
             Buying_Info.SetActive(false);
             LobbyMgr_Ref.Refresh_UI_Dia();
         }
-        else
+        else // 다이아 구매가 아니라면 아이템 구매
         {
             // 선택한 아이템이 있다면
             if (StoreItem_Info != null)
             {
+                // TODO ## Store_Manager 상점 재화 소모
+                // 테스트용인지 아닌지
+                if (!GameManager.Instance.TestMode)
+                {
+                    // 소환서를 소비 해야하는 물품일때
+                    if (StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.R_BOOK || StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.SR_BOOK || StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.SSR_BOOK)
+                    {
+                        // 상점아이템의 소모 아이템이 없다면
+                        if (UserInfo.InventoryDict.ContainsKey(BookNames[(int)StoreItem_Info.Get_ConsumeType - 2]) == false)
+                        {
+                            FailInfo_Panel.SetActive(true);
+                            Buying_Info.SetActive(false);
+                            return;
+                        }
+                        // 상점아이템의 소모 아이템에 맞는 재화의 수량이 부족하다면
+                        if (UserInfo.InventoryDict[BookNames[(int)StoreItem_Info.Get_ConsumeType - 2]].Get_Amount - StoreItem_Info.Get_ConsumeCount < 0)
+                        {
+                            FailInfo_Panel.SetActive(true);
+                            Buying_Info.SetActive(false);
+                            return;
+                        }
+
+                        // 해당 소환서 감소, 슬롯 초기화
+                        UserInfo.InventoryDict[BookNames[(int)StoreItem_Info.Get_ConsumeType - 2]].Get_Amount -= (StoreItem_Info.Get_ConsumeCount * Buy_Count);
+                        UserInfo.Remove_Inventory_Item();
+                        InventoryUI_Ref.Reset_Spend_Inventory();
+                        InventoryUI_Ref.Spend_Slot_Refresh();
+
+                        Store_Currency_Refresh();
+                    }
+                    // 소모재화가 다이아라면
+                    else if (StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.DIA)
+                    {
+                        // 다이아가 부족하다면
+                        if(UserInfo.Dia - StoreItem_Info.Get_ConsumeCount < 0)
+                        {
+                            FailInfo_Panel.SetActive(true);
+                            Buying_Info.SetActive(false);
+                            return;
+                        }
+
+                        // 구매
+                        UserInfo.Dia -= (StoreItem_Info.Get_ConsumeCount * Buy_Count);
+                        LobbyMgr_Ref.Refresh_UI_Dia();
+                    }
+                    // 소모재화가 골드라면
+                    else if (StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.MONEY)
+                    {
+                        // 골드가 부족하다면
+                        if (UserInfo.Money - StoreItem_Info.Get_ConsumeCount < 0)
+                        {
+                            FailInfo_Panel.SetActive(true);
+                            Buying_Info.SetActive(false);
+                            return;
+                        }
+
+                        // 구매
+                        UserInfo.Money -= StoreItem_Info.Get_ConsumeCount;
+                        LobbyMgr_Ref.Refresh_UI_Gold();
+                    }
+                }
+                else
+                {
+                    // 테스트용
+                    Buy_Count = 10;
+                }
+
+
                 // 소모 아이템
                 if (StoreItem_Info.Get_InvenType == INVENTORY_TYPE.SPEND)
                 {
                     for (int i = 0; i < Item_List.Spend_Item_List.Count; i++)
                     {
+                        // 리스트에 이미 아이템이 있다면
                         if (Item_List.Spend_Item_List[i].Get_Item_Name == StoreItem_Info.Get_Item_Name)
                         {
-                            UserInfo.Add_Inventory_Item(Item_List.Spend_Item_List[i], StoreItem_Info.Get_Item_Ex);
+                            // 추가 상점아이템의 수량만큼 증가
+                            UserInfo.Add_Inventory_Item(Item_List.Spend_Item_List[i], (StoreItem_Info.Get_Item_Ex * Buy_Count));
                             InventoryUI_Ref.Spend_Slot_Refresh();
                             break;
                         }
@@ -199,9 +351,11 @@ public class Store_Manager : MonoBehaviour
                 {
                     for (int i = 0; i < Item_List.Upgrade_Item_List.Count; i++)
                     {
+                        // 리스트에 이미 아이템이 있다면
                         if (Item_List.Upgrade_Item_List[i].Get_Item_Name == StoreItem_Info.Get_Item_Name)
                         {
-                            UserInfo.Add_Inventory_Item(Item_List.Upgrade_Item_List[i], StoreItem_Info.Get_Item_Ex);
+                            // 추가 상점아이템의 수량만큼 증가
+                            UserInfo.Add_Inventory_Item(Item_List.Upgrade_Item_List[i], StoreItem_Info.Get_Item_Ex * Buy_Count);
                             InventoryUI_Ref.Upgrade_Slot_Refresh();
                             break;
                         }
@@ -250,12 +404,32 @@ public class Store_Manager : MonoBehaviour
 
         return 0;
     }
+
+    public void Set_FailInfo_Panel(bool _isOn)
+    {
+        FailInfo_Panel.SetActive(_isOn);
+    }
     #endregion
 
     #region Book_List
     public void On_Click_Book(int _num)
     {
         Book_UI_Refresh(BookNames[_num], _num);
+    }
+
+    public void Store_Currency_Refresh()
+    {
+        for(int i = 0; i < BookCount_Texts.Length; i++)
+        {
+            if(UserInfo.InventoryDict.ContainsKey(BookNames[i]))
+            {
+                BookCount_Texts[i].text = $"{UserInfo.InventoryDict[BookNames[i]].Get_Amount}";
+            }
+            else
+            {
+                BookCount_Texts[i].text = "0";
+            }
+        }
     }
 
     void Book_UI_Refresh(string _bookname, int _index)

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class CharGrowUp_Mgr : MonoBehaviour
 {
     // Variable
+    [SerializeField] Inventory_UI InventoryUI_Ref;
+
     #region Text_UI 
     [Header("Text_UI")]
     [SerializeField] Text CombatPower;
@@ -19,9 +21,9 @@ public class CharGrowUp_Mgr : MonoBehaviour
     [SerializeField] Text Info_Char_Lv;
 
     [SerializeField] Text Exp_Percent;
-    [SerializeField] Text Low_Slime_Amout;
-    [SerializeField] Text Middle_Slime_Amout;
-    [SerializeField] Text High_Slime_Amout;
+    [SerializeField] Text Low_Slime_Amount;
+    [SerializeField] Text Middle_Slime_Amount;
+    [SerializeField] Text High_Slime_Amount;
     [SerializeField] Text[] Slime_Use;
     #endregion
 
@@ -168,31 +170,31 @@ public class CharGrowUp_Mgr : MonoBehaviour
         // 인벤토리에 옐로우 슬라임이 존재할 시
         if (UserInfo.InventoryDict.ContainsKey("옐로우 슬라임"))
         {
-            Low_Slime_Amout.text = $"{UserInfo.InventoryDict["옐로우 슬라임"].Get_Amount}";
+            Low_Slime_Amount.text = $"{UserInfo.InventoryDict["옐로우 슬라임"].Get_Amount}";
         }
         else
         {
-            Low_Slime_Amout.text = $"{0}";
+            Low_Slime_Amount.text = $"{0}";
         }
 
         // 인벤토리에 블루 슬라임이 존재할 시
         if (UserInfo.InventoryDict.ContainsKey("블루 슬라임"))
         {
-            Middle_Slime_Amout.text = $"{UserInfo.InventoryDict["블루 슬라임"].Get_Amount}";
+            Middle_Slime_Amount.text = $"{UserInfo.InventoryDict["블루 슬라임"].Get_Amount}";
         }
         else
         {
-            Middle_Slime_Amout.text = $"{0}";
+            Middle_Slime_Amount.text = $"{0}";
         }
 
         // 인벤토리에 레드 슬라임이 존재할 시
         if (UserInfo.InventoryDict.ContainsKey("레드 슬라임"))
         {
-            High_Slime_Amout.text = $"{UserInfo.InventoryDict["레드 슬라임"].Get_Amount}";
+            High_Slime_Amount.text = $"{UserInfo.InventoryDict["레드 슬라임"].Get_Amount}";
         }
         else
         {
-            High_Slime_Amout.text = $"{0}";
+            High_Slime_Amount.text = $"{0}";
         }
         #endregion
     }
@@ -601,6 +603,52 @@ public class CharGrowUp_Mgr : MonoBehaviour
         {
             GameManager.Instance.Get_SelectChar.Get_CurrentExp = Left_Exp;
         }
+
+        if (!GameManager.Instance.TestMode)
+        {
+            if (selectNum == 0)
+            {
+                UserInfo.InventoryDict["옐로우 슬라임"].Get_Amount -= UseCount;
+                SlimeMaxCount = UserInfo.InventoryDict["옐로우 슬라임"].Get_Amount;
+                Low_Slime_Amount.text = $"{UserInfo.InventoryDict["옐로우 슬라임"].Get_Amount}";
+
+                if (UserInfo.InventoryDict["옐로우 슬라임"].Get_Amount <= 0)
+                {
+                    Set_Active_UI(false);
+                }
+
+            }
+            else if (selectNum == 1)
+            {
+                UserInfo.InventoryDict["블루 슬라임"].Get_Amount -= UseCount;
+                SlimeMaxCount = UserInfo.InventoryDict["블루 슬라임"].Get_Amount;
+                Middle_Slime_Amount.text = $"{UserInfo.InventoryDict["블루 슬라임"].Get_Amount}";
+
+                if (UserInfo.InventoryDict["블루 슬라임"].Get_Amount <= 0)
+                {
+                    Set_Active_UI(false);
+                }
+            }
+            else if (selectNum == 2)
+            {
+                UserInfo.InventoryDict["레드 슬라임"].Get_Amount -= UseCount;
+                SlimeMaxCount = UserInfo.InventoryDict["레드 슬라임"].Get_Amount;
+                High_Slime_Amount.text = $"{UserInfo.InventoryDict["레드 슬라임"].Get_Amount}";
+
+                if (UserInfo.InventoryDict["레드 슬라임"].Get_Amount <= 0)
+                {
+                    Set_Active_UI(false);
+                }
+            }
+
+            // 인벤토리 초기화
+            UserInfo.Remove_Inventory_Item();
+            InventoryUI_Ref.Reset_Upgrade_Inventory();
+            InventoryUI_Ref.Upgrade_Slot_Refresh();
+
+        }
+
+
 
         Remove_Exp = 0;
         Left_Exp = 0;

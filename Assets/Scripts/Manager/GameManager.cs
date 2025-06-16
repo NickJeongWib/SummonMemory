@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public Character Get_SelectChar { get => SelectCharacter; set => SelectCharacter = value; }
     public static GameManager Instance;
 
+    public bool TestMode = false;
+
     // Start is called before the first frame update
     void Awake()
     {

@@ -4,27 +4,60 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 using static Define;
 
 public class Equipment_Gacha_Manager : MonoBehaviour
 {
     int Gacha_Count;
-
-    [SerializeField] GameObject Equip_GachaInfo_Panel;
-    [SerializeField] Inventory_UI Inventory_UI_Ref;
+    [SerializeField] Inventory_UI InventoryUI_Ref;
     // [SerializeField] List<Equipment_Slot> EquipmentSlot_List;
+
+    [Header("UI_Panel")]
+    [SerializeField] GameObject Inventory_FullInfo_Panel;
+    [SerializeField] GameObject Equip_GachaInfo_Panel;
+    [SerializeField] GameObject Equip_GachaFail_Panel;
+
+    [Header("Text")]
+    [SerializeField] Text User_Ticket_Amount;
+    [SerializeField] Text FailInfoCount;
+    [SerializeField] TextMeshProUGUI UserTicket;
 
     #region EquipGacha_Info_Pop
     public void EquipGachaInfo_Open(int _num)
     {
         Gacha_Count = _num;
-        Equip_GachaInfo_Panel.SetActive(true);
-    }
 
-    public void EquipGachaInfo_Close()
-    {
-        Gacha_Count = 0;
-        Equip_GachaInfo_Panel.transform.GetChild(0).GetComponent<Pop_UpDown>().Pop_Down();
+        // 인벤토리 부족
+        if (InventoryUI_Ref.Get_EquipmentSlot_List.Count < UserInfo.Equip_Inventory.Count + Gacha_Count)
+        {
+            Inventory_FullInfo_Panel.SetActive(true);
+            return;
+        }
+
+        if (!GameManager.Instance.TestMode)
+        {
+            if (UserInfo.InventoryDict.ContainsKey("장비 티켓") == false)
+            {
+                Equip_GachaFail_Panel.SetActive(true);
+                FailInfoCount.text = $"<color=red>{Mathf.Abs(_num)}</color>개 부족합니다.";
+                return;
+            }
+
+
+            if (UserInfo.InventoryDict["장비 티켓"].Get_Amount < _num)
+            {
+                Equip_GachaFail_Panel.SetActive(true);
+                FailInfoCount.text = $"<color=red>{Mathf.Abs(_num - UserInfo.InventoryDict["장비 티켓"].Get_Amount)}</color>개 부족합니다.";
+                return;
+            }
+
+            UserTicket.text = $"<color=orange>{UserInfo.InventoryDict["장비 티켓"].Get_Amount}</color> <sprite=0> " +
+                $"<color=red>{UserInfo.InventoryDict["장비 티켓"].Get_Amount - _num}</color>";
+        }
+
+
+        Equip_GachaInfo_Panel.SetActive(true);
     }
     #endregion
 
@@ -61,11 +94,15 @@ public class Equipment_Gacha_Manager : MonoBehaviour
 
     public void Equip_Gacha()
     {
-        if (Inventory_UI_Ref.Get_EquipmentSlot_List.Count < UserInfo.Equip_Inventory.Count + Gacha_Count)
+        // TODO ## Gacha_Manager : TestMode
+        if (!GameManager.Instance.TestMode)
         {
-            Debug.LogWarning("인벤토리 부족");
-            return;
-        }    
+            // 티켓 감소, 슬롯 초기화
+            UserInfo.InventoryDict["장비 티켓"].Get_Amount -= Gacha_Count;
+            UserInfo.Remove_Inventory_Item();
+            InventoryUI_Ref.Reset_Spend_Inventory();
+            InventoryUI_Ref.Spend_Slot_Refresh();
+        }
 
         for (int i = 0; i < Gacha_Count; i++)
         {
@@ -73,23 +110,48 @@ public class Equipment_Gacha_Manager : MonoBehaviour
         }
 
         Refresh_Equipment_Slot();
+        Refresh_EquipTicket();
 
-        EquipGachaInfo_Close();
+        Info_Close(Equip_GachaInfo_Panel);
     }
 
-    void Refresh_Equipment_Slot()
+    public void Refresh_Equipment_Slot()
     {
         int count = 0;
 
         for (int i = 0; i < UserInfo.Equip_Inventory.Count; i++)
         {
             count = i;
-            Inventory_UI_Ref.Get_EquipmentSlot_List[i].Set_Image(UserInfo.Equip_Inventory[i].Get_Item_Image, UserInfo.Equip_Inventory[i].Get_Equipment_Grade);
+            InventoryUI_Ref.Get_EquipmentSlot_List[i].Set_Image(UserInfo.Equip_Inventory[i].Get_Item_Image, UserInfo.Equip_Inventory[i].Get_Equipment_Grade);
         }
 
-        for (int i = count + 1; i < Inventory_UI_Ref.Get_EquipmentSlot_List.Count; i++)
+        for (int i = count + 1; i < InventoryUI_Ref.Get_EquipmentSlot_List.Count; i++)
         {
-            Inventory_UI_Ref.Get_EquipmentSlot_List[i].Off_Image();
+            InventoryUI_Ref.Get_EquipmentSlot_List[i].Off_Image();
+        }
+    }
+
+    // 인포 닫기
+    #region Error_Info_Close
+    public void Info_Close(GameObject _obj)
+    {
+        Gacha_Count = 0;
+        _obj.transform.GetChild(0).GetComponent<Pop_UpDown>().Pop_Down();
+    }
+    #endregion
+
+    #endregion
+
+    #region UI
+    public void Refresh_EquipTicket()
+    {
+        if (UserInfo.InventoryDict.ContainsKey("장비 티켓"))
+        {
+            User_Ticket_Amount.text = $"{UserInfo.InventoryDict["장비 티켓"].Get_Amount}";
+        }
+        else
+        {
+            User_Ticket_Amount.text = "0";
         }
     }
     #endregion

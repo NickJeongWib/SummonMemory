@@ -36,6 +36,8 @@ public class Item_Info_Panel : MonoBehaviour
     // 캐릭터 랜덤 옵션
     [SerializeField] Text[] Equipment_Random_Options;
 
+    [SerializeField] GameObject Decomposition_Btn;
+    public GameObject Get_Decomposition_Btn { get => Decomposition_Btn; }
     [SerializeField] GameObject EquipBtn_Obj;
     [SerializeField] GameObject Change_Btn;
     [SerializeField] GameObject Equip_Btn;
@@ -56,7 +58,13 @@ public class Item_Info_Panel : MonoBehaviour
     [SerializeField] GameObject UpgradePanel;
     [SerializeField] Transition_Fade Transition;
 
-#endregion
+    [Header("---Decomposition---")]
+    [SerializeField] GameObject ItemDecom_Info_Panel;
+    [SerializeField] GameObject DecomError_Info_Panel;
+    [SerializeField] GameObject Decom_GetItem_Info_Panel;
+    [SerializeField] Text Get_Decom_Amount_Text;
+    #endregion
+
     // -------------
 
     public void On_Click_Close_ItemInfo()
@@ -119,7 +127,11 @@ public class Item_Info_Panel : MonoBehaviour
             OwnCharRoot.SetActive(true);
             Spend_Item_Root.SetActive(false);
             EquipBtn_Obj.SetActive(false);
+            Decomposition_Btn.SetActive(true);
             Refresh_Equipment(_num);
+
+            // 선택한 아이템
+            CurrentItem = UserInfo.Equip_Inventory[_num];
         }
         else if (_invenType == INVENTORY_TYPE.SPEND) // 소모 아이템
         {
@@ -420,6 +432,167 @@ public class Item_Info_Panel : MonoBehaviour
     {
         ItemUpGrade_Ref.On_Click_UpgradeRoot();
     }
+    #endregion
+
+    #region Item_Decomposition
+    // 아이템 분해 안내 문구
+    public void On_Click_Item_Decomposition()
+    {
+        ItemDecom_Info_Panel.SetActive(true);
+    }
+
+    int Crystal_Amount;
+    int Powder_Amount;
+    // 아이템 분해 확인
+    public void On_Click_Decomposition_Select()
+    {
+        if (CurrentItem.Get_OwnCharacter != null)
+        {
+            DecomError_Info_Panel.SetActive(true);
+            ItemDecom_Info_Panel.SetActive(false);
+            return;
+        }
+
+        Crystal_Amount = (CurrentItem.Get_Item_Lv + 1);
+        Powder_Amount = 2 * (CurrentItem.Get_Item_Lv + 1);
+
+        if (CurrentItem.Get_EquipType == EQUIP_TYPE.WEAPON)
+        {
+            UserInfo.Weapon_Equipment.Remove(CurrentItem);
+            #region Test
+            for (int i = 0; i < UserInfo.Weapon_Equipment.Count; i++)
+            {
+                Debug.Log($"WEAP {i} : {UserInfo.Weapon_Equipment[i].Get_Item_Name}");
+            }
+            #endregion
+        }
+        else if (CurrentItem.Get_EquipType == EQUIP_TYPE.UPPER)
+        {
+            UserInfo.Upper_Equipment.Remove(CurrentItem);
+            #region Test
+            for (int i = 0; i < UserInfo.Upper_Equipment.Count; i++)
+            {
+                Debug.Log($"UPPET {i} : {UserInfo.Upper_Equipment[i].Get_Item_Name}");
+            }
+            #endregion
+        }
+        else if (CurrentItem.Get_EquipType == EQUIP_TYPE.HELMET)
+        {
+            UserInfo.Helmet_Equipment.Remove(CurrentItem);
+            #region Test
+            for (int i = 0; i < UserInfo.Helmet_Equipment.Count; i++)
+            {
+                Debug.Log($"HELMET {i} : {UserInfo.Helmet_Equipment[i].Get_Item_Name}");
+            }
+            #endregion
+        }
+        else if (CurrentItem.Get_EquipType == EQUIP_TYPE.ACCESSORY)
+        {
+            UserInfo.Accessory_Equipment.Remove(CurrentItem);
+            #region Test
+            for (int i = 0; i < UserInfo.Accessory_Equipment.Count; i++)
+            {
+                Debug.Log($"ACCE {i} : {UserInfo.Accessory_Equipment[i].Get_Item_Name}");
+            }
+            #endregion
+        }
+        else
+        {
+            UserInfo.Glove_Equipment.Remove(CurrentItem);
+            #region Test
+            for (int i = 0; i < UserInfo.Glove_Equipment.Count; i++)
+            {
+                Debug.Log($"GLOVE {i} : {UserInfo.Glove_Equipment[i].Get_Item_Name}");
+            }
+            #endregion
+        }
+
+        UserInfo.Equip_Inventory.Remove(CurrentItem);
+        CurrentItem = null;
+
+        ItemDecom_Info_Panel.SetActive(false);
+        this.gameObject.SetActive(false);
+
+        // 분해보상 획득
+        Calc_Get_Decom_Item();
+        // UI 분해 보상 열기
+        Open_Get_DecomItem();
+        // 인벤토리 초기화
+        Refresh_Equipment_Slot();
+
+        #region Test
+        //for (int i = 0; i < UserInfo.Equip_Inventory.Count; i++)
+        //{
+        //    Debug.Log($"{i} EQUIP : {UserInfo.Equip_Inventory[i].Get_Item_Name}");
+        //}
+        #endregion
+    }
+
+    // 분해 취소
+    public void Close_Decomposition()
+    {
+        if (CurrentItem != null)
+            CurrentItem = null;
+    }
+
+    void Open_Get_DecomItem()
+    {
+        Decom_GetItem_Info_Panel.SetActive(true);
+        Get_Decom_Amount_Text.text = $"";
+
+        // 분해보상을 받았으니 0개로 초기화
+        Crystal_Amount = 0;
+        Powder_Amount = 0;
+    }
+
+    void Calc_Get_Decom_Item()
+    {
+        for (int i = 0; i < Item_List.Upgrade_Item_List.Count; i++)
+        {
+            // 보상 획득
+            if (Item_List.Upgrade_Item_List[i].Get_Item_Name == "재련 수정")
+            {
+                UserInfo.Add_Inventory_Item(Item_List.Upgrade_Item_List[i], Crystal_Amount);
+            }
+            else if (Item_List.Upgrade_Item_List[i].Get_Item_Name == "재련 가루")
+            {
+                UserInfo.Add_Inventory_Item(Item_List.Upgrade_Item_List[i], Powder_Amount);
+            }
+        }
+
+        Inventory_UI_Ref.Upgrade_Slot_Refresh();
+
+        #region Test
+        for (int i = 0; i < UserInfo.Upgrade_Inventory.Count; i++)
+        {
+            Debug.Log($"{UserInfo.Upgrade_Inventory[i].Get_Item_Name} " + UserInfo.Upgrade_Inventory[i].Get_Amount);
+        }
+        #endregion
+    }
+
+    #region UI_Refresh - Overlap_Code
+    public void Refresh_Equipment_Slot()
+    {
+        int count = 0;
+
+        for (int i = 0; i < UserInfo.Equip_Inventory.Count; i++)
+        {
+            count = i;
+            Inventory_UI_Ref.Get_EquipmentSlot_List[i].Set_Image(UserInfo.Equip_Inventory[i].Get_Item_Image, UserInfo.Equip_Inventory[i].Get_Equipment_Grade);
+        }
+
+        // 위에 구문에서 아이템이 삭제되고 카운트가 0이되면 이미지가 계속 남아 있기에 제거하기 위한 IF문
+        if (UserInfo.Equip_Inventory.Count <= 0)
+        {
+            Inventory_UI_Ref.Get_EquipmentSlot_List[0].Off_Image();
+        }
+
+        for (int i = count + 1; i < Inventory_UI_Ref.Get_EquipmentSlot_List.Count; i++)
+        {
+            Inventory_UI_Ref.Get_EquipmentSlot_List[i].Off_Image();
+        }
+    }
+    #endregion
     #endregion
 }
 

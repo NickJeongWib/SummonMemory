@@ -50,6 +50,7 @@ public class UserInfo
     [Header("---Gacha---")]
     public static int SR_Set_Count;
     public static int SSR_Set_Count;
+
     #region R등급과 SR,SSR등급의 이미지 차별 적용
     public static void Get_Square_Image(Image[] _image, int _equipIndex)
     {
@@ -191,8 +192,6 @@ public class UserInfo
                 Upgrade_Inventory.Add(item);
             }
         }
-
-
 
         #region Test
         //foreach(Inventory_Item item in InventoryDict.Values)

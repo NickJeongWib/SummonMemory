@@ -59,6 +59,7 @@ public class Gacha_Manager : MonoBehaviour
     [Header("Gacha_Info")]
     [SerializeField] TextMeshProUGUI UserTicket;
     [SerializeField] Text FailInfoCount;
+    [SerializeField] Text User_Ticket_Amount;
 
     bool isR_Summon;
     bool isSR_Summon;
@@ -72,23 +73,26 @@ public class Gacha_Manager : MonoBehaviour
 
     public void GachaInfo_Open(int _num)
     {
-        if (UserInfo.InventoryDict.ContainsKey("캐릭터 티켓") == false)
+        if (!GameManager.Instance.TestMode)
         {
-            GachaFail_Info_Panel.SetActive(true);
-            FailInfoCount.text = $"<color=red>{Mathf.Abs(_num)}</color>개 부족합니다.";
-            return;
-        }
-           
+            if (UserInfo.InventoryDict.ContainsKey("캐릭터 티켓") == false)
+            {
+                GachaFail_Info_Panel.SetActive(true);
+                FailInfoCount.text = $"<color=red>{Mathf.Abs(_num)}</color>개 부족합니다.";
+                return;
+            }
 
-        if (UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount < _num)
-        {
-            GachaFail_Info_Panel.SetActive(true);
-            FailInfoCount.text = $"<color=red>{Mathf.Abs(_num - UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount)}</color>개 부족합니다.";
-            return;
-        }
 
-        UserTicket.text = $"<color=orange>{UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount}</color> <sprite=0> " +
-            $"<color=red>{UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount - _num}</color>";
+            if (UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount < _num)
+            {
+                GachaFail_Info_Panel.SetActive(true);
+                FailInfoCount.text = $"<color=red>{Mathf.Abs(_num - UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount)}</color>개 부족합니다.";
+                return;
+            }
+
+            UserTicket.text = $"<color=orange>{UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount}</color> <sprite=0> " +
+                $"<color=red>{UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount - _num}</color>";
+        }
 
         Gacha_Count = _num;
         GachaInfo_Panel.SetActive(true);
@@ -115,11 +119,16 @@ public class Gacha_Manager : MonoBehaviour
     // TODO ## Gacha_Manager 가차 시스템
     public void Summon()
     {
-        // 티켓 감소, 슬롯 초기화
-        UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount -= Gacha_Count;
-        UserInfo.Remove_Inventory_Item();
-        InventoryUI_Ref.Reset_Spend_Inventory();
-        InventoryUI_Ref.Spend_Slot_Refresh();
+        // TODO ## Gacha_Manager : TestMode
+        if (!GameManager.Instance.TestMode)
+        {
+            // 티켓 감소, 슬롯 초기화
+            UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount -= Gacha_Count;
+            UserInfo.Remove_Inventory_Item();
+            InventoryUI_Ref.Reset_Spend_Inventory();
+            InventoryUI_Ref.Spend_Slot_Refresh();
+        }
+
 
         // 새로 뽑는 친구들을 채우기 위해 리스트 초기화
         Gacha_Characters.Clear();
@@ -251,7 +260,7 @@ public class Gacha_Manager : MonoBehaviour
 
         // 캐릭터 인벤토리 Refresh
         CharListRef.Refresh_CharacterList();
-
+        Refresh_SummonTicket();
         // 바로 위 장착 캐릭터 예외 처리 후 저장이 필요함
         UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
 
@@ -519,4 +528,17 @@ public class Gacha_Manager : MonoBehaviour
     }
     #endregion
 
+    #region UI
+    public void Refresh_SummonTicket()
+    {
+        if (UserInfo.InventoryDict.ContainsKey("캐릭터 티켓"))
+        {
+            User_Ticket_Amount.text = $"{UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount}";
+        }
+        else
+        {
+            User_Ticket_Amount.text = "0";
+        }
+    }
+    #endregion
 }

@@ -83,6 +83,7 @@ public class EquipSlot : MonoBehaviour
         InventoryUI_Ref.Item_Info.Get_CurrentItem = SlotItemInfo;
         InventoryUI_Ref.Item_Info.gameObject.SetActive(true);
         InventoryUI_Ref.Item_Info.Open_Equip_Info(SlotItemInfo);
+        InventoryUI_Ref.Item_Info.Get_Decomposition_Btn.SetActive(false);
 
         if (GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)SlotItemInfo.Get_EquipType] == SlotItemInfo)
         {

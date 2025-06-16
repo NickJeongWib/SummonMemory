@@ -41,19 +41,74 @@ public class Store_Slot_Init : MonoBehaviour
     // 버튼 클릭 시
     public void On_Click_Btn()
     {
+        // 다이아 재화 구매 버튼을 누를 시
         if (StoreItemInfo.Get_StoreType == STORE_TYPE.CURRENCY &&
             StoreManager_Ref != null)
         {
-            StoreManager_Ref.On_Click_Buy_Dia(StoreItemInfo.Get_Item_Ex);
+            //if (StoreItemInfo.Get_ConsumeType == CONSUME_TYPE.DIA)
+            //{
+            //    if(UserInfo.Dia < StoreItemInfo.Get_ConsumeCount)
+            //    {
+            //        StoreManager_Ref.Set_FailInfo_Panel(true);
+            //        return;
+            //    }
+            //}
+            if (!GameManager.Instance.TestMode)
+            {
+                if (StoreItemInfo.Get_ConsumeType == CONSUME_TYPE.MONEY)
+                {
+                    // 재화 부족 시 안내문구
+                    if (UserInfo.Money < StoreItemInfo.Get_ConsumeCount)
+                    {
+                        StoreManager_Ref.Set_FailInfo_Panel(true);
+                        return;
+                    }
+                }
+            }
+
+
+            StoreManager_Ref.On_Click_Buy_Dia(StoreItemInfo.Get_Item_Ex, StoreItemInfo);
+            StoreManager_Ref.SliderRoot_OnOff(false);
+
         }
+        // 티켓 구매 버튼을 누를 시
         else if (StoreItemInfo.Get_StoreType == STORE_TYPE.TICKET &&
             StoreManager_Ref != null)
         {
+            if (!GameManager.Instance.TestMode)
+            {
+                // 재화 부족 시 안내문구
+                if (UserInfo.Dia < StoreItemInfo.Get_ConsumeCount)
+                {
+                    StoreManager_Ref.Set_FailInfo_Panel(true);
+                    return;
+                }
+            }
+
             StoreManager_Ref.On_Click_Buy_Item(StoreItemInfo);
+            StoreManager_Ref.SliderRoot_OnOff(true);
         }
+        // 나머지 강화재료 구매 버튼을 누를 시
         else
         {
+            if (!GameManager.Instance.TestMode)
+            {
+                if (!UserInfo.InventoryDict.ContainsKey(StoreManager_Ref.Get_BookNames[(int)StoreItemInfo.Get_ConsumeType - 2]))
+                {
+                    StoreManager_Ref.Set_FailInfo_Panel(true);
+                    return;
+                }
+
+                // 재화 부족 시 안내문구
+                if (UserInfo.InventoryDict[StoreManager_Ref.Get_BookNames[(int)StoreItemInfo.Get_ConsumeType - 2]].Get_Amount < StoreItemInfo.Get_ConsumeCount)
+                {
+                    StoreManager_Ref.Set_FailInfo_Panel(true);
+                    return;
+                }
+            }
+
             StoreManager_Ref.On_Click_Buy_Item(StoreItemInfo);
+            StoreManager_Ref.SliderRoot_OnOff(true);
         }
 
     }
