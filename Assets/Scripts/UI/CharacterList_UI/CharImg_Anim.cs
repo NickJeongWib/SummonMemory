@@ -20,7 +20,7 @@ public class CharImg_Anim : MonoBehaviour
         CharChange_animator.enabled = false;
 
         // TODO ## 초기 테스트 값
-        Debug.Log("Count : " + UserInfo.Equip_Characters.Count);
+        // Debug.Log("Count : " + UserInfo.Equip_Characters.Count);
         
         if (UserInfo.Equip_Characters.Count == 0)
         {

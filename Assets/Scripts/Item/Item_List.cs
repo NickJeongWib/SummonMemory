@@ -38,7 +38,9 @@ public class Item_List : MonoBehaviour
                 EquipmentOption equipmentOption = new EquipmentOption();
                 //Debug.Log($"{OptionType} : {GoogleSheetSORef.EquipOption_DBList[index].OPTION_MIN} / {GoogleSheetSORef.EquipOption_DBList[index].OPTION_MAX}");
                 equipmentOption.Set_MinMax(GoogleSheetSORef.EquipOption_DBList[index].OPTION_MIN, GoogleSheetSORef.EquipOption_DBList[index].OPTION_MAX, OptionType);
-                Node.OptionList.Add(equipmentOption);
+
+                UserInfo.OptionList.Add(equipmentOption);
+                // Node.UserInfo.OptionList.Add(equipmentOption);
             }
 
             // 이미지 누락 경고

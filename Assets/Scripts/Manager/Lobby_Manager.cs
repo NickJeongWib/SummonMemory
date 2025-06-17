@@ -200,5 +200,19 @@ public class Lobby_Manager : MonoBehaviour
 
         Debug.Log("5" + EquipSlot_List.EquipCharacter.Get_CharName);
     }
+
+    public void JsonTest()
+    {
+        ItemListWrapper wrap = new ItemListWrapper();
+        wrap.Equip_Inventory = UserInfo.Equip_Inventory;
+        string json = JsonUtility.ToJson(wrap, true);
+        Debug.Log(json);
+    }
     #endregion
+}
+
+[System.Serializable]
+public class ItemListWrapper
+{
+    public List<Item> Equip_Inventory;
 }

@@ -19,6 +19,8 @@ public class UserInfo
     #endregion
 
     #region Equip_Inventory
+    public static List<EquipmentOption> OptionList = new List<EquipmentOption>();
+
     public static List<Item> Equip_Inventory = new List<Item>();
     public static List<Item> Weapon_Equipment = new List<Item>();
     public static List<Item> Helmet_Equipment = new List<Item>();

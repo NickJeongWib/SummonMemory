@@ -90,7 +90,7 @@ public class Character
     #endregion
 
     #region Character_EquipItem
-    Item[] EquipItems = new Item[5];
+    [NonSerialized] Item[] EquipItems = new Item[5];
     public Item[] Get_EquipItems { get => EquipItems; set => EquipItems = value; }
     #endregion
     ///------- Func

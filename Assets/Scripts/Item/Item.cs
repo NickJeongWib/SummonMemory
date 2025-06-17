@@ -7,72 +7,68 @@ using System;
 [Serializable]
 public class Item
 {
-    Character OwnCharacter;
+    [NonSerialized] Character OwnCharacter;
     public Character Get_OwnCharacter { get => OwnCharacter; set => OwnCharacter = value; }
+    [SerializeField] int Item_ID; // 아이템 ID
+    public int Get_Item_ID { get => Item_ID; }
+    [SerializeField] string Item_Name;
+    public string Get_Item_Name { get => Item_Name; }
 
     // 장착 여부
-    bool isEquip;
+    [SerializeField] bool isEquip;
     public bool Get_isEquip { get => isEquip; set => isEquip = value; }
 
-    ITEM_TYPE ItemType;
+    [SerializeField] ITEM_TYPE ItemType;
     public ITEM_TYPE Get_ItemType { get => ItemType; }
     // 아이템 타입
-    EQUIP_TYPE EquipType;
+    [SerializeField] EQUIP_TYPE EquipType;
     public EQUIP_TYPE Get_EquipType { get => EquipType; set => EquipType = value; }
-    EQUIPMENT_GRADE Equipment_Grade;
+    [SerializeField] EQUIPMENT_GRADE Equipment_Grade;
     public EQUIPMENT_GRADE Get_Equipment_Grade { get => Equipment_Grade; set => Equipment_Grade = value; }
 
+    [SerializeField] int Item_Lv;
+    public int Get_Item_Lv { get => Item_Lv; set => Item_Lv = value; }
+
+    [SerializeField] float Item_ATK; // 아이템 공격력
+    public float Get_Item_Atk { get => Item_ATK; }
+
+    [SerializeField] float Item_DEF; // 아이템 방어력
+    public float Get_Item_DEF { get => Item_DEF; }
+
+    [SerializeField] float Item_CRI_RATE; // 아이템 크리티컬 확률
+    public float Get_Item_CRI_RATE { get => Item_CRI_RATE; }
+
+    [SerializeField] float Item_CRI_DMG; // 아이템 크리티컬 데미지
+    public float Get_Item_CRI_DMG { get => Item_CRI_DMG; }
+
+    [SerializeField] float Item_HP;  //아이템 체력
+    public float Get_Item_HP { get => Item_HP; }
+
+    [SerializeField] float ValueMinRange;
+    public float Get_ValueMinRange { get => ValueMinRange; }
+    [SerializeField] float ValueMaxRange;
+    public float Get_ValueMaxRange { get => ValueMaxRange; }
+
+    [SerializeField] EQUIPMENT_OPTION[] EquipmentOption = new EQUIPMENT_OPTION[3];
+    public EQUIPMENT_OPTION[] Get_EquipmentOption { get => EquipmentOption; set => EquipmentOption = value; }
+
+    [SerializeField] EQUIPMENT_OPTION_GRADE[] EquipmentOptionGrade = new EQUIPMENT_OPTION_GRADE[3];
+    public EQUIPMENT_OPTION_GRADE[] Get_EquipmentOptionGrade { get => EquipmentOptionGrade; set => EquipmentOptionGrade = value; }
+
+    [SerializeField] float[] OptionValue = new float[3];
+    public float[] Get_OptionValue { get => OptionValue; set => OptionValue = value; }
+
+    // public List<EquipmentOption> UserInfo.OptionList = new List<EquipmentOption>();
     // 아이템 이미지 
     Sprite Item_Image;
     public Sprite Get_Item_Image { get => Item_Image; set => Item_Image = value; }
-
-    int Item_Lv;
-    public int Get_Item_Lv { get => Item_Lv; set => Item_Lv = value; }
-
-    int Item_ID; // 아이템 ID
-    public int Get_Item_ID { get => Item_ID; }
-
-    string Item_Name;
-    public string Get_Item_Name { get => Item_Name; }
-
-    float Item_ATK; // 아이템 공격력
-    public float Get_Item_Atk { get => Item_ATK; }
-
-    float Item_DEF; // 아이템 방어력
-    public float Get_Item_DEF { get => Item_DEF; }
-
-    float Item_CRI_RATE; // 아이템 크리티컬 확률
-    public float Get_Item_CRI_RATE { get => Item_CRI_RATE; }
-
-    float Item_CRI_DMG; // 아이템 크리티컬 데미지
-    public float Get_Item_CRI_DMG { get => Item_CRI_DMG; }
-
-    float Item_HP;  //아이템 체력
-    public float Get_Item_HP { get => Item_HP; }
-
-    float ValueMinRange;
-    public float Get_ValueMinRange { get => ValueMinRange; }
-    float ValueMaxRange;
-    public float Get_ValueMaxRange { get => ValueMaxRange; }
-
-    EQUIPMENT_OPTION[] EquipmentOption = new EQUIPMENT_OPTION[3];
-    public EQUIPMENT_OPTION[] Get_EquipmentOption { get => EquipmentOption; set => EquipmentOption = value; }
-
-    EQUIPMENT_OPTION_GRADE[] EquipmentOptionGrade = new EQUIPMENT_OPTION_GRADE[3];
-    public EQUIPMENT_OPTION_GRADE[] Get_EquipmentOptionGrade { get => EquipmentOptionGrade; set => EquipmentOptionGrade = value; }
-
-    float[] OptionValue = new float[3];
-    public float[] Get_OptionValue { get => OptionValue; set => OptionValue = value; }
-
-    public List<EquipmentOption> OptionList = new List<EquipmentOption>();
-
 
 
     #region Constructor
     public Item(int _itemID, string _itemName, float _itemAtk, float _itemDef, float _itemCriRate, float _itemCriDMG, float _itemHp, float _itemValueMin, float _itemValueMax,
         ITEM_TYPE _itemType = ITEM_TYPE.NONE, EQUIP_TYPE _equipType = EQUIP_TYPE.NONE)
     {
-        Item_ID = _itemID;
+        Item_ID = _itemID; 
         Item_Name = _itemName;
         Item_ATK = _itemAtk;
         Item_DEF = _itemDef;
@@ -146,7 +142,7 @@ public class Item
     #region Option
     public void Set_OptionList(List<EquipmentOption> _OptionList)
     {
-        OptionList = _OptionList;
+        UserInfo.OptionList = _OptionList;
     }
 
     // 아이템 랜덤 능력 설정
@@ -162,9 +158,9 @@ public class Item
                 continue;
             }
 
-            int RandOption = UserInfo.RandomValue(0, OptionList.Count); // Random.Range(0, OptionList.Count);
-            EquipmentOption[i] = OptionList[RandOption].EquipmentRandomOption;
-            OptionValue[i] = OptionList[RandOption].Get_OptionValue(ref EquipmentOptionGrade[i]);
+            int RandOption = UserInfo.RandomValue(0, UserInfo.OptionList.Count); // Random.Range(0, OptionList.Count);
+            EquipmentOption[i] = UserInfo.OptionList[RandOption].EquipmentRandomOption;
+            OptionValue[i] = UserInfo.OptionList[RandOption].Get_OptionValue(ref EquipmentOptionGrade[i]);
 
             if (OwnCharacter != null) 
                 OwnCharacter.EquipmentOption_State_Calc(EquipmentOption[i], i, this, true);
@@ -206,13 +202,13 @@ public class Item
                 continue;
 
             // 설정가능한 옵션만큼 반복
-            for (int ii = 0; ii < OptionList.Count; ii++)
+            for (int ii = 0; ii < UserInfo.OptionList.Count; ii++)
             {
                 // 만약 현재 옵션이 OptionList에 저장된옵션과 같다면
-                if (EquipmentOption[i] == OptionList[ii].EquipmentRandomOption)
+                if (EquipmentOption[i] == UserInfo.OptionList[ii].EquipmentRandomOption)
                 {
                     // 옵션 수치 재설정
-                    OptionValue[i] = OptionList[ii].Get_OptionValue(ref EquipmentOptionGrade[i]);
+                    OptionValue[i] = UserInfo.OptionList[ii].Get_OptionValue(ref EquipmentOptionGrade[i]);
                     break;
                 }
             }
@@ -250,9 +246,9 @@ public class Item
             if (_bool[i] == true)
                 continue;
 
-            int RandOption = UserInfo.RandomValue(0, OptionList.Count); //  Random.Range();
-            EquipmentOption[i] = OptionList[RandOption].EquipmentRandomOption;
-            OptionValue[i] = OptionList[RandOption].Get_OptionValue(ref EquipmentOptionGrade[i]);
+            int RandOption = UserInfo.RandomValue(0, UserInfo.OptionList.Count); //  Random.Range();
+            EquipmentOption[i] = UserInfo.OptionList[RandOption].EquipmentRandomOption;
+            OptionValue[i] = UserInfo.OptionList[RandOption].Get_OptionValue(ref EquipmentOptionGrade[i]);
         }
 
         // 장착캐릭터가 존재한다면
