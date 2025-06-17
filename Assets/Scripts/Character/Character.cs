@@ -330,6 +330,7 @@ public class Character
             Char_CRT_RATE -= EquipItems[(int)_equipType].Get_Item_CRI_RATE;
 
             // 아이템 해제
+            EquipItems[(int)_equipType].Set_EquipCharName = "";
             EquipItems[(int)_equipType].Get_OwnCharacter = null;
             EquipItems[(int)_equipType].Get_isEquip = false;
             EquipItems[(int)_equipType] = null;

@@ -13,7 +13,8 @@ public class Item
     public int Get_Item_ID { get => Item_ID; }
     [SerializeField] string Item_Name;
     public string Get_Item_Name { get => Item_Name; }
-
+    [SerializeField] string EquipChar_Name; // 아이템 ID
+    public string Set_EquipCharName { get => EquipChar_Name; set => EquipChar_Name = value; }
     // 장착 여부
     [SerializeField] bool isEquip;
     public bool Get_isEquip { get => isEquip; set => isEquip = value; }

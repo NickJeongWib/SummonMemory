@@ -380,6 +380,7 @@ public class Item_Info_Panel : MonoBehaviour
             // 장착 캐릭터 등록
             GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] = CurrentItem;
             CurrentItem.Get_OwnCharacter = GameManager.Instance.Get_SelectChar;
+            CurrentItem.Set_EquipCharName = CurrentItem.Get_OwnCharacter.Get_CharName;
 
             // 장비 옵션값 전달 
             CurrentItem.EquipOption_Stat_Calc(true);
