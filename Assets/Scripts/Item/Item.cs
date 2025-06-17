@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Define;
+using System;
 
+[Serializable]
 public class Item
 {
     Character OwnCharacter;
@@ -109,7 +111,7 @@ public class Item
     // 생성 시 아이템 등급 결정 여부
     public void Spawn_Grading()
     {
-        float randValue = Random.Range(ValueMinRange, ValueMaxRange);
+        float randValue = UserInfo.RandomValue(ValueMinRange, ValueMaxRange);// Random.Range(ValueMinRange, ValueMaxRange);
 
         if (ValueMinRange <= randValue && randValue < ValueMaxRange * 0.25f)
         {
@@ -160,7 +162,7 @@ public class Item
                 continue;
             }
 
-            int RandOption = Random.Range(0, OptionList.Count);
+            int RandOption = UserInfo.RandomValue(0, OptionList.Count); // Random.Range(0, OptionList.Count);
             EquipmentOption[i] = OptionList[RandOption].EquipmentRandomOption;
             OptionValue[i] = OptionList[RandOption].Get_OptionValue(ref EquipmentOptionGrade[i]);
 
@@ -248,7 +250,7 @@ public class Item
             if (_bool[i] == true)
                 continue;
 
-            int RandOption = Random.Range(0, OptionList.Count);
+            int RandOption = UserInfo.RandomValue(0, OptionList.Count); //  Random.Range();
             EquipmentOption[i] = OptionList[RandOption].EquipmentRandomOption;
             OptionValue[i] = OptionList[RandOption].Get_OptionValue(ref EquipmentOptionGrade[i]);
         }

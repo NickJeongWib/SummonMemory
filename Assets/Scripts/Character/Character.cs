@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Define;
 using TMPro;
+using System;
 
+[Serializable]
 // TODO ## Character 데이터 저장 클래스
 public class Character
 {

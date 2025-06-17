@@ -212,6 +212,17 @@ public class UserInfo
         #endregion
     }
 
+    public static int RandomValue(int _min, int _max)
+    {
+        int rand = Random.Range(_min, _max);
+        return rand;
+    }
+
+    public static float RandomValue(float _min, float _max)
+    {
+        float rand = Random.Range(_min, _max);
+        return rand;
+    }
 
     #region Test
     public static void Test()
