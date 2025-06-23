@@ -4,6 +4,34 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Define;
 
+#region Json
+[System.Serializable]
+public class InventoryItemPair
+{
+    public string key;
+    public Inventory_Item value;
+}
+
+[System.Serializable]
+public class InventoryDictWrapper
+{
+    public List<InventoryItemPair> items = new List<InventoryItemPair>();
+}
+
+[System.Serializable]
+public class CharacterListPair
+{
+    public string key;
+    public Character value;
+}
+
+[System.Serializable]
+public class CharacterListWrapper
+{
+    public List<CharacterListPair> Characters = new List<CharacterListPair>();
+}
+#endregion
+
 public class UserInfo
 {
     #region Character
@@ -94,6 +122,7 @@ public class UserInfo
     }
     #endregion
 
+    #region Inventory_Refresh
     public static void Add_Inventory_Item(Inventory_Item _item, int _add = 1)
     {
         // 아이템이 Dictionary에 없다면 추가
@@ -213,7 +242,9 @@ public class UserInfo
         #endregion
         #endregion
     }
+    #endregion
 
+    #region Random
     public static int RandomValue(int _min, int _max)
     {
         int rand = Random.Range(_min, _max);
@@ -225,6 +256,33 @@ public class UserInfo
         float rand = Random.Range(_min, _max);
         return rand;
     }
+    #endregion
+
+    #region Json
+    public static void Inventory_ToJson()
+    {
+        InventoryDictWrapper wrapper = new InventoryDictWrapper();
+        foreach (var invenItem in InventoryDict)
+        {
+            wrapper.items.Add(new InventoryItemPair { key = invenItem.Key, value = invenItem.Value });
+        }
+
+        string json = JsonUtility.ToJson(wrapper, true);
+        Debug.Log(json);
+    }
+
+    public static void CharacterList_ToJson()
+    {
+        CharacterListWrapper wrapper = new CharacterListWrapper();
+        foreach (var character in UserCharDict)
+        {
+            wrapper.Characters.Add(new CharacterListPair { key = character.Key, value = character.Value });
+        }
+
+        string json = JsonUtility.ToJson(wrapper, true);
+        Debug.Log(json);
+    }
+    #endregion
 
     #region Test
     public static void Test()
@@ -237,3 +295,5 @@ public class UserInfo
 
     #endregion
 }
+
+

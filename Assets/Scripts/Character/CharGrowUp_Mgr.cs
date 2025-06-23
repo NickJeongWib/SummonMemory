@@ -34,6 +34,7 @@ public class CharGrowUp_Mgr : MonoBehaviour
     [SerializeField] Button[] Slime_Use_Btns;
     [SerializeField] Button LevelUP_Btn;
     [SerializeField] Slider Slime_Use_Slider;
+    [SerializeField] SpriteRenderer Char_Pixel_Img;
     #endregion
 
     #region Exp
@@ -59,6 +60,9 @@ public class CharGrowUp_Mgr : MonoBehaviour
     #region Open
     public void Open_Growing_Panel()
     {
+        // 이미지 변경
+        Char_Pixel_Img.sprite = GameManager.Instance.Get_SelectChar.Get_Pixel_Img;
+
         maxLv = GameManager.Instance.Get_SelectChar.Get_Max_Lv;
         // 캐릭터 세부 사항 Text_UI
         Exp_Percent.text = $"{((((float)GameManager.Instance.Get_SelectChar.Get_CurrentExp / (float)Character_List.Require_Exp[GameManager.Instance.Get_SelectChar.Get_Character_Lv - 1]) * 100).ToString("N2"))}%";

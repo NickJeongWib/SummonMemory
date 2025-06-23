@@ -50,6 +50,9 @@ public class Item
     [SerializeField] float ValueMaxRange;
     public float Get_ValueMaxRange { get => ValueMaxRange; }
 
+    [SerializeField] string ItemImage_Path;
+    public string Get_ItemImage_Path { get => ItemImage_Path; }
+
     [SerializeField] EQUIPMENT_OPTION[] EquipmentOption = new EQUIPMENT_OPTION[3];
     public EQUIPMENT_OPTION[] Get_EquipmentOption { get => EquipmentOption; set => EquipmentOption = value; }
 
@@ -93,13 +96,15 @@ public class Item
     #endregion
 
     #region Image_Load
-    public void Load_Item_Icon(string _add)
+    public void Load_Item_Icon(string _path)
     {
-        Item_Image = Resources.Load<Sprite>(_add);
+        ItemImage_Path = _path;
+        Item_Image = Resources.Load<Sprite>(_path);
     }
 
-    public void Image_Set(Sprite _sprite)
+    public void Image_Set(Sprite _sprite, string _path)
     {
+        ItemImage_Path = _path;
         Item_Image = _sprite;
     }
     #endregion

@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Define;
+using System;
 
+[Serializable]
 public class Inventory_Item
 {
-    INVENTORY_TYPE InventoryType;
+    [SerializeField]  INVENTORY_TYPE InventoryType;
     public INVENTORY_TYPE Get_InventoryType { get => InventoryType; }
 
-    string Item_Name;
+    [SerializeField] string Item_Name;
     public string Get_Item_Name { get => Item_Name; }
 
-    int Amount;
+    [SerializeField] int Amount;
     public int Get_Amount { get => Amount; set => Amount = value; }
 
-    string Item_Desc;
+    [SerializeField] string Item_Desc;
     public string Get_Item_Desc { get => Item_Desc; set => Item_Desc = value; }
 
     // 아이템 이미지 

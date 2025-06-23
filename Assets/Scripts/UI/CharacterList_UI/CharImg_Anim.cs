@@ -28,7 +28,7 @@ public class CharImg_Anim : MonoBehaviour
         }
         else
         {
-            Debug.Log(UserInfo.Equip_Characters[0].Get_CharName);
+            // Debug.Log(UserInfo.Equip_Characters[0].Get_CharName);
         }
        
         R_SR_Image_Change(0);

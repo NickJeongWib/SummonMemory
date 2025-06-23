@@ -12,80 +12,80 @@ public class Character
     ///------- Var
     #region Character_State
     #region Level
-    int Character_Lv;
+    [SerializeField] int Character_Lv;
     public int Get_Character_Lv { get => Character_Lv; set => Character_Lv = value; }
-    int Max_Lv;
+    [SerializeField] int Max_Lv;
     public int Get_Max_Lv { get => Max_Lv; set => Max_Lv = value; }
-    int CurrentExp;
+    [SerializeField] int CurrentExp;
     public int Get_CurrentExp { get => CurrentExp; set => CurrentExp = value; }
-    int Cumulative_Exp;
+    [SerializeField] int Cumulative_Exp;
     public int Get_Cumulative_Exp { get => Cumulative_Exp; set => Cumulative_Exp = value; }
 
     #endregion
     // google_Sheet 연동 변수들
-    int CharacterID;
+    [SerializeField] int CharacterID;
     public int Get_CharacterID { get => CharacterID; }
 
-    string CharName;
+    [SerializeField] string CharName;
     public string Get_CharName { get => CharName; }
 
-    string CharEngName;
+    [SerializeField] string CharEngName;
     public string Get_CharEngName { get => CharEngName; }
 
-    CHAR_GRADE CharGrade;
+    [SerializeField] CHAR_GRADE CharGrade;
     public CHAR_GRADE Get_CharGrade { get => CharGrade; }
 
-    CHAR_TYPE CharType;
+    [SerializeField] CHAR_TYPE CharType;
     public CHAR_TYPE Get_CharType { get => CharType; }
 
-    CHAR_ELE CharElement;
+    [SerializeField] CHAR_ELE CharElement;
     public CHAR_ELE Get_CharElement { get => CharElement; }
 
-    int CharStar;
+    [SerializeField] int CharStar;
     public int Get_CharStar { get => CharStar; set => CharStar = value; }
 
-    float BaseHP;
+    [SerializeField] float BaseHP;
     public float Get_BaseHP { get => BaseHP; }
-    float CharHP;
+    [SerializeField] float CharHP;
     public float Get_CharHP { get => CharHP; }
 
-    float BaseAtk;
+    [SerializeField] float BaseAtk;
     public float Get_BaseAtk { get => BaseAtk; }
-    float CharATK;
+    [SerializeField] float CharATK;
     public float Get_CharATK { get => CharATK; }
 
-    float BaseDef;
+    [SerializeField] float BaseDef;
     public float Get_BaseDef { get => BaseDef; }
-    float CharDEF;
+    [SerializeField] float CharDEF;
     public float Get_CharDEF { get => CharDEF; }
 
-    float BaseCRID;
+    [SerializeField] float BaseCRID;
     public float Get_BaseCRID { get => BaseCRID; }
-    float Char_CRT_DAMAGE;
+    [SerializeField] float Char_CRT_DAMAGE;
     public float Get_Char_CRT_Damage { get => Char_CRT_DAMAGE; }
 
-    float BaseCRIR;
+    [SerializeField] float BaseCRIR;
     public float Get_BaseCRIR { get => BaseCRIR; }
-    float Char_CRT_RATE;
+    [SerializeField] float Char_CRT_RATE;
     public float Get_Char_CRT_Rate { get => Char_CRT_RATE; }
 
-    float CombatPower;
+    [SerializeField] float CombatPower;
     public float Get_CombatPower { get => CombatPower; }
     #endregion
 
     #region Character_Growing_State
 
     // 성장 관련 파라미터
-    float linearFactor;     // 선형 성장 계수
+    [SerializeField] float linearFactor;     // 선형 성장 계수
     public float Get_linearFactor { get => linearFactor; }
 
-    float expFactor;        // 지수 성장 계수
+    [SerializeField] float expFactor;        // 지수 성장 계수
     public float Get_expFactor { get => expFactor; }
 
-    float expMultiplier;    // 지수 성장 가중치
+    [SerializeField] float expMultiplier;    // 지수 성장 가중치
     public float Get_expMultiplier { get => expMultiplier; }
 
-    int transitionLevel;  // 성장 방식 전환 레벨
+    [SerializeField] int transitionLevel;  // 성장 방식 전환 레벨
     public int Get_transitionLevel { get => transitionLevel; }
     #endregion
 
@@ -98,24 +98,26 @@ public class Character
     #region Image_Resource
     // -----------------------Image Resources Variable----------------------
 
-    string Illust_Address;
+    [SerializeField] string Illust_Address;
     public string Get_Illust_Address { get => Illust_Address; }
-    
-    string Normal_Image_Address;
+
+    [SerializeField] string Normal_Image_Address;
     public string Get_Normal_Image_Address { get => Normal_Image_Address; }
 
-    string Grade_Up_Image_Address;
+    [SerializeField] string Grade_Up_Image_Address;
     public string Get_Grade_Up_Image_Address { get => Grade_Up_Image_Address; }
 
-    string Profile_Address;
+    [SerializeField] string Profile_Address;
     public string Get_Profile_Address { get => Profile_Address; }
 
-    string White_Illust_Address;
+    [SerializeField] string White_Illust_Address;
     public string Get_White_Illust_Address { get => White_Illust_Address; }
 
-    string Square_Illust_Address;
+    [SerializeField] string Square_Illust_Address;
     public string Get_Square_Illust_Address { get => Square_Illust_Address; }
 
+    [SerializeField] string Pixel_Illust_Address;
+    public string Get_Pixel_Illust_Address { get => Pixel_Illust_Address; }
 
     // 이미지들 
     Sprite Illust_Img;
@@ -135,6 +137,9 @@ public class Character
 
     Sprite SquareIllust_Img;
     public Sprite Get_SquareIllust_Img { get => SquareIllust_Img; }
+
+    Sprite Pixel_Img;
+    public Sprite Get_Pixel_Img { get => Pixel_Img; }
     #endregion
 
     #region Constructor
@@ -182,7 +187,7 @@ public class Character
     #endregion
 
     #region Load_Resources
-    public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd, string _whiteIllustAdd, string _squareIllustAdd = null)
+    public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd, string _whiteIllustAdd, string _pixelIllustAdd, string _squareIllustAdd = null)
     {
         // 이미지 주소
         Illust_Address = _illustAdd;
@@ -191,6 +196,7 @@ public class Character
         Profile_Address = _profileAdd;
         White_Illust_Address = _whiteIllustAdd;
         Square_Illust_Address = _squareIllustAdd;
+        Pixel_Illust_Address = _pixelIllustAdd;
 
         // 이미지 로드
         Illust_Img = Resources.Load<Sprite>(Illust_Address);
@@ -199,6 +205,7 @@ public class Character
         Profile_Img = Resources.Load<Sprite>(Profile_Address);
         WhiteIllust_Img = Resources.Load<Sprite>(White_Illust_Address);
         SquareIllust_Img = Resources.Load<Sprite>(Square_Illust_Address);
+        Pixel_Img = Resources.Load<Sprite>(Pixel_Illust_Address);
     }
     #endregion
 

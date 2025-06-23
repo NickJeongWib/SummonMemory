@@ -344,7 +344,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_UpGrade",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Illust",
@@ -352,7 +353,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Illust",
@@ -360,7 +362,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Illust",
@@ -368,7 +371,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Illust",
@@ -376,7 +380,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Illust",
@@ -384,7 +389,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/3_Adri_W/Adri_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Illust",
@@ -392,7 +398,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Illust",
@@ -400,7 +407,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Illust",
@@ -408,7 +416,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Illust",
@@ -416,7 +425,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Illust",
@@ -424,7 +434,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Illust",
@@ -432,7 +443,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_White",
-      "CHAR_ILLUST_SQUARE": ""
+      "CHAR_ILLUST_SQUARE": "",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Illust",
@@ -440,7 +452,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Illust",
@@ -448,7 +461,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Illust",
@@ -456,7 +470,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Illust",
@@ -464,7 +479,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Illust",
@@ -472,7 +488,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Illust",
@@ -480,7 +497,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Illust",
@@ -488,7 +506,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Illust",
@@ -496,7 +515,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Illust",
@@ -504,7 +524,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Illust",
@@ -512,7 +533,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Illust",
@@ -520,7 +542,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Pixel"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Illust",
@@ -528,7 +551,8 @@
       "CHAR_GRADE_UP_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Grade_Up",
       "CHAR_PROFILE_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Profile",
       "CHAR_WHITE_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_White",
-      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Illust_Lobby"
+      "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Illust_Lobby",
+      "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Pixel"
     }
   ],
   "Character_Growing_State": [

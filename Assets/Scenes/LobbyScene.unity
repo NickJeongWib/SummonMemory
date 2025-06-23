@@ -3396,6 +3396,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 2087754359}
   Character_Face: {fileID: 292591742}
 --- !u!114 &52243367
@@ -5581,6 +5615,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 588404482}
   Character_Face: {fileID: 297675131}
 --- !u!114 &103081961
@@ -6089,6 +6157,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fea4500976efb9439bdb8a80f9ef0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EquipCharacter:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   SelectBtn: {fileID: 752610007}
 --- !u!1 &113047398
 GameObject:
@@ -9588,6 +9690,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 1359269617}
   Char_Porfile: {fileID: 1936732816}
@@ -9700,6 +9836,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 2052196494}
   Character_Face: {fileID: 2101323014}
 --- !u!114 &176647599
@@ -11328,6 +11498,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 579064248}
   Char_Porfile: {fileID: 799087563}
@@ -13280,6 +13484,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 290746434}
   Character_Face: {fileID: 1150201867}
 --- !u!114 &239963180
@@ -16823,6 +17061,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303859618}
   m_CullTransparentMesh: 1
+--- !u!1 &304170821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304170822}
+  - component: {fileID: 304170824}
+  - component: {fileID: 304170823}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &304170822
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304170821}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1906526771}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &304170823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304170821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: json
+--- !u!222 &304170824
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304170821}
+  m_CullTransparentMesh: 1
 --- !u!1 &304886597
 GameObject:
   m_ObjectHideFlags: 0
@@ -19232,6 +19549,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 2027631684}
   Character_Face: {fileID: 1906335903}
 --- !u!1 &356523711
@@ -19967,6 +20318,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 1029394658}
   Char_Porfile: {fileID: 912035697}
@@ -20471,6 +20856,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 1186950510}
   Char_Porfile: {fileID: 702777213}
@@ -21580,6 +21999,7 @@ MonoBehaviour:
   - {fileID: 1701467999}
   - {fileID: 165024181}
   - {fileID: 874536976}
+  Old_Equip_Characters: []
   Select_Scroll: {fileID: 981767357}
   Type_Kor_Str:
   - "\uB2E8\uC77C"
@@ -24625,6 +25045,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 1535715506}
   Char_Porfile: {fileID: 860496520}
@@ -25281,6 +25735,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 525780085}
   Char_Porfile: {fileID: 948112471}
@@ -32839,6 +33327,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 1912576373}
   Character_Face: {fileID: 470097584}
 --- !u!114 &614403799
@@ -34021,6 +34543,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 361338994}
   Character_Face: {fileID: 456054889}
 --- !u!114 &627297460
@@ -39224,6 +39780,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 2107793284}
   Char_Porfile: {fileID: 202967953}
@@ -42191,6 +42781,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 2042466876}
   Char_Porfile: {fileID: 935599881}
@@ -42398,6 +43022,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 166381073}
   Character_Face: {fileID: 106909435}
 --- !u!114 &784608103
@@ -43806,6 +44464,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 1017723858}
   Character_Face: {fileID: 227990198}
 --- !u!114 &805529597
@@ -44165,6 +44857,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 1175810110}
   Character_Face: {fileID: 1825898983}
 --- !u!114 &810714081
@@ -44389,6 +45115,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 1563132282}
   Character_Face: {fileID: 422930707}
 --- !u!114 &817593589
@@ -46265,6 +47025,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 1627066906}
   Character_Face: {fileID: 1626115208}
 --- !u!114 &859283549
@@ -48698,6 +49492,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 935271031}
   Character_Face: {fileID: 1462372380}
 --- !u!114 &905040120
@@ -51892,6 +52720,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 698756919}
   Character_Face: {fileID: 501392579}
 --- !u!114 &959686278
@@ -57866,6 +58728,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 2068228738}
   Character_Face: {fileID: 1860202222}
 --- !u!114 &1067660976
@@ -58015,6 +58911,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 370788022}
   Character_Face: {fileID: 880589081}
 --- !u!114 &1067902746
@@ -61230,6 +62160,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 1581249144}
   Char_Porfile: {fileID: 1134889609}
@@ -70041,6 +71005,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 1863209509}
   Char_Porfile: {fileID: 598477411}
@@ -71199,6 +72197,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 270887032}
   Char_Porfile: {fileID: 1244349208}
@@ -73371,6 +74403,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 1476447169}
   Character_Face: {fileID: 1147284928}
 --- !u!114 &1331103529
@@ -74777,6 +75843,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 1246915898}
   Character_Face: {fileID: 77689722}
 --- !u!114 &1351113358
@@ -75283,6 +76383,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fea4500976efb9439bdb8a80f9ef0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EquipCharacter:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   SelectBtn: {fileID: 486325255}
 --- !u!1 &1358189471
 GameObject:
@@ -76430,6 +77564,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 943760636}
   Char_Porfile: {fileID: 485161090}
@@ -76605,7 +77773,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 240, y: -31, z: 0}
-  m_LocalScale: {x: 250, y: 250, z: 250}
+  m_LocalScale: {x: 45, y: 45, z: 45}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1003273987}
@@ -77190,6 +78358,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 578582154}
   Char_Porfile: {fileID: 2096846791}
@@ -77946,6 +79148,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 240615}
   Char_Porfile: {fileID: 1700339789}
@@ -80393,6 +81629,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 670955503}
   Char_Porfile: {fileID: 2135738770}
@@ -83314,6 +84584,7 @@ MonoBehaviour:
   Gacha_Count_Text: {fileID: 412152399}
   Gacha_Count: 0
   Gacha_Num: 0
+  Gacha_Characters: []
   SR_Frame: {fileID: 2100000, guid: 7ea0847604e52dd4ba192b557ea6870f, type: 2}
   SSR_Frame: {fileID: 2100000, guid: e5fe0f59871aa3e448c6ffc9628b3e0b, type: 2}
   Gacha_10_CharImages:
@@ -86605,6 +87876,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 1569538160}
   Char_Porfile: {fileID: 1524150687}
@@ -86997,6 +88302,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fea4500976efb9439bdb8a80f9ef0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EquipCharacter:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   SelectBtn: {fileID: 853418693}
 --- !u!1 &1604681682
 GameObject:
@@ -87051,6 +88390,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 561314073}
   Character_Face: {fileID: 699958614}
 --- !u!114 &1604681685
@@ -88066,6 +89439,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 199495672}
   Character_Face: {fileID: 258489010}
 --- !u!114 &1642222928
@@ -90229,6 +91636,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 40425247}
   Char_Porfile: {fileID: 1716662759}
@@ -92816,6 +94257,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 823790558}
   Character_Face: {fileID: 64327953}
 --- !u!114 &1714521338
@@ -94112,6 +95587,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fea4500976efb9439bdb8a80f9ef0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EquipCharacter:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   SelectBtn: {fileID: 2107518365}
 --- !u!1 &1729503178
 GameObject:
@@ -94325,6 +95834,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 29320848}
   Char_Porfile: {fileID: 1375487941}
@@ -95010,6 +96553,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93803324ec979542bff9fb2f53a3549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectChar:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   CharacterPanel: {fileID: 1726970}
   CharacterUI_Ref: {fileID: 385401710}
   FrameColors:
@@ -95487,6 +97064,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 1733470771}
   Character_Face: {fileID: 909575119}
 --- !u!114 &1744352671
@@ -98049,6 +99660,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 1166126483}
   Character_Face: {fileID: 2130283761}
 --- !u!114 &1798804181
@@ -99633,6 +101278,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 1900108303}
   Character_Face: {fileID: 219540060}
 --- !u!114 &1836283944
@@ -102509,6 +104188,152 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906335901}
   m_CullTransparentMesh: 1
+--- !u!1 &1906526770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1906526771}
+  - component: {fileID: 1906526775}
+  - component: {fileID: 1906526774}
+  - component: {fileID: 1906526773}
+  - component: {fileID: 1906526772}
+  m_Layer: 5
+  m_Name: Json
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1906526771
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906526770}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 304170822}
+  m_Father: {fileID: 2007134837}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -53.2}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1906526772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906526770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151c0631e914a4c4090846b766b2a993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1906526773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906526770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1906526774}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: JsonTest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1906526774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906526770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1906526775
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906526770}
+  m_CullTransparentMesh: 1
 --- !u!1 &1907984809
 GameObject:
   m_ObjectHideFlags: 0
@@ -102642,6 +104467,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 2068039649}
   Char_Porfile: {fileID: 883189696}
@@ -103718,6 +105577,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 1090028226}
   Char_Porfile: {fileID: 1358189472}
@@ -104593,6 +106486,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 2064544537}
   Char_Porfile: {fileID: 1296324160}
@@ -105183,6 +107110,7 @@ MonoBehaviour:
   - {fileID: 2114046226}
   LevelUP_Btn: {fileID: 390366993}
   Slime_Use_Slider: {fileID: 1000743699}
+  Char_Pixel_Img: {fileID: 1398178744}
   ExpSlider: {fileID: 519365672}
   ExpBack: {fileID: 1490332157}
   Use_Exp: 10270000a861000050c30000
@@ -106212,6 +108140,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 824557192}
   Char_Porfile: {fileID: 30018727}
@@ -107488,6 +109450,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 278838877}
   Char_Porfile: {fileID: 62653613}
@@ -107929,7 +109925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2007134837
 RectTransform:
   m_ObjectHideFlags: 0
@@ -107943,6 +109939,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1793924717}
+  - {fileID: 1906526771}
   m_Father: {fileID: 616901857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -108233,6 +110230,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 1338707243}
   Char_Porfile: {fileID: 1410820325}
@@ -109102,6 +111133,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fea4500976efb9439bdb8a80f9ef0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EquipCharacter:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   SelectBtn: {fileID: 644002399}
 --- !u!1 &2027185856
 GameObject:
@@ -110663,6 +112728,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a82f55a04cca947a217a8cb0299f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Slot_Num: 0
   Element_BG: {fileID: 633327968}
   Char_Porfile: {fileID: 1934135326}
@@ -114932,6 +117031,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d334dbc79ddc144b11109dd912ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character:
+    Character_Lv: 0
+    Max_Lv: 0
+    CurrentExp: 0
+    Cumulative_Exp: 0
+    CharacterID: 0
+    CharName: 
+    CharEngName: 
+    CharGrade: 0
+    CharType: 0
+    CharElement: 0
+    CharStar: 0
+    BaseHP: 0
+    CharHP: 0
+    BaseAtk: 0
+    CharATK: 0
+    BaseDef: 0
+    CharDEF: 0
+    BaseCRID: 0
+    Char_CRT_DAMAGE: 0
+    BaseCRIR: 0
+    Char_CRT_RATE: 0
+    CombatPower: 0
+    linearFactor: 0
+    expFactor: 0
+    expMultiplier: 0
+    transitionLevel: 0
+    Illust_Address: 
+    Normal_Image_Address: 
+    Grade_Up_Image_Address: 
+    Profile_Address: 
+    White_Illust_Address: 
+    Square_Illust_Address: 
+    Pixel_Illust_Address: 
   Select_Img: {fileID: 127149832}
   Character_Face: {fileID: 686195476}
 --- !u!114 &2123005826

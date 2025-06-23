@@ -207,6 +207,9 @@ public class Lobby_Manager : MonoBehaviour
         wrap.Equip_Inventory = UserInfo.Equip_Inventory;
         string json = JsonUtility.ToJson(wrap, true);
         Debug.Log(json);
+
+        UserInfo.Inventory_ToJson();
+        UserInfo.CharacterList_ToJson();
     }
     #endregion
 }
