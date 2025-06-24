@@ -34,6 +34,11 @@ public class CharacterListWrapper
 
 public class UserInfo
 {
+    #region User
+    public static string UID;
+    public static string UserName;
+    #endregion
+
     #region Character
     // string 캐릭터 이름 / Character 캐릭터 데이터
     public static Dictionary<string, Character> UserCharDict = new Dictionary<string, Character>();
@@ -68,6 +73,9 @@ public class UserInfo
     public static List<Quest_Slot> QuestSlot_List = new List<Quest_Slot>();
     #endregion
 
+    #region Data
+    public static string JsonData;
+    #endregion
 
     [Header("---Currency---")]
     public static int Money = 10000000;
