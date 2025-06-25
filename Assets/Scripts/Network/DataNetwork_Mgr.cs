@@ -425,7 +425,7 @@ public class DataNetwork_Mgr : MonoBehaviour
             Data = CharData
         };
 
-        NetWaitTime = 0.3f;
+        NetWaitTime = 2.0f;
 
         PlayFabClientAPI.UpdateUserData(request,
             (_result) =>

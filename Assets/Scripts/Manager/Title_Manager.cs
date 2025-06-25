@@ -54,10 +54,6 @@ public class Title_Manager : MonoBehaviour
         }
     }
 
-    public void OnClick_GameStart()
-    {
-        SceneManager.LoadScene("LobbyScene");
-    }
 
     #region Login
     public void Login()
@@ -301,6 +297,11 @@ public class Title_Manager : MonoBehaviour
     public void Info_BG_RayCast_OnOff(bool _isOn)
     {
         Info_BG.raycastTarget = _isOn;
+    }
+
+    public void OnClick_GameStart()
+    {
+        SceneManager.LoadScene("LobbyScene");
     }
     #endregion
 
