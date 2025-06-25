@@ -52,6 +52,8 @@ public class Lobby_Manager : MonoBehaviour
             EquipSlot_List.EquipCharacter = UserInfo.UserCharDict_Copy[0].Value;
             UserInfo.UserCharDict_Copy.RemoveAt(0);
             UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
+
+            DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.EQUIP_CHAR_LIST);
         }
 
         // Debug.Log(UserInfo.Equip_Characters[0].Get_CharName);
