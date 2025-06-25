@@ -38,6 +38,22 @@ public class Title_Manager : MonoBehaviour
     bool invalidEmailType = false;       // 이메일 포맷이 올바른지 체크
     bool isValidFormat = false;          // 올바른 형식인지 아닌지 체크
 
+
+    private void Start()
+    {
+        // 아이지 저장 여부 불러오기
+        string strId = PlayerPrefs.GetString("MySave_ID", "");
+        if (!PlayerPrefs.HasKey("MySave_ID") || strId == "")
+        {
+            Save_ID_Toggle.isOn = false;
+        }
+        else
+        {
+            Save_ID_Toggle.isOn = true;
+            Login_ID_IF.text = strId;
+        }
+    }
+
     public void OnClick_GameStart()
     {
         SceneManager.LoadScene("LobbyScene");
