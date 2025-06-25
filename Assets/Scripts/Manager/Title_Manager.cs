@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,7 @@ public class Title_Manager : MonoBehaviour
     [SerializeField] InputField Login_ID_IF;
     [SerializeField] InputField Login_Pass_IF;
     [SerializeField] Toggle Hide_Pass_Toggle;
+    bool isLoginSuccess;
 
     [Header("CreateAccount_Panel")]
     [SerializeField] GameObject CreateAccountPanel;
@@ -53,6 +55,8 @@ public class Title_Manager : MonoBehaviour
             Save_ID_Toggle.isOn = true;
             Login_ID_IF.text = strId;
         }
+
+        isLoginSuccess = false;
     }
 
 
@@ -124,91 +128,25 @@ public class Title_Manager : MonoBehaviour
         UserInfo.UID = _result.PlayFabId;
 
         // 유저 이름 가져오기
-        if (_result.InfoResultPayload != null)
+        if (_result.InfoResultPayload != null && isLoginSuccess == false)
         {
             UserInfo.UserName = _result.InfoResultPayload.PlayerProfile.DisplayName;
+            isLoginSuccess = true;
+
+            List<string> CharDataKey = new List<string>();
             #region Character_Data_Load
             foreach (var eachData in _result.InfoResultPayload.UserData)
             {
-                if (eachData.Key.Contains("Character_"))
+                if (eachData.Key.Contains("CharData_Part"))
                 {
-                    #region Data_Load
-                    string Data = eachData.Value.Value;
-                    string[] strArr = Data.Split('|');
-
-                    int.TryParse(strArr[0], out int ID);
-                    CHAR_GRADE.TryParse(strArr[3], out CHAR_GRADE CharGrade);
-                    CHAR_TYPE.TryParse(strArr[4], out CHAR_TYPE CharType);
-                    CHAR_ELE.TryParse(strArr[5], out CHAR_ELE CharEle);
-                    int.TryParse(strArr[6], out int Star);
-                    float.TryParse(strArr[7], out float BaseHP);
-                    float.TryParse(strArr[8], out float CalHP);
-                    float.TryParse(strArr[9], out float BaseAtk);
-                    float.TryParse(strArr[10], out float CalAtk);
-                    float.TryParse(strArr[11], out float BaseDef);
-                    float.TryParse(strArr[12], out float CalDef);
-                    float.TryParse(strArr[13], out float BaseCriD);
-                    float.TryParse(strArr[14], out float CalCriD);
-                    float.TryParse(strArr[15], out float BaseCriR);
-                    float.TryParse(strArr[16], out float CalCriR);
-                    float.TryParse(strArr[17], out float CombatPower);
-                    float.TryParse(strArr[18], out float linearFactor);
-                    float.TryParse(strArr[19], out float expFactor);
-                    float.TryParse(strArr[20], out float expMultiplier);
-                    int.TryParse(strArr[21], out int transitionLevel);
-                    int.TryParse(strArr[22], out int Lv);
-                    int.TryParse(strArr[23], out int MaxLv);
-                    int.TryParse(strArr[24], out int CurrentExp);
-                    int.TryParse(strArr[25], out int Cumulative_Exp);
-
-                    Character node = new Character(ID, strArr[1], strArr[2], CharGrade, CharType, CharEle, Star, BaseHP, BaseAtk, BaseDef, BaseCriD, BaseCriR, Lv);
-                    node.Load_Resources(strArr[26], strArr[27], strArr[28], strArr[29], strArr[30], strArr[31], strArr[32]);
-                    node.Load_Data(linearFactor, expFactor, expMultiplier, transitionLevel, CalHP, CalAtk, CalDef, CalCriD, CalCriR, CombatPower, MaxLv, CurrentExp, Cumulative_Exp);
-
-                    UserInfo.UserCharDict.Add(node.Get_CharName, node);
-                    // 캐릭터 정보창 스크롤
-                    UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
-                    #endregion
+                    CharDataKey.Add(eachData.Key);
                 }
-                else if (eachData.Key.Contains("CharInven_"))
-                {
-                    #region Data_Load
-                    string Data = eachData.Value.Value;
-                    string[] strArr = Data.Split('|');
+            }
+            LoadUserCharactersFromChunks(CharDataKey);
 
-                    int.TryParse(strArr[0], out int ID);
-                    CHAR_GRADE.TryParse(strArr[3], out CHAR_GRADE CharGrade);
-                    CHAR_TYPE.TryParse(strArr[4], out CHAR_TYPE CharType);
-                    CHAR_ELE.TryParse(strArr[5], out CHAR_ELE CharEle);
-                    int.TryParse(strArr[6], out int Star);
-                    float.TryParse(strArr[7], out float BaseHP);
-                    float.TryParse(strArr[8], out float CalHP);
-                    float.TryParse(strArr[9], out float BaseAtk);
-                    float.TryParse(strArr[10], out float CalAtk);
-                    float.TryParse(strArr[11], out float BaseDef);
-                    float.TryParse(strArr[12], out float CalDef);
-                    float.TryParse(strArr[13], out float BaseCriD);
-                    float.TryParse(strArr[14], out float CalCriD);
-                    float.TryParse(strArr[15], out float BaseCriR);
-                    float.TryParse(strArr[16], out float CalCriR);
-                    float.TryParse(strArr[17], out float CombatPower);
-                    float.TryParse(strArr[18], out float linearFactor);
-                    float.TryParse(strArr[19], out float expFactor);
-                    float.TryParse(strArr[20], out float expMultiplier);
-                    int.TryParse(strArr[21], out int transitionLevel);
-                    int.TryParse(strArr[22], out int Lv);
-                    int.TryParse(strArr[23], out int MaxLv);
-                    int.TryParse(strArr[24], out int CurrentExp);
-                    int.TryParse(strArr[25], out int Cumulative_Exp);
-
-                    Character node = new Character(ID, strArr[1], strArr[2], CharGrade, CharType, CharEle, Star, BaseHP, BaseAtk, BaseDef, BaseCriD, BaseCriR, Lv);
-                    node.Load_Resources(strArr[26], strArr[27], strArr[28], strArr[29], strArr[30], strArr[31], strArr[32]);
-                    node.Load_Data(linearFactor, expFactor, expMultiplier, transitionLevel, CalHP, CalAtk, CalDef, CalCriD, CalCriR, CombatPower, MaxLv, CurrentExp, Cumulative_Exp);
-
-                    UserInfo.UserCharDict_Copy.Add(new KeyValuePair<string, Character>(node.Get_CharName, node));
-                    #endregion
-                }
-                else if (eachData.Key.Contains("EquipChar_"))
+            foreach (var eachData in _result.InfoResultPayload.UserData)
+            {
+                if (eachData.Key.Contains("EquipChar_"))
                 {
                     #region Data_Load
                     string Data = eachData.Value.Value;
@@ -247,6 +185,10 @@ public class Title_Manager : MonoBehaviour
                     #endregion
                 }
             }
+
+           
+            // Debug.Log(UserInfo.UserCharDict_Copy.Count);
+
             #endregion
 
         }
@@ -461,4 +403,50 @@ public class Title_Manager : MonoBehaviour
         return match.Groups[1].Value + domainName;
     }
     #endregion
+
+    #region Data_Load
+    void LoadUserCharactersFromChunks(List<string> keys)
+    {
+        var request = new GetUserDataRequest();
+        PlayFabClientAPI.GetUserData(request, result =>
+        {
+            Dictionary<string, Character> loadedDict = new Dictionary<string, Character>();
+
+            foreach (string key in keys)
+            {
+                if (result.Data.ContainsKey(key))
+                {
+                   
+                    string json = result.Data[key].Value;
+                    CharacterListWrapper wrapper = JsonUtility.FromJson<CharacterListWrapper>(json);
+
+                    foreach (var pair in wrapper.Characters)
+                    {
+                        loadedDict[pair.key] = pair.value;
+                        loadedDict[pair.key].Load_Resources(pair.value.Get_Illust_Address, pair.value.Get_Normal_Image_Address, pair.value.Get_Grade_Up_Image_Address,
+                            pair.value.Get_Profile_Address, pair.value.Get_White_Illust_Address, pair.value.Get_Pixel_Illust_Address, pair.value.Get_Square_Illust_Address);
+                    }
+                }
+            }
+
+            UserInfo.UserCharDict = loadedDict;
+
+            foreach (var pair in UserInfo.UserCharDict)
+            {
+                string charName = pair.Key;
+                Character character = pair.Value;
+
+                bool isEquipped = UserInfo.Equip_Characters.Any(equip => equip.Get_CharName == charName);
+
+                if (!isEquipped)
+                {
+                    UserInfo.UserCharDict_Copy.Add(new KeyValuePair<string, Character>(charName, character));
+                }
+            }
+            Debug.Log("모든 캐릭터 로드 완료");
+        },
+        error => Debug.LogError("불러오기 실패: " + error.GenerateErrorReport()));
+    }
+    #endregion
+
 }

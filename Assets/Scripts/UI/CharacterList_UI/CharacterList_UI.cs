@@ -332,7 +332,7 @@ public class CharacterList_UI : MonoBehaviour
         Change_Char_Btn.SetActive(true);
         Equip_Info_Btn.SetActive(false);
 
-        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_CHAR_INVEN);
+        // DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_CHAR_INVEN);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_EQUIP_CHAR);
     }
     #endregion

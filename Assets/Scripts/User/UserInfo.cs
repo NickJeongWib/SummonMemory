@@ -43,7 +43,7 @@ public class UserInfo
     // string 캐릭터 이름 / Character 캐릭터 데이터
     public static Dictionary<string, Character> UserCharDict = new Dictionary<string, Character>();
     // 캐릭터 장착 시 인벤토리에서 해제하기 위한 복사체
-    public static List<KeyValuePair<string, Character>> UserCharDict_Copy;
+    public static List<KeyValuePair<string, Character>> UserCharDict_Copy = new List<KeyValuePair<string, Character>>();
     // 캐릭터 정보창에 캐릭터 정보를 나열하기 위한 원본 복사체
     public static List<KeyValuePair<string, Character>> UserCharDict_Copy_2;
     public static List<KeyValuePair<string, Character>> Old_UserCharDict_Copy;

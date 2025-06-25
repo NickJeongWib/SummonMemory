@@ -265,8 +265,8 @@ public class Gacha_Manager : MonoBehaviour
         // 바로 위 장착 캐릭터 예외 처리 후 저장이 필요함
         UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
 
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_EQUIP_CHAR);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
-        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHAR_INVENTORY);
         Gacha_Video_Play();
     }
     #endregion

@@ -144,7 +144,7 @@ public class Character
 
     #region Constructor
     public Character(int _id, string _name, string _engName, CHAR_GRADE _grade, CHAR_TYPE _type, CHAR_ELE _ele, int _star,
-       float _hp, float _atk, float _def, float _crtDamage, float _crtRate, string _illustAdd = "", string _normalImageAdd = "", string _gradeUpAdd = "", string _profileAdd = "", int _lv = 1)
+       float _hp, float _atk, float _def, float _crtDamage, float _crtRate, int _lv = 1)
     {
         Character_Lv = _lv;
 
@@ -165,15 +165,15 @@ public class Character
         BaseSet(CharATK, CharDEF, CharHP, Char_CRT_RATE, Char_CRT_DAMAGE);
 
         // 이미지 주소
-        Illust_Address = _illustAdd;
-        Normal_Image_Address = _normalImageAdd;
-        Grade_Up_Image_Address = _gradeUpAdd;
-        Profile_Address = _profileAdd;
+        //Illust_Address = _illustAdd;
+        //Normal_Image_Address = _normalImageAdd;
+        //Grade_Up_Image_Address = _gradeUpAdd;
+        //Profile_Address = _profileAdd;
 
-        Illust_Img = Resources.Load<Sprite>(Illust_Address);
-        Normal_Img = Resources.Load<Sprite>(Normal_Image_Address);
-        Grade_Up_Img = Resources.Load<Sprite>(Grade_Up_Image_Address);
-        Profile_Img = Resources.Load<Sprite>(Profile_Address);
+        //Illust_Img = Resources.Load<Sprite>(Illust_Address);
+        //Normal_Img = Resources.Load<Sprite>(Normal_Image_Address);
+        //Grade_Up_Img = Resources.Load<Sprite>(Grade_Up_Image_Address);
+        //Profile_Img = Resources.Load<Sprite>(Profile_Address);
     }
 
     void BaseSet(float _atk, float _def, float _hp, float criR, float criD)
@@ -497,6 +497,33 @@ public class Character
             (Char_CRT_DAMAGE * 100 * 10.0f) + (Char_CRT_RATE * 100 * 3.0f);
 
         return CombatPower.ToString("N0");
+    }
+    #endregion
+
+    #region Load_Data
+    public void Load_Data(float _linearFactor, float _expFactor, float _expMultiplier, int _transitionLevel,
+        float _CalHP, float _CalAtk, float _CalDef, float _CalCriD, float CalcCriR, float _CombatPower, int _MaxLv, int _CurrentExp, int _Cumulative_Exp)
+    {
+        // 성장 수치
+        linearFactor = _linearFactor;
+        expFactor = _expFactor;
+        expMultiplier = _expMultiplier;
+        transitionLevel = _transitionLevel;
+
+        // 계산된 스탯
+        CharHP = _CalHP;
+        CharATK = _CalAtk;
+        CharDEF = _CalDef;
+        Char_CRT_DAMAGE = _CalCriD;
+        Char_CRT_RATE = CalcCriR;
+
+        CombatPower = _CombatPower;
+
+        // LV관련
+        Max_Lv = _MaxLv;
+        CurrentExp = _CurrentExp;
+        Cumulative_Exp = _Cumulative_Exp;
+
     }
     #endregion
 
