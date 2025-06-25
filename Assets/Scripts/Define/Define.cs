@@ -109,4 +109,13 @@ public static class Define
         SR,
         SSR,
     }
+
+    public enum PACKETTYPE
+    {
+        CHARLIST,
+        CHAR_INVENTORY,
+        EQUIP_CHAR_LIST,
+        CLEAR_CHAR_INVEN,
+        CLEAR_EQUIP_CHAR,
+    }
 }
