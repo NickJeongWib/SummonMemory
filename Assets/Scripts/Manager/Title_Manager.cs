@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Define;
 
 public class Title_Manager : MonoBehaviour
 {
@@ -126,6 +127,128 @@ public class Title_Manager : MonoBehaviour
         if (_result.InfoResultPayload != null)
         {
             UserInfo.UserName = _result.InfoResultPayload.PlayerProfile.DisplayName;
+            #region Character_Data_Load
+            foreach (var eachData in _result.InfoResultPayload.UserData)
+            {
+                if (eachData.Key.Contains("Character_"))
+                {
+                    #region Data_Load
+                    string Data = eachData.Value.Value;
+                    string[] strArr = Data.Split('|');
+
+                    int.TryParse(strArr[0], out int ID);
+                    CHAR_GRADE.TryParse(strArr[3], out CHAR_GRADE CharGrade);
+                    CHAR_TYPE.TryParse(strArr[4], out CHAR_TYPE CharType);
+                    CHAR_ELE.TryParse(strArr[5], out CHAR_ELE CharEle);
+                    int.TryParse(strArr[6], out int Star);
+                    float.TryParse(strArr[7], out float BaseHP);
+                    float.TryParse(strArr[8], out float CalHP);
+                    float.TryParse(strArr[9], out float BaseAtk);
+                    float.TryParse(strArr[10], out float CalAtk);
+                    float.TryParse(strArr[11], out float BaseDef);
+                    float.TryParse(strArr[12], out float CalDef);
+                    float.TryParse(strArr[13], out float BaseCriD);
+                    float.TryParse(strArr[14], out float CalCriD);
+                    float.TryParse(strArr[15], out float BaseCriR);
+                    float.TryParse(strArr[16], out float CalCriR);
+                    float.TryParse(strArr[17], out float CombatPower);
+                    float.TryParse(strArr[18], out float linearFactor);
+                    float.TryParse(strArr[19], out float expFactor);
+                    float.TryParse(strArr[20], out float expMultiplier);
+                    int.TryParse(strArr[21], out int transitionLevel);
+                    int.TryParse(strArr[22], out int Lv);
+                    int.TryParse(strArr[23], out int MaxLv);
+                    int.TryParse(strArr[24], out int CurrentExp);
+                    int.TryParse(strArr[25], out int Cumulative_Exp);
+
+                    Character node = new Character(ID, strArr[1], strArr[2], CharGrade, CharType, CharEle, Star, BaseHP, BaseAtk, BaseDef, BaseCriD, BaseCriR, Lv);
+                    node.Load_Resources(strArr[26], strArr[27], strArr[28], strArr[29], strArr[30], strArr[31], strArr[32]);
+                    node.Load_Data(linearFactor, expFactor, expMultiplier, transitionLevel, CalHP, CalAtk, CalDef, CalCriD, CalCriR, CombatPower, MaxLv, CurrentExp, Cumulative_Exp);
+
+                    UserInfo.UserCharDict.Add(node.Get_CharName, node);
+                    // 캐릭터 정보창 스크롤
+                    UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
+                    #endregion
+                }
+                else if (eachData.Key.Contains("CharInven_"))
+                {
+                    #region Data_Load
+                    string Data = eachData.Value.Value;
+                    string[] strArr = Data.Split('|');
+
+                    int.TryParse(strArr[0], out int ID);
+                    CHAR_GRADE.TryParse(strArr[3], out CHAR_GRADE CharGrade);
+                    CHAR_TYPE.TryParse(strArr[4], out CHAR_TYPE CharType);
+                    CHAR_ELE.TryParse(strArr[5], out CHAR_ELE CharEle);
+                    int.TryParse(strArr[6], out int Star);
+                    float.TryParse(strArr[7], out float BaseHP);
+                    float.TryParse(strArr[8], out float CalHP);
+                    float.TryParse(strArr[9], out float BaseAtk);
+                    float.TryParse(strArr[10], out float CalAtk);
+                    float.TryParse(strArr[11], out float BaseDef);
+                    float.TryParse(strArr[12], out float CalDef);
+                    float.TryParse(strArr[13], out float BaseCriD);
+                    float.TryParse(strArr[14], out float CalCriD);
+                    float.TryParse(strArr[15], out float BaseCriR);
+                    float.TryParse(strArr[16], out float CalCriR);
+                    float.TryParse(strArr[17], out float CombatPower);
+                    float.TryParse(strArr[18], out float linearFactor);
+                    float.TryParse(strArr[19], out float expFactor);
+                    float.TryParse(strArr[20], out float expMultiplier);
+                    int.TryParse(strArr[21], out int transitionLevel);
+                    int.TryParse(strArr[22], out int Lv);
+                    int.TryParse(strArr[23], out int MaxLv);
+                    int.TryParse(strArr[24], out int CurrentExp);
+                    int.TryParse(strArr[25], out int Cumulative_Exp);
+
+                    Character node = new Character(ID, strArr[1], strArr[2], CharGrade, CharType, CharEle, Star, BaseHP, BaseAtk, BaseDef, BaseCriD, BaseCriR, Lv);
+                    node.Load_Resources(strArr[26], strArr[27], strArr[28], strArr[29], strArr[30], strArr[31], strArr[32]);
+                    node.Load_Data(linearFactor, expFactor, expMultiplier, transitionLevel, CalHP, CalAtk, CalDef, CalCriD, CalCriR, CombatPower, MaxLv, CurrentExp, Cumulative_Exp);
+
+                    UserInfo.UserCharDict_Copy.Add(new KeyValuePair<string, Character>(node.Get_CharName, node));
+                    #endregion
+                }
+                else if (eachData.Key.Contains("EquipChar_"))
+                {
+                    #region Data_Load
+                    string Data = eachData.Value.Value;
+                    string[] strArr = Data.Split('|');
+
+                    int.TryParse(strArr[0], out int ID);
+                    CHAR_GRADE.TryParse(strArr[3], out CHAR_GRADE CharGrade);
+                    CHAR_TYPE.TryParse(strArr[4], out CHAR_TYPE CharType);
+                    CHAR_ELE.TryParse(strArr[5], out CHAR_ELE CharEle);
+                    int.TryParse(strArr[6], out int Star);
+                    float.TryParse(strArr[7], out float BaseHP);
+                    float.TryParse(strArr[8], out float CalHP);
+                    float.TryParse(strArr[9], out float BaseAtk);
+                    float.TryParse(strArr[10], out float CalAtk);
+                    float.TryParse(strArr[11], out float BaseDef);
+                    float.TryParse(strArr[12], out float CalDef);
+                    float.TryParse(strArr[13], out float BaseCriD);
+                    float.TryParse(strArr[14], out float CalCriD);
+                    float.TryParse(strArr[15], out float BaseCriR);
+                    float.TryParse(strArr[16], out float CalCriR);
+                    float.TryParse(strArr[17], out float CombatPower);
+                    float.TryParse(strArr[18], out float linearFactor);
+                    float.TryParse(strArr[19], out float expFactor);
+                    float.TryParse(strArr[20], out float expMultiplier);
+                    int.TryParse(strArr[21], out int transitionLevel);
+                    int.TryParse(strArr[22], out int Lv);
+                    int.TryParse(strArr[23], out int MaxLv);
+                    int.TryParse(strArr[24], out int CurrentExp);
+                    int.TryParse(strArr[25], out int Cumulative_Exp);
+
+                    Character node = new Character(ID, strArr[1], strArr[2], CharGrade, CharType, CharEle, Star, BaseHP, BaseAtk, BaseDef, BaseCriD, BaseCriR, Lv);
+                    node.Load_Resources(strArr[26], strArr[27], strArr[28], strArr[29], strArr[30], strArr[31], strArr[32]);
+                    node.Load_Data(linearFactor, expFactor, expMultiplier, transitionLevel, CalHP, CalAtk, CalDef, CalCriD, CalCriR, CombatPower, MaxLv, CurrentExp, Cumulative_Exp);
+
+                    UserInfo.Equip_Characters.Add(node);
+                    #endregion
+                }
+            }
+            #endregion
+
         }
         // 아이디 저장 토글 저장
         if (Save_ID_Toggle.isOn)
