@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static Define;
 
 public class CharGrowUp_Mgr : MonoBehaviour
 {
@@ -430,6 +432,7 @@ public class CharGrowUp_Mgr : MonoBehaviour
         Exp_Sum = Use_Exp[selectNum] * UseCount;
     }
     #endregion
+
     #region Exp_UI_Refresh
     void Exp_UI_Refresh()
     {
@@ -652,8 +655,6 @@ public class CharGrowUp_Mgr : MonoBehaviour
 
         }
 
-
-
         Remove_Exp = 0;
         Left_Exp = 0;
         ExpBack.showMaskGraphic = false;
@@ -677,6 +678,23 @@ public class CharGrowUp_Mgr : MonoBehaviour
             ExpSlider.value = 1;
             Exp_Percent.text = "100%";
         }
+        
+        
+        // TODO ## CharGrowUp_Mgr 캐릭터 레벨업 시 소모 슬라임 데이터 저장 및 캐릭터 데이터 저장
+        // 캐릭터가 장착 중이라면
+        if (UserInfo.Equip_Characters.Contains(GameManager.Instance.Get_SelectChar))
+        {
+            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_EQUIP_CHAR);
+            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
+        }
+        else // 캐릭터가 장착 중이 아니면
+        {
+            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
+        }
+
+        UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
 
         // Debug.Log("Lv : " + GameManager.Instance.Get_SelectChar.Get_Character_Lv);
         // Debug.Log("CurExp : " + GameManager.Instance.Get_SelectChar.Get_CurrentExp);

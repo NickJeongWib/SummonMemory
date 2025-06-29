@@ -399,6 +399,22 @@ public class Item_Info_Panel : MonoBehaviour
         if (CharacterListUI_Ref != null)
             CharacterListUI_Ref.Refresh_EquipItem_Image();
 
+        // TODO ## Item_Info_Panel 아이템 장착 시 데이터 저장
+        //if (CurrentItem.Get_isEquip)
+        //{
+        //    // 캐릭터 장착 중이라면
+        //    if (UserInfo.Equip_Characters.Contains(CurrentItem.Get_OwnCharacter))
+        //    {
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
+        //    }
+        //    else
+        //    {
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        //    }
+        //}
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
 
         On_Click_Close_ItemInfo();
         CurrentItem = null;
@@ -417,14 +433,36 @@ public class Item_Info_Panel : MonoBehaviour
             CurrentItem.Get_OwnCharacter.Refresh_Char_Equipment_State(false, CurrentItem.Get_EquipType);
         }
 
+
+
         Character_Equipment_Ref.Refresh_List_UI((int)CurrentItem.Get_EquipType);
+
+        // TODO ## Item_Info_Panel 아이템 장착 해제 시 데이터 저장
+        //if (CurrentItem.Get_isEquip)
+        //{
+        //    // 캐릭터 장착 중이라면
+        //    if (UserInfo.Equip_Characters.Contains(CurrentItem.Get_OwnCharacter))
+        //    {
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
+        //    }
+        //    else
+        //    {
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        //    }
+        //}
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+
         On_Click_Close_ItemInfo();
+
         CharacterListUI_Ref.Refresh_EquipItem_Image();
 
         // 해제라는 행동을 했으니 선택된 장비를 없애준다
         CurrentItem = null;
 
-        GameManager.Instance.Get_SelectChar.TestState();
+        // GameManager.Instance.Get_SelectChar.TestState();
+
     }
     #endregion
 
@@ -520,6 +558,9 @@ public class Item_Info_Panel : MonoBehaviour
         Open_Get_DecomItem();
         // 인벤토리 초기화
         Refresh_Equipment_Slot();
+
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
 
         #region Test
         //for (int i = 0; i < UserInfo.Equip_Inventory.Count; i++)

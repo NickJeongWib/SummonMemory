@@ -1,4 +1,4 @@
-using PlayFab;
+ï»¿using PlayFab;
 using PlayFab.ClientModels;
 using System;
 using System.Collections;
@@ -38,13 +38,17 @@ public class Title_Manager : MonoBehaviour
     [Header("UI")]
     [SerializeField] GameObject GameStart_Btn;
 
-    bool invalidEmailType = false;       // ÀÌ¸ŞÀÏ Æ÷¸ËÀÌ ¿Ã¹Ù¸¥Áö Ã¼Å©
-    bool isValidFormat = false;          // ¿Ã¹Ù¸¥ Çü½ÄÀÎÁö ¾Æ´ÑÁö Ã¼Å©
+    bool invalidEmailType = false;       // ì´ë©”ì¼ í¬ë§·ì´ ì˜¬ë°”ë¥¸ì§€ ì²´í¬
+    bool isValidFormat = false;          // ì˜¬ë°”ë¥¸ í˜•ì‹ì¸ì§€ ì•„ë‹Œì§€ ì²´í¬
 
+    List<string> CharDataKey = new List<string>();
+    List<string> InvenDataKet = new List<string>();
+    List<string> EquipInvenDataKet = new List<string>();
+    List<string> EquipCharNameData = new List<string>();
 
     private void Start()
     {
-        // ¾ÆÀÌÁö ÀúÀå ¿©ºÎ ºÒ·¯¿À±â
+        // ì•„ì´ì§€ ì €ì¥ ì—¬ë¶€ ë¶ˆëŸ¬ì˜¤ê¸°
         string strId = PlayerPrefs.GetString("MySave_ID", "");
         if (!PlayerPrefs.HasKey("MySave_ID") || strId == "")
         {
@@ -63,51 +67,51 @@ public class Title_Manager : MonoBehaviour
     #region Login
     public void Login()
     {
-        // ÀÎÇ²ÇÊµå°ª È®ÀÎ
+        // ì¸í’‹í•„ë“œê°’ í™•ì¸
         string strID = Login_ID_IF.text;
         string strPass = Login_Pass_IF.text;
 
-        // °ø¹é »èÁ¦
+        // ê³µë°± ì‚­ì œ
         strID = strID.Trim();
         strPass = strPass.Trim();
 
         if (string.IsNullOrEmpty(strID) == true ||
             string.IsNullOrEmpty(strPass) == true)
         {
-            MessageOnOff("°ø¹é ¾øÀÌ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+            MessageOnOff("ê³µë°± ì—†ì´ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
         }
 
         if (!(6 <= strID.Length && strID.Length <= 20))  // 6 ~ 20
         {
-            MessageOnOff("ÀÌ¸ŞÀÏÀº 6±ÛÀÚºÎÅÍ 20±ÛÀÚ±îÁö\nÀÛ¼ºÇØ ÁÖ¼¼¿ä.");
+            MessageOnOff("ì´ë©”ì¼ì€ 6ê¸€ìë¶€í„° 20ê¸€ìê¹Œì§€\nì‘ì„±í•´ ì£¼ì„¸ìš”.");
             return;
         }
 
         if (!(6 <= strPass.Length && strPass.Length <= 20))
         {
-            MessageOnOff("ºñ¹Ğ¹øÈ£´Â 6±ÛÀÚºÎÅÍ 20±ÛÀÚ±îÁö\nÀÛ¼ºÇØ ÁÖ¼¼¿ä.");
+            MessageOnOff("ë¹„ë°€ë²ˆí˜¸ëŠ” 6ê¸€ìë¶€í„° 20ê¸€ìê¹Œì§€\nì‘ì„±í•´ ì£¼ì„¸ìš”.");
             return;
         }
 
         if (!CheckEmailAddress(strID))
         {
-            MessageOnOff("ÀÌ¸ŞÀÏ Çü½ÄÀÌ ¸ÂÁö ¾Ê½À´Ï´Ù.");
+            MessageOnOff("ì´ë©”ì¼ í˜•ì‹ì´ ë§ì§€ ì•ŠìŠµë‹ˆë‹¤.");
             return;
         }
 
-        //·Î±×ÀÎ ¼º°ø½Ã À¯Àú Á¤º¸¸¦ °¡Á®¿ÃÁö¸¦ ¼³Á¤ÇÏ´Â ¿É¼Ç °´Ã¼ »ı¼º
+        //ë¡œê·¸ì¸ ì„±ê³µì‹œ ìœ ì € ì •ë³´ë¥¼ ê°€ì ¸ì˜¬ì§€ë¥¼ ì„¤ì •í•˜ëŠ” ì˜µì…˜ ê°ì²´ ìƒì„±
         var option = new GetPlayerCombinedInfoRequestParams()
         {
             GetPlayerProfile = true,
             ProfileConstraints = new PlayerProfileViewConstraints()
             {
-                //DisplayName(´Ğ³×ÀÓ) °¡Á®¿À±â À§ÇÑ ¿äÃ» ¿É¼Ç
+                //DisplayName(ë‹‰ë„¤ì„) ê°€ì ¸ì˜¤ê¸° ìœ„í•œ ìš”ì²­ ì˜µì…˜
                 ShowDisplayName = true, 
             },
             GetUserData = true
         };
 
-        //·Î±×ÀÎ ¾ÆÀÌµğ ÀúÀå
+        //ë¡œê·¸ì¸ ì•„ì´ë”” ì €ì¥
         Save_ID = strID;   
 
         var request = new LoginWithEmailAddressRequest()
@@ -123,76 +127,84 @@ public class Title_Manager : MonoBehaviour
 
     private void OnLoginSuccess(LoginResult _result)
     {
-        // TODO ## TitleManager "¹İµå½Ã ±¸Çö" ·Î±×ÀÎ ½Ã À¯Àú Á¤º¸ ³Ñ°ÜÁà¾ßÇÏ´Â °÷
-        MessageOnOff("·Î±×ÀÎ ¼º°ø");
+        // TODO ## TitleManager "ë°˜ë“œì‹œ êµ¬í˜„" ë¡œê·¸ì¸ ì‹œ ìœ ì € ì •ë³´ ë„˜ê²¨ì¤˜ì•¼í•˜ëŠ” ê³³
+        MessageOnOff("ë¡œê·¸ì¸ ì„±ê³µ");
         UserInfo.UID = _result.PlayFabId;
 
-        // À¯Àú ÀÌ¸§ °¡Á®¿À±â
+        // ìœ ì € ì´ë¦„ ê°€ì ¸ì˜¤ê¸°
         if (_result.InfoResultPayload != null && isLoginSuccess == false)
         {
             UserInfo.UserName = _result.InfoResultPayload.PlayerProfile.DisplayName;
             isLoginSuccess = true;
 
-            List<string> CharDataKey = new List<string>();
+
+
             #region Character_Data_Load
             foreach (var eachData in _result.InfoResultPayload.UserData)
             {
+
                 if (eachData.Key.Contains("CharData_Part"))
                 {
                     CharDataKey.Add(eachData.Key);
                 }
-            }
-            LoadUserCharactersFromChunks(CharDataKey);
-
-            foreach (var eachData in _result.InfoResultPayload.UserData)
-            {
-                if (eachData.Key.Contains("EquipChar_"))
+                else if (eachData.Key.Contains("Item_Inven_Part_"))
                 {
-                    #region Data_Load
+                    InvenDataKet.Add(eachData.Key);
+                }
+                else if (eachData.Key.Contains("Equip_Inven_Part_"))
+                {
+                    EquipInvenDataKet.Add(eachData.Key);
+                }
+                else if (eachData.Key.Contains("EquipChar_"))
+                {
                     string Data = eachData.Value.Value;
                     string[] strArr = Data.Split('|');
+                    EquipCharNameData.Add(strArr[1]);
+                    #region Data_Load
+                    //int.TryParse(strArr[0], out int ID);
+                    //CHAR_GRADE.TryParse(strArr[3], out CHAR_GRADE CharGrade);
+                    //CHAR_TYPE.TryParse(strArr[4], out CHAR_TYPE CharType);
+                    //CHAR_ELE.TryParse(strArr[5], out CHAR_ELE CharEle);
+                    //int.TryParse(strArr[6], out int Star);
+                    //float.TryParse(strArr[7], out float BaseHP);
+                    //float.TryParse(strArr[8], out float CalHP);
+                    //float.TryParse(strArr[9], out float BaseAtk);
+                    //float.TryParse(strArr[10], out float CalAtk);
+                    //float.TryParse(strArr[11], out float BaseDef);
+                    //float.TryParse(strArr[12], out float CalDef);
+                    //float.TryParse(strArr[13], out float BaseCriD);
+                    //float.TryParse(strArr[14], out float CalCriD);
+                    //float.TryParse(strArr[15], out float BaseCriR);
+                    //float.TryParse(strArr[16], out float CalCriR);
+                    //float.TryParse(strArr[17], out float CombatPower);
+                    //float.TryParse(strArr[18], out float linearFactor);
+                    //float.TryParse(strArr[19], out float expFactor);
+                    //float.TryParse(strArr[20], out float expMultiplier);
+                    //int.TryParse(strArr[21], out int transitionLevel);
+                    //int.TryParse(strArr[22], out int Lv);
+                    //int.TryParse(strArr[23], out int MaxLv);
+                    //int.TryParse(strArr[24], out int CurrentExp);
+                    //int.TryParse(strArr[25], out int Cumulative_Exp);
 
-                    int.TryParse(strArr[0], out int ID);
-                    CHAR_GRADE.TryParse(strArr[3], out CHAR_GRADE CharGrade);
-                    CHAR_TYPE.TryParse(strArr[4], out CHAR_TYPE CharType);
-                    CHAR_ELE.TryParse(strArr[5], out CHAR_ELE CharEle);
-                    int.TryParse(strArr[6], out int Star);
-                    float.TryParse(strArr[7], out float BaseHP);
-                    float.TryParse(strArr[8], out float CalHP);
-                    float.TryParse(strArr[9], out float BaseAtk);
-                    float.TryParse(strArr[10], out float CalAtk);
-                    float.TryParse(strArr[11], out float BaseDef);
-                    float.TryParse(strArr[12], out float CalDef);
-                    float.TryParse(strArr[13], out float BaseCriD);
-                    float.TryParse(strArr[14], out float CalCriD);
-                    float.TryParse(strArr[15], out float BaseCriR);
-                    float.TryParse(strArr[16], out float CalCriR);
-                    float.TryParse(strArr[17], out float CombatPower);
-                    float.TryParse(strArr[18], out float linearFactor);
-                    float.TryParse(strArr[19], out float expFactor);
-                    float.TryParse(strArr[20], out float expMultiplier);
-                    int.TryParse(strArr[21], out int transitionLevel);
-                    int.TryParse(strArr[22], out int Lv);
-                    int.TryParse(strArr[23], out int MaxLv);
-                    int.TryParse(strArr[24], out int CurrentExp);
-                    int.TryParse(strArr[25], out int Cumulative_Exp);
+                    //Character node = new Character(ID, strArr[1], strArr[2], CharGrade, CharType, CharEle, Star, BaseHP, BaseAtk, BaseDef, BaseCriD, BaseCriR, Lv);
+                    //node.Load_Resources(strArr[26], strArr[27], strArr[28], strArr[29], strArr[30], strArr[31], strArr[32]);
+                    //node.Load_Data(linearFactor, expFactor, expMultiplier, transitionLevel, CalHP, CalAtk, CalDef, CalCriD, CalCriR, CombatPower, MaxLv, CurrentExp, Cumulative_Exp);
 
-                    Character node = new Character(ID, strArr[1], strArr[2], CharGrade, CharType, CharEle, Star, BaseHP, BaseAtk, BaseDef, BaseCriD, BaseCriR, Lv);
-                    node.Load_Resources(strArr[26], strArr[27], strArr[28], strArr[29], strArr[30], strArr[31], strArr[32]);
-                    node.Load_Data(linearFactor, expFactor, expMultiplier, transitionLevel, CalHP, CalAtk, CalDef, CalCriD, CalCriR, CombatPower, MaxLv, CurrentExp, Cumulative_Exp);
 
-                    UserInfo.Equip_Characters.Add(node);
+                    //Debug.Log(UserInfo.Equip_Characters.Count);
                     #endregion
                 }
             }
 
-           
-            // Debug.Log(UserInfo.UserCharDict_Copy.Count);
+            // Debug.Log(EquipInvenDataKet.Count);
 
+            LoadUserCharactersFromChunks(CharDataKey);
+            LoadUserInvenFromChunks(InvenDataKet);
+            // LoadUserEquipInvenFromChunks(EquipInvenDataKet);
             #endregion
 
         }
-        // ¾ÆÀÌµğ ÀúÀå Åä±Û ÀúÀå
+        // ì•„ì´ë”” ì €ì¥ í† ê¸€ ì €ì¥
         if (Save_ID_Toggle.isOn)
         {
             PlayerPrefs.SetString("MySave_ID", Save_ID);
@@ -206,20 +218,22 @@ public class Title_Manager : MonoBehaviour
         GameStart_Btn.SetActive(true);
     }
 
+
+
     private void OnLoginFailure(PlayFabError _error)
     {
-        // ·Î±×ÀÎ ½ÇÆĞ ½Ã ¾È³»¹®±¸
+        // ë¡œê·¸ì¸ ì‹¤íŒ¨ ì‹œ ì•ˆë‚´ë¬¸êµ¬
         if (_error.GenerateErrorReport().Contains("User not found"))
         {
-            MessageOnOff("ÇØ´ç ÀÌ¸ŞÀÏÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+            MessageOnOff("í•´ë‹¹ ì´ë©”ì¼ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
         }
         else if (_error.GenerateErrorReport().Contains("Invalid email address or password"))
         {
-            MessageOnOff("ÆĞ½º¿öµå°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+            MessageOnOff("íŒ¨ìŠ¤ì›Œë“œê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
         }
         else
         {
-            MessageOnOff("·Î±×ÀÎ ½ÇÆĞ");
+            MessageOnOff("ë¡œê·¸ì¸ ì‹¤íŒ¨");
         }
     }
     #endregion
@@ -237,31 +251,31 @@ public class Title_Manager : MonoBehaviour
 
         if (string.IsNullOrEmpty(idStr) || string.IsNullOrEmpty(passStr) || string.IsNullOrEmpty(nickStr))
         {
-            MessageOnOff("ºóÄ­ ¾øÀÌ ÀÔ·Â ÇØÁÖ¼¼¿ä");
+            MessageOnOff("ë¹ˆì¹¸ ì—†ì´ ì…ë ¥ í•´ì£¼ì„¸ìš”");
             return;
         }
 
         if (!(6 <= idStr.Length && idStr.Length <= 20))
         {
-            MessageOnOff("¾ÆÀÌµğ´Â 6~20ÀÚ »çÀÌ·Î\nÀÔ·ÂÇØÁÖ¼¼¿ä.");
+            MessageOnOff("ì•„ì´ë””ëŠ” 6~20ì ì‚¬ì´ë¡œ\nì…ë ¥í•´ì£¼ì„¸ìš”.");
             return;
         }
 
         if (!(6 <= passStr.Length && passStr.Length <= 20))
         {
-            MessageOnOff("ºñ¹Ğ¹øÈ£´Â 6~20ÀÚ »çÀÌ·Î\nÀÔ·ÂÇØÁÖ¼¼¿ä.");
+            MessageOnOff("ë¹„ë°€ë²ˆí˜¸ëŠ” 6~20ì ì‚¬ì´ë¡œ\nì…ë ¥í•´ì£¼ì„¸ìš”.");
             return;
         }
 
         if (!(3 <= nickStr.Length && nickStr.Length <= 20))
         {
-            MessageOnOff("ÀÌ¸§Àº 3~20ÀÚ »çÀÌ·Î\nÀÔ·ÂÇØÁÖ¼¼¿ä.");
+            MessageOnOff("ì´ë¦„ì€ 3~20ì ì‚¬ì´ë¡œ\nì…ë ¥í•´ì£¼ì„¸ìš”.");
             return;
         }
 
         if (!CheckEmailAddress(idStr))
         {
-            MessageOnOff("ÀÌ¸ŞÀÏ Çü½ÄÀÌ ¸ÂÁö ¾Ê½À´Ï´Ù.");
+            MessageOnOff("ì´ë©”ì¼ í˜•ì‹ì´ ë§ì§€ ì•ŠìŠµë‹ˆë‹¤.");
             return;
         }
 
@@ -276,19 +290,19 @@ public class Title_Manager : MonoBehaviour
             RequireBothUsernameAndEmail = false
         };
 
-        MessageOnOff("È¸¿ø°¡ÀÔ Áß...\nÀá½Ã¸¸ ±â´Ù·Á ÁÖ¼¼¿ä");
+        MessageOnOff("íšŒì›ê°€ì… ì¤‘...\nì ì‹œë§Œ ê¸°ë‹¤ë ¤ ì£¼ì„¸ìš”");
 
         PlayFabClientAPI.RegisterPlayFabUser(request, RegisterSuccess, RegisterFail);
     }
 
     private void RegisterSuccess(RegisterPlayFabUserResult _result)
     {
-        MessageOnOff("°¡ÀÔ¼º°ø");
+        MessageOnOff("ê°€ì…ì„±ê³µ");
 
-        // °¡ÀÔÇÑ ¾ÆÀÌµğ ºñ¹Ğ¹øÈ£¸¸ ÀÔ·ÂÇÒ ¼ö ÀÖ°Ô ÀúÀå
+        // ê°€ì…í•œ ì•„ì´ë”” ë¹„ë°€ë²ˆí˜¸ë§Œ ì…ë ¥í•  ìˆ˜ ìˆê²Œ ì €ì¥
         Create_ID_IF.text = Save_ID;
 
-        // ÆÇ³Ú ±³Ã¼
+        // íŒë„¬ êµì²´
         CreateAccountPanel.SetActive(false);
         LoginPanel.SetActive(true);
     }
@@ -297,15 +311,15 @@ public class Title_Manager : MonoBehaviour
     {
         if (_error.GenerateErrorReport().Contains("Email address already exists"))
         {
-            MessageOnOff("ÀÌ¹ÌÁö Á¸ÀçÇÏ´Â\nÀÌ¸ŞÀÏÀÔ´Ï´Ù");
+            MessageOnOff("ì´ë¯¸ì§€ ì¡´ì¬í•˜ëŠ”\nì´ë©”ì¼ì…ë‹ˆë‹¤");
         }
         else if (_error.GenerateErrorReport().Contains("The display name entered is not available"))
         {
-            MessageOnOff("ÀÌ¹Ì Á¸ÀçÇÏ´Â ´Ğ³×ÀÓÀÔ´Ï´Ù.");
+            MessageOnOff("ì´ë¯¸ ì¡´ì¬í•˜ëŠ” ë‹‰ë„¤ì„ì…ë‹ˆë‹¤.");
         }
         else
         {
-            MessageOnOff("°¡ÀÔ ½ÇÆĞ");
+            MessageOnOff("ê°€ì… ì‹¤íŒ¨");
         }
     }
     #endregion
@@ -345,7 +359,7 @@ public class Title_Manager : MonoBehaviour
 
     public void On_Click_HidePass()
     {
-        // ºñ¹Ğ¹øÈ£ º¸¿©ÁÙÁö ¸»Áö
+        // ë¹„ë°€ë²ˆí˜¸ ë³´ì—¬ì¤„ì§€ ë§ì§€
         if (Hide_Pass_Toggle.isOn)
         {
             Login_Pass_IF.contentType = InputField.ContentType.Standard;
@@ -355,7 +369,7 @@ public class Title_Manager : MonoBehaviour
             Login_Pass_IF.contentType = InputField.ContentType.Password;
         }
 
-        // °­Á¦·Î ·¹ÀÌºí ¾÷µ¥ÀÌÆ®
+        // ê°•ì œë¡œ ë ˆì´ë¸” ì—…ë°ì´íŠ¸
         Login_Pass_IF.ForceLabelUpdate();
     }
 
@@ -378,7 +392,7 @@ public class Title_Manager : MonoBehaviour
         EmailStr = Regex.Replace(EmailStr, @"(@)(.+)$", this.DomainMapper, RegexOptions.None);
         if (invalidEmailType) isValidFormat = false;
 
-        // true ·Î ¹İÈ¯ÇÒ ½Ã, ¿Ã¹Ù¸¥ ÀÌ¸ŞÀÏ Æ÷¸ËÀÓ.
+        // true ë¡œ ë°˜í™˜í•  ì‹œ, ì˜¬ë°”ë¥¸ ì´ë©”ì¼ í¬ë§·ì„.
         isValidFormat = Regex.IsMatch(EmailStr,
                       @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
                       @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
@@ -405,14 +419,14 @@ public class Title_Manager : MonoBehaviour
     #endregion
 
     #region Data_Load
-    void LoadUserCharactersFromChunks(List<string> keys)
+    void LoadUserCharactersFromChunks(List<string> _keys)
     {
         var request = new GetUserDataRequest();
         PlayFabClientAPI.GetUserData(request, result =>
         {
             Dictionary<string, Character> loadedDict = new Dictionary<string, Character>();
 
-            foreach (string key in keys)
+            foreach (string key in _keys)
             {
                 if (result.Data.ContainsKey(key))
                 {
@@ -425,11 +439,17 @@ public class Title_Manager : MonoBehaviour
                         loadedDict[pair.key] = pair.value;
                         loadedDict[pair.key].Load_Resources(pair.value.Get_Illust_Address, pair.value.Get_Normal_Image_Address, pair.value.Get_Grade_Up_Image_Address,
                             pair.value.Get_Profile_Address, pair.value.Get_White_Illust_Address, pair.value.Get_Pixel_Illust_Address, pair.value.Get_Square_Illust_Address);
+                        loadedDict[pair.key].Reset_Item();
                     }
                 }
             }
 
             UserInfo.UserCharDict = loadedDict;
+
+            for (int i = 0; i < EquipCharNameData.Count; i++)
+            {
+                UserInfo.Equip_Characters.Add(UserInfo.UserCharDict[EquipCharNameData[i]]);
+            }
 
             foreach (var pair in UserInfo.UserCharDict)
             {
@@ -443,9 +463,152 @@ public class Title_Manager : MonoBehaviour
                     UserInfo.UserCharDict_Copy.Add(new KeyValuePair<string, Character>(charName, character));
                 }
             }
-            Debug.Log("¸ğµç Ä³¸¯ÅÍ ·Îµå ¿Ï·á");
+            UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
+            LoadUserEquipInvenFromChunks(EquipInvenDataKet);
+            Debug.Log("ëª¨ë“  ìºë¦­í„° ë¡œë“œ ì™„ë£Œ");
         },
-        error => Debug.LogError("ºÒ·¯¿À±â ½ÇÆĞ: " + error.GenerateErrorReport()));
+        error => 
+        Debug.LogError("ë¶ˆëŸ¬ì˜¤ê¸° ì‹¤íŒ¨: " + error.GenerateErrorReport())
+        );
+    }
+
+    void LoadUserInvenFromChunks(List<string> _keys)
+    {
+        var request = new GetUserDataRequest();
+        PlayFabClientAPI.GetUserData(request, 
+        result =>
+        {
+            Dictionary<string, Inventory_Item> loadedDict = new Dictionary<string, Inventory_Item>();
+
+            foreach (string key in _keys)
+            {
+                if (result.Data.ContainsKey(key))
+                {
+
+                    string json = result.Data[key].Value;
+                    InventoryDictWrapper wrapper = JsonUtility.FromJson<InventoryDictWrapper>(json);
+
+                    foreach (var pair in wrapper.items)
+                    {
+                        loadedDict[pair.key] = pair.value;
+                        loadedDict[pair.key].Load_Item_Icon(pair.value.Get_ItemIcon_Address);
+                    }
+                }
+            }
+
+            UserInfo.InventoryDict = loadedDict;
+
+            foreach (var pair in UserInfo.InventoryDict)
+            {
+                if (pair.Value.Get_InventoryType == INVENTORY_TYPE.SPEND)
+                {
+                    UserInfo.Spend_Inventory.Add(pair.Value);
+                    // Debug.Log(pair.Value.Get_Amount);
+                }
+                else if (pair.Value.Get_InventoryType == INVENTORY_TYPE.UPGRADE)
+                {
+                    UserInfo.Upgrade_Inventory.Add(pair.Value);
+                    // Debug.Log(pair.Value.Get_Amount);
+                }
+
+                // Debug.Log(pair.Value.Get_Item_Name);
+            }
+
+            Debug.Log("ëª¨ë“  ì•„ì´í…œ ë¡œë“œ ì™„ë£Œ");
+        },
+        error =>
+        Debug.LogError("ë¶ˆëŸ¬ì˜¤ê¸° ì‹¤íŒ¨: " + error.GenerateErrorReport())
+        );
+    }
+
+    private void LoadUserEquipInvenFromChunks(List<string> _keys)
+    {
+        var request = new GetUserDataRequest();
+        PlayFabClientAPI.GetUserData(request, 
+        result =>
+        {
+            List<Item> loadedList = new List<Item>();
+
+            foreach (var key in _keys)
+            {
+                if (result.Data.ContainsKey(key))
+                {
+                    string json = result.Data[key].Value;
+                    EquipItemListWrapper wrapper = JsonUtility.FromJson<EquipItemListWrapper>(json);
+
+                    if (wrapper != null && wrapper.Items != null)
+                        loadedList.AddRange(wrapper.Items);
+                }
+            }
+
+            for(int i = 0; i < loadedList.Count; i++)
+            {
+                loadedList[i].Load_Item_Icon(loadedList[i].Get_ItemImage_Path);
+            }
+
+            UserInfo.Equip_Inventory = loadedList;
+            // Debug.Log(UserInfo.Equip_Inventory.Count);
+
+            #region Type
+            foreach (Item item in UserInfo.Equip_Inventory)
+            {
+                // ë§Œì•½ ì•„ì´í…œì´ ì¥ì°©ì´ê³ 
+                if (item.Get_isEquip)
+                {
+                    // ì•„ì´í…œ ì†Œìœ  ì¤‘ì¸ ìºë¦­í„°ê°€ ìˆë‹¤ë©´
+                    if(UserInfo.UserCharDict.ContainsKey(item.Set_EquipCharName))
+                    {
+                        // ì†Œìœ  ì£¼ ë“±ë¡
+                        item.Get_OwnCharacter = UserInfo.UserCharDict[item.Set_EquipCharName];
+                        // ì°¾ì•„ì„œ ë“±ë¡
+                        UserInfo.UserCharDict[item.Set_EquipCharName].Get_EquipItems[(int)item.Get_EquipType] = item;
+                    }
+
+                    // ì•„ì´í…œì„ ì¥ì°©í•œ ìºë¦­í„°ê°€ ìˆê³ 
+                    if (item.Get_OwnCharacter != null)
+                    {
+                        // ì „íˆ¬ ë°°ì¹˜ëœ ìºë¦­í„°ë§Œí¼ ëŒë ¤ì„œ
+                        for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+                        {
+                            // ë™ì¼í•œ ìºë¦­í„°ë¼ë©´
+                            if (UserInfo.Equip_Characters[i].Get_CharName == item.Get_OwnCharacter.Get_CharName)
+                            {
+                                Debug.Log(3);
+                                UserInfo.Equip_Characters[i].Get_EquipItems[(int)item.Get_EquipType] = item;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (item.Get_EquipType == EQUIP_TYPE.WEAPON)
+                {
+                    UserInfo.Weapon_Equipment.Add(item);
+                }
+                else if (item.Get_EquipType == EQUIP_TYPE.HELMET)
+                {
+                    UserInfo.Helmet_Equipment.Add(item);
+                }
+                else if (item.Get_EquipType == EQUIP_TYPE.UPPER)
+                {
+                    UserInfo.Upper_Equipment.Add(item);
+                }
+                else if (item.Get_EquipType == EQUIP_TYPE.ACCESSORY)
+                {
+                    UserInfo.Accessory_Equipment.Add(item);
+                }
+                else if (item.Get_EquipType == EQUIP_TYPE.GLOVE)
+                {
+                    UserInfo.Glove_Equipment.Add(item);
+                }
+            }
+            #endregion
+
+            Debug.Log("ì¥ì°© ì•„ì´í…œ ë¡œë“œ ì™„ë£Œ");
+        },
+        error => 
+        Debug.LogError("ë¶ˆëŸ¬ì˜¤ê¸° ì‹¤íŒ¨: " + error.GenerateErrorReport())
+        );
     }
     #endregion
 

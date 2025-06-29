@@ -363,6 +363,7 @@ public class Store_Manager : MonoBehaviour
                 }
             }
 
+            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
             Buying_Info.SetActive(false);
         }
     }

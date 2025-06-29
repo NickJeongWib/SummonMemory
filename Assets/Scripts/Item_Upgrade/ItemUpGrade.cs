@@ -47,6 +47,7 @@ public class ItemUpGrade : MonoBehaviour
     bool[] OpValue_Locks = new bool[3];
 
     [Header("ChainUpgrade_Root")]
+    [SerializeField] GameObject ChainUpgrade_Panel;
     [SerializeField] int Cost;
     [SerializeField] int UpgradeItem_Cost;
     int MaxCost;
@@ -333,6 +334,31 @@ public class ItemUpGrade : MonoBehaviour
             Item_Info_Panel_Ref.ButtonRoot_Active(true);
             RandomOptionRoot.SetActive(true);
         }
+
+        #region Data
+        // 체인업그레이드 시 중복 호출 방지
+        if (ChainUpgrade_Panel.activeSelf == false)
+        {
+            // TODO ## ItemUpGrade 업그레이드 데이터 저장
+            //if (SelectItem.Get_isEquip)
+            //{
+            //    // 캐릭터 장착 중이라면
+            //    if (UserInfo.Equip_Characters.Contains(SelectItem.Get_OwnCharacter))
+            //    {
+            //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+            //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
+            //    }
+            //    else
+            //    {
+            //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+            //    }
+            //}
+            // 재료 저장
+            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
+            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
+        }
+        #endregion
     }
     #endregion
 
@@ -489,6 +515,26 @@ public class ItemUpGrade : MonoBehaviour
 
         LobbyManager_Ref.Refresh_UI_Gold();
 
+        // TODO ## ItemUpGrade 체인 업그레이드 데이터 저장
+        //if (SelectItem.Get_isEquip)
+        //{
+        //    // 캐릭터 장착 중이라면
+        //    if (UserInfo.Equip_Characters.Contains(SelectItem.Get_OwnCharacter))
+        //    {
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
+        //    }
+        //    else
+        //    {
+                
+        //    }
+        //}
+
+        // 재료 저장
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
+
         // Debug.Log($"{CostSum.ToString("N0")}원 사용");
         ChainAnimator.Play("ChainUp_Close");
     }
@@ -523,6 +569,25 @@ public class ItemUpGrade : MonoBehaviour
             Refresh_UserPowder();
         }
 
+        // TODO ## ItemUpGrade 옵션수치 데이터 저장
+        //if (SelectItem.Get_isEquip)
+        //{
+        //    // 캐릭터 장착 중이라면
+        //    if (UserInfo.Equip_Characters.Contains(SelectItem.Get_OwnCharacter))
+        //    {
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
+        //    }
+        //    else
+        //    {
+
+        //    }
+        //}
+
+        // 재료 저장
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
 
         SelectItem.Set_ResetOptionValue(OpValue_Locks);
         Refresh_OptionText();
@@ -560,6 +625,26 @@ public class ItemUpGrade : MonoBehaviour
 
         SelectItem.Set_ResetOption(Op_Locks);
         Refresh_OptionText();
+
+
+        // TODO ## ItemUpGrade 옵션 변경 데이터 저장
+        //if (SelectItem.Get_isEquip)
+        //{
+        //    // 캐릭터 장착 중이라면
+        //    if (UserInfo.Equip_Characters.Contains(SelectItem.Get_OwnCharacter))
+        //    {
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
+        //    }
+        //    else
+        //    {
+
+        //    }
+        //}
+        // 재료 저장
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
 
         if (SelectItem.Get_OwnCharacter != null)
             SelectItem.Get_OwnCharacter.TestState();

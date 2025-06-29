@@ -23,6 +23,11 @@ public class Equipment_Gacha_Manager : MonoBehaviour
     [SerializeField] Text FailInfoCount;
     [SerializeField] TextMeshProUGUI UserTicket;
 
+    private void Start()
+    {
+        Refresh_Equipment_Slot();
+    }
+
     #region EquipGacha_Info_Pop
     public void EquipGachaInfo_Open(int _num)
     {
@@ -113,6 +118,8 @@ public class Equipment_Gacha_Manager : MonoBehaviour
         Refresh_EquipTicket();
 
         Info_Close(Equip_GachaInfo_Panel);
+
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
     }
 
     public void Refresh_Equipment_Slot()

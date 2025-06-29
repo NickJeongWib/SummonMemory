@@ -525,6 +525,16 @@ public class Character
         Cumulative_Exp = _Cumulative_Exp;
 
     }
+
+    public void Reset_Item()
+    {
+        EquipItems = new Item[5];
+
+        for (int i = 0; i < EquipItems.Length; i++)
+        {
+            EquipItems[i] = null;
+        }
+    }
     #endregion
 
     #region Test

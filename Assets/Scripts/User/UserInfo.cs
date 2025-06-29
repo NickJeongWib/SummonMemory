@@ -30,6 +30,17 @@ public class CharacterListWrapper
 {
     public List<CharacterListPair> Characters = new List<CharacterListPair>();
 }
+
+[System.Serializable]
+public class EquipItemListWrapper
+{
+    public List<Item> Items;
+
+    public EquipItemListWrapper(List<Item> items)
+    {
+        Items = items;
+    }
+}
 #endregion
 
 public class UserInfo

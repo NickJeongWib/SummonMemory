@@ -19,6 +19,8 @@ public class Inventory_Item
     [SerializeField] string Item_Desc;
     public string Get_Item_Desc { get => Item_Desc; set => Item_Desc = value; }
 
+    [SerializeField] string ItemIcon_Address;
+    public string Get_ItemIcon_Address { get => ItemIcon_Address; }
     // 아이템 이미지 
     Sprite Item_Image;
     public Sprite Get_Item_Image { get => Item_Image; set => Item_Image = value; }
@@ -36,6 +38,7 @@ public class Inventory_Item
     public void Load_Item_Icon(string _add)
     {
         Item_Image = Resources.Load<Sprite>(_add);
+        ItemIcon_Address = _add;
     }
 
     public void Copy_Data(Inventory_Item _item)

@@ -20,5 +20,7 @@ public class Quest_List : MonoBehaviour
 
             QuestList.Add(node);
         }
+
+        Debug.Log(QuestList.Count);
     }
 }

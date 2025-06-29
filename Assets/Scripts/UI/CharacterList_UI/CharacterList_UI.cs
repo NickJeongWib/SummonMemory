@@ -103,6 +103,7 @@ public class CharacterList_UI : MonoBehaviour
         }
 
         Refresh_CharacterList();
+        Init_Interact_EquipCharBtn();
     }
 
     public void On_Click_EnterCharacter_Inven()
@@ -197,6 +198,26 @@ public class CharacterList_UI : MonoBehaviour
             {
                 Slots[i].Equip_Btn.gameObject.SetActive(false);
             }
+        }
+    }
+
+    public void Init_Interact_EquipCharBtn()
+    {
+        int count = 0;
+
+        // 만약 캐릭터 교체 버튼을 활성화 시 캐릭터정보창으로 이동 할 수 있는 버튼을 활성화 시키고
+        // 클릭이 안되게 interactable를 비활성화 시킨다.
+        for (int on = 0; on < UserInfo.Equip_Characters.Count; on++)
+        {
+            EquipSlot_List[on].SelectBtn.gameObject.SetActive(true);
+            EquipSlot_List[on].SelectBtn.interactable = true;
+            count = on;
+        }
+
+        // 캐릭터 장착 수 외 나머지 칸은 버튼을 비활성화 시킨다.
+        for (int off = count + 1; off < EquipSlot_List.Count; off++)
+        {
+            EquipSlot_List[off].SelectBtn.gameObject.SetActive(false);
         }
     }
     #endregion
@@ -480,7 +501,7 @@ public class CharacterList_UI : MonoBehaviour
     {
         CharacterInfo_Transition.SetActive(true);
         GameManager.Instance.Get_SelectChar = _slot.character;
-        Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
+        // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
 
         Refresh_EquipItem_Image();
 
@@ -683,7 +704,7 @@ public class CharacterList_UI : MonoBehaviour
 
     public void Refresh_EquipItem_Image()
     {
-        Debug.Log(GameManager.Instance.Get_SelectChar);
+        // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
 
         for (int i = 0; i < CharEquipment_Btns.Length; i++)
         {

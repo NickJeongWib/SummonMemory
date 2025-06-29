@@ -113,8 +113,9 @@ public static class Define
     public enum PACKETTYPE
     {
         CHARLIST,
-        CLEAR_CHAR_LIST,
         EQUIP_CHAR_LIST,
         CLEAR_EQUIP_CHAR,
+        ITEM_INVENTORY,
+        EQUIP_ITEM_INVENTORY,
     }
 }

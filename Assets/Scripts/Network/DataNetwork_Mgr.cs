@@ -70,13 +70,107 @@ public class DataNetwork_Mgr : MonoBehaviour
         {
             UpdateClearEquipCharCo();
         }
-        else if (PacketBuff[0] == PACKETTYPE.CLEAR_CHAR_LIST)
+        else if (PacketBuff[0] == PACKETTYPE.ITEM_INVENTORY)
         {
-            UpdateClearCharCo();
+            UpdateItemInvenCo();
         }
-
+        else if (PacketBuff[0] == PACKETTYPE.EQUIP_ITEM_INVENTORY)
+        {
+            UpdateEquipItemInvenCo();
+        }
+        
         PacketBuff.RemoveAt(0);
     }
+
+    #region Equip_Item_Inven_Data
+    private void UpdateEquipItemInvenCo()
+    {
+        // UID가 없다면 return;
+        if (UserInfo.UID == "")
+            return;
+
+        var allEntries = UserInfo.Equip_Inventory;
+        int chunkSize = 10;
+
+        int totalChunks = Mathf.CeilToInt(allEntries.Count / (float)chunkSize);
+
+        for (int i = 0; i < totalChunks; i++)
+        {
+            var chunk = allEntries.Skip(i * chunkSize).Take(chunkSize).ToList();
+
+            var wrapper = new EquipItemListWrapper(chunk);
+            string json = JsonUtility.ToJson(wrapper, true);
+            string keyName = $"Equip_Inven_Part_{i + 1}";
+            Debug.Log(json);
+
+            var request = new UpdateUserDataRequest
+            {
+                Data = new Dictionary<string, string> {
+                { 
+                    keyName,
+                    json 
+                }
+            }};
+
+            PlayFabClientAPI.UpdateUserData(request,
+            (_result) =>
+            {
+                Debug.Log("장착 아이템 리스트 저장 성공");
+            },
+            (_error) =>
+            {
+                Debug.Log(_error.GenerateErrorReport());
+                Debug.Log("장착 아이템 리스트 저장 실패");
+            });
+        }
+    }
+    #endregion
+
+    #region Item_InvenUpdate
+    private void UpdateItemInvenCo()
+    {
+        // UID가 없다면 return;
+        if (UserInfo.UID == "")
+            return;
+
+        var allEntries = UserInfo.InventoryDict.ToList(); // Dictionary → List<KeyValuePair>
+        int chunkSize = 10;
+
+        int totalChunks = Mathf.CeilToInt(allEntries.Count / (float)chunkSize);
+
+        for (int i = 0; i < totalChunks; i++)
+        {
+            var chunk = allEntries.Skip(i * chunkSize).Take(chunkSize);
+
+            InventoryDictWrapper wrapper = new InventoryDictWrapper();
+            foreach (var pair in chunk)
+            {
+                wrapper.items.Add(new InventoryItemPair { key = pair.Key, value = pair.Value });
+            }
+
+            string json = JsonUtility.ToJson(wrapper);
+            string keyName = $"Item_Inven_Part_{i + 1}";
+
+            var request = new UpdateUserDataRequest
+            {
+                Data = new Dictionary<string, string> {
+                { keyName, json }
+            }
+            };
+
+            PlayFabClientAPI.UpdateUserData(request,
+            (_result) =>
+            {
+                Debug.Log("아이템 리스트 저장 성공");
+            },
+            (_error) =>
+            {
+                Debug.Log(_error.GenerateErrorReport());
+                Debug.Log("아이템 리스트 저장 실패");
+            });
+        }
+    }
+    #endregion
 
     #region Clear_Equip_Char_Data
     private void UpdateClearEquipCharCo()
@@ -265,72 +359,6 @@ public class DataNetwork_Mgr : MonoBehaviour
         if (UserInfo.UID == "")
             return;
 
-        //Dictionary<string, string> CharData = new Dictionary<string, string>();
-        //List<KeyValuePair<string, Character>> CharDict_Copy;
-        //CharDict_Copy = UserInfo.UserCharDict.ToList();
-
-        //for (int i = 0; i < CharDict_Copy.Count; i++)
-        //{
-        //    string Data = "";
-        //    #region Data_Save
-        //    // Info
-        //    Data += $"{CharDict_Copy[i].Value.Get_CharacterID}|";          // 0
-        //    Data += $"{CharDict_Copy[i].Value.Get_CharName}|";             // 1
-        //    Data += $"{CharDict_Copy[i].Value.Get_CharEngName}|";          // 2
-        //    Data += $"{CharDict_Copy[i].Value.Get_CharGrade}|";            // 3
-        //    Data += $"{CharDict_Copy[i].Value.Get_CharType}|";             // 4
-        //    Data += $"{CharDict_Copy[i].Value.Get_CharElement}|";          // 5
-        //    Data += $"{CharDict_Copy[i].Value.Get_CharStar}|";             // 6
-
-        //    // Stat
-        //    Data += $"{CharDict_Copy[i].Value.Get_BaseHP}|";               // 7
-        //    Data += $"{CharDict_Copy[i].Value.Get_CharHP}|";               // 8
-        //    Data += $"{CharDict_Copy[i].Value.Get_BaseAtk}|";              // 9
-        //    Data += $"{CharDict_Copy[i].Value.Get_CharATK}|";              // 10
-        //    Data += $"{CharDict_Copy[i].Value.Get_BaseDef}|";              // 11
-        //    Data += $"{CharDict_Copy[i].Value.Get_CharDEF}|";              // 12
-        //    Data += $"{CharDict_Copy[i].Value.Get_BaseCRID}|";             // 13
-        //    Data += $"{CharDict_Copy[i].Value.Get_Char_CRT_Damage}|";      // 14
-        //    Data += $"{CharDict_Copy[i].Value.Get_BaseCRIR}|";             // 15
-        //    Data += $"{CharDict_Copy[i].Value.Get_Char_CRT_Rate}|";        // 16
-        //    Data += $"{CharDict_Copy[i].Value.Get_CombatPower}|";          // 17
-
-        //    // Growing
-        //    Data += $"{CharDict_Copy[i].Value.Get_linearFactor}|";         // 18
-        //    Data += $"{CharDict_Copy[i].Value.Get_expFactor}|";            // 19
-        //    Data += $"{CharDict_Copy[i].Value.Get_expMultiplier}|";        // 20
-        //    Data += $"{CharDict_Copy[i].Value.Get_transitionLevel}|";      // 21
-
-        //    // Lv
-        //    Data += $"{CharDict_Copy[i].Value.Get_Character_Lv}|";         // 22
-        //    Data += $"{CharDict_Copy[i].Value.Get_Max_Lv}|";               // 23
-        //    Data += $"{CharDict_Copy[i].Value.Get_CurrentExp}|";           // 24
-        //    Data += $"{CharDict_Copy[i].Value.Get_Cumulative_Exp}|";       // 25
-
-        //    // Path
-        //    Data += $"{CharDict_Copy[i].Value.Get_Illust_Address}|";       // 26
-        //    Data += $"{CharDict_Copy[i].Value.Get_Normal_Image_Address}|"; // 27
-        //    Data += $"{CharDict_Copy[i].Value.Get_Grade_Up_Image_Address}|";// 28
-        //    Data += $"{CharDict_Copy[i].Value.Get_Profile_Address}|";      // 29
-        //    Data += $"{CharDict_Copy[i].Value.Get_White_Illust_Address}|"; // 30
-        //    Data += $"{CharDict_Copy[i].Value.Get_Pixel_Illust_Address}|"; // 31
-
-        //    if (CharDict_Copy[i].Value.Get_Square_Illust_Address == "null") // 32
-        //    {
-        //        Data += $"NULL";
-        //    }
-        //    else
-        //    {
-        //        Data += $"{CharDict_Copy[i].Value.Get_Square_Illust_Address}";
-        //    }
-        //    #endregion
-        //    CharData.Add($"Character_{i}", Data);
-        //}
-
-        //var request = new UpdateUserDataRequest()
-        //{
-        //    Data = CharData
-        //};
         var allEntries = UserInfo.UserCharDict.ToList(); // Dictionary → List<KeyValuePair>
         int chunkSize = 10;
 
@@ -366,7 +394,6 @@ public class DataNetwork_Mgr : MonoBehaviour
                 Debug.Log(_error.GenerateErrorReport());
                 Debug.Log("캐릭터 리스트 원본 저장 실패");
             });
-
         }
     }
     #endregion

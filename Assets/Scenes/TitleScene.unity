@@ -2584,6 +2584,7 @@ GameObject:
   - component: {fileID: 1905404841}
   - component: {fileID: 1905404840}
   - component: {fileID: 1905404839}
+  - component: {fileID: 1905404843}
   m_Layer: 0
   m_Name: Game_DB
   m_TagString: Untagged
@@ -2662,6 +2663,19 @@ MonoBehaviour:
   availSheets: Character_DB/Character_Image_Address/Character_Growing_State/Item_DB/Store_Item_DB/EquipOption_DB/Level_DB/Inventory_Item_DB
   generateFolderPath: /GenerateGoogleSheet
   googleSheetSO: {fileID: 11400000, guid: 3e3846e2bbbd87d4388ef03d8979f93f, type: 2}
+--- !u!114 &1905404843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905404837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ee35307e6482b4ead0c1a1187a7be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GoogleSheetSORef: {fileID: 11400000, guid: 3e3846e2bbbd87d4388ef03d8979f93f, type: 2}
 --- !u!1 &1914142606
 GameObject:
   m_ObjectHideFlags: 0

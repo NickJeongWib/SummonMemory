@@ -189,8 +189,11 @@ public class Inventory_UI : MonoBehaviour
             // 아이템을 보유 한 경우
             if (UserInfo.Spend_Inventory[i].Get_Amount >= 1)
             {
+                Debug.Log(SpendSlot_List[index]);
+
                 // 유저가 들고 있는 아이템 정보 세팅
                 SpendSlot_List[index].Set_Info(UserInfo.Spend_Inventory[i]);
+
                 // 슬롯 숫자 증가
                 index++;
             }
@@ -217,6 +220,12 @@ public class Inventory_UI : MonoBehaviour
                 index++;
             }
         }
+    }
+
+    public void Item_Slot_Refresh()
+    {
+        Spend_Slot_Refresh();
+        Upgrade_Slot_Refresh();
     }
     #endregion
 

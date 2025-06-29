@@ -19,7 +19,6 @@ public class Character_List : MonoBehaviour
 
     private void Awake()
     {
-
         #region Character_Level
         for (int i = 0; i < GoogleSheetSORef.Level_DBList.Count; i++)
         {
