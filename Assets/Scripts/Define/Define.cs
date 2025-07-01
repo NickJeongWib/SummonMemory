@@ -117,5 +117,7 @@ public static class Define
         CLEAR_EQUIP_CHAR,
         ITEM_INVENTORY,
         EQUIP_ITEM_INVENTORY,
+        DIA,
+        MONEY,
     }
 }

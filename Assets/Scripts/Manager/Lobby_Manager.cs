@@ -53,7 +53,15 @@ public class Lobby_Manager : MonoBehaviour
             UserInfo.UserCharDict_Copy.RemoveAt(0);
             UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
 
+            // 전투배치 캐릭터 저장
             DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.EQUIP_CHAR_LIST);
+            DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.CHARLIST);
+
+            UserInfo.Money = 10000000;
+            UserInfo.Dia = 10000;
+
+            DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.DIA);
+            DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.MONEY);
         }
 
         // Debug.Log(UserInfo.Equip_Characters[0].Get_CharName);
@@ -157,7 +165,7 @@ public class Lobby_Manager : MonoBehaviour
     #endregion
 
     #region Lobby_Currency_Text_Refresh
-    public void Refresh_UI_Gold()
+    public void Refresh_UI_Money()
     {
         // 골드 값 초기화
         for (int i = 0; i < GoldCount_Texts.Length; i++)
@@ -178,7 +186,7 @@ public class Lobby_Manager : MonoBehaviour
 
     void InitData()
     {
-        Refresh_UI_Gold();
+        Refresh_UI_Money();
         Refresh_UI_Dia();
     }
 

@@ -90,7 +90,7 @@ public class UserInfo
 
     [Header("---Currency---")]
     public static int Money = 10000000;
-    public static int Dia;
+    public static int Dia = 10000;
     public static int EnterHealth;
 
     public static int SummonTicket;

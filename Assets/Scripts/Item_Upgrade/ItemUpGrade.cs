@@ -513,7 +513,7 @@ public class ItemUpGrade : MonoBehaviour
             }
         }
 
-        LobbyManager_Ref.Refresh_UI_Gold();
+        LobbyManager_Ref.Refresh_UI_Money();
 
         // TODO ## ItemUpGrade 체인 업그레이드 데이터 저장
         //if (SelectItem.Get_isEquip)
@@ -558,7 +558,7 @@ public class ItemUpGrade : MonoBehaviour
             UserInfo.Money -= ResetOptionValue_Cost;
             UserInfo.InventoryDict["재련 가루"].Get_Amount -= ResetOptionValue_Item_Cost;
 
-            LobbyManager_Ref.Refresh_UI_Gold();
+            LobbyManager_Ref.Refresh_UI_Money();
 
             // 인벤토리 초기화
             UserInfo.Remove_Inventory_Item();
@@ -612,7 +612,7 @@ public class ItemUpGrade : MonoBehaviour
             UserInfo.Money -= ResetOptionValue_Cost;
             UserInfo.InventoryDict["재련 수정"].Get_Amount -= ResetOptionItem_Cost;
 
-            LobbyManager_Ref.Refresh_UI_Gold();
+            LobbyManager_Ref.Refresh_UI_Money();
 
             // 인벤토리 초기화
             UserInfo.Remove_Inventory_Item();

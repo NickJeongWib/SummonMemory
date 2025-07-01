@@ -250,7 +250,7 @@ public class Store_Manager : MonoBehaviour
                 }
 
                 UserInfo.Money -= StoreItem_Info.Get_ConsumeCount;
-                LobbyMgr_Ref.Refresh_UI_Gold();
+                LobbyMgr_Ref.Refresh_UI_Money();
             }
                 
             UserInfo.Dia += Dia_SelectCount;
@@ -307,6 +307,7 @@ public class Store_Manager : MonoBehaviour
                         // 구매
                         UserInfo.Dia -= (StoreItem_Info.Get_ConsumeCount * Buy_Count);
                         LobbyMgr_Ref.Refresh_UI_Dia();
+                        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.DIA);
                     }
                     // 소모재화가 골드라면
                     else if (StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.MONEY)
@@ -321,7 +322,8 @@ public class Store_Manager : MonoBehaviour
 
                         // 구매
                         UserInfo.Money -= StoreItem_Info.Get_ConsumeCount;
-                        LobbyMgr_Ref.Refresh_UI_Gold();
+                        LobbyMgr_Ref.Refresh_UI_Money();
+                        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.MONEY);
                     }
                 }
                 else
@@ -345,6 +347,8 @@ public class Store_Manager : MonoBehaviour
                             break;
                         }
                     }
+
+                    DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
                 }
                 // 강화 아이템
                 else if (StoreItem_Info.Get_InvenType == INVENTORY_TYPE.UPGRADE)
@@ -360,10 +364,11 @@ public class Store_Manager : MonoBehaviour
                             break;
                         }
                     }
+
+                    DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
                 }
             }
 
-            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
             Buying_Info.SetActive(false);
         }
     }

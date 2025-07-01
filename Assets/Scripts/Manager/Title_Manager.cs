@@ -137,7 +137,7 @@ public class Title_Manager : MonoBehaviour
             UserInfo.UserName = _result.InfoResultPayload.PlayerProfile.DisplayName;
             isLoginSuccess = true;
 
-
+            int GetValue = 0;
 
             #region Character_Data_Load
             foreach (var eachData in _result.InfoResultPayload.UserData)
@@ -160,6 +160,7 @@ public class Title_Manager : MonoBehaviour
                     string Data = eachData.Value.Value;
                     string[] strArr = Data.Split('|');
                     EquipCharNameData.Add(strArr[1]);
+                    Debug.Log(EquipCharNameData.Count);
                     #region Data_Load
                     //int.TryParse(strArr[0], out int ID);
                     //CHAR_GRADE.TryParse(strArr[3], out CHAR_GRADE CharGrade);
@@ -194,9 +195,22 @@ public class Title_Manager : MonoBehaviour
                     //Debug.Log(UserInfo.Equip_Characters.Count);
                     #endregion
                 }
-            }
+                else if (eachData.Key.Contains("UserDia"))
+                {
+                    if(int.TryParse(eachData.Value.Value, out GetValue))
+                    {
+                        UserInfo.Dia = GetValue;
+                    }
 
-            // Debug.Log(EquipInvenDataKet.Count);
+                }
+                else if (eachData.Key.Contains("UserMoney"))
+                {
+                    if(int.TryParse(eachData.Value.Value, out GetValue))
+                    {
+                        UserInfo.Money = GetValue;
+                    }
+                }
+            }
 
             LoadUserCharactersFromChunks(CharDataKey);
             LoadUserInvenFromChunks(InvenDataKet);
@@ -573,7 +587,6 @@ public class Title_Manager : MonoBehaviour
                             // 동일한 캐릭터라면
                             if (UserInfo.Equip_Characters[i].Get_CharName == item.Get_OwnCharacter.Get_CharName)
                             {
-                                Debug.Log(3);
                                 UserInfo.Equip_Characters[i].Get_EquipItems[(int)item.Get_EquipType] = item;
                                 break;
                             }

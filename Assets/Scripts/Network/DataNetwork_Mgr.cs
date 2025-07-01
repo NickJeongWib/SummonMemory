@@ -78,9 +78,76 @@ public class DataNetwork_Mgr : MonoBehaviour
         {
             UpdateEquipItemInvenCo();
         }
-        
+        else if (PacketBuff[0] == PACKETTYPE.DIA)
+        {
+            UpdateDiaCo();
+        }
+        else if (PacketBuff[0] == PACKETTYPE.MONEY)
+        {
+            UpdateMoneyCo();
+        }
         PacketBuff.RemoveAt(0);
     }
+
+    #region Dia_Data
+    private void UpdateDiaCo()
+    {
+        // UID가 없다면 return;
+        if (UserInfo.UID == "")
+            return;
+
+        var request = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string> {
+                {
+                    "UserDia",
+                    UserInfo.Dia.ToString()
+                }
+            }
+        };
+
+        PlayFabClientAPI.UpdateUserData(request,
+           (_result) =>
+           {
+               Debug.Log("다이아 저장 성공");
+           },
+           (_error) =>
+           {
+               Debug.Log(_error.GenerateErrorReport());
+               Debug.Log("다이아 저장 실패");
+           });
+    }
+    #endregion
+
+    #region Money_Data
+    private void UpdateMoneyCo()
+    {
+        // UID가 없다면 return;
+        if (UserInfo.UID == "")
+            return;
+
+        var request = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string> {
+                {
+                    "UserMoney",
+                    UserInfo.Money.ToString()
+                }
+            }
+        };
+
+        PlayFabClientAPI.UpdateUserData(request,
+           (_result) =>
+           {
+               Debug.Log("보유골드 저장 성공");
+           },
+           (_error) =>
+           {
+               Debug.Log(_error.GenerateErrorReport());
+               Debug.Log("보유골드 저장 실패");
+           });
+    }
+    #endregion
 
     #region Equip_Item_Inven_Data
     private void UpdateEquipItemInvenCo()
