@@ -452,7 +452,8 @@ public class Title_Manager : MonoBehaviour
                     {
                         loadedDict[pair.key] = pair.value;
                         loadedDict[pair.key].Load_Resources(pair.value.Get_Illust_Address, pair.value.Get_Normal_Image_Address, pair.value.Get_Grade_Up_Image_Address,
-                            pair.value.Get_Profile_Address, pair.value.Get_White_Illust_Address, pair.value.Get_Pixel_Illust_Address, pair.value.Get_Square_Illust_Address);
+                            pair.value.Get_Profile_Address, pair.value.Get_White_Illust_Address, pair.value.Get_Pixel_Illust_Address, pair.value.Get_Icon_Address, pair.value.Get_BG_Address,
+                            pair.value.Get_Square_Illust_Address);
                         loadedDict[pair.key].Reset_Item();
                     }
                 }

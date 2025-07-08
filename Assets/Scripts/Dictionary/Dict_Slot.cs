@@ -21,7 +21,8 @@ public class Dict_Slot : MonoBehaviour
         if (Slot_Char == null)
         {
             Slot_Char = _character;
-            CharImage.sprite = Slot_Char.Get_Normal_Img;
+            // CharImage.sprite = Slot_Char.Get_Normal_Img;
+            CharImage.sprite = Slot_Char.Get_Icon_Img;
         }
 
         Select_Btn.interactable = _isExist;

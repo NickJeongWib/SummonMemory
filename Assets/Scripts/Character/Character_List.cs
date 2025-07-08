@@ -44,7 +44,7 @@ public class Character_List : MonoBehaviour
             Node.Load_Resources(GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST,
                GoogleSheetSORef.Character_Image_AddressList[i].CHAR_NORMAL_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_GRADE_UP_IMAGE,
                GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PROFILE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_WHITE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PIXEL_IMAGE,
-               GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST_SQUARE);
+               GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ICON_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_BG_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST_SQUARE);
 
             Node.Load_Growing_State(GoogleSheetSORef.Character_Growing_StateList[i].LINEAR_FACTOR, GoogleSheetSORef.Character_Growing_StateList[i].EXP_FACTOR, GoogleSheetSORef.Character_Growing_StateList[i].EXP_MULTIPLIER,
                  GoogleSheetSORef.Character_Growing_StateList[i].TRANSITION_LEVEL);
@@ -82,5 +82,7 @@ public class Character_List : MonoBehaviour
             }
         }
         #endregion
+
+        GameManager.Instance.Get_CharMaxCount = GoogleSheetSORef.Character_DBList.Count;
     }
 }

@@ -119,6 +119,12 @@ public class Character
     [SerializeField] string Pixel_Illust_Address;
     public string Get_Pixel_Illust_Address { get => Pixel_Illust_Address; }
 
+    [SerializeField] string Icon_Address;
+    public string Get_Icon_Address { get => Icon_Address; }
+
+    [SerializeField] string BG_Address;
+    public string Get_BG_Address { get => BG_Address; }
+
     // 이미지들 
     Sprite Illust_Img;
     public Sprite Get_Illust_Img { get => Illust_Img; }
@@ -140,6 +146,12 @@ public class Character
 
     Sprite Pixel_Img;
     public Sprite Get_Pixel_Img { get => Pixel_Img; }
+
+    Sprite BG_Img;
+    public Sprite Get_BG_Img { get => BG_Img; }
+
+    Sprite Icon_Img;
+    public Sprite Get_Icon_Img { get => Icon_Img; }
     #endregion
 
     #region Constructor
@@ -187,7 +199,8 @@ public class Character
     #endregion
 
     #region Load_Resources
-    public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd, string _whiteIllustAdd, string _pixelIllustAdd, string _squareIllustAdd = null)
+    public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd, string _whiteIllustAdd, string _pixelIllustAdd, 
+        string _iconAdd, string _bgAdd = null, string _squareIllustAdd = null)
     {
         // 이미지 주소
         Illust_Address = _illustAdd;
@@ -195,8 +208,11 @@ public class Character
         Grade_Up_Image_Address = _gradeUpAdd;
         Profile_Address = _profileAdd;
         White_Illust_Address = _whiteIllustAdd;
-        Square_Illust_Address = _squareIllustAdd;
         Pixel_Illust_Address = _pixelIllustAdd;
+        Icon_Address = _iconAdd;
+
+        Square_Illust_Address = _squareIllustAdd;
+        BG_Address = _bgAdd;
 
         // 이미지 로드
         Illust_Img = Resources.Load<Sprite>(Illust_Address);
@@ -204,8 +220,11 @@ public class Character
         Grade_Up_Img = Resources.Load<Sprite>(Grade_Up_Image_Address);
         Profile_Img = Resources.Load<Sprite>(Profile_Address);
         WhiteIllust_Img = Resources.Load<Sprite>(White_Illust_Address);
-        SquareIllust_Img = Resources.Load<Sprite>(Square_Illust_Address);
         Pixel_Img = Resources.Load<Sprite>(Pixel_Illust_Address);
+        Icon_Img = Resources.Load<Sprite>(Icon_Address);
+
+        SquareIllust_Img = Resources.Load<Sprite>(Square_Illust_Address);
+        BG_Img = Resources.Load<Sprite>(BG_Address);
     }
     #endregion
 
@@ -497,6 +516,32 @@ public class Character
             (Char_CRT_DAMAGE * 100 * 10.0f) + (Char_CRT_RATE * 100 * 3.0f);
 
         return CombatPower.ToString("N0");
+    }
+    #endregion
+
+    #region Get_Profile_Sprite
+    public Sprite Get_Profile_Sprite()
+    {
+        if (CharGrade == CHAR_GRADE.R)
+        {
+            return Normal_Img;
+        }
+        else
+        {
+            return Get_BG_Img;
+        }
+    }
+
+    public Sprite Get_Lobby_Sprite()
+    {
+        if (CharGrade == CHAR_GRADE.R)
+        {
+            return Illust_Img;
+        }
+        else
+        {
+            return SquareIllust_Img;
+        }
     }
     #endregion
 

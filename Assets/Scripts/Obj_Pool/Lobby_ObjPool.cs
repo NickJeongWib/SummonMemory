@@ -50,6 +50,10 @@ public class Lobby_ObjPool : MonoBehaviour
     [SerializeField] Transform SR_Dict_Tr;
     [SerializeField] Transform SSR_Dict_Tr;
 
+    [Header("---Profile_Slot---")]
+    [SerializeField] GameObject Profile_Prefab;
+    [SerializeField] Transform Profile_Tr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -184,6 +188,36 @@ public class Lobby_ObjPool : MonoBehaviour
             questSlot.GetComponent<Quest_Slot>().Set_QuestUI_Ref = QuestUI_Ref;
             questSlot.GetComponent<Quest_Slot>().Set_UI(Quest_List.QuestList[i].Get_RewardType, Quest_List.QuestList[i].Get_Reward_Img,
                 Quest_List.QuestList[i].Get_QuestTitle, Quest_List.QuestList[i].Get_QuestDesc, Quest_List.QuestList[i].Get_RewardAmount);
+        }
+        #endregion
+
+        #region Profile_Slot
+        for (int i = 0; i < Character_List.R_Char.Count; i++)
+        {
+            GameObject profileSlot = Instantiate(Profile_Prefab);
+            profileSlot.transform.SetParent(Profile_Tr, false);
+            profileSlot.GetComponent<Profile_Slot>().Set_LobbyMgr(LobbyManagerRef);
+            profileSlot.GetComponent<Profile_Slot>().Set_Change_Char_Profile(Character_List.R_Char[i].Get_CharName,
+            Character_List.R_Char[i].Get_Lobby_Sprite(), Character_List.R_Char[i].Get_Profile_Sprite(), Character_List.R_Char[i].Get_Icon_Img);
+            LobbyManagerRef.UserInfo_ProfileList.Add(profileSlot.GetComponent<Profile_Slot>());
+        }
+        for (int i = 0; i < Character_List.SR_Char.Count; i++)
+        {
+            GameObject profileSlot = Instantiate(Profile_Prefab);
+            profileSlot.transform.SetParent(Profile_Tr, false);
+            profileSlot.GetComponent<Profile_Slot>().Set_LobbyMgr(LobbyManagerRef);
+            profileSlot.GetComponent<Profile_Slot>().Set_Change_Char_Profile(Character_List.SR_Char[i].Get_CharName,
+            Character_List.SR_Char[i].Get_Lobby_Sprite(), Character_List.SR_Char[i].Get_Profile_Sprite(), Character_List.SR_Char[i].Get_Icon_Img);
+            LobbyManagerRef.UserInfo_ProfileList.Add(profileSlot.GetComponent<Profile_Slot>());
+        }
+        for (int i = 0; i < Character_List.SSR_Char.Count; i++)
+        {
+            GameObject profileSlot = Instantiate(Profile_Prefab);
+            profileSlot.transform.SetParent(Profile_Tr, false);
+            profileSlot.GetComponent<Profile_Slot>().Set_LobbyMgr(LobbyManagerRef);
+            profileSlot.GetComponent<Profile_Slot>().Set_Change_Char_Profile(Character_List.SSR_Char[i].Get_CharName,
+            Character_List.SSR_Char[i].Get_Lobby_Sprite(), Character_List.SSR_Char[i].Get_Profile_Sprite(), Character_List.SSR_Char[i].Get_Icon_Img);
+            LobbyManagerRef.UserInfo_ProfileList.Add(profileSlot.GetComponent<Profile_Slot>());
         }
         #endregion
     }

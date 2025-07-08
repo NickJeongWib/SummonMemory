@@ -34,6 +34,21 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] Text[] DiaCount_Texts;
     [SerializeField] Text[] GoldCount_Texts;
 
+    public List<Profile_Slot> UserInfo_ProfileList = new List<Profile_Slot>();
+    [SerializeField] Image[] UserProfile;
+    [SerializeField] Image Profile_Panel_BG;
+    [SerializeField] Image Lobby_Char_Illust;
+    [SerializeField] GameObject ProfileChar_Panel;
+    public GameObject Get_ProfileChar_Panel { get => ProfileChar_Panel; }
+
+    [Header("---UserInfo---")]
+    [SerializeField] Text LobbyUserName_Text;
+
+    [Header("---UserInfo_Panel---")]
+    [SerializeField] Text UID_Text;
+    [SerializeField] Text UserInfoName_Text;
+    [SerializeField] Text UserCombatPower_Text;
+    [SerializeField] Text UserCharAmount_Text;
 
     private void Awake()
     {
@@ -63,8 +78,6 @@ public class Lobby_Manager : MonoBehaviour
             DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.DIA);
             DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.MONEY);
         }
-
-        // Debug.Log(UserInfo.Equip_Characters[0].Get_CharName);
 
         InitData();
     }
@@ -184,10 +197,75 @@ public class Lobby_Manager : MonoBehaviour
     }
     #endregion
 
+    #region UserData_Refresh
+    void Refresh_UserName()
+    {
+        LobbyUserName_Text.text = UserInfo.UserName;
+        UserInfoName_Text.text = UserInfo.UserName;
+    }
+
+    public void Refresh_User_CharAmount()
+    {
+        float amountPercent = ((float)UserInfo.UserCharDict.Count / (float)GameManager.Instance.Get_CharMaxCount) * 100;
+        UserCharAmount_Text.text = 
+            $"캐릭터 보유 {UserInfo.UserCharDict.Count}/{GameManager.Instance.Get_CharMaxCount}  <color=orange>{amountPercent.ToString("N0")}%</color>";
+    }
+
+    public void Refresh_User_CombatPower()
+    {
+        float TotalCombat = 0;
+
+        foreach (Character character in UserInfo.UserCharDict.Values)
+        {
+            character.Calc_CombatPower();
+            TotalCombat += character.Get_CombatPower;
+        }
+
+        UserCombatPower_Text.text = $"총 전투력 {TotalCombat.ToString("N0")}";
+    }
+
+    #endregion
+
+    #region UserProfile_Refresh
+    // 캐릭터 추가 시 프로필 잠금 해제
+    public void Refresh_OwnChar_Profile()
+    {
+        for (int i = 0; i < UserInfo_ProfileList.Count; i++)
+        {
+            if(UserInfo.UserCharDict.ContainsKey(UserInfo_ProfileList[i].Get_Profile_Char_Name))
+            {
+                UserInfo_ProfileList[i].Set_UnLock(true);
+            }
+            else
+            {
+                UserInfo_ProfileList[i].Set_UnLock(false);
+            }
+        }
+    }
+
+    // 캐릭터 프로필 선택 창에서 캐릭터 선택 시 이미지 교체
+    public void Select_Char_Icon(Sprite _selectIcon, Sprite _panel_BG, Sprite _lobbyChar)
+    {
+        for(int i = 0; i < UserProfile.Length; i++)
+        {
+            UserProfile[i].sprite = _selectIcon;
+        }
+
+        Profile_Panel_BG.sprite = _panel_BG;
+        Lobby_Char_Illust.sprite = _lobbyChar;
+    }
+    #endregion
+
     void InitData()
     {
+        UID_Text.text = $"UID : {UserInfo.UID}";
+
+        // 불러온 초기 데이터 표시하기 위한 작업
         Refresh_UI_Money();
         Refresh_UI_Dia();
+        Refresh_UserName();
+        Refresh_User_CombatPower();
+        Refresh_User_CharAmount();
     }
 
     public void Reset_SelectChar()
@@ -222,6 +300,7 @@ public class Lobby_Manager : MonoBehaviour
         UserInfo.CharacterList_ToJson();
     }
     #endregion
+
 }
 
 [System.Serializable]

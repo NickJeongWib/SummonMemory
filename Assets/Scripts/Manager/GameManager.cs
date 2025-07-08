@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     Character SelectCharacter;
     public Character Get_SelectChar { get => SelectCharacter; set => SelectCharacter = value; }
     public static GameManager Instance;
-
     public bool TestMode = false;
+
+    int CharMaxCount;
+    public int Get_CharMaxCount { get => CharMaxCount; set => CharMaxCount = value; }
 
     // Start is called before the first frame update
     void Awake()

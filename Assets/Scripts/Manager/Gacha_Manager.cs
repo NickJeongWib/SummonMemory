@@ -9,7 +9,7 @@ using static Define;
 
 public class Gacha_Manager : MonoBehaviour
 {
-
+    [SerializeField] Lobby_Manager LobbyManger_Ref;
     [SerializeField] CharacterList_UI CharListRef;
     [SerializeField] Dictionary_Ctrl DictionaryCtrl_Ref;
 
@@ -267,6 +267,11 @@ public class Gacha_Manager : MonoBehaviour
 
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_EQUIP_CHAR);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
+
+        LobbyManger_Ref.Refresh_User_CharAmount();
+        LobbyManger_Ref.Refresh_User_CombatPower();
+        LobbyManger_Ref.Refresh_OwnChar_Profile();
         Gacha_Video_Play();
     }
     #endregion

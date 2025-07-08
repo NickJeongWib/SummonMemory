@@ -48,6 +48,8 @@ public class UserInfo
     #region User
     public static string UID;
     public static string UserName;
+
+    public static UserProfile_Set Profile_Setting = new UserProfile_Set();
     #endregion
 
     #region Character

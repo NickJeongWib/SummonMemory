@@ -120,6 +120,7 @@ public class Equipment_Gacha_Manager : MonoBehaviour
         Info_Close(Equip_GachaInfo_Panel);
 
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
     }
 
     public void Refresh_Equipment_Slot()

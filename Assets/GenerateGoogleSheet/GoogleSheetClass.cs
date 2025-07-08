@@ -43,6 +43,8 @@ public class Character_Image_Address
 	public string CHAR_WHITE_IMAGE;
 	public string CHAR_ILLUST_SQUARE;
 	public string CHAR_PIXEL_IMAGE;
+	public string CHAR_ICON_IMAGE;
+	public string CHAR_BG_IMAGE;
 }
 
 [Serializable]
