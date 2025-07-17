@@ -119,5 +119,6 @@ public static class Define
         EQUIP_ITEM_INVENTORY,
         DIA,
         MONEY,
+        PROFILE_IMG,
     }
 }

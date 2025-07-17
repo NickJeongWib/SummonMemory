@@ -142,7 +142,7 @@ public class Title_Manager : MonoBehaviour
             #region Character_Data_Load
             foreach (var eachData in _result.InfoResultPayload.UserData)
             {
-
+                // Playfab 저장 데이터 불러오기
                 if (eachData.Key.Contains("CharData_Part"))
                 {
                     CharDataKey.Add(eachData.Key);
@@ -158,9 +158,9 @@ public class Title_Manager : MonoBehaviour
                 else if (eachData.Key.Contains("EquipChar_"))
                 {
                     string Data = eachData.Value.Value;
-                    string[] strArr = Data.Split('|');
-                    EquipCharNameData.Add(strArr[1]);
-                    Debug.Log(EquipCharNameData.Count);
+                    //string[] strArr = Data.Split('|');
+                    EquipCharNameData.Add(Data);
+                    // Debug.Log(EquipCharNameData.Count);
                     #region Data_Load
                     //int.TryParse(strArr[0], out int ID);
                     //CHAR_GRADE.TryParse(strArr[3], out CHAR_GRADE CharGrade);
@@ -208,6 +208,15 @@ public class Title_Manager : MonoBehaviour
                     if(int.TryParse(eachData.Value.Value, out GetValue))
                     {
                         UserInfo.Money = GetValue;
+                    }
+                }
+                else if (eachData.Key.Contains("UserProfile"))
+                {
+                    string[] path = eachData.Value.Value.Split(",");
+
+                    for(int i = 0; i < path.Length; i++)
+                    {
+                        UserInfo.Profile_Setting.Profile_Sprite_Path.Add(path[i]);
                     }
                 }
             }

@@ -198,7 +198,8 @@ public class Lobby_ObjPool : MonoBehaviour
             profileSlot.transform.SetParent(Profile_Tr, false);
             profileSlot.GetComponent<Profile_Slot>().Set_LobbyMgr(LobbyManagerRef);
             profileSlot.GetComponent<Profile_Slot>().Set_Change_Char_Profile(Character_List.R_Char[i].Get_CharName,
-            Character_List.R_Char[i].Get_Lobby_Sprite(), Character_List.R_Char[i].Get_Profile_Sprite(), Character_List.R_Char[i].Get_Icon_Img);
+            Character_List.R_Char[i].Get_Lobby_Sprite(), Character_List.R_Char[i].Get_Profile_Sprite(), Character_List.R_Char[i].Get_Icon_Img,
+            Character_List.R_Char[i].Get_Lobby_Sprite_Path(), Character_List.R_Char[i].Get_Profile_Sprite_Path(), Character_List.R_Char[i].Get_Icon_Address);
             LobbyManagerRef.UserInfo_ProfileList.Add(profileSlot.GetComponent<Profile_Slot>());
         }
         for (int i = 0; i < Character_List.SR_Char.Count; i++)
@@ -207,7 +208,8 @@ public class Lobby_ObjPool : MonoBehaviour
             profileSlot.transform.SetParent(Profile_Tr, false);
             profileSlot.GetComponent<Profile_Slot>().Set_LobbyMgr(LobbyManagerRef);
             profileSlot.GetComponent<Profile_Slot>().Set_Change_Char_Profile(Character_List.SR_Char[i].Get_CharName,
-            Character_List.SR_Char[i].Get_Lobby_Sprite(), Character_List.SR_Char[i].Get_Profile_Sprite(), Character_List.SR_Char[i].Get_Icon_Img);
+            Character_List.SR_Char[i].Get_Lobby_Sprite(), Character_List.SR_Char[i].Get_Profile_Sprite(), Character_List.SR_Char[i].Get_Icon_Img,
+             Character_List.SR_Char[i].Get_Lobby_Sprite_Path(), Character_List.SR_Char[i].Get_Profile_Sprite_Path(), Character_List.SR_Char[i].Get_Icon_Address);
             LobbyManagerRef.UserInfo_ProfileList.Add(profileSlot.GetComponent<Profile_Slot>());
         }
         for (int i = 0; i < Character_List.SSR_Char.Count; i++)
@@ -216,7 +218,8 @@ public class Lobby_ObjPool : MonoBehaviour
             profileSlot.transform.SetParent(Profile_Tr, false);
             profileSlot.GetComponent<Profile_Slot>().Set_LobbyMgr(LobbyManagerRef);
             profileSlot.GetComponent<Profile_Slot>().Set_Change_Char_Profile(Character_List.SSR_Char[i].Get_CharName,
-            Character_List.SSR_Char[i].Get_Lobby_Sprite(), Character_List.SSR_Char[i].Get_Profile_Sprite(), Character_List.SSR_Char[i].Get_Icon_Img);
+            Character_List.SSR_Char[i].Get_Lobby_Sprite(), Character_List.SSR_Char[i].Get_Profile_Sprite(), Character_List.SSR_Char[i].Get_Icon_Img,
+             Character_List.SSR_Char[i].Get_Lobby_Sprite_Path(), Character_List.SSR_Char[i].Get_Profile_Sprite_Path(), Character_List.SSR_Char[i].Get_Icon_Address);
             LobbyManagerRef.UserInfo_ProfileList.Add(profileSlot.GetComponent<Profile_Slot>());
         }
         #endregion

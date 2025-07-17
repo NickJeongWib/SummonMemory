@@ -87,6 +87,7 @@ public class CharacterList_UI : MonoBehaviour
     [SerializeField] RectTransform content; // 캐릭터 리스트(Content)
     [SerializeField] GridLayoutGroup gridLayoutGroup; // GridLayoutGroup 참조
 
+    bool isSortList;
     private void Start()
     {
         // TODO ## 초기 테스트 값
@@ -120,6 +121,8 @@ public class CharacterList_UI : MonoBehaviour
     // TODO ## CharacterList_UI 캐릭터창 Refresh
     public void Refresh_CharacterList()
     {
+        isSortList = false;
+
         int SlotNum = 0;
         foreach(KeyValuePair<string, Character> Dict in UserInfo.UserCharDict_Copy)
         {
@@ -157,6 +160,89 @@ public class CharacterList_UI : MonoBehaviour
 
             Slots[SlotNum].Char_Porfile.sprite = Dict.Value.Get_Profile_Img;
             Slots[SlotNum].Star_Image.rectTransform.sizeDelta = new Vector2(20 * Dict.Value.Get_CharStar, 20.0f);
+            // Debug.Log(SlotNum + " " + Dict.Value.Get_CharName + " " + Dict.Value.Get_CharStar);
+
+            SlotNum++;
+        }
+
+        for (int i = SlotNum; i < Slots.Count; i++)
+        {
+            if (Slots[i].character != null)
+            {
+                Slots[i].character = null;
+            }
+
+            // 이미지들 켜져 있다면 꺼주기
+            if (Slots[i].Element_BG.IsActive())
+            {
+                Slots[i].Element_BG.gameObject.SetActive(false);
+            }
+            if (Slots[i].Element_Image.IsActive())
+            {
+                Slots[i].Element_Image.gameObject.SetActive(false);
+            }
+            if (Slots[i].Char_Porfile.IsActive())
+            {
+                Slots[i].Char_Porfile.gameObject.SetActive(false);
+            }
+            if (Slots[i].Star_Image.IsActive())
+            {
+                Slots[i].Star_Image.gameObject.SetActive(false);
+            }
+            if (Slots[i].Grade_Image.IsActive())
+            {
+                Slots[i].Grade_Image.gameObject.SetActive(false);
+            }
+            if (Slots[i].Select_Btn.IsActive())
+            {
+                Slots[i].Select_Btn.gameObject.SetActive(false);
+            }
+            if (Slots[i].Equip_Btn.IsActive())
+            {
+                Slots[i].Equip_Btn.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void Refresh_SortCharacterList(List<Character> SortList)
+    {
+        int SlotNum = 0;
+        foreach (Character character in SortList)
+        {
+            // 이미지들 꺼져 있다면 켜주기
+            if (!Slots[SlotNum].Element_BG.IsActive())
+            {
+                Slots[SlotNum].Element_BG.gameObject.SetActive(true);
+            }
+            if (!Slots[SlotNum].Element_Image.IsActive())
+            {
+                Slots[SlotNum].Element_Image.gameObject.SetActive(true);
+            }
+            if (!Slots[SlotNum].Char_Porfile.IsActive())
+            {
+                Slots[SlotNum].Char_Porfile.gameObject.SetActive(true);
+            }
+            if (!Slots[SlotNum].Star_Image.IsActive())
+            {
+                Slots[SlotNum].Star_Image.gameObject.SetActive(true);
+            }
+            if (!Slots[SlotNum].Grade_Image.IsActive())
+            {
+                Slots[SlotNum].Grade_Image.gameObject.SetActive(true);
+            }
+            if (!Slots[SlotNum].Select_Btn.IsActive())
+            {
+                Slots[SlotNum].Select_Btn.gameObject.SetActive(true);
+            }
+
+            Slots[SlotNum].Slot_Num = SlotNum;
+            Slots[SlotNum].character = character;
+            Slots[SlotNum].Grade_Image.sprite = Grades[(int)character.Get_CharGrade];
+            Slots[SlotNum].Element_BG.sprite = Elements_BG[(int)character.Get_CharElement];
+            Slots[SlotNum].Element_Image.sprite = Elements[(int)character.Get_CharElement];
+
+            Slots[SlotNum].Char_Porfile.sprite = character.Get_Profile_Img;
+            Slots[SlotNum].Star_Image.rectTransform.sizeDelta = new Vector2(20 * character.Get_CharStar, 20.0f);
             // Debug.Log(SlotNum + " " + Dict.Value.Get_CharName + " " + Dict.Value.Get_CharStar);
 
             SlotNum++;
@@ -363,7 +449,21 @@ public class CharacterList_UI : MonoBehaviour
     // TODO ## Lobby_Manager 캐릭터 교체를 위한 버튼 작동
     public void On_Click_Change()
     {
-        UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
+        Old_Equip_Characters.Clear();
+        UserInfo.Old_UserCharDict_Copy.Clear();
+
+        for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        {
+            Old_Equip_Characters.Add(UserInfo.Equip_Characters[i]);
+        }
+
+        for(int i = 0; i < UserInfo.UserCharDict_Copy.Count; i++)
+        {
+            UserInfo.Old_UserCharDict_Copy.Add(UserInfo.UserCharDict_Copy[i]);
+        }
+
+        Debug.Log(Old_Equip_Characters.Count);
+        Debug.Log(UserInfo.Old_UserCharDict_Copy.Count);
 
         Change_Char_Btn.SetActive(false);
         Equip_Info_Btn.SetActive(true);
@@ -375,12 +475,25 @@ public class CharacterList_UI : MonoBehaviour
         CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex);
         // 장착한 캐릭터에 따라 이미지 교체 함수
         CharImg_Anim_Ref.CharImage_ChangeAnimF();
+
+
     }
 
     public void On_Click_ChangeCancel()
     {
-        UserInfo.Equip_Characters = Old_Equip_Characters.ToList();
-        UserInfo.UserCharDict_Copy = UserInfo.Old_UserCharDict_Copy.ToList();
+        // 취소할 시 되돌리기
+        UserInfo.Equip_Characters.Clear();
+        UserInfo.UserCharDict_Copy.Clear();
+
+        for (int i = 0; i < Old_Equip_Characters.Count; i++)
+        {
+            UserInfo.Equip_Characters.Add(Old_Equip_Characters[i]);
+        }
+
+        for (int i = 0; i < UserInfo.Old_UserCharDict_Copy.Count; i++)
+        {
+            UserInfo.UserCharDict_Copy.Add(UserInfo.Old_UserCharDict_Copy[i]);
+        }
 
         // 장착 캐릭터 슬롯 초기화
         Equip_Image_Refresh(true);
@@ -397,7 +510,6 @@ public class CharacterList_UI : MonoBehaviour
         Equip_Char_Btn(false);
         Change_Char_Btn.SetActive(true);
         Equip_Info_Btn.SetActive(false);
-
     }
 
     [SerializeField] int Equip_Count;
@@ -819,5 +931,37 @@ public class CharacterList_UI : MonoBehaviour
         CharInfo_Type_Txt.text = $"<color=orange>{Type_Kor_Str[(int)GameManager.Instance.Get_SelectChar.Get_CharType]}</color>";
     }
 
+    #endregion
+
+    #region Sort_Character_List
+    public void On_Click_Element_Sort(int _num)
+    {
+        isSortList = true;
+
+        List<Character> ElementSort = new List<Character>();
+
+        foreach(KeyValuePair<string, Character> character in UserInfo.UserCharDict_Copy)
+        {
+            // 불
+            if(_num == 0 && character.Value.Get_CharElement == CHAR_ELE.FIRE)
+            {
+                ElementSort.Add(character.Value);
+            }
+            else if (_num == 1 && character.Value.Get_CharElement == CHAR_ELE.WATER) // 물
+            {
+                ElementSort.Add(character.Value);
+            }
+            else if (_num == 2 && character.Value.Get_CharElement == CHAR_ELE.WIND) // 바람
+            {
+                ElementSort.Add(character.Value);
+            }
+            else if (_num == 3 && character.Value.Get_CharElement == CHAR_ELE.GROUND) // 땅
+            {
+                ElementSort.Add(character.Value);
+            }
+        }
+
+        Refresh_SortCharacterList(ElementSort);
+    }
     #endregion
 }

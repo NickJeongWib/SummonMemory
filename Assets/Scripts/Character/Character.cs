@@ -532,6 +532,18 @@ public class Character
         }
     }
 
+    public string Get_Profile_Sprite_Path()
+    {
+        if (CharGrade == CHAR_GRADE.R)
+        {
+            return Normal_Image_Address;
+        }
+        else
+        {
+            return BG_Address;
+        }
+    }
+
     public Sprite Get_Lobby_Sprite()
     {
         if (CharGrade == CHAR_GRADE.R)
@@ -541,6 +553,18 @@ public class Character
         else
         {
             return SquareIllust_Img;
+        }
+    }
+
+    public string Get_Lobby_Sprite_Path()
+    {
+        if (CharGrade == CHAR_GRADE.R)
+        {
+            return Illust_Address;
+        }
+        else
+        {
+            return Square_Illust_Address;
         }
     }
     #endregion

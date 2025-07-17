@@ -61,6 +61,11 @@ public class Lobby_Manager : MonoBehaviour
             UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToList();
             UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
 
+            // 프로필 스프라이트 주소 저장
+            UserInfo.Profile_Setting.Profile_Sprite_Path.Add(UserInfo.UserCharDict[Character_List.SR_Char[0].Get_CharName].Get_Square_Illust_Address);
+            UserInfo.Profile_Setting.Profile_Sprite_Path.Add(UserInfo.UserCharDict[Character_List.SR_Char[0].Get_CharName].Get_BG_Address);
+            UserInfo.Profile_Setting.Profile_Sprite_Path.Add(UserInfo.UserCharDict[Character_List.SR_Char[0].Get_CharName].Get_Icon_Address);
+
             UserInfo.Equip_Characters.Add(UserInfo.UserCharDict_Copy[0].Value);
             CharacterList_UI_Ref.Get_Old_Equip_Characters = UserInfo.Equip_Characters.ToList();
 
@@ -77,6 +82,7 @@ public class Lobby_Manager : MonoBehaviour
 
             DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.DIA);
             DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.MONEY);
+            DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.PROFILE_IMG); 
         }
 
         InitData();
@@ -259,6 +265,8 @@ public class Lobby_Manager : MonoBehaviour
     void InitData()
     {
         UID_Text.text = $"UID : {UserInfo.UID}";
+        
+        Init_Profile_Img();
 
         // 불러온 초기 데이터 표시하기 위한 작업
         Refresh_UI_Money();
@@ -266,12 +274,26 @@ public class Lobby_Manager : MonoBehaviour
         Refresh_UserName();
         Refresh_User_CombatPower();
         Refresh_User_CharAmount();
+
+
     }
 
     public void Reset_SelectChar()
     {
         GameManager.Instance.Get_SelectChar = null;
     }
+
+    void Init_Profile_Img()
+    {
+        Lobby_Char_Illust.sprite = Resources.Load<Sprite>($"{UserInfo.Profile_Setting.Profile_Sprite_Path[0]}");
+        Profile_Panel_BG.sprite = Resources.Load<Sprite>($"{UserInfo.Profile_Setting.Profile_Sprite_Path[1]}");
+
+        for (int i = 0; i < UserProfile.Length; i++)
+        {
+            UserProfile[i].sprite = Resources.Load<Sprite>($"{UserInfo.Profile_Setting.Profile_Sprite_Path[2]}");
+        }
+    }
+
     #region Test
     // TODO ## Lobby_Manager_Test
     public void Test()
@@ -300,7 +322,6 @@ public class Lobby_Manager : MonoBehaviour
         UserInfo.CharacterList_ToJson();
     }
     #endregion
-
 }
 
 [System.Serializable]

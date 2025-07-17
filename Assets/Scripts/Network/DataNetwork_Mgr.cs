@@ -86,8 +86,50 @@ public class DataNetwork_Mgr : MonoBehaviour
         {
             UpdateMoneyCo();
         }
+        else if (PacketBuff[0] == PACKETTYPE.PROFILE_IMG)
+        {
+            UpdateProfileCo();
+        }
         PacketBuff.RemoveAt(0);
     }
+
+    #region Profile_Img
+    private void UpdateProfileCo()
+    {
+        // UID가 없다면 return;
+        if (UserInfo.UID == "")
+            return;
+
+        string Sprites_Path = "";
+
+        // 이미지 주소 나열
+        for(int i = 0; i < UserInfo.Profile_Setting.Profile_Sprite_Path.Count; i++)
+        {
+            Sprites_Path += $"{UserInfo.Profile_Setting.Profile_Sprite_Path[i]},";
+        }
+
+        var request = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string> {
+                {
+                    "UserProfile",
+                    Sprites_Path
+                }
+            }
+        };
+
+        PlayFabClientAPI.UpdateUserData(request,
+           (_result) =>
+           {
+               Debug.Log("프로필 저장 성공");
+           },
+           (_error) =>
+           {
+               Debug.Log(_error.GenerateErrorReport());
+               Debug.Log("프로필 저장 실패");
+           });
+    }
+    #endregion
 
     #region Dia_Data
     private void UpdateDiaCo()
@@ -345,57 +387,58 @@ public class DataNetwork_Mgr : MonoBehaviour
         for (int i = 0; i < EquipChar_List.Count; i++)
         {
             string Data = "";
+            Data = $"{EquipChar_List[i].Get_CharName}";
             #region Data_Save
             // Info
-            Data += $"{EquipChar_List[i].Get_CharacterID}|";          // 0
-            Data += $"{EquipChar_List[i].Get_CharName}|";             // 1
-            Data += $"{EquipChar_List[i].Get_CharEngName}|";          // 2
-            Data += $"{EquipChar_List[i].Get_CharGrade}|";            // 3
-            Data += $"{EquipChar_List[i].Get_CharType}|";             // 4
-            Data += $"{EquipChar_List[i].Get_CharElement}|";          // 5
-            Data += $"{EquipChar_List[i].Get_CharStar}|";             // 6
+            //Data += $"{EquipChar_List[i].Get_CharacterID}|";          // 0
+            // 1
+            //Data += $"{EquipChar_List[i].Get_CharEngName}|";          // 2
+            //Data += $"{EquipChar_List[i].Get_CharGrade}|";            // 3
+            //Data += $"{EquipChar_List[i].Get_CharType}|";             // 4
+            //Data += $"{EquipChar_List[i].Get_CharElement}|";          // 5
+            //Data += $"{EquipChar_List[i].Get_CharStar}|";             // 6
 
-            // Stat
-            Data += $"{EquipChar_List[i].Get_BaseHP}|";               // 7
-            Data += $"{EquipChar_List[i].Get_CharHP}|";               // 8
-            Data += $"{EquipChar_List[i].Get_BaseAtk}|";              // 9
-            Data += $"{EquipChar_List[i].Get_CharATK}|";              // 10
-            Data += $"{EquipChar_List[i].Get_BaseDef}|";              // 11
-            Data += $"{EquipChar_List[i].Get_CharDEF}|";              // 12
-            Data += $"{EquipChar_List[i].Get_BaseCRID}|";             // 13
-            Data += $"{EquipChar_List[i].Get_Char_CRT_Damage}|";      // 14
-            Data += $"{EquipChar_List[i].Get_BaseCRIR}|";             // 15
-            Data += $"{EquipChar_List[i].Get_Char_CRT_Rate}|";        // 16
-            Data += $"{EquipChar_List[i].Get_CombatPower}|";          // 17
+            //// Stat
+            //Data += $"{EquipChar_List[i].Get_BaseHP}|";               // 7
+            //Data += $"{EquipChar_List[i].Get_CharHP}|";               // 8
+            //Data += $"{EquipChar_List[i].Get_BaseAtk}|";              // 9
+            //Data += $"{EquipChar_List[i].Get_CharATK}|";              // 10
+            //Data += $"{EquipChar_List[i].Get_BaseDef}|";              // 11
+            //Data += $"{EquipChar_List[i].Get_CharDEF}|";              // 12
+            //Data += $"{EquipChar_List[i].Get_BaseCRID}|";             // 13
+            //Data += $"{EquipChar_List[i].Get_Char_CRT_Damage}|";      // 14
+            //Data += $"{EquipChar_List[i].Get_BaseCRIR}|";             // 15
+            //Data += $"{EquipChar_List[i].Get_Char_CRT_Rate}|";        // 16
+            //Data += $"{EquipChar_List[i].Get_CombatPower}|";          // 17
 
-            // Growing
-            Data += $"{EquipChar_List[i].Get_linearFactor}|";         // 18
-            Data += $"{EquipChar_List[i].Get_expFactor}|";            // 19
-            Data += $"{EquipChar_List[i].Get_expMultiplier}|";        // 20
-            Data += $"{EquipChar_List[i].Get_transitionLevel}|";      // 21
+            //// Growing
+            //Data += $"{EquipChar_List[i].Get_linearFactor}|";         // 18
+            //Data += $"{EquipChar_List[i].Get_expFactor}|";            // 19
+            //Data += $"{EquipChar_List[i].Get_expMultiplier}|";        // 20
+            //Data += $"{EquipChar_List[i].Get_transitionLevel}|";      // 21
 
-            // Lv
-            Data += $"{EquipChar_List[i].Get_Character_Lv}|";         // 22
-            Data += $"{EquipChar_List[i].Get_Max_Lv}|";               // 23
-            Data += $"{EquipChar_List[i].Get_CurrentExp}|";           // 24
-            Data += $"{EquipChar_List[i].Get_Cumulative_Exp}|";       // 25
+            //// Lv
+            //Data += $"{EquipChar_List[i].Get_Character_Lv}|";         // 22
+            //Data += $"{EquipChar_List[i].Get_Max_Lv}|";               // 23
+            //Data += $"{EquipChar_List[i].Get_CurrentExp}|";           // 24
+            //Data += $"{EquipChar_List[i].Get_Cumulative_Exp}|";       // 25
 
-            // Path
-            Data += $"{EquipChar_List[i].Get_Illust_Address}|";       // 26
-            Data += $"{EquipChar_List[i].Get_Normal_Image_Address}|"; // 27
-            Data += $"{EquipChar_List[i].Get_Grade_Up_Image_Address}|";// 28
-            Data += $"{EquipChar_List[i].Get_Profile_Address}|";      // 29
-            Data += $"{EquipChar_List[i].Get_White_Illust_Address}|"; // 30
-            Data += $"{EquipChar_List[i].Get_Pixel_Illust_Address}|"; // 31
+            //// Path
+            //Data += $"{EquipChar_List[i].Get_Illust_Address}|";       // 26
+            //Data += $"{EquipChar_List[i].Get_Normal_Image_Address}|"; // 27
+            //Data += $"{EquipChar_List[i].Get_Grade_Up_Image_Address}|";// 28
+            //Data += $"{EquipChar_List[i].Get_Profile_Address}|";      // 29
+            //Data += $"{EquipChar_List[i].Get_White_Illust_Address}|"; // 30
+            //Data += $"{EquipChar_List[i].Get_Pixel_Illust_Address}|"; // 31
 
-            if (EquipChar_List[i].Get_Square_Illust_Address == "null") // 32
-            {
-                Data += $"NULL";
-            }
-            else
-            {
-                Data += $"{EquipChar_List[i].Get_Square_Illust_Address}";
-            }
+            //if (EquipChar_List[i].Get_Square_Illust_Address == "null") // 32
+            //{
+            //    Data += $"NULL";
+            //}
+            //else
+            //{
+            //    Data += $"{EquipChar_List[i].Get_Square_Illust_Address}";
+            //}
             #endregion
             CharData.Add($"EquipChar_{i}", Data);
         }

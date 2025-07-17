@@ -59,7 +59,7 @@ public class UserInfo
     public static List<KeyValuePair<string, Character>> UserCharDict_Copy = new List<KeyValuePair<string, Character>>();
     // 캐릭터 정보창에 캐릭터 정보를 나열하기 위한 원본 복사체
     public static List<KeyValuePair<string, Character>> UserCharDict_Copy_2;
-    public static List<KeyValuePair<string, Character>> Old_UserCharDict_Copy;
+    public static List<KeyValuePair<string, Character>> Old_UserCharDict_Copy = new List<KeyValuePair<string, Character>>();
     // 캐릭터 장착 시 인벤토리에서 제거한 캐릭터 값을 받기위한 리스트
     public static List<Character> Equip_Characters = new List<Character>();
     #endregion

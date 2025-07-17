@@ -57,6 +57,9 @@ public class CharImg_Anim : MonoBehaviour
     // 애니메이션 이벤트 함수
     public void CharImg_Change()
     {
+        if (UserInfo.Equip_Characters.Count == 0)
+            return;
+
         if (UserInfo.Equip_Characters[Get_NextIndex()].Get_CharGrade != Define.CHAR_GRADE.R)
         {
             UserInfo.Get_Square_Image(CharacterImage, ImageIndex);

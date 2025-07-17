@@ -17,14 +17,21 @@ public class Profile_Slot : MonoBehaviour
     Sprite User_Lobby_Sprite;
     Sprite UserInfo_Panel_BG;
 
+    public List<string> Profile_Path = new List<string>();
+
     // 생성하면서 가지고 있을 변수 초기화
-    public void Set_Change_Char_Profile(string _name, Sprite _userLobby, Sprite _userInfo_BG, Sprite _charIcon)
+    public void Set_Change_Char_Profile(string _name, Sprite _userLobby, Sprite _userInfo_BG, Sprite _charIcon, string _userLobbyPath, string _userInfo_BG_Path, string _CharIcon_Path)
     {
         Profile_Char_Name = _name;
         Character_Icon.sprite = _charIcon;
         User_Lobby_Sprite = _userLobby;
         UserInfo_Panel_BG = _userInfo_BG;
 
+        Profile_Path.Add(_userLobbyPath);
+        Profile_Path.Add(_userInfo_BG_Path);
+        Profile_Path.Add(_CharIcon_Path);
+
+        // 캐릭터를 지니고 있다면 버튼 활성화 아니면 비활성화
         Lock_Image.SetActive(UserInfo.UserCharDict.ContainsKey(Profile_Char_Name) ? false : true);
     }
 
@@ -43,6 +50,12 @@ public class Profile_Slot : MonoBehaviour
     public void On_Click_Icon()
     {
         LobbyManager_Ref.Select_Char_Icon(Character_Icon.sprite, UserInfo_Panel_BG, User_Lobby_Sprite);
+
+        // 초기화 시켜주고 이 버튼이 들고 있는 이미지 주소들 넘겨주기
+        UserInfo.Profile_Setting.Profile_Sprite_Path.Clear();
+        UserInfo.Profile_Setting.Profile_Sprite_Path = this.Profile_Path;
+
+        DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.PROFILE_IMG);
 
         Info_Close();
     }
