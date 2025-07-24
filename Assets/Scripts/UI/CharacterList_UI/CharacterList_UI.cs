@@ -87,6 +87,7 @@ public class CharacterList_UI : MonoBehaviour
     [SerializeField] RectTransform content; // 캐릭터 리스트(Content)
     [SerializeField] GridLayoutGroup gridLayoutGroup; // GridLayoutGroup 참조
 
+    List<Character> ElementSort = new List<Character>();
     bool isSortList;
     private void Start()
     {
@@ -383,7 +384,24 @@ public class CharacterList_UI : MonoBehaviour
             EquipSlot_List[i].EquipCharacter = UserInfo.Equip_Characters[i];
         }
 
-        UserInfo.UserCharDict_Copy.RemoveAt(_slot.Slot_Num);
+        // 캐릭터 리스트 초기화
+        if(isSortList == false)
+        {
+            // 해당 슬롯 캐릭터 제거
+            UserInfo.UserCharDict_Copy.RemoveAt(_slot.Slot_Num);
+        }
+        else
+        {
+            // 캐릭터 속성 정렬 중일때 해당 속성의 장착캐릭터 이름으로 비교해서 전체 캐릭터 리스트에서 검색해서 삭제
+            for(int i = 0; i < UserInfo.UserCharDict_Copy.Count; i++)
+            {
+                if (_slot.character.Get_CharName == UserInfo.UserCharDict_Copy[i].Value.Get_CharName)
+                {
+                    UserInfo.UserCharDict_Copy.RemoveAt(i);
+                    break;
+                }
+            }
+        }
 
         CharImg_Anim_Ref.Get_ImageIndex = 0;
         CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex); ;
@@ -394,6 +412,12 @@ public class CharacterList_UI : MonoBehaviour
         Refresh_CharacterList();
         Equip_Image_Refresh(true);
         Interact_EquipSlot_Btn();
+
+        // 캐릭터 교체 시 교체버튼 나오게
+        if (Equip_Info_Btn.activeSelf)
+        {
+            Equip_Char_Btn(true);
+        }
     }
 
     void Check_EquipCount()
@@ -462,9 +486,6 @@ public class CharacterList_UI : MonoBehaviour
             UserInfo.Old_UserCharDict_Copy.Add(UserInfo.UserCharDict_Copy[i]);
         }
 
-        Debug.Log(Old_Equip_Characters.Count);
-        Debug.Log(UserInfo.Old_UserCharDict_Copy.Count);
-
         Change_Char_Btn.SetActive(false);
         Equip_Info_Btn.SetActive(true);
         Equip_Char_Btn(true);
@@ -475,8 +496,6 @@ public class CharacterList_UI : MonoBehaviour
         CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex);
         // 장착한 캐릭터에 따라 이미지 교체 함수
         CharImg_Anim_Ref.CharImage_ChangeAnimF();
-
-
     }
 
     public void On_Click_ChangeCancel()
@@ -514,28 +533,62 @@ public class CharacterList_UI : MonoBehaviour
 
     [SerializeField] int Equip_Count;
     // 캐릭터 장착 버튼 활성화
-    void Equip_Char_Btn(bool _bool)
+    public void Equip_Char_Btn(bool _bool)
     {
-        // 캐릭터가 없다면 return
-        if (UserInfo.UserCharDict.Count <= 0)
-            return;
-
-        // 캐릭터 장착 버튼 활성 비활성 전환
-        for (int i = 0; i < UserInfo.UserCharDict_Copy.Count; i++)
+        // 현재 캐릭터 교체 상황 일 시
+        if (Equip_Info_Btn.activeSelf == false)
         {
-            Slots[i].Equip_Btn.gameObject.SetActive(_bool);
-            Slots[i].Select_Btn.interactable = !_bool;
+            return;
         }
 
-        // 장착 시 장착 캐릭터 칸 위에 캐릭터를 뺄 수 있게 
-        Equip_Count = 0;
-        for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        // 속성별 정렬이 아닐 때
+        if (isSortList == false)
         {
-            Equip_Count = i;
-            // 캐릭터 해제버튼 활성화
-            UnEquip_Btn[i].SetActive(_bool);
-            // 캐릭터 선택버튼 비활성화
-            EquipChar_Select_Btn[i].interactable = !_bool;
+            // 캐릭터가 없다면 return
+            if (UserInfo.UserCharDict.Count <= 0)
+                return;
+
+            // 캐릭터 장착 버튼 활성 비활성 전환
+            for (int i = 0; i < UserInfo.UserCharDict_Copy.Count; i++)
+            {
+                Slots[i].Equip_Btn.gameObject.SetActive(_bool);
+                Slots[i].Select_Btn.interactable = !_bool;
+            }
+
+            // 장착 시 장착 캐릭터 칸 위에 캐릭터를 뺄 수 있게 
+            Equip_Count = 0;
+            for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+            {
+                Equip_Count = i;
+                // 캐릭터 해제버튼 활성화
+                UnEquip_Btn[i].SetActive(_bool);
+                // 캐릭터 선택버튼 비활성화
+                EquipChar_Select_Btn[i].interactable = !_bool;
+            }
+        }
+        else // 속성 정렬
+        {
+            // 캐릭터가 없다면 return
+            if (ElementSort.Count <= 0)
+                return;
+
+            // 캐릭터 장착 버튼 활성 비활성 전환
+            for (int i = 0; i < ElementSort.Count; i++)
+            {
+                Slots[i].Equip_Btn.gameObject.SetActive(_bool);
+                Slots[i].Select_Btn.interactable = !_bool;
+            }
+
+            // 장착 시 장착 캐릭터 칸 위에 캐릭터를 뺄 수 있게 
+            Equip_Count = 0;
+            for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+            {
+                Equip_Count = i;
+                // 캐릭터 해제버튼 활성화
+                UnEquip_Btn[i].SetActive(_bool);
+                // 캐릭터 선택버튼 비활성화
+                EquipChar_Select_Btn[i].interactable = !_bool;
+            }
         }
     }
 
@@ -938,9 +991,9 @@ public class CharacterList_UI : MonoBehaviour
     {
         isSortList = true;
 
-        List<Character> ElementSort = new List<Character>();
+        ElementSort.Clear();
 
-        foreach(KeyValuePair<string, Character> character in UserInfo.UserCharDict_Copy)
+        foreach (KeyValuePair<string, Character> character in UserInfo.UserCharDict_Copy)
         {
             // 불
             if(_num == 0 && character.Value.Get_CharElement == CHAR_ELE.FIRE)
@@ -962,6 +1015,12 @@ public class CharacterList_UI : MonoBehaviour
         }
 
         Refresh_SortCharacterList(ElementSort);
+
+        // 캐릭터 교체 상황일 시 교체버튼 나오게
+        if(Equip_Info_Btn.activeSelf)
+        {
+            Equip_Char_Btn(true);
+        }
     }
     #endregion
 }

@@ -290,9 +290,9 @@ public class Title_Manager : MonoBehaviour
             return;
         }
 
-        if (!(3 <= nickStr.Length && nickStr.Length <= 20))
+        if (!(2 <= nickStr.Length && nickStr.Length <= 10))
         {
-            MessageOnOff("이름은 3~20자 사이로\n입력해주세요.");
+            MessageOnOff("이름은 2~10자 사이로\n입력해주세요.");
             return;
         }
 

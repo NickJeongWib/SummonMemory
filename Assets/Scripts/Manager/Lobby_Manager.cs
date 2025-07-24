@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using PlayFab.ClientModels;
+using PlayFab;
 
 public class Lobby_Manager : MonoBehaviour
 {
@@ -33,6 +35,10 @@ public class Lobby_Manager : MonoBehaviour
     [Header("---UI---")]
     [SerializeField] Text[] DiaCount_Texts;
     [SerializeField] Text[] GoldCount_Texts;
+    [SerializeField] GameObject NameChange_Panel;
+    [SerializeField] InputField NameChange_IF;
+    [SerializeField] GameObject Erorr_Panel;
+    [SerializeField] Text ErorrMessage;
 
     public List<Profile_Slot> UserInfo_ProfileList = new List<Profile_Slot>();
     [SerializeField] Image[] UserProfile;
@@ -50,6 +56,7 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] Text UserCombatPower_Text;
     [SerializeField] Text UserCharAmount_Text;
 
+    #region Init
     private void Awake()
     {
         // TODO ## 초기 테스트 값
@@ -87,6 +94,23 @@ public class Lobby_Manager : MonoBehaviour
 
         InitData();
     }
+
+    void InitData()
+    {
+        UID_Text.text = $"UID : {UserInfo.UID}";
+
+        Init_Profile_Img();
+
+        // 불러온 초기 데이터 표시하기 위한 작업
+        Refresh_UI_Money();
+        Refresh_UI_Dia();
+        Refresh_UserName();
+        Refresh_User_CombatPower();
+        Refresh_User_CharAmount();
+
+
+    }
+    #endregion
 
     #region Shader_Graph_Transition
     // 상점, 도감, 업적 등 여러 창으로 이동
@@ -262,29 +286,80 @@ public class Lobby_Manager : MonoBehaviour
     }
     #endregion
 
-    void InitData()
+    #region Name_Change
+    public void NameChange()
     {
-        UID_Text.text = $"UID : {UserInfo.UID}";
-        
-        Init_Profile_Img();
+        // 입력받은 InputField
+        string nickStr = NameChange_IF.text;
+        // 빈칸 제거
+        nickStr.Trim();
 
-        // 불러온 초기 데이터 표시하기 위한 작업
-        Refresh_UI_Money();
-        Refresh_UI_Dia();
-        Refresh_UserName();
-        Refresh_User_CombatPower();
-        Refresh_User_CharAmount();
+        // 공란 체크
+        if (string.IsNullOrEmpty(nickStr))
+        {
+            ErorrPanel_Text("빈칸 없이 입력 해주세요");
+            return;
+        }
 
+        // 글자 수 체크
+        if (!(2 <= nickStr.Length && nickStr.Length <= 10))
+        {
+            ErorrPanel_Text("이름은 2~10자 사이로\n입력해주세요.");
+            return;
+        }
 
+        // 이름 변경 판넬 꺼주기
+        NameChange_Panel.SetActive(false);
+
+        // 닉네임 설정
+        var request = new UpdateUserTitleDisplayNameRequest()
+        {
+            DisplayName = nickStr,
+        };
+
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request,
+            _result =>
+            {
+                // 성공
+                ErorrPanel_Text("닉네임 변경 성공.");
+                // 유저 이름 변경
+                UserInfo.UserName = nickStr;
+                //UI 이름 바꿔주기
+                Refresh_UserName();
+            },
+            _error => 
+            {
+                // 실패(이미 중복된 닉네임이라면)
+                if (_error.GenerateErrorReport().Contains("The display name entered is not available"))
+                {
+                    ErorrPanel_Text("이미 존재하는 닉네임입니다.");
+                }
+            });
     }
+
+    // 닉네임 관련 에러 문구 표기 Panel
+    void ErorrPanel_Text(string _text)
+    {
+        Erorr_Panel.SetActive(true);
+        ErorrMessage.text = _text;
+    }
+
+    public void Init_NameIF()
+    {
+        // UI 오픈 시 공란 유지
+        NameChange_IF.text = "";
+    }
+    #endregion
 
     public void Reset_SelectChar()
     {
         GameManager.Instance.Get_SelectChar = null;
     }
 
+    // 이미지 초기 값 세팅
     void Init_Profile_Img()
     {
+        // 불러와진 저장된 이미지 리소스를 로비화면에 출력
         Lobby_Char_Illust.sprite = Resources.Load<Sprite>($"{UserInfo.Profile_Setting.Profile_Sprite_Path[0]}");
         Profile_Panel_BG.sprite = Resources.Load<Sprite>($"{UserInfo.Profile_Setting.Profile_Sprite_Path[1]}");
 
