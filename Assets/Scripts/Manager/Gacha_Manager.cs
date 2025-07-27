@@ -495,44 +495,45 @@ public class Gacha_Manager : MonoBehaviour
     #region Gacha_Movie
     void Gacha_Video_Play()
     {
+        // 영상 실행 초기 자연스러운 전환을 위한 UI들 활성화
         GachaEnter_Transition.SetActive(true);
         Gacha_Video.SetActive(true);
+        // 영상 시작과 동시에 나온 캐릭터들 목록 활성화
         GachaCharacterList.SetActive(true);
 
+        // R등급 캐릭터만 소환됬다면
         if (isR_Summon && !isSR_Summon && !isSSR_Summon)
         {
-            Videoplayer.clip = Gacha_Scenes[0];
-            Videoplayer.Play();
-
-            isR_Summon = false;
-            isSR_Summon = false;
-            isSSR_Summon = false;
+            Gacha_VideoPlay(0);
 
             return;
         }
+        // SR이상 캐릭터가 소환 되었다면
         else if ((isR_Summon && isSR_Summon && !isSSR_Summon) || (!isR_Summon && isSR_Summon && !isSSR_Summon))
         {
-            Videoplayer.clip = Gacha_Scenes[1];
-            Videoplayer.Play();
-
-            isR_Summon = false;
-            isSR_Summon = false;
-            isSSR_Summon = false;
+            Gacha_VideoPlay(1);
 
             return;
         }
+        // SSR이상 캐릭터가  소환 되 었다면
         else if ((isR_Summon && isSR_Summon && isSSR_Summon) || (!isR_Summon && isSR_Summon && isSSR_Summon) ||
             (isR_Summon && !isSR_Summon && isSSR_Summon) || (!isR_Summon && !isSR_Summon && isSSR_Summon))
         {
-            Videoplayer.clip = Gacha_Scenes[2];
-            Videoplayer.Play();
-
-            isR_Summon = false;
-            isSR_Summon = false;
-            isSSR_Summon = false;
+            Gacha_VideoPlay(2);
 
             return;
         } 
+    }
+
+    // 등급에 따른 다른 영상 출력
+    void Gacha_VideoPlay(int _index)
+    {
+        Videoplayer.clip = Gacha_Scenes[_index];
+        Videoplayer.Play();
+        // 무슨 등급 뽑았는지 초기화
+        isR_Summon = false;
+        isSR_Summon = false;
+        isSSR_Summon = false;
     }
     #endregion
 
