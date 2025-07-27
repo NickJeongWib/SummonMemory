@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 18
+        width: 110
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669fb4ce0250f9d4e91dd8c9ea468318
+      internalID: -789320538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 18
+        width: 110
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 849217718af8ccf47a0369c362e224e5
+      internalID: -1203692579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 18
+        width: 110
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ab9d34f6dfd7744b8a26039ddcad8f
+      internalID: 848576218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 20
+        width: 107
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf685c9887b4394c9e8086695921006
+      internalID: -1208838514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 20
+        width: 108
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 778163ab14d7ec14a97264790bc51ada
+      internalID: -988966072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 20
+        width: 108
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da90e9da920bde14c8f11d3221a13def
+      internalID: 1453016942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 21
+        width: 108
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac49121930665134392a56a1ef03deca
+      internalID: 662179384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 21
+        width: 108
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ed7f05774717a4baf47e17057606a4
+      internalID: -99051731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2116
+        y: 21
+        width: 108
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c2b03f41457e54b9bac0ffa4943adc
+      internalID: -243033771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2372
+        y: 20
+        width: 107
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75755758198ebf4ca66ac56f7c470b8
+      internalID: -614013123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 20
+        width: 107
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697c8a6c6b2d8914fa5fcb4f4988f873
+      internalID: -187838353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2884
+        y: 20
+        width: 107
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9905f5e8eb6a1714c8dceb58cb3a311b
+      internalID: 1773553963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 18
+        width: 110
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049798ad56462d14697971b2196ee6fd
+      internalID: -1619664998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3396
+        y: 18
+        width: 110
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1fc5752bc1fc1468d08fbf8a2d383e
+      internalID: -1373488192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3652
+        y: 18
+        width: 110
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7e73a836c1dab43aa78e38109d9c2f
+      internalID: -2074079678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leze_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3908
+        y: 18
+        width: 110
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727d5434a9b52884d979cc135a932a33
+      internalID: 999479573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Leze_Pixel-Sheet_0: -789320538
+      Leze_Pixel-Sheet_1: -1203692579
+      Leze_Pixel-Sheet_10: -187838353
+      Leze_Pixel-Sheet_11: 1773553963
+      Leze_Pixel-Sheet_12: -1619664998
+      Leze_Pixel-Sheet_13: -1373488192
+      Leze_Pixel-Sheet_14: -2074079678
+      Leze_Pixel-Sheet_15: 999479573
+      Leze_Pixel-Sheet_2: 848576218
+      Leze_Pixel-Sheet_3: -1208838514
+      Leze_Pixel-Sheet_4: -988966072
+      Leze_Pixel-Sheet_5: 1453016942
+      Leze_Pixel-Sheet_6: 662179384
+      Leze_Pixel-Sheet_7: -99051731
+      Leze_Pixel-Sheet_8: -243033771
+      Leze_Pixel-Sheet_9: -614013123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

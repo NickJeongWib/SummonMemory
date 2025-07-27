@@ -49967,6 +49967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GachaVideo_Renderer: {fileID: 1843925254}
+  EquipGachaVideo_Renderer: {fileID: 1155382416}
   Skip_Info: {fileID: 65108581}
 --- !u!1 &871601091
 GameObject:
@@ -88527,12 +88528,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryUI_Ref: {fileID: 760716143}
+  GachaEnter_Transition: {fileID: 661664744}
   Inventory_FullInfo_Panel: {fileID: 54971034}
   Equip_GachaInfo_Panel: {fileID: 1462177025}
   Equip_GachaFail_Panel: {fileID: 763031701}
   User_Ticket_Amount: {fileID: 497855487}
   FailInfoCount: {fileID: 629818654}
   UserTicket: {fileID: 1261965081}
+  Gacha_Video: {fileID: 1155382416}
+  Gacha_Scenes: {fileID: 32900000, guid: 1d87c9fd3a8953c4cad06aa84b2c2284, type: 3}
+  Videoplayer: {fileID: 870467970}
 --- !u!114 &1531980158
 MonoBehaviour:
   m_ObjectHideFlags: 0

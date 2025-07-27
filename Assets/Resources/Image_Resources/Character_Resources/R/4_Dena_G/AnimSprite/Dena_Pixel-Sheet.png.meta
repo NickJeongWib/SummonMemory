@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd087fe234374f0478b56e58c3d40406
+      internalID: -1352461737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81e397aafa1c384b8b4c92a29a3620c
+      internalID: 836839909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4d67b59071d1a4b8281706b51a59fe
+      internalID: 569699965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfeb0fe99182afe42a50c6c394a71faf
+      internalID: -327660130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3d29f60f5b41144ade9f4fa8ce7749
+      internalID: 2012019378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75b1ed08650d5642886c7c73ce851ab
+      internalID: 924093459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 7
+        width: 131
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d79c2fe8f65b2c4a80d35dd5e55c2da
+      internalID: 1649750059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 7
+        width: 131
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72e6d6faa2169f4290c23aa9009e1f0
+      internalID: 900303109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 7
+        width: 131
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af738f8c43e9694ea66c00141c0e46e
+      internalID: -875116487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2364
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47a3c7ad7c3f104698f422975c0da9d
+      internalID: 1481336637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2620
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c21e0dfd1f46f498da13f67b573b9f
+      internalID: 1194393967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2876
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8cd823dc59a0540aa73e9acca06deb
+      internalID: -1615011622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d329a07993836cd41a2899d002c83736
+      internalID: 1018553901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3388
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7944611d737ce47b23d661d8e4732c
+      internalID: -758568395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3644
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b526f10674cf33f43be167c0aca41477
+      internalID: 1851356421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dena_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 7
+        width: 130
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16b82f37297dd04ab04b8ff4684afd4
+      internalID: -959774296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dena_Pixel-Sheet_0: -1352461737
+      Dena_Pixel-Sheet_1: 836839909
+      Dena_Pixel-Sheet_10: 1194393967
+      Dena_Pixel-Sheet_11: -1615011622
+      Dena_Pixel-Sheet_12: 1018553901
+      Dena_Pixel-Sheet_13: -758568395
+      Dena_Pixel-Sheet_14: 1851356421
+      Dena_Pixel-Sheet_15: -959774296
+      Dena_Pixel-Sheet_2: 569699965
+      Dena_Pixel-Sheet_3: -327660130
+      Dena_Pixel-Sheet_4: 2012019378
+      Dena_Pixel-Sheet_5: 924093459
+      Dena_Pixel-Sheet_6: 1649750059
+      Dena_Pixel-Sheet_7: 900303109
+      Dena_Pixel-Sheet_8: -875116487
+      Dena_Pixel-Sheet_9: 1481336637
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

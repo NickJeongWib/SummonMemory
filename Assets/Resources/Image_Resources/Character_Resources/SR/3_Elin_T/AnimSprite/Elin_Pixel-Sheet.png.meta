@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 18
+        width: 126
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767c66890f596ba46aa87c4354c5ad03
+      internalID: -2091450864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 18
+        width: 126
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec2fd6c05ba3a1a4cb80e7f6c1761624
+      internalID: -835757181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 18
+        width: 126
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b005e7ab7f09ef41a58aea026d25c00
+      internalID: -1695004876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 18
+        width: 126
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a0533ae47c8ef48ab1716bb5b9d59d
+      internalID: 1513877339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 18
+        width: 126
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 974e6efdf67e8a443aac5134225e27a1
+      internalID: -1983344945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 18
+        width: 126
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691b63c60277fb74a9dd0316666753b3
+      internalID: -883937174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 19
+        width: 126
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0660ace42238b24384f0427049cfda9
+      internalID: -1014103073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 19
+        width: 126
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7681a22a5ebaf6c4591acc18da645947
+      internalID: 442599962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 19
+        width: 126
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037ad487e95484e468cea60fabec221b
+      internalID: 1661310698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2369
+        y: 18
+        width: 126
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2467319dfbf8fa14a8f8eedcea1c91cb
+      internalID: -1609792639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 18
+        width: 126
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb364d3de985f6408edfe8fef0c57ad
+      internalID: 460724221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2881
+        y: 18
+        width: 126
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deeca278dc1f1884eaf1a059d514ae5f
+      internalID: -318481073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3137
+        y: 18
+        width: 126
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6220ba24bc2c734d939f5b38bff2427
+      internalID: -1282454775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3393
+        y: 18
+        width: 126
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e9a6ef891d755d49897806d9a4cd3c2
+      internalID: -1781577026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3649
+        y: 18
+        width: 126
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2642fff6a03e341b814f31012bfa05
+      internalID: -1024208663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elin_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3905
+        y: 18
+        width: 126
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5813f600ba9c5b245b79d3e061566aae
+      internalID: -1704290051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Elin_Pixel-Sheet_0: -2091450864
+      Elin_Pixel-Sheet_1: -835757181
+      Elin_Pixel-Sheet_10: 460724221
+      Elin_Pixel-Sheet_11: -318481073
+      Elin_Pixel-Sheet_12: -1282454775
+      Elin_Pixel-Sheet_13: -1781577026
+      Elin_Pixel-Sheet_14: -1024208663
+      Elin_Pixel-Sheet_15: -1704290051
+      Elin_Pixel-Sheet_2: -1695004876
+      Elin_Pixel-Sheet_3: 1513877339
+      Elin_Pixel-Sheet_4: -1983344945
+      Elin_Pixel-Sheet_5: -883937174
+      Elin_Pixel-Sheet_6: -1014103073
+      Elin_Pixel-Sheet_7: 442599962
+      Elin_Pixel-Sheet_8: 1661310698
+      Elin_Pixel-Sheet_9: -1609792639
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

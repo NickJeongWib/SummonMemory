@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 16
+        width: 173
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f55c5fa24feed04abacb9ca2f48f0b1
+      internalID: 1923947847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 16
+        width: 173
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93849f60e102a344fbd018f70c9d19e6
+      internalID: 1964338880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 16
+        width: 173
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f4cd3df5ef3c14f930d4ee50b94cdc
+      internalID: -1365979607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 16
+        width: 159
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4ae317e85a30444b336c6141291f1e
+      internalID: 1076057431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 16
+        width: 159
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374f1a3c402419c419b409d8d32d2ae7
+      internalID: 1766469587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 16
+        width: 159
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a457596079f86640be606b8369d89a1
+      internalID: -741990487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 16
+        width: 157
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbdaaec8490945c46bbcdf0e55e696ed
+      internalID: 1032594748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 16
+        width: 157
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f883b3461ff2dbf4abb529dcd2edffc2
+      internalID: 700080221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 16
+        width: 157
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c9270dd27e78245a023f1d3bcf61d9
+      internalID: 655838562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2367
+        y: 16
+        width: 159
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112f4a47df5af3c4fba1b8033ca16c32
+      internalID: 1672827728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2623
+        y: 16
+        width: 159
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ddc955da09e954485190721b3e6cd0
+      internalID: 231224963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 16
+        width: 159
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51995c1684a4a0c42a5048fc79dfd0c9
+      internalID: -681048084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3126
+        y: 16
+        width: 173
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9ccdcd5f9201b4dbd301fb68fe7411
+      internalID: 448449056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3382
+        y: 16
+        width: 173
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac875751921e86a4cbc59b058005a969
+      internalID: 1407083967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3638
+        y: 16
+        width: 173
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6336544e133294d8e99aaf18745561
+      internalID: 611877737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asa_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3894
+        y: 16
+        width: 173
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b985c6012365f499b0462c7565b46c
+      internalID: -376664948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Asa_Pixel-Sheet_0: 1923947847
+      Asa_Pixel-Sheet_1: 1964338880
+      Asa_Pixel-Sheet_10: 231224963
+      Asa_Pixel-Sheet_11: -681048084
+      Asa_Pixel-Sheet_12: 448449056
+      Asa_Pixel-Sheet_13: 1407083967
+      Asa_Pixel-Sheet_14: 611877737
+      Asa_Pixel-Sheet_15: -376664948
+      Asa_Pixel-Sheet_2: -1365979607
+      Asa_Pixel-Sheet_3: 1076057431
+      Asa_Pixel-Sheet_4: 1766469587
+      Asa_Pixel-Sheet_5: -741990487
+      Asa_Pixel-Sheet_6: 1032594748
+      Asa_Pixel-Sheet_7: 700080221
+      Asa_Pixel-Sheet_8: 655838562
+      Asa_Pixel-Sheet_9: 1672827728
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

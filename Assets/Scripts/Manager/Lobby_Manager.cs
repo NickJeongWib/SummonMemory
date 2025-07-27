@@ -107,8 +107,6 @@ public class Lobby_Manager : MonoBehaviour
         Refresh_UserName();
         Refresh_User_CombatPower();
         Refresh_User_CharAmount();
-
-
     }
     #endregion
 

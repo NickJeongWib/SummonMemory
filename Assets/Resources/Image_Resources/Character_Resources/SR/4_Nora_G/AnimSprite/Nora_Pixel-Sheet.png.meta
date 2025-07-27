@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 3
+        width: 119
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a5dce5970c5494ba37b6456fe0094c
+      internalID: 1893055632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 3
+        width: 119
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71475ae80a036a4f831bb1118a189e2
+      internalID: -879820431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 3
+        width: 119
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44cbda633cd21d478891ec489ab5595
+      internalID: 49866771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 8
+        width: 119
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95345419bde1b4f40a257b9b0fdd44a2
+      internalID: 2106860638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 8
+        width: 119
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c033c8d164c9fd348870f99fc7e25d90
+      internalID: -1671361362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 8
+        width: 119
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afebc24c450ea23439a633836d3a20d3
+      internalID: -1927539121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 9
+        width: 119
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479db1289c4d94946b3777a57487b36a
+      internalID: 1683568308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1862
+        y: 9
+        width: 119
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcba44eb4c2e105428efbb57c3cb4da1
+      internalID: -1407509355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2118
+        y: 9
+        width: 119
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7845ad98897b89d4e9851b30e63f6aff
+      internalID: 375980363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2374
+        y: 8
+        width: 119
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac821e553e6ed7b469529b9261a0a891
+      internalID: -8162711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 8
+        width: 119
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714789b3fb75a4a48a902e55657d8d80
+      internalID: 1694183402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 8
+        width: 119
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf16aab79e3f584abdb0682a1193c8c
+      internalID: -12684695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3142
+        y: 3
+        width: 119
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0050298129e9f48b2920dcebe740d3
+      internalID: -407191149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3398
+        y: 3
+        width: 119
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c66b8c54a47484db320c20a18ef3e7
+      internalID: -809631762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3654
+        y: 3
+        width: 119
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09aa0114bd6e87944a47f625b0b4a5a5
+      internalID: 1604172708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nora_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 3
+        width: 119
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc58ddc284d0fb479581ee54799412e
+      internalID: 2094215000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Nora_Pixel-Sheet_0: 1893055632
+      Nora_Pixel-Sheet_1: -879820431
+      Nora_Pixel-Sheet_10: 1694183402
+      Nora_Pixel-Sheet_11: -12684695
+      Nora_Pixel-Sheet_12: -407191149
+      Nora_Pixel-Sheet_13: -809631762
+      Nora_Pixel-Sheet_14: 1604172708
+      Nora_Pixel-Sheet_15: 2094215000
+      Nora_Pixel-Sheet_2: 49866771
+      Nora_Pixel-Sheet_3: 2106860638
+      Nora_Pixel-Sheet_4: -1671361362
+      Nora_Pixel-Sheet_5: -1927539121
+      Nora_Pixel-Sheet_6: 1683568308
+      Nora_Pixel-Sheet_7: -1407509355
+      Nora_Pixel-Sheet_8: 375980363
+      Nora_Pixel-Sheet_9: -8162711
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

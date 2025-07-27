@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 12
+        width: 123
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be4d86a944c5ef4592b107a48aaaacb
+      internalID: 1814251368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 12
+        width: 123
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30df3bdb69f6b4b4cac49039eff669d8
+      internalID: 456371555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 12
+        width: 123
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fc6c7db48a85e4d92c97faf86aefd4
+      internalID: -1177436354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 12
+        width: 123
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fff131079da60a4b9fd6783a0e2dd79
+      internalID: -996133252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 12
+        width: 123
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689f6d9e8f60d1f4ca46016d243718e3
+      internalID: 138621864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 12
+        width: 123
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01462013264fbb241968010f66a5640b
+      internalID: -1615681479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 12
+        width: 123
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af24137cb8074324d97bc0f1f2ca7427
+      internalID: -1749798217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 12
+        width: 123
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e01b862bc8d6a544bbf5aa22f5b7d76
+      internalID: 1463319213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2116
+        y: 12
+        width: 123
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9174f8312179c5c489decf8e06f2aec2
+      internalID: 1329375671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2371
+        y: 12
+        width: 123
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4fa026956cfe6547860b73c534338b1
+      internalID: -438054961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2627
+        y: 12
+        width: 123
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168d3992cd650064abf5335d0bfbd275
+      internalID: 2065938987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2883
+        y: 12
+        width: 123
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb0398691f8bd3429e7708868737459
+      internalID: 1063559137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3137
+        y: 12
+        width: 123
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e850e98a16dc54d8380239b4fa27ff
+      internalID: 1709624853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3393
+        y: 12
+        width: 123
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69f5b4988d68ef45a5c41bdaf781b03
+      internalID: -1939863940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3649
+        y: 12
+        width: 123
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd645a7594bbca47a44a73fed17e3fb
+      internalID: -194009239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yuki_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3905
+        y: 12
+        width: 123
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6d3bcba0d906445ba1a6192a573207
+      internalID: 1370663337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Yuki_Pixel-Sheet_0: 1814251368
+      Yuki_Pixel-Sheet_1: 456371555
+      Yuki_Pixel-Sheet_10: 2065938987
+      Yuki_Pixel-Sheet_11: 1063559137
+      Yuki_Pixel-Sheet_12: 1709624853
+      Yuki_Pixel-Sheet_13: -1939863940
+      Yuki_Pixel-Sheet_14: -194009239
+      Yuki_Pixel-Sheet_15: 1370663337
+      Yuki_Pixel-Sheet_2: -1177436354
+      Yuki_Pixel-Sheet_3: -996133252
+      Yuki_Pixel-Sheet_4: 138621864
+      Yuki_Pixel-Sheet_5: -1615681479
+      Yuki_Pixel-Sheet_6: -1749798217
+      Yuki_Pixel-Sheet_7: 1463319213
+      Yuki_Pixel-Sheet_8: 1329375671
+      Yuki_Pixel-Sheet_9: -438054961
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

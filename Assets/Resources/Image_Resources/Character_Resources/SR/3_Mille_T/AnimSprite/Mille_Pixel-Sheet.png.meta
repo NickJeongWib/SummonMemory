@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 23
+        width: 95
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcda5a05d94270498ca7d0136d05447
+      internalID: 1269167128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 23
+        width: 95
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb970566281fe504b948e038f6e0122e
+      internalID: -1161353818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 23
+        width: 95
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da65ff54c51ead46a6cc30502f539ce
+      internalID: 162551620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 24
+        width: 95
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e768ce757d672e439e207e3feefa699
+      internalID: 668424941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 24
+        width: 95
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f53170cbd0a1d4aac68844c81acaf2
+      internalID: -1398307969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 24
+        width: 95
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda06bbaf887d12499b89b22b5dad70a
+      internalID: 1859319965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 25
+        width: 95
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e3591c48ca3e04197e7e98c14e83d2
+      internalID: 748654489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 25
+        width: 95
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7784cdeba73e384418a12206826dc576
+      internalID: 1467350308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2128
+        y: 25
+        width: 95
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41edad6c34cc4f4b8e0bb7e1fe31507
+      internalID: -1133330108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2384
+        y: 24
+        width: 95
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 141c52c49a607e946b548d3009999a86
+      internalID: 80206762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 24
+        width: 95
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6900251641bc346a56ff1d6ca646eb
+      internalID: -361468256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2896
+        y: 24
+        width: 95
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be003b2dfdb88414f84b0ce7945516cc
+      internalID: -1917427014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3152
+        y: 23
+        width: 95
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980f712aeb8142544a9387609dbb6076
+      internalID: -1960213706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 23
+        width: 95
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518753b6f0f852d428f60085887c2610
+      internalID: -1776752580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3664
+        y: 23
+        width: 95
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0acb65555bfe2f4f8c826cd76c06ba3
+      internalID: -192781568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mille_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 23
+        width: 95
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1667f89528b5f7a479751d4d5acdf602
+      internalID: -1481583103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mille_Pixel-Sheet_0: 1269167128
+      Mille_Pixel-Sheet_1: -1161353818
+      Mille_Pixel-Sheet_10: -361468256
+      Mille_Pixel-Sheet_11: -1917427014
+      Mille_Pixel-Sheet_12: -1960213706
+      Mille_Pixel-Sheet_13: -1776752580
+      Mille_Pixel-Sheet_14: -192781568
+      Mille_Pixel-Sheet_15: -1481583103
+      Mille_Pixel-Sheet_2: 162551620
+      Mille_Pixel-Sheet_3: 668424941
+      Mille_Pixel-Sheet_4: -1398307969
+      Mille_Pixel-Sheet_5: 1859319965
+      Mille_Pixel-Sheet_6: 748654489
+      Mille_Pixel-Sheet_7: 1467350308
+      Mille_Pixel-Sheet_8: -1133330108
+      Mille_Pixel-Sheet_9: 80206762
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

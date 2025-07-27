@@ -14,6 +14,7 @@ public class Equipment_Gacha_Manager : MonoBehaviour
     // [SerializeField] List<Equipment_Slot> EquipmentSlot_List;
 
     [Header("UI_Panel")]
+    [SerializeField] GameObject GachaEnter_Transition;
     [SerializeField] GameObject Inventory_FullInfo_Panel;
     [SerializeField] GameObject Equip_GachaInfo_Panel;
     [SerializeField] GameObject Equip_GachaFail_Panel;
@@ -22,6 +23,11 @@ public class Equipment_Gacha_Manager : MonoBehaviour
     [SerializeField] Text User_Ticket_Amount;
     [SerializeField] Text FailInfoCount;
     [SerializeField] TextMeshProUGUI UserTicket;
+
+    [Header("----Gacha_Video----")]
+    [SerializeField] GameObject Gacha_Video;
+    [SerializeField] VideoClip Gacha_Scenes;
+    [SerializeField] VideoPlayer Videoplayer;
 
     private void Start()
     {
@@ -121,7 +127,20 @@ public class Equipment_Gacha_Manager : MonoBehaviour
 
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
+        Gacha_Video_Play();
     }
+
+    #region Gacha_Video
+
+    void Gacha_Video_Play()
+    {
+        // 영상 실행 초기 자연스러운 전환을 위한 UI들 활성화
+        GachaEnter_Transition.SetActive(true);
+        Gacha_Video.SetActive(true);
+        Videoplayer.clip = Gacha_Scenes;
+        Videoplayer.Play();
+    }
+    #endregion
 
     public void Refresh_Equipment_Slot()
     {

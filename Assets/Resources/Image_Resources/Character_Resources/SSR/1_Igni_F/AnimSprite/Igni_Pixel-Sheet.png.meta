@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 13
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435c64787fafe8c4b95aa387afa7129f
+      internalID: 791231686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 13
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bd8c5b2a445d14ba1d74d0b43027f1
+      internalID: -47796151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 13
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144782c4cb24dfe4d967802e7b2bb07e
+      internalID: -338976361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 13
+        width: 102
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6de1c2108d70947a265bdc149bcd1a
+      internalID: 174045496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 13
+        width: 102
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b250109c2633634da0d81da920a77f9
+      internalID: 424820530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 13
+        width: 102
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754fd85c1c57b40498355b590145f60e
+      internalID: 1846423615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 13
+        width: 102
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c8fdb10636a1745b7f0a4878a601b4
+      internalID: 1456907623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 13
+        width: 102
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1f87cde95a74843930925dc3cd1ef9
+      internalID: -1236414220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 13
+        width: 102
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5ce558d74ac9f4dac2962ce11a9a15
+      internalID: 414247906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2386
+        y: 13
+        width: 102
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc16fab024989d24da641863205aa3d7
+      internalID: 850346648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2642
+        y: 13
+        width: 102
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2bb0fd836874b6409950a551a79b81f
+      internalID: 44341291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2898
+        y: 13
+        width: 102
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c67b4287ca4c54482aca713589e759
+      internalID: -847469508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3154
+        y: 13
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a6e0e7a0cfc794ba27f9bff8c6edcd
+      internalID: -1469682909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3410
+        y: 13
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8149b503efde0534da8b173d7fa9e77d
+      internalID: -713386704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3666
+        y: 13
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0af535ebe1a63943a45b652cb229038
+      internalID: -1825836434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Igni_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3922
+        y: 13
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584781922b18fbc49a2c2e47d9902a20
+      internalID: -264559109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Igni_Pixel-Sheet_0: 791231686
+      Igni_Pixel-Sheet_1: -47796151
+      Igni_Pixel-Sheet_10: 44341291
+      Igni_Pixel-Sheet_11: -847469508
+      Igni_Pixel-Sheet_12: -1469682909
+      Igni_Pixel-Sheet_13: -713386704
+      Igni_Pixel-Sheet_14: -1825836434
+      Igni_Pixel-Sheet_15: -264559109
+      Igni_Pixel-Sheet_2: -338976361
+      Igni_Pixel-Sheet_3: 174045496
+      Igni_Pixel-Sheet_4: 424820530
+      Igni_Pixel-Sheet_5: 1846423615
+      Igni_Pixel-Sheet_6: 1456907623
+      Igni_Pixel-Sheet_7: -1236414220
+      Igni_Pixel-Sheet_8: 414247906
+      Igni_Pixel-Sheet_9: 850346648
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

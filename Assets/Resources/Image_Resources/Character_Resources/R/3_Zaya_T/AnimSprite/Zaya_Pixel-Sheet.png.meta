@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 15
+        width: 116
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf19dc0c1682bef4c9098669f6de4006
+      internalID: 1209136190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 15
+        width: 116
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb7257d2ecd6d744a6e7b1462279f55
+      internalID: 1915684825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 15
+        width: 116
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6ab4d00c40b7041b7fbe858a8cabf9
+      internalID: 2100084860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 17
+        width: 116
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe921aac9e53614185999a6301a69d9
+      internalID: -1573542222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 17
+        width: 116
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a973c9511912cf49a57fbbd93848741
+      internalID: 239455612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 17
+        width: 116
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1ded9c7136cbb458d6ee4e5331184c
+      internalID: -434082550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 19
+        width: 116
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6219d2fbf806804f99fb2c4936e6b1c
+      internalID: -724317336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 19
+        width: 116
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f31b95ac7d69347a8bd8a375652198
+      internalID: -750038181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2114
+        y: 19
+        width: 116
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c506472016030e4594f96d7ea174ee7
+      internalID: -1558034215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 17
+        width: 116
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26521227ca7c5454bb715dfac818d40e
+      internalID: 232507309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2626
+        y: 17
+        width: 116
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5007af1c031d9574d8ffd5ef222e6caa
+      internalID: -1128786862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2882
+        y: 17
+        width: 116
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2d54decc1d9744b93ac57b8c9bea18
+      internalID: -917414576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3138
+        y: 15
+        width: 116
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667196396327477419ef5298039078f7
+      internalID: -1002532571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3394
+        y: 15
+        width: 116
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59670bd78ca552248a9733da047bc6d4
+      internalID: -1512095607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3650
+        y: 15
+        width: 116
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a5b6881f0aacb14295588941a6c8d78
+      internalID: 946981729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zaya_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3906
+        y: 15
+        width: 116
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601773430b0d30849b49d0215d4be17b
+      internalID: 1496227462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zaya_Pixel-Sheet_0: 1209136190
+      Zaya_Pixel-Sheet_1: 1915684825
+      Zaya_Pixel-Sheet_10: -1128786862
+      Zaya_Pixel-Sheet_11: -917414576
+      Zaya_Pixel-Sheet_12: -1002532571
+      Zaya_Pixel-Sheet_13: -1512095607
+      Zaya_Pixel-Sheet_14: 946981729
+      Zaya_Pixel-Sheet_15: 1496227462
+      Zaya_Pixel-Sheet_2: 2100084860
+      Zaya_Pixel-Sheet_3: -1573542222
+      Zaya_Pixel-Sheet_4: 239455612
+      Zaya_Pixel-Sheet_5: -434082550
+      Zaya_Pixel-Sheet_6: -724317336
+      Zaya_Pixel-Sheet_7: -750038181
+      Zaya_Pixel-Sheet_8: -1558034215
+      Zaya_Pixel-Sheet_9: 232507309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

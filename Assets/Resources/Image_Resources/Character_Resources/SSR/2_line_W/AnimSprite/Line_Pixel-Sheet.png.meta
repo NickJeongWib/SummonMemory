@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3
+        width: 181
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd0048dc44d0faa4d8efca1c84c818a7
+      internalID: 879303974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 3
+        width: 181
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96c9e4d6a0d58c4299515a9cae3cbd8
+      internalID: -1316652703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 3
+        width: 181
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380a064b3477bf24a8b688d709ee1233
+      internalID: 298459030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 3
+        width: 181
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61d8692a324d4a4db074df706f463c6
+      internalID: 819433628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 3
+        width: 181
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06cd1d152d000944ae9e10fdea60fff
+      internalID: -346528992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 3
+        width: 181
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be21fad60d1254f44bceb0ddffb0acf0
+      internalID: 56307620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 2
+        width: 181
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60801db639b64d24b86db26e373c3045
+      internalID: 433811705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 2
+        width: 181
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63957f32cebfb0749a47df2ec3102db7
+      internalID: 216421403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 2
+        width: 181
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d078d01c1b7e94c93c6dbd3f4c3631
+      internalID: -1863274574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 3
+        width: 181
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c7dda5f0e1eca4ca3c2c7550cd791b
+      internalID: 1530065489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 3
+        width: 181
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd1ec58c461d764291af52ae24e82a4
+      internalID: -1896700650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 3
+        width: 181
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b018b7ea80919ba49bb3f650c5526207
+      internalID: 579729574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 3
+        width: 181
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef473d90a187e643855e9af0a473500
+      internalID: 1796483724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 3
+        width: 181
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62475debf5ef14f46abbe6b3aa20e051
+      internalID: -1009710539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 3
+        width: 181
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ce5bd352d85934595e9f87d1ad92b3
+      internalID: -959602243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Line_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3872
+        y: 3
+        width: 181
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02bc63391019ca43a42dcbb086f7e05
+      internalID: 1559293367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Line_Pixel-Sheet_0: 879303974
+      Line_Pixel-Sheet_1: -1316652703
+      Line_Pixel-Sheet_10: -1896700650
+      Line_Pixel-Sheet_11: 579729574
+      Line_Pixel-Sheet_12: 1796483724
+      Line_Pixel-Sheet_13: -1009710539
+      Line_Pixel-Sheet_14: -959602243
+      Line_Pixel-Sheet_15: 1559293367
+      Line_Pixel-Sheet_2: 298459030
+      Line_Pixel-Sheet_3: 819433628
+      Line_Pixel-Sheet_4: -346528992
+      Line_Pixel-Sheet_5: 56307620
+      Line_Pixel-Sheet_6: 433811705
+      Line_Pixel-Sheet_7: 216421403
+      Line_Pixel-Sheet_8: -1863274574
+      Line_Pixel-Sheet_9: 1530065489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

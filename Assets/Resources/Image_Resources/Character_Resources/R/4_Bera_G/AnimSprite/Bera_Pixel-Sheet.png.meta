@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 7
+        width: 117
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c03751736ea7941a43264e1a083969
+      internalID: 598742234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 7
+        width: 117
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf2ba02591b77749a7ece4873e95c9c
+      internalID: -595600860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 7
+        width: 117
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce0682de13d0ea409d6d68bbb3e149e
+      internalID: -1559827428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 10
+        width: 117
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef902008ef3c28409554206f11935a9
+      internalID: -612317078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 10
+        width: 117
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0f1fc312001d84d9914a1021d192bb
+      internalID: 1176844236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 10
+        width: 117
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d74325a355b7549807bf4dea40be8d
+      internalID: -1380199770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 11
+        width: 117
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e895d6d8e96334e9c1d1b6edabe870
+      internalID: 79335606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1866
+        y: 11
+        width: 117
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a56081be6709a54bb7af234ab13e230
+      internalID: 6448278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2122
+        y: 11
+        width: 117
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab5ac8acfd35bb4b9e33ec22f878183
+      internalID: 2124403152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2378
+        y: 10
+        width: 117
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6d887d1a5139a4db3dd5bb2c5907e8
+      internalID: 919570748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2634
+        y: 10
+        width: 117
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7c695720eb6314b8834f523472f055
+      internalID: -949049775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2890
+        y: 10
+        width: 117
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2ae1b26ee364440a95bdf72aac2f95
+      internalID: -987618699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3146
+        y: 7
+        width: 117
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17bbbbe8cdc6bd4283e86395a826e02
+      internalID: 926972283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3402
+        y: 7
+        width: 117
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebf43f1adc8a134e844529e5b679f07
+      internalID: 1976777778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3658
+        y: 7
+        width: 117
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56ebc4b96d8f0f49bcd1bf959a5bcc4
+      internalID: 393157211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bera_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3914
+        y: 7
+        width: 117
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090073423a25c034fa8f01367b215c3b
+      internalID: 1296641455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bera_Pixel-Sheet_0: 598742234
+      Bera_Pixel-Sheet_1: -595600860
+      Bera_Pixel-Sheet_10: -949049775
+      Bera_Pixel-Sheet_11: -987618699
+      Bera_Pixel-Sheet_12: 926972283
+      Bera_Pixel-Sheet_13: 1976777778
+      Bera_Pixel-Sheet_14: 393157211
+      Bera_Pixel-Sheet_15: 1296641455
+      Bera_Pixel-Sheet_2: -1559827428
+      Bera_Pixel-Sheet_3: -612317078
+      Bera_Pixel-Sheet_4: 1176844236
+      Bera_Pixel-Sheet_5: -1380199770
+      Bera_Pixel-Sheet_6: 79335606
+      Bera_Pixel-Sheet_7: 6448278
+      Bera_Pixel-Sheet_8: 2124403152
+      Bera_Pixel-Sheet_9: 919570748
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

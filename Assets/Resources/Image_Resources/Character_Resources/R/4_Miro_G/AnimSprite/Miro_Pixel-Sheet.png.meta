@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 7
+        width: 141
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d10ec0f8db4e04da40e20509fdb9e8
+      internalID: 1411448008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 7
+        width: 141
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718d333c5f20994489bb80e856d1ca54
+      internalID: -1703540829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 7
+        width: 141
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26614452e9ca5564893568c41a97a178
+      internalID: -575829571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 9
+        width: 134
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f29053fa222464ca4f839d2d7dd7d6
+      internalID: 213677957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 9
+        width: 134
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3afbc884c8a068b428e0b11b1420a367
+      internalID: 996794024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 9
+        width: 134
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e3da848933d124c846e3a9315304df
+      internalID: -1364061277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 9
+        width: 134
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35f3d68b8c6ca84e824ccb9a3236054
+      internalID: 1955961188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 9
+        width: 134
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e953e419b2940c47b56c17b716b4d86
+      internalID: 909599454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 9
+        width: 134
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f06afbf6a710546a201353d01a7f66
+      internalID: -1878493712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 9
+        width: 134
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40a6f0039bdcc74fbe49831ba80f625
+      internalID: 293996561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2618
+        y: 9
+        width: 134
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0678616cfed77848be15e06d4dd19af
+      internalID: -1416501650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2874
+        y: 9
+        width: 134
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6239badca171d1d42814f440390a2984
+      internalID: 281762109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3130
+        y: 7
+        width: 141
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8fc5d991c08724084d6ffdf30872a8
+      internalID: -891763645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3386
+        y: 7
+        width: 141
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8bcbf010d3e134daed40f8fd6d6cc3
+      internalID: 223378109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3642
+        y: 7
+        width: 141
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a31104ab27080448db3e79acdaeed0
+      internalID: 779908547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Miro_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3898
+        y: 7
+        width: 141
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee8be67bee4e4549923148ea6cd590b
+      internalID: -503843839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Miro_Pixel-Sheet_0: 1411448008
+      Miro_Pixel-Sheet_1: -1703540829
+      Miro_Pixel-Sheet_10: -1416501650
+      Miro_Pixel-Sheet_11: 281762109
+      Miro_Pixel-Sheet_12: -891763645
+      Miro_Pixel-Sheet_13: 223378109
+      Miro_Pixel-Sheet_14: 779908547
+      Miro_Pixel-Sheet_15: -503843839
+      Miro_Pixel-Sheet_2: -575829571
+      Miro_Pixel-Sheet_3: 213677957
+      Miro_Pixel-Sheet_4: 996794024
+      Miro_Pixel-Sheet_5: -1364061277
+      Miro_Pixel-Sheet_6: 1955961188
+      Miro_Pixel-Sheet_7: 909599454
+      Miro_Pixel-Sheet_8: -1878493712
+      Miro_Pixel-Sheet_9: 293996561
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

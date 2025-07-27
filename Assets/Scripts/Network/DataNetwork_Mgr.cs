@@ -210,7 +210,7 @@ public class DataNetwork_Mgr : MonoBehaviour
             var wrapper = new EquipItemListWrapper(chunk);
             string json = JsonUtility.ToJson(wrapper, true);
             string keyName = $"Equip_Inven_Part_{i + 1}";
-            Debug.Log(json);
+            // Debug.Log(json);
 
             var request = new UpdateUserDataRequest
             {

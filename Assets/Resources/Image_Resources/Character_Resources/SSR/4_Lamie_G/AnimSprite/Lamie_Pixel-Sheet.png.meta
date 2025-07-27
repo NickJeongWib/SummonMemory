@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,14 +108,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -147,7 +147,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 5
+        width: 166
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823ceba6412454d44b2115bd5e70c587
+      internalID: 1036203293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 5
+        width: 166
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58db01928fb3bd247b84b687cde6a513
+      internalID: 1908733942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 5
+        width: 166
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c3ef5e7c499a445a3e8f848122c2ce
+      internalID: -763581385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 5
+        width: 166
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2641a7199f5958149b376f7e35bb0b70
+      internalID: 1303009493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 5
+        width: 166
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d3b366398741e41a07d7f007966ff3
+      internalID: -2060989589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 5
+        width: 166
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b73faa4d803a3419857e35e8040e00
+      internalID: 1697363348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 5
+        width: 166
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b79c293a87d6a498fcacd0792e79f7
+      internalID: -1427243726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1821
+        y: 5
+        width: 166
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d23b2ac75d81543b3005cb332fcccc
+      internalID: 1978299814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2077
+        y: 5
+        width: 166
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145f774e4d4190e469581efa4ceaee29
+      internalID: -132591501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 5
+        width: 166
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 839504d3ada2a094cba257db4e297aef
+      internalID: -1471090294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2589
+        y: 5
+        width: 166
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3c5f24fe31ddf4eb31dac6cd48d1ff
+      internalID: 1109571352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2845
+        y: 5
+        width: 166
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbb5e6c953765742a3e59f387ff04e2
+      internalID: -1763802991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3101
+        y: 5
+        width: 166
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79aeb249e86e4e46b3e08ed03831511
+      internalID: -1453581576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3357
+        y: 5
+        width: 166
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c0dbb4702abd7479de48bf0495d3a0
+      internalID: -215280275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3613
+        y: 5
+        width: 166
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80bcded784c0c204c81c3ea45531fd22
+      internalID: -86479255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamie_Pixel-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3869
+        y: 5
+        width: 166
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9eafe4228344743b05728d0990d37c
+      internalID: -475871381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +494,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lamie_Pixel-Sheet_0: 1036203293
+      Lamie_Pixel-Sheet_1: 1908733942
+      Lamie_Pixel-Sheet_10: 1109571352
+      Lamie_Pixel-Sheet_11: -1763802991
+      Lamie_Pixel-Sheet_12: -1453581576
+      Lamie_Pixel-Sheet_13: -215280275
+      Lamie_Pixel-Sheet_14: -86479255
+      Lamie_Pixel-Sheet_15: -475871381
+      Lamie_Pixel-Sheet_2: -763581385
+      Lamie_Pixel-Sheet_3: 1303009493
+      Lamie_Pixel-Sheet_4: -2060989589
+      Lamie_Pixel-Sheet_5: 1697363348
+      Lamie_Pixel-Sheet_6: -1427243726
+      Lamie_Pixel-Sheet_7: 1978299814
+      Lamie_Pixel-Sheet_8: -132591501
+      Lamie_Pixel-Sheet_9: -1471090294
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
