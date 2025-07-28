@@ -399,22 +399,10 @@ public class Item_Info_Panel : MonoBehaviour
         if (CharacterListUI_Ref != null)
             CharacterListUI_Ref.Refresh_EquipItem_Image();
 
-        // TODO ## Item_Info_Panel 아이템 장착 시 데이터 저장
-        //if (CurrentItem.Get_isEquip)
-        //{
-        //    // 캐릭터 장착 중이라면
-        //    if (UserInfo.Equip_Characters.Contains(CurrentItem.Get_OwnCharacter))
-        //    {
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
-        //    }
-        //    else
-        //    {
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
-        //    }
-        //}
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
+
+        Refresh_Equipment_Slot();
 
         On_Click_Close_ItemInfo();
         CurrentItem = null;
@@ -437,26 +425,14 @@ public class Item_Info_Panel : MonoBehaviour
 
         Character_Equipment_Ref.Refresh_List_UI((int)CurrentItem.Get_EquipType);
 
-        // TODO ## Item_Info_Panel 아이템 장착 해제 시 데이터 저장
-        //if (CurrentItem.Get_isEquip)
-        //{
-        //    // 캐릭터 장착 중이라면
-        //    if (UserInfo.Equip_Characters.Contains(CurrentItem.Get_OwnCharacter))
-        //    {
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
-        //    }
-        //    else
-        //    {
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
-        //    }
-        //}
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
 
         On_Click_Close_ItemInfo();
 
         CharacterListUI_Ref.Refresh_EquipItem_Image();
+
+        Refresh_Equipment_Slot();
 
         // 해제라는 행동을 했으니 선택된 장비를 없애준다
         CurrentItem = null;
@@ -620,7 +596,7 @@ public class Item_Info_Panel : MonoBehaviour
         for (int i = 0; i < UserInfo.Equip_Inventory.Count; i++)
         {
             count = i;
-            Inventory_UI_Ref.Get_EquipmentSlot_List[i].Set_Image(UserInfo.Equip_Inventory[i].Get_Item_Image, UserInfo.Equip_Inventory[i].Get_Equipment_Grade);
+            Inventory_UI_Ref.Get_EquipmentSlot_List[i].Set_Image(UserInfo.Equip_Inventory[i].Get_Item_Image, UserInfo.Equip_Inventory[i].Get_Equipment_Grade, UserInfo.Equip_Inventory[i]);
         }
 
         // 위에 구문에서 아이템이 삭제되고 카운트가 0이되면 이미지가 계속 남아 있기에 제거하기 위한 IF문

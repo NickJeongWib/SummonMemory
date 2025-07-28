@@ -14,6 +14,7 @@ public class Dict_Slot : MonoBehaviour
     Dictionary_Ctrl DictionaryCtrl_Ref;
     public Dictionary_Ctrl Set_DictionaryCtrl_Ref { set => DictionaryCtrl_Ref = value; }
 
+    // UI이미지 초기화
     public void Set_UI_Refresh(bool _isExist, Character _character = null)
     {
         LockImage.SetActive(!_isExist);

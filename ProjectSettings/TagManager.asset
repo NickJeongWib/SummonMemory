@@ -41,9 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Card_Front
-    uniqueID: 960185857
+  - name: Transition
+    uniqueID: 4220135055
     locked: 0
-  - name: Card_Back
-    uniqueID: 1713230257
+  - name: Char_Prefab
+    uniqueID: 3640313843
     locked: 0

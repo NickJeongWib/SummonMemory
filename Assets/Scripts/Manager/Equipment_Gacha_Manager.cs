@@ -18,6 +18,15 @@ public class Equipment_Gacha_Manager : MonoBehaviour
     [SerializeField] GameObject Inventory_FullInfo_Panel;
     [SerializeField] GameObject Equip_GachaInfo_Panel;
     [SerializeField] GameObject Equip_GachaFail_Panel;
+    [SerializeField] GameObject GachaEquipList;
+
+    [Header("UI")]
+    [SerializeField] EquipGacha_Slot[] EquipGacha_Slots;    // 10연 뽑기 목록
+    [SerializeField] EquipGacha_Slot EquipGacha_Slot;       // 단일 뽑기 목록
+    [SerializeField] Sprite[] Item_Ranks;
+    [SerializeField] GameObject Gacha_10;
+    [SerializeField] GameObject Gacha_1;
+    [SerializeField] Color[] Rank_Colors;
 
     [Header("Text")]
     [SerializeField] Text User_Ticket_Amount;
@@ -117,26 +126,57 @@ public class Equipment_Gacha_Manager : MonoBehaviour
 
         for (int i = 0; i < Gacha_Count; i++)
         {
-            UserInfo.Equip_Inventory.Add(EquipItem_Spawn());
+            // 랜덤 아이템 생성
+            Item item = EquipItem_Spawn();
+
+            // 10연 가차일 때와 단일 가차일 시 나오는 UI가 다르기 때문에 아래의 코드 작성
+            if(Gacha_Count == 10) // 10연 가차
+            {
+                // 뽑은 무기 UI 이미지 설정
+                EquipGacha_Slots[i].Set_GachaEquipItem(item.Get_Item_Image, Item_Ranks[(int)item.Get_Equipment_Grade], Rank_Colors[(int)item.Get_Equipment_Grade]);
+            }
+            else // 단일 뽑기
+            {
+                // // 뽑은 무기 UI 이미지 설정
+                EquipGacha_Slot.Set_GachaEquipItem(item.Get_Item_Image, Item_Ranks[(int)item.Get_Equipment_Grade], Rank_Colors[(int)item.Get_Equipment_Grade]);
+            }
+
+            // 유저가 관리하는 리스트에 저장
+            UserInfo.Equip_Inventory.Add(item);
+        }
+
+        // 10연 가차일 시 나오는 목록 
+        if(Gacha_Count == 10)
+        {
+            Gacha_1.SetActive(false);
+            Gacha_10.SetActive(true);
+        }
+        else // 단일 가차일 시 나오는 목록
+        {
+            Gacha_1.SetActive(true);
+            Gacha_10.SetActive(false);
         }
 
         Refresh_Equipment_Slot();
         Refresh_EquipTicket();
 
         Info_Close(Equip_GachaInfo_Panel);
-
+        // 유저 정보 저장
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
         Gacha_Video_Play();
     }
 
     #region Gacha_Video
-
     void Gacha_Video_Play()
     {
         // 영상 실행 초기 자연스러운 전환을 위한 UI들 활성화
         GachaEnter_Transition.SetActive(true);
+        // 연출 영상 재생
         Gacha_Video.SetActive(true);
+        // 장비 목록 나열
+        GachaEquipList.SetActive(true);
+
         Videoplayer.clip = Gacha_Scenes;
         Videoplayer.Play();
     }
@@ -145,13 +185,13 @@ public class Equipment_Gacha_Manager : MonoBehaviour
     public void Refresh_Equipment_Slot()
     {
         int count = 0;
-
+        // 유저가 보유한 장비 만큼 반복
         for (int i = 0; i < UserInfo.Equip_Inventory.Count; i++)
         {
             count = i;
-            InventoryUI_Ref.Get_EquipmentSlot_List[i].Set_Image(UserInfo.Equip_Inventory[i].Get_Item_Image, UserInfo.Equip_Inventory[i].Get_Equipment_Grade);
+            InventoryUI_Ref.Get_EquipmentSlot_List[i].Set_Image(UserInfo.Equip_Inventory[i].Get_Item_Image, UserInfo.Equip_Inventory[i].Get_Equipment_Grade, UserInfo.Equip_Inventory[i]);
         }
-
+        // 유저의 보유 장비만큼 반복 완료 후 나머지 칸들 빈칸으로 만들기
         for (int i = count + 1; i < InventoryUI_Ref.Get_EquipmentSlot_List.Count; i++)
         {
             InventoryUI_Ref.Get_EquipmentSlot_List[i].Off_Image();

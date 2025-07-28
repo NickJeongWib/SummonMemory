@@ -16,15 +16,27 @@ public class Equipment_Slot : MonoBehaviour
 
     [SerializeField] Image Grade_Back_Image;
     [SerializeField] Mask Grade_Back_Mask;
+    [SerializeField] Image Owner_Image;
+    [SerializeField] GameObject OwnerObject;
 
     // 이미지 출력o
-    public void Set_Image(Sprite _sprite, EQUIPMENT_GRADE _equipGrade)
+    public void Set_Image(Sprite _sprite, EQUIPMENT_GRADE _equipGrade, Item _item)
     {
         Item_Image.sprite = _sprite;
         Slot_Mask.showMaskGraphic = true;
 
         Grade_Back_Image.color = Inventory_UI_Ref.Get_Colors[(int)_equipGrade];
         Grade_Back_Mask.showMaskGraphic = true;
+
+        if(_item.Get_OwnCharacter != null)
+        {
+            OwnerObject.SetActive(true);
+            Owner_Image.sprite = _item.Get_OwnCharacter.Get_Icon_Img;
+        }
+        else
+        {
+            OwnerObject.SetActive(false);
+        }
     }
 
     // 이미지 출력x

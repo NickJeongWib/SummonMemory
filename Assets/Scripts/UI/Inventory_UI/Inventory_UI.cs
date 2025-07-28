@@ -158,6 +158,7 @@ public class Inventory_UI : MonoBehaviour
     #endregion
 
     #region Slot_Refresh
+    // 소비 재료 아이템 초기화
     public void Reset_Spend_Inventory()
     {
         for (int i = 0; i < SpendSlot_List.Count; i++)
@@ -166,6 +167,7 @@ public class Inventory_UI : MonoBehaviour
         }
     }
 
+    // 강화 재료 아이템 초기화
     public void Reset_Upgrade_Inventory()
     {
         for (int i = 0; i < SpendSlot_List.Count; i++)
@@ -189,7 +191,7 @@ public class Inventory_UI : MonoBehaviour
             // 아이템을 보유 한 경우
             if (UserInfo.Spend_Inventory[i].Get_Amount >= 1)
             {
-                Debug.Log(SpendSlot_List[index]);
+                //Debug.Log(SpendSlot_List[index]);
 
                 // 유저가 들고 있는 아이템 정보 세팅
                 SpendSlot_List[index].Set_Info(UserInfo.Spend_Inventory[i]);
@@ -222,6 +224,7 @@ public class Inventory_UI : MonoBehaviour
         }
     }
 
+    // 아이템 슬롯 초기화
     public void Item_Slot_Refresh()
     {
         Spend_Slot_Refresh();
