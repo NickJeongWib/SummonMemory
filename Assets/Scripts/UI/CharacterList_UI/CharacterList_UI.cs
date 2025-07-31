@@ -465,6 +465,8 @@ public class CharacterList_UI : MonoBehaviour
 
         // DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_CHAR_INVEN);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_EQUIP_CHAR);
+        // 대기 캐릭터 UI 생성
+        StageSelect_UI.Inst.Spawn_Stand_Char();
     }
     #endregion
 

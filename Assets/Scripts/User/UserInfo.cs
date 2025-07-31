@@ -90,6 +90,10 @@ public class UserInfo
     public static string JsonData;
     #endregion
 
+    #region StagePos_Index
+    public static int[] Pos_Index = {-1, -1, -1, -1, -1};
+    #endregion
+
     [Header("---Currency---")]
     public static int Money = 10000000;
     public static int Dia = 10000;

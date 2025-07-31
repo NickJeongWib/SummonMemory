@@ -41,7 +41,7 @@ public class Character_List : MonoBehaviour
                GoogleSheetSORef.Character_DBList[i].CHAR_CRI_DAMAGE, GoogleSheetSORef.Character_DBList[i].CHAR_CRI_RATE);
 
             // TODO ## Character_List 이미지 리소스 저장
-            Node.Load_Resources(GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST,
+            Node.Load_Resources(GoogleSheetSORef.Character_Image_AddressList[i].CHAR_UI_PATH, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PREFAB_PATH, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST,
                GoogleSheetSORef.Character_Image_AddressList[i].CHAR_NORMAL_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_GRADE_UP_IMAGE,
                GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PROFILE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_WHITE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PIXEL_IMAGE,
                GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ICON_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_BG_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST_SQUARE);

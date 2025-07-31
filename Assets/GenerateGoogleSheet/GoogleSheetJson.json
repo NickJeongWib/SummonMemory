@@ -347,7 +347,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/1_Sonia_F/Sonia_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/1_Sonia_Prefab/Sonia_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/1_Sonia_Prefab/Sonia_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Illust",
@@ -358,7 +360,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/1_Tana_F/Tana_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/1_Tana_Prefab/Tana_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/1_Tana_Prefab/Tana_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Illust",
@@ -369,7 +373,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/1_Tania_F/Tania_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/1_Tania_Prefab/Tania_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/1_Tania_Prefab/Tania_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Illust",
@@ -380,7 +386,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/2_Ariel_W/Ariel_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/2_Ariel_Prefab/Ariel_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/2_Ariel_Prefab/Ariel_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Illust",
@@ -391,7 +399,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/2_Lapa_W/Lapa_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/2_Lapa_Prefab/Lapa_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/2_Lapa_Prefab/Lapa_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/2_Adri_W/Adri_Illust",
@@ -402,7 +412,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/2_Adri_W/Adri_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/2_Adri_W/Adri_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/2_Adri_Prefab/Adri_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/2_Adri_Prefab/Adri_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Illust",
@@ -413,7 +425,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/3_Melia_T/Melia_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/3_Melia_Prefab/Melia_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/3_Melia_Prefab/Melia_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Illust",
@@ -424,7 +438,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/3_Seiza_T/Seiza_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/3_Seiza_Prefab/Seiza_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/3_Seiza_Prefab/Seiza_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Illust",
@@ -435,7 +451,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/3_Zaya_T/Zaya_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/3_Zaya_Prefab/Zaya_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/3_Zaya_Prefab/Zaya_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Illust",
@@ -446,7 +464,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/4_Bera_G/Bera_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/4_Bera_Prefab/Bera_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/4_Bera_Prefab/Bera_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Illust",
@@ -457,7 +477,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/4_Dena_G/Dena_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/4_Dena_Prefab/Dena_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/4_Dena_Prefab/Dena_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Illust",
@@ -468,7 +490,9 @@
       "CHAR_ILLUST_SQUARE": "",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/R/4_Miro_G/Miro_Icon",
-      "CHAR_BG_IMAGE": ""
+      "CHAR_BG_IMAGE": "",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/R/4_Miro_Prefab/Miro_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/R/4_Miro_Prefab/Miro_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Illust",
@@ -479,7 +503,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/1_Leze_F/Leze_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SR/1_Leze_Prefab/Leze_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SR/1_Leze_Prefab/Leze_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Illust",
@@ -490,7 +516,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/1_Ruina_F/Ruina_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SR/1_Ruina_Prefab/Ruina_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SR/1_Ruina_Prefab/Ruina_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Illust",
@@ -501,7 +529,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/2_Arine_W/Arine_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SR/2_Arine_Prefab/Arine_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SR/2_Arine_Prefab/Arine_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Illust",
@@ -512,7 +542,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/2_Yuki_W/Yuki_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SR/2_Yuki_Prefab/Yuki_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SR/2_Yuki_Prefab/Yuki_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Illust",
@@ -523,7 +555,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/3_Elin_T/Elin_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SR/3_Elin_Prefab/Elin_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SR/3_Elin_Prefab/Elin_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Illust",
@@ -534,7 +568,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/3_Mille_T/Mille_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SR/3_Mille_Prefab/Mille_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SR/3_Mille_Prefab/Mille_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Illust",
@@ -545,7 +581,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/4_Asa_G/Asa_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SR/4_Asa_Prefab/Asa_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SR/4_Asa_Prefab/Asa_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Illust",
@@ -556,7 +594,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SR/4_Nora_G/Nora_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SR/4_Nora_Prefab/Nora_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SR/4_Nora_Prefab/Nora_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Illust",
@@ -567,7 +607,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SSR/1_Igni_F/Igni_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SSR/1_Igni_Prefab/Igni_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SSR/1_Igni_Prefab/Igni_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Illust",
@@ -578,7 +620,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SSR/2_line_W/Line_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SSR/2_line_Prefab/Line_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SSR/2_line_Prefab/Line_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Illust",
@@ -589,7 +633,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SSR/3_Elloin_T/Elloin_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SSR/3_Elloin_Prefab/Elloin_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SSR/3_Elloin_Prefab/Elloin_Prefab"
     },
     {
       "CHAR_ILLUST": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Illust",
@@ -600,7 +646,9 @@
       "CHAR_ILLUST_SQUARE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Illust_Lobby",
       "CHAR_PIXEL_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Pixel",
       "CHAR_ICON_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_Icon",
-      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_BG"
+      "CHAR_BG_IMAGE": "Image_Resources/Character_Resources/SSR/4_Lamie_G/Lamie_BG",
+      "CHAR_PREFAB_PATH": "Prefab/InGame_Charcter_Prefab/SSR/4_Lamie_Prefab/Lamie_Prefab",
+      "CHAR_UI_PATH": "Prefab/UI_Charcter_Prefab/SSR/4_Lamie_Prefab/Lamie_Prefab"
     }
   ],
   "Character_Growing_State": [

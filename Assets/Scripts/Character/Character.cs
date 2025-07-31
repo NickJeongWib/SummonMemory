@@ -93,10 +93,17 @@ public class Character
     [NonSerialized] Item[] EquipItems = new Item[5];
     public Item[] Get_EquipItems { get => EquipItems; set => EquipItems = value; }
     #endregion
-    ///------- Func
 
-    #region Image_Resource
+    #region Prefab_Path
+    [SerializeField] string Prefab_Path;
+    public string Get_Prefab_Path { get => Prefab_Path; }
+
+    [SerializeField] string UI_Prefab_Path;
+    public string Get_UI_Prefab_Path { get => UI_Prefab_Path; }
+    #endregion
     // -----------------------Image Resources Variable----------------------
+    #region Image_Resource
+
 
     [SerializeField] string Illust_Address;
     public string Get_Illust_Address { get => Illust_Address; }
@@ -153,6 +160,7 @@ public class Character
     Sprite Icon_Img;
     public Sprite Get_Icon_Img { get => Icon_Img; }
     #endregion
+    ///------- Func
 
     #region Constructor
     public Character(int _id, string _name, string _engName, CHAR_GRADE _grade, CHAR_TYPE _type, CHAR_ELE _ele, int _star,
@@ -199,9 +207,13 @@ public class Character
     #endregion
 
     #region Load_Resources
-    public void Load_Resources(string _illustAdd, string _normalImageAdd, string _gradeUpAdd, string _profileAdd, string _whiteIllustAdd, string _pixelIllustAdd, 
-        string _iconAdd, string _bgAdd = null, string _squareIllustAdd = null)
+    public void Load_Resources(string _ui_prefabPath, string _prefabPath, string _illustAdd, string _normalImageAdd, string _gradeUpAdd,
+        string _profileAdd, string _whiteIllustAdd, string _pixelIllustAdd, string _iconAdd, string _bgAdd = null, string _squareIllustAdd = null)
     {
+        // 橇府崎 林家
+        Prefab_Path = _prefabPath;
+        UI_Prefab_Path = _ui_prefabPath;
+
         // 捞固瘤 林家
         Illust_Address = _illustAdd;
         Normal_Image_Address = _normalImageAdd;
@@ -518,6 +530,8 @@ public class Character
         return CombatPower.ToString("N0");
     }
     #endregion
+
+
 
     #region Get_Profile_Sprite
     public Sprite Get_Profile_Sprite()

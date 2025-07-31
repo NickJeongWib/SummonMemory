@@ -16,21 +16,22 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] CharacterList_UI CharacterList_UI_Ref;
 
     [Header("---Transition---")]
-    [SerializeField] GameObject CircleTransition;
-    [SerializeField] GameObject ShaderTransition;
-    [SerializeField] GameObject NotTouch_RayCast;
+    [SerializeField] GameObject CircleTransition;       // 원형으로 페이드 인 앤 아웃 되는 화면전환
+    [SerializeField] GameObject ShaderTransition;       // 쉐이더그래프를 이용한 패턴이 있는 화면전환 
+    [SerializeField] GameObject NotTouch_RayCast;       // 화면 전환시 클릭 방지
+
     public GameObject Get_NotTouch_RayCast { get => NotTouch_RayCast; }
 
-    [SerializeField] Equip_Slot EquipSlot_List;
-
+    [SerializeField] Equip_Slot EquipSlot_List;         // 게임 로그인 처음인 계정 시작 캐릭터를 장착하기 위한 
+    [SerializeField] GameObject SelectStage_BG;
     [Header("---GachaMovie---")]
-    [SerializeField] GachaVideo gachaVideo;
+    [SerializeField] GachaVideo gachaVideo;             // 가차 비디오를 출력 시켜 값을 다루기 위한
 
     [Header("---Gacha_CharacterList---")]
-    [SerializeField] GameObject Gacha_10;
-    [SerializeField] GameObject Gacha_1;
-    [SerializeField] GameObject[] Book_Images;
-    [SerializeField] GameObject Book_Image;
+    [SerializeField] GameObject Gacha_10;               // 10연 가차일 때 나오는
+    [SerializeField] GameObject Gacha_1;                // 단일 가차일 때 나오는
+    [SerializeField] GameObject[] Book_Images;          // 10연 가차에서 나온 캐릭터가 최고 등급에 도달했지만 중복으로 나올 경우 획득한 소환서를 알기 위한
+    [SerializeField] GameObject Book_Image;             // 단일 가차에서 나온 캐릭터가 최고 등급에 도달했지만 중복으로 나올 경우 획득한 소환서를 알기 위한
 
     [Header("---UI---")]
     [SerializeField] Text[] DiaCount_Texts;
@@ -39,6 +40,7 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] InputField NameChange_IF;
     [SerializeField] GameObject Erorr_Panel;
     [SerializeField] Text ErorrMessage;
+   
 
     public List<Profile_Slot> UserInfo_ProfileList = new List<Profile_Slot>();
     [SerializeField] Image[] UserProfile;
@@ -107,6 +109,8 @@ public class Lobby_Manager : MonoBehaviour
         Refresh_UserName();
         Refresh_User_CombatPower();
         Refresh_User_CharAmount();
+        // 대기 캐릭터 UI 생성
+        StageSelect_UI.Inst.Spawn_Stand_Char();
     }
     #endregion
 
@@ -291,7 +295,6 @@ public class Lobby_Manager : MonoBehaviour
         string nickStr = NameChange_IF.text;
         // 빈칸 제거
         nickStr.Trim();
-
         // 공란 체크
         if (string.IsNullOrEmpty(nickStr))
         {
@@ -300,9 +303,9 @@ public class Lobby_Manager : MonoBehaviour
         }
 
         // 글자 수 체크
-        if (!(2 <= nickStr.Length && nickStr.Length <= 10))
+        if (!(3 <= nickStr.Length && nickStr.Length <= 10))
         {
-            ErorrPanel_Text("이름은 2~10자 사이로\n입력해주세요.");
+            ErorrPanel_Text("이름은 3~10자 사이로\n입력해주세요.");
             return;
         }
 
@@ -348,6 +351,7 @@ public class Lobby_Manager : MonoBehaviour
         NameChange_IF.text = "";
     }
     #endregion
+
 
     public void Reset_SelectChar()
     {
@@ -395,6 +399,13 @@ public class Lobby_Manager : MonoBehaviour
         UserInfo.CharacterList_ToJson();
     }
     #endregion
+
+    public void TestMoveScene()
+    {
+        SceneManager.LoadScene("InGameScene");
+    }
+
+
 }
 
 [System.Serializable]

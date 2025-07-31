@@ -241,8 +241,6 @@ public class Title_Manager : MonoBehaviour
         GameStart_Btn.SetActive(true);
     }
 
-
-
     private void OnLoginFailure(PlayFabError _error)
     {
         // 로그인 실패 시 안내문구
@@ -290,9 +288,9 @@ public class Title_Manager : MonoBehaviour
             return;
         }
 
-        if (!(2 <= nickStr.Length && nickStr.Length <= 10))
+        if (!(3 <= nickStr.Length && nickStr.Length <= 10))
         {
-            MessageOnOff("이름은 2~10자 사이로\n입력해주세요.");
+            MessageOnOff("이름은 3~10자 사이로\n입력해주세요.");
             return;
         }
 
@@ -444,23 +442,30 @@ public class Title_Manager : MonoBehaviour
     #region Data_Load
     void LoadUserCharactersFromChunks(List<string> _keys)
     {
+        // 캐릭터 데이터 요청
         var request = new GetUserDataRequest();
         PlayFabClientAPI.GetUserData(request, result =>
         {
+            // 성공했으면
+            // Load할 캐릭터 Dictionary타입으로 받기 위해
             Dictionary<string, Character> loadedDict = new Dictionary<string, Character>();
 
+            // 캐릭터 이름으로 비교하기 위해
             foreach (string key in _keys)
             {
+                // Load 성공한 데이타에 _Key의 이름이 순서대로 포함되어있는지 확인
                 if (result.Data.ContainsKey(key))
                 {
-                   
+                    // json 형식의 value값 받아오기
                     string json = result.Data[key].Value;
+                    // Wrapper로 json형식 데이터 타입으로 받기 위해 쪼개기
                     CharacterListWrapper wrapper = JsonUtility.FromJson<CharacterListWrapper>(json);
 
+                    // 플레이팹에 저장된 Json형식의 캐릭터 데이터 불러오기
                     foreach (var pair in wrapper.Characters)
                     {
                         loadedDict[pair.key] = pair.value;
-                        loadedDict[pair.key].Load_Resources(pair.value.Get_Illust_Address, pair.value.Get_Normal_Image_Address, pair.value.Get_Grade_Up_Image_Address,
+                        loadedDict[pair.key].Load_Resources(pair.value.Get_UI_Prefab_Path, pair.value.Get_Prefab_Path, pair.value.Get_Illust_Address, pair.value.Get_Normal_Image_Address, pair.value.Get_Grade_Up_Image_Address,
                             pair.value.Get_Profile_Address, pair.value.Get_White_Illust_Address, pair.value.Get_Pixel_Illust_Address, pair.value.Get_Icon_Address, pair.value.Get_BG_Address,
                             pair.value.Get_Square_Illust_Address);
                         loadedDict[pair.key].Reset_Item();
@@ -468,20 +473,26 @@ public class Title_Manager : MonoBehaviour
                 }
             }
 
+            // 유저가 지니고 있는 캐릭터를 위에서 받은 Dictionary로 초기화
             UserInfo.UserCharDict = loadedDict;
 
+            // 장착한 캐릭터가 있는지 확인
             for (int i = 0; i < EquipCharNameData.Count; i++)
             {
+                // 장착한 캐릭터 Equip_Characters리스트에 추가
                 UserInfo.Equip_Characters.Add(UserInfo.UserCharDict[EquipCharNameData[i]]);
             }
 
+            // 유저 전체 Dictionary만큼 반복
             foreach (var pair in UserInfo.UserCharDict)
             {
+                //이름과 Character를 변수로 받아 장착했는지 비교
                 string charName = pair.Key;
                 Character character = pair.Value;
 
                 bool isEquipped = UserInfo.Equip_Characters.Any(equip => equip.Get_CharName == charName);
 
+                // UI로 보여주기 위한 Dictionary에 추가
                 if (!isEquipped)
                 {
                     UserInfo.UserCharDict_Copy.Add(new KeyValuePair<string, Character>(charName, character));

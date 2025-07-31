@@ -45,6 +45,8 @@ public class Character_Image_Address
 	public string CHAR_PIXEL_IMAGE;
 	public string CHAR_ICON_IMAGE;
 	public string CHAR_BG_IMAGE;
+	public string CHAR_PREFAB_PATH;
+	public string CHAR_UI_PATH;
 }
 
 [Serializable]

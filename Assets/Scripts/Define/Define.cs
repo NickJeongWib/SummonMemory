@@ -110,6 +110,7 @@ public static class Define
         SSR,
     }
 
+    // 데이터 저장 타입
     public enum PACKETTYPE
     {
         CHARLIST,
@@ -120,5 +121,13 @@ public static class Define
         DIA,
         MONEY,
         PROFILE_IMG,
+    }
+
+    // 인게임 게임 진행 상태
+    public enum INGAME_STATE
+    {
+        READY,
+        PLAYING,
+        PAUSE
     }
 }
