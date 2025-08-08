@@ -20,7 +20,7 @@ public class InGame_ObjPool : MonoBehaviour
         for(int i = 0; i < UserInfo.Equip_Characters.Count; i++)
         {
             GameObject spawnCharPath = Resources.Load<GameObject>(UserInfo.Equip_Characters[i].Get_Prefab_Path);
-            GameObject spawnChar = Instantiate(spawnCharPath, SpawnPos[i].position, Quaternion.identity);
+            GameObject spawnChar = Instantiate(spawnCharPath, SpawnPos[UserInfo.Pos_Index[i]].position, Quaternion.identity);
 
             // 생성된 캐릭터 체력 넘겨주기
             spawnChar.GetComponent<Character_Ctrl>().Set_HP(UserInfo.Equip_Characters[i].Get_CharHP);

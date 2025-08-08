@@ -10,6 +10,7 @@ public class EquipChar_Move : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
     [Header("PointerDown")]
     int Pos_Num;
+    int StageSpawnPos;
 
     [Header("Drag_Var")]
     public RectTransform canvasRectTransform;
@@ -24,7 +25,7 @@ public class EquipChar_Move : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     {
         // 이름 가져와서 몇번째 장착된 캐릭인지 알기
         string[] name = this.gameObject.name.Split("_");
-        Pos_Num = int.Parse(name[2]);
+        Pos_Num = (int.Parse(name[2]) - 1);
 
         if(gameObject.transform.childCount <= 0)
         {
@@ -40,6 +41,7 @@ public class EquipChar_Move : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         {
             return;
         }
+
         // Canvas가 Screen space - camera로 되있기 때문에
         // 좌표계를 바꿔줘야 할 필요가 있음
         Vector2 localPoint;
@@ -89,6 +91,8 @@ public class EquipChar_Move : MonoBehaviour, IPointerDownHandler, IDragHandler, 
                     // 바꿔준 오브젝트 위치는 기존에 드래그했던 캐릭터 위치로
                     result.gameObject.transform.position = StartPos;
 
+                    Change_Char_Pos(result.gameObject);
+
                 }
                 else
                 {
@@ -104,9 +108,26 @@ public class EquipChar_Move : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     #endregion
 
     #region Change_Position
-    void Change_Char_Pos()
+    void Change_Char_Pos(GameObject _obj)
     {
-        // UserInfo.Pos_Index[]
+        // 이름 가져와서 몇번째 장착된 캐릭인지 알기
+        string[] spawnPos = _obj.transform.parent.name.Split("_");
+        StageSpawnPos = (int.Parse(spawnPos[1]) - 1);
+        UserInfo.Pos_Index[Pos_Num] = StageSpawnPos;
+
+        // 다른 오브젝트를 이 오브젝트가 있던 부모 오브젝트로 붙히기
+        StageSelect_UI.Inst.MovePanel_Parents[StageSpawnPos].transform.GetChild(1).SetParent(this.transform.parent.transform);
+
+        // 이 오브젝트 다른 부모 오브젝트로 붙히기
+        this.transform.SetParent(StageSelect_UI.Inst.MovePanel_Parents[StageSpawnPos].transform);
+
+        StageSelect_UI.Inst.Check_Pos();
+
+        for (int i = 0; i < StageSelect_UI.Inst.Copy_EquipChar.Count; i++)
+        {
+            Debug.Log(StageSelect_UI.Inst.Copy_EquipChar[i].Get_CharName);
+            Debug.Log(UserInfo.Pos_Index[i]);
+        }
     }
     #endregion
 }

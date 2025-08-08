@@ -453,7 +453,11 @@ public class CharacterList_UI : MonoBehaviour
         }
 
         // 기존 캐릭터 장착 리스트를 새 장착 캐릭터들로 저장
-        Old_Equip_Characters = UserInfo.Equip_Characters.ToList();
+        for(int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        {
+            Old_Equip_Characters.Add(UserInfo.Equip_Characters[i]);
+            EquipSlot_List[i].EquipCharacter = UserInfo.Equip_Characters[i];
+        }
         //UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
         // 확인버튼 비활성화
         Save_Change_Char.interactable = false;

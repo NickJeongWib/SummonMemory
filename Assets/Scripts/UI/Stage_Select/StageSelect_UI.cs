@@ -23,6 +23,8 @@ public class StageSelect_UI : MonoBehaviour
     [Header("Drag")]
     [SerializeField] Transform[] CharPos;
 
+    public GameObject[] MovePanel_Parents;
+
     private void Awake()
     {
         if (Inst == null)
@@ -62,10 +64,23 @@ public class StageSelect_UI : MonoBehaviour
     {
         // 현재 장착 캐릭터를 담기 위한 List
         Copy_EquipChar = new List<Character>();
+        int index = 0;
         // 장착 캐릭터 순서를 조종하기 위해 복사
         for(int i = 0; i < UserInfo.Equip_Characters.Count; i++)
         {
             Copy_EquipChar.Add(UserInfo.Equip_Characters[i]);
+            UserInfo.Pos_Index[i] = i;
+            index = i;
+        }
+        // 장착안 한 칸 확인 하기 위해
+        for(int i = index + 1; i < UserInfo.Pos_Index.Length; i++)
+        {
+            UserInfo.Pos_Index[i] = -1;
+        }
+
+        for(int i = 0; i < UserInfo.Pos_Index.Length; i++)
+        {
+            Debug.Log(UserInfo.Pos_Index[i]);
         }
 
         // 기존 장착한 캐릭터 프리펩 전체 삭제
@@ -91,4 +106,28 @@ public class StageSelect_UI : MonoBehaviour
     }
 
     #endregion
+
+    public void Check_Pos()
+    {
+        for(int i = 0; i < CharPos.Length; i++)
+        {
+            // CharPos[i].localPosition = Vector3.zero;
+            CharPos[i].GetComponent<EquipChar_Move>().canvasRectTransform = CharPos[i].parent.GetComponent<RectTransform>();
+            // Debug.Log(CharPos[i].parent.name);
+
+            // UI프리펩이 달려 있지 않으면 계속
+            if (CharPos[i].childCount <= 0)
+            {
+                continue;
+            }
+            // CharPos의 장착 캐릭터 순번 들고 오기
+            string[] name = CharPos[i].name.Split("_");
+            int index = int.Parse(name[2]) - 1;
+
+            // 오브젝트의 부모 이름으로 어디 소환할지 알기
+            string[] spawnPos = CharPos[i].parent.name.Split("_");
+            int spawnindex = int.Parse(spawnPos[1]) - 1;
+            UserInfo.Pos_Index[index] = spawnindex;
+        }
+    }
 }

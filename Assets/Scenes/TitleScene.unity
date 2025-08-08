@@ -590,6 +590,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 313875186}
   PopUp_Panel: {fileID: 472154271}
+  SelectStage_Transition: {fileID: 0}
+  SelectStage_BG: {fileID: 0}
 --- !u!95 &313875186
 Animator:
   serializedVersion: 5

@@ -134,6 +134,7 @@ Transform:
   m_Children:
   - {fileID: 8573892526077696439}
   - {fileID: 551806700969486900}
+  - {fileID: 7362920762596813795}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3524748354810611968
@@ -407,3 +408,69 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &6760537261644226706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6933543572404192056}
+    m_Modifications:
+    - target: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387376169730044214, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_Name
+      value: WindShot_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387376169730044214, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+--- !u!4 &7362920762596813795 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4322358047293229937, guid: 21570decc1e55e54ea03e78dc1004898, type: 3}
+  m_PrefabInstance: {fileID: 6760537261644226706}
+  m_PrefabAsset: {fileID: 0}
