@@ -134,6 +134,7 @@ Transform:
   m_Children:
   - {fileID: 4107302814636226550}
   - {fileID: 7823804539879562561}
+  - {fileID: 7186461353999198720}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &364441597725219945
@@ -407,3 +408,69 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &6458970129048032503
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1229940821243282082}
+    m_Modifications:
+    - target: {fileID: 4170445914640735221, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_Name
+      value: GreatWaterHill_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170445914640735221, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6864a82a96004a4e806374f88500782, type: 3}
+--- !u!4 &7186461353999198720 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4186570408234172151, guid: f6864a82a96004a4e806374f88500782, type: 3}
+  m_PrefabInstance: {fileID: 6458970129048032503}
+  m_PrefabAsset: {fileID: 0}
