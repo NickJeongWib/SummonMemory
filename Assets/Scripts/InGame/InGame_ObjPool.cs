@@ -23,7 +23,7 @@ public class InGame_ObjPool : MonoBehaviour
             GameObject spawnChar = Instantiate(spawnCharPath, SpawnPos[UserInfo.Pos_Index[i]].position, Quaternion.identity);
 
             // 생성된 캐릭터 체력 넘겨주기
-            spawnChar.GetComponent<Character_Ctrl>().Set_HP(UserInfo.Equip_Characters[i].Get_CharHP);
+            spawnChar.GetComponent<Character_Ctrl>().Set_Init(UserInfo.Equip_Characters[i].Get_CharHP, UserInfo.Equip_Characters[i].SkillData);
 
             GameObject skill = Instantiate(Skill_Icon);
             skill.transform.SetParent(SkillIcon_Tr, false);

@@ -14,6 +14,7 @@ public class GoogleSheetSO : ScriptableObject
 	public List<Level_DB> Level_DBList;
 	public List<Inventory_Item_DB> Inventory_Item_DBList;
 	public List<Quest_DB> Quest_DBList;
+	public List<SKILL_DATA> SKILL_DATAList;
 }
 
 [Serializable]
@@ -122,5 +123,25 @@ public class Quest_DB
 	public int REWARD_AMOUNT;
 	public string QUEST_DESC;
 	public string REWARD_IMAGE;
+}
+
+[Serializable]
+public class SKILL_DATA
+{
+	public string SKILL_NAME;
+	public string SKILL_LV;
+	public string SKILL_TYPE;
+	public int SKILL_POINT;
+	public int TARGET_NUM;
+	public float DAMAGE_RATIO;
+	public float DEBUFF_RATIO;
+	public string DEBUFF_TYPE;
+	public float BUFF_RATIO;
+	public string BUFF_TYPE;
+	public int SP_HILL_COUNT;
+	public int BUFF_TIME;
+	public string SKILL_DESC;
+	public string SKILL_ICON;
+	public string SKILL_PREFAB;
 }
 

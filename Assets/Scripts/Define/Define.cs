@@ -6,7 +6,6 @@ public static class Define
         GOLD,
     }
 
-
     public enum STORE_TYPE
     {
         CURRENCY,
@@ -130,4 +129,30 @@ public static class Define
         PLAYING,
         PAUSE
     }
+
+    #region Skill
+    public enum BUFF_TYPE
+    {
+        NONE,       // 버프 스킬 X
+        HILL,       // 힐
+        SP_HILL,    // 스킬포인트 증가
+        DEF,        // 방어력 증가
+        DEF_TARGET, // 도발 + 방어력 증가
+        ATK,        // 공격력 증가
+        ALL_BUFF    // 힐 + 공격력 증가
+    }
+
+    public enum DEBUFF_TYPE
+    {
+        NONE,
+        STUNNED,    // 기절
+        DEF,        // 방어력 디버프
+    }
+
+    public enum SKILL_TYPE
+    {
+        ATTACK,
+        BUFF,
+    }
+    #endregion
 }

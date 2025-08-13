@@ -160,6 +160,8 @@ public class Character
     Sprite Icon_Img;
     public Sprite Get_Icon_Img { get => Icon_Img; }
     #endregion
+
+    public Skill SkillData;
     ///------- Func
 
     #region Constructor
