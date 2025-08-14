@@ -7,6 +7,7 @@ using static Define;
 public class Skill
 {
     [SerializeField] string Skill_Name;
+    public string Get_Skill_Name { get => Skill_Name; }
     [SerializeField] int Skill_Lv;
     public int Get_Skill_Lv { get => Skill_Lv; set => Skill_Lv = value; }
     [SerializeField] SKILL_TYPE SkillType;
@@ -31,11 +32,16 @@ public class Skill
     public Sprite Skill_Icon_Sprite;
     public Sprite Get_Skill_Icon { get => Skill_Icon_Sprite; }
 
-    [SerializeField] string SkillIcon_Path; 
+    [SerializeField] string SkillIcon_Path;
+
+    // 스킬 프리펩 주소 & 프리펩
+    public GameObject Skill_Prefab;
+    public GameObject Get_Skill_Prefab { get => Skill_Prefab; }
+    [SerializeField] string Skill_Prefab_Path;
 
     #region Constructor
     public Skill(string _skillName, int _lv, SKILL_TYPE _skillType, int _sp, int _targetCount, float _damageRatio, float _debuffRatio, DEBUFF_TYPE _debuffType, float _buffRatio, BUFF_TYPE _buffType,
-        int _spHillCount, int _buffTime, string _skillDesc, string _iconPath)
+        int _spHillCount, int _buffTime, string _skillDesc, string _iconPath, string _prefabPath)
     {
         // 스킬정보
         Skill_Name = _skillName;
@@ -60,13 +66,16 @@ public class Skill
         Skill_Desc = _skillDesc;
         SkillIcon_Path = _iconPath;
 
-        Skill_Init(_skillDesc, _iconPath);
+        // Prefab
+        Skill_Prefab_Path = _prefabPath;
+
+        Skill_Init(_skillDesc, _iconPath, _prefabPath);
     }
 
-    public void Skill_Init(string _Desc, string _iconPath)
+    public void Skill_Init(string _Desc, string _iconPath, string _prefabPath)
     {
         Skill_Icon_Sprite = Resources.Load<Sprite>(_iconPath);
-
+        Skill_Prefab = Resources.Load<GameObject>(_prefabPath);
         Skill_Desc = _Desc;
     }
 

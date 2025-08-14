@@ -226,6 +226,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_Image: {fileID: 247760026184364019}
   CurHP: 0
+  SkillData:
+    Skill_Name: 
+    Skill_Lv: 0
+    SkillType: 0
+    SP: 0
+    TargetCount: 0
+    Damage_Ratio: 0
+    DeBuff_Ratio: 0
+    DeBuffType: 0
+    Buff_Ratio: 0
+    BuffType: 0
+    SP_Hill_Count: 0
+    Buff_Time: 0
+    Skill_Desc: 
+    SkillIcon_Path: 
+    Skill_Prefab: {fileID: 0}
+    Skill_Prefab_Path: 
+  Skill_Prefab: {fileID: 8906362402422870314}
 --- !u!1 &5950525530864634678
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,5 +490,10 @@ PrefabInstance:
 --- !u!4 &1416986389066238174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 422661551213212036, guid: 8f0a13b7a0647714799dfd7dc4e8dc33, type: 3}
+  m_PrefabInstance: {fileID: 1618971412500592986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8906362402422870314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7921405712827377776, guid: 8f0a13b7a0647714799dfd7dc4e8dc33, type: 3}
   m_PrefabInstance: {fileID: 1618971412500592986}
   m_PrefabAsset: {fileID: 0}

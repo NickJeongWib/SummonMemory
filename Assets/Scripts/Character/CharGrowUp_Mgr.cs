@@ -96,6 +96,8 @@ public class CharGrowUp_Mgr : MonoBehaviour
 
         // µ¹ÆÄ
         Char_Star.rectTransform.sizeDelta = new Vector3(GameManager.Instance.Get_SelectChar.Get_CharStar * 20, 20, 0);
+
+        On_Click_Slime(0);
     }
     #endregion
 

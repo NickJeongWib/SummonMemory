@@ -151,6 +151,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_Image: {fileID: 714169517865691539}
   CurHP: 0
+  SkillData:
+    Skill_Name: 
+    Skill_Lv: 0
+    SkillType: 0
+    SP: 0
+    TargetCount: 0
+    Damage_Ratio: 0
+    DeBuff_Ratio: 0
+    DeBuffType: 0
+    Buff_Ratio: 0
+    BuffType: 0
+    SP_Hill_Count: 0
+    Buff_Time: 0
+    Skill_Desc: 
+    SkillIcon_Path: 
+    Skill_Prefab: {fileID: 0}
+    Skill_Prefab_Path: 
+  Skill_Prefab: {fileID: 5759963217569809866}
 --- !u!1 &6544045061469800913
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefBuff_2_Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 1115182952689488625, guid: 33972249d27e83d448626b5b99022200, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5781269664329686579, guid: 33972249d27e83d448626b5b99022200, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1
@@ -468,5 +490,10 @@ PrefabInstance:
 --- !u!4 &1201720969751464200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5781269664329686579, guid: 33972249d27e83d448626b5b99022200, type: 3}
+  m_PrefabInstance: {fileID: 4654027094323386171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5759963217569809866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1115182952689488625, guid: 33972249d27e83d448626b5b99022200, type: 3}
   m_PrefabInstance: {fileID: 4654027094323386171}
   m_PrefabAsset: {fileID: 0}

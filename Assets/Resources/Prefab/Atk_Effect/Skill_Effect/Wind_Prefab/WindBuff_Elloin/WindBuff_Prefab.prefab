@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8546285777249294647}
   - component: {fileID: 9073782256885212074}
   - component: {fileID: 2078308172841350025}
+  - component: {fileID: 8439633478703916143}
   m_Layer: 0
   m_Name: WindBuff_Prefab
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 848483910, guid: 2327d47c40b09664c8a7c705ce6e82ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -106,3 +107,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8439633478703916143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704313466126443929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64ad1d134b5fce46b466d890839d0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

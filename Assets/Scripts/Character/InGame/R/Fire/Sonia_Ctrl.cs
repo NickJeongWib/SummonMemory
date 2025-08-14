@@ -10,4 +10,9 @@ public class Sonia_Ctrl : Character_Ctrl
     {
 
     }
+
+    protected override void Start()
+    {
+        base.Start();
+    }
 }

@@ -9,4 +9,9 @@ public class Tana_Ctrl : Character_Ctrl
     {
 
     }
+
+    protected override void Start()
+    {
+        base.Start();
+    }
 }

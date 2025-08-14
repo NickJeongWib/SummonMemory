@@ -8,10 +8,13 @@ public class InGame_ObjPool : MonoBehaviour
     [SerializeField] Material[] Skill_ON_Frames;
     // 스킬 아이콘 프레임
     [SerializeField] GameObject Skill_Icon;
+    [SerializeField] Vector3 Skill_Icon_SpawnPos;
+
     // 스킬 아이콘 부모 오브젝트
     [SerializeField] Transform SkillIcon_Tr;
-
     [SerializeField] Transform[] SpawnPos;
+
+    public List<Skill_Icon> SkillIcon_List = new List<Skill_Icon>();
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +26,18 @@ public class InGame_ObjPool : MonoBehaviour
             GameObject spawnChar = Instantiate(spawnCharPath, SpawnPos[UserInfo.Pos_Index[i]].position, Quaternion.identity);
 
             // 생성된 캐릭터 체력 넘겨주기
-            spawnChar.GetComponent<Character_Ctrl>().Set_Init(UserInfo.Equip_Characters[i].Get_CharHP, UserInfo.Equip_Characters[i].SkillData);
+            spawnChar.GetComponent<Character_Ctrl>().Set_Init(UserInfo.Equip_Characters[i].Get_CharHP, UserInfo.Equip_Characters[i].SkillData, UserInfo.Equip_Characters[i]);
 
-            GameObject skill = Instantiate(Skill_Icon);
+            GameObject skill = Instantiate(Skill_Icon, Skill_Icon_SpawnPos, Quaternion.identity);
             skill.transform.SetParent(SkillIcon_Tr, false);
+
             // 스킬 아이콘 UI 넘겨주기
-            skill.GetComponent<Skill_Icon>().Set_Character_UI(UserInfo.Equip_Characters[i].Get_Icon_Img,
+            skill.GetComponent<Skill_Icon>().Set_Character_UI(UserInfo.Equip_Characters[i].Get_Icon_Img, UserInfo.Equip_Characters[i].SkillData.Get_Skill_Icon,
                 Skill_ON_Frames[(int)UserInfo.Equip_Characters[i].Get_CharElement], spawnChar.GetComponent<Character_Ctrl>());
+
+            skill.SetActive(false);
+
+            SkillIcon_List.Add(skill.GetComponent<Skill_Icon>());
         }
     }
 }

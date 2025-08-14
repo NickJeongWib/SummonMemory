@@ -290,7 +290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1726971
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3757,6 +3757,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 2087754359}
   Character_Face: {fileID: 292591742}
 --- !u!114 &52243367
@@ -6131,6 +6149,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 588404482}
   Character_Face: {fileID: 297675131}
 --- !u!114 &103081961
@@ -6724,10 +6760,10 @@ RectTransform:
   - {fileID: 1701468000}
   m_Father: {fileID: 592893156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 319.6, y: -130}
-  m_SizeDelta: {x: 100, y: 232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &109549134
 MonoBehaviour:
@@ -6830,6 +6866,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   SelectBtn: {fileID: 752610007}
 --- !u!1 &113047398
 GameObject:
@@ -10744,6 +10798,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1359269617}
   Char_Porfile: {fileID: 1936732816}
@@ -10894,6 +10966,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 2052196494}
   Character_Face: {fileID: 2101323014}
 --- !u!114 &176647599
@@ -12790,6 +12880,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 579064248}
   Char_Porfile: {fileID: 799087563}
@@ -13258,10 +13366,10 @@ RectTransform:
   - {fileID: 1724450133}
   m_Father: {fileID: 455344544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 90, y: -17.165}
-  m_SizeDelta: {x: 80, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216182606
 MonoBehaviour:
@@ -13943,10 +14051,10 @@ RectTransform:
   - {fileID: 1695208371}
   m_Father: {fileID: 455344544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -17.165}
-  m_SizeDelta: {x: 80, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221885428
 MonoBehaviour:
@@ -14184,6 +14292,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226791968}
   m_CullTransparentMesh: 1
+--- !u!1 &227559170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 227559171}
+  m_Layer: 5
+  m_Name: Skill_Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &227559171
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227559170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1641248928}
+  - {fileID: 1995028012}
+  - {fileID: 2113015019}
+  - {fileID: 1738346184}
+  m_Father: {fileID: 2010792415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &227990196
 GameObject:
   m_ObjectHideFlags: 0
@@ -15049,6 +15196,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 290746434}
   Character_Face: {fileID: 1150201867}
 --- !u!114 &239963180
@@ -19244,7 +19409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NotTouch_Raycast: {fileID: 365620016}
   Character_Transition_Panel: {fileID: 0}
-  NotTouch_RayCast: {fileID: 0}
+  NotTouch_RayCast: {fileID: 365620016}
 --- !u!1 &307492119
 GameObject:
   m_ObjectHideFlags: 0
@@ -21866,6 +22031,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 2027631684}
   Character_Face: {fileID: 1906335903}
 --- !u!1 &356523711
@@ -23049,6 +23232,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1029394658}
   Char_Porfile: {fileID: 912035697}
@@ -23591,6 +23792,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1186950510}
   Char_Porfile: {fileID: 702777213}
@@ -27557,7 +27776,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 5, y: 0.0012817383}
-  m_SizeDelta: {x: 5.4799805, y: 920}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &445495926
 MonoBehaviour:
@@ -28165,6 +28384,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1535715506}
   Char_Porfile: {fileID: 860496520}
@@ -28859,6 +29096,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 525780085}
   Char_Porfile: {fileID: 948112471}
@@ -33824,10 +34079,10 @@ RectTransform:
   - {fileID: 634730962}
   m_Father: {fileID: 455344544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 170, y: -17.165}
-  m_SizeDelta: {x: 80, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &552320131
 MonoBehaviour:
@@ -37226,6 +37481,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 1912576373}
   Character_Face: {fileID: 470097584}
 --- !u!114 &614403799
@@ -38521,6 +38794,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 361338994}
   Character_Face: {fileID: 456054889}
 --- !u!114 &627297460
@@ -44163,6 +44454,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 2107793284}
   Char_Porfile: {fileID: 202967953}
@@ -47827,6 +48136,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 2042466876}
   Char_Porfile: {fileID: 935599881}
@@ -48072,6 +48399,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 166381073}
   Character_Face: {fileID: 106909435}
 --- !u!114 &784608103
@@ -49805,6 +50150,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 1017723858}
   Character_Face: {fileID: 227990198}
 --- !u!114 &805529597
@@ -50202,6 +50565,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 1175810110}
   Character_Face: {fileID: 1825898983}
 --- !u!114 &810714081
@@ -50373,6 +50754,81 @@ RectTransform:
   m_AnchoredPosition: {x: -37.99998, y: 72}
   m_SizeDelta: {x: 24, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &813764600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813764601}
+  - component: {fileID: 813764603}
+  - component: {fileID: 813764602}
+  m_Layer: 5
+  m_Name: Deco_Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &813764601
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813764600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1248628472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 237.7}
+  m_SizeDelta: {x: 1000, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &813764602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813764600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ddfdb47803a7d8347b7f363976c29765, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &813764603
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813764600}
+  m_CullTransparentMesh: 1
 --- !u!1 &817593586
 GameObject:
   m_ObjectHideFlags: 0
@@ -50464,6 +50920,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 1563132282}
   Character_Face: {fileID: 422930707}
 --- !u!114 &817593589
@@ -51766,6 +52240,7 @@ RectTransform:
   m_Children:
   - {fileID: 1896583050}
   - {fileID: 252683022}
+  - {fileID: 2010792415}
   - {fileID: 700090641}
   m_Father: {fileID: 1726971}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52583,6 +53058,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 1627066906}
   Character_Face: {fileID: 1626115208}
 --- !u!114 &859283549
@@ -55422,6 +55915,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 935271031}
   Character_Face: {fileID: 1462372380}
 --- !u!114 &905040120
@@ -59153,6 +59664,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 698756919}
   Character_Face: {fileID: 501392579}
 --- !u!114 &959686278
@@ -65241,6 +65770,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 2068228738}
   Character_Face: {fileID: 1860202222}
 --- !u!114 &1067660976
@@ -65428,6 +65975,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 370788022}
   Character_Face: {fileID: 880589081}
 --- !u!114 &1067902746
@@ -69061,6 +69626,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1581249144}
   Char_Porfile: {fileID: 1134889609}
@@ -71544,6 +72127,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161992327}
   m_CullTransparentMesh: 1
+--- !u!1 &1162574063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1162574064}
+  - component: {fileID: 1162574066}
+  - component: {fileID: 1162574065}
+  m_Layer: 5
+  m_Name: PanelTitle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1162574064
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162574063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2010792415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 297}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1162574065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162574063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a9a948d0110490a489dfc981208bd0a1, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "\uC2A4\uD0AC \uC815\uBCF4"
+--- !u!222 &1162574066
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162574063}
+  m_CullTransparentMesh: 1
 --- !u!1 &1163806922
 GameObject:
   m_ObjectHideFlags: 0
@@ -73100,6 +73762,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182235785}
+  m_CullTransparentMesh: 1
+--- !u!1 &1182373000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1182373001}
+  - component: {fileID: 1182373003}
+  - component: {fileID: 1182373002}
+  m_Layer: 5
+  m_Name: Deco_Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1182373001
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182373000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1248628472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 2}
+  m_SizeDelta: {x: 1000, y: 3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1182373002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182373000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ddfdb47803a7d8347b7f363976c29765, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1182373003
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182373000}
   m_CullTransparentMesh: 1
 --- !u!1 &1182391252
 GameObject:
@@ -78185,6 +78922,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248484911}
   m_CullTransparentMesh: 1
+--- !u!1 &1248628471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1248628472}
+  m_Layer: 5
+  m_Name: Deco
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1248628472
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248628471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 813764601}
+  - {fileID: 1182373001}
+  m_Father: {fileID: 2010792415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1249348618
 GameObject:
   m_ObjectHideFlags: 0
@@ -79245,6 +80019,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1863209509}
   Char_Porfile: {fileID: 598477411}
@@ -80461,6 +81253,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 270887032}
   Char_Porfile: {fileID: 1244349208}
@@ -82825,6 +83635,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 1476447169}
   Character_Face: {fileID: 1147284928}
 --- !u!114 &1331103529
@@ -83090,6 +83918,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333874431}
+  m_CullTransparentMesh: 1
+--- !u!1 &1335650586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1335650587}
+  - component: {fileID: 1335650589}
+  - component: {fileID: 1335650588}
+  m_Layer: 5
+  m_Name: Deco
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1335650587
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335650586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2010792415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -32}
+  m_SizeDelta: {x: 1280, y: 720}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1335650588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335650586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 18df68c954e82d246b2e4ea8075ec404, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1335650589
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335650586}
   m_CullTransparentMesh: 1
 --- !u!1 &1336657402
 GameObject:
@@ -84403,6 +85306,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 1246915898}
   Character_Face: {fileID: 77689722}
 --- !u!114 &1351113358
@@ -84841,10 +85762,10 @@ RectTransform:
   - {fileID: 136717170}
   m_Father: {fileID: 592893156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.8, y: -130}
-  m_SizeDelta: {x: 100, y: 232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355748820
 MonoBehaviour:
@@ -84947,6 +85868,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   SelectBtn: {fileID: 486325255}
 --- !u!1 &1358189471
 GameObject:
@@ -86378,6 +87317,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 943760636}
   Char_Porfile: {fileID: 485161090}
@@ -87376,6 +88333,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 578582154}
   Char_Porfile: {fileID: 2096846791}
@@ -88095,6 +89070,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 240615}
   Char_Porfile: {fileID: 1700339789}
@@ -91230,6 +92223,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 670955503}
   Char_Porfile: {fileID: 2135738770}
@@ -96919,6 +97930,117 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573144315}
   m_CullTransparentMesh: 1
+--- !u!1 &1575779379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1575779380}
+  - component: {fileID: 1575779384}
+  - component: {fileID: 1575779383}
+  - component: {fileID: 1575779382}
+  - component: {fileID: 1575779381}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1575779380
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575779379}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139159644}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1575779381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575779379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.8666667, g: 0.49411765, b: 0.49411765, a: 0.5019608}
+  m_EffectDistance: {x: 0, y: -2}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1575779382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575779379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.8679245, g: 0.495372, b: 0.495372, a: 0.5}
+  m_EffectDistance: {x: 2, y: 0}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1575779383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575779379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a9a948d0110490a489dfc981208bd0a1, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "\uC2A4\uD0AC \uB808\uBCA8 \uC5C5"
+--- !u!222 &1575779384
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575779379}
+  m_CullTransparentMesh: 1
 --- !u!1 &1579052871
 GameObject:
   m_ObjectHideFlags: 0
@@ -98451,6 +99573,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1569538160}
   Char_Porfile: {fileID: 1524150687}
@@ -98850,10 +99990,10 @@ RectTransform:
   - {fileID: 540326369}
   m_Father: {fileID: 592893156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 64, y: -130}
-  m_SizeDelta: {x: 100, y: 232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1602779258
 MonoBehaviour:
@@ -98956,6 +100096,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   SelectBtn: {fileID: 853418693}
 --- !u!1 &1604681682
 GameObject:
@@ -99048,6 +100206,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 561314073}
   Character_Face: {fileID: 699958614}
 --- !u!114 &1604681685
@@ -100008,6 +101184,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639390147}
   m_CullTransparentMesh: 1
+--- !u!1 &1641248927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1641248928}
+  - component: {fileID: 1641248930}
+  - component: {fileID: 1641248929}
+  m_Layer: 5
+  m_Name: Skill_Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1641248928
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641248927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227559171}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -444, y: 0}
+  m_SizeDelta: {x: 150, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1641248929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641248927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0f92c3166ba4a0441987af6a248b6e6b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1641248930
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641248927}
+  m_CullTransparentMesh: 1
 --- !u!1 &1641519196
 GameObject:
   m_ObjectHideFlags: 0
@@ -100175,6 +101426,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 199495672}
   Character_Face: {fileID: 258489010}
 --- !u!114 &1642222928
@@ -102506,6 +103775,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 40425247}
   Char_Porfile: {fileID: 1716662759}
@@ -103718,10 +105005,10 @@ RectTransform:
   - {fileID: 898296185}
   m_Father: {fileID: 455344544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -70, y: -17.165}
-  m_SizeDelta: {x: 80, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1699040350
 MonoBehaviour:
@@ -105171,6 +106458,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 823790558}
   Character_Face: {fileID: 64327953}
 --- !u!114 &1714521338
@@ -105301,10 +106606,10 @@ RectTransform:
   - {fileID: 231253600}
   m_Father: {fileID: 455344544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -150, y: -17.165}
-  m_SizeDelta: {x: 80, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1715740279
 MonoBehaviour:
@@ -106592,10 +107897,10 @@ RectTransform:
   - {fileID: 165024182}
   m_Father: {fileID: 592893156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 447.4, y: -130}
-  m_SizeDelta: {x: 100, y: 232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728869334
 MonoBehaviour:
@@ -106698,6 +108003,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   SelectBtn: {fileID: 2107518365}
 --- !u!1 &1729503178
 GameObject:
@@ -106949,6 +108272,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 29320848}
   Char_Porfile: {fileID: 1375487941}
@@ -107537,6 +108878,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738062208}
   m_CullTransparentMesh: 1
+--- !u!1 &1738346183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1738346184}
+  - component: {fileID: 1738346186}
+  - component: {fileID: 1738346185}
+  m_Layer: 5
+  m_Name: NextSkill_Desc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1738346184
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738346183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227559171}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -178, y: -39}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1738346185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738346183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a9a948d0110490a489dfc981208bd0a1, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "\uB2E4\uC74C \uB808\uBCA8 \uC2A4\uD0AC \uC124\uBA85"
+--- !u!222 &1738346186
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738346183}
+  m_CullTransparentMesh: 1
 --- !u!1 &1738469598
 GameObject:
   m_ObjectHideFlags: 0
@@ -107747,6 +109167,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   CharacterPanel: {fileID: 1726970}
   CharacterUI_Ref: {fileID: 385401710}
   FrameColors:
@@ -108262,6 +109700,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 1733470771}
   Character_Face: {fileID: 909575119}
 --- !u!114 &1744352671
@@ -110022,6 +111478,138 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783489699}
   m_CullTransparentMesh: 1
+--- !u!1 &1784913330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1784913331}
+  - component: {fileID: 1784913334}
+  - component: {fileID: 1784913333}
+  - component: {fileID: 1784913332}
+  m_Layer: 5
+  m_Name: Back_Btn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1784913331
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784913330}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000799, y: 1.0000799, z: 1.0000799}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2010792415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -600.9999, y: 320}
+  m_SizeDelta: {x: 70, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1784913332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784913330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1784913333}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: On_Click_OffPanel_Circle
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2010792414}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1784913333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784913330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c9dc3458d834f29448141faadeaaaba6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1784913334
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784913330}
+  m_CullTransparentMesh: 1
 --- !u!1 &1787927952
 GameObject:
   m_ObjectHideFlags: 0
@@ -110782,6 +112370,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 1166126483}
   Character_Face: {fileID: 2130283761}
 --- !u!114 &1798804181
@@ -112693,6 +114299,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 1900108303}
   Character_Face: {fileID: 219540060}
 --- !u!114 &1836283944
@@ -116139,6 +117763,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 2068039649}
   Char_Porfile: {fileID: 883189696}
@@ -117460,6 +119102,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1090028226}
   Char_Porfile: {fileID: 1358189472}
@@ -118373,6 +120033,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 2064544537}
   Char_Porfile: {fileID: 1296324160}
@@ -120197,6 +121875,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 824557192}
   Char_Porfile: {fileID: 30018727}
@@ -121401,6 +123097,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991338749}
   m_CullTransparentMesh: 1
+--- !u!1 &1995028011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995028012}
+  - component: {fileID: 1995028014}
+  - component: {fileID: 1995028013}
+  - component: {fileID: 1995028015}
+  m_Layer: 5
+  m_Name: Skill_Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1995028012
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995028011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227559171}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -444, y: -101}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1995028013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995028011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a9a948d0110490a489dfc981208bd0a1, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "\uB85C \uC544\uC774\uC544\uC2A4"
+--- !u!222 &1995028014
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995028011}
+  m_CullTransparentMesh: 1
+--- !u!114 &1995028015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995028011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1995790560
 GameObject:
   m_ObjectHideFlags: 0
@@ -121726,6 +123517,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 278838877}
   Char_Porfile: {fileID: 62653613}
@@ -122373,6 +124182,105 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008912101}
   m_CullTransparentMesh: 1
+--- !u!1 &2010792414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2010792415}
+  - component: {fileID: 2010792417}
+  - component: {fileID: 2010792416}
+  - component: {fileID: 2010792418}
+  m_Layer: 5
+  m_Name: CharSkill_Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2010792415
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010792414}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1335650587}
+  - {fileID: 1162574064}
+  - {fileID: 1248628472}
+  - {fileID: 227559171}
+  - {fileID: 1784913331}
+  - {fileID: 2139159644}
+  m_Father: {fileID: 849424344}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1280, y: 720}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2010792416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010792414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0616925a691d3644fbf39e5e8a27283e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2010792417
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010792414}
+  m_CullTransparentMesh: 1
+--- !u!114 &2010792418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010792414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c4f982bdd586a46a93aa3d21faf5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Skill_Name: {fileID: 1995028013}
+  Skill_Icon_Img: {fileID: 1641248929}
+  Skill_Cur_Desc: {fileID: 2113015020}
+  Skill_Next_Desc: {fileID: 1738346185}
+  Skill_Lv: 0
 --- !u!1 &2013404050
 GameObject:
   m_ObjectHideFlags: 0
@@ -122548,6 +124456,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1338707243}
   Char_Porfile: {fileID: 1410820325}
@@ -123439,10 +125365,10 @@ RectTransform:
   - {fileID: 874536977}
   m_Father: {fileID: 592893156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 575.2, y: -130}
-  m_SizeDelta: {x: 100, y: 232}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027061179
 MonoBehaviour:
@@ -123545,6 +125471,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   SelectBtn: {fileID: 644002399}
 --- !u!1 &2027185856
 GameObject:
@@ -125144,6 +127088,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 633327968}
   Char_Porfile: {fileID: 1934135326}
@@ -127402,7 +129364,7 @@ GameObject:
   - component: {fileID: 2086652607}
   - component: {fileID: 2086652606}
   m_Layer: 5
-  m_Name: Item_Select_Btn
+  m_Name: Skill_Select_Btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127472,7 +129434,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2086652607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: On_Click_OnPanel_Circle
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2010792414}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2086652607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128206,10 +130180,10 @@ RectTransform:
   - {fileID: 7673009}
   m_Father: {fileID: 455344544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -17.165}
-  m_SizeDelta: {x: 80, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2097655693
 MonoBehaviour:
@@ -129622,6 +131596,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110509586}
   m_CullTransparentMesh: 1
+--- !u!1 &2113015018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113015019}
+  - component: {fileID: 2113015021}
+  - component: {fileID: 2113015020}
+  m_Layer: 5
+  m_Name: CurSkill_Desc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2113015019
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113015018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227559171}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -178, y: 197}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2113015020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113015018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a9a948d0110490a489dfc981208bd0a1, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "\uD604\uC7AC \uB808\uBCA8 \uC2A4\uD0AC \uC124\uBA85"
+--- !u!222 &2113015021
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113015018}
+  m_CullTransparentMesh: 1
 --- !u!1 &2114046224
 GameObject:
   m_ObjectHideFlags: 0
@@ -130462,6 +132515,24 @@ MonoBehaviour:
     Pixel_Illust_Address: 
     Icon_Address: 
     BG_Address: 
+    SkillData:
+      Skill_Name: 
+      Skill_Lv: 0
+      SkillType: 0
+      SP: 0
+      TargetCount: 0
+      Damage_Ratio: 0
+      DeBuff_Ratio: 0
+      DeBuffType: 0
+      Buff_Ratio: 0
+      BuffType: 0
+      SP_Hill_Count: 0
+      Buff_Time: 0
+      Skill_Desc: 
+      Skill_Icon_Sprite: {fileID: 0}
+      SkillIcon_Path: 
+      Skill_Prefab: {fileID: 0}
+      Skill_Prefab_Path: 
   Select_Img: {fileID: 127149832}
   Character_Face: {fileID: 686195476}
 --- !u!114 &2123005826
@@ -131156,6 +133227,127 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139103418}
+  m_CullTransparentMesh: 1
+--- !u!1 &2139159643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2139159644}
+  - component: {fileID: 2139159647}
+  - component: {fileID: 2139159646}
+  - component: {fileID: 2139159645}
+  m_Layer: 5
+  m_Name: Skill_Level_Up_Btn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2139159644
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139159643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1575779380}
+  m_Father: {fileID: 2010792415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -312}
+  m_SizeDelta: {x: 250, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2139159645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139159643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2139159646}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2139159646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139159643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7b19a61f532ce2b4c87e215027b15510, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 0.01
+--- !u!222 &2139159647
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139159643}
   m_CullTransparentMesh: 1
 --- !u!1 &2140309986
 GameObject:
