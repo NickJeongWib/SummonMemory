@@ -671,7 +671,7 @@ public class CharacterList_UI : MonoBehaviour
     public void On_Click_CharInfo(CharacterSlot _slot)
     {
         CharacterInfo_Transition.SetActive(true);
-        GameManager.Instance.Get_SelectChar = _slot.character;
+        GameManager.Inst.Get_SelectChar = _slot.character;
         // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
 
         Refresh_EquipItem_Image();
@@ -722,7 +722,7 @@ public class CharacterList_UI : MonoBehaviour
     public void On_Click_CharInfo(Equip_Slot _slot)
     {
         CharacterInfo_Transition.SetActive(true);
-        GameManager.Instance.Get_SelectChar = _slot.EquipCharacter;
+        GameManager.Inst.Get_SelectChar = _slot.EquipCharacter;
         // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
 
         Refresh_EquipItem_Image();
@@ -786,7 +786,7 @@ public class CharacterList_UI : MonoBehaviour
             return;
         }
 
-        GameManager.Instance.Get_SelectChar = character;
+        GameManager.Inst.Get_SelectChar = character;
         // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
 
         Refresh_EquipItem_Image();
@@ -851,7 +851,7 @@ public class CharacterList_UI : MonoBehaviour
     // 장착 캐릭터 클릭 시 이동 오버로딩
     public void On_Click_CharInfo(CharInfo_CharSelect_Btn _slot)
     {
-        GameManager.Instance.Get_SelectChar = _slot.character;
+        GameManager.Inst.Get_SelectChar = _slot.character;
         // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
 
         Refresh_EquipItem_Image();
@@ -879,14 +879,14 @@ public class CharacterList_UI : MonoBehaviour
 
         for (int i = 0; i < CharEquipment_Btns.Length; i++)
         {
-            if (GameManager.Instance.Get_SelectChar.Get_EquipItems[i] == null)
+            if (GameManager.Inst.Get_SelectChar.Get_EquipItems[i] == null)
             {
-                CharEquipment_Btns[i].Refresh_EquipItem(ItemEquipType[i], false, GameManager.Instance.Get_SelectChar.Get_EquipItems[i]);
+                CharEquipment_Btns[i].Refresh_EquipItem(ItemEquipType[i], false, GameManager.Inst.Get_SelectChar.Get_EquipItems[i]);
                 continue;
             }
 
-            CharEquipment_Btns[i].Refresh_EquipItem(GameManager.Instance.Get_SelectChar.Get_EquipItems[i].Get_Item_Image, true,
-                GameManager.Instance.Get_SelectChar.Get_EquipItems[i]);
+            CharEquipment_Btns[i].Refresh_EquipItem(GameManager.Inst.Get_SelectChar.Get_EquipItems[i].Get_Item_Image, true,
+                GameManager.Inst.Get_SelectChar.Get_EquipItems[i]);
         }
     }
 
@@ -968,26 +968,26 @@ public class CharacterList_UI : MonoBehaviour
     #region Char_ComabatPower_UI
     public void CharCombat_Text_Refresh()
     {
-        Char_CombatTxt.text = $"{GameManager.Instance.Get_SelectChar.Calc_CombatPower()}";
+        Char_CombatTxt.text = $"{GameManager.Inst.Get_SelectChar.Calc_CombatPower()}";
 
-        CharInfo_MaxHP_Txt.text = $"{GameManager.Instance.Get_SelectChar.Get_CharHP.ToString("N0")} " +
-            $"<color=orange>(+{(GameManager.Instance.Get_SelectChar.Get_CharHP - GameManager.Instance.Get_SelectChar.Get_BaseHP).ToString("N0")})</color>";
+        CharInfo_MaxHP_Txt.text = $"{GameManager.Inst.Get_SelectChar.Get_CharHP.ToString("N0")} " +
+            $"<color=orange>(+{(GameManager.Inst.Get_SelectChar.Get_CharHP - GameManager.Inst.Get_SelectChar.Get_BaseHP).ToString("N0")})</color>";
 
-        CharInfo_Atk_Txt.text = $"{GameManager.Instance.Get_SelectChar.Get_CharATK.ToString("N0")} " +
-            $"<color=orange>(+{(GameManager.Instance.Get_SelectChar.Get_CharATK - GameManager.Instance.Get_SelectChar.Get_BaseAtk).ToString("N0")})</color>";
+        CharInfo_Atk_Txt.text = $"{GameManager.Inst.Get_SelectChar.Get_CharATK.ToString("N0")} " +
+            $"<color=orange>(+{(GameManager.Inst.Get_SelectChar.Get_CharATK - GameManager.Inst.Get_SelectChar.Get_BaseAtk).ToString("N0")})</color>";
 
-        CharInfo_Def_Txt.text = $"{GameManager.Instance.Get_SelectChar.Get_CharDEF.ToString("N0")} " +
-            $"<color=orange>(+{(GameManager.Instance.Get_SelectChar.Get_CharDEF - GameManager.Instance.Get_SelectChar.Get_BaseDef).ToString("N0")})</color>";
+        CharInfo_Def_Txt.text = $"{GameManager.Inst.Get_SelectChar.Get_CharDEF.ToString("N0")} " +
+            $"<color=orange>(+{(GameManager.Inst.Get_SelectChar.Get_CharDEF - GameManager.Inst.Get_SelectChar.Get_BaseDef).ToString("N0")})</color>";
 
-        CharInfo_CrtDmg_Txt.text = $"{(GameManager.Instance.Get_SelectChar.Get_Char_CRT_Damage * 100).ToString("N1")}% " +
-            $"<color=orange>(+{((GameManager.Instance.Get_SelectChar.Get_Char_CRT_Damage - GameManager.Instance.Get_SelectChar.Get_BaseCRID) * 100).ToString("N1")}%)</color>";
+        CharInfo_CrtDmg_Txt.text = $"{(GameManager.Inst.Get_SelectChar.Get_Char_CRT_Damage * 100).ToString("N1")}% " +
+            $"<color=orange>(+{((GameManager.Inst.Get_SelectChar.Get_Char_CRT_Damage - GameManager.Inst.Get_SelectChar.Get_BaseCRID) * 100).ToString("N1")}%)</color>";
 
-        CharInfo_CrtRate_Txt.text = $"{(GameManager.Instance.Get_SelectChar.Get_Char_CRT_Rate * 100).ToString("N1")}% " +
-            $"<color=orange>(+{((GameManager.Instance.Get_SelectChar.Get_Char_CRT_Rate - GameManager.Instance.Get_SelectChar.Get_BaseCRIR) * 100).ToString("N1")}%)</color>";
+        CharInfo_CrtRate_Txt.text = $"{(GameManager.Inst.Get_SelectChar.Get_Char_CRT_Rate * 100).ToString("N1")}% " +
+            $"<color=orange>(+{((GameManager.Inst.Get_SelectChar.Get_Char_CRT_Rate - GameManager.Inst.Get_SelectChar.Get_BaseCRIR) * 100).ToString("N1")}%)</color>";
 
-        CharInfo_Element_Txt.text = $"<color=orange>{Element_Kor_Str[(int)GameManager.Instance.Get_SelectChar.Get_CharElement]}</color>";
+        CharInfo_Element_Txt.text = $"<color=orange>{Element_Kor_Str[(int)GameManager.Inst.Get_SelectChar.Get_CharElement]}</color>";
 
-        CharInfo_Type_Txt.text = $"<color=orange>{Type_Kor_Str[(int)GameManager.Instance.Get_SelectChar.Get_CharType]}</color>";
+        CharInfo_Type_Txt.text = $"<color=orange>{Type_Kor_Str[(int)GameManager.Inst.Get_SelectChar.Get_CharType]}</color>";
     }
 
     #endregion
@@ -1029,4 +1029,5 @@ public class CharacterList_UI : MonoBehaviour
         }
     }
     #endregion
+
 }

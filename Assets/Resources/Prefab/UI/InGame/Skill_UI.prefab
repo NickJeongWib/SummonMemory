@@ -377,7 +377,6 @@ GameObject:
   - component: {fileID: 7107002535075393075}
   - component: {fileID: 1125496521224955807}
   - component: {fileID: 2084801993021757509}
-  - component: {fileID: 8542788885765497165}
   m_Layer: 5
   m_Name: Skill_UI
   m_TagString: Untagged
@@ -404,7 +403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -290}
   m_SizeDelta: {x: 380, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7249502662378300591
@@ -485,28 +484,7 @@ MonoBehaviour:
   Characet_Icon: {fileID: 3492195070099840934}
   Skill_On_Frame: {fileID: 1955619989694821317}
   Skill_Icon_Img: {fileID: 7177062512750588998}
-  animator: {fileID: 8542788885765497165}
---- !u!95 &8542788885765497165
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4046533191490364419}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 029a0c5342077d845b9704a916902e80, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  animator: {fileID: 0}
 --- !u!1 &6582518607550020219
 GameObject:
   m_ObjectHideFlags: 0

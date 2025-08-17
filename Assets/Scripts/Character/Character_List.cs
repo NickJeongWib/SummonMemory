@@ -36,7 +36,7 @@ public class Character_List : MonoBehaviour
         {
             BUFF_TYPE.TryParse(GoogleSheetSORef.SKILL_DATAList[i].BUFF_TYPE, out BUFF_TYPE BuffType);
             DEBUFF_TYPE.TryParse(GoogleSheetSORef.SKILL_DATAList[i].DEBUFF_TYPE, out DEBUFF_TYPE DeBuffType);
-            SKILL_TYPE.TryParse(GoogleSheetSORef.SKILL_DATAList[i].BUFF_TYPE, out SKILL_TYPE SkillType);
+            SKILL_TYPE.TryParse(GoogleSheetSORef.SKILL_DATAList[i].SKILL_TYPE, out SKILL_TYPE SkillType);
 
             Skill node = new Skill(GoogleSheetSORef.SKILL_DATAList[i].SKILL_NAME, int.Parse(GoogleSheetSORef.SKILL_DATAList[i].SKILL_LV), SkillType, GoogleSheetSORef.SKILL_DATAList[i].SKILL_POINT,
                 GoogleSheetSORef.SKILL_DATAList[i].TARGET_NUM, GoogleSheetSORef.SKILL_DATAList[i].DAMAGE_RATIO, GoogleSheetSORef.SKILL_DATAList[i].DEBUFF_RATIO , DeBuffType,
@@ -105,6 +105,6 @@ public class Character_List : MonoBehaviour
         }
         #endregion
 
-        GameManager.Instance.Get_CharMaxCount = GoogleSheetSORef.Character_DBList.Count;
+        GameManager.Inst.Get_CharMaxCount = GoogleSheetSORef.Character_DBList.Count;
     }
 }

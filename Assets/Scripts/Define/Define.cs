@@ -122,14 +122,6 @@ public static class Define
         PROFILE_IMG,
     }
 
-    // 인게임 게임 진행 상태
-    public enum INGAME_STATE
-    {
-        READY,
-        PLAYING,
-        PAUSE
-    }
-
     #region Skill
     public enum BUFF_TYPE
     {

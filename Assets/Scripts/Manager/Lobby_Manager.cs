@@ -238,9 +238,9 @@ public class Lobby_Manager : MonoBehaviour
 
     public void Refresh_User_CharAmount()
     {
-        float amountPercent = ((float)UserInfo.UserCharDict.Count / (float)GameManager.Instance.Get_CharMaxCount) * 100;
+        float amountPercent = ((float)UserInfo.UserCharDict.Count / (float)GameManager.Inst.Get_CharMaxCount) * 100;
         UserCharAmount_Text.text = 
-            $"캐릭터 보유 {UserInfo.UserCharDict.Count}/{GameManager.Instance.Get_CharMaxCount}  <color=orange>{amountPercent.ToString("N0")}%</color>";
+            $"캐릭터 보유 {UserInfo.UserCharDict.Count}/{GameManager.Inst.Get_CharMaxCount}  <color=orange>{amountPercent.ToString("N0")}%</color>";
     }
 
     public void Refresh_User_CombatPower()
@@ -355,7 +355,7 @@ public class Lobby_Manager : MonoBehaviour
 
     public void Reset_SelectChar()
     {
-        GameManager.Instance.Get_SelectChar = null;
+        GameManager.Inst.Get_SelectChar = null;
     }
 
     // 이미지 초기 값 세팅

@@ -43,4 +43,11 @@ public class Transition_Fade : MonoBehaviour
         NotTouch_RayCast.SetActive(false); // 화면전환 중 버튼 클릭 방지
     }
     #endregion
+
+    #region InGame
+    public void TurnStart()
+    {
+        InGame_Mgr.Inst.InGameState = INGAME_STATE.TURN_START;
+    }
+    #endregion
 }

@@ -74,7 +74,7 @@ public class Gacha_Manager : MonoBehaviour
 
     public void GachaInfo_Open(int _num)
     {
-        if (!GameManager.Instance.TestMode)
+        if (!GameManager.Inst.TestMode)
         {
             if (UserInfo.InventoryDict.ContainsKey("캐릭터 티켓") == false)
             {
@@ -121,7 +121,7 @@ public class Gacha_Manager : MonoBehaviour
     public void Summon()
     {
         // TODO ## Gacha_Manager : TestMode
-        if (!GameManager.Instance.TestMode)
+        if (!GameManager.Inst.TestMode)
         {
             // 티켓 감소, 슬롯 초기화
             UserInfo.InventoryDict["캐릭터 티켓"].Get_Amount -= Gacha_Count;

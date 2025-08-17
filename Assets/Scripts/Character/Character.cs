@@ -281,19 +281,19 @@ public class Character
 
         if (level != Character_Lv)
         {
-            _hpText.text = $"{GameManager.Instance.Get_SelectChar.BaseHP}<sprite=0><color=#389D37>{(hp - Before_Hp).ToString("N0")}</color>";
-            _atkText.text = $"{GameManager.Instance.Get_SelectChar.BaseAtk}<sprite=0><color=#389D37>{(attack - Before_Atk).ToString("N0")}</color>";
-            _defText.text = $"{GameManager.Instance.Get_SelectChar.BaseDef}<sprite=0><color=#389D37>{(def - Before_Def).ToString("N0")}</color>";
-            _criRText.text = $"{(GameManager.Instance.Get_SelectChar.BaseCRIR * 100).ToString("N1")}%<sprite=0><color=#389D37>{((criR - Before_criR) * 100).ToString("N1")}%</color>";
-            _criDText.text = $"{(GameManager.Instance.Get_SelectChar.BaseCRID * 100).ToString("N1")}%<sprite=0><color=#389D37>{((criD - Before_criD) * 100).ToString("N1")}%</color>";
+            _hpText.text = $"{GameManager.Inst.Get_SelectChar.BaseHP}<sprite=0><color=#389D37>{(hp - Before_Hp).ToString("N0")}</color>";
+            _atkText.text = $"{GameManager.Inst.Get_SelectChar.BaseAtk}<sprite=0><color=#389D37>{(attack - Before_Atk).ToString("N0")}</color>";
+            _defText.text = $"{GameManager.Inst.Get_SelectChar.BaseDef}<sprite=0><color=#389D37>{(def - Before_Def).ToString("N0")}</color>";
+            _criRText.text = $"{(GameManager.Inst.Get_SelectChar.BaseCRIR * 100).ToString("N1")}%<sprite=0><color=#389D37>{((criR - Before_criR) * 100).ToString("N1")}%</color>";
+            _criDText.text = $"{(GameManager.Inst.Get_SelectChar.BaseCRID * 100).ToString("N1")}%<sprite=0><color=#389D37>{((criD - Before_criD) * 100).ToString("N1")}%</color>";
         }
         else
         {
-            _hpText.text = $"{GameManager.Instance.Get_SelectChar.BaseHP.ToString("N0")}";
-            _atkText.text = $"{GameManager.Instance.Get_SelectChar.BaseAtk.ToString("N0")}";
-            _defText.text = $"{GameManager.Instance.Get_SelectChar.BaseDef.ToString("N0")}";
-            _criRText.text = $"{(GameManager.Instance.Get_SelectChar.BaseCRIR * 100).ToString("N1")}%";
-            _criDText.text = $"{(GameManager.Instance.Get_SelectChar.BaseCRID * 100).ToString("N1")}%";
+            _hpText.text = $"{GameManager.Inst.Get_SelectChar.BaseHP.ToString("N0")}";
+            _atkText.text = $"{GameManager.Inst.Get_SelectChar.BaseAtk.ToString("N0")}";
+            _defText.text = $"{GameManager.Inst.Get_SelectChar.BaseDef.ToString("N0")}";
+            _criRText.text = $"{(GameManager.Inst.Get_SelectChar.BaseCRIR * 100).ToString("N1")}%";
+            _criDText.text = $"{(GameManager.Inst.Get_SelectChar.BaseCRID * 100).ToString("N1")}%";
         }
 
         // Debug.Log($"Lv{level} : Atk : {attack} / Def : {def} / HP : {hp} / CriR : {criR} / CriD : {criD}");

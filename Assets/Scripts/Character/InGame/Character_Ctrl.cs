@@ -14,6 +14,7 @@ public class Character_Ctrl : MonoBehaviour
     [SerializeField] float CurHP;
 
     [SerializeField] Skill SkillData;
+    public Skill Get_SkillData { get => SkillData; }
     [SerializeField] GameObject Skill_Prefab;
     public GameObject Get_Skill_Prefab { get => Skill_Prefab; }
 
@@ -29,7 +30,8 @@ public class Character_Ctrl : MonoBehaviour
         {
             // Debug.Log(SkillData.Get_Skill_Name);
             // 스킬 이펙트 동적생성
-            GameObject skill = Instantiate(SkillData.Get_Skill_Prefab);
+            GameObject skill_obj = Resources.Load<GameObject>(SkillData.Get_Skill_Prefab_Path);
+            GameObject skill = Instantiate(skill_obj);
             Skill_Prefab = skill;
             Skill_Prefab.SetActive(false);
         }

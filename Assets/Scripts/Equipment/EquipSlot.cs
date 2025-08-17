@@ -85,12 +85,12 @@ public class EquipSlot : MonoBehaviour
         InventoryUI_Ref.Item_Info.Open_Equip_Info(SlotItemInfo);
         InventoryUI_Ref.Item_Info.Get_Decomposition_Btn.SetActive(false);
 
-        if (GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)SlotItemInfo.Get_EquipType] == SlotItemInfo)
+        if (GameManager.Inst.Get_SelectChar.Get_EquipItems[(int)SlotItemInfo.Get_EquipType] == SlotItemInfo)
         {
             InventoryUI_Ref.Item_Info.Set_ChangeBtn(false);
         }
 
-        if (GameManager.Instance.Get_SelectChar != SlotItemInfo.Get_OwnCharacter)
+        if (GameManager.Inst.Get_SelectChar != SlotItemInfo.Get_OwnCharacter)
         {
             InventoryUI_Ref.Item_Info.Set_ChangeBtn(false);
             InventoryUI_Ref.Item_Info.Set_EquipBtn(true);

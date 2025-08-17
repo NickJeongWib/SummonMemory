@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    Character SelectCharacter;
+    public Character SelectCharacter;
     public Character Get_SelectChar { get => SelectCharacter; set => SelectCharacter = value; }
-    public static GameManager Instance;
+    public static GameManager Inst;
     public bool TestMode = false;
 
     int CharMaxCount;
@@ -16,10 +16,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (Instance == null)
+        if (Inst == null)
         {
             // Debug.Log(1);
-            Instance = this;
+            Inst = this;
             DontDestroyOnLoad(this);
         }
         else

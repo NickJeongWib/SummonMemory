@@ -20,7 +20,7 @@ public class Character_Equipment : MonoBehaviour
     public void On_Click_OpenEquipSlot(int _num)
     {
         // 캐릭터가 장비를 장착하고 있지않다면
-        if(GameManager.Instance.Get_SelectChar.Get_EquipItems[_num] == null)
+        if(GameManager.Inst.Get_SelectChar.Get_EquipItems[_num] == null)
         {
             InventoryUI_Ref.EquipSlots.SetActive(true);
         }
@@ -28,8 +28,8 @@ public class Character_Equipment : MonoBehaviour
         {
             // 동일 타입의 장비를 착용하고 있다면
             InventoryUI_Ref.Item_Info.gameObject.SetActive(true);
-            InventoryUI_Ref.Item_Info.Get_CurrentItem = GameManager.Instance.Get_SelectChar.Get_EquipItems[_num];
-            InventoryUI_Ref.Item_Info.Open_Equip_Info(GameManager.Instance.Get_SelectChar.Get_EquipItems[_num], true);
+            InventoryUI_Ref.Item_Info.Get_CurrentItem = GameManager.Inst.Get_SelectChar.Get_EquipItems[_num];
+            InventoryUI_Ref.Item_Info.Open_Equip_Info(GameManager.Inst.Get_SelectChar.Get_EquipItems[_num], true);
         }
 
         switch (_num)

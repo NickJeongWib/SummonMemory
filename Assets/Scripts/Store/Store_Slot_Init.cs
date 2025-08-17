@@ -53,7 +53,7 @@ public class Store_Slot_Init : MonoBehaviour
             //        return;
             //    }
             //}
-            if (!GameManager.Instance.TestMode)
+            if (!GameManager.Inst.TestMode)
             {
                 if (StoreItemInfo.Get_ConsumeType == CONSUME_TYPE.MONEY)
                 {
@@ -75,7 +75,7 @@ public class Store_Slot_Init : MonoBehaviour
         else if (StoreItemInfo.Get_StoreType == STORE_TYPE.TICKET &&
             StoreManager_Ref != null)
         {
-            if (!GameManager.Instance.TestMode)
+            if (!GameManager.Inst.TestMode)
             {
                 // 재화 부족 시 안내문구
                 if (UserInfo.Dia < StoreItemInfo.Get_ConsumeCount)
@@ -91,7 +91,7 @@ public class Store_Slot_Init : MonoBehaviour
         // 나머지 강화재료 구매 버튼을 누를 시
         else
         {
-            if (!GameManager.Instance.TestMode)
+            if (!GameManager.Inst.TestMode)
             {
                 if (!UserInfo.InventoryDict.ContainsKey(StoreManager_Ref.Get_BookNames[(int)StoreItemInfo.Get_ConsumeType - 2]))
                 {

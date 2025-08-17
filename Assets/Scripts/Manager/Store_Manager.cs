@@ -240,7 +240,7 @@ public class Store_Manager : MonoBehaviour
         // TODO ## Store_Manager Dia획득 다이아 구매
         if (Dia_SelectCount != 0)
         {
-            if (!GameManager.Instance.TestMode)
+            if (!GameManager.Inst.TestMode)
             {
                 if (UserInfo.Money - StoreItem_Info.Get_ConsumeCount < 0)
                 {
@@ -265,7 +265,7 @@ public class Store_Manager : MonoBehaviour
             {
                 // TODO ## Store_Manager 상점 재화 소모
                 // 테스트용인지 아닌지
-                if (!GameManager.Instance.TestMode)
+                if (!GameManager.Inst.TestMode)
                 {
                     // 소환서를 소비 해야하는 물품일때
                     if (StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.R_BOOK || StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.SR_BOOK || StoreItem_Info.Get_ConsumeType == CONSUME_TYPE.SSR_BOOK)

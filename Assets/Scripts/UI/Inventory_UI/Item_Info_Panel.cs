@@ -364,31 +364,31 @@ public class Item_Info_Panel : MonoBehaviour
         }
 
         // 선택된 캐릭터가 있을 시
-        if (GameManager.Instance.Get_SelectChar != null)
+        if (GameManager.Inst.Get_SelectChar != null)
         {
             // 선택된 캐릭터의 현재 선택 아이템타입의 장비를 착용하고 있다면
-            if (GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] != null)
+            if (GameManager.Inst.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] != null)
             {
                 // 장착해제
-                GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType].Get_isEquip = false;
-                GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType].EquipOption_Stat_Calc(false);
-                GameManager.Instance.Get_SelectChar.Refresh_Char_Equipment_State(false, CurrentItem.Get_EquipType);
+                GameManager.Inst.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType].Get_isEquip = false;
+                GameManager.Inst.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType].EquipOption_Stat_Calc(false);
+                GameManager.Inst.Get_SelectChar.Refresh_Char_Equipment_State(false, CurrentItem.Get_EquipType);
                 // 선택된 캐릭터에서 해제
                 // GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)SlotItemInfo.Get_EquipType].Get_OwnCharacter = null;
             }
 
             // 장착 캐릭터 등록
-            GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] = CurrentItem;
-            CurrentItem.Get_OwnCharacter = GameManager.Instance.Get_SelectChar;
+            GameManager.Inst.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] = CurrentItem;
+            CurrentItem.Get_OwnCharacter = GameManager.Inst.Get_SelectChar;
             CurrentItem.Set_EquipCharName = CurrentItem.Get_OwnCharacter.Get_CharName;
 
             // 장비 옵션값 전달 
             CurrentItem.EquipOption_Stat_Calc(true);
             // 능력치 전달
-            GameManager.Instance.Get_SelectChar.Refresh_Char_Equipment_State(true, CurrentItem.Get_EquipType);
+            GameManager.Inst.Get_SelectChar.Refresh_Char_Equipment_State(true, CurrentItem.Get_EquipType);
         }
 
-        GameManager.Instance.Get_SelectChar.TestState();
+        GameManager.Inst.Get_SelectChar.TestState();
 
         // 장비타입에 맞는 장비가 하나도 없을 때 다른 장비타입의 정보가 남아있는걸 방지
         for (int i = 0; i < Inventory_UI_Ref.Get_EquipSlot_List.Count; i++)

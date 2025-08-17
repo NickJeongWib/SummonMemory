@@ -6,38 +6,65 @@ using static Define;
 [System.Serializable]
 public class Skill
 {
+    // 스킬 이름
     [SerializeField] string Skill_Name;
     public string Get_Skill_Name { get => Skill_Name; }
+
+    // 스킬 레벨
     [SerializeField] int Skill_Lv;
     public int Get_Skill_Lv { get => Skill_Lv; set => Skill_Lv = value; }
+
+    // 스킬 속성
     [SerializeField] SKILL_TYPE SkillType;
+    public SKILL_TYPE Get_SkillType { get => SkillType; }
+
+    // 사용 SP
     [SerializeField] int SP;
+    public int Get_SP { get => SP; }
+
+    // 타켓팅 수
     [SerializeField] int TargetCount;
+    public int Get_TargetCount { get => TargetCount; }
+
+    // 데미지 비율
     [SerializeField] float Damage_Ratio;
+    public float Get_Damage_Ratio { get => Damage_Ratio; }
 
     // 디버프
     [SerializeField] float DeBuff_Ratio;
+    public float Get_DeBuff_Ratio { get => DeBuff_Ratio; }
     [SerializeField] DEBUFF_TYPE DeBuffType;
+    public DEBUFF_TYPE Get_DeBuffType { get => DeBuffType; }
 
     // 버프
     [SerializeField] float Buff_Ratio;
+    public float Get_Buff_Ratio { get => Buff_Ratio; }
     [SerializeField] BUFF_TYPE BuffType;
+    public BUFF_TYPE Get_BuffType { get => BuffType; }
 
-    [SerializeField] int SP_Hill_Count; // 스킬포인트 회복 카운트
-    [SerializeField] int Buff_Time;     // 버프 유지 턴
+    // 스킬포인트 회복 카운트
+    [SerializeField] float SP_Hill_Count; 
+    public float Get_SP_Hill_Count { get => SP_Hill_Count; }
+    // 버프 유지 턴
+    [SerializeField] int Buff_Time;
+    public int Get_Buff_Time { get => Buff_Time; }
 
+    // 스킬 설명
     [SerializeField] string Skill_Desc;
+    public string Get_Skill_Desc { get => Skill_Desc; }
 
     // 스킬 UI
     public Sprite Skill_Icon_Sprite;
     public Sprite Get_Skill_Icon { get => Skill_Icon_Sprite; }
 
     [SerializeField] string SkillIcon_Path;
+    public string Get_SkillIcon_Path { get => SkillIcon_Path; }
 
     // 스킬 프리펩 주소 & 프리펩
     public GameObject Skill_Prefab;
     public GameObject Get_Skill_Prefab { get => Skill_Prefab; }
     [SerializeField] string Skill_Prefab_Path;
+    public string Get_Skill_Prefab_Path { get => Skill_Prefab_Path; }
 
     #region Constructor
     public Skill(string _skillName, int _lv, SKILL_TYPE _skillType, int _sp, int _targetCount, float _damageRatio, float _debuffRatio, DEBUFF_TYPE _debuffType, float _buffRatio, BUFF_TYPE _buffType,
@@ -79,5 +106,54 @@ public class Skill
         Skill_Desc = _Desc;
     }
 
+    #endregion
+
+    #region Skill_Desc
+    public string Skill_Desc_Trans(string _desc, float _damage = 0, float _hill = 0, float _sp = 0, float _buff = 0, float _deBuff = 0)
+    {
+        string Replace_Desc = _desc
+            .Replace("{_damage}", (_damage * 100).ToString("N0"))
+            .Replace("{_hill}", (_hill * 100).ToString("N0"))
+            .Replace("{_sp}", (_sp).ToString("N0"))
+            .Replace("{_buff}", (_buff * 100).ToString("N0"))
+            .Replace("{_deBuff}", (_deBuff * 100).ToString("N0"));
+
+        Replace_Desc = Replace_Desc.Replace("\\n", "\n");
+        Replace_Desc = Replace_Desc.Replace("\\", "");
+
+        return Replace_Desc;
+    }
+
+    public string NextSkill_Desc_Trans(string _desc, float _damage = 0, float _hill = 0, float _sp = 0, float _buff = 0, float _deBuff = 0)
+    {
+        string Replace_Desc = _desc
+            .Replace("{_damage}", "<color=orange>" + ((_damage + 0.05f) * 100).ToString("N0") + "</color>")
+            .Replace("{_hill}", "<color=orange>" + ((_hill + 0.01f) * 100).ToString("N0") + "</color>")
+            .Replace("{_sp}", "<color=orange>" + (_sp + 0.2f).ToString("N0") + "</color>")
+            .Replace("{_buff}", "<color=orange>" + ((_buff + 0.01f) * 100).ToString("N0") + "</color>")
+            .Replace("{_deBuff}", "<color=orange>" + ((_deBuff + 0.01f)* 100).ToString("N0") + "</color>");
+
+        Replace_Desc = Replace_Desc.Replace("\\n", "\n");
+        Replace_Desc = Replace_Desc.Replace("\\", "");
+
+        return Replace_Desc;
+    }
+
+    #endregion
+
+    #region Increase_Ratio
+    // 스킬 레벨업 시 증가 비율
+    public void Increase_Ratio(float _damage = 0, float _sp = 0, float _buff = 0, float _deBuff = 0)
+    {
+        if (Skill_Lv == 20)
+            return;
+
+        Skill_Lv++;
+
+        Damage_Ratio += _damage;
+        SP_Hill_Count += _sp;
+        Buff_Ratio += _buff;
+        DeBuff_Ratio += _deBuff;
+    }
     #endregion
 }

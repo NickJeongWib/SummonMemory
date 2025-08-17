@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1596666954362804588}
   - component: {fileID: 2145697124993526923}
   - component: {fileID: 3580560030329612876}
+  - component: {fileID: 3542816122752219883}
   m_Layer: 0
   m_Name: GroundExplo_Prefab
   m_TagString: Untagged
@@ -117,5 +118,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a64ad1d134b5fce46b466d890839d0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3542816122752219883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606261588746441895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2ba892103ae3041a6d983525bce582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

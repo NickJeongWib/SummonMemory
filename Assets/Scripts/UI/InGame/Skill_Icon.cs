@@ -14,13 +14,27 @@ public class Skill_Icon : MonoBehaviour
 
     [SerializeField] Animator animator;
 
+    private void Start()
+    {
+        animator = InGame_Mgr.Inst.SP_animator;
+    }
+
     // 스킬 아이콘 UI 초기화 및 캐릭터 컨트롤러 시작과 함께 초기화
     public void Set_Character_UI(Sprite _charSprite, Sprite _skillSprite, Material _mat, Character_Ctrl _ctrl)
     {
         InGame_Char = _ctrl;
         Characet_Icon.sprite = _charSprite;
-        Skill_Icon_Img.sprite = _skillSprite;
         Skill_On_Frame.material = _mat;
+
+        // 스킬 아이콘을 못 찾았으면
+        if (InGame_Char.Get_SkillData.Get_Skill_Icon == null)
+        {
+            Skill_Icon_Img.sprite = Resources.Load<Sprite>(InGame_Char.Get_SkillData.Get_SkillIcon_Path);
+        }
+        else
+        {
+            Skill_Icon_Img.sprite = _skillSprite;
+        }
     }
 
     public void Active_Off()
@@ -31,9 +45,10 @@ public class Skill_Icon : MonoBehaviour
     // 스킬 사용시 
     public void On_Click_Skill_Btn()
     {
+        InGame_Mgr.Inst.InGameState = INGAME_STATE.BATTLE;
         InGame_Mgr.Inst.UseSkill_ON += Skill_Use;
 
-        animator.Play("Skill_UI_PopDown");
+        animator.Play("SP_PopDown");
 
         InGame_Mgr.Inst.Skill_On_CharFace.gameObject.SetActive(true);
         InGame_Mgr.Inst.Skill_On_CharFace.UseChar_Face.sprite = InGame_Char.Get_character.Get_Illust_Img;

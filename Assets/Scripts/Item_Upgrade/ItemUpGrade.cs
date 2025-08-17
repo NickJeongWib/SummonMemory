@@ -283,7 +283,7 @@ public class ItemUpGrade : MonoBehaviour
             return;
         }
 
-        if (!GameManager.Instance.TestMode)
+        if (!GameManager.Inst.TestMode)
         {
             if (UserInfo.Money < Cost || !UserInfo.InventoryDict.ContainsKey("재련 가루") || UserInfo.InventoryDict["재련 가루"].Get_Amount < UpgradeItem_Cost)
             {
@@ -384,7 +384,7 @@ public class ItemUpGrade : MonoBehaviour
         Count = Mathf.RoundToInt(MaxCount * CountSlider.value);
         ChainCountText.text = $"{Count}회";
 
-        if (!GameManager.Instance.TestMode)
+        if (!GameManager.Inst.TestMode)
         {
             // 재화가 없다면
             if (UserInfo.Money < Count * Cost || !UserInfo.InventoryDict.ContainsKey("재련 가루") ||
@@ -547,7 +547,7 @@ public class ItemUpGrade : MonoBehaviour
         if (OpValue_Locks[0] && OpValue_Locks[1] && OpValue_Locks[2])
             return;
 
-        if (!GameManager.Instance.TestMode)
+        if (!GameManager.Inst.TestMode)
         {
             if (UserInfo.Money < ResetOptionValue_Cost || !UserInfo.InventoryDict.ContainsKey("재련 가루") || UserInfo.InventoryDict["재련 가루"].Get_Amount < ResetOptionValue_Item_Cost)
             {
@@ -601,7 +601,7 @@ public class ItemUpGrade : MonoBehaviour
         if (Op_Locks[0] && Op_Locks[1] && Op_Locks[2])
             return;
         
-        if(!GameManager.Instance.TestMode)
+        if(!GameManager.Inst.TestMode)
         {
             if (UserInfo.Money < ResetOptionCost || !UserInfo.InventoryDict.ContainsKey("재련 수정") || UserInfo.InventoryDict["재련 수정"].Get_Amount < ResetOptionItem_Cost)
             {
