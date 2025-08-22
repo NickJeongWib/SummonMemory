@@ -45,6 +45,17 @@ public class Skill_Icon : MonoBehaviour
     // 스킬 사용시 
     public void On_Click_Skill_Btn()
     {
+        // 스킬 포인트 부족
+        if (InGame_Mgr.Inst.CurSP - InGame_Char.Get_SkillData.Get_SP < 0 || InGame_Mgr.Inst.InGameState == INGAME_STATE.BATTLE)
+            return;
+
+        if (InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].CanSkill == false)
+        {
+            Debug.Log("버프 적용 중");
+            return;
+        }
+           
+
         InGame_Mgr.Inst.InGameState = INGAME_STATE.BATTLE;
         InGame_Mgr.Inst.UseSkill_ON += Skill_Use;
 
@@ -52,6 +63,15 @@ public class Skill_Icon : MonoBehaviour
 
         InGame_Mgr.Inst.Skill_On_CharFace.gameObject.SetActive(true);
         InGame_Mgr.Inst.Skill_On_CharFace.UseChar_Face.sprite = InGame_Char.Get_character.Get_Illust_Img;
+
+        // SP 감소
+        for(int i = InGame_Mgr.Inst.CurSP; i > (InGame_Mgr.Inst.CurSP - InGame_Char.Get_SkillData.Get_SP); i--)
+        {
+            InGame_Mgr.Inst.SP_ChargeAnimator[i - 1].Play("SP_DOWN");
+        }
+        // 현재 잔존 sp계산
+        InGame_Mgr.Inst.CurSP -= InGame_Char.Get_SkillData.Get_SP;
+
     }
 
     void Skill_Use()

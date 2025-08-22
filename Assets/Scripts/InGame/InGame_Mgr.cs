@@ -19,22 +19,45 @@ public enum INGAME_STATE
 
 public class InGame_Mgr : MonoBehaviour
 {
-    public Skill_Use_Face Skill_On_CharFace;
     // 현재 게임진행 상태
-    public INGAME_STATE InGameState = INGAME_STATE.READY;
+    public INGAME_STATE InGameState = INGAME_STATE.STANDBY;
     [SerializeField] InGame_ObjPool ObjPool;
+    public InGame_ObjPool Get_ObjPool { get => ObjPool; }
 
-    // 스킬 이펙트 나오게 하기 위한 델리게이트
-    public delegate void UseSkill();
-    public UseSkill UseSkill_ON;
+    [Header("Character")]
+    public List<Character_Ctrl> CharCtrl_List = new List<Character_Ctrl>();
+
+    [Header("Skill")]
+    public int CurSP;
+    public Animator[] SP_ChargeAnimator;
     public Animator SP_animator;
 
     [Header("Game_Info")]
     public int CurTurnCharIndex = 0;
 
     [Header("UI")]
+    public Skill_Use_Face Skill_On_CharFace;
+    public MonSkill_Use_Face Skill_On_MonFace;
+    [SerializeField] GameObject[] CharStat_Pop_Images;
+    bool isCharStat_Open = false;
+    [SerializeField] GameObject[] MonStat_Pop_Images;
+    bool isMonStat_Open = false;
     [SerializeField] Text TurnText;
     public int CurrentTurn = 1;
+    public Color[] TextColor;
+
+    [Header("Monster")]
+    [SerializeField] int MonTurnIndex = 0;
+    public int Get_MonTurnIndex { get => MonTurnIndex; }
+    public List<Enemy_Ctrl> CurMonsters = new List<Enemy_Ctrl>();
+
+    // delegate
+    // 캐릭터 스킬 이펙트 나오게 하기 위한 델리게이트
+    public delegate void UseSkill();
+    public UseSkill UseSkill_ON;
+    // 몬스터 스킬 이펙트 나오게 하기 위한 델리게이트
+    public delegate void UseMonSkill();
+    public UseMonSkill UseMonSkill_ON;
 
     #region Init
     // 싱글톤
@@ -55,7 +78,19 @@ public class InGame_Mgr : MonoBehaviour
 
     private void Start()
     {
+        if(GameManager.Inst.TestMode == false)
+        {
+            CurSP = 6;
+        }
+        else
+        {
+            CurSP = 15;
+        }
 
+        for (int i = 0; i < CurSP; i++)
+        {
+            SP_ChargeAnimator[i].Play("SP_UP");
+        }
     }
     #endregion
 
@@ -76,6 +111,18 @@ public class InGame_Mgr : MonoBehaviour
                 // UI 팝업
                 SP_animator.Play("SP_UI_PopUp");
                 
+                if(CharCtrl_List[CurTurnCharIndex].gameObject.activeSelf == false)
+                {
+                    for(int i = CurTurnCharIndex + 1; i < CharCtrl_List.Count; i++)
+                    {
+                        if(CharCtrl_List[i].gameObject.activeSelf == true)
+                        {
+                            CurTurnCharIndex = i;
+                            break;
+                        }
+                    }
+                }
+
                 for (int i = 0; i < ObjPool.SkillIcon_List.Count; i++)
                 {
                     // 현재 차례 캐릭터 스킬 UI만 켜주기
@@ -97,11 +144,11 @@ public class InGame_Mgr : MonoBehaviour
             case INGAME_STATE.TURN_END:
                 // 다음 캐릭터 UI 표시해주기 위해 인덱스 증가
                 CurTurnCharIndex++;
-
                 // 마지막 캐릭터까지 돌았으면 다시 반복
                 if (UserInfo.Equip_Characters.Count <= CurTurnCharIndex)
                 {
-                    InGame_Mgr.Inst.CurTurnCharIndex = 0;
+                    Buff_Decreased();
+                    CurTurnCharIndex = 0;
                     CurrentTurn++;
                     TurnText.text = $"TURN.{CurrentTurn}";
                     InGameState = INGAME_STATE.ENEMY_TURN;
@@ -118,8 +165,51 @@ public class InGame_Mgr : MonoBehaviour
             case INGAME_STATE.BATTLE:
                 break;
 
+            case INGAME_STATE.ENEMY_TURN:
+                for(int i = MonTurnIndex; i < CurMonsters.Count; i++)
+                {
+                    if (CurMonsters[i].gameObject.activeSelf == false)
+                        continue;
+
+                    // 만약 몬스터가 죽지 않고 살아있는 몬스터를 찾았다면 스킬 사용
+                    MonTurnIndex = i;
+                    UseMonSkill_ON += CurMonsters[i].Skill_Use;
+                    Skill_On_MonFace.Set_UI_Init(CurMonsters[i].Get_Icon, CurMonsters[i].MonName);
+                    break;
+                }
+                
+                InGameState = INGAME_STATE.BATTLE;
+                break;
+
+            case INGAME_STATE.ENEMY_TURN_END:
+                MonTurnIndex++;
+                // 마지막 캐릭터까지 돌았으면 다시 반복
+                if (CurMonsters.Count <= MonTurnIndex)
+                {
+                    Buff_Decreased();
+                    MonTurnIndex = 0;
+                    CurrentTurn++;
+                    TurnText.text = $"TURN.{CurrentTurn}";
+                    InGameState = INGAME_STATE.TURN_START;
+                    break;
+                }
+                InGameState = INGAME_STATE.ENEMY_TURN;
+                break;
             default:
                 break;
+        }
+    }
+
+    void Buff_Decreased()
+    {
+        for(int i = 0; i < ObjPool.BuffIcon_List.Count; i++)
+        {
+            // 꺼져있으면 건너뛰기
+            if (ObjPool.BuffIcon_List[i].gameObject.activeSelf == false)
+                continue;
+
+            // 유지 턴 감소
+            ObjPool.BuffIcon_List[i].Turn_Decreased();
         }
     }
 
@@ -127,4 +217,43 @@ public class InGame_Mgr : MonoBehaviour
     {
         SceneManager.LoadScene("LobbyScene");
     }
+
+    #region UI
+    // 캐릭터 상태창 열기 닫기
+    public void On_Click_OpenCharStat(Animator _animator)
+    {
+        if(isCharStat_Open)
+        {
+            _animator.Play("Pop_Down");
+            CharStat_Pop_Images[0].SetActive(true);
+            CharStat_Pop_Images[1].SetActive(false);
+        }
+        else
+        {
+            _animator.Play("Pop_Up");
+            CharStat_Pop_Images[0].SetActive(false);
+            CharStat_Pop_Images[1].SetActive(true);
+        }
+
+        isCharStat_Open = !isCharStat_Open;
+    }
+
+    public void On_Click_OpenMonStat(Animator _animator)
+    {
+        if (isMonStat_Open)
+        {
+            _animator.Play("Pop_Down");
+            MonStat_Pop_Images[0].SetActive(true);
+            MonStat_Pop_Images[1].SetActive(false);
+        }
+        else
+        {
+            _animator.Play("Pop_Up");
+            MonStat_Pop_Images[0].SetActive(false);
+            MonStat_Pop_Images[1].SetActive(true);
+        }
+
+        isMonStat_Open = !isMonStat_Open;
+    }
+    #endregion
 }

@@ -100,6 +100,14 @@ public static class Define
         WIND,
         GROUND,
     }
+    // 캐릭터 속성
+    public enum MONSTER_ELE
+    {
+        FIRE,
+        WATER,
+        WIND,
+        GROUND,
+    }
 
     // 캐릭터 등급
     public enum CHAR_GRADE
@@ -129,7 +137,7 @@ public static class Define
         HILL,       // 힐
         SP_HILL,    // 스킬포인트 증가
         DEF,        // 방어력 증가
-        DEF_TARGET, // 도발 + 방어력 증가
+        // DEF_TARGET, // 도발 + 방어력 증가
         ATK,        // 공격력 증가
         ALL_BUFF    // 힐 + 공격력 증가
     }

@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     int CharMaxCount;
     public int Get_CharMaxCount { get => CharMaxCount; set => CharMaxCount = value; }
 
+    public int StageIndex;
+
     // Start is called before the first frame update
     void Awake()
     {

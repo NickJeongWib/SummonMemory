@@ -58,6 +58,9 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] Text UserCombatPower_Text;
     [SerializeField] Text UserCharAmount_Text;
 
+    [Header("---SelectStage_UI---")]
+    [SerializeField] List<CharDrag_UI> CharDragUI_List = new List<CharDrag_UI>();
+
     #region Init
     private void Awake()
     {
@@ -352,6 +355,24 @@ public class Lobby_Manager : MonoBehaviour
     }
     #endregion
 
+    #region Stage_UI_Init
+    public void Set_Stage_UI_Image()
+    {
+        int index = 0;
+        // 장착 가능 이미지 표시
+        for(int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        {
+            index = i;
+            CharDragUI_List[i].Set_UI(false);
+        }
+
+        // 장착 불가 이미지 표시
+        for(int i = index + 1; i < CharDragUI_List.Count; i++)
+        {
+            CharDragUI_List[i].Set_UI(true);
+        }
+    }
+    #endregion
 
     public void Reset_SelectChar()
     {
@@ -400,12 +421,11 @@ public class Lobby_Manager : MonoBehaviour
     }
     #endregion
 
-    public void TestMoveScene()
+    public void On_Click_InGame(int _index)
     {
+        GameManager.Inst.StageIndex = _index;
         SceneManager.LoadScene("InGameScene");
     }
-
-
 }
 
 [System.Serializable]

@@ -92,7 +92,6 @@ public class CharSkill_Info : MonoBehaviour
             }
             // 방어력, 공격력 증가 관련
             else if (GameManager.Inst.Get_SelectChar.SkillData.Get_BuffType == BUFF_TYPE.DEF ||
-                GameManager.Inst.Get_SelectChar.SkillData.Get_BuffType == BUFF_TYPE.DEF_TARGET ||
                 GameManager.Inst.Get_SelectChar.SkillData.Get_BuffType == BUFF_TYPE.ATK)
             {
                 GameManager.Inst.Get_SelectChar.SkillData.Increase_Ratio(0, 0, 0.01f, 0);
@@ -109,7 +108,6 @@ public class CharSkill_Info : MonoBehaviour
         Skill_Info_Init();
         // 캐릭터 정보 저장 API호출
         DataNetwork_Mgr.Inst.PushPacket(Define.PACKETTYPE.CHARLIST);
-        Debug.Log(1);
     }
 
     #region Character_Skill_UI
@@ -136,7 +134,7 @@ public class CharSkill_Info : MonoBehaviour
 
         // 스킬정보 초기화
         Show_Skill_Info(GameManager.Inst.Get_SelectChar.SkillData.Get_Skill_Name, Desc, NextDesc,
-        GameManager.Inst.Get_SelectChar.SkillData.Skill_Icon_Sprite, GameManager.Inst.Get_SelectChar.SkillData.Get_Skill_Lv);
+        GameManager.Inst.Get_SelectChar.SkillData.Get_Skill_Icon, GameManager.Inst.Get_SelectChar.SkillData.Get_Skill_Lv);
     }
     #endregion
 }

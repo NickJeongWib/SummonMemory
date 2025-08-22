@@ -11,6 +11,8 @@ public class Transition_Fade : MonoBehaviour
     [SerializeField] GameObject Character_Transition_Panel;
     [SerializeField] GameObject NotTouch_RayCast;
 
+    [SerializeField] GameObject StartPanel;
+
     #region Base
     // TODO ## Transition_Fade ±âº» Fade Out
     public void Transition_ActiveF()
@@ -47,7 +49,8 @@ public class Transition_Fade : MonoBehaviour
     #region InGame
     public void TurnStart()
     {
-        InGame_Mgr.Inst.InGameState = INGAME_STATE.TURN_START;
+        InGame_Mgr.Inst.InGameState = INGAME_STATE.READY;
+        StartPanel.SetActive(true);
     }
     #endregion
 }

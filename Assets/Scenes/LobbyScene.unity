@@ -3980,9 +3980,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 2087754359}
   Character_Face: {fileID: 292591742}
@@ -6372,9 +6370,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 588404482}
   Character_Face: {fileID: 297675131}
@@ -6503,6 +6499,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 617382149}
+  - {fileID: 136333636}
   m_Father: {fileID: 1248484912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7089,9 +7086,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   SelectBtn: {fileID: 752610007}
 --- !u!1 &113047398
@@ -8208,6 +8203,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135995443}
+  m_CullTransparentMesh: 1
+--- !u!1 &136333635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 136333636}
+  - component: {fileID: 136333638}
+  - component: {fileID: 136333637}
+  m_Layer: 5
+  m_Name: CantChange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &136333636
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136333635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 105108033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 65}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &136333637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136333635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 48ea2e032af0d6346b9eae059999712f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &136333638
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136333635}
   m_CullTransparentMesh: 1
 --- !u!1 &136387065
 GameObject:
@@ -11156,9 +11226,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1359269617}
@@ -11324,9 +11392,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 2052196494}
   Character_Face: {fileID: 2101323014}
@@ -13238,9 +13304,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 579064248}
@@ -14286,7 +14350,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 221507269}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: On_Click_InGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &221507269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15556,9 +15632,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 290746434}
   Character_Face: {fileID: 1150201867}
@@ -19631,6 +19705,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304886597}
   m_CullTransparentMesh: 1
+--- !u!1 &305745682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 305745683}
+  - component: {fileID: 305745685}
+  - component: {fileID: 305745684}
+  m_Layer: 5
+  m_Name: CantChange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &305745683
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305745682}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1146401009}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 65}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &305745684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305745682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 48ea2e032af0d6346b9eae059999712f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &305745685
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305745682}
+  m_CullTransparentMesh: 1
 --- !u!1 &307328684
 GameObject:
   m_ObjectHideFlags: 0
@@ -19756,6 +19905,7 @@ MonoBehaviour:
   NotTouch_Raycast: {fileID: 365620016}
   Character_Transition_Panel: {fileID: 0}
   NotTouch_RayCast: {fileID: 365620016}
+  StartPanel: {fileID: 0}
 --- !u!1 &307492119
 GameObject:
   m_ObjectHideFlags: 0
@@ -20168,7 +20318,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 313598780}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: On_Click_InGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &313598780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22391,9 +22553,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 2027631684}
   Character_Face: {fileID: 1906335903}
@@ -23363,6 +23523,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 385401710}
+        m_TargetAssemblyTypeName: CharacterList_UI, Assembly-CSharp
+        m_MethodName: On_Click_ChangeCancel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: Set_Stage_UI_Image
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &365644708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23592,9 +23776,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1029394658}
@@ -24152,9 +24334,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1186950510}
@@ -28865,9 +29045,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1535715506}
@@ -29672,9 +29850,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 525780085}
@@ -30477,6 +30653,7 @@ GameObject:
   - component: {fileID: 473953046}
   - component: {fileID: 473953048}
   - component: {fileID: 473953047}
+  - component: {fileID: 473953049}
   m_Layer: 5
   m_Name: Place_4
   m_TagString: Untagged
@@ -30543,6 +30720,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473953045}
   m_CullTransparentMesh: 1
+--- !u!114 &473953049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473953045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25777522e420bb54091a3f10a0ef81f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CantChange: {fileID: 889389188}
 --- !u!1 &474468534
 GameObject:
   m_ObjectHideFlags: 0
@@ -34914,6 +35104,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: Set_Stage_UI_Image
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &555712876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38215,9 +38417,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 1912576373}
   Character_Face: {fileID: 470097584}
@@ -39528,9 +39728,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 361338994}
   Character_Face: {fileID: 456054889}
@@ -41909,6 +42107,7 @@ MonoBehaviour:
   NotTouch_Raycast: {fileID: 0}
   Character_Transition_Panel: {fileID: 0}
   NotTouch_RayCast: {fileID: 0}
+  StartPanel: {fileID: 0}
 --- !u!95 &661664747
 Animator:
   serializedVersion: 5
@@ -43238,7 +43437,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 681513716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: On_Click_InGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &681513716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44588,6 +44799,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1552484537}
+  - {fileID: 977883943}
   m_Father: {fileID: 2094656847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -45188,9 +45400,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 2107793284}
@@ -48870,9 +49080,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 2042466876}
@@ -49133,9 +49341,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 166381073}
   Character_Face: {fileID: 106909435}
@@ -49316,7 +49522,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 786423438}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: On_Click_InGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &786423438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50979,9 +51197,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 1017723858}
   Character_Face: {fileID: 227990198}
@@ -51394,9 +51610,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 1175810110}
   Character_Face: {fileID: 1825898983}
@@ -51749,9 +51963,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 1563132282}
   Character_Face: {fileID: 422930707}
@@ -53887,9 +54099,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 1627066906}
   Character_Face: {fileID: 1626115208}
@@ -55613,6 +55823,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889068087}
   m_CullTransparentMesh: 1
+--- !u!1 &889389186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889389187}
+  - component: {fileID: 889389189}
+  - component: {fileID: 889389188}
+  m_Layer: 5
+  m_Name: CantChange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &889389187
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889389186}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1205487162}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 65}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &889389188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889389186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 48ea2e032af0d6346b9eae059999712f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &889389189
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889389186}
+  m_CullTransparentMesh: 1
 --- !u!1 &889673007
 GameObject:
   m_ObjectHideFlags: 0
@@ -56279,7 +56564,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 899015973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: On_Click_InGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &899015973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56744,9 +57041,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 935271031}
   Character_Face: {fileID: 1462372380}
@@ -59868,6 +60163,7 @@ MonoBehaviour:
   NotTouch_Raycast: {fileID: 365620016}
   Character_Transition_Panel: {fileID: 152999545}
   NotTouch_RayCast: {fileID: 365620016}
+  StartPanel: {fileID: 0}
 --- !u!95 &951969829
 Animator:
   serializedVersion: 5
@@ -60493,9 +60789,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 698756919}
   Character_Face: {fileID: 501392579}
@@ -61235,6 +61529,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977689535}
+  m_CullTransparentMesh: 1
+--- !u!1 &977883942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 977883943}
+  - component: {fileID: 977883945}
+  - component: {fileID: 977883944}
+  m_Layer: 5
+  m_Name: CantChange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &977883943
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977883942}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 711812848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 65}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &977883944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977883942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 48ea2e032af0d6346b9eae059999712f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &977883945
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977883942}
   m_CullTransparentMesh: 1
 --- !u!1 &977975340
 GameObject:
@@ -66599,9 +66968,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 2068228738}
   Character_Face: {fileID: 1860202222}
@@ -66804,9 +67171,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 370788022}
   Character_Face: {fileID: 880589081}
@@ -70455,9 +70820,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1581249144}
@@ -71463,6 +71826,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 427748672}
+  - {fileID: 305745683}
   m_Father: {fileID: 1296957882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -76454,6 +76818,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1421675416}
+  - {fileID: 889389187}
   m_Father: {fileID: 473953046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -79671,6 +80036,7 @@ GameObject:
   - component: {fileID: 1248484912}
   - component: {fileID: 1248484914}
   - component: {fileID: 1248484913}
+  - component: {fileID: 1248484915}
   m_Layer: 5
   m_Name: Place_1
   m_TagString: Untagged
@@ -79737,6 +80103,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248484911}
   m_CullTransparentMesh: 1
+--- !u!114 &1248484915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248484911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25777522e420bb54091a3f10a0ef81f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CantChange: {fileID: 136333637}
 --- !u!1 &1248628471
 GameObject:
   m_ObjectHideFlags: 0
@@ -80848,9 +81227,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1863209509}
@@ -80989,6 +81366,12 @@ MonoBehaviour:
   UserInfoName_Text: {fileID: 33750980}
   UserCombatPower_Text: {fileID: 314403713}
   UserCharAmount_Text: {fileID: 1709260699}
+  CharDragUI_List:
+  - {fileID: 1248484915}
+  - {fileID: 1882044145}
+  - {fileID: 2094656850}
+  - {fileID: 473953049}
+  - {fileID: 1296957885}
 --- !u!4 &1278358673
 Transform:
   m_ObjectHideFlags: 0
@@ -82082,9 +82465,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 270887032}
@@ -82477,6 +82858,7 @@ GameObject:
   - component: {fileID: 1296957882}
   - component: {fileID: 1296957884}
   - component: {fileID: 1296957883}
+  - component: {fileID: 1296957885}
   m_Layer: 5
   m_Name: Place_5
   m_TagString: Untagged
@@ -82543,6 +82925,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296957881}
   m_CullTransparentMesh: 1
+--- !u!114 &1296957885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296957881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25777522e420bb54091a3f10a0ef81f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CantChange: {fileID: 305745684}
 --- !u!1 &1298008683
 GameObject:
   m_ObjectHideFlags: 0
@@ -84464,9 +84859,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 1476447169}
   Character_Face: {fileID: 1147284928}
@@ -85579,6 +85972,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345845968}
   m_CullTransparentMesh: 1
+--- !u!1 &1345965449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345965450}
+  - component: {fileID: 1345965452}
+  - component: {fileID: 1345965451}
+  m_Layer: 5
+  m_Name: CantChange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1345965450
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345965449}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1349189270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 65}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1345965451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345965449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 48ea2e032af0d6346b9eae059999712f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1345965452
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345965449}
+  m_CullTransparentMesh: 1
 --- !u!1 &1346042674
 GameObject:
   m_ObjectHideFlags: 0
@@ -85835,6 +86303,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1245022825}
+  - {fileID: 1345965450}
   m_Father: {fileID: 1882044142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -86135,9 +86604,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 1246915898}
   Character_Face: {fileID: 77689722}
@@ -86697,9 +87164,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   SelectBtn: {fileID: 486325255}
 --- !u!1 &1358189471
@@ -88146,9 +88611,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 943760636}
@@ -89162,9 +89625,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 578582154}
@@ -89899,9 +90360,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 240615}
@@ -93127,9 +93586,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 670955503}
@@ -93365,8 +93822,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1278358672}
         m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
-        m_MethodName: TestMoveScene
-        m_Mode: 1
+        m_MethodName: On_Click_InGame
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -96336,7 +96793,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 99bf9639b79a75e4fb23c95d99b8ba00, type: 3}
   - {fileID: 21300000, guid: bc3f9e07982c36a47b0bff99f70a379d, type: 3}
   - {fileID: 21300000, guid: 453accfd343e5974a9c7161fcde2a471, type: 3}
-  R_Summon_Rate: 0.8
+  R_Summon_Rate: 1
   SR_Summon_Rate: 0.18
   SSR_Summon_Rate: 0.02
   Gacha_Video: {fileID: 1843925254}
@@ -100520,9 +100977,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1569538160}
@@ -101043,9 +101498,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   SelectBtn: {fileID: 853418693}
 --- !u!1 &1604681682
@@ -101153,9 +101606,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 561314073}
   Character_Face: {fileID: 699958614}
@@ -102373,9 +102824,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 199495672}
   Character_Face: {fileID: 258489010}
@@ -104519,6 +104968,7 @@ MonoBehaviour:
   NotTouch_Raycast: {fileID: 365620016}
   Character_Transition_Panel: {fileID: 1912000253}
   NotTouch_RayCast: {fileID: 365620016}
+  StartPanel: {fileID: 0}
 --- !u!95 &1678199307
 Animator:
   serializedVersion: 5
@@ -104722,9 +105172,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 40425247}
@@ -105025,6 +105473,18 @@ MonoBehaviour:
       - m_Target: {fileID: 385401710}
         m_TargetAssemblyTypeName: CharacterList_UI, Assembly-CSharp
         m_MethodName: Refresh_CharacterList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 385401710}
+        m_TargetAssemblyTypeName: CharacterList_UI, Assembly-CSharp
+        m_MethodName: On_Click_ChangeCancel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -107405,9 +107865,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 823790558}
   Character_Face: {fileID: 64327953}
@@ -107873,6 +108331,7 @@ MonoBehaviour:
   NotTouch_Raycast: {fileID: 365620016}
   Character_Transition_Panel: {fileID: 0}
   NotTouch_RayCast: {fileID: 0}
+  StartPanel: {fileID: 0}
 --- !u!1 &1721555016
 GameObject:
   m_ObjectHideFlags: 0
@@ -108950,9 +109409,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   SelectBtn: {fileID: 2107518365}
 --- !u!1 &1729503178
@@ -109219,9 +109676,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 29320848}
@@ -110114,9 +110569,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   CharacterPanel: {fileID: 1726970}
   CharacterUI_Ref: {fileID: 385401710}
@@ -110647,9 +111100,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 1733470771}
   Character_Face: {fileID: 909575119}
@@ -113317,9 +113768,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 1166126483}
   Character_Face: {fileID: 2130283761}
@@ -115458,9 +115907,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 1900108303}
   Character_Face: {fileID: 219540060}
@@ -117386,6 +117833,7 @@ GameObject:
   - component: {fileID: 1882044142}
   - component: {fileID: 1882044144}
   - component: {fileID: 1882044143}
+  - component: {fileID: 1882044145}
   m_Layer: 5
   m_Name: Place_2
   m_TagString: Untagged
@@ -117452,6 +117900,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882044141}
   m_CullTransparentMesh: 1
+--- !u!114 &1882044145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882044141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25777522e420bb54091a3f10a0ef81f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CantChange: {fileID: 1345965451}
 --- !u!1 &1882860173
 GameObject:
   m_ObjectHideFlags: 0
@@ -118922,9 +119383,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 2068039649}
@@ -120261,9 +120720,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1090028226}
@@ -121192,9 +121649,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 2064544537}
@@ -122502,7 +122957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1959646424
 RectTransform:
   m_ObjectHideFlags: 0
@@ -123034,9 +123489,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 824557192}
@@ -124676,9 +125129,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 278838877}
@@ -125620,9 +126071,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 1338707243}
@@ -126635,9 +127084,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   SelectBtn: {fileID: 644002399}
 --- !u!1 &2027185856
@@ -128252,9 +128699,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Slot_Num: 0
   Element_BG: {fileID: 633327968}
@@ -129065,7 +129510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2060540832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -129960,6 +130405,7 @@ MonoBehaviour:
   NotTouch_Raycast: {fileID: 0}
   Character_Transition_Panel: {fileID: 0}
   NotTouch_RayCast: {fileID: 0}
+  StartPanel: {fileID: 0}
 --- !u!1 &2075074573
 GameObject:
   m_ObjectHideFlags: 0
@@ -130884,6 +131330,7 @@ GameObject:
   - component: {fileID: 2094656847}
   - component: {fileID: 2094656849}
   - component: {fileID: 2094656848}
+  - component: {fileID: 2094656850}
   m_Layer: 5
   m_Name: Place_3
   m_TagString: Untagged
@@ -130950,6 +131397,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094656846}
   m_CullTransparentMesh: 1
+--- !u!114 &2094656850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094656846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25777522e420bb54091a3f10a0ef81f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CantChange: {fileID: 977883944}
 --- !u!1 &2094718283
 GameObject:
   m_ObjectHideFlags: 0
@@ -131600,7 +132060,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2100191157}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1278358672}
+        m_TargetAssemblyTypeName: Lobby_Manager, Assembly-CSharp
+        m_MethodName: On_Click_InGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2100191157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133770,9 +134242,7 @@ MonoBehaviour:
       SP_Hill_Count: 0
       Buff_Time: 0
       Skill_Desc: 
-      Skill_Icon_Sprite: {fileID: 0}
       SkillIcon_Path: 
-      Skill_Prefab: {fileID: 0}
       Skill_Prefab_Path: 
   Select_Img: {fileID: 127149832}
   Character_Face: {fileID: 686195476}

@@ -63,6 +63,8 @@ public class EquipChar_Move : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             return;
         }
 
+        int EquipCharCount = UserInfo.Equip_Characters.Count;
+
         // Raycast 준비
         PointerEventData pointerData = new PointerEventData(eventSystem);
         pointerData.position = eventData.position;
@@ -86,13 +88,22 @@ public class EquipChar_Move : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             {
                 if (result.gameObject.GetComponent<EquipChar_Move>() != null)
                 {
-                    // 위치 바꿔주기
-                    this.transform.position = result.gameObject.transform.position;
-                    // 바꿔준 오브젝트 위치는 기존에 드래그했던 캐릭터 위치로
-                    result.gameObject.transform.position = StartPos;
+                    string[] counts = result.gameObject.transform.parent.name.Split("_");
 
-                    Change_Char_Pos(result.gameObject);
+                    if (int.Parse(counts[1]) - 1 >= EquipCharCount)
+                    {
+                        // 원래 위치로 복귀
+                        this.transform.position = StartPos;
+                    }
+                    else if (int.Parse(counts[1]) - 1 < EquipCharCount)
+                    {
+                        // 위치 바꿔주기
+                        this.transform.position = result.gameObject.transform.position;
+                        // 바꿔준 오브젝트 위치는 기존에 드래그했던 캐릭터 위치로
+                        result.gameObject.transform.position = StartPos;
 
+                        Change_Char_Pos(result.gameObject);
+                    }
                 }
                 else
                 {
@@ -123,11 +134,6 @@ public class EquipChar_Move : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
         StageSelect_UI.Inst.Check_Pos();
 
-        for (int i = 0; i < StageSelect_UI.Inst.Copy_EquipChar.Count; i++)
-        {
-            Debug.Log(StageSelect_UI.Inst.Copy_EquipChar[i].Get_CharName);
-            Debug.Log(UserInfo.Pos_Index[i]);
-        }
     }
     #endregion
 }

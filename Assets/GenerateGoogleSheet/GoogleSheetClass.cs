@@ -15,6 +15,8 @@ public class GoogleSheetSO : ScriptableObject
 	public List<Inventory_Item_DB> Inventory_Item_DBList;
 	public List<Quest_DB> Quest_DBList;
 	public List<SKILL_DATA> SKILL_DATAList;
+	public List<ENEMY_DB> ENEMY_DBList;
+	public List<STAGE_DB> STAGE_DBList;
 }
 
 [Serializable]
@@ -143,5 +145,31 @@ public class SKILL_DATA
 	public string SKILL_DESC;
 	public string SKILL_ICON;
 	public string SKILL_PREFAB;
+}
+
+[Serializable]
+public class ENEMY_DB
+{
+	public int MON_INDEX;
+	public string MON_NAME;
+	public string MON_ELEMENT;
+	public int MON_HP;
+	public int MON_ATK;
+	public int MON_DEF;
+	public string MON_PREFAB_PATH;
+	public int TARGET_NUM;
+	public float SKILL_RATIO;
+	public string MON_SKILL_PATH;
+	public string MON_ICON_PATH;
+	public string MON_ILLUST_PATH;
+}
+
+[Serializable]
+public class STAGE_DB
+{
+	public int STAGE_INDEX;
+	public string STAGE_NUM;
+	public string SPAWN_MON;
+	public float MON_STAT_INCREASE_VALUE;
 }
 

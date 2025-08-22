@@ -506,6 +506,9 @@ public class CharacterList_UI : MonoBehaviour
 
     public void On_Click_ChangeCancel()
     {
+        if (Equip_Info_Btn.activeSelf == false)
+            return;
+
         // 취소할 시 되돌리기
         UserInfo.Equip_Characters.Clear();
         UserInfo.UserCharDict_Copy.Clear();

@@ -469,6 +469,7 @@ public class Title_Manager : MonoBehaviour
                             pair.value.Get_Profile_Address, pair.value.Get_White_Illust_Address, pair.value.Get_Pixel_Illust_Address, pair.value.Get_Icon_Address, pair.value.Get_BG_Address,
                             pair.value.Get_Square_Illust_Address);
                         loadedDict[pair.key].Reset_Item();
+                        loadedDict[pair.key].SkillData.Resource_Path_Init();
                     }
                 }
             }

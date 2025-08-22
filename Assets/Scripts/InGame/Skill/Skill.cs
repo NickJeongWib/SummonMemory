@@ -54,14 +54,14 @@ public class Skill
     public string Get_Skill_Desc { get => Skill_Desc; }
 
     // 스킬 UI
-    public Sprite Skill_Icon_Sprite;
+    Sprite Skill_Icon_Sprite;
     public Sprite Get_Skill_Icon { get => Skill_Icon_Sprite; }
 
     [SerializeField] string SkillIcon_Path;
     public string Get_SkillIcon_Path { get => SkillIcon_Path; }
 
     // 스킬 프리펩 주소 & 프리펩
-    public GameObject Skill_Prefab;
+    GameObject Skill_Prefab;
     public GameObject Get_Skill_Prefab { get => Skill_Prefab; }
     [SerializeField] string Skill_Prefab_Path;
     public string Get_Skill_Prefab_Path { get => Skill_Prefab_Path; }
@@ -106,9 +106,15 @@ public class Skill
         Skill_Desc = _Desc;
     }
 
+    public void Resource_Path_Init()
+    {
+        Skill_Icon_Sprite = Resources.Load<Sprite>(SkillIcon_Path);
+        Skill_Prefab = Resources.Load<GameObject>(Skill_Prefab_Path);
+    }
     #endregion
 
     #region Skill_Desc
+    // 현재 레벨 스킬 설명
     public string Skill_Desc_Trans(string _desc, float _damage = 0, float _hill = 0, float _sp = 0, float _buff = 0, float _deBuff = 0)
     {
         string Replace_Desc = _desc
@@ -124,6 +130,7 @@ public class Skill
         return Replace_Desc;
     }
 
+    // 다음 레벨 스킬 설명
     public string NextSkill_Desc_Trans(string _desc, float _damage = 0, float _hill = 0, float _sp = 0, float _buff = 0, float _deBuff = 0)
     {
         string Replace_Desc = _desc

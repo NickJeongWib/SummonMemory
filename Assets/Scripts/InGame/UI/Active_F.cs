@@ -20,4 +20,22 @@ public class Active_F : MonoBehaviour
 
         InGame_Mgr.Inst.UseSkill_ON = null;
     }
+
+    public void On_MonSkill_Effect()
+    {
+        InGame_Mgr.Inst.UseMonSkill_ON();
+
+        InGame_Mgr.Inst.UseMonSkill_ON = null;
+    }
+
+    public void TurnStart()
+    {
+        InGame_Mgr.Inst.InGameState = INGAME_STATE.TURN_START;
+        this.gameObject.SetActive(false);
+    }
+
+    public void Prefab_ActiveF()
+    {
+        this.transform.parent.gameObject.SetActive(false);
+    }
 }
