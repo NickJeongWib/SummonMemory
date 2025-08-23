@@ -90,8 +90,81 @@ public class DataNetwork_Mgr : MonoBehaviour
         {
             UpdateProfileCo();
         }
+        else if (PacketBuff[0] == PACKETTYPE.QUEST)
+        {
+            UpdateQuestCo();
+        }
+        else if (PacketBuff[0] == PACKETTYPE.STAGE)
+        {
+            UpdateStageCo();
+        }
         PacketBuff.RemoveAt(0);
     }
+
+    #region StageClear
+    private void UpdateStageCo()
+    {
+        // UID가 없다면 return;
+        if (UserInfo.UID == "")
+            return;
+
+        StageClearListWrapper wrapper = new StageClearListWrapper();
+        wrapper.StageClear = UserInfo.StageClear;
+
+        // 리스트 전체 직렬화
+        string json = JsonUtility.ToJson(wrapper, true);
+
+        var request = new PlayFab.ClientModels.UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string>
+        {
+            { "StageClear", json }
+        }
+        };
+
+        PlayFab.PlayFabClientAPI.UpdateUserData(request,
+            (_result) =>
+            {
+                // Debug.Log("퀘스트 리스트 저장 성공!");
+            },
+            (_error) =>
+            {
+                Debug.LogError("퀘스트 저장 실패: " + _error.GenerateErrorReport());
+            });
+    }
+    #endregion
+
+    #region QuestData
+    private void UpdateQuestCo()
+    {
+        // UID가 없다면 return;
+        if (UserInfo.UID == "")
+            return;
+
+        QuestDataListWrapper wrapper = new QuestDataListWrapper();
+        wrapper.QuestData_List = UserInfo.QuestData_List;
+
+        // 리스트 전체 직렬화
+        string json = JsonUtility.ToJson(wrapper, true); 
+
+        var request = new PlayFab.ClientModels.UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string>
+        {
+            { "QuestDataList", json }
+        }};
+
+        PlayFab.PlayFabClientAPI.UpdateUserData(request,
+            (_result) =>
+            {
+                // Debug.Log("퀘스트 리스트 저장 성공!");
+            },
+            (_error) =>
+            {
+                Debug.LogError("퀘스트 저장 실패: " + _error.GenerateErrorReport());
+            });
+    }
+    #endregion
 
     #region Profile_Img
     private void UpdateProfileCo()
@@ -117,6 +190,8 @@ public class DataNetwork_Mgr : MonoBehaviour
                 }
             }
         };
+
+        // NetWaitTime = 0.5f;
 
         PlayFabClientAPI.UpdateUserData(request,
            (_result) =>
@@ -148,6 +223,8 @@ public class DataNetwork_Mgr : MonoBehaviour
             }
         };
 
+        // NetWaitTime = 0.5f;
+
         PlayFabClientAPI.UpdateUserData(request,
            (_result) =>
            {
@@ -177,6 +254,8 @@ public class DataNetwork_Mgr : MonoBehaviour
                 }
             }
         };
+
+        // NetWaitTime = 0.5f;
 
         PlayFabClientAPI.UpdateUserData(request,
            (_result) =>
@@ -221,15 +300,16 @@ public class DataNetwork_Mgr : MonoBehaviour
                 }
             }};
 
+            // NetWaitTime = 0.5f;
+
             PlayFabClientAPI.UpdateUserData(request,
             (_result) =>
             {
-                Debug.Log("장착 아이템 리스트 저장 성공");
+                // Debug.Log("장착 아이템 리스트 저장 성공");
             },
             (_error) =>
             {
-                Debug.Log(_error.GenerateErrorReport());
-                Debug.Log("장착 아이템 리스트 저장 실패");
+                Debug.Log("장착 아이템 리스트 저장 실패 : " + _error.GenerateErrorReport());
             });
         }
     }
@@ -267,15 +347,16 @@ public class DataNetwork_Mgr : MonoBehaviour
             }
             };
 
+            // NetWaitTime = 0.5f;
+
             PlayFabClientAPI.UpdateUserData(request,
             (_result) =>
             {
-                Debug.Log("아이템 리스트 저장 성공");
+                // Debug.Log("아이템 리스트 저장 성공");
             },
             (_error) =>
             {
-                Debug.Log(_error.GenerateErrorReport());
-                Debug.Log("아이템 리스트 저장 실패");
+                Debug.Log("아이템 리스트 저장 실패 : " +_error.GenerateErrorReport());
             });
         }
     }
@@ -315,7 +396,7 @@ public class DataNetwork_Mgr : MonoBehaviour
                 },
                 error =>
                 {
-
+                    Debug.Log("장착 캐릭터 : " + error.GenerateErrorReport());
                 });
             }
         },
@@ -341,7 +422,7 @@ public class DataNetwork_Mgr : MonoBehaviour
                 if (eachData.Key.Contains("Character_"))
                 {
                     RemoveKey.Add(eachData.Key);
-                    Debug.Log(RemoveKey.Count);
+                    // Debug.Log(RemoveKey.Count);
                 }
             }
 
@@ -362,7 +443,7 @@ public class DataNetwork_Mgr : MonoBehaviour
                 },
                 error =>
                 {
-
+                    Debug.Log("장착 캐릭터 초기화: " + error.GenerateErrorReport());
                 });
             }
         },
@@ -453,11 +534,12 @@ public class DataNetwork_Mgr : MonoBehaviour
         PlayFabClientAPI.UpdateUserData(request,
             (_result) =>
             {
-                Debug.Log("장착 캐릭터 리스트 데이터 저장 성공");
+                // Debug.Log("장착 캐릭터 리스트 데이터 저장 성공");
             },
             (_error) =>
             {
-                Debug.Log("장착 캐릭터 리스트 데이터 저장 실패");
+                Debug.Log("장착 캐릭터 리스트 데이터 저장 실패 : " +_error.GenerateErrorReport());
+                // Debug.Log("장착 캐릭터 리스트 데이터 저장 실패");
             });
     }
     #endregion
@@ -494,15 +576,17 @@ public class DataNetwork_Mgr : MonoBehaviour
             }
             };
 
+            NetWaitTime = 0.5f;
+
             PlayFabClientAPI.UpdateUserData(request,
             (_result) =>
             {
-                Debug.Log("캐릭터 리스트 원본 저장 성공");
+                // Debug.Log("캐릭터 리스트 원본 저장 성공");
             },
             (_error) =>
             {
-                Debug.Log(_error.GenerateErrorReport());
-                Debug.Log("캐릭터 리스트 원본 저장 실패");
+                Debug.Log("캐릭터 리스트 원본 저장 실패 : " + _error.GenerateErrorReport());
+                // Debug.Log("캐릭터 리스트 원본 저장 실패");
             });
         }
     }

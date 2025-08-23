@@ -194,7 +194,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7508368176633632346}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2084801993021757509}
+        m_TargetAssemblyTypeName: Skill_Icon, Assembly-CSharp
+        m_MethodName: On_Click_NoramlAtk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1656192788805752334
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,10 +297,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InGame_Char: {fileID: 0}
+  animator: {fileID: 0}
   Characet_Icon: {fileID: 3492195070099840934}
   Skill_On_Frame: {fileID: 0}
   Skill_Icon_Img: {fileID: 0}
-  animator: {fileID: 0}
+  NormalAtk_Icon: {fileID: 0}
 --- !u!1 &2392425875180895628
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,10 +494,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InGame_Char: {fileID: 0}
+  animator: {fileID: 0}
   Characet_Icon: {fileID: 3492195070099840934}
   Skill_On_Frame: {fileID: 1955619989694821317}
   Skill_Icon_Img: {fileID: 7177062512750588998}
-  animator: {fileID: 0}
+  NormalAtk_Icon: {fileID: 7508368176633632346}
 --- !u!1 &6582518607550020219
 GameObject:
   m_ObjectHideFlags: 0

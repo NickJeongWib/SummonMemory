@@ -142,6 +142,8 @@ public class SKILL_DATA
 	public string BUFF_TYPE;
 	public int SP_HILL_COUNT;
 	public int BUFF_TIME;
+	public float NORMAL_ATK_RATIO;
+	public string NORMAL_ATK_DESC;
 	public string SKILL_DESC;
 	public string SKILL_ICON;
 	public string SKILL_PREFAB;

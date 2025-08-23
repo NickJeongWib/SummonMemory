@@ -433,3 +433,15 @@ public class ItemListWrapper
 {
     public List<Item> Equip_Inventory;
 }
+
+[System.Serializable]
+public class StageClearListWrapper
+{
+    public List<bool> StageClear;
+}
+
+[System.Serializable]
+public class QuestDataListWrapper
+{
+    public List<QuestData> QuestData_List;
+}

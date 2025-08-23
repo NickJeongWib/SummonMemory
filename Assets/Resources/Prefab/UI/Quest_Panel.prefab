@@ -255,6 +255,9 @@ MonoBehaviour:
   Amount_Text: {fileID: 1732950664945434860}
   Reward_Amount: 0
   isClear: 0
+  QuestIndex: 0
+  Reward_Btn: {fileID: 157959634944362218}
+  QuestUI_Ref: {fileID: 0}
 --- !u!1 &2205892313682675712
 GameObject:
   m_ObjectHideFlags: 0

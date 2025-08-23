@@ -28,6 +28,18 @@ public class Skill_Ctrl : MonoBehaviour
         if (allDead)
         {
             InGame_Mgr.Inst.InGameState = INGAME_STATE.STAGE_END;
+
+            // 게임 조작에 관련된 UI Canvas 꺼주기
+            for(int i = 0; i < InGame_Mgr.Inst.UI_Canvas.Length; i++)
+            {
+                InGame_Mgr.Inst.UI_Canvas[i].SetActive(false);
+            }
+            // 게임 클리어 연출 활성화
+            InGame_Mgr.Inst.StageClear_Root.SetActive(true);
+
+            // 스테이지 클리어 데이터 저장
+            UserInfo.StageClear[GameManager.Inst.StageIndex] = true;
+            DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.STAGE);
         }
         else
         {
@@ -53,6 +65,14 @@ public class Skill_Ctrl : MonoBehaviour
         if (allDead)
         {
             InGame_Mgr.Inst.InGameState = INGAME_STATE.STAGE_END;
+
+            // 게임 조작에 관련된 UI Canvas 꺼주기
+            for (int i = 0; i < InGame_Mgr.Inst.UI_Canvas.Length; i++)
+            {
+                InGame_Mgr.Inst.UI_Canvas[i].SetActive(false);
+            }
+            // 게임 클리어 연출 활성화
+            InGame_Mgr.Inst.StageFail_Root.SetActive(true);
         }
         else
         {
@@ -64,7 +84,7 @@ public class Skill_Ctrl : MonoBehaviour
 
     #region DamageCalc
     // 스킬 데미지 계산 공식
-    float CalcDamage(float _atk, float _def, float _skillPower, ref bool _isCrit, float _criR = 0.5f, float _criD = 1.3f, float _elementMul = 1)
+    public float CalcDamage(float _atk, float _def, float _skillPower, ref bool _isCrit, float _criR = 0.5f, float _criD = 1.3f, float _elementMul = 1)
     {
         float baseDamage = _atk * _skillPower;
 
@@ -85,10 +105,15 @@ public class Skill_Ctrl : MonoBehaviour
     }
     #endregion
 
-    // TODO ## Skill_Ctrl 몬스터에게 데미지 적용
+    float ShakeTime = 0.55f;
+    float ShakePower = 0.25f;
+
+    // TODO ## Skill_Ctrl.cs 몬스터에게 데미지 적용
     #region Monster Damage
     public void Damage_Point()
     {
+        StartCoroutine(Camera.main.GetComponent<CameraShake>().Shake(ShakeTime, ShakePower));
+
         // Debug.Log(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.Get_CharName);
         int targetNum = InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_TargetCount;
 
@@ -198,11 +223,11 @@ public class Skill_Ctrl : MonoBehaviour
     }
     #endregion
 
-    // TODO ## Skill_Ctrl 캐릭터에게 데지미 적용
+    // TODO ## Skill_Ctrl.cs 캐릭터에게 데미지 적용
     #region CharacterDamage
     public void Mon_Damage_Point()
     {
-        // Debug.Log(InGame_Mgr.Inst.CurMonsters[InGame_Mgr.Inst.Get_MonTurnIndex].MonName);
+
         int targetNum = InGame_Mgr.Inst.CurMonsters[InGame_Mgr.Inst.Get_MonTurnIndex].Get_TargetCount;
 
         float atk = InGame_Mgr.Inst.CurMonsters[InGame_Mgr.Inst.Get_MonTurnIndex].Get_Atk;
@@ -313,7 +338,103 @@ public class Skill_Ctrl : MonoBehaviour
     }
     #endregion
 
-    // TODO ##  Skill_Ctrl 캐릭터 버프 스킬
+    #region Set_elementMul
+    public void NormalAtk(Enemy_Ctrl _enemyCtrl, float _atk, float _atkPower, float _criDamage, float _criRate)
+    {
+        // 속성 데미지 비율
+        float _elementMul = 0;
+
+        // 속성 데미지
+        if (InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_CharEle == CHAR_ELE.FIRE)
+        {
+            if (_enemyCtrl.Get_MonEle == MONSTER_ELE.WIND)
+            {
+                _elementMul = 2.0f;
+            }
+            else if (_enemyCtrl.Get_MonEle == MONSTER_ELE.WATER)
+            {
+                _elementMul = 0.8f;
+            }
+            else
+            {
+                _elementMul = 1.0f;
+            }
+
+            TextColor = InGame_Mgr.Inst.TextColor[0];
+        }
+        else if (InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_CharEle == CHAR_ELE.WATER)
+        {
+            if (_enemyCtrl.Get_MonEle == MONSTER_ELE.FIRE)
+            {
+                _elementMul = 2.0f;
+            }
+            else if (_enemyCtrl.Get_MonEle == MONSTER_ELE.GROUND)
+            {
+                _elementMul = 0.8f;
+            }
+            else
+            {
+                _elementMul = 1.0f;
+            }
+
+            TextColor = InGame_Mgr.Inst.TextColor[1];
+        }
+        else if (InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_CharEle == CHAR_ELE.WIND)
+        {
+            if (_enemyCtrl.Get_MonEle == MONSTER_ELE.GROUND)
+            {
+                _elementMul = 2.0f;
+            }
+            else if (_enemyCtrl.Get_MonEle == MONSTER_ELE.FIRE)
+            {
+                _elementMul = 0.8f;
+            }
+            else
+            {
+                _elementMul = 1.0f;
+            }
+
+            TextColor = InGame_Mgr.Inst.TextColor[2];
+        }
+        else if (InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_CharEle == CHAR_ELE.GROUND)
+        {
+            if (_enemyCtrl.Get_MonEle == MONSTER_ELE.WATER)
+            {
+                _elementMul = 2.0f;
+            }
+            else if (_enemyCtrl.Get_MonEle == MONSTER_ELE.WIND)
+            {
+                _elementMul = 0.8f;
+            }
+            else
+            {
+                _elementMul = 1.0f;
+            }
+
+            TextColor = InGame_Mgr.Inst.TextColor[3];
+        }
+
+        bool _isCrit = false;
+        float damage = CalcDamage(_atk, _enemyCtrl.Get_Def, _atkPower, ref _isCrit, _criDamage, _criRate, _elementMul);
+        float value = 0;
+        // 데미지 적용
+        _enemyCtrl.TakeDamage(damage, ref value, _isCrit, TextColor);
+
+        int index = 0;
+        for(int i = 0; i < InGame_Mgr.Inst.CurMonsters.Count; i++)
+        {
+            if(_enemyCtrl == InGame_Mgr.Inst.CurMonsters[i])
+            {
+                index = i;
+                break;
+            }
+        }
+        // UI 초기화
+        InGame_Mgr.Inst.Get_ObjPool.MonStatUI_List[index].Set_HP(value);
+    }
+    #endregion
+
+    // TODO ##  Skill_Ctrl.cs 캐릭터 버프 스킬
     #region Buff_Skill
     public void Buff_Skill()
     {
@@ -339,13 +460,28 @@ public class Skill_Ctrl : MonoBehaviour
             // 체력 제일 낮은 캐릭터 서치
             charList.Sort((a, b) => a.Get_CurHP.CompareTo(b.Get_CurHP));
 
-            for (int i = 0; i < InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_TargetCount; i++)
+            int hillCount = 0;
+            int charIndex = 0;
+
+            // 힐 적용
+            while (hillCount < InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_TargetCount)
             {
-                float hillValue = charList[i].Get_MaxHP * InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_Buff_Ratio;
+                // 죽었으면 다음 차례
+                if (charList[charIndex].Get_CurHP <= 0)
+                {
+                    // 다음 캐릭터
+                    charIndex++;
+                    continue;
+                }
+                   
+
+                float hillValue = charList[charIndex].Get_MaxHP * InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_Buff_Ratio;
                 float value = 0;
 
                 // 힐 적용
-                charList[i].TakeDamage(hillValue, ref value, TextColor, false);
+                charList[charIndex].TakeDamage(hillValue, ref value, TextColor, false);
+                hillCount++;
+                charIndex++;
             }
 
             for(int i = 0; i < InGame_Mgr.Inst.CharCtrl_List.Count; i++)
@@ -379,7 +515,7 @@ public class Skill_Ctrl : MonoBehaviour
             #endregion
         }
     }
-
+    // TODO ##  Skill_Ctrl.cs SP 회복
     void SP_Hill()
     {
         for (int i = InGame_Mgr.Inst.CurSP; i < (InGame_Mgr.Inst.CurSP +

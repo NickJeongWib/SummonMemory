@@ -82,7 +82,9 @@ public class UserInfo
     public static List<Inventory_Item> Upgrade_Inventory = new List<Inventory_Item>();  // 요리 아이템
     #endregion
 
-    #region Quest
+    #region Quest & Stage
+    public static List<bool> StageClear = new List<bool>();
+    public static List<QuestData> QuestData_List = new List<QuestData>();
     public static List<Quest_Slot> QuestSlot_List = new List<Quest_Slot>();
     #endregion
 

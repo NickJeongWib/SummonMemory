@@ -179,6 +179,7 @@ public class Lobby_ObjPool : MonoBehaviour
         #endregion
 
         #region Quest_Slot
+        UserInfo.QuestSlot_List.Clear();
         // 퀘스트 슬롯 생성
         for (int i = 0; i < Quest_List.QuestList.Count; i++)
         {
@@ -186,8 +187,10 @@ public class Lobby_ObjPool : MonoBehaviour
 
             questSlot.transform.SetParent(QuestSlot_Tr, false);
             questSlot.GetComponent<Quest_Slot>().Set_QuestUI_Ref = QuestUI_Ref;
-            questSlot.GetComponent<Quest_Slot>().Set_UI(Quest_List.QuestList[i].Get_RewardType, Quest_List.QuestList[i].Get_Reward_Img,
-                Quest_List.QuestList[i].Get_QuestTitle, Quest_List.QuestList[i].Get_QuestDesc, Quest_List.QuestList[i].Get_RewardAmount);
+            questSlot.GetComponent<Quest_Slot>().Set_UI(UserInfo.QuestData_List[i].Get_RewardType,
+                Resources.Load<Sprite>(UserInfo.QuestData_List[i].Get_RewardIcon_Path),
+                UserInfo.QuestData_List[i].Get_QuestTitle, UserInfo.QuestData_List[i].Get_QuestDesc, UserInfo.QuestData_List[i].Get_RewardAmount, i,
+                UserInfo.QuestData_List[i].Set_isClear);
         }
         #endregion
 
@@ -223,6 +226,11 @@ public class Lobby_ObjPool : MonoBehaviour
             LobbyManagerRef.UserInfo_ProfileList.Add(profileSlot.GetComponent<Profile_Slot>());
         }
         #endregion
+
+        // 완료한 업적은 제일 밑으로 정렬해준다.
+        UserInfo.QuestSlot_List.Sort((a, b) => a.Get_isClear.CompareTo(b.Get_isClear));
+        // UI에 Refresh
+        QuestUI_Ref.Sort_Quest();
     }
 
     // 상점 (하, 중, 고)소환서 창 슬롯 생성하기 위한 함수

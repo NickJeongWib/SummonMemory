@@ -46,6 +46,11 @@ public class InGame_Mgr : MonoBehaviour
     public int CurrentTurn = 1;
     public Color[] TextColor;
 
+    // 게임 클리어 여부에 따른 오브젝트 활성화하기 위한 변수
+    public GameObject[] UI_Canvas;
+    public GameObject StageClear_Root;
+    public GameObject StageFail_Root;
+
     [Header("Monster")]
     [SerializeField] int MonTurnIndex = 0;
     public int Get_MonTurnIndex { get => MonTurnIndex; }
@@ -111,11 +116,11 @@ public class InGame_Mgr : MonoBehaviour
                 // UI 팝업
                 SP_animator.Play("SP_UI_PopUp");
                 
-                if(CharCtrl_List[CurTurnCharIndex].gameObject.activeSelf == false)
+                if(CharCtrl_List[CurTurnCharIndex].Get_CurHP <= 0)
                 {
                     for(int i = CurTurnCharIndex + 1; i < CharCtrl_List.Count; i++)
                     {
-                        if(CharCtrl_List[i].gameObject.activeSelf == true)
+                        if(0 < CharCtrl_List[i].Get_CurHP)
                         {
                             CurTurnCharIndex = i;
                             break;
@@ -168,7 +173,7 @@ public class InGame_Mgr : MonoBehaviour
             case INGAME_STATE.ENEMY_TURN:
                 for(int i = MonTurnIndex; i < CurMonsters.Count; i++)
                 {
-                    if (CurMonsters[i].gameObject.activeSelf == false)
+                    if (CurMonsters[i].Get_CurHP <= 0)
                         continue;
 
                     // 만약 몬스터가 죽지 않고 살아있는 몬스터를 찾았다면 스킬 사용
@@ -213,9 +218,26 @@ public class InGame_Mgr : MonoBehaviour
         }
     }
 
-    public void Test_Back()
+    public void On_Click_GoLobby()
     {
         SceneManager.LoadScene("LobbyScene");
+    }
+
+    public void On_Click_Retry()
+    {
+        SceneManager.LoadScene("InGameScene");
+    }
+
+    public void On_Click_NextStage()
+    {
+        if (GameManager.Inst.StageIndex == Stage_List.StageList.Count - 1)
+        {
+            Debug.Log("현재 스테이지가 마지막입니다.");
+            return;
+        }
+
+        GameManager.Inst.StageIndex++;
+        SceneManager.LoadScene("InGameScene");
     }
 
     #region UI

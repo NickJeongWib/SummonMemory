@@ -39,9 +39,10 @@ public class Character_List : MonoBehaviour
             SKILL_TYPE.TryParse(GoogleSheetSORef.SKILL_DATAList[i].SKILL_TYPE, out SKILL_TYPE SkillType);
 
             Skill node = new Skill(GoogleSheetSORef.SKILL_DATAList[i].SKILL_NAME, int.Parse(GoogleSheetSORef.SKILL_DATAList[i].SKILL_LV), SkillType, GoogleSheetSORef.SKILL_DATAList[i].SKILL_POINT,
-                GoogleSheetSORef.SKILL_DATAList[i].TARGET_NUM, GoogleSheetSORef.SKILL_DATAList[i].DAMAGE_RATIO, GoogleSheetSORef.SKILL_DATAList[i].DEBUFF_RATIO , DeBuffType,
+                GoogleSheetSORef.SKILL_DATAList[i].TARGET_NUM, GoogleSheetSORef.SKILL_DATAList[i].DAMAGE_RATIO, GoogleSheetSORef.SKILL_DATAList[i].DEBUFF_RATIO, DeBuffType,
                 GoogleSheetSORef.SKILL_DATAList[i].BUFF_RATIO, BuffType, GoogleSheetSORef.SKILL_DATAList[i].SP_HILL_COUNT, GoogleSheetSORef.SKILL_DATAList[i].BUFF_TIME,
-                GoogleSheetSORef.SKILL_DATAList[i].SKILL_DESC, GoogleSheetSORef.SKILL_DATAList[i].SKILL_ICON, GoogleSheetSORef.SKILL_DATAList[i].SKILL_PREFAB);
+                GoogleSheetSORef.SKILL_DATAList[i].SKILL_DESC, GoogleSheetSORef.SKILL_DATAList[i].SKILL_ICON, GoogleSheetSORef.SKILL_DATAList[i].SKILL_PREFAB,
+                GoogleSheetSORef.SKILL_DATAList[i].NORMAL_ATK_RATIO, GoogleSheetSORef.SKILL_DATAList[i].NORMAL_ATK_DESC);
 
             SkillData_List.Add(node);
         }

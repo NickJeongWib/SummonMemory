@@ -18,7 +18,7 @@ public class Stage_List : MonoBehaviour
                 GoogleSheetSORef.STAGE_DBList[i].STAGE_NUM, GoogleSheetSORef.STAGE_DBList[i].SPAWN_MON,
                 GoogleSheetSORef.STAGE_DBList[i].MON_STAT_INCREASE_VALUE);
 
-
+            UserInfo.StageClear.Add(false);
             StageList.Add(node);
         }
     }

@@ -66,9 +66,18 @@ public class Skill
     [SerializeField] string Skill_Prefab_Path;
     public string Get_Skill_Prefab_Path { get => Skill_Prefab_Path; }
 
+
+    // -------------기본 공격---------------
+    [SerializeField] float NormalAtk_Ratio;
+    public float Get_NormalAtk_Ratio { get => NormalAtk_Ratio; }
+    [SerializeField] string NormalAtk_Desc;
+    public string Get_NormalAtk_Desc { get => NormalAtk_Desc; }
+    [SerializeField] int NormalAtk_Lv;
+    public int Get_NormalAtk_Lv { get => NormalAtk_Lv; }
+
     #region Constructor
     public Skill(string _skillName, int _lv, SKILL_TYPE _skillType, int _sp, int _targetCount, float _damageRatio, float _debuffRatio, DEBUFF_TYPE _debuffType, float _buffRatio, BUFF_TYPE _buffType,
-        int _spHillCount, int _buffTime, string _skillDesc, string _iconPath, string _prefabPath)
+        int _spHillCount, int _buffTime, string _skillDesc, string _iconPath, string _prefabPath, float _normalAtkRatio, string _normalAtkDesc)
     {
         // 스킬정보
         Skill_Name = _skillName;
@@ -97,6 +106,11 @@ public class Skill
         Skill_Prefab_Path = _prefabPath;
 
         Skill_Init(_skillDesc, _iconPath, _prefabPath);
+
+        // ------------- 기본 공격 변수 초기화 -------------
+        NormalAtk_Ratio = _normalAtkRatio;
+        NormalAtk_Desc = _normalAtkDesc;
+        NormalAtk_Lv = 0;
     }
 
     public void Skill_Init(string _Desc, string _iconPath, string _prefabPath)
@@ -124,6 +138,7 @@ public class Skill
             .Replace("{_buff}", (_buff * 100).ToString("N0"))
             .Replace("{_deBuff}", (_deBuff * 100).ToString("N0"));
 
+        // 줄바꿈 기호로 바꾸기
         Replace_Desc = Replace_Desc.Replace("\\n", "\n");
         Replace_Desc = Replace_Desc.Replace("\\", "");
 
@@ -138,8 +153,9 @@ public class Skill
             .Replace("{_hill}", "<color=orange>" + ((_hill + 0.01f) * 100).ToString("N0") + "</color>")
             .Replace("{_sp}", "<color=orange>" + (_sp + 0.2f).ToString("N0") + "</color>")
             .Replace("{_buff}", "<color=orange>" + ((_buff + 0.01f) * 100).ToString("N0") + "</color>")
-            .Replace("{_deBuff}", "<color=orange>" + ((_deBuff + 0.01f)* 100).ToString("N0") + "</color>");
+            .Replace("{_deBuff}", "<color=orange>" + ((_deBuff + 0.01f) * 100).ToString("N0") + "</color>");
 
+        // 줄바꿈 기호로 바꾸기
         Replace_Desc = Replace_Desc.Replace("\\n", "\n");
         Replace_Desc = Replace_Desc.Replace("\\", "");
 
@@ -161,6 +177,15 @@ public class Skill
         SP_Hill_Count += _sp;
         Buff_Ratio += _buff;
         DeBuff_Ratio += _deBuff;
+    }
+
+    public void Increase_NormalRatio(float _damage = 0)
+    {
+        if (NormalAtk_Lv == 20)
+            return;
+
+        NormalAtk_Lv++;
+        NormalAtk_Ratio += _damage;
     }
     #endregion
 }

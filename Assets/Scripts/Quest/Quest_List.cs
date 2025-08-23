@@ -19,6 +19,7 @@ public class Quest_List : MonoBehaviour
                 GoogleSheetSORef.Quest_DBList[i].REWARD_AMOUNT, rewardType, GoogleSheetSORef.Quest_DBList[i].REWARD_IMAGE);
 
             QuestList.Add(node);
+            UserInfo.QuestData_List.Add(node);
         }
 
         // Debug.Log(QuestList.Count);

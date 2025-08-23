@@ -128,6 +128,8 @@ public static class Define
         DIA,
         MONEY,
         PROFILE_IMG,
+        QUEST,
+        STAGE,
     }
 
     #region Skill

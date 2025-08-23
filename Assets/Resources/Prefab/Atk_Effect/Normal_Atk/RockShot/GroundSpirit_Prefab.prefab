@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4751553756252977616}
+  - component: {fileID: 1783739051620459789}
+  - component: {fileID: 8529562106924153155}
   m_Layer: 0
   m_Name: GroundSpirit_Prefab
   m_TagString: Untagged
@@ -32,6 +34,33 @@ Transform:
   - {fileID: 5893942217634292200}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1783739051620459789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4879964402081187271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ba8c0a12d083d42b9fee19eb82903e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetTr: {fileID: 0}
+  MoveSpeed: 17
+  SkillCtrl_Ref: {fileID: 8529562106924153155}
+--- !u!114 &8529562106924153155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4879964402081187271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2ba892103ae3041a6d983525bce582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7457361463871178856
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +89,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4751553756252977616}

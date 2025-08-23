@@ -18,11 +18,18 @@ public class InGame_ObjPool : MonoBehaviour
     [SerializeField] Transform SkillIcon_Tr;
     [SerializeField] Transform[] SpawnPos;
     public List<Skill_Icon> SkillIcon_List = new List<Skill_Icon>();
+    [SerializeField] Sprite[] NormalAtk_Icon;
 
     [Header("Char_UI")]
     [SerializeField] Transform Char_UI_Tr;
     [SerializeField] GameObject CharStat_Prefab;
     public List<PrefabStat_UI> CharStatUI_List = new List<PrefabStat_UI>();
+
+    [Header("NormalAtk")]
+    [SerializeField] GameObject[] NormalAtk_Prefab;
+    [SerializeField] Transform NormalAtk_Tr;
+
+    public List<List<NormalAtk_Ctrl>> NormalAtk_List = new List<List<NormalAtk_Ctrl>>();
     #endregion
 
     #region Enemy
@@ -80,7 +87,7 @@ public class InGame_ObjPool : MonoBehaviour
             skill.transform.SetParent(SkillIcon_Tr, false);
 
             skill.GetComponent<Skill_Icon>().Set_Character_UI(spawnChar.GetComponent<Character_Ctrl>().Get_character.Get_Icon_Img,
-                spawnChar.GetComponent<Character_Ctrl>().Get_SkillData.Get_Skill_Icon,
+                spawnChar.GetComponent<Character_Ctrl>().Get_SkillData.Get_Skill_Icon, NormalAtk_Icon[(int)spawnChar.GetComponent<Character_Ctrl>().Get_CharEle],
                 Skill_ON_Frames[(int)spawnChar.GetComponent<Character_Ctrl>().Get_character.Get_CharElement], spawnChar.GetComponent<Character_Ctrl>());
 
             skill.SetActive(false);
@@ -159,6 +166,18 @@ public class InGame_ObjPool : MonoBehaviour
             BuffIcon_List.Add(buffIcon.GetComponent<BuffIcon_UI>());
         }
         #endregion
+
+        #region NormalAtk
+        for(int i = 0; i < NormalAtk_Prefab.Length; i++)
+        {
+            NormalAtk_List.Add(new List<NormalAtk_Ctrl>());
+
+            GameObject atk = Instantiate(NormalAtk_Prefab[i]);
+            atk.transform.SetParent(NormalAtk_Tr);
+            atk.gameObject.SetActive(false);
+            NormalAtk_List[i].Add(atk.GetComponent<NormalAtk_Ctrl>());
+        }
+        #endregion
     }
 
     public GameObject Get_BuffIcon(Character_Ctrl _charCtrl ,Transform _parent, Sprite _sprite, int _turn, float _buffValue, BUFF_TYPE _buffType)
@@ -183,5 +202,34 @@ public class InGame_ObjPool : MonoBehaviour
         buffIcon.GetComponent<BuffIcon_UI>().Set_Skill_UI(_charCtrl, _parent, _sprite, _turn, _buffValue, _buffType);
         BuffIcon_List.Add(buffIcon.GetComponent<BuffIcon_UI>());
         return buffIcon;
+    }
+
+    // 기본 공격 오브젝트 반환
+    public GameObject Get_NormalAtk(CHAR_ELE _ele, Transform _targetTr)
+    {
+        // 속성에 있는 기본공격의 개수만큼 반복
+        for(int i = 0; i < NormalAtk_List[(int)_ele].Count; i++)
+        {
+            // 속성의 기본공격이 켜져있으면 건너뛰기
+            if(NormalAtk_List[(int)_ele][i].gameObject.activeSelf)
+            {
+                continue;
+            }
+            else // 속성 공격이 꺼져 있다면
+            {
+                // 꺼져있는 공격 타겟 설정 후 오브젝트 활성화 시킨 뒤 반환
+                NormalAtk_List[(int)_ele][i].Set_Target(_targetTr);
+                NormalAtk_List[(int)_ele][i].gameObject.SetActive(true);
+                return NormalAtk_List[(int)_ele][i].gameObject;
+            }
+        }
+
+        // 만약 for문에서 벗어난다면 활용 가능한 오브젝트가 없다는 것을 의미
+        // 따라서 새로 생성 후 반환
+        GameObject atk = Instantiate(NormalAtk_Prefab[(int)_ele]);
+        atk.transform.SetParent(NormalAtk_Tr);
+        atk.GetComponent<NormalAtk_Ctrl>().Set_Target(_targetTr);
+        NormalAtk_List[(int)_ele].Add(atk.GetComponent<NormalAtk_Ctrl>());
+        return atk;
     }
 }

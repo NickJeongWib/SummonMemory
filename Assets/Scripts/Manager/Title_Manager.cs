@@ -37,6 +37,7 @@ public class Title_Manager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] GameObject GameStart_Btn;
+    [SerializeField] GameObject TouchPanel;
 
     bool invalidEmailType = false;       // 이메일 포맷이 올바른지 체크
     bool isValidFormat = false;          // 올바른 형식인지 아닌지 체크
@@ -160,40 +161,6 @@ public class Title_Manager : MonoBehaviour
                     string Data = eachData.Value.Value;
                     //string[] strArr = Data.Split('|');
                     EquipCharNameData.Add(Data);
-                    // Debug.Log(EquipCharNameData.Count);
-                    #region Data_Load
-                    //int.TryParse(strArr[0], out int ID);
-                    //CHAR_GRADE.TryParse(strArr[3], out CHAR_GRADE CharGrade);
-                    //CHAR_TYPE.TryParse(strArr[4], out CHAR_TYPE CharType);
-                    //CHAR_ELE.TryParse(strArr[5], out CHAR_ELE CharEle);
-                    //int.TryParse(strArr[6], out int Star);
-                    //float.TryParse(strArr[7], out float BaseHP);
-                    //float.TryParse(strArr[8], out float CalHP);
-                    //float.TryParse(strArr[9], out float BaseAtk);
-                    //float.TryParse(strArr[10], out float CalAtk);
-                    //float.TryParse(strArr[11], out float BaseDef);
-                    //float.TryParse(strArr[12], out float CalDef);
-                    //float.TryParse(strArr[13], out float BaseCriD);
-                    //float.TryParse(strArr[14], out float CalCriD);
-                    //float.TryParse(strArr[15], out float BaseCriR);
-                    //float.TryParse(strArr[16], out float CalCriR);
-                    //float.TryParse(strArr[17], out float CombatPower);
-                    //float.TryParse(strArr[18], out float linearFactor);
-                    //float.TryParse(strArr[19], out float expFactor);
-                    //float.TryParse(strArr[20], out float expMultiplier);
-                    //int.TryParse(strArr[21], out int transitionLevel);
-                    //int.TryParse(strArr[22], out int Lv);
-                    //int.TryParse(strArr[23], out int MaxLv);
-                    //int.TryParse(strArr[24], out int CurrentExp);
-                    //int.TryParse(strArr[25], out int Cumulative_Exp);
-
-                    //Character node = new Character(ID, strArr[1], strArr[2], CharGrade, CharType, CharEle, Star, BaseHP, BaseAtk, BaseDef, BaseCriD, BaseCriR, Lv);
-                    //node.Load_Resources(strArr[26], strArr[27], strArr[28], strArr[29], strArr[30], strArr[31], strArr[32]);
-                    //node.Load_Data(linearFactor, expFactor, expMultiplier, transitionLevel, CalHP, CalAtk, CalDef, CalCriD, CalCriR, CombatPower, MaxLv, CurrentExp, Cumulative_Exp);
-
-
-                    //Debug.Log(UserInfo.Equip_Characters.Count);
-                    #endregion
                 }
                 else if (eachData.Key.Contains("UserDia"))
                 {
@@ -201,7 +168,6 @@ public class Title_Manager : MonoBehaviour
                     {
                         UserInfo.Dia = GetValue;
                     }
-
                 }
                 else if (eachData.Key.Contains("UserMoney"))
                 {
@@ -221,9 +187,15 @@ public class Title_Manager : MonoBehaviour
                 }
             }
 
+            // 데이터 로드
+            // 캐릭터 정보 로드
             LoadUserCharactersFromChunks(CharDataKey);
+            // 인벤토리 아이템 로드
             LoadUserInvenFromChunks(InvenDataKet);
-            // LoadUserEquipInvenFromChunks(EquipInvenDataKet);
+            // 퀘스트 데이터 로드
+            LoadQuestList();
+            // 스테이지 클리어 정보 로드
+            LoadStageClearList();
             #endregion
 
         }
@@ -401,7 +373,8 @@ public class Title_Manager : MonoBehaviour
 
     public void OnClick_GameStart()
     {
-        SceneManager.LoadScene("LobbyScene");
+        TouchPanel.SetActive(true);
+        SceneManager.LoadSceneAsync("LobbyScene");
     }
     #endregion
 
@@ -556,7 +529,6 @@ public class Title_Manager : MonoBehaviour
         Debug.LogError("불러오기 실패: " + error.GenerateErrorReport())
         );
     }
-
     private void LoadUserEquipInvenFromChunks(List<string> _keys)
     {
         var request = new GetUserDataRequest();
@@ -583,7 +555,6 @@ public class Title_Manager : MonoBehaviour
             }
 
             UserInfo.Equip_Inventory = loadedList;
-            // Debug.Log(UserInfo.Equip_Inventory.Count);
 
             #region Type
             foreach (Item item in UserInfo.Equip_Inventory)
@@ -644,6 +615,46 @@ public class Title_Manager : MonoBehaviour
         error => 
         Debug.LogError("불러오기 실패: " + error.GenerateErrorReport())
         );
+    }
+
+    private void LoadQuestList()
+    {
+        PlayFab.PlayFabClientAPI.GetUserData(new PlayFab.ClientModels.GetUserDataRequest(),
+            result =>
+            {
+                if (result.Data != null && result.Data.ContainsKey("QuestDataList"))
+                {
+                    string json = result.Data["QuestDataList"].Value;
+                    QuestDataListWrapper wrapper = JsonUtility.FromJson<QuestDataListWrapper>(json);
+
+                    if(wrapper.QuestData_List.Count != 0)
+                    {
+                        UserInfo.QuestData_List = wrapper.QuestData_List;
+                    }
+                }
+            },
+            error => Debug.LogError("로드 실패: " + error.GenerateErrorReport())
+        );
+    }
+
+    private void LoadStageClearList()
+    {
+        PlayFab.PlayFabClientAPI.GetUserData(new PlayFab.ClientModels.GetUserDataRequest(),
+           result =>
+           {
+               if (result.Data != null && result.Data.ContainsKey("StageClear"))
+               {
+                   string json = result.Data["StageClear"].Value;
+                   StageClearListWrapper wrapper = JsonUtility.FromJson<StageClearListWrapper>(json);
+
+                   if (wrapper.StageClear.Count != 0)
+                   {
+                       UserInfo.StageClear = wrapper.StageClear;
+                   }
+               }
+           },
+           error => Debug.LogError("로드 실패: " + error.GenerateErrorReport())
+       );
     }
     #endregion
 
