@@ -53,4 +53,9 @@ public class Transition_Fade : MonoBehaviour
         StartPanel.SetActive(true);
     }
     #endregion
+
+    public void SelectVoice_Play()
+    {
+        SoundManager.Inst.PlaySelectVoice(GameManager.Inst.SelectCharacter.VoicePath.Get_SelectVoice_Path);
+    }
 }

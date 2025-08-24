@@ -101,6 +101,10 @@ public class Character
     [SerializeField] string UI_Prefab_Path;
     public string Get_UI_Prefab_Path { get => UI_Prefab_Path; }
     #endregion
+
+    #region Sound_Path
+    public Voice VoicePath;
+    #endregion
     // -----------------------Image Resources Variable----------------------
     #region Image_Resource
 
@@ -532,8 +536,6 @@ public class Character
         return CombatPower.ToString("N0");
     }
     #endregion
-
-
 
     #region Get_Profile_Sprite
     public Sprite Get_Profile_Sprite()

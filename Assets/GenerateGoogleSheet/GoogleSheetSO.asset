@@ -2667,3 +2667,52 @@ MonoBehaviour:
     STAGE_NUM: 1-3
     SPAWN_MON: 0,0,0,0,2
     MON_STAT_INCREASE_VALUE: 0.2
+  CHAR_VOICEList:
+  - SELECT_VOICE: Sounds/Fire/Sonia/Sonia_Select
+    USESKILL_VOICE: Sounds/Fire/Sonia/Sonia_Skill
+  - SELECT_VOICE: Sounds/Fire/Tana/Tana_Select
+    USESKILL_VOICE: Sounds/Fire/Tana/Tana_Skill
+  - SELECT_VOICE: Sounds/Fire/Tania/Tania_Select
+    USESKILL_VOICE: Sounds/Fire/Tania/Tania_Skill
+  - SELECT_VOICE: Sounds/Water/Ariel/Ariel_Select
+    USESKILL_VOICE: Sounds/Water/Ariel/Ariel_Skill
+  - SELECT_VOICE: Sounds/Water/Lapa/Lapa_Select
+    USESKILL_VOICE: Sounds/Water/Lapa/Lapa_Skill
+  - SELECT_VOICE: Sounds/Water/Adri/Adri_Select
+    USESKILL_VOICE: Sounds/Water/Adri/Adri_Skill
+  - SELECT_VOICE: Sounds/Wind/Melia/Melia_Select
+    USESKILL_VOICE: Sounds/Wind/Melia/Melia_Skill
+  - SELECT_VOICE: Sounds/Wind/Seiza/Seiza_Select
+    USESKILL_VOICE: Sounds/Wind/Seiza/Seiza_Skill
+  - SELECT_VOICE: Sounds/Wind/Zaya/Zaya_Select
+    USESKILL_VOICE: Sounds/Wind/Zaya/Zaya_Skill
+  - SELECT_VOICE: Sounds/Ground/Bera/Bera_Select
+    USESKILL_VOICE: Sounds/Ground/Bera/Bera_Skill
+  - SELECT_VOICE: Sounds/Ground/Dena/Dena_Select
+    USESKILL_VOICE: Sounds/Ground/Dena/Dena_Skill
+  - SELECT_VOICE: Sounds/Ground/Miro/Miro_Select
+    USESKILL_VOICE: Sounds/Ground/Miro/Miro_Skill
+  - SELECT_VOICE: Sounds/Fire/Leze/Leze_Select
+    USESKILL_VOICE: Sounds/Fire/Leze/Leze_Skill
+  - SELECT_VOICE: Sounds/Fire/Ruina/Ruina_Select
+    USESKILL_VOICE: Sounds/Fire/Ruina/Ruina_Skill
+  - SELECT_VOICE: Sounds/Water/Arine/Arine_Select
+    USESKILL_VOICE: Sounds/Water/Arine/Arine_Skill
+  - SELECT_VOICE: Sounds/Water/Yuki/Yuki_Select
+    USESKILL_VOICE: Sounds/Water/Yuki/Yuki_Skill
+  - SELECT_VOICE: Sounds/Wind/Elin/Elin_Select
+    USESKILL_VOICE: Sounds/Wind/Elin/Elin_Skill
+  - SELECT_VOICE: Sounds/Wind/Mille/Mille_Select
+    USESKILL_VOICE: Sounds/Wind/Mille/Mille_Skill
+  - SELECT_VOICE: Sounds/Ground/Asa/Asa_Select
+    USESKILL_VOICE: Sounds/Ground/Asa/Asa_Skill
+  - SELECT_VOICE: Sounds/Ground/Nora/Nora_Select
+    USESKILL_VOICE: Sounds/Ground/Nora/Nora_Skill
+  - SELECT_VOICE: Sounds/Fire/Igni/Igni_Select
+    USESKILL_VOICE: Sounds/Fire/Igni/Igni_Skill
+  - SELECT_VOICE: Sounds/Water/Line/Line_Select
+    USESKILL_VOICE: Sounds/Water/Line/Line_Skill
+  - SELECT_VOICE: Sounds/Wind/Elloin/Elloin_Select
+    USESKILL_VOICE: Sounds/Wind/Elloin/Elloin_Skill
+  - SELECT_VOICE: Sounds/Ground/Lamie/Lamie_Select
+    USESKILL_VOICE: Sounds/Ground/Lamie/Lamie_Skill

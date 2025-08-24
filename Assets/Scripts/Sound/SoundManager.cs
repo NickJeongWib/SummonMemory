@@ -21,6 +21,8 @@ public class SoundManager : MonoBehaviour
     AudioSource[] AudioSource_List = new AudioSource[10];
     float[] EffVolume = new float[10];
 
+    [SerializeField] AudioSource VoiceAudioSrc;
+
     #region Singleton
     // 싱글톤 
     public static SoundManager Inst = null;
@@ -124,11 +126,6 @@ public class SoundManager : MonoBehaviour
         AudioSrc.Play();
     }
     
-    /// <summary>
-    /// Character Skill_Voice도 사용 가능
-    /// </summary>
-    /// <param name="_filePath"></param>
-    /// <param name="_vol"></param>
     // UI 효과음 재생 함수
     public void PlayUISound(string _filePath, float _vol = 0.2f)
     {
@@ -200,6 +197,45 @@ public class SoundManager : MonoBehaviour
             // EffSoundCount가 SoundCount보다 작으면 SoundCount다시 0으로
             if (EffSoundCount <= SoundCount)
                 SoundCount = 0;
+        }
+    }
+
+    public void PlaySelectVoice(string _filePath, float _vol = 0.2f)
+    {
+        // 사운드 재생 꺼져있으면 return
+        if (isSoundOn == false)
+            return;
+
+        AudioClip audioClip = null;
+
+        // Dictionary에 파일 이름이 포함 되어 있다면
+        if (AudioClip_Dict.ContainsKey(_filePath) == true)
+        {
+            // 오디오 클립은 Dictionary에서 찾은 클립으로 설정
+            audioClip = AudioClip_Dict[_filePath];
+        }
+        else
+        {
+            // Dictionary에 없으면 폴더에서 찾은 후 Dictionary에 저장
+            audioClip = Resources.Load(_filePath) as AudioClip;
+            AudioClip_Dict.Add(_filePath, audioClip);
+        }
+
+        // audioClip이 null이면 찾지 못했으면 return
+        if (audioClip == null)
+            return;
+
+        if(VoiceAudioSrc.isPlaying)
+        {
+            // 현재 진행 중인 보이스 멈추고 새 보이스로 출력
+            VoiceAudioSrc.Stop();
+            VoiceAudioSrc.clip = audioClip;
+            VoiceAudioSrc.Play();
+        }
+        else
+        {
+            VoiceAudioSrc.clip = audioClip;
+            VoiceAudioSrc.Play();
         }
     }
 

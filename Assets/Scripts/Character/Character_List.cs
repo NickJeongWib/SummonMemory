@@ -19,6 +19,7 @@ public class Character_List : MonoBehaviour
 
     // 스킬 데이터
     public List<Skill> SkillData_List = new List<Skill>();
+    public List<Voice> VoiceList = new List<Voice>();
 
     private void Awake()
     {
@@ -48,6 +49,14 @@ public class Character_List : MonoBehaviour
         }
         #endregion
 
+        #region CharVoice
+        for (int i = 0; i < GoogleSheetSORef.CHAR_VOICEList.Count; i++)
+        {
+            Voice voice = new Voice(GoogleSheetSORef.CHAR_VOICEList[i].SELECT_VOICE, GoogleSheetSORef.CHAR_VOICEList[i].USESKILL_VOICE);
+            VoiceList.Add(voice);
+        }
+        #endregion
+
         #region Character_Data
         for (int i = 0; i < GoogleSheetSORef.Character_DBList.Count; i++)
         {
@@ -71,6 +80,7 @@ public class Character_List : MonoBehaviour
 
             // 캐릭터에 스킬 데이터 넘겨주기
             Node.SkillData = SkillData_List[i];
+            Node.VoicePath = VoiceList[i];
 
             #region 이미지 누락 경고
             if (Node.Get_Grade_Up_Img == null)
