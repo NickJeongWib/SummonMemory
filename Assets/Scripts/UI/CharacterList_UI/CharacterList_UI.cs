@@ -944,8 +944,9 @@ public class CharacterList_UI : MonoBehaviour
                 Info_Char_Slot[i].gameObject.SetActive(true);
             }
 
+            // 이미지 프로필 아이콘으로 변경
             Info_Char_Slot[i].character = UserInfo.UserCharDict_Copy_2[i].Value;
-            Info_Char_Slot[i].Character_Face.sprite = UserInfo.UserCharDict_Copy_2[i].Value.Get_Normal_Img;
+            Info_Char_Slot[i].Character_Face.sprite = UserInfo.UserCharDict_Copy_2[i].Value.Get_Icon_Img;
         }
     }
     #endregion

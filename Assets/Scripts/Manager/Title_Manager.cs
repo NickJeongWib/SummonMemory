@@ -203,6 +203,7 @@ public class Title_Manager : MonoBehaviour
         if (Save_ID_Toggle.isOn)
         {
             PlayerPrefs.SetString("MySave_ID", Save_ID);
+            PlayerPrefs.Save();
         }
         else
         {

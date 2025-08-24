@@ -34,6 +34,7 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] GameObject Book_Image;             // 단일 가차에서 나온 캐릭터가 최고 등급에 도달했지만 중복으로 나올 경우 획득한 소환서를 알기 위한
 
     [Header("---UI---")]
+    [SerializeField] GameObject CantTouchPanel;
     [SerializeField] Text[] DiaCount_Texts;
     [SerializeField] Text[] GoldCount_Texts;
     [SerializeField] GameObject NameChange_Panel;
@@ -392,39 +393,11 @@ public class Lobby_Manager : MonoBehaviour
         }
     }
 
-    #region Test
-    // TODO ## Lobby_Manager_Test
-    public void Test()
-    {
-        for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
-        {
-            Debug.Log("Equip " + UserInfo.Equip_Characters[i].Get_CharName);
-        }
-
-        for (int i = 0; i < UserInfo.UserCharDict_Copy_2.Count; i++)
-        {
-            Debug.Log("Dict2 " + UserInfo.UserCharDict_Copy_2[i].Value.Get_CharName);
-        }
-
-        Debug.Log("5" + EquipSlot_List.EquipCharacter.Get_CharName);
-    }
-
-    public void JsonTest()
-    {
-        ItemListWrapper wrap = new ItemListWrapper();
-        wrap.Equip_Inventory = UserInfo.Equip_Inventory;
-        string json = JsonUtility.ToJson(wrap, true);
-        Debug.Log(json);
-
-        UserInfo.Inventory_ToJson();
-        UserInfo.CharacterList_ToJson();
-    }
-    #endregion
-
     public void On_Click_InGame(int _index)
     {
+        CantTouchPanel.SetActive(true);
         GameManager.Inst.StageIndex = _index;
-        SceneManager.LoadScene("InGameScene");
+        SceneManager.LoadSceneAsync("InGameScene");
     }
 }
 
