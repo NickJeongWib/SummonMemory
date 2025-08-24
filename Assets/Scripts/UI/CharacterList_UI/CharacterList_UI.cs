@@ -855,6 +855,9 @@ public class CharacterList_UI : MonoBehaviour
     public void On_Click_CharInfo(CharInfo_CharSelect_Btn _slot)
     {
         GameManager.Inst.Get_SelectChar = _slot.character;
+
+        // 캐릭터 선택시 선택 사운드 출력
+        SoundManager.Inst.PlaySelectVoice(GameManager.Inst.SelectCharacter.VoicePath.Get_SelectVoice_Path);
         // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
 
         Refresh_EquipItem_Image();

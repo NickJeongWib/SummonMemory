@@ -17,6 +17,7 @@ public class GoogleSheetSO : ScriptableObject
 	public List<SKILL_DATA> SKILL_DATAList;
 	public List<ENEMY_DB> ENEMY_DBList;
 	public List<STAGE_DB> STAGE_DBList;
+	public List<CHAR_VOICE> CHAR_VOICEList;
 }
 
 [Serializable]
@@ -173,5 +174,12 @@ public class STAGE_DB
 	public string STAGE_NUM;
 	public string SPAWN_MON;
 	public float MON_STAT_INCREASE_VALUE;
+}
+
+[Serializable]
+public class CHAR_VOICE
+{
+	public string SELECT_VOICE;
+	public string USESKILL_VOICE;
 }
 
