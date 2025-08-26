@@ -47,8 +47,21 @@ public class Title_Manager : MonoBehaviour
     List<string> EquipInvenDataKet = new List<string>();
     List<string> EquipCharNameData = new List<string>();
 
+    [Header("BGM")]
+    [SerializeField] AudioClip Title_BGM;
+
+    [Header("Loading")]
+    [SerializeField] GameObject LoadingPanel;
+    bool isCharLoad;
+    bool isInvenLoad;
+    bool isQuestLoad;
+    bool isStageLoad;
+    bool isEquipItemLoad;
+
     private void Start()
     {
+        SoundManager.Inst.PlayBGM(Title_BGM);
+
         // 아이지 저장 여부 불러오기
         string strId = PlayerPrefs.GetString("MySave_ID", "");
         if (!PlayerPrefs.HasKey("MySave_ID") || strId == "")
@@ -64,6 +77,14 @@ public class Title_Manager : MonoBehaviour
         isLoginSuccess = false;
     }
 
+    private void Update()
+    {
+        // 로그인 성공 시 로딩창이 데이터가 모두 로딩 완료되면 사라지게
+        if(LoadingPanel.activeSelf == true && !isCharLoad && !isInvenLoad && !isQuestLoad && !isStageLoad && !isEquipItemLoad)
+        {
+            LoadingPanel.SetActive(false);
+        }
+    }
 
     #region Login
     public void Login()
@@ -133,7 +154,7 @@ public class Title_Manager : MonoBehaviour
         // TODO ## TitleManager "반드시 구현" 로그인 시 유저 정보 넘겨줘야하는 곳
         MessageOnOff("로그인 성공");
         UserInfo.UID = _result.PlayFabId;
-
+        LoadingPanel.SetActive(true);
         // 유저 이름 가져오기
         if (_result.InfoResultPayload != null && isLoginSuccess == false)
         {
@@ -427,6 +448,8 @@ public class Title_Manager : MonoBehaviour
     #region Data_Load
     void LoadUserCharactersFromChunks(List<string> _keys)
     {
+        isCharLoad = true;
+
         // 캐릭터 데이터 요청
         var request = new GetUserDataRequest();
         PlayFabClientAPI.GetUserData(request, result =>
@@ -486,7 +509,10 @@ public class Title_Manager : MonoBehaviour
             }
             UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
             LoadUserEquipInvenFromChunks(EquipInvenDataKet);
-            Debug.Log("모든 캐릭터 로드 완료");
+
+            isCharLoad = false;
+            // Debug.Log("모든 캐릭터 로드 완료");
+
         },
         error => 
         Debug.LogError("불러오기 실패: " + error.GenerateErrorReport())
@@ -495,6 +521,8 @@ public class Title_Manager : MonoBehaviour
 
     void LoadUserInvenFromChunks(List<string> _keys)
     {
+        isInvenLoad = true;
+
         var request = new GetUserDataRequest();
         PlayFabClientAPI.GetUserData(request, 
         result =>
@@ -534,8 +562,7 @@ public class Title_Manager : MonoBehaviour
 
                 // Debug.Log(pair.Value.Get_Item_Name);
             }
-
-            Debug.Log("모든 아이템 로드 완료");
+            isInvenLoad = false;
         },
         error =>
         Debug.LogError("불러오기 실패: " + error.GenerateErrorReport())
@@ -543,6 +570,8 @@ public class Title_Manager : MonoBehaviour
     }
     private void LoadUserEquipInvenFromChunks(List<string> _keys)
     {
+        isEquipItemLoad = true;
+
         var request = new GetUserDataRequest();
         PlayFabClientAPI.GetUserData(request, 
         result =>
@@ -621,8 +650,8 @@ public class Title_Manager : MonoBehaviour
                 }
             }
             #endregion
-
-            Debug.Log("장착 아이템 로드 완료");
+            isEquipItemLoad = false;
+            // Debug.Log("장착 아이템 로드 완료");
         },
         error => 
         Debug.LogError("불러오기 실패: " + error.GenerateErrorReport())
@@ -631,6 +660,8 @@ public class Title_Manager : MonoBehaviour
 
     private void LoadQuestList()
     {
+        isQuestLoad = true;
+
         PlayFab.PlayFabClientAPI.GetUserData(new PlayFab.ClientModels.GetUserDataRequest(),
             result =>
             {
@@ -644,13 +675,18 @@ public class Title_Manager : MonoBehaviour
                         UserInfo.QuestData_List = wrapper.QuestData_List;
                     }
                 }
+
+                isQuestLoad = false;
             },
-            error => Debug.LogError("로드 실패: " + error.GenerateErrorReport())
+            error => 
+            Debug.LogError("로드 실패: " + error.GenerateErrorReport())
         );
     }
 
     private void LoadStageClearList()
     {
+        isStageLoad = true;
+
         PlayFab.PlayFabClientAPI.GetUserData(new PlayFab.ClientModels.GetUserDataRequest(),
            result =>
            {
@@ -664,8 +700,12 @@ public class Title_Manager : MonoBehaviour
                        UserInfo.StageClear = wrapper.StageClear;
                    }
                }
+
+               isStageLoad = false;
            },
-           error => Debug.LogError("로드 실패: " + error.GenerateErrorReport())
+
+           error => 
+           Debug.LogError("로드 실패: " + error.GenerateErrorReport())
        );
     }
     #endregion

@@ -874,6 +874,10 @@ public class CharacterList_UI : MonoBehaviour
     {
         SoundManager.Inst.PlayUISound();
 
+
+        if (GameManager.Inst.Get_SelectChar == _slot.character)
+            return;
+
         GameManager.Inst.Get_SelectChar = _slot.character;
 
         // 캐릭터 선택시 선택 사운드 출력

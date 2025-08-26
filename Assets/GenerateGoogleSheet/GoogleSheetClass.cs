@@ -166,6 +166,7 @@ public class ENEMY_DB
 	public string MON_SKILL_PATH;
 	public string MON_ICON_PATH;
 	public string MON_ILLUST_PATH;
+	public string MON_SFX_PATH;
 }
 
 [Serializable]

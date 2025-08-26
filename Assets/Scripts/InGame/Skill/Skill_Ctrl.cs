@@ -114,7 +114,7 @@ public class Skill_Ctrl : MonoBehaviour
     {
         StartCoroutine(Camera.main.GetComponent<CameraShake>().Shake(ShakeTime, ShakePower));
 
-        SoundManager.Inst.PlayEffSound("Sounds/Hit");
+        SoundManager.Inst.PlayEffSound("Sounds/Hit", PlayerPrefs.GetFloat("SFX_Vol"));
 
         // Debug.Log(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.Get_CharName);
         int targetNum = InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_TargetCount;
@@ -229,7 +229,7 @@ public class Skill_Ctrl : MonoBehaviour
     #region CharacterDamage
     public void Mon_Damage_Point()
     {
-        SoundManager.Inst.PlayEffSound("Sounds/Hit");
+        SoundManager.Inst.PlayEffSound("Sounds/Hit", PlayerPrefs.GetFloat("SFX_Vol"));
 
         // Å¸°Ù ¼ýÀÚ
         int targetNum = InGame_Mgr.Inst.CurMonsters[InGame_Mgr.Inst.Get_MonTurnIndex].Get_TargetCount;
@@ -588,6 +588,11 @@ public class Skill_Ctrl : MonoBehaviour
     public void PlaySkill_SFX()
     {
         SoundManager.Inst.PlayEffSound(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_SFX_Path);
+    }
+
+    public void PlayMonsterSkill_SFX()
+    {
+        SoundManager.Inst.PlayEffSound(InGame_Mgr.Inst.CurMonsters[InGame_Mgr.Inst.Get_MonTurnIndex].monster.Get_SFX_Path);
     }
     #endregion
 }

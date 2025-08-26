@@ -65,6 +65,8 @@ public class InGame_Mgr : MonoBehaviour
     public delegate void UseMonSkill();
     public UseMonSkill UseMonSkill_ON;
 
+    [SerializeField] AudioClip InGame_BGM;
+
     #region Init
     // ΩÃ±€≈Ê
     public static InGame_Mgr Inst = null;
@@ -84,6 +86,8 @@ public class InGame_Mgr : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Inst.PlayBGM(InGame_BGM);
+
         if(GameManager.Inst.TestMode == false)
         {
             CurSP = 6;
@@ -235,16 +239,6 @@ public class InGame_Mgr : MonoBehaviour
             // ¿Ø¡ˆ ≈œ ∞®º“
             ObjPool.BuffIcon_List[i].Turn_Decreased();
         }
-    }
-
-    public void On_Click_GoLobby()
-    {
-        SceneManager.LoadScene("LobbyScene");
-    }
-
-    public void On_Click_Retry()
-    {
-        SceneManager.LoadScene("InGameScene");
     }
 
     public void On_Click_NextStage()

@@ -8,7 +8,8 @@ public class SoundManager : MonoBehaviour
     Dictionary<string, AudioClip> AudioClip_Dict = new Dictionary<string, AudioClip>();
 
     float m_bgmVolume = 0.2f;
-    [HideInInspector] public bool isSoundOn = true;
+    public bool isSFX_On = true;
+    public bool isBGM_On = true;
     [HideInInspector] public float SoundVol = 1.0f;
 
     // 효과음 최적화를 위한 버퍼 변수
@@ -23,6 +24,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource VoiceAudioSrc;
     public AudioSource SelectUI_Audio;
+    public AudioSource BGM_AudioSrc;
 
     #region Singleton
     // 싱글톤 
@@ -41,102 +43,98 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadInit_Sound();
         LoadChildGameObj();
-
-        // 사운드 리소스 미리 로딩
-        AudioClip audioClip = null;
-        object[] temp = Resources.LoadAll("Sounds");
-        for (int i = 0; i < temp.Length; i++)
-        {
-            audioClip = temp[i] as AudioClip;
-
-            if (AudioClip_Dict.ContainsKey(audioClip.name) == true)
-                continue;
-
-            AudioClip_Dict.Add(audioClip.name, audioClip);
-        }
     }
 
-    void LoadChildGameObj()
+    void LoadInit_Sound()
     {
-        AudioSrc = gameObject.AddComponent<AudioSource>();
+        // 게임 시작되면 효과음 OnOff, 사운드 볼륨 로컬 로딩 후 적용
+        int SFX_OnOff = PlayerPrefs.GetInt("SFX_OnOff", 0);
+        // 게임 시작되면 배경음 OnOff, 사운드 볼륨 로컬 로딩 후 적용
+        int BGM_OnOff = PlayerPrefs.GetInt("BGM_OnOff", 0);
 
-        // 게임 효과음 플레이를 위한 5개의 레이어 생성 코드
-        for (int i = 0; i < EffSoundCount; i++)
+        if (SFX_OnOff == 1)
         {
-            // 게임 오브젝트 생성
-            GameObject newSndObj = new GameObject();
-            // 만든 오브젝트를 SoundManager의 자식 오브젝트로 생성
-            newSndObj.transform.SetParent(transform);
-            // 위치는 Vector3.zero;
-            newSndObj.transform.localPosition = Vector3.zero;
-            // newSndObj에 AudioSource 코드로 생성 후 초기 값 초기화
-            AudioSource a_AudioSrc = newSndObj.AddComponent<AudioSource>();
-            a_AudioSrc.playOnAwake = false;
-            a_AudioSrc.loop = false;
-            newSndObj.name = "SoundEffObj";
+            VoiceAudioSrc.mute = true;
+            SelectUI_Audio.mute = true;
 
-            AudioSource_List[i] = a_AudioSrc;
-            SoundObj_List[i] = newSndObj;
+        }
+        else
+        {
+            VoiceAudioSrc.mute = false;
+            SelectUI_Audio.mute = false;
         }
 
-        // 게임 시작되면 사운드 OnOff, 사운드 볼륨 로컬 로딩 후 적용
-        int a_SoundOnOff = PlayerPrefs.GetInt("SoundOnOff", 1);
-        if (a_SoundOnOff == 1)
-            SoundOnOff(true);
+        if (BGM_OnOff == 1)
+        {
+            BGM_AudioSrc.mute = true;
+        }
         else
-            SoundOnOff(false);
+        {
+            BGM_AudioSrc.mute = false;
+        }
 
-        float a_Value = PlayerPrefs.GetFloat("SoundVolume", 1.0f);
-        // apk용으로 Save
+        #region Volume
+        // 저장된 배경음 볼륨값이 없다면
+        if (PlayerPrefs.HasKey("BGM_Vol") == false)
+        {
+            // 볼륨 50% 기본값으로 저장
+            PlayerPrefs.SetFloat("BGM_Vol", 0.5f);
+        }
+        else
+        {
+            // 이미 저장된게 있으면 그 값으로
+            BGM_AudioSrc.volume = PlayerPrefs.GetFloat("BGM_Vol");
+        }
+
+        // 저장된 효과음 볼륨값이 없다면
+        if (PlayerPrefs.HasKey("SFX_Vol") == false)
+        {
+            // 볼륨 50% 기본값으로 저장
+            PlayerPrefs.SetFloat("SFX_Vol", 0.5f);
+        }
+        else
+        {
+            // 이미 저장된게 있으면 그 값으로
+            VoiceAudioSrc.volume = PlayerPrefs.GetFloat("SFX_Vol");
+            SelectUI_Audio.volume = PlayerPrefs.GetFloat("SFX_Vol");
+        }
+        #endregion
+
+        // apk용으로 확실히 저장
         PlayerPrefs.Save();
-        SoundVolume(a_Value);
     }
     #endregion
 
-    #region PlayBGN
+    #region PlayBGM
     // BGM 재생
-    public void PlayBGM(string _filePath, float _vol = 0.2f)
+    public void PlayBGM(AudioClip _audioClip)
     {
-        // 클립을 받을 지역변수 선언
-        AudioClip audioClip = null;
-
-        // Dictionary에 파일 이름이 포함 되어 있다면
-        if (AudioClip_Dict.ContainsKey(_filePath) == true)
-        {
-            // 오디오 클립은 Dictionary에서 찾은 클립으로 설정
-            audioClip = AudioClip_Dict[_filePath];
-        }
-        else
-        {
-            // Dictionary에 없으면 폴더에서 찾은 후 Dictionary에 저장
-            audioClip = Resources.Load(_filePath) as AudioClip;
-            AudioClip_Dict.Add(_filePath, audioClip);
-        }
-
         // 찾지못했으면 return
-        if (AudioSrc == null)
+        if (BGM_AudioSrc == null)
             return;
 
         //  AudioSrc가 null이 아니고 AudioSrc의 클립 이름 파일이름과 같다면 이미 있는거니까 return
-        if (AudioSrc.clip != null && AudioSrc.clip.name == _filePath)
+        if (BGM_AudioSrc.clip != null && BGM_AudioSrc.clip.name == _audioClip.name)
             return;
 
+        float vol = PlayerPrefs.GetFloat("BGM_Vol");
+
         // 여기까지 왔다면 AudioSource 설정 후 플레이
-        AudioSrc.clip = audioClip;
-        AudioSrc.volume = _vol * SoundVol;
-        m_bgmVolume = _vol;
-        AudioSrc.loop = true;
-        AudioSrc.Play();
+        BGM_AudioSrc.clip = _audioClip;
+        BGM_AudioSrc.volume = vol;
+        m_bgmVolume = vol;
+        BGM_AudioSrc.Play();
     }
     #endregion
 
     #region PlayUISound
     // UI 효과음 재생 함수
-    public void PlayUISound(float _vol = 0.5f)
+    public void PlayUISound()
     {
         // 사운드 재생 꺼져있으면 return
-        if (isSoundOn == false)
+        if (isSFX_On == false)
             return;
 
         // AudioSource가 null이면 return;
@@ -148,7 +146,7 @@ public class SoundManager : MonoBehaviour
             return;
 
         // AudioSource 한번 플레이
-        SelectUI_Audio.PlayOneShot(SelectUI_Audio.clip, _vol * SoundVol);
+        SelectUI_Audio.PlayOneShot(SelectUI_Audio.clip, PlayerPrefs.GetFloat("SFX_Vol") * SoundVol);
     }
     #endregion
 
@@ -157,7 +155,7 @@ public class SoundManager : MonoBehaviour
     public void PlayEffSound(string _filePath, float _vol = 1.0f)
     {
         // 사운드 재생 꺼져있으면 return
-        if (isSoundOn == false)
+        if (isSFX_On == false)
             return;
 
         AudioClip audioClip = null;
@@ -187,7 +185,6 @@ public class SoundManager : MonoBehaviour
             AudioSource_List[SoundCount].PlayOneShot(audioClip, _vol * SoundVol);
             // EffVolume[SoundCount]의 볼륨은 매개변수로 받은 _vol로 설정
             EffVolume[SoundCount] = _vol;
-
             // SoundCount증가
             SoundCount++;
 
@@ -203,7 +200,7 @@ public class SoundManager : MonoBehaviour
     public void PlaySelectVoice(string _filePath, float _vol = 0.5f)
     {
         // 사운드 재생 꺼져있으면 return
-        if (isSoundOn == false)
+        if (isSFX_On == false)
             return;
 
         AudioClip audioClip = null;
@@ -226,8 +223,8 @@ public class SoundManager : MonoBehaviour
             return;
 
         // 이미 재생 중인 사운드면 return
-        if (VoiceAudioSrc.clip != null && audioClip.name == VoiceAudioSrc.clip.name)
-            return;
+        //if (VoiceAudioSrc.clip != null && audioClip.name == VoiceAudioSrc.clip.name)
+        //    return;
 
         if(VoiceAudioSrc.isPlaying)
         {
@@ -244,49 +241,25 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
-    // 사운드 On Off 체크
-    public void SoundOnOff(bool _isOn = true)
+    #region LoadChild_AudioSrc
+    void LoadChildGameObj()
     {
-        // 사운드 효과 On/Off
-        bool isMute = !_isOn;
+        AudioSrc = gameObject.AddComponent<AudioSource>();
 
-        // AudioSrc가 null이 아니면
-        if (AudioSrc != null)
-        {
-            //mute == true 끄기 mute == false 켜기
-            AudioSrc.mute = isMute;
-        }
-
-        // EffSoundCount만큼 반복
+        // 게임 효과음 플레이를 위한 5개의 레이어 생성 코드
         for (int i = 0; i < EffSoundCount; i++)
         {
-            // i번째 AudioSource가 null이 아니면
-            if (AudioSource_List[i] != null)
-            {
-                // 설정된 isMute로 변경
-                AudioSource_List[i].mute = isMute;
+            GameObject newSndObj = new GameObject();
+            newSndObj.transform.SetParent(transform);
+            newSndObj.transform.localPosition = Vector3.zero;
+            AudioSource a_AudioSrc = newSndObj.AddComponent<AudioSource>();
+            a_AudioSrc.playOnAwake = false;
+            a_AudioSrc.loop = false;
+            newSndObj.name = "SoundEffObj";
 
-                // 만약 isMute가 false면
-                if (isMute == false)
-                {
-                    //처음부터 다시 플레이
-                    AudioSource_List[i].time = 0;
-                }
-
-            }
+            AudioSource_List[i] = a_AudioSrc;
+            SoundObj_List[i] = newSndObj;
         }
-
-        // 초기화
-        isSoundOn = _isOn;
     }
-
-    // 사운드 볼륨 조절
-    public void SoundVolume(float _vol)
-    {
-        // AudioSource의 볼륨 조절
-        if (AudioSrc != null)
-            AudioSrc.volume = m_bgmVolume * _vol;
-
-        SoundVol = _vol;
-    }
+    #endregion
 }

@@ -2654,6 +2654,7 @@ MonoBehaviour:
     MON_SKILL_PATH: Prefab/Atk_Effect/Enemy_Atk/FireDog/FireDogSkill_Prefab
     MON_ICON_PATH: Image_Resources/Enemy/Icon/FireDog_Icon
     MON_ILLUST_PATH: Image_Resources/Enemy/Illust/FireDog_Illust
+    MON_SFX_PATH: Sounds/Enemy/FireDogSkill
   - MON_INDEX: 1
     MON_NAME: "\uC9C0\uC625 \uBD88 \uC0AC\uC790"
     MON_ELEMENT: FIRE
@@ -2666,6 +2667,7 @@ MonoBehaviour:
     MON_SKILL_PATH: Prefab/Atk_Effect/Enemy_Atk/FireLion/FireLionSkill_Prefab
     MON_ICON_PATH: Image_Resources/Enemy/Icon/Lion_Icon
     MON_ILLUST_PATH: Image_Resources/Enemy/Illust/Lion_Illust
+    MON_SFX_PATH: Sounds/Enemy/FireLionSkill
   - MON_INDEX: 2
     MON_NAME: "\uC9C0\uC625 \uBD88 \uC8FC\uC778"
     MON_ELEMENT: FIRE
@@ -2678,6 +2680,7 @@ MonoBehaviour:
     MON_SKILL_PATH: Prefab/Atk_Effect/Enemy_Atk/FireMaster/FireMasterSkill_Prefab
     MON_ICON_PATH: Image_Resources/Enemy/Icon/Limbo_Icon
     MON_ILLUST_PATH: Image_Resources/Enemy/Illust/Limbo_Illust
+    MON_SFX_PATH: Sounds/Enemy/FireMasterSkill
   STAGE_DBList:
   - STAGE_INDEX: 0
     STAGE_NUM: 1-1

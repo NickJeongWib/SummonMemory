@@ -44,4 +44,15 @@ public class Active_F : MonoBehaviour
         // 스킬 사용 시 캐릭터 목소리 나오게
         SoundManager.Inst.PlaySelectVoice(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.VoicePath.Get_UseSkillVoice_Path);
     }
+
+    public void Loading()
+    {
+        this.gameObject.SetActive(true);
+    }
+
+    public IEnumerator LoadImage()
+    {
+        yield return new WaitForSeconds(0.5f);
+        this.gameObject.SetActive(false);
+    }
 }

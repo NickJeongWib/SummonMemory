@@ -362,6 +362,9 @@ public class Item_Info_Panel : MonoBehaviour
         if (CurrentItem == null)
             return;
 
+        // 로딩창 켜주기
+        DataNetwork_Mgr.Inst.LoadingPanel.gameObject.SetActive(true);
+
         Inventory_UI_Ref.EquipSlots.SetActive(false);
         CurrentItem.Get_isEquip = true;
 
@@ -425,6 +428,9 @@ public class Item_Info_Panel : MonoBehaviour
         if (CurrentItem.Get_OwnCharacter == null)
             return;
 
+        // 로딩창 켜주기
+        DataNetwork_Mgr.Inst.LoadingPanel.gameObject.SetActive(true);
+
         // GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] = null;
         CurrentItem.EquipOption_Stat_Calc(false);
 
@@ -432,8 +438,6 @@ public class Item_Info_Panel : MonoBehaviour
         {
             CurrentItem.Get_OwnCharacter.Refresh_Char_Equipment_State(false, CurrentItem.Get_EquipType);
         }
-
-
 
         Character_Equipment_Ref.Refresh_List_UI((int)CurrentItem.Get_EquipType);
 
@@ -482,6 +486,9 @@ public class Item_Info_Panel : MonoBehaviour
             ItemDecom_Info_Panel.SetActive(false);
             return;
         }
+        // 로딩창 켜주기
+        DataNetwork_Mgr.Inst.LoadingPanel.gameObject.SetActive(true);
+
 
         Crystal_Amount = (CurrentItem.Get_Item_Lv + 1);
         Powder_Amount = 2 * (CurrentItem.Get_Item_Lv + 1);

@@ -54,6 +54,11 @@ public class Lobby_ObjPool : MonoBehaviour
     [SerializeField] GameObject Profile_Prefab;
     [SerializeField] Transform Profile_Tr;
 
+    [Header("---Config_Panel---")]
+    [SerializeField] GameObject Config_Prefab;
+    [SerializeField] Transform Config_Tr;
+    [SerializeField] GameObject Config_Panel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -227,6 +232,14 @@ public class Lobby_ObjPool : MonoBehaviour
         }
         #endregion
 
+        #region Config_Spawn
+        GameObject config = Instantiate(Config_Prefab);
+        config.SetActive(false);
+        config.transform.SetParent(Config_Tr, false);
+        config.GetComponent<Config_Ctrl>().Set_Btn_UI(true);
+        Config_Panel = config;
+        #endregion
+
         // 완료한 업적은 제일 밑으로 정렬해준다.
         UserInfo.QuestSlot_List.Sort((a, b) => a.Get_isClear.CompareTo(b.Get_isClear));
         // UI에 Refresh
@@ -243,6 +256,26 @@ public class Lobby_ObjPool : MonoBehaviour
             slot.GetComponent<Store_Slot_Init>().StoreItemInfo = _list[i];
             slot.GetComponent<Store_Slot_Init>().Init_UI();
             slot.transform.SetParent(_parent, false);
+        }
+    }
+
+    // 환경설정 보여주기
+    public void On_Click_Config()
+    {
+        SoundManager.Inst.PlayUISound();
+
+        // 환경 설정이 null이 아니면
+        if (Config_Panel != null)
+        {
+            // 활성화로 보여주기
+            Config_Panel.SetActive(true);
+        }
+        else
+        {
+            // null이면 생성해서 보여주기
+            GameObject config = Instantiate(Config_Prefab);
+            config.transform.SetParent(Config_Tr, false);
+            Config_Panel = config;
         }
     }
 }

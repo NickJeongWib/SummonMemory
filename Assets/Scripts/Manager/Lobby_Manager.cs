@@ -41,6 +41,7 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] InputField NameChange_IF;
     [SerializeField] GameObject Erorr_Panel;
     [SerializeField] Text ErorrMessage;
+    [SerializeField] Active_F LoadingPanel;
    
 
     public List<Profile_Slot> UserInfo_ProfileList = new List<Profile_Slot>();
@@ -62,9 +63,14 @@ public class Lobby_Manager : MonoBehaviour
     [Header("---SelectStage_UI---")]
     [SerializeField] List<CharDrag_UI> CharDragUI_List = new List<CharDrag_UI>();
 
+    [Header("BGM")]
+    [SerializeField] AudioClip Lobby_BGM;
+
     #region Init
     private void Awake()
     {
+        DataNetwork_Mgr.Inst.LoadingPanel = LoadingPanel;
+        SoundManager.Inst.PlayBGM(Lobby_BGM);
         // TODO ## 초기 테스트 값
         if (UserInfo.UserCharDict.Count <= 0)
         {

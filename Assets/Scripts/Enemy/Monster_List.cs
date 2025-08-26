@@ -21,7 +21,7 @@ public class Monster_List : MonoBehaviour
                 GoogleSheetSORef.ENEMY_DBList[i].MON_ATK, GoogleSheetSORef.ENEMY_DBList[i].MON_DEF,
                 GoogleSheetSORef.ENEMY_DBList[i].TARGET_NUM, GoogleSheetSORef.ENEMY_DBList[i].SKILL_RATIO, GoogleSheetSORef.ENEMY_DBList[i].MON_PREFAB_PATH,
                 GoogleSheetSORef.ENEMY_DBList[i].MON_SKILL_PATH, GoogleSheetSORef.ENEMY_DBList[i].MON_ICON_PATH,
-                GoogleSheetSORef.ENEMY_DBList[i].MON_ILLUST_PATH);
+                GoogleSheetSORef.ENEMY_DBList[i].MON_ILLUST_PATH, GoogleSheetSORef.ENEMY_DBList[i].MON_SFX_PATH);
 
             MonsterList.Add(node);
         }    

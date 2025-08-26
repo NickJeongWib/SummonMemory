@@ -116,6 +116,14 @@ public class Equipment_Gacha_Manager : MonoBehaviour
 
     public void Equip_Gacha()
     {
+        StartCoroutine(GachaStart());
+    }
+
+    IEnumerator GachaStart()
+    {
+        // 로딩창 켜주기
+        DataNetwork_Mgr.Inst.LoadingPanel.gameObject.SetActive(true);
+
         // TODO ## Gacha_Manager : TestMode
         if (!GameManager.Inst.TestMode)
         {
@@ -132,7 +140,7 @@ public class Equipment_Gacha_Manager : MonoBehaviour
             Item item = EquipItem_Spawn();
 
             // 10연 가차일 때와 단일 가차일 시 나오는 UI가 다르기 때문에 아래의 코드 작성
-            if(Gacha_Count == 10) // 10연 가차
+            if (Gacha_Count == 10) // 10연 가차
             {
                 // 뽑은 무기 UI 이미지 설정
                 EquipGacha_Slots[i].Set_GachaEquipItem(item.Get_Item_Image, Item_Ranks[(int)item.Get_Equipment_Grade], Rank_Colors[(int)item.Get_Equipment_Grade]);
@@ -148,7 +156,7 @@ public class Equipment_Gacha_Manager : MonoBehaviour
         }
 
         // 10연 가차일 시 나오는 목록 
-        if(Gacha_Count == 10)
+        if (Gacha_Count == 10)
         {
             Gacha_1.SetActive(false);
             Gacha_10.SetActive(true);
@@ -166,6 +174,10 @@ public class Equipment_Gacha_Manager : MonoBehaviour
         // 유저 정보 저장
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
+
+        // 람다 식으로 로딩창이 꺼질때까지 기다리기
+        yield return new WaitUntil(() => DataNetwork_Mgr.Inst.LoadingPanel.gameObject.activeInHierarchy == false);
+
         Gacha_Video_Play();
     }
 

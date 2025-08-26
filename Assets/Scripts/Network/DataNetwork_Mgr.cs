@@ -14,6 +14,8 @@ public class DataNetwork_Mgr : MonoBehaviour
     Dictionary<string, string> Data;
     float NetWaitTime;
 
+    public Active_F LoadingPanel;
+
     #region Singleton
     public static DataNetwork_Mgr Inst = null;
     private void Awake()
@@ -306,6 +308,10 @@ public class DataNetwork_Mgr : MonoBehaviour
             (_result) =>
             {
                 // Debug.Log("장착 아이템 리스트 저장 성공");
+                if(LoadingPanel != null)
+                {
+                    LoadingPanel.StartCoroutine(LoadingPanel.LoadImage());
+                }
             },
             (_error) =>
             {

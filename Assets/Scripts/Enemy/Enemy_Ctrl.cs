@@ -7,6 +7,8 @@ using static Define;
 
 public class Enemy_Ctrl : MonoBehaviour
 {
+    public Monster_DB monster;
+
     public string MonName;
 
     [Header("HP")]
@@ -44,8 +46,9 @@ public class Enemy_Ctrl : MonoBehaviour
 
     // 스탯 초기화
     public void Set_Stat(string _name, float _hp, float _atk, float _def, float _value, int _targetNum, float _skillRatio, MONSTER_ELE _ele, string _skillPath,
-        Transform _skillTr)
+        Transform _skillTr, Monster_DB _monsterDB)
     {
+        monster = _monsterDB;
         MonName = _name;
 
         // value : 스테이지에 따른 스탯 상승치

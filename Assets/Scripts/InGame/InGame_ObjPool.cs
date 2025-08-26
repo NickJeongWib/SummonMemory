@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Define;
 
 public class InGame_ObjPool : MonoBehaviour
@@ -48,6 +49,12 @@ public class InGame_ObjPool : MonoBehaviour
     [SerializeField] GameObject Buff_Prefab;
     [SerializeField] Transform BuffIcon_Tr;
     public List<BuffIcon_UI> BuffIcon_List = new List<BuffIcon_UI>();
+
+    [Header("---Config_Panel---")]
+    [SerializeField] GameObject Config_Prefab;
+    [SerializeField] Transform Config_Tr;
+    [SerializeField] GameObject Config_Panel;
+    public GameObject Get_Config_Panel { get => Config_Panel; }
     #endregion
     //----
     // Start is called before the first frame update
@@ -140,7 +147,7 @@ public class InGame_ObjPool : MonoBehaviour
                 Monster_List.MonsterList[Stage_List.StageList[GameManager.Inst.StageIndex].Get_SpawnIndex[i]].Get_Skill_Ratio,
                 Monster_List.MonsterList[Stage_List.StageList[GameManager.Inst.StageIndex].Get_SpawnIndex[i]].Get_MonsterEle,
                 Monster_List.MonsterList[Stage_List.StageList[GameManager.Inst.StageIndex].Get_SpawnIndex[i]].Get_MonSkill_Path,
-                EnemySkill_Tr);
+                EnemySkill_Tr, Monster_List.MonsterList[Stage_List.StageList[GameManager.Inst.StageIndex].Get_SpawnIndex[i]]);
 
             InGame_Mgr.Inst.CurMonsters.Add(spawnMonster.GetComponent<Enemy_Ctrl>());
 
@@ -165,10 +172,19 @@ public class InGame_ObjPool : MonoBehaviour
             buffIcon.transform.SetParent(BuffIcon_Tr);
             BuffIcon_List.Add(buffIcon.GetComponent<BuffIcon_UI>());
         }
+
+        // 환경 설정
+        GameObject config = Instantiate(Config_Prefab);
+        config.SetActive(false);
+        config.transform.SetParent(Config_Tr, false);
+        config.GetComponent<Config_Ctrl>().Set_Btn_UI(true, true, true);
+        config.GetComponent<Config_Ctrl>().Get_Lobby_Btn.onClick.AddListener(On_Click_GoLobby);
+        config.GetComponent<Config_Ctrl>().Get_Retry_Btn.onClick.AddListener(On_Click_Retry);
+       Config_Panel = config;
         #endregion
 
         #region NormalAtk
-        for(int i = 0; i < NormalAtk_Prefab.Length; i++)
+        for (int i = 0; i < NormalAtk_Prefab.Length; i++)
         {
             NormalAtk_List.Add(new List<NormalAtk_Ctrl>());
 
@@ -180,6 +196,7 @@ public class InGame_ObjPool : MonoBehaviour
         #endregion
     }
 
+    #region BuffIcon_Return;
     public GameObject Get_BuffIcon(Character_Ctrl _charCtrl ,Transform _parent, Sprite _sprite, int _turn, float _buffValue, BUFF_TYPE _buffType)
     {
         for(int i = 0; i < BuffIcon_List.Count; i++)
@@ -203,7 +220,9 @@ public class InGame_ObjPool : MonoBehaviour
         BuffIcon_List.Add(buffIcon.GetComponent<BuffIcon_UI>());
         return buffIcon;
     }
+    #endregion
 
+    #region NormalAtk_Obj_Return
     // 기본 공격 오브젝트 반환
     public GameObject Get_NormalAtk(CHAR_ELE _ele, Transform _targetTr)
     {
@@ -232,4 +251,39 @@ public class InGame_ObjPool : MonoBehaviour
         NormalAtk_List[(int)_ele].Add(atk.GetComponent<NormalAtk_Ctrl>());
         return atk;
     }
+    #endregion
+
+    #region Config_Btn
+    // 환경설정 보여주기
+    public void On_Click_Config()
+    {
+        SoundManager.Inst.PlayUISound();
+
+        // 환경 설정이 null이 아니면
+        if (Config_Panel != null)
+        {
+            // 활성화로 보여주기
+            Config_Panel.SetActive(true);
+        }
+        else
+        {
+            // null이면 생성해서 보여주기
+            GameObject config = Instantiate(Config_Prefab);
+            config.transform.SetParent(Config_Tr, false);
+            Config_Panel = config;
+        }
+    }
+
+    public void On_Click_GoLobby()
+    {
+        SoundManager.Inst.PlayUISound();
+        SceneManager.LoadScene("LobbyScene");
+    }
+
+    public void On_Click_Retry()
+    {
+        SoundManager.Inst.PlayUISound();
+        SceneManager.LoadScene("InGameScene");
+    }
+#endregion
 }

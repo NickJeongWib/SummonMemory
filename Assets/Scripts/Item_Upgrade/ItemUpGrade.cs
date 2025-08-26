@@ -10,6 +10,8 @@ public class ItemUpGrade : MonoBehaviour
     Item SelectItem;
     public Item Get_SelectItem { get => SelectItem; set => SelectItem = value; }
 
+    [SerializeField] Active_F LoadingPanel;
+
     [Header("Ref")]
     [SerializeField] Item_Info_Panel Item_Info_Panel_Ref;
     [SerializeField] Inventory_UI InventoryUI_Ref;
@@ -285,6 +287,8 @@ public class ItemUpGrade : MonoBehaviour
             return;
         }
 
+        LoadingPanel.Loading();
+
         if (!GameManager.Inst.TestMode)
         {
             if (UserInfo.Money < Cost || !UserInfo.InventoryDict.ContainsKey("재련 가루") || UserInfo.InventoryDict["재련 가루"].Get_Amount < UpgradeItem_Cost)
@@ -506,6 +510,8 @@ public class ItemUpGrade : MonoBehaviour
             return;
         }
 
+        LoadingPanel.Loading();
+
         MaxCost = Cost * Count;
 
         // 아이템 강화 골드보다 보유골드가 적으면
@@ -533,7 +539,6 @@ public class ItemUpGrade : MonoBehaviour
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
 
-        // Debug.Log($"{CostSum.ToString("N0")}원 사용");
         ChainAnimator.Play("ChainUp_Close");
     }
     #endregion
@@ -546,6 +551,8 @@ public class ItemUpGrade : MonoBehaviour
         // 옵션 다 잠궜으면
         if (OpValue_Locks[0] && OpValue_Locks[1] && OpValue_Locks[2])
             return;
+
+        LoadingPanel.Loading();
 
         if (!GameManager.Inst.TestMode)
         {
@@ -587,8 +594,10 @@ public class ItemUpGrade : MonoBehaviour
         // 옵션 다 잠궜으면
         if (Op_Locks[0] && Op_Locks[1] && Op_Locks[2])
             return;
-        
-        if(!GameManager.Inst.TestMode)
+
+        LoadingPanel.Loading();
+
+        if (!GameManager.Inst.TestMode)
         {
             if (UserInfo.Money < ResetOptionCost || !UserInfo.InventoryDict.ContainsKey("재련 수정") || UserInfo.InventoryDict["재련 수정"].Get_Amount < ResetOptionItem_Cost)
             {
