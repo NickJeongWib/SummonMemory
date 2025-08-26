@@ -31,6 +31,8 @@ public class Pop_UpDown : MonoBehaviour
     // 스테이지 선택 클릭
     public void On_Click_SelectStage()
     {
+        SoundManager.Inst.PlayUISound();
+
         if(SelectStage_Transition.activeSelf == false)
         {
             SelectStage_Transition.SetActive(true);
@@ -47,6 +49,8 @@ public class Pop_UpDown : MonoBehaviour
     // 스테이지 선택 닫기
     public void On_Click_SelectStage_Close()
     {
+        SoundManager.Inst.PlayUISound();
+
         // 닫는 화면전환 실행
         animator.Play("Stage_Transition_Close");
         isStageOn = false;

@@ -68,6 +68,8 @@ public class Title_Manager : MonoBehaviour
     #region Login
     public void Login()
     {
+        SoundManager.Inst.PlayUISound();
+
         // 인풋필드값 확인
         string strID = Login_ID_IF.text;
         string strPass = Login_Pass_IF.text;
@@ -235,6 +237,8 @@ public class Title_Manager : MonoBehaviour
     #region Create_Account
     public void On_Click_CreateAccount()
     {
+        SoundManager.Inst.PlayUISound();
+
         string idStr = Create_ID_IF.text;
         string passStr = Create_Pass_IF.text;
         string nickStr = Create_Name_IF.text;
@@ -321,17 +325,20 @@ public class Title_Manager : MonoBehaviour
     #region UI
     public void Click_Login()
     {
+        SoundManager.Inst.PlayUISound();
         LoginPanel.SetActive(false);
     }
 
     public void On_Click_CreateAccount_Panel()
     {
+        SoundManager.Inst.PlayUISound();
         LoginPanel.SetActive(false);
         CreateAccountPanel.SetActive(true);
     }
 
     public void On_Click_CreateAccount_Cancel()
     {
+        SoundManager.Inst.PlayUISound();
         LoginPanel.SetActive(true);
         CreateAccountPanel.SetActive(false);
     }
@@ -353,6 +360,8 @@ public class Title_Manager : MonoBehaviour
 
     public void On_Click_HidePass()
     {
+        SoundManager.Inst.PlayUISound();
+
         // 비밀번호 보여줄지 말지
         if (Hide_Pass_Toggle.isOn)
         {
@@ -374,6 +383,8 @@ public class Title_Manager : MonoBehaviour
 
     public void OnClick_GameStart()
     {
+        SoundManager.Inst.PlayUISound();
+
         TouchPanel.SetActive(true);
         SceneManager.LoadSceneAsync("LobbyScene");
     }

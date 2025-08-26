@@ -21,7 +21,8 @@ public class SoundManager : MonoBehaviour
     AudioSource[] AudioSource_List = new AudioSource[10];
     float[] EffVolume = new float[10];
 
-    [SerializeField] AudioSource VoiceAudioSrc;
+    public AudioSource VoiceAudioSrc;
+    public AudioSource SelectUI_Audio;
 
     #region Singleton
     // 싱글톤 
@@ -36,6 +37,7 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
+    #region Init
     // Start is called before the first frame update
     void Start()
     {
@@ -90,7 +92,9 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.Save();
         SoundVolume(a_Value);
     }
-    
+    #endregion
+
+    #region PlayBGN
     // BGM 재생
     public void PlayBGM(string _filePath, float _vol = 0.2f)
     {
@@ -125,39 +129,32 @@ public class SoundManager : MonoBehaviour
         AudioSrc.loop = true;
         AudioSrc.Play();
     }
-    
+    #endregion
+
+    #region PlayUISound
     // UI 효과음 재생 함수
-    public void PlayUISound(string _filePath, float _vol = 0.2f)
+    public void PlayUISound(float _vol = 0.5f)
     {
         // 사운드 재생 꺼져있으면 return
         if (isSoundOn == false)
             return;
 
-        AudioClip audioClip = null;
-
-        // Dictionary에 파일 이름이 포함 되어 있다면
-        if (AudioClip_Dict.ContainsKey(_filePath) == true)
-        {
-            // 오디오 클립은 Dictionary에서 찾은 클립으로 설정
-            audioClip = AudioClip_Dict[_filePath];
-        }
-        else
-        {
-            // Dictionary에 없으면 폴더에서 찾은 후 Dictionary에 저장
-            audioClip = Resources.Load(_filePath) as AudioClip;
-            AudioClip_Dict.Add(_filePath, audioClip);
-        }
-
         // AudioSource가 null이면 return;
-        if (AudioSrc == null)
+        if (SelectUI_Audio == null)
+            return;
+
+        // 중복 재생 방지
+        if (SelectUI_Audio.isPlaying)
             return;
 
         // AudioSource 한번 플레이
-        AudioSrc.PlayOneShot(audioClip, _vol * SoundVol);
+        SelectUI_Audio.PlayOneShot(SelectUI_Audio.clip, _vol * SoundVol);
     }
+    #endregion
 
+    #region Skill_SFX
     // 이펙트 사운드 재생 함수
-    public void PlayEffSound(string _filePath, float _vol = 0.2f)
+    public void PlayEffSound(string _filePath, float _vol = 1.0f)
     {
         // 사운드 재생 꺼져있으면 return
         if (isSoundOn == false)
@@ -199,8 +196,11 @@ public class SoundManager : MonoBehaviour
                 SoundCount = 0;
         }
     }
+    #endregion
 
-    public void PlaySelectVoice(string _filePath, float _vol = 0.2f)
+    #region Char_Voice
+
+    public void PlaySelectVoice(string _filePath, float _vol = 0.5f)
     {
         // 사운드 재생 꺼져있으면 return
         if (isSoundOn == false)
@@ -225,6 +225,10 @@ public class SoundManager : MonoBehaviour
         if (audioClip == null)
             return;
 
+        // 이미 재생 중인 사운드면 return
+        if (VoiceAudioSrc.clip != null && audioClip.name == VoiceAudioSrc.clip.name)
+            return;
+
         if(VoiceAudioSrc.isPlaying)
         {
             // 현재 진행 중인 보이스 멈추고 새 보이스로 출력
@@ -238,6 +242,7 @@ public class SoundManager : MonoBehaviour
             VoiceAudioSrc.Play();
         }
     }
+    #endregion
 
     // 사운드 On Off 체크
     public void SoundOnOff(bool _isOn = true)

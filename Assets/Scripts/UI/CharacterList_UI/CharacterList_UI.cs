@@ -327,6 +327,8 @@ public class CharacterList_UI : MonoBehaviour
     // TODO ## Lobby_Manager 캐릭터 해제 작동 부분
     public void On_Click_UnEquip_Char(int _equipNum)
     {
+        SoundManager.Inst.PlayUISound();
+
         if (UserInfo.Equip_Characters.Count <= 1)
         {
             Debug.Log("캐릭터 하나는 유지");
@@ -368,6 +370,8 @@ public class CharacterList_UI : MonoBehaviour
     // TODO ## Lobby_Manager 캐릭터 장착 작동 부분
     public void On_Click_EquipChar(CharacterSlot _slot)
     {
+        SoundManager.Inst.PlayUISound();
+
         if (5 <= UserInfo.Equip_Characters.Count)
         {
             Debug.Log("장착 슬롯 꽉");
@@ -446,6 +450,8 @@ public class CharacterList_UI : MonoBehaviour
 
     public void On_Click_CharacterSave()
     {
+        SoundManager.Inst.PlayUISound();
+
         // 장착해제 버튼 비활성화
         for (int i = 0; i < UnEquip_Btn.Length; i++)
         {
@@ -479,6 +485,8 @@ public class CharacterList_UI : MonoBehaviour
     // TODO ## Lobby_Manager 캐릭터 교체를 위한 버튼 작동
     public void On_Click_Change()
     {
+        SoundManager.Inst.PlayUISound();
+
         Old_Equip_Characters.Clear();
         UserInfo.Old_UserCharDict_Copy.Clear();
 
@@ -506,6 +514,8 @@ public class CharacterList_UI : MonoBehaviour
 
     public void On_Click_ChangeCancel()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (Equip_Info_Btn.activeSelf == false)
             return;
 
@@ -544,6 +554,8 @@ public class CharacterList_UI : MonoBehaviour
     // 캐릭터 장착 버튼 활성화
     public void Equip_Char_Btn(bool _bool)
     {
+        SoundManager.Inst.PlayUISound();
+
         // 현재 캐릭터 교체 상황 일 시
         if (Equip_Info_Btn.activeSelf == false)
         {
@@ -673,6 +685,8 @@ public class CharacterList_UI : MonoBehaviour
     // 캐릭터 슬롯에서 클릭 시 캐릭터 정보 창으로 이동
     public void On_Click_CharInfo(CharacterSlot _slot)
     {
+        SoundManager.Inst.PlayUISound();
+
         CharacterInfo_Transition.SetActive(true);
         GameManager.Inst.Get_SelectChar = _slot.character;
         // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
@@ -724,6 +738,8 @@ public class CharacterList_UI : MonoBehaviour
     // 장착 캐릭터 클릭 시 이동 오버로딩
     public void On_Click_CharInfo(Equip_Slot _slot)
     {
+        SoundManager.Inst.PlayUISound();
+
         CharacterInfo_Transition.SetActive(true);
         GameManager.Inst.Get_SelectChar = _slot.EquipCharacter;
         // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
@@ -776,6 +792,8 @@ public class CharacterList_UI : MonoBehaviour
     // 장착 캐릭터 클릭 시 이동 오버로딩
     public void On_Click_CharInfo(Character _char)
     {
+        SoundManager.Inst.PlayUISound();
+
         CharacterInfo_Transition.SetActive(false);
 
         Character character = null;
@@ -854,11 +872,12 @@ public class CharacterList_UI : MonoBehaviour
     // 장착 캐릭터 클릭 시 이동 오버로딩
     public void On_Click_CharInfo(CharInfo_CharSelect_Btn _slot)
     {
+        SoundManager.Inst.PlayUISound();
+
         GameManager.Inst.Get_SelectChar = _slot.character;
 
         // 캐릭터 선택시 선택 사운드 출력
         SoundManager.Inst.PlaySelectVoice(GameManager.Inst.SelectCharacter.VoicePath.Get_SelectVoice_Path);
-        // Debug.Log(GameManager.Instance.Get_SelectChar.Get_CharName);
 
         Refresh_EquipItem_Image();
 
@@ -1002,6 +1021,8 @@ public class CharacterList_UI : MonoBehaviour
     #region Sort_Character_List
     public void On_Click_Element_Sort(int _num)
     {
+        SoundManager.Inst.PlayUISound();
+
         isSortList = true;
 
         ElementSort.Clear();

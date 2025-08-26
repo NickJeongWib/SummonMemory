@@ -63,6 +63,8 @@ public class Skill_Icon : MonoBehaviour
             return;
         }
 
+        SoundManager.Inst.PlaySelectVoice(InGame_Char.Get_character.VoicePath.Get_UseSkillVoice_Path);
+
         InGame_Mgr.Inst.InGameState = INGAME_STATE.BATTLE;
         InGame_Mgr.Inst.UseSkill_ON += Skill_Use;
 
@@ -87,6 +89,8 @@ public class Skill_Icon : MonoBehaviour
     // 기본공격 사용시
     public void On_Click_NoramlAtk()
     {
+        SoundManager.Inst.PlayUISound();
+
         // 중복 클릭 방지
         if (InGame_Mgr.Inst.InGameState == INGAME_STATE.BATTLE)
             return;

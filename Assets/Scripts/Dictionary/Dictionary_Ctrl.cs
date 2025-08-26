@@ -55,6 +55,8 @@ public class Dictionary_Ctrl : MonoBehaviour
     #region Click_Character_Grade
     public void On_Click_CharGrade_Btn(int _num)
     {
+        SoundManager.Inst.PlayUISound();
+
         // 3¼º Å¬¸¯
         if (_num == 0)
         {

@@ -2633,7 +2633,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n불 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 적 3명에게 {_damage}%의\\\\n불 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Fire/FireHammer",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/FireHammer_Sonia/FireHammer_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/FireHammer_Sonia/FireHammer_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Fire/Sonia/SoniaSkill"
     },
     {
       "SKILL_NAME": "대폭발",
@@ -2652,7 +2653,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n불 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 적 4명에게 {_damage}%의\\\\n불 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Fire/ExploBomb",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/BombExplo_Tania/BombExplosion_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/BombExplo_Tania/BombExplosion_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Fire/Tana/TanaSkill"
     },
     {
       "SKILL_NAME": "익스플로",
@@ -2671,7 +2673,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n불 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 적 5명에게 {_damage}%의\\\\n불 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Fire/Explo",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/FireExplo_Tana/FireExplo_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/FireExplo_Tana/FireExplo_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Fire/Tania/TaniaSkill"
     },
     {
       "SKILL_NAME": "서먼 샤크",
@@ -2690,7 +2693,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n물 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 적 3명에게 {_damage}%의\\\\n물 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Water/SharkAtk",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/Shark_Ariel/Shark_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/Shark_Ariel/Shark_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Water/Ariel/ArielSkill"
     },
     {
       "SKILL_NAME": "워터 힐",
@@ -2709,7 +2713,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n물 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 아군 2명에게 {_hill}%의 회복을 시킨다.",
       "SKILL_ICON": "Skill/Icon/Water/Hill",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterHill_Lapa/WaterHill_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterHill_Lapa/WaterHill_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Water/Lapa/Lapa_Skill"
     },
     {
       "SKILL_NAME": "워터 싸이클론",
@@ -2728,7 +2733,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n물 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 적 4명에게 {_damage}%의\\\\n물 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Water/WaterCyclone",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterCycle_Adri/WaterCycle_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterCycle_Adri/WaterCycle_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Water/Adri/AdriSkill"
     },
     {
       "SKILL_NAME": "윈드 턴",
@@ -2747,7 +2753,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n바람 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 적 3명에게 {_damage}%의\\\\n바람 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Wind/WindTurn",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindSwipe_Melia/WindSwipe_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindSwipe_Melia/WindSwipe_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Wind/Melia/MeliaSkill"
     },
     {
       "SKILL_NAME": "바람의 속삭임",
@@ -2766,7 +2773,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n바람 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 SP를 {_sp}만큼 회복한다.",
       "SKILL_ICON": "Skill/Icon/Wind/SP_Hill",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/SP_Buff_Seiza/SP_Buff_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/SP_Buff_Seiza/SP_Buff_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Wind/Seiza/SeizaSkill"
     },
     {
       "SKILL_NAME": "윈드 익스플로",
@@ -2785,7 +2793,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n바람 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 적 4명에게 {_damage}%의\\\\n바람 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Wind/WindExplo",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindExplo_Zaya/WindExplo_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindExplo_Zaya/WindExplo_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Wind/Zaya/ZayaSkill"
     },
     {
       "SKILL_NAME": "그라운드 익스플로",
@@ -2804,7 +2813,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n땅 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 적 3명에게 {_damage}%의\\\\n땅 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Ground/GroundExplo",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/GroundExplo_Bera/GroundExplo_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/GroundExplo_Bera/GroundExplo_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Ground/Bera/BeraSkill"
     },
     {
       "SKILL_NAME": "그라운드 블레싱",
@@ -2823,7 +2833,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n땅 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 3턴 동안 {_buff}%만큼\\\\n자신의 방어력을 증가시킨다.",
       "SKILL_ICON": "Skill/Icon/Ground/DefBuff",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/DefBuf_Dena/DefBuf_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/DefBuf_Dena/DefBuf_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Ground/Dena/DenaSkill"
     },
     {
       "SKILL_NAME": "스톤 핸즈",
@@ -2842,7 +2853,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n땅 속성 데미지를 준다.",
       "SKILL_DESC": "2 SP를 사용하여 적 4명에게 {_damage}%의\\\\n땅 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Ground/StoneHand",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/StoneHand_Miro/StoneHand_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/StoneHand_Miro/StoneHand_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Ground/Miro/MiroSkill"
     },
     {
       "SKILL_NAME": "드래곤 버스트",
@@ -2861,7 +2873,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n불 속성 데미지를 준다.",
       "SKILL_DESC": "3 SP를 사용하여 적 4명에게 {_damage}%의\\\\n불 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Fire/DragonBurst",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/DragonBurst_Leze/DragonBurst_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/DragonBurst_Leze/DragonBurst_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Fire/Leze/LezeSkill"
     },
     {
       "SKILL_NAME": "파이어 블레싱",
@@ -2880,7 +2893,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n불 속성 데미지를 준다.",
       "SKILL_DESC": "3 SP를 사용하여 3턴 동안 {_buff}%만큼\\\\n자신의 방어력을 증가시킨다.",
       "SKILL_ICON": "Skill/Icon/Fire/FireDefBuff",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/FireDef_Buff_Ruina/DefBuff_2_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/FireDef_Buff_Ruina/DefBuff_2_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Fire/Ruina/RuinaSkill"
     },
     {
       "SKILL_NAME": "워터 블레싱",
@@ -2899,7 +2913,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n물 속성 데미지를 준다.",
       "SKILL_DESC": "3 SP를 사용하여 아군 3명에게 {_hill}%의 회복을 시킨다.",
       "SKILL_ICON": "Skill/Icon/Water/GreatHill",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/GreatWaterHill_Ariel/GreatWaterHill_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/GreatWaterHill_Ariel/GreatWaterHill_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Water/Arine/ArineSkill"
     },
     {
       "SKILL_NAME": "아이스 디펜스",
@@ -2918,7 +2933,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n물 속성 데미지를 준다.",
       "SKILL_DESC": "3 SP를 사용하여 3턴 동안 {_buff}%만큼\\\\n아군 전체의 방어력을 증가시킨다.",
       "SKILL_ICON": "Skill/Icon/Water/WaterDefBuf",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterDefBuf_Yuki/WaterDefBuf2_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterDefBuf_Yuki/WaterDefBuf2_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Water/Yuki/YukiSkill"
     },
     {
       "SKILL_NAME": "허리케인",
@@ -2937,7 +2953,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n바람 속성 데미지를 준다.",
       "SKILL_DESC": "3 SP를 사용하여 적 4명에게 {_damage}%의\\\\n바람 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Wind/Tornado",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/Tornado_Elin/Tornado_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/Tornado_Elin/Tornado_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Wind/Elin/ElinSkilll"
     },
     {
       "SKILL_NAME": "윈드 블레싱",
@@ -2954,9 +2971,10 @@
       "BUFF_TIME": 3,
       "NORMAL_ATK_RATIO": 1.2,
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n바람 속성 데미지를 준다.",
-      "SKILL_DESC": "3 SP를 사용하여 3턴 동안 {_buff}%만큼\\\\n아군 전체의 공격력을 증가시킨다.",
+      "SKILL_DESC": "3 SP를 사용하여 4턴 동안 {_buff}%만큼\\\\n아군 전체의 공격력을 증가시킨다.",
       "SKILL_ICON": "Skill/Icon/Wind/WindBlessing",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindBlessing_Mille/WindBlessing_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindBlessing_Mille/WindBlessing_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Wind/Mille/MilleSkill"
     },
     {
       "SKILL_NAME": "전투의 함성",
@@ -2975,7 +2993,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n땅 속성 데미지를 준다.",
       "SKILL_DESC": "3 SP를 사용하여 3턴 동안 {_buff}%만큼\\\\n자신의 방어력을 증가시킨다.",
       "SKILL_ICON": "Skill/Icon/Ground/AllDefBuff",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/All_DefBuf_Asa/AllDefBuf_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/All_DefBuf_Asa/AllDefBuf_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Ground/Asa/Asa_Skill"
     },
     {
       "SKILL_NAME": "그라운드 스매시",
@@ -2994,7 +3013,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n땅 속성 데미지를 준다.",
       "SKILL_DESC": "3 SP를 사용하여 적 4명에게 {_damage}%의\\\\n땅 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Ground/GroundSmash",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/GroundSmash_Nora/GroundSmash_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/GroundSmash_Nora/GroundSmash_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Ground/Nora/NoraSkill"
     },
     {
       "SKILL_NAME": "피닉스의 숨결",
@@ -3013,7 +3033,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n불 속성 데미지를 준다.",
       "SKILL_DESC": "4 SP를 사용하여 적 5명에게 {_damage}%의\\\\n불 속성 데미지를 준다.",
       "SKILL_ICON": "Skill/Icon/Fire/Phoenix",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/Phoenix_Igni/Phoenix_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/Phoenix_Igni/Phoenix_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Fire/Igni/IgniSkill"
     },
     {
       "SKILL_NAME": "해신 강림",
@@ -3032,7 +3053,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n물 속성 데미지를 준다.",
       "SKILL_DESC": "4 SP를 사용하여 적 5명에게 {_damage}%의\\\\n물 속성 데미지를 주고\\\\n적들을 1턴 기절 시킨다.",
       "SKILL_ICON": "Skill/Icon/Water/WhaleAtk",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WhaleAtk_Line/WhaleAtk_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WhaleAtk_Line/WhaleAtk_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Water/Line/LineSkill"
     },
     {
       "SKILL_NAME": "바람의 가호",
@@ -3049,9 +3071,10 @@
       "BUFF_TIME": 3,
       "NORMAL_ATK_RATIO": 1.4,
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n바람 속성 데미지를 준다.",
-      "SKILL_DESC": "4 SP를 사용하여 아군 전체의 공격력을\\\\n{_buff}%만큼 증가시키고\\\\nSP를 {_sp}만큼 회복시킨다.",
+      "SKILL_DESC": "4 SP를 사용하여  4턴 동안\\\\n아군 전체의 공격력을\\\\n{_buff}%만큼 증가시키고\\\\nSP를 {_sp}만큼 회복시킨다.",
       "SKILL_ICON": "Skill/Icon/Wind/WindAllBuff",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindBuff_Elloin/WindBuff_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindBuff_Elloin/WindBuff_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Wind/Elloin/ElloinSkill"
     },
     {
       "SKILL_NAME": "그라운드 브레이크",
@@ -3070,7 +3093,8 @@
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n땅 속성 데미지를 준다.",
       "SKILL_DESC": "4 SP를 사용하여 적 5명에게 {_damage}%의\\\\n땅 속성 데미지를 주고\\\\n적들의 방어력을 3턴동안 {_deBuff}%만큼 감소시킨다.",
       "SKILL_ICON": "Skill/Icon/Ground/GroundBreak",
-      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/GroundBreak_Lamie/GroundBreak_Prefab"
+      "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/GroundBreak_Lamie/GroundBreak_Prefab",
+      "SKILL_SFX_PATH": "Sounds/Skill_SFX/Ground/Lamie/LamieSkill"
     }
   ],
   "ENEMY_DB": [

@@ -122,6 +122,8 @@ public class Lobby_Manager : MonoBehaviour
     // 상점, 도감, 업적 등 여러 창으로 이동
     public void On_Click_OnPanel(GameObject _obj)
     {
+        SoundManager.Inst.PlayUISound();
+
         // 로비 이동 후 다시 재입장, 처음 입장 시 첫번째 목록으로 초기화
         if (_obj.name == "MyBag_Panel")
         {
@@ -148,6 +150,8 @@ public class Lobby_Manager : MonoBehaviour
     // 현재 열려 있는 창을 닫고 로비로 이동
     public void On_Click_OffPanel(GameObject _obj)
     {
+        SoundManager.Inst.PlayUISound();
+
         NotTouch_RayCast.SetActive(true); // 화면전환 중 버튼 클릭 방지
         ShaderTransition.SetActive(true);
         _obj.SetActive(false);
@@ -157,6 +161,7 @@ public class Lobby_Manager : MonoBehaviour
     #region Circle_Transition
     public void On_Click_OnPanel_Circle(GameObject _obj)
     {
+        SoundManager.Inst.PlayUISound();
         NotTouch_RayCast.SetActive(true); // 이동 중 버튼 클릭 방지
         CircleTransition.SetActive(true);
         _obj.SetActive(true);
@@ -165,6 +170,7 @@ public class Lobby_Manager : MonoBehaviour
     // 현재 열려 있는 창을 닫고 로비로 이동
     public void On_Click_OffPanel_Circle(GameObject _obj)
     {
+        SoundManager.Inst.PlayUISound();
         _obj.SetActive(false);
         NotTouch_RayCast.SetActive(true); // 화면전환 중 버튼 클릭 방지
         CircleTransition.SetActive(true);
@@ -175,11 +181,13 @@ public class Lobby_Manager : MonoBehaviour
     // TODO ## Lobby_Manager 로비화면에서 팝업 온 오프
     public void On_Click_Back(GameObject _obj)
     {
+        SoundManager.Inst.PlayUISound();
         _obj.SetActive(false);
     }
 
     public void On_Click_On(GameObject _obj)
     {
+        SoundManager.Inst.PlayUISound();
         _obj.SetActive(true);
     }
     #endregion
@@ -188,6 +196,8 @@ public class Lobby_Manager : MonoBehaviour
 
     public void On_Click_Skip_GachaMovie(GameObject _obj)
     {
+        SoundManager.Inst.PlayUISound();
+
         // 가챠 연출 스킵
         _obj.SetActive(false);
         _obj.transform.parent.gameObject.SetActive(false);
@@ -198,6 +208,8 @@ public class Lobby_Manager : MonoBehaviour
 
     public void On_Click_Back_GachaList(GameObject _obj)
     {
+        SoundManager.Inst.PlayUISound();
+
         // 가챠 뽑기 목록 닫기
         Gacha_10.SetActive(false);
         Gacha_1.SetActive(false);
@@ -295,6 +307,8 @@ public class Lobby_Manager : MonoBehaviour
     #region Name_Change
     public void NameChange()
     {
+        SoundManager.Inst.PlayUISound();
+
         // 입력받은 InputField
         string nickStr = NameChange_IF.text;
         // 빈칸 제거
@@ -395,9 +409,16 @@ public class Lobby_Manager : MonoBehaviour
 
     public void On_Click_InGame(int _index)
     {
+        SoundManager.Inst.PlayUISound();
+
         CantTouchPanel.SetActive(true);
         GameManager.Inst.StageIndex = _index;
         SceneManager.LoadSceneAsync("InGameScene");
+    }
+
+    public void Cancel_Voice()
+    {
+        SoundManager.Inst.VoiceAudioSrc.Stop();
     }
 }
 

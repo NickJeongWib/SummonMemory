@@ -60,6 +60,9 @@ public class Skill
     [SerializeField] string SkillIcon_Path;
     public string Get_SkillIcon_Path { get => SkillIcon_Path; }
 
+    [SerializeField] string SFX_Path;
+    public string Get_SFX_Path { get => SFX_Path; }
+
     // 스킬 프리펩 주소 & 프리펩
     GameObject Skill_Prefab;
     public GameObject Get_Skill_Prefab { get => Skill_Prefab; }
@@ -77,7 +80,7 @@ public class Skill
 
     #region Constructor
     public Skill(string _skillName, int _lv, SKILL_TYPE _skillType, int _sp, int _targetCount, float _damageRatio, float _debuffRatio, DEBUFF_TYPE _debuffType, float _buffRatio, BUFF_TYPE _buffType,
-        int _spHillCount, int _buffTime, string _skillDesc, string _iconPath, string _prefabPath, float _normalAtkRatio, string _normalAtkDesc)
+        int _spHillCount, int _buffTime, string _skillDesc, string _iconPath, string _prefabPath, float _normalAtkRatio, string _normalAtkDesc, string _sfxPath)
     {
         // 스킬정보
         Skill_Name = _skillName;
@@ -104,6 +107,8 @@ public class Skill
 
         // Prefab
         Skill_Prefab_Path = _prefabPath;
+
+        SFX_Path = _sfxPath;
 
         Skill_Init(_skillDesc, _iconPath, _prefabPath);
 

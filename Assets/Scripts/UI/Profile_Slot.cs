@@ -49,6 +49,8 @@ public class Profile_Slot : MonoBehaviour
 
     public void On_Click_Icon()
     {
+        SoundManager.Inst.PlayUISound();
+
         LobbyManager_Ref.Select_Char_Icon(Character_Icon.sprite, UserInfo_Panel_BG, User_Lobby_Sprite);
 
         // 초기화 시켜주고 이 버튼이 들고 있는 이미지 주소들 넘겨주기

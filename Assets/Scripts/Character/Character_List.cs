@@ -43,7 +43,7 @@ public class Character_List : MonoBehaviour
                 GoogleSheetSORef.SKILL_DATAList[i].TARGET_NUM, GoogleSheetSORef.SKILL_DATAList[i].DAMAGE_RATIO, GoogleSheetSORef.SKILL_DATAList[i].DEBUFF_RATIO, DeBuffType,
                 GoogleSheetSORef.SKILL_DATAList[i].BUFF_RATIO, BuffType, GoogleSheetSORef.SKILL_DATAList[i].SP_HILL_COUNT, GoogleSheetSORef.SKILL_DATAList[i].BUFF_TIME,
                 GoogleSheetSORef.SKILL_DATAList[i].SKILL_DESC, GoogleSheetSORef.SKILL_DATAList[i].SKILL_ICON, GoogleSheetSORef.SKILL_DATAList[i].SKILL_PREFAB,
-                GoogleSheetSORef.SKILL_DATAList[i].NORMAL_ATK_RATIO, GoogleSheetSORef.SKILL_DATAList[i].NORMAL_ATK_DESC);
+                GoogleSheetSORef.SKILL_DATAList[i].NORMAL_ATK_RATIO, GoogleSheetSORef.SKILL_DATAList[i].NORMAL_ATK_DESC, GoogleSheetSORef.SKILL_DATAList[i].SKILL_SFX_PATH);
 
             SkillData_List.Add(node);
         }

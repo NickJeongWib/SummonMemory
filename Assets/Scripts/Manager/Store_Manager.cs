@@ -57,6 +57,8 @@ public class Store_Manager : MonoBehaviour
     #region Spend_Store_Click
     public void On_Click_Spend_Store_Btn()
     {
+        SoundManager.Inst.PlayUISound();
+
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
         if (Store_Spend_Panel.gameObject.activeSelf == false && Store_Spend_Panel != null)
         {
@@ -93,6 +95,8 @@ public class Store_Manager : MonoBehaviour
     #region Ticket_Store_Click
     public void On_Click_Ticket_Store_Btn()
     {
+        SoundManager.Inst.PlayUISound();
+
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
         if (Store_Ticket_Panel.gameObject.activeSelf == false && Store_Ticket_Panel != null)
         {
@@ -129,6 +133,8 @@ public class Store_Manager : MonoBehaviour
     #region Level_Store_Click
     public void On_Click_Level_Store_Btn()
     {
+        SoundManager.Inst.PlayUISound();
+
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
         if (Store_Level_Panel.gameObject.activeSelf == false && Store_Level_Panel != null)
         {
@@ -166,6 +172,8 @@ public class Store_Manager : MonoBehaviour
     #region Dia_Buy
     public void On_Click_Buy_Dia(int _count, Store_Item _storeInfo)
     {
+        SoundManager.Inst.PlayUISound();
+
         Dia_SelectCount = _count;
         StoreItem_Info = _storeInfo;
         Buying_Info.SetActive(true);
@@ -237,6 +245,8 @@ public class Store_Manager : MonoBehaviour
 
     public void On_Click_Buy()
     {
+        SoundManager.Inst.PlayUISound();
+
         // TODO ## Store_Manager Dia획득 다이아 구매
         if (Dia_SelectCount != 0)
         {
@@ -375,6 +385,8 @@ public class Store_Manager : MonoBehaviour
 
     public void On_Click_Cancel(Animator _animator)
     {
+        SoundManager.Inst.PlayUISound();
+
         if (Dia_SelectCount != 0)
             Dia_SelectCount = 0;
 
@@ -386,6 +398,8 @@ public class Store_Manager : MonoBehaviour
     #region Ticket_Buy
     public void On_Click_Buy_Item(Store_Item _storeItem)
     {
+        SoundManager.Inst.PlayUISound();
+
         StoreItem_Info = _storeItem;
         Buying_Info.SetActive(true);
     }
@@ -420,6 +434,8 @@ public class Store_Manager : MonoBehaviour
     #region Book_List
     public void On_Click_Book(int _num)
     {
+        SoundManager.Inst.PlayUISound();
+
         Book_UI_Refresh(BookNames[_num], _num);
     }
 

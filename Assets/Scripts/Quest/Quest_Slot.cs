@@ -51,6 +51,8 @@ public class Quest_Slot : MonoBehaviour
     // 보상 획득 버튼 클릭 시 
     public void On_Click_Get_Reward()
     {
+        SoundManager.Inst.PlayUISound();
+
         ClearImage.SetActive(true);
         isClear = true;
         // 스킬 데이터 미션완료

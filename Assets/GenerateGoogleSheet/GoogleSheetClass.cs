@@ -148,6 +148,7 @@ public class SKILL_DATA
 	public string SKILL_DESC;
 	public string SKILL_ICON;
 	public string SKILL_PREFAB;
+	public string SKILL_SFX_PATH;
 }
 
 [Serializable]

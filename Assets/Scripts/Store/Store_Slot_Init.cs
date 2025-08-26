@@ -41,18 +41,12 @@ public class Store_Slot_Init : MonoBehaviour
     // 버튼 클릭 시
     public void On_Click_Btn()
     {
+        SoundManager.Inst.PlayUISound();
+
         // 다이아 재화 구매 버튼을 누를 시
         if (StoreItemInfo.Get_StoreType == STORE_TYPE.CURRENCY &&
             StoreManager_Ref != null)
         {
-            //if (StoreItemInfo.Get_ConsumeType == CONSUME_TYPE.DIA)
-            //{
-            //    if(UserInfo.Dia < StoreItemInfo.Get_ConsumeCount)
-            //    {
-            //        StoreManager_Ref.Set_FailInfo_Panel(true);
-            //        return;
-            //    }
-            //}
             if (!GameManager.Inst.TestMode)
             {
                 if (StoreItemInfo.Get_ConsumeType == CONSUME_TYPE.MONEY)
@@ -116,6 +110,8 @@ public class Store_Slot_Init : MonoBehaviour
     // 아이템 정보 버튼 클릭 시
     public void On_Click_ItemInfo()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (StoreManager_Ref != null)
         {
             StoreManager_Ref.On_ItemInfo_Pop(StoreItemInfo);

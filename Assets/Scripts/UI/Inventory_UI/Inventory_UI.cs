@@ -61,6 +61,8 @@ public class Inventory_UI : MonoBehaviour
     #region Spend_Item_Inventory_Click
     public void On_Click_Spend_Item_Btn()
     {
+        SoundManager.Inst.PlayUISound();
+
         Inventory_Type = INVENTORY_TYPE.SPEND;
 
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
@@ -94,6 +96,8 @@ public class Inventory_UI : MonoBehaviour
     #region Equip_Item_Inventory_Click
     public void On_Click_Equip_Item_Btn()
     {
+        SoundManager.Inst.PlayUISound();
+
         Inventory_Type = INVENTORY_TYPE.EQUIPMENT;
 
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
@@ -127,6 +131,8 @@ public class Inventory_UI : MonoBehaviour
     #region Upgrade_Item_Inventory_Click
     public void On_Click_Upgrade_Item_Btn()
     {
+        SoundManager.Inst.PlayUISound();
+
         Inventory_Type = INVENTORY_TYPE.UPGRADE;
 
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
@@ -235,6 +241,8 @@ public class Inventory_UI : MonoBehaviour
     #region ItemInfo_Panel
     public void On_Click_Open_ItemInfo(int _slotNum)
     {
+        SoundManager.Inst.PlayUISound();
+
         // 장비가 빈 슬롯을 클릭했을때 return
         if ((UserInfo.Equip_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.EQUIPMENT) ||
             (UserInfo.Spend_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.SPEND) ||

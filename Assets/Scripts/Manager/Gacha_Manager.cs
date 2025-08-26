@@ -74,6 +74,8 @@ public class Gacha_Manager : MonoBehaviour
 
     public void GachaInfo_Open(int _num)
     {
+        SoundManager.Inst.PlayUISound();
+
         if (!GameManager.Inst.TestMode)
         {
             if (UserInfo.InventoryDict.ContainsKey("캐릭터 티켓") == false)
@@ -103,6 +105,8 @@ public class Gacha_Manager : MonoBehaviour
     #region Info_Close
     public void GachaInfo_Close()
     {
+        SoundManager.Inst.PlayUISound();
+
         Gacha_Count = 0;
         GachaInfo_Panel.transform.GetChild(0).GetComponent<Pop_UpDown>().Pop_Down();
         // GachaInfo_Panel.SetActive(false);
@@ -110,6 +114,8 @@ public class Gacha_Manager : MonoBehaviour
 
     public void GachaFailInfo_Close()
     {
+        SoundManager.Inst.PlayUISound();
+
         Gacha_Count = 0;
         GachaFail_Info_Panel.transform.GetChild(0).GetComponent<Pop_UpDown>().Pop_Down();
         // GachaInfo_Panel.SetActive(false);

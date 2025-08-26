@@ -77,6 +77,8 @@ public class EquipSlot : MonoBehaviour
 
     public void On_Click_OpenItemInfo()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (SlotItemInfo == null)
             return;
 

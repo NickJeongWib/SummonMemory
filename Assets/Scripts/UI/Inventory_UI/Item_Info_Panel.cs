@@ -69,6 +69,8 @@ public class Item_Info_Panel : MonoBehaviour
 
     public void On_Click_Close_ItemInfo()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (CurrentItem != null)
             CurrentItem = null;
         animator.Play("Pop_Down_Item_Info");
@@ -83,6 +85,8 @@ public class Item_Info_Panel : MonoBehaviour
     #region Upgrade_PopUP
     public void On_Click_UpgradePanel()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (this.gameObject.activeSelf)
         {
             this.gameObject.SetActive(false);
@@ -217,6 +221,8 @@ public class Item_Info_Panel : MonoBehaviour
     // 장비 정보 열람
     public void Open_Equip_Info(Item _item, bool _isChange = false)
     {
+        SoundManager.Inst.PlayUISound();
+
         Equipment_Item_Root.SetActive(true);
         EquipBtn_Obj.SetActive(true);
         Spend_Item_Root.SetActive(false);
@@ -304,11 +310,13 @@ public class Item_Info_Panel : MonoBehaviour
 
     public void Set_ChangeBtn(bool _isOn)
     {
+        SoundManager.Inst.PlayUISound();
         Change_Btn.SetActive(_isOn);
     }
 
     public void Set_EquipBtn(bool _isOn)
     {
+        SoundManager.Inst.PlayUISound();
         Equip_Btn.SetActive(_isOn);
     }
     #endregion
@@ -349,6 +357,8 @@ public class Item_Info_Panel : MonoBehaviour
     #region Item_Equip_UnEquip
     public void On_Click_EquipBtn()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (CurrentItem == null)
             return;
 
@@ -410,6 +420,8 @@ public class Item_Info_Panel : MonoBehaviour
 
     public void On_Click_UnEquipBtn()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (CurrentItem.Get_OwnCharacter == null)
             return;
 
@@ -453,6 +465,7 @@ public class Item_Info_Panel : MonoBehaviour
     // 아이템 분해 안내 문구
     public void On_Click_Item_Decomposition()
     {
+        SoundManager.Inst.PlayUISound();
         ItemDecom_Info_Panel.SetActive(true);
     }
 
@@ -461,6 +474,8 @@ public class Item_Info_Panel : MonoBehaviour
     // 아이템 분해 확인
     public void On_Click_Decomposition_Select()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (CurrentItem.Get_OwnCharacter != null)
         {
             DecomError_Info_Panel.SetActive(true);

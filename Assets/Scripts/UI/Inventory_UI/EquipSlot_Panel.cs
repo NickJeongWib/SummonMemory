@@ -9,6 +9,7 @@ public class EquipSlot_Panel : MonoBehaviour
 
     public void On_Click_Close()
     {
+        SoundManager.Inst.PlayUISound();
         animator.Play("EquipSlot_Close");
     }
 

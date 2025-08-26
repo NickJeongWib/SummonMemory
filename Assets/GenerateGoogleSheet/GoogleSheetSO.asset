@@ -2178,6 +2178,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Fire/FireHammer
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/FireHammer_Sonia/FireHammer_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Fire/Sonia/SoniaSkill
   - SKILL_NAME: "\uB300\uD3ED\uBC1C"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2197,6 +2198,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Fire/ExploBomb
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/BombExplo_Tania/BombExplosion_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Fire/Tana/TanaSkill
   - SKILL_NAME: "\uC775\uC2A4\uD50C\uB85C"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2216,6 +2218,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Fire/Explo
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/FireExplo_Tana/FireExplo_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Fire/Tania/TaniaSkill
   - SKILL_NAME: "\uC11C\uBA3C \uC0E4\uD06C"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2235,6 +2238,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Water/SharkAtk
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Water_Prefab/Shark_Ariel/Shark_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Water/Ariel/ArielSkill
   - SKILL_NAME: "\uC6CC\uD130 \uD790"
     SKILL_LV: 0
     SKILL_TYPE: BUFF
@@ -2254,6 +2258,7 @@ MonoBehaviour:
       {_hill}%\uC758 \uD68C\uBCF5\uC744 \uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Water/Hill
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterHill_Lapa/WaterHill_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Water/Lapa/Lapa_Skill
   - SKILL_NAME: "\uC6CC\uD130 \uC2F8\uC774\uD074\uB860"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2273,6 +2278,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Water/WaterCyclone
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterCycle_Adri/WaterCycle_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Water/Adri/AdriSkill
   - SKILL_NAME: "\uC708\uB4DC \uD134"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2292,6 +2298,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Wind/WindTurn
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindSwipe_Melia/WindSwipe_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Wind/Melia/MeliaSkill
   - SKILL_NAME: "\uBC14\uB78C\uC758 \uC18D\uC0AD\uC784"
     SKILL_LV: 0
     SKILL_TYPE: BUFF
@@ -2310,6 +2317,7 @@ MonoBehaviour:
     SKILL_DESC: "2 SP\uB97C \uC0AC\uC6A9\uD558\uC5EC SP\uB97C {_sp}\uB9CC\uD07C \uD68C\uBCF5\uD55C\uB2E4."
     SKILL_ICON: Skill/Icon/Wind/SP_Hill
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/SP_Buff_Seiza/SP_Buff_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Wind/Seiza/SeizaSkill
   - SKILL_NAME: "\uC708\uB4DC \uC775\uC2A4\uD50C\uB85C"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2329,6 +2337,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Wind/WindExplo
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindExplo_Zaya/WindExplo_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Wind/Zaya/ZayaSkill
   - SKILL_NAME: "\uADF8\uB77C\uC6B4\uB4DC \uC775\uC2A4\uD50C\uB85C"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2348,6 +2357,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Ground/GroundExplo
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/GroundExplo_Bera/GroundExplo_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Ground/Bera/BeraSkill
   - SKILL_NAME: "\uADF8\uB77C\uC6B4\uB4DC \uBE14\uB808\uC2F1"
     SKILL_LV: 0
     SKILL_TYPE: BUFF
@@ -2367,6 +2377,7 @@ MonoBehaviour:
       \uBC29\uC5B4\uB825\uC744 \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Ground/DefBuff
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/DefBuf_Dena/DefBuf_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Ground/Dena/DenaSkill
   - SKILL_NAME: "\uC2A4\uD1A4 \uD578\uC988"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2386,6 +2397,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Ground/StoneHand
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/StoneHand_Miro/StoneHand_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Ground/Miro/MiroSkill
   - SKILL_NAME: "\uB4DC\uB798\uACE4 \uBC84\uC2A4\uD2B8"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2405,6 +2417,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Fire/DragonBurst
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/DragonBurst_Leze/DragonBurst_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Fire/Leze/LezeSkill
   - SKILL_NAME: "\uD30C\uC774\uC5B4 \uBE14\uB808\uC2F1"
     SKILL_LV: 0
     SKILL_TYPE: BUFF
@@ -2424,6 +2437,7 @@ MonoBehaviour:
       \uBC29\uC5B4\uB825\uC744 \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Fire/FireDefBuff
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/FireDef_Buff_Ruina/DefBuff_2_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Fire/Ruina/RuinaSkill
   - SKILL_NAME: "\uC6CC\uD130 \uBE14\uB808\uC2F1"
     SKILL_LV: 0
     SKILL_TYPE: BUFF
@@ -2443,6 +2457,7 @@ MonoBehaviour:
       {_hill}%\uC758 \uD68C\uBCF5\uC744 \uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Water/GreatHill
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Water_Prefab/GreatWaterHill_Ariel/GreatWaterHill_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Water/Arine/ArineSkill
   - SKILL_NAME: "\uC544\uC774\uC2A4 \uB514\uD39C\uC2A4"
     SKILL_LV: 0
     SKILL_TYPE: BUFF
@@ -2462,6 +2477,7 @@ MonoBehaviour:
       \uC804\uCCB4\uC758 \uBC29\uC5B4\uB825\uC744 \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Water/WaterDefBuf
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterDefBuf_Yuki/WaterDefBuf2_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Water/Yuki/YukiSkill
   - SKILL_NAME: "\uD5C8\uB9AC\uCF00\uC778"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2481,6 +2497,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Wind/Tornado
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/Tornado_Elin/Tornado_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Wind/Elin/ElinSkilll
   - SKILL_NAME: "\uC708\uB4DC \uBE14\uB808\uC2F1"
     SKILL_LV: 0
     SKILL_TYPE: BUFF
@@ -2496,10 +2513,11 @@ MonoBehaviour:
     NORMAL_ATK_RATIO: 1.2
     NORMAL_ATK_DESC: "SP\uB97C 1\uD68C\uBCF5 \uC2DC\uD0A4\uACE0 {_damage}%\uB9CC\uD07C\\\\n\uBC14\uB78C
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
-    SKILL_DESC: "3 SP\uB97C \uC0AC\uC6A9\uD558\uC5EC 3\uD134 \uB3D9\uC548 {_buff}%\uB9CC\uD07C\\\\n\uC544\uAD70
+    SKILL_DESC: "3 SP\uB97C \uC0AC\uC6A9\uD558\uC5EC 4\uD134 \uB3D9\uC548 {_buff}%\uB9CC\uD07C\\\\n\uC544\uAD70
       \uC804\uCCB4\uC758 \uACF5\uACA9\uB825\uC744 \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Wind/WindBlessing
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindBlessing_Mille/WindBlessing_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Wind/Mille/MilleSkill
   - SKILL_NAME: "\uC804\uD22C\uC758 \uD568\uC131"
     SKILL_LV: 0
     SKILL_TYPE: BUFF
@@ -2519,6 +2537,7 @@ MonoBehaviour:
       \uBC29\uC5B4\uB825\uC744 \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Ground/AllDefBuff
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/All_DefBuf_Asa/AllDefBuf_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Ground/Asa/Asa_Skill
   - SKILL_NAME: "\uADF8\uB77C\uC6B4\uB4DC \uC2A4\uB9E4\uC2DC"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2538,6 +2557,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Ground/GroundSmash
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/GroundSmash_Nora/GroundSmash_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Ground/Nora/NoraSkill
   - SKILL_NAME: "\uD53C\uB2C9\uC2A4\uC758 \uC228\uACB0"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2557,6 +2577,7 @@ MonoBehaviour:
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_ICON: Skill/Icon/Fire/Phoenix
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Fire_Prefab/Phoenix_Igni/Phoenix_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Fire/Igni/IgniSkill
   - SKILL_NAME: "\uD574\uC2E0 \uAC15\uB9BC"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2577,6 +2598,7 @@ MonoBehaviour:
       \uAE30\uC808 \uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Water/WhaleAtk
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WhaleAtk_Line/WhaleAtk_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Water/Line/LineSkill
   - SKILL_NAME: "\uBC14\uB78C\uC758 \uAC00\uD638"
     SKILL_LV: 0
     SKILL_TYPE: BUFF
@@ -2592,11 +2614,12 @@ MonoBehaviour:
     NORMAL_ATK_RATIO: 1.4
     NORMAL_ATK_DESC: "SP\uB97C 1\uD68C\uBCF5 \uC2DC\uD0A4\uACE0 {_damage}%\uB9CC\uD07C\\\\n\uBC14\uB78C
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
-    SKILL_DESC: "4 SP\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC544\uAD70 \uC804\uCCB4\uC758
-      \uACF5\uACA9\uB825\uC744\\\\n{_buff}%\uB9CC\uD07C \uC99D\uAC00\uC2DC\uD0A4\uACE0\\\\nSP\uB97C
+    SKILL_DESC: "4 SP\uB97C \uC0AC\uC6A9\uD558\uC5EC  4\uD134 \uB3D9\uC548\\\\n\uC544\uAD70
+      \uC804\uCCB4\uC758 \uACF5\uACA9\uB825\uC744\\\\n{_buff}%\uB9CC\uD07C \uC99D\uAC00\uC2DC\uD0A4\uACE0\\\\nSP\uB97C
       {_sp}\uB9CC\uD07C \uD68C\uBCF5\uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Wind/WindAllBuff
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Wind_Prefab/WindBuff_Elloin/WindBuff_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Wind/Elloin/ElloinSkill
   - SKILL_NAME: "\uADF8\uB77C\uC6B4\uB4DC \uBE0C\uB808\uC774\uD06C"
     SKILL_LV: 0
     SKILL_TYPE: ATTACK
@@ -2617,6 +2640,7 @@ MonoBehaviour:
       3\uD134\uB3D9\uC548 {_deBuff}%\uB9CC\uD07C \uAC10\uC18C\uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Ground/GroundBreak
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Ground_Prefab/GroundBreak_Lamie/GroundBreak_Prefab
+    SKILL_SFX_PATH: Sounds/Skill_SFX/Ground/Lamie/LamieSkill
   ENEMY_DBList:
   - MON_INDEX: 0
     MON_NAME: "\uC9C0\uC625 \uBD88 \uB291\uB300"

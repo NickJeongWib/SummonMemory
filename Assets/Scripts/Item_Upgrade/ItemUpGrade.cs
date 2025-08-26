@@ -277,6 +277,8 @@ public class ItemUpGrade : MonoBehaviour
     // TODO ## ItemUpGrade 아이템 업그레이드
     public void On_Click_UpgradeBtn()
     {
+        SoundManager.Inst.PlayUISound();
+
         // 최대 레벨 도달 시 적용x
         if (SelectItem.Get_Item_Lv >= 9)
         {
@@ -366,6 +368,8 @@ public class ItemUpGrade : MonoBehaviour
     // 연속강화 창 오픈
     public void On_Click_ChainUp(GameObject _obj)
     {
+        SoundManager.Inst.PlayUISound();
+
         _obj.SetActive(true);
 
         CountSlider.value = 0;
@@ -375,6 +379,7 @@ public class ItemUpGrade : MonoBehaviour
     // 연속강화 창 오프
     public void On_Click_ChainBack()
     {
+        SoundManager.Inst.PlayUISound();
         ChainAnimator.Play("ChainUp_Close");
     }
 
@@ -425,6 +430,8 @@ public class ItemUpGrade : MonoBehaviour
     // 1 +,- 반복횟수 설정
     public void On_Click_Count_1(bool _isPlus)
     {
+        SoundManager.Inst.PlayUISound();
+
         if (_isPlus)
         {
             Count++;
@@ -445,6 +452,8 @@ public class ItemUpGrade : MonoBehaviour
     // 10 +,- 반복횟수 카운드 설정
     public void On_Click_Count_10(bool _isPlus)
     {
+        SoundManager.Inst.PlayUISound();
+
         // +면 카운터 증가
         if (_isPlus)
         {
@@ -466,6 +475,8 @@ public class ItemUpGrade : MonoBehaviour
     // 반복횟수 최대,최소 설정
     public void On_Click_Count_MinMax(bool _isMax)
     {
+        SoundManager.Inst.PlayUISound();
+
         if (_isMax)
         {
             Count = 100;
@@ -488,6 +499,8 @@ public class ItemUpGrade : MonoBehaviour
     int CostSum;
     public void On_Click_ChainUpgrade()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (SelectItem.Get_Item_Lv >= 9)
         {
             return;
@@ -515,21 +528,6 @@ public class ItemUpGrade : MonoBehaviour
 
         LobbyManager_Ref.Refresh_UI_Money();
 
-        // TODO ## ItemUpGrade 체인 업그레이드 데이터 저장
-        //if (SelectItem.Get_isEquip)
-        //{
-        //    // 캐릭터 장착 중이라면
-        //    if (UserInfo.Equip_Characters.Contains(SelectItem.Get_OwnCharacter))
-        //    {
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
-        //    }
-        //    else
-        //    {
-                
-        //    }
-        //}
-
         // 재료 저장
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
@@ -543,6 +541,8 @@ public class ItemUpGrade : MonoBehaviour
     #region OptionValueReset
     public void On_Click_Reset_Item_Option_Value()
     {
+        SoundManager.Inst.PlayUISound();
+
         // 옵션 다 잠궜으면
         if (OpValue_Locks[0] && OpValue_Locks[1] && OpValue_Locks[2])
             return;
@@ -569,21 +569,6 @@ public class ItemUpGrade : MonoBehaviour
             Refresh_UserPowder();
         }
 
-        // TODO ## ItemUpGrade 옵션수치 데이터 저장
-        //if (SelectItem.Get_isEquip)
-        //{
-        //    // 캐릭터 장착 중이라면
-        //    if (UserInfo.Equip_Characters.Contains(SelectItem.Get_OwnCharacter))
-        //    {
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
-        //    }
-        //    else
-        //    {
-
-        //    }
-        //}
-
         // 재료 저장
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
@@ -597,6 +582,8 @@ public class ItemUpGrade : MonoBehaviour
     #region OptionReset
     public void On_Click_Reset_Item_Option()
     {
+        SoundManager.Inst.PlayUISound();
+
         // 옵션 다 잠궜으면
         if (Op_Locks[0] && Op_Locks[1] && Op_Locks[2])
             return;
@@ -626,21 +613,6 @@ public class ItemUpGrade : MonoBehaviour
         SelectItem.Set_ResetOption(Op_Locks);
         Refresh_OptionText();
 
-
-        // TODO ## ItemUpGrade 옵션 변경 데이터 저장
-        //if (SelectItem.Get_isEquip)
-        //{
-        //    // 캐릭터 장착 중이라면
-        //    if (UserInfo.Equip_Characters.Contains(SelectItem.Get_OwnCharacter))
-        //    {
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
-        //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
-        //    }
-        //    else
-        //    {
-
-        //    }
-        //}
         // 재료 저장
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
@@ -654,6 +626,8 @@ public class ItemUpGrade : MonoBehaviour
     #region RootClick
     public void On_Click_UpgradeRoot()
     {
+        SoundManager.Inst.PlayUISound();
+
         for (int i = 0; i < OPRELock_Toggle.Length; i++)
         {
             OPRELock_Toggle[i].isOn = false;
@@ -672,7 +646,9 @@ public class ItemUpGrade : MonoBehaviour
 
     public void On_Click_ResetOptionRoot()
     {
-        for(int i = 0; i < OptionLock_Toggle.Length; i++)
+        SoundManager.Inst.PlayUISound();
+
+        for (int i = 0; i < OptionLock_Toggle.Length; i++)
         {
             OptionLock_Toggle[i].isOn = false;
         }
@@ -691,6 +667,8 @@ public class ItemUpGrade : MonoBehaviour
     #region OptionValue_Lock_Toggle
     public void On_Click_Option_Lock(int _num)
     {
+        SoundManager.Inst.PlayUISound();
+
         if (OptionLock_Toggle[_num].isOn)
         {
             Refresh_ResetOptionValueColor(_num, "<color=#80807F>");
@@ -722,6 +700,8 @@ public class ItemUpGrade : MonoBehaviour
     #region Option_Lock_Toggle
     public void On_Click_OptionRe_Lock(int _num)
     {
+        SoundManager.Inst.PlayUISound();
+
         if (OPRELock_Toggle[_num].isOn)
         {
             Refresh_ResetOptionColor(_num, "<color=#80807F>");
@@ -753,6 +733,8 @@ public class ItemUpGrade : MonoBehaviour
     #region Lock_Off
     public void Lock_Off()
     {
+        SoundManager.Inst.PlayUISound();
+
         for (int i = 0; i < OPRELock_Toggle.Length; i++)
         {
             OPRELock_Toggle[i].isOn = false;

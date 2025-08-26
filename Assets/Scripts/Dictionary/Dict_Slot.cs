@@ -40,6 +40,10 @@ public class Dict_Slot : MonoBehaviour
 
     public void On_Click_Slot()
     {
+        SoundManager.Inst.PlayUISound();
+
+        GameManager.Inst.SelectCharacter = Slot_Char;
+
         DictionaryCtrl_Ref.Show_Char_Info(Slot_Char);
     }
 }

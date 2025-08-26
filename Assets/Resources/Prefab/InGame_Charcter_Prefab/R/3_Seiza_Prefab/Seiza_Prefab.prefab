@@ -612,6 +612,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_Image: {fileID: 5580665163054775494}
   CurHP: 0
+  CanSkill: 1
+  Atk: 0
+  Def: 0
   SkillData:
     Skill_Name: 
     Skill_Lv: 0
@@ -627,7 +630,11 @@ MonoBehaviour:
     Buff_Time: 0
     Skill_Desc: 
     SkillIcon_Path: 
+    SFX_Path: 
     Skill_Prefab_Path: 
+    NormalAtk_Ratio: 0
+    NormalAtk_Desc: 
+    NormalAtk_Lv: 0
   Skill_Prefab: {fileID: 4868087781849695711}
   animator: {fileID: 1716924737178916993}
   Damage_Animator: {fileID: 742759726206407258}
@@ -642,7 +649,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1031213268084072366, guid: 5280711fe50131b4ca4bc25f6daf362e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 1031213268084072366, guid: 5280711fe50131b4ca4bc25f6daf362e, type: 3}
       propertyPath: m_LocalPosition.y

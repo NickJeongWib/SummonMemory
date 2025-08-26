@@ -46,6 +46,8 @@ public class Equipment_Gacha_Manager : MonoBehaviour
     #region EquipGacha_Info_Pop
     public void EquipGachaInfo_Open(int _num)
     {
+        SoundManager.Inst.PlayUISound();
+
         Gacha_Count = _num;
 
         // 인벤토리 부족
@@ -202,6 +204,8 @@ public class Equipment_Gacha_Manager : MonoBehaviour
     #region Error_Info_Close
     public void Info_Close(GameObject _obj)
     {
+        SoundManager.Inst.PlayUISound();
+
         Gacha_Count = 0;
         _obj.transform.GetChild(0).GetComponent<Pop_UpDown>().Pop_Down();
     }

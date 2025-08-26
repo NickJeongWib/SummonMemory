@@ -52,6 +52,7 @@ public class Upgrade_Slot : MonoBehaviour
 
     void Item_Info()
     {
+        SoundManager.Inst.PlayUISound();
         Inventory_UI_Ref.On_Click_Open_ItemInfo(SlotNum);
     }
 }

@@ -14,6 +14,8 @@ public class Gacha_UI : MonoBehaviour
 
     public void On_Click_Summon_Btn()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (Summon_Btn_Pop.activeSelf == false)
         {
             Summon_Btn_Pop.SetActive(true);
@@ -26,6 +28,8 @@ public class Gacha_UI : MonoBehaviour
 
     public void On_Click_Equipment_Btn()
     {
+        SoundManager.Inst.PlayUISound();
+
         if (Equipment_Btn_Pop.activeSelf == false)
         {
             Summon_Btn_Pop.SetActive(false);

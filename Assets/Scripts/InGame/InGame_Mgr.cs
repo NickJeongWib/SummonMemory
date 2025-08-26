@@ -33,6 +33,7 @@ public class InGame_Mgr : MonoBehaviour
     public Animator SP_animator;
 
     [Header("Game_Info")]
+    public int LastIndex;
     public int CurTurnCharIndex = 0;
 
     [Header("UI")]
@@ -115,12 +116,26 @@ public class InGame_Mgr : MonoBehaviour
             case INGAME_STATE.TURN_START:
                 // UI 팝업
                 SP_animator.Play("SP_UI_PopUp");
-                
+
+                // 턴의 마지막 캐릭터 인덱스 설정
+                LastIndex = CharCtrl_List.Count - 1;
+                while(0 <= LastIndex)
+                {
+                    if (0 < CharCtrl_List[LastIndex].Get_CurHP)
+                    {
+                        break;
+                    }
+
+                    LastIndex--;
+                }
+
+                // 캐릭터가 죽어있으면
                 if(CharCtrl_List[CurTurnCharIndex].Get_CurHP <= 0)
                 {
                     for(int i = CurTurnCharIndex + 1; i < CharCtrl_List.Count; i++)
                     {
-                        if(0 < CharCtrl_List[i].Get_CurHP)
+                        // 다음 캐릭터 순 반복으로 죽었는지 체크
+                        if (0 < CharCtrl_List[i].Get_CurHP)
                         {
                             CurTurnCharIndex = i;
                             break;
@@ -140,6 +155,8 @@ public class InGame_Mgr : MonoBehaviour
                         ObjPool.SkillIcon_List[i].gameObject.SetActive(false);
                     }
                 }
+
+                InGameState = INGAME_STATE.STANDBY;
                 break;
 
             case INGAME_STATE.STANDBY:
@@ -147,10 +164,12 @@ public class InGame_Mgr : MonoBehaviour
                 break;
 
             case INGAME_STATE.TURN_END:
+
                 // 다음 캐릭터 UI 표시해주기 위해 인덱스 증가
                 CurTurnCharIndex++;
+
                 // 마지막 캐릭터까지 돌았으면 다시 반복
-                if (UserInfo.Equip_Characters.Count <= CurTurnCharIndex)
+                if (LastIndex < CurTurnCharIndex)
                 {
                     Buff_Decreased();
                     CurTurnCharIndex = 0;
@@ -244,7 +263,9 @@ public class InGame_Mgr : MonoBehaviour
     // 캐릭터 상태창 열기 닫기
     public void On_Click_OpenCharStat(Animator _animator)
     {
-        if(isCharStat_Open)
+        SoundManager.Inst.PlayUISound();
+
+        if (isCharStat_Open)
         {
             _animator.Play("Pop_Down");
             CharStat_Pop_Images[0].SetActive(true);
@@ -260,8 +281,11 @@ public class InGame_Mgr : MonoBehaviour
         isCharStat_Open = !isCharStat_Open;
     }
 
+    // 몬스터 상태창 열기 닫기
     public void On_Click_OpenMonStat(Animator _animator)
     {
+        SoundManager.Inst.PlayUISound();
+
         if (isMonStat_Open)
         {
             _animator.Play("Pop_Down");

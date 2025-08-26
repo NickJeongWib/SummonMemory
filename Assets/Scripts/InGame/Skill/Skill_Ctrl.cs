@@ -114,6 +114,8 @@ public class Skill_Ctrl : MonoBehaviour
     {
         StartCoroutine(Camera.main.GetComponent<CameraShake>().Shake(ShakeTime, ShakePower));
 
+        SoundManager.Inst.PlayEffSound("Sounds/Hit");
+
         // Debug.Log(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.Get_CharName);
         int targetNum = InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_TargetCount;
 
@@ -227,7 +229,9 @@ public class Skill_Ctrl : MonoBehaviour
     #region CharacterDamage
     public void Mon_Damage_Point()
     {
+        SoundManager.Inst.PlayEffSound("Sounds/Hit");
 
+        // 타겟 숫자
         int targetNum = InGame_Mgr.Inst.CurMonsters[InGame_Mgr.Inst.Get_MonTurnIndex].Get_TargetCount;
 
         float atk = InGame_Mgr.Inst.CurMonsters[InGame_Mgr.Inst.Get_MonTurnIndex].Get_Atk;
@@ -238,6 +242,7 @@ public class Skill_Ctrl : MonoBehaviour
         // 실제로 데미지를 적용한 몬스터 수
         int appliedCount = 0;
 
+        StartCoroutine(Camera.main.GetComponent<CameraShake>().Shake(ShakeTime, ShakePower));
 
         //  데미지 적용
         for (int i = 0; i < InGame_Mgr.Inst.CharCtrl_List.Count; i++)
@@ -576,6 +581,13 @@ public class Skill_Ctrl : MonoBehaviour
                     buffValue, _buffType);
             }
         }
+    }
+    #endregion
+
+    #region PlaySkill_SFX
+    public void PlaySkill_SFX()
+    {
+        SoundManager.Inst.PlayEffSound(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_SFX_Path);
     }
     #endregion
 }
