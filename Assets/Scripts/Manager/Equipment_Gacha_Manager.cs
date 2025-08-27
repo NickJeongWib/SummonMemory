@@ -36,6 +36,7 @@ public class Equipment_Gacha_Manager : MonoBehaviour
     [Header("----Gacha_Video----")]
     [SerializeField] GameObject Gacha_Video;
     [SerializeField] VideoClip Gacha_Scenes;
+    [SerializeField] AudioClip Gacha_SFX;
     [SerializeField] VideoPlayer Videoplayer;
 
     private void Start()
@@ -180,7 +181,7 @@ public class Equipment_Gacha_Manager : MonoBehaviour
         yield return new WaitUntil(() => DataNetwork_Mgr.Inst.LoadingPanel.gameObject.activeInHierarchy == false);
 
         Gacha_Video_Play();
-        SoundManager.Inst.PlayEffSound("Sounds/Gacha/ItemGacha", PlayerPrefs.GetFloat("SFX_Vol"));
+        SoundManager.Inst.PlayGachaSound(Gacha_SFX);
     }
 
     #region Gacha_Video

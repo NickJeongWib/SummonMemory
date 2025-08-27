@@ -203,6 +203,10 @@ public class Lobby_Manager : MonoBehaviour
     public void On_Click_Skip_GachaMovie(GameObject _obj)
     {
         SoundManager.Inst.PlayUISound();
+        
+        // 사운드 재생 중이면 꺼주기
+        if(SoundManager.Inst.Gacha_AudioSrc.isPlaying)
+            SoundManager.Inst.Gacha_AudioSrc.Stop();
 
         // 가챠 연출 스킵
         _obj.SetActive(false);

@@ -97,6 +97,8 @@ public class Inventory_UI : MonoBehaviour
     public void On_Click_Equip_Item_Btn()
     {
         SoundManager.Inst.PlayUISound();
+        // NPC 사운드 재생
+        SoundManager.Inst.PlaySelectVoice("Sounds/NPC_SFX/Equip_Inven_SFX");
 
         Inventory_Type = INVENTORY_TYPE.EQUIPMENT;
 
@@ -132,7 +134,8 @@ public class Inventory_UI : MonoBehaviour
     public void On_Click_Upgrade_Item_Btn()
     {
         SoundManager.Inst.PlayUISound();
-
+        // NPC 사운드 재생
+        SoundManager.Inst.PlaySelectVoice("Sounds/NPC_SFX/Upgrade_Inven_SFX");
         Inventory_Type = INVENTORY_TYPE.UPGRADE;
 
         // Spend_Inventory_Slot 비활성화 상태에 연결이 잘 되어있다면
@@ -264,4 +267,17 @@ public class Inventory_UI : MonoBehaviour
         Item_Info.gameObject.SetActive(true);
     }
     #endregion
+
+    // 로비에서 가방 버튼 눌렀을 때 가방을 소비아이템으로 초기화해서 보여주기 때문에 사운드가 호출되어 따로 빼둠
+    public void Play_SpendNPC_Voice()
+    {
+        // NPC 사운드 재생
+        SoundManager.Inst.PlaySelectVoice("Sounds/NPC_SFX/Spend_Inven_SFX");
+    }
+
+    // 가방화면에서 나가실 NPC 사운드 멈춤
+    public void On_Click_BagClose()
+    {
+        SoundManager.Inst.VoiceAudioSrc.Stop();
+    }
 }

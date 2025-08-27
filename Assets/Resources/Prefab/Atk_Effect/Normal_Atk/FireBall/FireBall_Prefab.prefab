@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetTr: {fileID: 0}
-  MoveSpeed: 17
+  MoveSpeed: 22
   SkillCtrl_Ref: {fileID: 2018344926345538023}
 --- !u!114 &2018344926345538023
 MonoBehaviour:

@@ -308,7 +308,7 @@ public class DataNetwork_Mgr : MonoBehaviour
             (_result) =>
             {
                 // Debug.Log("장착 아이템 리스트 저장 성공");
-                if(LoadingPanel != null)
+                if(LoadingPanel != null && LoadingPanel.gameObject.activeSelf)
                 {
                     LoadingPanel.StartCoroutine(LoadingPanel.LoadImage());
                 }
@@ -589,7 +589,7 @@ public class DataNetwork_Mgr : MonoBehaviour
             PlayFabClientAPI.UpdateUserData(request,
             (_result) =>
             {
-                if (LoadingPanel != null)
+                if (LoadingPanel != null && LoadingPanel.gameObject.activeSelf)
                 {
                     LoadingPanel.StartCoroutine(LoadingPanel.LoadImage());
                 }

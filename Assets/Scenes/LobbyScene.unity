@@ -20196,6 +20196,8 @@ MonoBehaviour:
   Character_Transition_Panel: {fileID: 0}
   NotTouch_RayCast: {fileID: 365620016}
   StartPanel: {fileID: 0}
+  Inventory_Panel: {fileID: 0}
+  Store_Panel: {fileID: 0}
 --- !u!1 &307492119
 GameObject:
   m_ObjectHideFlags: 0
@@ -42816,6 +42818,8 @@ MonoBehaviour:
   Character_Transition_Panel: {fileID: 0}
   NotTouch_RayCast: {fileID: 0}
   StartPanel: {fileID: 0}
+  Inventory_Panel: {fileID: 0}
+  Store_Panel: {fileID: 0}
 --- !u!95 &661664747
 Animator:
   serializedVersion: 5
@@ -51473,6 +51477,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1010131894}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 760716143}
+        m_TargetAssemblyTypeName: Inventory_UI, Assembly-CSharp
+        m_MethodName: On_Click_BagClose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -60930,6 +60946,8 @@ MonoBehaviour:
   Character_Transition_Panel: {fileID: 152999545}
   NotTouch_RayCast: {fileID: 365620016}
   StartPanel: {fileID: 0}
+  Inventory_Panel: {fileID: 0}
+  Store_Panel: {fileID: 0}
 --- !u!95 &951969829
 Animator:
   serializedVersion: 5
@@ -98233,6 +98251,10 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 6b0cfbc360955b0429dc3c6641084f12, type: 3}
   - {fileID: 32900000, guid: 0702287bfdebf4840a864440bff39091, type: 3}
   - {fileID: 32900000, guid: 804f3b5e7bda3e6418462817daadc213, type: 3}
+  Gacha_SFX_Path:
+  - {fileID: 8300000, guid: aa89fc3ef1a49474c8ba47ce2dfef52b, type: 3}
+  - {fileID: 8300000, guid: af546122313edbb41870f42e5cf102bd, type: 3}
+  - {fileID: 8300000, guid: 6087a73577d09a446b20ca0cb77ff35a, type: 3}
   Videoplayer: {fileID: 870467970}
   InventoryUI_Ref: {fileID: 760716143}
   UserTicket: {fileID: 1591683993}
@@ -98285,6 +98307,7 @@ MonoBehaviour:
   UserTicket: {fileID: 1261965081}
   Gacha_Video: {fileID: 1155382416}
   Gacha_Scenes: {fileID: 32900000, guid: 1d87c9fd3a8953c4cad06aa84b2c2284, type: 3}
+  Gacha_SFX: {fileID: 8300000, guid: 89b5209c0f30ddd4ea83e1ada0db5c97, type: 3}
   Videoplayer: {fileID: 870467970}
 --- !u!114 &1531980158
 MonoBehaviour:
@@ -106429,6 +106452,8 @@ MonoBehaviour:
   Character_Transition_Panel: {fileID: 1912000253}
   NotTouch_RayCast: {fileID: 365620016}
   StartPanel: {fileID: 0}
+  Inventory_Panel: {fileID: 0}
+  Store_Panel: {fileID: 0}
 --- !u!95 &1678199307
 Animator:
   serializedVersion: 5
@@ -109806,6 +109831,8 @@ MonoBehaviour:
   Character_Transition_Panel: {fileID: 0}
   NotTouch_RayCast: {fileID: 0}
   StartPanel: {fileID: 0}
+  Inventory_Panel: {fileID: 1010131894}
+  Store_Panel: {fileID: 1242971115}
 --- !u!1 &1720681751
 GameObject:
   m_ObjectHideFlags: 0
@@ -120688,6 +120715,18 @@ MonoBehaviour:
       - m_Target: {fileID: 760716143}
         m_TargetAssemblyTypeName: Inventory_UI, Assembly-CSharp
         m_MethodName: On_Click_Spend_Item_Btn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 760716143}
+        m_TargetAssemblyTypeName: Inventory_UI, Assembly-CSharp
+        m_MethodName: Play_SpendNPC_Voice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -132294,6 +132333,8 @@ MonoBehaviour:
   Character_Transition_Panel: {fileID: 0}
   NotTouch_RayCast: {fileID: 0}
   StartPanel: {fileID: 0}
+  Inventory_Panel: {fileID: 0}
+  Store_Panel: {fileID: 0}
 --- !u!1 &2075074573
 GameObject:
   m_ObjectHideFlags: 0
