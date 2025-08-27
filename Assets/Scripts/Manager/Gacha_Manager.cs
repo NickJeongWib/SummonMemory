@@ -52,6 +52,7 @@ public class Gacha_Manager : MonoBehaviour
     [Header("----Gacha_Video----")]
     [SerializeField] GameObject Gacha_Video;
     [SerializeField] VideoClip[] Gacha_Scenes;
+    [SerializeField] AudioClip[] Gacha_SFX_Path;
     [SerializeField] VideoPlayer Videoplayer;
 
     [Header("Inventory_UI")]
@@ -127,6 +128,7 @@ public class Gacha_Manager : MonoBehaviour
     public void Summon()
     {
         Videoplayer.playbackSpeed = 0.7f;
+
         // TODO ## Gacha_Manager : TestMode
         if (!GameManager.Inst.TestMode)
         {
@@ -279,8 +281,19 @@ public class Gacha_Manager : MonoBehaviour
         LobbyManger_Ref.Refresh_User_CharAmount();
         LobbyManger_Ref.Refresh_User_CombatPower();
         LobbyManger_Ref.Refresh_OwnChar_Profile();
+
+        StartCoroutine(Loading());
+    }
+
+    IEnumerator Loading()
+    {
+        DataNetwork_Mgr.Inst.LoadingPanel.gameObject.SetActive(true);
+        // 패널이 꺼질 때까지 대기
+        yield return new WaitUntil(() => DataNetwork_Mgr.Inst.LoadingPanel.gameObject.activeInHierarchy == false);
+
         Gacha_Video_Play();
     }
+
     #endregion
 
     #region SummonRate
@@ -536,6 +549,7 @@ public class Gacha_Manager : MonoBehaviour
     void Gacha_VideoPlay(int _index)
     {
         Videoplayer.clip = Gacha_Scenes[_index];
+        SoundManager.Inst.PlayGachaSound(Gacha_SFX_Path[_index]);
         Videoplayer.Play();
         // 무슨 등급 뽑았는지 초기화
         isR_Summon = false;

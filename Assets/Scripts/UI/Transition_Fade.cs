@@ -12,6 +12,8 @@ public class Transition_Fade : MonoBehaviour
     [SerializeField] GameObject NotTouch_RayCast;
 
     [SerializeField] GameObject StartPanel;
+    [SerializeField] GameObject Inventory_Panel;
+    [SerializeField] GameObject Store_Panel;
 
     #region Base
     // TODO ## Transition_Fade 기본 Fade Out
@@ -58,4 +60,20 @@ public class Transition_Fade : MonoBehaviour
     {
         SoundManager.Inst.PlaySelectVoice(GameManager.Inst.SelectCharacter.VoicePath.Get_SelectVoice_Path);
     }
+    
+    public void NPC_SFX_Play()
+    {
+        if(Inventory_Panel.activeSelf)
+        {
+            // 가방에 들어갔을 때 NPC 목소리 출력
+            SoundManager.Inst.PlaySelectVoice("Sounds/NPC_SFX/Spend_Inven_SFX");
+        }
+
+        if(Store_Panel.activeSelf)
+        {
+            // 상점에 들어갔을 때 NPC 목소리 출력
+            SoundManager.Inst.PlaySelectVoice("Sounds/NPC_SFX/Store_SFX");
+        }
+    }
+
 }

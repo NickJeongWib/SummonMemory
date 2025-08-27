@@ -20,7 +20,8 @@ public class NormalAtk_Ctrl : MonoBehaviour
             
             // 데미지 적용
             SkillCtrl_Ref.NormalAtk(TargetTr.GetComponent<Enemy_Ctrl>(), atk, normalAtkPower, criDamage, criRate);
-
+            // 효과음 적용
+            SoundManager.Inst.PlayEffSound("Sounds/Hit", PlayerPrefs.GetFloat("SFX_Vol"));
             // 전투종료
             SkillCtrl_Ref.TurnEnd();
 

@@ -25,6 +25,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource VoiceAudioSrc;
     public AudioSource SelectUI_Audio;
     public AudioSource BGM_AudioSrc;
+    public AudioSource Gacha_AudioSrc;
 
     #region Singleton
     // 싱글톤 
@@ -148,6 +149,27 @@ public class SoundManager : MonoBehaviour
         // AudioSource 한번 플레이
         SelectUI_Audio.PlayOneShot(SelectUI_Audio.clip, PlayerPrefs.GetFloat("SFX_Vol") * SoundVol);
     }
+
+    public void PlayGachaSound(AudioClip _audioClip)
+    {
+        // 사운드 재생 꺼져있으면 return
+        if (isSFX_On == false)
+            return;
+
+        // AudioSource가 null이면 return;
+        if (Gacha_AudioSrc == null)
+            return;
+
+        // 중복 재생 방지
+        if (Gacha_AudioSrc.isPlaying)
+        {
+            // 멈추고 새로운 사운드 재생
+            Gacha_AudioSrc.Stop();
+        }
+
+        // AudioSource 한번 플레이
+        Gacha_AudioSrc.PlayOneShot(_audioClip, PlayerPrefs.GetFloat("SFX_Vol") * SoundVol);
+    }
     #endregion
 
     #region Skill_SFX
@@ -223,10 +245,10 @@ public class SoundManager : MonoBehaviour
             return;
 
         // 이미 재생 중인 사운드면 return
-        //if (VoiceAudioSrc.clip != null && audioClip.name == VoiceAudioSrc.clip.name)
-        //    return;
+        if (VoiceAudioSrc.clip != null && audioClip.name == VoiceAudioSrc.clip.name && VoiceAudioSrc.isPlaying)
+            return;
 
-        if(VoiceAudioSrc.isPlaying)
+        if (VoiceAudioSrc.isPlaying)
         {
             // 현재 진행 중인 보이스 멈추고 새 보이스로 출력
             VoiceAudioSrc.Stop();
