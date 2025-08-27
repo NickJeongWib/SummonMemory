@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Active_F : MonoBehaviour
 {
+    bool isEnterCo = false;
+
     public void Active_Off()
     {
         this.gameObject.SetActive(false);
@@ -52,7 +54,16 @@ public class Active_F : MonoBehaviour
 
     public IEnumerator LoadImage()
     {
+        // 이미 작동 중이면
+        if (isEnterCo)
+            yield return null;
+
+        // 작동 중
+        isEnterCo = true;
+
         yield return new WaitForSeconds(0.5f);
         this.gameObject.SetActive(false);
+        // 끝나면 false
+        isEnterCo = false;
     }
 }

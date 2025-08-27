@@ -10,6 +10,7 @@ public class Item_Info_Panel : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Inventory_UI Inventory_UI_Ref;
     [SerializeField] CharacterList_UI CharacterListUI_Ref;
+    [SerializeField] Lobby_Manager LobbyMangerRef;
 
     [SerializeField] Image Item_Image;
     [SerializeField] Image Item_Back;
@@ -382,16 +383,18 @@ public class Item_Info_Panel : MonoBehaviour
             // 선택된 캐릭터의 현재 선택 아이템타입의 장비를 착용하고 있다면
             if (GameManager.Inst.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] != null)
             {
-                // 장착해제
                 GameManager.Inst.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType].Get_isEquip = false;
                 GameManager.Inst.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType].EquipOption_Stat_Calc(false);
+                // 장착해제
                 GameManager.Inst.Get_SelectChar.Refresh_Char_Equipment_State(false, CurrentItem.Get_EquipType);
+
                 // 선택된 캐릭터에서 해제
                 // GameManager.Instance.Get_SelectChar.Get_EquipItems[(int)SlotItemInfo.Get_EquipType].Get_OwnCharacter = null;
             }
 
             // 장착 캐릭터 등록
             GameManager.Inst.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType] = CurrentItem;
+            GameManager.Inst.Get_SelectChar.Get_EquipItems[(int)CurrentItem.Get_EquipType].Get_isEquip = true;
             CurrentItem.Get_OwnCharacter = GameManager.Inst.Get_SelectChar;
             CurrentItem.Set_EquipCharName = CurrentItem.Get_OwnCharacter.Get_CharName;
 
@@ -417,6 +420,7 @@ public class Item_Info_Panel : MonoBehaviour
 
         Refresh_Equipment_Slot();
 
+        LobbyMangerRef.Refresh_User_CombatPower();
         On_Click_Close_ItemInfo();
         CurrentItem = null;
     }
@@ -452,7 +456,7 @@ public class Item_Info_Panel : MonoBehaviour
 
         // 해제라는 행동을 했으니 선택된 장비를 없애준다
         CurrentItem = null;
-
+        LobbyMangerRef.Refresh_User_CombatPower();
         // GameManager.Instance.Get_SelectChar.TestState();
 
     }
@@ -603,10 +607,10 @@ public class Item_Info_Panel : MonoBehaviour
         Inventory_UI_Ref.Upgrade_Slot_Refresh();
 
         #region Test
-        for (int i = 0; i < UserInfo.Upgrade_Inventory.Count; i++)
-        {
-            Debug.Log($"{UserInfo.Upgrade_Inventory[i].Get_Item_Name} " + UserInfo.Upgrade_Inventory[i].Get_Amount);
-        }
+        //for (int i = 0; i < UserInfo.Upgrade_Inventory.Count; i++)
+        //{
+        //    Debug.Log($"{UserInfo.Upgrade_Inventory[i].Get_Item_Name} " + UserInfo.Upgrade_Inventory[i].Get_Amount);
+        //}
         #endregion
     }
 

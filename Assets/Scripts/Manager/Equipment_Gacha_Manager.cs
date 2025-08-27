@@ -116,6 +116,7 @@ public class Equipment_Gacha_Manager : MonoBehaviour
 
     public void Equip_Gacha()
     {
+        Videoplayer.playbackSpeed = 1.0f;
         StartCoroutine(GachaStart());
     }
 
@@ -179,6 +180,7 @@ public class Equipment_Gacha_Manager : MonoBehaviour
         yield return new WaitUntil(() => DataNetwork_Mgr.Inst.LoadingPanel.gameObject.activeInHierarchy == false);
 
         Gacha_Video_Play();
+        SoundManager.Inst.PlayEffSound("Sounds/Gacha/ItemGacha", PlayerPrefs.GetFloat("SFX_Vol"));
     }
 
     #region Gacha_Video

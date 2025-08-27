@@ -10,7 +10,6 @@ public class GachaVideo : MonoBehaviour
     // 장비 뽑기 연출 UI 오브젝트
     [SerializeField] GameObject EquipGachaVideo_Renderer;
     [SerializeField] GameObject Skip_Info;
-
     VideoPlayer videoPlayer;
     public VideoPlayer Get_VideoPlayer { get => videoPlayer;}
 
@@ -27,11 +26,14 @@ public class GachaVideo : MonoBehaviour
         // 캐릭터뽑기 ui영상이 켜져있다면
         if(GachaVideo_Renderer.activeSelf)
         {
-           GachaVideo_Renderer.SetActive(false);
+            // videoPlayer.playbackSpeed = 0.7f;
+            GachaVideo_Renderer.SetActive(false);
         }
+
         // 장비뽑기 ui영상이 켜져있다면
         if (EquipGachaVideo_Renderer.activeSelf)
         {
+            // videoPlayer.playbackSpeed = 1.0f;
             EquipGachaVideo_Renderer.SetActive(false);
         }
 

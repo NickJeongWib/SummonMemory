@@ -63,6 +63,8 @@ public class Dictionary_Ctrl : MonoBehaviour
             R_Char_Slot.SetActive(true);
             SR_Char_Slot.SetActive(false);
             SSR_Char_Slot.SetActive(false);
+
+            // R등급 보유 Text
             Char_Count.text = $"{R_Count} / {Character_List.R_Char.Count}  ({(R_Count + SR_Count + SSR_Count)} / " +
               $"{(Character_List.R_Char.Count + Character_List.SR_Char.Count + Character_List.SSR_Char.Count)})";
         }
@@ -72,6 +74,8 @@ public class Dictionary_Ctrl : MonoBehaviour
             R_Char_Slot.SetActive(false);
             SR_Char_Slot.SetActive(true);
             SSR_Char_Slot.SetActive(false);
+
+            // SR등급 보유 Text
             Char_Count.text = $"{SR_Count} / {Character_List.SR_Char.Count}  ({(R_Count + SR_Count + SSR_Count)} / " +
               $"{(Character_List.R_Char.Count + Character_List.SR_Char.Count + Character_List.SSR_Char.Count)})";
         }
@@ -81,6 +85,8 @@ public class Dictionary_Ctrl : MonoBehaviour
             R_Char_Slot.SetActive(false);
             SR_Char_Slot.SetActive(false);
             SSR_Char_Slot.SetActive(true);
+
+            // SSR등급 보유 Text
             Char_Count.text = $"{SSR_Count} / {Character_List.SSR_Char.Count}  ({(R_Count + SR_Count + SSR_Count)} / " +
                 $"{(Character_List.R_Char.Count + Character_List.SR_Char.Count + Character_List.SSR_Char.Count)})";
         }
@@ -123,13 +129,14 @@ public class Dictionary_Ctrl : MonoBehaviour
     #region Click_Char_Info
     public void Show_Char_Info(Character _char)
     {
+        // 도감에서 캐릭터 정보 볼 수 있도록 
         CharInfo_Panel.SetActive(true);
         SelectChar = _char;
 
         #region Char_Info_UI
+        // 선택한 캐릭터에 맞는 UI이미지들로 바꿔주기
         UserInfo.Get_Square_Image(Character_Image, _char);
         CharStar_Refresh(_char, Char_Grade);
-
 
         Char_Ele.sprite = Elements[(int)_char.Get_CharElement];
         Element_Back.sprite = Elements_BG[(int)_char.Get_CharElement];
@@ -138,9 +145,9 @@ public class Dictionary_Ctrl : MonoBehaviour
         Char_Grade.color = colors[(int)_char.Get_CharElement];
 
         CharName_Lv.text = $"{_char.Get_CharName} Lv.1";
-        // Char_Grade.rectTransform.sizeDelta = new Vector3(20 * _char.Get_CharStar, 20.0f, 0.0f);
         #endregion
 
+        // 캐릭터 속성, 등급에 따라 색상, 크기를 다르게 표현하기 위해
         #region Transition
         CharStar_Refresh(_char, TransChar_Grade);
 
@@ -162,6 +169,7 @@ public class Dictionary_Ctrl : MonoBehaviour
     #region Change_Star_UI
     void CharStar_Refresh(Character _char, Image _image)
     {
+        // R, SR, SSR 등급에 따라 다르게 보이는 이미지 출력
         if (_char.Get_CharGrade == Define.CHAR_GRADE.R)
         {
             _image.rectTransform.sizeDelta = new Vector2(96.0f, 30.0f);
@@ -180,22 +188,31 @@ public class Dictionary_Ctrl : MonoBehaviour
     #region Clear_Select_CharS
     public void Clear_SelectChar()
     {
+        // 선택한 캐릭터 제거
+        SoundManager.Inst.VoiceAudioSrc.Stop();
+
         if (SelectChar != null)
             SelectChar = null;
     }
     #endregion
 
+    // 캐릭터 리스트 패널로 이동
     public void On_Click_Character_Info()
     {
+        // 이 패널 닫기
         #region Off_this_Panel
         On_Click_CharGrade_Btn(0);
         CharInfo_Panel.SetActive(false);
         this.gameObject.SetActive(false);
         #endregion
 
+        // 화면 전환 트랜지션 작동
         Circle_Transition.SetActive(true);
+        // 도감에서 넘어간거니까 Back버튼을 눌렀을 때 도감에 다시올 수 있는 Back버튼 활성화
         CharacterUI_Ref.CharInfo_From_Dict(true);
+        // 현재 선택한 캐릭터 변경
         CharacterUI_Ref.On_Click_CharInfo(SelectChar);
+        // 캐릭터 리스트 열어주기
         CharacterPanel.SetActive(true);
     }
 }

@@ -30,27 +30,40 @@ public class GoogleSheetManager : MonoBehaviour
     string[] availSheetArray;
     string json;
     bool refeshTrigger;
-    public static GoogleSheetManager instance;
+    public static GoogleSheetManager Inst;
 
+    #region Init
+    // 싱글톤
     private void Awake()
     {
-        instance = GetInstance();
+        Inst = GetInstance();
     }
 
+    // 시작과 동시에 googleSheetSO 반환하기 위해 미리 메모리 할당
     public static T SO<T>() where T : ScriptableObject
     {
         if (GetInstance().googleSheetSO == null)
         {
-            Debug.Log($"googleSheetSO is null");
+            // googleSheetSO가 아예 없을 경우 null 반환
             return null;
         }
 
+        // googleSheetSO를 T 타입으로 캐스팅해 반환
         return GetInstance().googleSheetSO as T;
     }
 
-
+    static GoogleSheetManager GetInstance()
+    {
+        if (Inst == null)
+        {
+            Inst = FindFirstObjectByType<GoogleSheetManager>();
+        }
+        return Inst;
+    }
+    #endregion
 
 #if UNITY_EDITOR
+    // 구글 스프레드 시트 값 받아오기
     [ContextMenu("FetchGoogleSheet")]
     async void FetchGoogleSheet()
     {
@@ -298,13 +311,4 @@ public class GoogleSheetManager : MonoBehaviour
         }
     }
 #endif
-
-    static GoogleSheetManager GetInstance()
-    {
-        if (instance == null)
-        {
-            instance = FindFirstObjectByType<GoogleSheetManager>();
-        }
-        return instance;
-    }
 }

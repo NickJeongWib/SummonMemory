@@ -126,6 +126,7 @@ public class Gacha_Manager : MonoBehaviour
     // TODO ## Gacha_Manager 가차 시스템
     public void Summon()
     {
+        Videoplayer.playbackSpeed = 0.7f;
         // TODO ## Gacha_Manager : TestMode
         if (!GameManager.Inst.TestMode)
         {

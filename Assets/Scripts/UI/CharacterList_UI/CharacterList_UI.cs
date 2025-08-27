@@ -357,9 +357,9 @@ public class CharacterList_UI : MonoBehaviour
 
         CharImg_Anim_Ref.Get_ImageIndex = 0;
         CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex);
+
         // 장착한 캐릭터에 따라 이미지 교체 함수
         CharImg_Anim_Ref.CharImage_ChangeAnimF();
-
 
         Refresh_CharacterList();
         Refresh_Equip_Btn();
@@ -407,8 +407,9 @@ public class CharacterList_UI : MonoBehaviour
             }
         }
 
+        // 착용하면 인덱스 0부터 다시 시작하고 이미지 등급에 맞게 변환
         CharImg_Anim_Ref.Get_ImageIndex = 0;
-        CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex); ;
+        CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex);
 
         // 장착한 캐릭터에 따라 이미지 교체 함수
         CharImg_Anim_Ref.CharImage_ChangeAnimF();
@@ -477,6 +478,7 @@ public class CharacterList_UI : MonoBehaviour
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_EQUIP_CHAR);
         // 대기 캐릭터 UI 생성
         StageSelect_UI.Inst.Spawn_Stand_Char();
+        CharImg_Anim_Ref.PlayCheck_ChangeAnim();
     }
     #endregion
 
@@ -489,6 +491,9 @@ public class CharacterList_UI : MonoBehaviour
 
         Old_Equip_Characters.Clear();
         UserInfo.Old_UserCharDict_Copy.Clear();
+
+        // 움직이는 연출 멈추기
+        CharImg_Anim_Ref.Stop_Anim();
 
         for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
         {
@@ -509,7 +514,7 @@ public class CharacterList_UI : MonoBehaviour
         CharImg_Anim_Ref.Get_ImageIndex = 0;
         CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex);
         // 장착한 캐릭터에 따라 이미지 교체 함수
-        CharImg_Anim_Ref.CharImage_ChangeAnimF();
+        CharImg_Anim_Ref.PlayCheck_ChangeAnim();
     }
 
     public void On_Click_ChangeCancel()
@@ -548,6 +553,9 @@ public class CharacterList_UI : MonoBehaviour
         Equip_Char_Btn(false);
         Change_Char_Btn.SetActive(true);
         Equip_Info_Btn.SetActive(false);
+
+        // 장착한 캐릭터에 따라 이미지 교체 함수
+        CharImg_Anim_Ref.PlayCheck_ChangeAnim();
     }
 
     [SerializeField] int Equip_Count;
@@ -1012,8 +1020,24 @@ public class CharacterList_UI : MonoBehaviour
         CharInfo_CrtDmg_Txt.text = $"{(GameManager.Inst.Get_SelectChar.Get_Char_CRT_Damage * 100).ToString("N1")}% " +
             $"<color=orange>(+{((GameManager.Inst.Get_SelectChar.Get_Char_CRT_Damage - GameManager.Inst.Get_SelectChar.Get_BaseCRID) * 100).ToString("N1")}%)</color>";
 
-        CharInfo_CrtRate_Txt.text = $"{(GameManager.Inst.Get_SelectChar.Get_Char_CRT_Rate * 100).ToString("N1")}% " +
-            $"<color=orange>(+{((GameManager.Inst.Get_SelectChar.Get_Char_CRT_Rate - GameManager.Inst.Get_SelectChar.Get_BaseCRIR) * 100).ToString("N1")}%)</color>";
+        #region CriR_100%_Over
+        // 치확이 100% 넘어간다면 
+        if (1 < GameManager.Inst.Get_SelectChar.Get_Char_CRT_Rate)
+        {
+            // 초과치 계산
+            float OverRate = GameManager.Inst.Get_SelectChar.Get_Char_CRT_Rate - 1;
+            CharInfo_CrtRate_Txt.text = $"100.0% " +
+                $"<color=red>(+{((GameManager.Inst.Get_SelectChar.Get_Char_CRT_Rate - GameManager.Inst.Get_SelectChar.Get_BaseCRIR) * 100).ToString("N1")}%)</color>";
+        }
+        // 치확이 100% 넘어가지 않는다면
+        else if (GameManager.Inst.Get_SelectChar.Get_Char_CRT_Rate <= 1)
+        {
+
+            CharInfo_CrtRate_Txt.text = $"{(GameManager.Inst.Get_SelectChar.Get_Char_CRT_Rate * 100).ToString("N1")}% " +
+                $"<color=orange>(+{((GameManager.Inst.Get_SelectChar.Get_Char_CRT_Rate - GameManager.Inst.Get_SelectChar.Get_BaseCRIR) * 100).ToString("N1")}%)</color>";
+        }
+        #endregion
+
 
         CharInfo_Element_Txt.text = $"<color=orange>{Element_Kor_Str[(int)GameManager.Inst.Get_SelectChar.Get_CharElement]}</color>";
 

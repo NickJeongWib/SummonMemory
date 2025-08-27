@@ -553,6 +553,8 @@ public class DataNetwork_Mgr : MonoBehaviour
     #region Original_CharacterListUpdate_Network
     private void UpdateCharListCo()
     {
+        DataNetwork_Mgr.Inst.LoadingPanel.gameObject.SetActive(true);
+
         // UID가 없다면 return;
         if (UserInfo.UID == "")
             return;
@@ -587,7 +589,10 @@ public class DataNetwork_Mgr : MonoBehaviour
             PlayFabClientAPI.UpdateUserData(request,
             (_result) =>
             {
-                // Debug.Log("캐릭터 리스트 원본 저장 성공");
+                if (LoadingPanel != null)
+                {
+                    LoadingPanel.StartCoroutine(LoadingPanel.LoadImage());
+                }
             },
             (_error) =>
             {

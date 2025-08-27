@@ -7,7 +7,7 @@ using System.Linq;
 
 public class Character_List : MonoBehaviour
 {
-    [SerializeField] GoogleSheetSO GoogleSheetSORef;
+    GoogleSheetSO GoogleSheetSORef;
 
     public static List<Character> R_Char = new List<Character>();
     public static List<Character> SR_Char = new List<Character>();
@@ -23,6 +23,8 @@ public class Character_List : MonoBehaviour
 
     private void Awake()
     {
+        GoogleSheetSORef = GoogleSheetManager.SO<GoogleSheetSO>();
+
         #region Character_Level
         for (int i = 0; i < GoogleSheetSORef.Level_DBList.Count; i++)
         {

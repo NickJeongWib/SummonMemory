@@ -17,21 +17,37 @@ public class CharImg_Anim : MonoBehaviour
 
     private void Start()
     {
-        CharChange_animator.enabled = false;
-
         // TODO ## 초기 테스트 값
-        // Debug.Log("Count : " + UserInfo.Equip_Characters.Count);
-        
-        if (UserInfo.Equip_Characters.Count == 0)
-        {
-            Debug.LogError("없음");
-        }
-        else
-        {
-            // Debug.Log(UserInfo.Equip_Characters[0].Get_CharName);
-        }
-       
         R_SR_Image_Change(0);
+    }
+
+    private void OnEnable()
+    {
+        ImageIndex = 0;
+
+        PlayCheck_ChangeAnim();
+    }
+
+    public void PlayCheck_ChangeAnim()
+    {
+        // 유저가 장착중인 캐릭터가 1이하면 멈춘 애니메이션
+        if (UserInfo.Equip_Characters.Count <= 1)
+        {
+            CharChange_animator.Play("Stop_Anim");
+        }
+        // 유저가 장착중인 캐릭터가 2개 이상이면 이미지 체인지
+        else if (UserInfo.Equip_Characters.Count > 1)
+        {
+            CharChange_animator.Play("Change_Anim");
+        }
+    }
+
+    // 움직이는 연출 멈추기
+    public void Stop_Anim()
+    {
+        ImageIndex = 0;
+        R_SR_Image_Change(ImageIndex);
+        CharChange_animator.Play("Stop_Anim");
     }
 
     public void CharImage_ChangeAnimF()

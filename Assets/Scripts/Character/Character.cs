@@ -362,7 +362,9 @@ public class Character
             Char_CRT_RATE += EquipItems[(int)_equipType].Get_Item_CRI_RATE;
 
             if (Char_CRT_RATE >= 1.0f)
-                Char_CRT_RATE = 1.0f;
+            {
+                //Char_CRT_RATE = 1.0f;
+            }
         }
         else // 아이템 해제 시
         {
@@ -403,7 +405,10 @@ public class Character
             Char_CRT_RATE += EquipItems[(int)_equipType].Get_Item_CRI_RATE;
 
             if (Char_CRT_RATE >= 1.0f)
-                Char_CRT_RATE = 1.0f;
+            {
+                // Char_CRT_RATE = 1.0f;
+            }
+
         }
     }
 

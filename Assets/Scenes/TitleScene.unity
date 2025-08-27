@@ -3407,7 +3407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479ff55a8e686f84c9018c89cf86e659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoogleSheetSORef: {fileID: 11400000, guid: 3e3846e2bbbd87d4388ef03d8979f93f, type: 2}
   SkillData_List: []
   VoiceList: []
 --- !u!114 &1905404842

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Define;
 
 public class Character_Equipment : MonoBehaviour
 {
     [SerializeField] Inventory_UI InventoryUI_Ref;
+    [SerializeField] Lobby_Manager LobbyMangerRef;
+
     Item SelectEquipItem;
     public Item Get_SelectEquipItem { get => SelectEquipItem; set => SelectEquipItem = value; }
 
@@ -13,6 +16,7 @@ public class Character_Equipment : MonoBehaviour
     [SerializeField] Image ItemGradeColor;
     [SerializeField] Mask ItemGradeMask;
     
+
     //Image ItemIcon;
     //Image ItemGradeColor;
     //Mask ItemGradeMask;
@@ -215,5 +219,10 @@ public class Character_Equipment : MonoBehaviour
         Refresh_List_UI((int)InventoryUI_Ref.Item_Info.Get_CurrentItem.Get_EquipType);
         InventoryUI_Ref.Item_Info.gameObject.SetActive(false);
         InventoryUI_Ref.EquipSlots.SetActive(true);
+
+        LobbyMangerRef.Refresh_User_CombatPower();
+
+        //DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
+        //DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
     }
 }

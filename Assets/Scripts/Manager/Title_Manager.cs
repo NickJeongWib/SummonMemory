@@ -507,11 +507,17 @@ public class Title_Manager : MonoBehaviour
                     UserInfo.UserCharDict_Copy.Add(new KeyValuePair<string, Character>(charName, character));
                 }
             }
-            UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
+            // UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
+
+            // UserInfo.UserCharDict_Copy_2에 원본값 저장
+            foreach (var UserCharDict in UserInfo.UserCharDict)
+            {
+                UserInfo.UserCharDict_Copy_2.Add(new KeyValuePair<string, Character>(UserCharDict.Key, UserCharDict.Value));
+            }
+
             LoadUserEquipInvenFromChunks(EquipInvenDataKet);
 
             isCharLoad = false;
-            // Debug.Log("모든 캐릭터 로드 완료");
 
         },
         error => 
@@ -552,15 +558,11 @@ public class Title_Manager : MonoBehaviour
                 if (pair.Value.Get_InventoryType == INVENTORY_TYPE.SPEND)
                 {
                     UserInfo.Spend_Inventory.Add(pair.Value);
-                    // Debug.Log(pair.Value.Get_Amount);
                 }
                 else if (pair.Value.Get_InventoryType == INVENTORY_TYPE.UPGRADE)
                 {
                     UserInfo.Upgrade_Inventory.Add(pair.Value);
-                    // Debug.Log(pair.Value.Get_Amount);
                 }
-
-                // Debug.Log(pair.Value.Get_Item_Name);
             }
             isInvenLoad = false;
         },
@@ -594,7 +596,7 @@ public class Title_Manager : MonoBehaviour
             {
                 loadedList[i].Load_Item_Icon(loadedList[i].Get_ItemImage_Path);
             }
-
+            // UserInfo.Equip_Inventory 로딩한 리스트 붙여넣기
             UserInfo.Equip_Inventory = loadedList;
 
             #region Type
@@ -604,7 +606,7 @@ public class Title_Manager : MonoBehaviour
                 if (item.Get_isEquip)
                 {
                     // 아이템 소유 중인 캐릭터가 있다면
-                    if(UserInfo.UserCharDict.ContainsKey(item.Set_EquipCharName))
+                    if (UserInfo.UserCharDict.ContainsKey(item.Set_EquipCharName))
                     {
                         // 소유 주 등록
                         item.Get_OwnCharacter = UserInfo.UserCharDict[item.Set_EquipCharName];

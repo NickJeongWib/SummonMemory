@@ -249,6 +249,16 @@ public class Inventory_UI : MonoBehaviour
             (UserInfo.Upgrade_Inventory.Count <= _slotNum && Inventory_Type == INVENTORY_TYPE.UPGRADE))
             return;
 
+        // 장착 장비면 분해버튼 활성화 아니면 비활성화 
+        if(Inventory_Type == INVENTORY_TYPE.EQUIPMENT)
+        {
+            Item_Info.Get_Decomposition_Btn.SetActive(true);
+        }
+        else
+        {
+            Item_Info.Get_Decomposition_Btn.SetActive(false);
+        }
+
         // 아이템 정보 표기
         Item_Info.ItemInfo_Refresh(Inventory_Type, _slotNum);
         Item_Info.gameObject.SetActive(true);
