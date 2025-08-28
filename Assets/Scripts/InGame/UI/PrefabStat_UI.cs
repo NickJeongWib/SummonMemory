@@ -14,6 +14,8 @@ public class PrefabStat_UI : MonoBehaviour
     [SerializeField] Transform Buff_Tr;
     public Transform Get_Buff_Tr { get => Buff_Tr; }
 
+    // 동적으로 생성 시 호출되는 함수
+    // UI 초기화 목적으로 사용
     public void Set_UI(Sprite _icon, string _name, int _index = 0)
     {
         PosIndex = _index;
@@ -23,6 +25,7 @@ public class PrefabStat_UI : MonoBehaviour
         HP_Text.text = "100.0%";
     }
 
+    // 캐릭터나 몬스터가 데미지 입었을 시 HP바 비율 계산하기 위한 함수
     public void Set_HP(float _value)
     {
         HP_Text.text = $"{(_value * 100.0f).ToString("N1")}%";

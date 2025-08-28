@@ -100,8 +100,42 @@ public class DataNetwork_Mgr : MonoBehaviour
         {
             UpdateStageCo();
         }
+        else if (PacketBuff[0] == PACKETTYPE.GACHA_COUNT)
+        {
+            UpdateGachaCountCo();
+        }
         PacketBuff.RemoveAt(0);
     }
+
+    #region UserGachaCount
+    private void UpdateGachaCountCo()
+    {
+        // UID가 없다면 return;
+        if (UserInfo.UID == "")
+            return;
+
+        // SSR, SR 카운트를 저장
+        var request = new UpdateUserDataRequest()
+        {
+            Data = new Dictionary<string, string>()
+            {
+                { "SSR_Count", UserInfo.SSR_Set_Count.ToString() },
+                { "SR_Count", UserInfo.SR_Set_Count.ToString() }
+            }
+        };
+
+        NetWaitTime = 1.0f;
+
+        PlayFabClientAPI.UpdateUserData(request,
+            (_result) =>
+            {
+            },
+            (_error) =>
+            {
+                Debug.Log("가차 카운트 저장 실패 : " + _error.GenerateErrorReport());
+            });
+    }
+    #endregion
 
     #region StageClear
     private void UpdateStageCo()
@@ -416,6 +450,10 @@ public class DataNetwork_Mgr : MonoBehaviour
     #region Clear_Char_Data
     private void UpdateClearCharCo()
     {
+        // UID가 없다면 return;
+        if (UserInfo.UID == "")
+            return;
+
         var Get_request = new GetUserDataRequest();
         // 키값 삭제하기위한 리스트
         List<string> RemoveKey = new List<string>();

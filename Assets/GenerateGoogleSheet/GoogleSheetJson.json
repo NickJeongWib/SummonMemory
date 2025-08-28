@@ -2711,7 +2711,7 @@
       "BUFF_TIME": 0,
       "NORMAL_ATK_RATIO": 1,
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n물 속성 데미지를 준다.",
-      "SKILL_DESC": "2 SP를 사용하여 아군 2명에게 {_hill}%의 회복을 시킨다.",
+      "SKILL_DESC": "2 SP를 사용하여 아군 2명에게 {_hill}%의\\\\n회복을 시킨다.",
       "SKILL_ICON": "Skill/Icon/Water/Hill",
       "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterHill_Lapa/WaterHill_Prefab",
       "SKILL_SFX_PATH": "Sounds/Skill_SFX/Water/Lapa/Lapa_Skill"
@@ -2911,7 +2911,7 @@
       "BUFF_TIME": 0,
       "NORMAL_ATK_RATIO": 1.2,
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n물 속성 데미지를 준다.",
-      "SKILL_DESC": "3 SP를 사용하여 아군 3명에게 {_hill}%의 회복을 시킨다.",
+      "SKILL_DESC": "3 SP를 사용하여 아군 3명에게 {_hill}%의\\\\n회복을 시킨다.",
       "SKILL_ICON": "Skill/Icon/Water/GreatHill",
       "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/GreatWaterHill_Ariel/GreatWaterHill_Prefab",
       "SKILL_SFX_PATH": "Sounds/Skill_SFX/Water/Arine/ArineSkill"
@@ -3048,10 +3048,10 @@
       "BUFF_RATIO": 0,
       "BUFF_TYPE": "NONE",
       "SP_HILL_COUNT": 0,
-      "BUFF_TIME": 1,
+      "BUFF_TIME": 2,
       "NORMAL_ATK_RATIO": 1.4,
       "NORMAL_ATK_DESC": "SP를 1회복 시키고 {_damage}%만큼\\\\n물 속성 데미지를 준다.",
-      "SKILL_DESC": "4 SP를 사용하여 적 5명에게 {_damage}%의\\\\n물 속성 데미지를 주고\\\\n적들을 1턴 기절 시킨다.",
+      "SKILL_DESC": "4 SP를 사용하여 적 5명에게 {_damage}%의\\\\n물 속성 데미지를 주고\\\\n적들을 2턴 기절 시킨다.",
       "SKILL_ICON": "Skill/Icon/Water/WhaleAtk",
       "SKILL_PREFAB": "Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WhaleAtk_Line/WhaleAtk_Prefab",
       "SKILL_SFX_PATH": "Sounds/Skill_SFX/Water/Line/LineSkill"

@@ -20,6 +20,7 @@ public class InGame_ObjPool : MonoBehaviour
     [SerializeField] Transform[] SpawnPos;
     public List<Skill_Icon> SkillIcon_List = new List<Skill_Icon>();
     [SerializeField] Sprite[] NormalAtk_Icon;
+    public Sprite[] Get_NormalAtk_Icon { get => NormalAtk_Icon; }
 
     [Header("Char_UI")]
     [SerializeField] Transform Char_UI_Tr;
@@ -197,7 +198,7 @@ public class InGame_ObjPool : MonoBehaviour
     }
 
     #region BuffIcon_Return;
-    public GameObject Get_BuffIcon(Character_Ctrl _charCtrl ,Transform _parent, Sprite _sprite, int _turn, float _buffValue, BUFF_TYPE _buffType)
+    public GameObject Get_BuffIcon(Character_Ctrl _useChar, Character_Ctrl _charCtrl ,Transform _parent, Sprite _sprite, int _turn, float _buffValue, BUFF_TYPE _buffType, Skill _skill)
     {
         for(int i = 0; i < BuffIcon_List.Count; i++)
         {
@@ -209,14 +210,40 @@ public class InGame_ObjPool : MonoBehaviour
             {
                 // 매개변수로 받은값 다시 넣어 생성위치 잡아주기
                 BuffIcon_List[i].gameObject.SetActive(true);
-                BuffIcon_List[i].Set_Skill_UI(_charCtrl, _parent, _sprite, _turn, _buffValue, _buffType);
+                BuffIcon_List[i].Set_Skill_UI(_useChar, _charCtrl, _parent, _sprite, _turn, _buffValue, _buffType,
+                    _skill);
                 return BuffIcon_List[i].gameObject;
             }
         }
 
         // 리스트에 오브젝트가 전부 활성화 중이면 생성해서 return
         GameObject buffIcon = Instantiate(Buff_Prefab);
-        buffIcon.GetComponent<BuffIcon_UI>().Set_Skill_UI(_charCtrl, _parent, _sprite, _turn, _buffValue, _buffType);
+        buffIcon.GetComponent<BuffIcon_UI>().Set_Skill_UI(_useChar, _charCtrl, _parent, _sprite, _turn, _buffValue, _buffType,
+            _skill);
+        BuffIcon_List.Add(buffIcon.GetComponent<BuffIcon_UI>());
+        return buffIcon;
+    }
+
+    public GameObject Get_DeBuffIcon(Enemy_Ctrl _enemyCtrl, Transform _parent, Sprite _sprite, int _turn, float _buffValue, DEBUFF_TYPE _deBuffType, string _skillName, Skill _skill)
+    {
+        for (int i = 0; i < BuffIcon_List.Count; i++)
+        {
+            if (BuffIcon_List[i].gameObject.activeSelf)
+            {
+                continue;
+            }
+            else
+            {
+                // 매개변수로 받은값 다시 넣어 생성위치 잡아주기
+                BuffIcon_List[i].gameObject.SetActive(true);
+                BuffIcon_List[i].Set_DeBuff_UI(_enemyCtrl, _parent, _sprite, _turn, _deBuffType, _skillName, _buffValue, _skill);
+                return BuffIcon_List[i].gameObject;
+            }
+        }
+
+        // 리스트에 오브젝트가 전부 활성화 중이면 생성해서 return
+        GameObject buffIcon = Instantiate(Buff_Prefab);
+        buffIcon.GetComponent<BuffIcon_UI>().Set_DeBuff_UI(_enemyCtrl, _parent, _sprite, _turn, _deBuffType, _skillName, _buffValue, _skill);
         BuffIcon_List.Add(buffIcon.GetComponent<BuffIcon_UI>());
         return buffIcon;
     }

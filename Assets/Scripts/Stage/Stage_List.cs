@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Stage_List : MonoBehaviour
 {
-    [SerializeField] GoogleSheetSO GoogleSheetSORef;
+    GoogleSheetSO GoogleSheetSORef;
 
     public static List<Stage_DB> StageList = new List<Stage_DB>();
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        GoogleSheetSORef = GoogleSheetManager.SO<GoogleSheetSO>();
+
         // 스테이지 데이터 정보 저장
         for (int i = 0; i < GoogleSheetSORef.STAGE_DBList.Count; i++)
         {

@@ -23,6 +23,8 @@ public class EquipChar_Move : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        SoundManager.Inst.PlayUISound();
+
         // 이름 가져와서 몇번째 장착된 캐릭인지 알기
         string[] name = this.gameObject.name.Split("_");
         Pos_Num = (int.Parse(name[2]) - 1);
@@ -62,6 +64,8 @@ public class EquipChar_Move : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         {
             return;
         }
+
+        SoundManager.Inst.PlayUISound();
 
         int EquipCharCount = UserInfo.Equip_Characters.Count;
 

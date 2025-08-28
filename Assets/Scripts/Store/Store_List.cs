@@ -7,7 +7,7 @@ using System.Linq;
 
 public class Store_List : MonoBehaviour
 {
-    [SerializeField] GoogleSheetSO GoogleSheetSORef;
+    GoogleSheetSO GoogleSheetSORef;
 
     public static List<Store_Item> CurrencyList = new List<Store_Item>();
     public static List<Store_Item> TicketList = new List<Store_Item>();
@@ -17,6 +17,8 @@ public class Store_List : MonoBehaviour
 
     private void Awake()
     {
+        GoogleSheetSORef = GoogleSheetManager.SO<GoogleSheetSO>();
+
         for (int i = 0; i < GoogleSheetSORef.Store_Item_DBList.Count; i++)
         {
             STORE_TYPE.TryParse(GoogleSheetSORef.Store_Item_DBList[i].STORE_TYPE, out STORE_TYPE storeType);

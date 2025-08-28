@@ -71,6 +71,7 @@ public class Lobby_Manager : MonoBehaviour
     {
         DataNetwork_Mgr.Inst.LoadingPanel = LoadingPanel;
         SoundManager.Inst.PlayBGM(Lobby_BGM);
+
         // TODO ## 초기 테스트 값
         if (UserInfo.UserCharDict.Count <= 0)
         {
@@ -417,6 +418,7 @@ public class Lobby_Manager : MonoBehaviour
         }
     }
 
+    // 인게임 진입 버튼 이벤트에 매개변수 기입한 숫자를 가져와 인덱스에 맞는 스테이지의 정보를 가져옴
     public void On_Click_InGame(int _index)
     {
         SoundManager.Inst.PlayUISound();
@@ -432,6 +434,8 @@ public class Lobby_Manager : MonoBehaviour
     }
 }
 
+#region JSON_Wrapper
+// 리스트 json으로 변환하기 위한 클래스들
 [System.Serializable]
 public class ItemListWrapper
 {
@@ -449,3 +453,4 @@ public class QuestDataListWrapper
 {
     public List<QuestData> QuestData_List;
 }
+#endregion

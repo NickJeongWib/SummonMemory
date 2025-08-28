@@ -5,15 +5,17 @@ using static Define;
 
 public class Monster_List : MonoBehaviour
 {
-    [SerializeField] GoogleSheetSO GoogleSheetSORef;
+    GoogleSheetSO GoogleSheetSORef;
 
     public static List<Monster_DB> MonsterList = new List<Monster_DB>();
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        GoogleSheetSORef = GoogleSheetManager.SO<GoogleSheetSO>();
+
         // 몬스터 데이터 저장
-        for(int i = 0; i < GoogleSheetSORef.ENEMY_DBList.Count; i++)
+        for (int i = 0; i < GoogleSheetSORef.ENEMY_DBList.Count; i++)
         {
             MONSTER_ELE.TryParse(GoogleSheetSORef.ENEMY_DBList[i].MON_ELEMENT, out MONSTER_ELE element);
 

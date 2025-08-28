@@ -484,6 +484,7 @@ public class Item_Info_Panel : MonoBehaviour
     {
         SoundManager.Inst.PlayUISound();
 
+        // 선택된 장비가 장착을 하고 있다면 return
         if (CurrentItem.Get_OwnCharacter != null)
         {
             DecomError_Info_Panel.SetActive(true);
@@ -493,61 +494,63 @@ public class Item_Info_Panel : MonoBehaviour
         // 로딩창 켜주기
         DataNetwork_Mgr.Inst.LoadingPanel.gameObject.SetActive(true);
 
-
+        // 분해보상 수량 계산 부분
         Crystal_Amount = (CurrentItem.Get_Item_Lv + 1);
         Powder_Amount = 2 * (CurrentItem.Get_Item_Lv + 1);
 
+        // 분해를 했으니 해당장비의 부위 리스트에서 삭제
         if (CurrentItem.Get_EquipType == EQUIP_TYPE.WEAPON)
         {
             UserInfo.Weapon_Equipment.Remove(CurrentItem);
             #region Test
-            for (int i = 0; i < UserInfo.Weapon_Equipment.Count; i++)
-            {
-                Debug.Log($"WEAP {i} : {UserInfo.Weapon_Equipment[i].Get_Item_Name}");
-            }
+            //for (int i = 0; i < UserInfo.Weapon_Equipment.Count; i++)
+            //{
+            //    Debug.Log($"WEAP {i} : {UserInfo.Weapon_Equipment[i].Get_Item_Name}");
+            //}
             #endregion
         }
         else if (CurrentItem.Get_EquipType == EQUIP_TYPE.UPPER)
         {
             UserInfo.Upper_Equipment.Remove(CurrentItem);
             #region Test
-            for (int i = 0; i < UserInfo.Upper_Equipment.Count; i++)
-            {
-                Debug.Log($"UPPET {i} : {UserInfo.Upper_Equipment[i].Get_Item_Name}");
-            }
+            //for (int i = 0; i < UserInfo.Upper_Equipment.Count; i++)
+            //{
+            //    Debug.Log($"UPPET {i} : {UserInfo.Upper_Equipment[i].Get_Item_Name}");
+            //}
             #endregion
         }
         else if (CurrentItem.Get_EquipType == EQUIP_TYPE.HELMET)
         {
             UserInfo.Helmet_Equipment.Remove(CurrentItem);
             #region Test
-            for (int i = 0; i < UserInfo.Helmet_Equipment.Count; i++)
-            {
-                Debug.Log($"HELMET {i} : {UserInfo.Helmet_Equipment[i].Get_Item_Name}");
-            }
+            //for (int i = 0; i < UserInfo.Helmet_Equipment.Count; i++)
+            //{
+            //    Debug.Log($"HELMET {i} : {UserInfo.Helmet_Equipment[i].Get_Item_Name}");
+            //}
             #endregion
         }
         else if (CurrentItem.Get_EquipType == EQUIP_TYPE.ACCESSORY)
         {
             UserInfo.Accessory_Equipment.Remove(CurrentItem);
             #region Test
-            for (int i = 0; i < UserInfo.Accessory_Equipment.Count; i++)
-            {
-                Debug.Log($"ACCE {i} : {UserInfo.Accessory_Equipment[i].Get_Item_Name}");
-            }
+            //for (int i = 0; i < UserInfo.Accessory_Equipment.Count; i++)
+            //{
+            //    Debug.Log($"ACCE {i} : {UserInfo.Accessory_Equipment[i].Get_Item_Name}");
+            //}
             #endregion
         }
         else
         {
             UserInfo.Glove_Equipment.Remove(CurrentItem);
             #region Test
-            for (int i = 0; i < UserInfo.Glove_Equipment.Count; i++)
-            {
-                Debug.Log($"GLOVE {i} : {UserInfo.Glove_Equipment[i].Get_Item_Name}");
-            }
+            //for (int i = 0; i < UserInfo.Glove_Equipment.Count; i++)
+            //{
+            //    Debug.Log($"GLOVE {i} : {UserInfo.Glove_Equipment[i].Get_Item_Name}");
+            //}
             #endregion
         }
 
+        // 분해를 했으니 총 장비 리스트에서 삭제
         UserInfo.Equip_Inventory.Remove(CurrentItem);
         CurrentItem = null;
 
@@ -582,7 +585,7 @@ public class Item_Info_Panel : MonoBehaviour
     void Open_Get_DecomItem()
     {
         Decom_GetItem_Info_Panel.SetActive(true);
-        Get_Decom_Amount_Text.text = $"";
+        Get_Decom_Amount_Text.text = $"재련 수정 <color=orange>{Crystal_Amount}개</color> 획득\n재련 가루 <color=orange>{Powder_Amount}개</color>획득";
 
         // 분해보상을 받았으니 0개로 초기화
         Crystal_Amount = 0;
@@ -594,10 +597,12 @@ public class Item_Info_Panel : MonoBehaviour
         for (int i = 0; i < Item_List.Upgrade_Item_List.Count; i++)
         {
             // 보상 획득
+            // Item_List.Upgrade_Item_List[i].Get_Item_Name의 이름이 "재련 수정"이라면 증가
             if (Item_List.Upgrade_Item_List[i].Get_Item_Name == "재련 수정")
             {
                 UserInfo.Add_Inventory_Item(Item_List.Upgrade_Item_List[i], Crystal_Amount);
             }
+            // Item_List.Upgrade_Item_List[i].Get_Item_Name의 이름이 "재련 가루"이라면 증가
             else if (Item_List.Upgrade_Item_List[i].Get_Item_Name == "재련 가루")
             {
                 UserInfo.Add_Inventory_Item(Item_List.Upgrade_Item_List[i], Powder_Amount);

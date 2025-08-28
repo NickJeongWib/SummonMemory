@@ -199,6 +199,21 @@ public class Title_Manager : MonoBehaviour
                         UserInfo.Money = GetValue;
                     }
                 }
+                else if (eachData.Key.Contains("SSR_Count"))
+                {
+                    if (int.TryParse(eachData.Value.Value, out GetValue))
+                    {
+                        UserInfo.SSR_Set_Count = GetValue;
+                    }   
+                }
+                else if (eachData.Key.Contains("SR_Count"))
+                {
+                    if (int.TryParse(eachData.Value.Value, out GetValue))
+                    {
+                        UserInfo.SR_Set_Count = GetValue;
+                    }
+
+                }
                 else if (eachData.Key.Contains("UserProfile"))
                 {
                     string[] path = eachData.Value.Value.Split(",");

@@ -240,5 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88de5424b22fbd408b12e98bfb74ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InGame_Char: {fileID: 0}
+  animator: {fileID: 0}
   Characet_Icon: {fileID: 3279324970464829411}
   Skill_On_Frame: {fileID: 4350279480689456453}
+  Skill_Icon_Img: {fileID: 0}
+  NormalAtk_Icon: {fileID: 0}

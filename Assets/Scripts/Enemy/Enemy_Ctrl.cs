@@ -23,12 +23,17 @@ public class Enemy_Ctrl : MonoBehaviour
     [SerializeField] float Atk;
     public float Get_Atk { get => Atk; }
     [SerializeField] float Def;
-    public float Get_Def { get => Def; }
+    public float Get_Def { get => Def; set => Def = value; }
     [SerializeField] int TargetCount;
     public int Get_TargetCount { get => TargetCount; }
     [SerializeField] float Skill_Ratio;
     public float Get_Skill_Ratio { get => Skill_Ratio; }
-
+    DEBUFF_TYPE DebuffType;
+    public DEBUFF_TYPE Set_DebuffType { set => DebuffType = value; }
+    bool isCC;
+    public bool Get_isCC;
+    public List<string> DebuffSkill_List = new List<string>();
+    public List<BuffIcon_UI> DeBuffIconList = new List<BuffIcon_UI>();
 
     [Header("Skill")]
     [SerializeField] GameObject Skill_Prefab;
@@ -42,6 +47,7 @@ public class Enemy_Ctrl : MonoBehaviour
     [SerializeField] Sprite Icon;
     public Sprite Get_Icon { get => Icon; }
     [SerializeField] Text DamageText;
+
 
 
     // 스탯 초기화
@@ -100,6 +106,32 @@ public class Enemy_Ctrl : MonoBehaviour
         {
             CurHP = 0;
             animator.Play("Die");
+        }
+    }
+
+    public void EndDeBuff(DEBUFF_TYPE _deBuffType, float _buffValue, string _skillName, BuffIcon_UI _buffIcon)
+    {
+        // 버프 타입이 방어면 방어력 감소
+        if (_deBuffType == DEBUFF_TYPE.DEF)
+        {
+            Def += _buffValue;
+        }
+        // 공격력이면 공격력 감소
+        else if (_deBuffType == DEBUFF_TYPE.STUNNED)
+        {
+            Get_isCC = false;
+        }
+
+        DebuffSkill_List.Remove(_skillName);
+
+
+        for (int i = 0; i < DeBuffIconList.Count; i++)
+        {
+            if(DeBuffIconList[i] == _buffIcon)
+            {
+                DeBuffIconList.Remove(_buffIcon);
+                break;
+            }
         }
     }
 

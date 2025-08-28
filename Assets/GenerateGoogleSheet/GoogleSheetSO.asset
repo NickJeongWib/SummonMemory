@@ -2255,7 +2255,7 @@ MonoBehaviour:
     NORMAL_ATK_DESC: "SP\uB97C 1\uD68C\uBCF5 \uC2DC\uD0A4\uACE0 {_damage}%\uB9CC\uD07C\\\\n\uBB3C
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_DESC: "2 SP\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC544\uAD70 2\uBA85\uC5D0\uAC8C
-      {_hill}%\uC758 \uD68C\uBCF5\uC744 \uC2DC\uD0A8\uB2E4."
+      {_hill}%\uC758\\\\n\uD68C\uBCF5\uC744 \uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Water/Hill
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WaterHill_Lapa/WaterHill_Prefab
     SKILL_SFX_PATH: Sounds/Skill_SFX/Water/Lapa/Lapa_Skill
@@ -2454,7 +2454,7 @@ MonoBehaviour:
     NORMAL_ATK_DESC: "SP\uB97C 1\uD68C\uBCF5 \uC2DC\uD0A4\uACE0 {_damage}%\uB9CC\uD07C\\\\n\uBB3C
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_DESC: "3 SP\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC544\uAD70 3\uBA85\uC5D0\uAC8C
-      {_hill}%\uC758 \uD68C\uBCF5\uC744 \uC2DC\uD0A8\uB2E4."
+      {_hill}%\uC758\\\\n\uD68C\uBCF5\uC744 \uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Water/GreatHill
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Water_Prefab/GreatWaterHill_Ariel/GreatWaterHill_Prefab
     SKILL_SFX_PATH: Sounds/Skill_SFX/Water/Arine/ArineSkill
@@ -2589,12 +2589,12 @@ MonoBehaviour:
     BUFF_RATIO: 0
     BUFF_TYPE: NONE
     SP_HILL_COUNT: 0
-    BUFF_TIME: 1
+    BUFF_TIME: 2
     NORMAL_ATK_RATIO: 1.4
     NORMAL_ATK_DESC: "SP\uB97C 1\uD68C\uBCF5 \uC2DC\uD0A4\uACE0 {_damage}%\uB9CC\uD07C\\\\n\uBB3C
       \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
     SKILL_DESC: "4 SP\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC801 5\uBA85\uC5D0\uAC8C {_damage}%\uC758\\\\n\uBB3C
-      \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC8FC\uACE0\\\\n\uC801\uB4E4\uC744 1\uD134
+      \uC18D\uC131 \uB370\uBBF8\uC9C0\uB97C \uC8FC\uACE0\\\\n\uC801\uB4E4\uC744 2\uD134
       \uAE30\uC808 \uC2DC\uD0A8\uB2E4."
     SKILL_ICON: Skill/Icon/Water/WhaleAtk
     SKILL_PREFAB: Prefab/Atk_Effect/Skill_Effect/Water_Prefab/WhaleAtk_Line/WhaleAtk_Prefab

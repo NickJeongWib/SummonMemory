@@ -130,6 +130,7 @@ public static class Define
         PROFILE_IMG,
         QUEST,
         STAGE,
+        GACHA_COUNT
     }
 
     #region Skill

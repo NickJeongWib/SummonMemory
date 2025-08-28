@@ -7,7 +7,7 @@ using System.Linq;
 
 public class Item_List : MonoBehaviour
 {
-    [SerializeField] GoogleSheetSO GoogleSheetSORef;
+    GoogleSheetSO GoogleSheetSORef;
 
     public static List<Inventory_Item> Spend_Item_List = new List<Inventory_Item>();
     public static List<Inventory_Item> Upgrade_Item_List = new List<Inventory_Item>();
@@ -16,6 +16,8 @@ public class Item_List : MonoBehaviour
 
     private void Awake()
     {
+        GoogleSheetSORef = GoogleSheetManager.SO<GoogleSheetSO>();
+
         #region Equip_Item
         for (int i = 0; i < GoogleSheetSORef.Item_DBList.Count; i++)
         {

@@ -13,6 +13,7 @@ public class Skill_Icon : MonoBehaviour
     [Header("Skill")]
     [SerializeField] Image Characet_Icon;
     [SerializeField] Image Skill_On_Frame;
+    [SerializeField] Image NormalAtk_On_Frame;
     [SerializeField] Image Skill_Icon_Img;
 
     [Header("Normal_Atk")]
@@ -27,9 +28,11 @@ public class Skill_Icon : MonoBehaviour
     // 스킬 아이콘 UI 초기화 및 캐릭터 컨트롤러 시작과 함께 초기화
     public void Set_Character_UI(Sprite _charSprite, Sprite _skillSprite, Sprite _atkIconSprite, Material _mat, Character_Ctrl _ctrl)
     {
+        // UI 값들 초기화
         InGame_Char = _ctrl;
         Characet_Icon.sprite = _charSprite;
         Skill_On_Frame.material = _mat;
+        NormalAtk_On_Frame.material = _mat;
         NormalAtk_Icon.sprite = _atkIconSprite;
 
         // 스킬 아이콘을 못 찾았으면
@@ -90,6 +93,7 @@ public class Skill_Icon : MonoBehaviour
     public void On_Click_NoramlAtk()
     {
         SoundManager.Inst.PlayUISound();
+        SoundManager.Inst.PlayEffSound("Sounds/NormalAtk");
 
         // 중복 클릭 방지
         if (InGame_Mgr.Inst.InGameState == INGAME_STATE.BATTLE)
@@ -132,5 +136,22 @@ public class Skill_Icon : MonoBehaviour
     void Skill_Use()
     {
         InGame_Char.Get_Skill_Prefab.SetActive(true);
+    }
+
+    public void Skill_Use_Frame()
+    {
+        // 현재 인게임 스킬포인트가 사용할 스킬포인트 이상보유하고 캐릭터가 스킬을 사용할 수 있을 때 활성화
+        if (InGame_Char.Get_SkillData.Get_SP <= InGame_Mgr.Inst.CurSP && InGame_Char.CanSkill)
+        {
+            Skill_On_Frame.gameObject.SetActive(true);
+        }
+            
+
+        // 현재 인게임 스킬포인트가 사용할 스킬포인트보다 적거나 캐릭터가 스킬을 사용할 수 없는 상태 일 때 비활성화
+        if (InGame_Mgr.Inst.CurSP < InGame_Char.Get_SkillData.Get_SP || !InGame_Char.CanSkill)
+        {
+            Skill_On_Frame.gameObject.SetActive(false);
+        }
+         
     }
 }

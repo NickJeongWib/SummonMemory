@@ -287,8 +287,6 @@ public class ItemUpGrade : MonoBehaviour
             return;
         }
 
-        LoadingPanel.Loading();
-
         if (!GameManager.Inst.TestMode)
         {
             if (UserInfo.Money < Cost || !UserInfo.InventoryDict.ContainsKey("재련 가루") || UserInfo.InventoryDict["재련 가루"].Get_Amount < UpgradeItem_Cost)
@@ -310,6 +308,8 @@ public class ItemUpGrade : MonoBehaviour
             Refresh_UserPowder();
         }
 
+        LoadingPanel.Loading();
+
         // Debug.Log(SelectItem.Get_Item_Lv);
         int Rate = Random.Range(1, 101);
         // Debug.Log(Rate);
@@ -326,7 +326,6 @@ public class ItemUpGrade : MonoBehaviour
                 SelectItem.Get_OwnCharacter.EquipmentUpgrade_State_Refresh(SelectItem.Get_EquipType, true);
             }
         }
-
 
         Refresh_Upgrade_Option();
         // 랜덤 능력 부여
@@ -552,8 +551,6 @@ public class ItemUpGrade : MonoBehaviour
         if (OpValue_Locks[0] && OpValue_Locks[1] && OpValue_Locks[2])
             return;
 
-        LoadingPanel.Loading();
-
         if (!GameManager.Inst.TestMode)
         {
             if (UserInfo.Money < ResetOptionValue_Cost || !UserInfo.InventoryDict.ContainsKey("재련 가루") || UserInfo.InventoryDict["재련 가루"].Get_Amount < ResetOptionValue_Item_Cost)
@@ -576,6 +573,8 @@ public class ItemUpGrade : MonoBehaviour
             Refresh_UserPowder();
         }
 
+        LoadingPanel.Loading();
+
         // 재료 저장
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
@@ -594,8 +593,6 @@ public class ItemUpGrade : MonoBehaviour
         // 옵션 다 잠궜으면
         if (Op_Locks[0] && Op_Locks[1] && Op_Locks[2])
             return;
-
-        LoadingPanel.Loading();
 
         if (!GameManager.Inst.TestMode)
         {
@@ -618,6 +615,8 @@ public class ItemUpGrade : MonoBehaviour
             // 보유 재련 가루 표시
             Refresh_UserItemCrystal();
         }
+
+        LoadingPanel.Loading();
 
         SelectItem.Set_ResetOption(Op_Locks);
         Refresh_OptionText();

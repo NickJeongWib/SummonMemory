@@ -122,6 +122,7 @@ public class SoundManager : MonoBehaviour
 
         float vol = PlayerPrefs.GetFloat("BGM_Vol");
 
+
         // 여기까지 왔다면 AudioSource 설정 후 플레이
         BGM_AudioSrc.clip = _audioClip;
         BGM_AudioSrc.volume = vol;

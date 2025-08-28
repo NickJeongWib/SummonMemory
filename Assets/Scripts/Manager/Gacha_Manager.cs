@@ -67,6 +67,12 @@ public class Gacha_Manager : MonoBehaviour
     bool isSR_Summon;
     bool isSSR_Summon;
 
+    private void Start()
+    {
+        // 천장 수치 출력
+        Gacha_Count_Text.text = $"{UserInfo.SSR_Set_Count} / 80";
+    }
+
     float Summon_Rate()
     {
         float RandomRate = Random.Range(0.01f, 1.0f);
@@ -274,14 +280,18 @@ public class Gacha_Manager : MonoBehaviour
         // 바로 위 장착 캐릭터 예외 처리 후 저장이 필요함
         UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
 
+        // 데이터 저장
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.GACHA_COUNT);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_EQUIP_CHAR);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
 
+        // UI초기화 함수들 호출
         LobbyManger_Ref.Refresh_User_CharAmount();
         LobbyManger_Ref.Refresh_User_CombatPower();
         LobbyManger_Ref.Refresh_OwnChar_Profile();
 
+        // 플레이펩에 저장될 때까지 기다렸다가 영상이 재생되게 대기
         StartCoroutine(Loading());
     }
 

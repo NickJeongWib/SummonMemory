@@ -112,14 +112,13 @@ public class Skill_Ctrl : MonoBehaviour
     #region Monster Damage
     public void Damage_Point()
     {
+        // 카메라 쉐이크 적용
         StartCoroutine(Camera.main.GetComponent<CameraShake>().Shake(ShakeTime, ShakePower));
-
+        // 피격 사운드 재생
         SoundManager.Inst.PlayEffSound("Sounds/Hit", PlayerPrefs.GetFloat("SFX_Vol"));
 
-        // Debug.Log(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.Get_CharName);
         int targetNum = InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_TargetCount;
 
-        // InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.get
         float atk = InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_Atk;
         float skillPower = InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_Damage_Ratio;
         float criDamage = InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_CriD;
@@ -138,11 +137,13 @@ public class Skill_Ctrl : MonoBehaviour
                 break;
 
             // 해당 몬스터가 죽어있으면
-            if (InGame_Mgr.Inst.CurMonsters[i].gameObject.activeSelf == false)
+            if (InGame_Mgr.Inst.CurMonsters[i].gameObject.activeSelf == false || InGame_Mgr.Inst.CurMonsters[i].Get_CurHP <= 0)
             {
                 continue;
             }
-        
+
+            // 속성 데미지 비율 결정
+            #region Elemental_Damage_Value
             // 속성 데미지
             if (InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_CharEle == CHAR_ELE.FIRE)
             {
@@ -212,6 +213,81 @@ public class Skill_Ctrl : MonoBehaviour
 
                 TextColor = InGame_Mgr.Inst.TextColor[3];
             }
+            #endregion
+
+            #region Debuff_Skill_Check
+            if(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_DeBuffType != DEBUFF_TYPE.NONE)
+            {
+                if(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_DeBuffType == DEBUFF_TYPE.STUNNED)
+                {
+                    #region Stunned
+                    // 방어력 비율만큼 감소
+                    InGame_Mgr.Inst.CurMonsters[i].Get_isCC = true;
+
+                    BuffIcon_UI BuffIcon = InGame_Mgr.Inst.Get_ObjPool.Get_DeBuffIcon(InGame_Mgr.Inst.CurMonsters[i],
+                        InGame_Mgr.Inst.Get_ObjPool.MonStatUI_List[i].Get_Buff_Tr,
+                        InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_Skill_Icon,
+                        InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_Buff_Time,
+                        0, DEBUFF_TYPE.STUNNED, InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_Skill_Name,
+                        InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData).GetComponent<BuffIcon_UI>();
+                    #endregion
+                }
+                else if(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_DeBuffType == DEBUFF_TYPE.DEF)
+                {
+                    #region Decreased_Def
+                    // 이미 적용중인지 체크하기 위한 변수
+                    bool isAlreadySet = false;
+                    // 이미 적용 중이라면 리스트에서 해당 인덱스의 UI에 적용 턴을 재설정하기 위해 선언한 변수
+                    int DebuffIndex = 0;
+
+                    // 데미지를 받는 몬스터의 디버프 리스트 체크
+                    for (int Buffindex = 0; Buffindex < InGame_Mgr.Inst.CurMonsters[i].DebuffSkill_List.Count; Buffindex++)
+                    {
+                        // 이미 적용 중인지 체크
+                        if(InGame_Mgr.Inst.CurMonsters[i].DebuffSkill_List[Buffindex] == InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_Skill_Name)
+                        {
+                            // 적용 중이라면 true로 for문 벗어나기
+                            isAlreadySet = true;
+                            DebuffIndex = Buffindex;
+                            break;
+                        }
+                    }
+
+                    // 적용중이 아니라면 디버프 적용
+                    if (isAlreadySet == false)
+                    {
+                        // 디버프 비율
+                        float deBuffValue = (InGame_Mgr.Inst.CurMonsters[i].Get_Def *
+                            InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_DeBuff_Ratio);
+
+                        // 방어력 비율만큼 감소
+                        InGame_Mgr.Inst.CurMonsters[i].Get_Def -= deBuffValue;
+
+                        BuffIcon_UI BuffIcon = InGame_Mgr.Inst.Get_ObjPool.Get_DeBuffIcon(InGame_Mgr.Inst.CurMonsters[i],
+                            InGame_Mgr.Inst.Get_ObjPool.MonStatUI_List[i].Get_Buff_Tr,
+                            InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_Skill_Icon,
+                            InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_Buff_Time,
+                            deBuffValue, DEBUFF_TYPE.DEF, InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_Skill_Name,
+                            InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData).GetComponent<BuffIcon_UI>();
+
+                        // 디버프 리스트에 추가
+                        InGame_Mgr.Inst.CurMonsters[i].DeBuffIconList.Add(BuffIcon);
+                        // 디버프 적용시킨 스킬 이름 추가
+                        InGame_Mgr.Inst.CurMonsters[i].DebuffSkill_List.Add(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_Skill_Name);
+                    }
+                    // 이미 적용 중이라면
+                    else
+                    {
+                        int Applyturn = InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_SkillData.Get_Buff_Time;
+
+                        // 디버프 타임을 초기화 해준다
+                        InGame_Mgr.Inst.CurMonsters[i].DeBuffIconList[DebuffIndex].Set_Skill_Turn = Applyturn;
+                        InGame_Mgr.Inst.CurMonsters[i].DeBuffIconList[DebuffIndex].Set_ApplyTurn_Text(Applyturn);
+                    }
+                    #endregion
+                }
+            }
+            #endregion
 
             bool _isCrit = false;
             float damage = CalcDamage(atk, InGame_Mgr.Inst.CurMonsters[i].Get_Def, skillPower, ref _isCrit, criDamage, criRate, _elementMul);
@@ -220,6 +296,13 @@ public class Skill_Ctrl : MonoBehaviour
             InGame_Mgr.Inst.CurMonsters[i].TakeDamage(damage, ref value, _isCrit, TextColor);
             // UI 초기화
             InGame_Mgr.Inst.Get_ObjPool.MonStatUI_List[i].Set_HP(value);
+
+            // 데미지 받고 죽었으면
+            if(InGame_Mgr.Inst.CurMonsters[i].Get_CurHP <= 0)
+            {
+                InGame_Mgr.Inst.Get_ObjPool.MonStatUI_List[i].Get_Buff_Tr.gameObject.SetActive(false);
+            }
+
             appliedCount++;
         }
     }
@@ -436,6 +519,12 @@ public class Skill_Ctrl : MonoBehaviour
         }
         // UI 초기화
         InGame_Mgr.Inst.Get_ObjPool.MonStatUI_List[index].Set_HP(value);
+        
+        // 데미지 받고 죽었으면 디버프, 버프 창 비활성화
+        if (InGame_Mgr.Inst.CurMonsters[index].Get_CurHP <= 0)
+        {
+            InGame_Mgr.Inst.Get_ObjPool.MonStatUI_List[index].Get_Buff_Tr.gameObject.SetActive(false);
+        }
     }
     #endregion
 
@@ -455,6 +544,7 @@ public class Skill_Ctrl : MonoBehaviour
             == BUFF_TYPE.HILL)
         {
             #region Hill
+            int LiveCount = 0;
             List<Character_Ctrl> charList = new List<Character_Ctrl>();
 
             for(int i = 0; i < InGame_Mgr.Inst.CharCtrl_List.Count; i++)
@@ -468,9 +558,23 @@ public class Skill_Ctrl : MonoBehaviour
             int hillCount = 0;
             int charIndex = 0;
 
+            // 생존자 탐색
+            for(int i = 0; i < charList.Count; i++)
+            {
+                if(charList[i].Get_CurHP <= 0)
+                {
+                    continue;
+                }
+
+                LiveCount++;
+            }
+
             // 힐 적용
             while (hillCount < InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_TargetCount)
             {
+                if (InGame_Mgr.Inst.LastIndex < charIndex)
+                    break;
+
                 // 죽었으면 다음 차례
                 if (charList[charIndex].Get_CurHP <= 0)
                 {
@@ -487,6 +591,12 @@ public class Skill_Ctrl : MonoBehaviour
                 charList[charIndex].TakeDamage(hillValue, ref value, TextColor, false);
                 hillCount++;
                 charIndex++;
+
+                // 만약에 생존자보다 힐카운드 높아지면 break
+                if(LiveCount < hillCount)
+                {
+                    break;
+                }
             }
 
             for(int i = 0; i < InGame_Mgr.Inst.CharCtrl_List.Count; i++)
@@ -501,21 +611,24 @@ public class Skill_Ctrl : MonoBehaviour
             == BUFF_TYPE.DEF)
         {
             #region Def
-            Buff_Apply(BUFF_TYPE.DEF);
+            // 스킬 데이터 정보 넘겨주기
+            Buff_Apply(BUFF_TYPE.DEF, InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData);
             #endregion
         }
         else if (InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_BuffType
            == BUFF_TYPE.ATK)
         {
             #region Atk
-            Buff_Apply(BUFF_TYPE.ATK);
+            // 스킬 데이터 정보 넘겨주기
+            Buff_Apply(BUFF_TYPE.ATK, InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData);
             #endregion
         }
         else if (InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_BuffType
             == BUFF_TYPE.ALL_BUFF)
         {
             #region Atk
-            Buff_Apply(BUFF_TYPE.ALL_BUFF);
+            // 스킬 데이터 정보 넘겨주기
+            Buff_Apply(BUFF_TYPE.ALL_BUFF, InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData);
             SP_Hill();
             #endregion
         }
@@ -542,7 +655,7 @@ public class Skill_Ctrl : MonoBehaviour
         }
     }
 
-    void Buff_Apply(BUFF_TYPE _buffType)
+    void Buff_Apply(BUFF_TYPE _buffType, Skill _skill = null)
     {
         InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].CanSkill = false;
 
@@ -556,11 +669,13 @@ public class Skill_Ctrl : MonoBehaviour
                 ref buffValue);
 
             // 아이콘 생성
-            InGame_Mgr.Inst.Get_ObjPool.Get_BuffIcon(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex],
+            InGame_Mgr.Inst.Get_ObjPool.Get_BuffIcon(
+                InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex],
+                InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex],
                 InGame_Mgr.Inst.Get_ObjPool.CharStatUI_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_Buff_Tr,
                 InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_Skill_Icon,
                 InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_Buff_Time,
-                buffValue, _buffType);
+                buffValue, _buffType, _skill);
         }
         else // 아군 버프
         {
@@ -574,11 +689,12 @@ public class Skill_Ctrl : MonoBehaviour
                     ref buffValue);
 
                 // 아이콘 생성
-                InGame_Mgr.Inst.Get_ObjPool.Get_BuffIcon(InGame_Mgr.Inst.CharCtrl_List[i],
+                InGame_Mgr.Inst.Get_ObjPool.Get_BuffIcon(InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex],
+                    InGame_Mgr.Inst.CharCtrl_List[i],
                     InGame_Mgr.Inst.Get_ObjPool.CharStatUI_List[i].Get_Buff_Tr,
                     InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_Skill_Icon,
                     InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].Get_character.SkillData.Get_Buff_Time,
-                    buffValue, _buffType);
+                    buffValue, _buffType, _skill);
             }
         }
     }

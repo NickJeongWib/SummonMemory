@@ -46,6 +46,7 @@ public class InGame_Mgr : MonoBehaviour
     [SerializeField] Text TurnText;
     public int CurrentTurn = 1;
     public Color[] TextColor;
+    [SerializeField] Skill_Desc Skill_Desc_UI;
 
     // 게임 클리어 여부에 따른 오브젝트 활성화하기 위한 변수
     public GameObject[] UI_Canvas;
@@ -109,6 +110,7 @@ public class InGame_Mgr : MonoBehaviour
         GameStateUpdate();
     }
 
+    #region FSM_InGameState
     void GameStateUpdate()
     {
         switch(InGameState)
@@ -153,6 +155,7 @@ public class InGame_Mgr : MonoBehaviour
                     if(i == CurTurnCharIndex)
                     {
                         ObjPool.SkillIcon_List[i].gameObject.SetActive(true);
+                        ObjPool.SkillIcon_List[i].Skill_Use_Frame();
                     }
                     else
                     {
@@ -194,15 +197,35 @@ public class InGame_Mgr : MonoBehaviour
                 break;
 
             case INGAME_STATE.ENEMY_TURN:
-                for(int i = MonTurnIndex; i < CurMonsters.Count; i++)
+
+                // 시작 Index잡아주기
+                for (int i = MonTurnIndex; i < CurMonsters.Count; i++)
+                {
+                    if (0 < CurMonsters[i].Get_CurHP)
+                    {
+                        MonTurnIndex = i;
+                        break;
+                    }
+                }
+
+                for (int i = MonTurnIndex; i < CurMonsters.Count; i++)
                 {
                     if (CurMonsters[i].Get_CurHP <= 0)
+                    {
                         continue;
+                    }
+                        
+                    // CC상태면 공격하지 못하게 Break
+                    if (CurMonsters[i].Get_isCC)
+                    {
+                        Skill_On_MonFace.Set_UI_Init(CurMonsters[i].Get_Icon, CurMonsters[i].MonName, "행동 불가 상태", "MonSkill_Skip");
+                        break;
+                    }
 
                     // 만약 몬스터가 죽지 않고 살아있는 몬스터를 찾았다면 스킬 사용
                     MonTurnIndex = i;
                     UseMonSkill_ON += CurMonsters[i].Skill_Use;
-                    Skill_On_MonFace.Set_UI_Init(CurMonsters[i].Get_Icon, CurMonsters[i].MonName);
+                    Skill_On_MonFace.Set_UI_Init(CurMonsters[i].Get_Icon, CurMonsters[i].MonName, "아군 다수 공격", "MonSkill_Play");
                     break;
                 }
                 
@@ -227,9 +250,12 @@ public class InGame_Mgr : MonoBehaviour
                 break;
         }
     }
+    #endregion
 
+    #region BuffTurn_Ctrl
     void Buff_Decreased()
     {
+        // 버프들 턴 감소
         for(int i = 0; i < ObjPool.BuffIcon_List.Count; i++)
         {
             // 꺼져있으면 건너뛰기
@@ -239,6 +265,34 @@ public class InGame_Mgr : MonoBehaviour
             // 유지 턴 감소
             ObjPool.BuffIcon_List[i].Turn_Decreased();
         }
+    }
+    #endregion
+
+    #region UI
+    public void Show_Skill_Desc( bool _isOn, BuffIcon_UI _buffIcon = null, Skill _skill = null, Transform _tr = null, Sprite _icon = null, bool _isUseSkill = false, bool _isSkillBtn = true)
+    {
+        // 아군 적용이나 몬스터 적용인지에 따라 보여주는 ui위치 바꿔주기 위한
+        float setPos = 0.0f;
+        if (_buffIcon != null && _buffIcon.Get_Character_Ctrl != null)
+        {
+            // 캐릭터 적용이라면 오른쪽으로 200 옮겨줌
+            setPos = 200.0f;
+        }
+
+        // 디버프 아이콘이라면
+        if(_buffIcon != null && _buffIcon.Get_EnemyCtrl != null)
+        {
+            // 몬스터 적용이라면 왼쪽으로 200 옮겨줌
+            setPos = -200.0f;
+        }
+
+        // 만약 스킬 사용 버튼이라면
+        if(_isUseSkill)
+        {
+            setPos = 100.0f;
+        }
+
+        Skill_Desc_UI.Show_Skill_Desc(_skill, _isOn, _tr, _icon, setPos, _isUseSkill, _isSkillBtn);
     }
 
     public void On_Click_NextStage()
@@ -253,7 +307,7 @@ public class InGame_Mgr : MonoBehaviour
         SceneManager.LoadScene("InGameScene");
     }
 
-    #region UI
+
     // 캐릭터 상태창 열기 닫기
     public void On_Click_OpenCharStat(Animator _animator)
     {

@@ -89,6 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bdcd3a636661c4f9c93a3fddad95c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuffType: 0
+  DeBuffType: 0
+  CharCtrl: {fileID: 0}
+  EnemyCtrl: {fileID: 0}
+  Skill_Turn: 0
+  BuffValue: 0
   Skill_Icon: {fileID: 2524698958431162611}
   Skill_Turn_Txt: {fileID: 2009210286873116531}
 --- !u!1 &6698523521025732035
@@ -128,7 +134,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8034767133057776229
 CanvasRenderer:
@@ -152,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
