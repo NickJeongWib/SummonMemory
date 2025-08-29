@@ -7,6 +7,7 @@ public class Skill_Icon : MonoBehaviour
 {
     // 캐릭터가 스킬을 사용할 수 있는지 알기 위해
     [SerializeField] Character_Ctrl InGame_Char;
+    public Character_Ctrl Get_InGame_Char { get => InGame_Char; }
     [SerializeField] Animator animator;
 
     // UI 이미지

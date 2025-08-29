@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Character Get_SelectChar { get => SelectCharacter; set => SelectCharacter = value; }
     public static GameManager Inst;
     public bool TestMode = false;
+    public bool isAutoBattle;
 
     int CharMaxCount;
     public int Get_CharMaxCount { get => CharMaxCount; set => CharMaxCount = value; }

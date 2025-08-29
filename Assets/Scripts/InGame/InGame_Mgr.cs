@@ -35,6 +35,7 @@ public class InGame_Mgr : MonoBehaviour
     [Header("Game_Info")]
     public int LastIndex;
     public int CurTurnCharIndex = 0;
+    public bool isAuto;
 
     [Header("UI")]
     public Skill_Use_Face Skill_On_CharFace;
@@ -44,9 +45,12 @@ public class InGame_Mgr : MonoBehaviour
     [SerializeField] GameObject[] MonStat_Pop_Images;
     bool isMonStat_Open = false;
     [SerializeField] Text TurnText;
+    [SerializeField] Text StageNum;
     public int CurrentTurn = 1;
     public Color[] TextColor;
     [SerializeField] Skill_Desc Skill_Desc_UI;
+    [SerializeField] Toggle AutoToggle;
+    [SerializeField] GameObject Toggle_BG;
 
     // 게임 클리어 여부에 따른 오브젝트 활성화하기 위한 변수
     public GameObject[] UI_Canvas;
@@ -102,6 +106,10 @@ public class InGame_Mgr : MonoBehaviour
         {
             SP_ChargeAnimator[i].Play("SP_UP");
         }
+
+        // 전에 자동전투를 켜놓았다면 다시 클릭하지 않기 위해
+        AutoToggle.isOn = GameManager.Inst.isAutoBattle;
+        StageNum.text = $"스토리 {GoogleSheetManager.SO<GoogleSheetSO>().STAGE_DBList[GameManager.Inst.StageIndex].STAGE_NUM}";
     }
     #endregion
 
@@ -269,6 +277,34 @@ public class InGame_Mgr : MonoBehaviour
     #endregion
 
     #region UI
+    // 자동전투 토글 누를 시
+    public void On_Click_AutoBattle()
+    {
+        // 토글에 따라 자동 전투
+        isAuto = AutoToggle.isOn;
+        GameManager.Inst.isAutoBattle = AutoToggle.isOn;
+        // 토글 뒷 배경 감추기
+        Toggle_BG.SetActive(!AutoToggle.isOn);
+
+        // 자동 전투가 아니라면 return
+        if (Inst.isAuto && InGameState == INGAME_STATE.STANDBY)
+        {
+            // 스킬 사용 가능 상태이고 현재 보유 SP가 스킬에 사용할 SP이상 지니고 있을 때
+            if (ObjPool.SkillIcon_List[CurTurnCharIndex].Get_InGame_Char.CanSkill &&
+               ObjPool.SkillIcon_List[CurTurnCharIndex].Get_InGame_Char.Get_SkillData.Get_SP <= CurSP)
+            {
+                ObjPool.SkillIcon_List[CurTurnCharIndex].On_Click_Skill_Btn();
+            }
+
+            // 현재 캐릭터가 스킬을 사용할 수 없는 상태이거나 스킬 보유 SP가 사용해야할 SP보다 적다면 기본공격
+            if (ObjPool.SkillIcon_List[CurTurnCharIndex].Get_InGame_Char.CanSkill == false ||
+               CurSP < ObjPool.SkillIcon_List[CurTurnCharIndex].Get_InGame_Char.Get_SkillData.Get_SP)
+            {
+                ObjPool.SkillIcon_List[CurTurnCharIndex].On_Click_NoramlAtk();
+            }
+        }
+    }
+
     public void Show_Skill_Desc( bool _isOn, BuffIcon_UI _buffIcon = null, Skill _skill = null, Transform _tr = null, Sprite _icon = null, bool _isUseSkill = false, bool _isSkillBtn = true)
     {
         // 아군 적용이나 몬스터 적용인지에 따라 보여주는 ui위치 바꿔주기 위한
