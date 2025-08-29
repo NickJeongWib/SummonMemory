@@ -421,6 +421,12 @@ public class Skill_Ctrl : MonoBehaviour
             // UI 초기화
             InGame_Mgr.Inst.Get_ObjPool.CharStatUI_List[i].Set_HP(value);
 
+            // 캐릭터 체력이 0이하가 된다면
+            if(InGame_Mgr.Inst.CharCtrl_List[i].Get_CurHP <= 0)
+            {
+                InGame_Mgr.Inst.Get_ObjPool.CharStatUI_List[i].Get_Buff_Tr.gameObject.SetActive(false);
+            }
+
             appliedCount++;
         }
     }
