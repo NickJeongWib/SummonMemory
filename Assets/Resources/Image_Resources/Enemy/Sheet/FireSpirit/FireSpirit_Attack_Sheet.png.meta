@@ -1,0 +1,1090 @@
+fileFormatVersion: 2
+guid: 396cf577b75ff55459150b7edd743d2d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3385
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e023bb86d4c4a1744a9b1a33ead0bced
+      internalID: -2010596111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 3385
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf57b9fb4cbc25488a48d4581da4bcd
+      internalID: -2057109270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 3385
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb4ecf7d3468e54892676edd64c7990
+      internalID: -784782258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2838
+        y: 3385
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cb6b3a32080c4428824304bd2e3051
+      internalID: -1946979923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 3385
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95bd28fff603354997039124de1420e
+      internalID: -192646718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 4730
+        y: 3385
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e86aa3d581dc407459f9541c3961dab6
+      internalID: 1786696180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 5676
+        y: 3385
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b037a70584aeff43a4b7468add67480
+      internalID: -1167701237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2708
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8fd9b683746fc4c805f4cec76aa97a
+      internalID: 368728969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 2708
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbcaa6889a5a4ac46b0ab7b4ccb6b1ff
+      internalID: 1786735364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 2708
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f96bd5a753237849ad8f3b2c5ad2de0
+      internalID: 1762839550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2838
+        y: 2708
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc601d2ff430b44fa4e139e1b7e5400
+      internalID: -145215052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 2708
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca04d9bdb1a2764682544246c910faa
+      internalID: -150067415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 4730
+        y: 2708
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1906c03846436ac479a11b5ea579367b
+      internalID: 2012544912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 5676
+        y: 2708
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f2951c67c8450498c31113eb092fb1
+      internalID: 2109324779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2031
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1ab0a117f523b44bd5a1915f73ac9b
+      internalID: -391182791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 2031
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00eda50d1d398243814f3951dec9789
+      internalID: 297464941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 2031
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa28f6285afd94c4db1ff7e2f2758611
+      internalID: 132743864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2838
+        y: 2031
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d635c63374b89a428ee636c65d4304a
+      internalID: 1954446615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 2031
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ba9d747374f294bb449afb96fc1fa7
+      internalID: -979057857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 4730
+        y: 2031
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1464d718f0f5eee4fa47b18580c1c4cf
+      internalID: 1127308921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 5676
+        y: 2031
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f57a30cfec835c4e8a7e93dde106c95
+      internalID: 456750892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1354
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c2d24f3f0e7ad4f9be21bde487db0a
+      internalID: 1731634652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1354
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775db4d900334d04f98be08eb6edeab4
+      internalID: -958690373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 1354
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d34f4b90a449d0c41a533050382dca00
+      internalID: -387257827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 2838
+        y: 1354
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3c544db7fef794d924a240836f40dc
+      internalID: 891671259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 1354
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfe2b1d189941c47832cc8ef84a8559
+      internalID: -254601550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 4730
+        y: 1354
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b5e9356c76ab948a89141417b8ae0f
+      internalID: -543154538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 5676
+        y: 1354
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da1f7eb14a5ab684a8423dd9568e7dbe
+      internalID: 1589768130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 677
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb843f8a974900747acc7a3ceb17ed6c
+      internalID: 1977835354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 677
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e98abefeaf5b84c9fb32f2f7676a21
+      internalID: 542318903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 677
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dffab0f2798868f4fad4cd824e847c6d
+      internalID: 1186502497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 2838
+        y: 677
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad92162c23ecfa45875461935c23b47
+      internalID: -1443440818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 677
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc978e3551f678a4b867fa8b1ff87be9
+      internalID: 1148321002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 4730
+        y: 677
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672e6bce4033c184fab71756dd24d8d0
+      internalID: -201684188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 5676
+        y: 677
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e317a03554f4d224bbe3b1ce8684e2be
+      internalID: -117866908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ae25d5e5e9ad147b3da716214cade1
+      internalID: 1870858025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 0
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc46c4f67cab9ff45a8e2b6e28f7aa35
+      internalID: 1539850581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 0
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf79bc9902b7611418cd75e3f0c36e20
+      internalID: 620893541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 2838
+        y: 0
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4fc3b58bdf11345bb62ea93c46e178
+      internalID: 869417687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 0
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f18a131eeb2224f9a896cbff517001
+      internalID: -2079217144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 4730
+        y: 0
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5508c27bc821cbe438b4a37a5d43b7cc
+      internalID: 586594983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireSpirit_Attack_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 5676
+        y: 0
+        width: 946
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29aa89b6e86bd454ebeb422d186ddd5f
+      internalID: 610714787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      FireSpirit_Attack_Sheet_0: -2010596111
+      FireSpirit_Attack_Sheet_1: -2057109270
+      FireSpirit_Attack_Sheet_10: -145215052
+      FireSpirit_Attack_Sheet_11: -150067415
+      FireSpirit_Attack_Sheet_12: 2012544912
+      FireSpirit_Attack_Sheet_13: 2109324779
+      FireSpirit_Attack_Sheet_14: -391182791
+      FireSpirit_Attack_Sheet_15: 297464941
+      FireSpirit_Attack_Sheet_16: 132743864
+      FireSpirit_Attack_Sheet_17: 1954446615
+      FireSpirit_Attack_Sheet_18: -979057857
+      FireSpirit_Attack_Sheet_19: 1127308921
+      FireSpirit_Attack_Sheet_2: -784782258
+      FireSpirit_Attack_Sheet_20: 456750892
+      FireSpirit_Attack_Sheet_21: 1731634652
+      FireSpirit_Attack_Sheet_22: -958690373
+      FireSpirit_Attack_Sheet_23: -387257827
+      FireSpirit_Attack_Sheet_24: 891671259
+      FireSpirit_Attack_Sheet_25: -254601550
+      FireSpirit_Attack_Sheet_26: -543154538
+      FireSpirit_Attack_Sheet_27: 1589768130
+      FireSpirit_Attack_Sheet_28: 1977835354
+      FireSpirit_Attack_Sheet_29: 542318903
+      FireSpirit_Attack_Sheet_3: -1946979923
+      FireSpirit_Attack_Sheet_30: 1186502497
+      FireSpirit_Attack_Sheet_31: -1443440818
+      FireSpirit_Attack_Sheet_32: 1148321002
+      FireSpirit_Attack_Sheet_33: -201684188
+      FireSpirit_Attack_Sheet_34: -117866908
+      FireSpirit_Attack_Sheet_35: 1870858025
+      FireSpirit_Attack_Sheet_36: 1539850581
+      FireSpirit_Attack_Sheet_37: 620893541
+      FireSpirit_Attack_Sheet_38: 869417687
+      FireSpirit_Attack_Sheet_39: -2079217144
+      FireSpirit_Attack_Sheet_4: -192646718
+      FireSpirit_Attack_Sheet_40: 586594983
+      FireSpirit_Attack_Sheet_41: 610714787
+      FireSpirit_Attack_Sheet_5: 1786696180
+      FireSpirit_Attack_Sheet_6: -1167701237
+      FireSpirit_Attack_Sheet_7: 368728969
+      FireSpirit_Attack_Sheet_8: 1786735364
+      FireSpirit_Attack_Sheet_9: 1762839550
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

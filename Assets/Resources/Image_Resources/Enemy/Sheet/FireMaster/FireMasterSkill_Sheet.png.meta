@@ -1,0 +1,1090 @@
+fileFormatVersion: 2
+guid: 5a4af56b8b8baa6419d761deaec9937c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2765
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3094b42efae587042a3f8214f0046463
+      internalID: 1382194509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 2765
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ee346e2eb5f15419499db4d85c3fac
+      internalID: -1495521221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 2765
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbad25c5732a9fd49aa63849d7c53920
+      internalID: -116111090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 2765
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ac69a2588a576449297fb6276b781d
+      internalID: -1663637454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 2765
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9823038069b842b4cb460cd8fe1fa243
+      internalID: 607027984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 2765
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100e2ad8f8a4fd642af374284b038658
+      internalID: -2052393236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 2765
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0936153ae0278c40b7d9a8d6bf4b2ae
+      internalID: -412403392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2212
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84036e446e0ed154aa2101afdec5a3c1
+      internalID: -831148223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 2212
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78e0e1b300d1594fac7264070ce8932
+      internalID: 1421630641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 2212
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad17d80073ea494ea154e88be08e7ba
+      internalID: -781258419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 2212
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96683de92bf399b42abbc997b95f20bc
+      internalID: -68903330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 2212
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc91fc8ae0361d458092b44952bcda4
+      internalID: -461609104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 2212
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bebf520c95040546934a758b97807d0
+      internalID: -1421076084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 2212
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d5b990a5b1cd34480e779457b77ac8
+      internalID: 170950704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1659
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab3e10e75102df4b87f2617d2deeabb
+      internalID: 1802749512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1659
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aea73237c4287f40b5a66bf38d8b5f8
+      internalID: 589837893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 1659
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6339267617f9a84eb76175ba387ee33
+      internalID: 1139262201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 1659
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4cec056e9200344189e92600752a08a
+      internalID: -1942875963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1659
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0fb10b374c4b0d458da2e6b82a6a356
+      internalID: 1232348026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 1659
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72e9db7d9580c5478ac20a87beb4293
+      internalID: -1808529618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 1659
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d952c78e391b6c34d871c77445be594c
+      internalID: -142642313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1106
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf81f6cd7827d940a53a71dfef69a2b
+      internalID: 846997675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1106
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce1ed9b645ff4c47bb28b38a86c6d8d
+      internalID: -1944793451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 1106
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb833e3e65df7b4abbe4480c0695136
+      internalID: 1464249899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 1106
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f3e1660df1ff7439761f7634e88e8c
+      internalID: 956175728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1106
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc8128ca3ead8345b845a5ae8ddc0fc
+      internalID: -2130206451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 1106
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019d27831f6ef3344b0291e6145ab23b
+      internalID: -1530973692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 1106
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f23ddf715acaee4d8e86fa343cc9522
+      internalID: -2134644255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 553
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02ba5bf2c3018847b6954c3a6cbfd82
+      internalID: -1658116948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 553
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9557c53470d634fac4a9c4e35f5d84
+      internalID: -1122221856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 553
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422955a19449f2e418975c81d92c5462
+      internalID: -1475970299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 553
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0da7e7939bf016489579c7fc5b0b9a7
+      internalID: -1141068167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 553
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260517541aa948d459e6eb16d75aaf97
+      internalID: 855956351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 553
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 808f24de9aa07c34b947c8888b39f6cb
+      internalID: -1979371674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 553
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1ebd2783d5b974bb921da67c77749f
+      internalID: -1261899589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382e4f38719cdc94f80aa2605d767c0f
+      internalID: -657260890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 0
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae0e011c72927e4ea4c82edfedf471d
+      internalID: 1322526841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 0
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9662350111a654540a1ed5f2adf42856
+      internalID: 1298714014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 0
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8102c86d31aecab41b9abd4c60e9fb22
+      internalID: -606219136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 0
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821fc697cae4a4745a9d92904bf67787
+      internalID: 1891769353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 0
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15d4c6c03ea8824a9d4acc47ad6d9e0
+      internalID: -1064312252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireMasterSkill_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 0
+        width: 498
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeadf91ab0c336448a810044e5004a2d
+      internalID: -1336867577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      FireMasterSkill_Sheet_0: 1382194509
+      FireMasterSkill_Sheet_1: -1495521221
+      FireMasterSkill_Sheet_10: -68903330
+      FireMasterSkill_Sheet_11: -461609104
+      FireMasterSkill_Sheet_12: -1421076084
+      FireMasterSkill_Sheet_13: 170950704
+      FireMasterSkill_Sheet_14: 1802749512
+      FireMasterSkill_Sheet_15: 589837893
+      FireMasterSkill_Sheet_16: 1139262201
+      FireMasterSkill_Sheet_17: -1942875963
+      FireMasterSkill_Sheet_18: 1232348026
+      FireMasterSkill_Sheet_19: -1808529618
+      FireMasterSkill_Sheet_2: -116111090
+      FireMasterSkill_Sheet_20: -142642313
+      FireMasterSkill_Sheet_21: 846997675
+      FireMasterSkill_Sheet_22: -1944793451
+      FireMasterSkill_Sheet_23: 1464249899
+      FireMasterSkill_Sheet_24: 956175728
+      FireMasterSkill_Sheet_25: -2130206451
+      FireMasterSkill_Sheet_26: -1530973692
+      FireMasterSkill_Sheet_27: -2134644255
+      FireMasterSkill_Sheet_28: -1658116948
+      FireMasterSkill_Sheet_29: -1122221856
+      FireMasterSkill_Sheet_3: -1663637454
+      FireMasterSkill_Sheet_30: -1475970299
+      FireMasterSkill_Sheet_31: -1141068167
+      FireMasterSkill_Sheet_32: 855956351
+      FireMasterSkill_Sheet_33: -1979371674
+      FireMasterSkill_Sheet_34: -1261899589
+      FireMasterSkill_Sheet_35: -657260890
+      FireMasterSkill_Sheet_36: 1322526841
+      FireMasterSkill_Sheet_37: 1298714014
+      FireMasterSkill_Sheet_38: -606219136
+      FireMasterSkill_Sheet_39: 1891769353
+      FireMasterSkill_Sheet_4: 607027984
+      FireMasterSkill_Sheet_40: -1064312252
+      FireMasterSkill_Sheet_41: -1336867577
+      FireMasterSkill_Sheet_5: -2052393236
+      FireMasterSkill_Sheet_6: -412403392
+      FireMasterSkill_Sheet_7: -831148223
+      FireMasterSkill_Sheet_8: 1421630641
+      FireMasterSkill_Sheet_9: -781258419
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

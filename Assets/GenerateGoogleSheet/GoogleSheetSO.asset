@@ -2681,6 +2681,19 @@ MonoBehaviour:
     MON_ICON_PATH: Image_Resources/Enemy/Icon/Limbo_Icon
     MON_ILLUST_PATH: Image_Resources/Enemy/Illust/Limbo_Illust
     MON_SFX_PATH: Sounds/Enemy/FireMasterSkill
+  - MON_INDEX: 3
+    MON_NAME: "\uBD88\uAF43 \uC815\uB839"
+    MON_ELEMENT: FIRE
+    MON_HP: 500
+    MON_ATK: 105
+    MON_DEF: 50
+    MON_PREFAB_PATH: Prefab/InGame_Enemy_Prefab/FireSpirit_Prefab
+    TARGET_NUM: 3
+    SKILL_RATIO: 1.1
+    MON_SKILL_PATH: Prefab/Atk_Effect/Enemy_Atk/FireSpirit/FireSpiritSkill_Prefab
+    MON_ICON_PATH: Image_Resources/Enemy/Icon/FireSpirit/FireSpirit_Icon
+    MON_ILLUST_PATH: Image_Resources/Enemy/Illust/FireSpirit/FireSpirit_Illust
+    MON_SFX_PATH: Sounds/Enemy/FireSpiritSkill
   STAGE_DBList:
   - STAGE_INDEX: 0
     STAGE_NUM: 1-1
@@ -2694,6 +2707,10 @@ MonoBehaviour:
     STAGE_NUM: 1-3
     SPAWN_MON: 0,0,0,0,2
     MON_STAT_INCREASE_VALUE: 0.2
+  - STAGE_INDEX: 3
+    STAGE_NUM: 1-4
+    SPAWN_MON: 3,3,3,3,3
+    MON_STAT_INCREASE_VALUE: 0.25
   CHAR_VOICEList:
   - SELECT_VOICE: Sounds/Fire/Sonia/Sonia_Select
     USESKILL_VOICE: Sounds/Fire/Sonia/Sonia_Skill

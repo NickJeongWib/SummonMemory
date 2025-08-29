@@ -35,12 +35,15 @@ public class Active_F : MonoBehaviour
         InGame_Mgr.Inst.UseSkill_ON = null;
     }
 
-    // 몬스터 스킬 이펙트 꺼주기
+    // 몬스터 스킬 이펙트 델리게이트 해제
     public void On_MonSkill_Effect()
     {
-        InGame_Mgr.Inst.UseMonSkill_ON();
+        if (InGame_Mgr.Inst.UseMonSkill_ON != null)
+        {
+            InGame_Mgr.Inst.UseMonSkill_ON();
 
-        InGame_Mgr.Inst.UseMonSkill_ON = null;
+            InGame_Mgr.Inst.UseMonSkill_ON = null;
+        }
     }
     #endregion
 

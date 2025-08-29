@@ -232,7 +232,15 @@ public class InGame_Mgr : MonoBehaviour
 
                     // 만약 몬스터가 죽지 않고 살아있는 몬스터를 찾았다면 스킬 사용
                     MonTurnIndex = i;
+
                     UseMonSkill_ON += CurMonsters[i].Skill_Use;
+                    
+                    // 적을 공격하는 애니메이션이 있다면
+                    if (CurMonsters[i].EnemyAnimClip.Attack_Clip != null)
+                    {
+                        CurMonsters[i].Get_animator.Play(CurMonsters[i].EnemyAnimClip.Attack_Clip.name);
+                    }
+                    
                     Skill_On_MonFace.Set_UI_Init(CurMonsters[i].Get_Icon, CurMonsters[i].MonName, "아군 다수 공격", "MonSkill_Play");
                     break;
                 }

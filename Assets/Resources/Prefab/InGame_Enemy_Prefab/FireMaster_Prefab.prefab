@@ -609,6 +609,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf1c467c14de7a44bb7e6bc9467701a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyAnimClip:
+    Idle_Clip: {fileID: 7400000, guid: b6bbc090c525f4d4e9e0b351a362c063, type: 2}
+    Attack_Clip: {fileID: 7400000, guid: b16ae36f63420fd47922d19d58cb264f, type: 2}
+    Die_Clip: {fileID: 7400000, guid: 43fad4a925ddd944da92bae96f622922, type: 2}
   MonName: 
   HP_Image: {fileID: 217946436198877353}
   CurHP: 0
@@ -616,6 +620,9 @@ MonoBehaviour:
   Def: 0
   TargetCount: 0
   Skill_Ratio: 0
+  Get_isCC: 0
+  DebuffSkill_List: []
+  DeBuffIconList: []
   Skill_Prefab: {fileID: 0}
   animator: {fileID: 2070137311724871956}
   Damage_Animator: {fileID: 1073074278443869610}

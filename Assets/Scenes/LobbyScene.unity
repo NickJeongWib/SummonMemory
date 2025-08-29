@@ -34150,7 +34150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageIndex: 3
-  Lock_Image: {fileID: 0}
+  Lock_Image: {fileID: 1202090228}
 --- !u!1 &525383307
 GameObject:
   m_ObjectHideFlags: 0

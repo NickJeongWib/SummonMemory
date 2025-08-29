@@ -8,7 +8,7 @@ using static Define;
 public class Enemy_Ctrl : MonoBehaviour
 {
     public Monster_DB monster;
-
+    public AnimClip EnemyAnimClip;
     public string MonName;
 
     [Header("HP")]
@@ -41,6 +41,7 @@ public class Enemy_Ctrl : MonoBehaviour
 
     [Header("Animator")]
     [SerializeField] Animator animator;
+    public Animator Get_animator { get => animator; }
     [SerializeField] Animator Damage_Animator;
 
     [Header("UI")]
@@ -105,7 +106,14 @@ public class Enemy_Ctrl : MonoBehaviour
         if (CurHP <= 0)
         {
             CurHP = 0;
-            animator.Play("Die");
+            if(EnemyAnimClip.Die_Clip == null)
+            {
+                animator.Play("Die");
+            }
+            else
+            {
+                animator.Play(EnemyAnimClip.Die_Clip.name);
+            }
         }
     }
 
@@ -137,6 +145,7 @@ public class Enemy_Ctrl : MonoBehaviour
 
     public void Skill_Use()
     {
+        // 스킬 켜주기
         Skill_Prefab.SetActive(true);
     }
 }
