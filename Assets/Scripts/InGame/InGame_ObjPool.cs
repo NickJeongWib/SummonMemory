@@ -197,7 +197,7 @@ public class InGame_ObjPool : MonoBehaviour
         #endregion
     }
 
-    #region BuffIcon_Return;
+    #region BuffIcon_Return
     public GameObject Get_BuffIcon(Character_Ctrl _useChar, Character_Ctrl _charCtrl ,Transform _parent, Sprite _sprite, int _turn, float _buffValue, BUFF_TYPE _buffType, Skill _skill)
     {
         for(int i = 0; i < BuffIcon_List.Count; i++)
@@ -304,12 +304,14 @@ public class InGame_ObjPool : MonoBehaviour
     public void On_Click_GoLobby()
     {
         SoundManager.Inst.PlayUISound();
+        SoundManager.Inst.StopEffSound();
         SceneManager.LoadScene("LobbyScene");
     }
 
     public void On_Click_Retry()
     {
         SoundManager.Inst.PlayUISound();
+        SoundManager.Inst.StopEffSound();
         SceneManager.LoadScene("InGameScene");
     }
 #endregion

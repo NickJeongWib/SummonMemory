@@ -17,6 +17,7 @@ public class Pop_UpDown : MonoBehaviour
 
     public void Pop_Down()
     {
+        SoundManager.Inst.PlayUISound();
         animator.SetTrigger("PopDown");
     }
 

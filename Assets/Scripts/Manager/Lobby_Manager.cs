@@ -34,14 +34,15 @@ public class Lobby_Manager : MonoBehaviour
     [SerializeField] GameObject Book_Image;             // 단일 가차에서 나온 캐릭터가 최고 등급에 도달했지만 중복으로 나올 경우 획득한 소환서를 알기 위한
 
     [Header("---UI---")]
-    [SerializeField] GameObject CantTouchPanel;
-    [SerializeField] Text[] DiaCount_Texts;
-    [SerializeField] Text[] GoldCount_Texts;
-    [SerializeField] GameObject NameChange_Panel;
-    [SerializeField] InputField NameChange_IF;
-    [SerializeField] GameObject Erorr_Panel;
-    [SerializeField] Text ErorrMessage;
-    [SerializeField] Active_F LoadingPanel;
+    [SerializeField] Info_Panel Info_Panel_Ref;         // 알림 패널
+    [SerializeField] GameObject CantTouchPanel;         // Raycast 막는 패널
+    [SerializeField] Text[] DiaCount_Texts;             // 유저 보유 다이아 카운트 텍스트 배열
+    [SerializeField] Text[] GoldCount_Texts;            // 유저 보유 골드 표시 카운트 텍스트 배열
+    [SerializeField] GameObject NameChange_Panel;       // 이름 변경 패널
+    [SerializeField] InputField NameChange_IF;          // 이름 변경 InputField
+    [SerializeField] GameObject Erorr_Panel;            // 경고 패널
+    [SerializeField] Text ErorrMessage;                 // 에러 메세지
+    [SerializeField] Active_F LoadingPanel;             // 로딩 패널
    
 
     public List<Profile_Slot> UserInfo_ProfileList = new List<Profile_Slot>();
@@ -192,10 +193,18 @@ public class Lobby_Manager : MonoBehaviour
         _obj.SetActive(false);
     }
 
+    // 팝업 열었을 때
     public void On_Click_On(GameObject _obj)
     {
         SoundManager.Inst.PlayUISound();
         _obj.SetActive(true);
+    }
+
+    // 알림 패널 보여주기
+    public void Show_Info_Panel(string _text)
+    {
+        Info_Panel_Ref.gameObject.SetActive(true);
+        Info_Panel_Ref.Set_Text(_text);
     }
     #endregion
 

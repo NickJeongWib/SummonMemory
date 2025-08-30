@@ -59,21 +59,49 @@ public class Skill_Icon : MonoBehaviour
     {
         // 스킬 포인트 부족
         if (InGame_Mgr.Inst.CurSP - InGame_Char.Get_SkillData.Get_SP < 0 || InGame_Mgr.Inst.InGameState == INGAME_STATE.BATTLE)
-            return;
-
-        if (InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].CanSkill == false)
         {
-            Debug.Log("버프 적용 중");
+            // 알림창이 활성화 되있지 않고 전투 상태가 아닐 때 알림 활성화
+            if(InGame_Mgr.Inst.Get_Info_Panel_Ref.gameObject.activeSelf == false && InGame_Mgr.Inst.InGameState != INGAME_STATE.BATTLE)
+            {
+                InGame_Mgr.Inst.Get_Info_Panel_Ref.gameObject.SetActive(true);
+                InGame_Mgr.Inst.Show_Info_Panel("현재 SP가 부족합니다.");
+            }
+            // 이미 알림창이 활성화 되 있고 전투 상태라면
+            else if(InGame_Mgr.Inst.Get_Info_Panel_Ref.gameObject.activeSelf == true && InGame_Mgr.Inst.InGameState == INGAME_STATE.BATTLE)
+            {
+                InGame_Mgr.Inst.Show_Info_Panel("현재 SP가 부족합니다.");
+            }
+
             return;
         }
 
+
+        if (InGame_Mgr.Inst.CharCtrl_List[InGame_Mgr.Inst.CurTurnCharIndex].CanSkill == false)
+        {
+            if (InGame_Mgr.Inst.Get_Info_Panel_Ref.gameObject.activeSelf == false)
+            {
+                InGame_Mgr.Inst.Get_Info_Panel_Ref.gameObject.SetActive(true);
+                InGame_Mgr.Inst.Show_Info_Panel("해당 캐릭터\n버프스킬이 적용 중이라\n스킬 사용이 불가합니다.");
+            }
+            else
+            {
+                InGame_Mgr.Inst.Show_Info_Panel("해당 캐릭터\n버프스킬이 적용 중이라\n스킬 사용이 불가합니다.");
+            }
+            return;
+        }
+
+        // 캐릭터 목소리 나오게
         SoundManager.Inst.PlaySelectVoice(InGame_Char.Get_character.VoicePath.Get_UseSkillVoice_Path);
 
+        // 전투단계로 진입
         InGame_Mgr.Inst.InGameState = INGAME_STATE.BATTLE;
+        // 사용할 스킬 델리게이트 연결
         InGame_Mgr.Inst.UseSkill_ON += Skill_Use;
 
+        // 스킬 선택 UI밑으로 내리기
         animator.Play("SP_PopDown");
 
+        // 스킬 사용하는 캐릭터 얼굴 나오게 연출
         InGame_Mgr.Inst.Skill_On_CharFace.gameObject.SetActive(true);
         InGame_Mgr.Inst.Skill_On_CharFace.UseChar_Face.sprite = InGame_Char.Get_character.Get_Illust_Img;
 
@@ -82,6 +110,7 @@ public class Skill_Icon : MonoBehaviour
         {
             InGame_Mgr.Inst.SP_ChargeAnimator[i - 1].Play("SP_DOWN");
         }
+
         // 현재 잔존 sp계산
         InGame_Mgr.Inst.CurSP -= InGame_Char.Get_SkillData.Get_SP;
 
@@ -94,7 +123,7 @@ public class Skill_Icon : MonoBehaviour
     public void On_Click_NoramlAtk()
     {
         SoundManager.Inst.PlayUISound();
-        SoundManager.Inst.PlayEffSound("Sounds/NormalAtk");
+
 
         // 중복 클릭 방지
         if (InGame_Mgr.Inst.InGameState == INGAME_STATE.BATTLE)
@@ -104,8 +133,10 @@ public class Skill_Icon : MonoBehaviour
 
         Transform TargetTr = null;
 
+        SoundManager.Inst.PlayEffSound("Sounds/NormalAtk");
+
         // 타겟 목표 설정
-        for(int i = 0; i < InGame_Mgr.Inst.CurMonsters.Count; i++)
+        for (int i = 0; i < InGame_Mgr.Inst.CurMonsters.Count; i++)
         {
             if(0 < InGame_Mgr.Inst.CurMonsters[i].Get_CurHP)
             {

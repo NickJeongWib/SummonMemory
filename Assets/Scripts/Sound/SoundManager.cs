@@ -216,6 +216,18 @@ public class SoundManager : MonoBehaviour
                 SoundCount = 0;
         }
     }
+
+    // 이펙트 사운드 멈추기
+    public void StopEffSound()
+    {
+        for(int i = 0; i < AudioSource_List.Length; i++)
+        {
+            if(AudioSource_List[i] != null && AudioSource_List[i].isPlaying)
+            {
+                AudioSource_List[i].Stop();
+            }
+        }
+    }
     #endregion
 
     #region Char_Voice

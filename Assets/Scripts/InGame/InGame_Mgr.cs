@@ -51,6 +51,9 @@ public class InGame_Mgr : MonoBehaviour
     [SerializeField] Skill_Desc Skill_Desc_UI;
     [SerializeField] Toggle AutoToggle;
     [SerializeField] GameObject Toggle_BG;
+    [SerializeField] Info_Panel Info_Panel_Ref;
+    public Info_Panel Get_Info_Panel_Ref { get => Info_Panel_Ref; }
+
 
     // 게임 클리어 여부에 따른 오브젝트 활성화하기 위한 변수
     public GameObject[] UI_Canvas;
@@ -70,9 +73,10 @@ public class InGame_Mgr : MonoBehaviour
     public delegate void UseMonSkill();
     public UseMonSkill UseMonSkill_ON;
 
+    [Header("SFX")]
     [SerializeField] AudioClip InGame_BGM;
 
-    #region Init
+    #region Init 
     // 싱글톤
     public static InGame_Mgr Inst = null;
     private void Awake()
@@ -285,6 +289,11 @@ public class InGame_Mgr : MonoBehaviour
     #endregion
 
     #region UI
+    public void Show_Info_Panel(string _text)
+    {
+        Info_Panel_Ref.Set_Text(_text);
+    }
+
     // 자동전투 토글 누를 시
     public void On_Click_AutoBattle()
     {
@@ -347,6 +356,7 @@ public class InGame_Mgr : MonoBehaviour
             return;
         }
 
+        SoundManager.Inst.StopEffSound();
         GameManager.Inst.StageIndex++;
         SceneManager.LoadScene("InGameScene");
     }

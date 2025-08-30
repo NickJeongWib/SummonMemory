@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// 스킬 설명 보기 위한
 public class UseSkill_Btn : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] bool isSkill;

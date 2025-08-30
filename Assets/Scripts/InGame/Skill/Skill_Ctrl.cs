@@ -29,13 +29,16 @@ public class Skill_Ctrl : MonoBehaviour
         {
             InGame_Mgr.Inst.InGameState = INGAME_STATE.STAGE_END;
 
+            SoundManager.Inst.PlayEffSound("Sounds/StageClear");
+
             // 게임 조작에 관련된 UI Canvas 꺼주기
-            for(int i = 0; i < InGame_Mgr.Inst.UI_Canvas.Length; i++)
+            for (int i = 0; i < InGame_Mgr.Inst.UI_Canvas.Length; i++)
             {
                 InGame_Mgr.Inst.UI_Canvas[i].SetActive(false);
             }
             // 게임 클리어 연출 활성화
             InGame_Mgr.Inst.StageClear_Root.SetActive(true);
+
 
             // 스테이지 클리어 데이터 저장
             UserInfo.StageClear[GameManager.Inst.StageIndex] = true;
@@ -65,6 +68,8 @@ public class Skill_Ctrl : MonoBehaviour
         if (allDead)
         {
             InGame_Mgr.Inst.InGameState = INGAME_STATE.STAGE_END;
+
+            SoundManager.Inst.PlayEffSound("Sounds/StageFail");
 
             // 게임 조작에 관련된 UI Canvas 꺼주기
             for (int i = 0; i < InGame_Mgr.Inst.UI_Canvas.Length; i++)

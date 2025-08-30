@@ -120,7 +120,7 @@ public class CharacterList_UI : MonoBehaviour
     /// 캐릭터의 정보가 레벨이나 수치 변경 시 한번 호출 해 줄 필요가 있음
     /// </summary> 
     // TODO ## CharacterList_UI 캐릭터창 Refresh
-    public void Refresh_CharacterList()
+    public void Refresh_CharacterList(bool _isEquip = true)
     {
         isSortList = false;
 
@@ -161,6 +161,7 @@ public class CharacterList_UI : MonoBehaviour
 
             Slots[SlotNum].Char_Porfile.sprite = Dict.Value.Get_Profile_Img;
             Slots[SlotNum].Star_Image.rectTransform.sizeDelta = new Vector2(20 * Dict.Value.Get_CharStar, 20.0f);
+            Slots[SlotNum].Select_Btn.interactable = _isEquip;
             // Debug.Log(SlotNum + " " + Dict.Value.Get_CharName + " " + Dict.Value.Get_CharStar);
 
             SlotNum++;
@@ -331,7 +332,8 @@ public class CharacterList_UI : MonoBehaviour
 
         if (UserInfo.Equip_Characters.Count <= 1)
         {
-            Debug.Log("캐릭터 하나는 유지");
+            // Debug.Log("캐릭터 하나는 유지");
+            LobbyMgr_Ref.Show_Info_Panel("캐릭터 한 명은 파티에 포함되어\n있어야 합니다.");
             return;
         }
 
@@ -361,9 +363,13 @@ public class CharacterList_UI : MonoBehaviour
         // 장착한 캐릭터에 따라 이미지 교체 함수
         CharImg_Anim_Ref.CharImage_ChangeAnimF();
 
-        Refresh_CharacterList();
+        // 캐릭터 리스트 리셋
+        Refresh_CharacterList(false);
+        // 장착버튼 리셋
         Refresh_Equip_Btn();
+        // 장착칸 UI 리셋
         Equip_Image_Refresh(true);
+        // 장착 상호 작용 버튼
         Interact_EquipSlot_Btn();
     }
 
@@ -374,7 +380,7 @@ public class CharacterList_UI : MonoBehaviour
 
         if (5 <= UserInfo.Equip_Characters.Count)
         {
-            Debug.Log("장착 슬롯 꽉");
+            LobbyMgr_Ref.Show_Info_Panel("같이 모험할 캐릭터를 파티에\n모두 섭외했습니다.");
             return;
         }
 
@@ -414,7 +420,7 @@ public class CharacterList_UI : MonoBehaviour
         // 장착한 캐릭터에 따라 이미지 교체 함수
         CharImg_Anim_Ref.CharImage_ChangeAnimF();
         // 장착 캐릭터 슬롯 초기화
-        Refresh_CharacterList();
+        Refresh_CharacterList(false);
         Equip_Image_Refresh(true);
         Interact_EquipSlot_Btn();
 
@@ -668,13 +674,88 @@ public class CharacterList_UI : MonoBehaviour
     }
     #endregion
 
+    #region Auto_Character_Equip
+    // 캐릭터 자동 장착
+    public void On_Click_AutoEquip()
+    {
+        SoundManager.Inst.PlayUISound();
+
+        // 장착 중인 캐릭터 모두 다시 캐릭터 목록으로 옮겨 담아주기
+        for(int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        {
+            // 제거된 캐릭터 현재 캐릭터 인벤토리에 추가
+            UserInfo.UserCharDict_Copy.Add(
+                new KeyValuePair<string, Character>(UserInfo.Equip_Characters[i].Get_CharName, UserInfo.Equip_Characters[i]));
+        }
+        // 옮겨 담아 주었으니 장착캐릭터 리스트 리셋
+        UserInfo.Equip_Characters.Clear();
+        // 변경점 체크
+        // Check_EquipCount();
+
+        List<Character> SortCombat_List = new List<Character>();
+
+        // 전투력 순으로 정렬하기 위해 새로운 리스트에 담아두기
+        foreach(var character in UserInfo.UserCharDict_Copy)
+        {
+            SortCombat_List.Add(character.Value);
+        }
+
+        // 전투력 순으로 정렬
+        SortCombat_List.Sort((a, b) => b.Get_CombatPower.CompareTo(a.Get_CombatPower));
+
+        // 최대 장착 칸인 5개보다 작으면 보유 리스트의 카운트 만큼 반복
+        if(SortCombat_List.Count < MaxEquip_Count)
+        {
+            for (int i = 0; i < SortCombat_List.Count; i++)
+            {
+                // 장착 캐릭터 추가 
+                UserInfo.Equip_Characters.Add(SortCombat_List[i]);
+
+                // 추가해주었으니 캐릭터 목록에서는 삭제
+                UserInfo.UserCharDict_Copy.Remove(
+                    new KeyValuePair<string, Character>(UserInfo.Equip_Characters[i].Get_CharName, UserInfo.Equip_Characters[i]));
+            }
+        }
+        // 최대 장착 칸인 5개보다 많으면 5번만 돌기 위해
+        else if (SortCombat_List.Count >= MaxEquip_Count)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                UserInfo.Equip_Characters.Add(SortCombat_List[i]);
+
+                // 추가해주었으니 캐릭터 목록에서는 삭제
+                UserInfo.UserCharDict_Copy.Remove(
+                    new KeyValuePair<string, Character>(UserInfo.Equip_Characters[i].Get_CharName, UserInfo.Equip_Characters[i]));
+            }
+        }
+
+        // 장착된 슬롯 캐릭터 정보 저장
+        for(int i = 0; i < UserInfo.Equip_Characters.Count; i++)
+        {
+            EquipSlot_List[i].EquipCharacter = UserInfo.Equip_Characters[i];
+        }
+
+        CharImg_Anim_Ref.Get_ImageIndex = 0;
+        CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex);
+        // 장착한 캐릭터에 따라 이미지 교체 함수
+        CharImg_Anim_Ref.PlayCheck_ChangeAnim();
+        // 캐릭터 리스트 리셋
+        Refresh_CharacterList();
+        // 장착칸 UI 리셋
+        Equip_Image_Refresh(false);
+
+        // 데이터 저장 
+        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CLEAR_EQUIP_CHAR);
+    }
+    #endregion
+
     #region CharacterList_UI
     // 캐릭터 장착 슬롯 버튼 활성화
     void Interact_EquipSlot_Btn()
     {
         int count = 0;
 
-        // 만약 캐릭터 교체 버튼을 활성화 시 캐릭터정보창으로 이동 할 수 있는 버튼을 활성화 시키고
+        // 만약 캐릭터 교체 버튼을 활성화 시 캐릭터 정보창으로 이동 할 수 있는 버튼을 활성화 시키고
         // 클릭이 안되게 interactable를 비활성화 시킨다.
         for (int on = 0; on < UserInfo.Equip_Characters.Count; on++)
         {
