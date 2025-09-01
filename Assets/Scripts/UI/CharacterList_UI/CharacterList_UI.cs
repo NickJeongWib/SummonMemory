@@ -418,7 +418,7 @@ public class CharacterList_UI : MonoBehaviour
         CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex);
 
         // 장착한 캐릭터에 따라 이미지 교체 함수
-        CharImg_Anim_Ref.CharImage_ChangeAnimF();
+        CharImg_Anim_Ref.PlayCheck_ChangeAnim();
         // 장착 캐릭터 슬롯 초기화
         Refresh_CharacterList(false);
         Equip_Image_Refresh(true);

@@ -99097,7 +99097,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 99bf9639b79a75e4fb23c95d99b8ba00, type: 3}
   - {fileID: 21300000, guid: bc3f9e07982c36a47b0bff99f70a379d, type: 3}
   - {fileID: 21300000, guid: 453accfd343e5974a9c7161fcde2a471, type: 3}
-  R_Summon_Rate: 1
+  R_Summon_Rate: 0.99
   SR_Summon_Rate: 0.12
   SSR_Summon_Rate: 0.02
   Gacha_Video: {fileID: 1843925254}

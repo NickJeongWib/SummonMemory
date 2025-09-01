@@ -53,14 +53,15 @@ public class UserInfo
     #endregion
 
     #region Character
-    // string 캐릭터 이름 / Character 캐릭터 데이터
+    // string 캐릭터 이름 / Character 캐릭터 리스트 원본 데이터
     public static Dictionary<string, Character> UserCharDict = new Dictionary<string, Character>();
     // 캐릭터 장착 시 인벤토리에서 해제하기 위한 복사체
     public static List<KeyValuePair<string, Character>> UserCharDict_Copy = new List<KeyValuePair<string, Character>>();
-    // 캐릭터 정보창에 캐릭터 정보를 나열하기 위한 원본 복사체
+    // 캐릭터 정보창에서 캐릭터를 아이콘을 눌러 캐릭터 성장, 정보, 스킬강화 창에서 왼쪽에 표시되는 스크롤에 표시하기 위한 복사체
     public static List<KeyValuePair<string, Character>> UserCharDict_Copy_2 = new List<KeyValuePair<string, Character>>();
+    // 유저가 캐릭터를 장착 후 저장하지 않고 취소 시 세팅 전의 캐릭터 리스트로 돌아가기 위한 리스트
     public static List<KeyValuePair<string, Character>> Old_UserCharDict_Copy = new List<KeyValuePair<string, Character>>();
-    // 캐릭터 장착 시 인벤토리에서 제거한 캐릭터 값을 받기위한 리스트
+    // 캐릭터 장착 시 캐릭터 리스트에서 제거한 캐릭터 값을 받기위한 리스트
     public static List<Character> Equip_Characters = new List<Character>();
     #endregion
 

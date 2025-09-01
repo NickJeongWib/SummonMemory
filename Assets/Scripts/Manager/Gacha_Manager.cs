@@ -45,9 +45,9 @@ public class Gacha_Manager : MonoBehaviour
     [SerializeField] Sprite[] Books;
 
     [Header("----SummonRate----")]
-    [SerializeField] float R_Summon_Rate; // 0.8
-    [SerializeField] float SR_Summon_Rate; // 0.16
-    [SerializeField] float SSR_Summon_Rate; // 0.04
+    [SerializeField] float R_Summon_Rate; // 0.86
+    [SerializeField] float SR_Summon_Rate; // 0.12
+    [SerializeField] float SSR_Summon_Rate; // 0.02
 
     [Header("----Gacha_Video----")]
     [SerializeField] GameObject Gacha_Video;
@@ -75,7 +75,7 @@ public class Gacha_Manager : MonoBehaviour
 
     float Summon_Rate()
     {
-        float RandomRate = Random.Range(0.01f, 1.0f);
+        float RandomRate = Random.Range(0.00f, 1.0f);
         return RandomRate;
     }
 
@@ -133,6 +133,7 @@ public class Gacha_Manager : MonoBehaviour
     // TODO ## Gacha_Manager 가차 시스템
     public void Summon()
     {
+        // 아이템 뽑기 연출은 1.0f라서 0.7f로 바꿔주기
         Videoplayer.playbackSpeed = 0.7f;
 
         // TODO ## Gacha_Manager : TestMode
@@ -153,57 +154,67 @@ public class Gacha_Manager : MonoBehaviour
 
         Gacha_Num = 0;
 
-
+        // 정해진 가차만큼 반복 단일뽑기, 10연 뽑기인지
         while (Gacha_Num < Gacha_Count)
         {
+            // 소환될 확률 받아오기
             float RandomRate = Summon_Rate();
-
+            // 카운트 증가
             UserInfo.SSR_Set_Count++;
             UserInfo.SR_Set_Count++;
 
+            // 만약 SSR_Set_Count가 80이상이 되면 SSR 획득
             if (UserInfo.SSR_Set_Count >= 80)
             {
-                // Debug.Log(i + " ssr 확정");
+                // SSR 소환
                 SSR_Summon();
+                // SSR 소환 카운트 초기화
                 UserInfo.SSR_Set_Count = 0;
+                // SSR의 뽑기 연출을 위해 true
                 isSSR_Summon = true;
             }
             else if (UserInfo.SR_Set_Count >= 10)
             {
-                // Debug.Log(i + " sr 확정");
+                // SR 소환
                 SR_Summon();
+                // SR 소환 카운트 초기화
                 UserInfo.SR_Set_Count = 0;
+                // SR의 뽑기 연출을 위해 true
                 isSR_Summon = true;
             }
+            // 확정 뽑기가 아니라면
             else
             {
+                // 받은 랜덤 숫자가 SSR 확률보다 작으면 SSR소환 0.00~0.02 사이 수가 뜨면 SSR(2%)
                 if (SSR_Summon_Rate >= RandomRate)
                 {
-                    // Debug.Log(i + " ssr");
                     SSR_Summon();
                     UserInfo.SSR_Set_Count = 0;
                     isSSR_Summon = true;
                 }
+                // 0.02% 초과이거나 0.12보다 작으면 0.03 ~ 0.12가 사이 수가 뜨면 SR(10%)
                 else if (SSR_Summon_Rate < RandomRate && RandomRate <= SR_Summon_Rate)
                 {
-                    // Debug.Log(i + " sr");
                     SR_Summon();
                     UserInfo.SR_Set_Count = 0;
                     isSR_Summon = true;
                 }
+                // SSR, SR범위를 모두 빗겨나간다면 R등급 소환
                 else
                 {
-                    // Debug.Log(i + " r");
                     R_Summon();
                     isR_Summon = true;
                 }
             }
 
+            // 10연속 뽑기일 경우 다시 뽑기 위해 뽑기카운트 증가
             Gacha_Num++;
         }
 
+        // 만약 10연속 뽑기일 경우
         if (Gacha_Count == 10)
         {
+            // 뽑기가 종료 후 10연속으로 뽑은 캐릭터 목록 UI화면을 활성화 시킨다.
             Gacha_10.SetActive(true);
 
             for (int i = 0; i < Gacha_Characters.Count; i++)
@@ -229,8 +240,10 @@ public class Gacha_Manager : MonoBehaviour
                 #endregion
             }
         }
+        // 단일 뽑기 였다면
         else
         {
+            // 뽑기가 종료 후 단일 뽑기로 뽑은 캐릭터 목록 UI화면을 활성화 시킨다.
             Gacha_1.SetActive(true);
 
             Gacha_CharImage.sprite = Gacha_Characters[0].Get_Normal_Img;
@@ -255,9 +268,12 @@ public class Gacha_Manager : MonoBehaviour
 
         Gacha_Count_Text.text = $"{UserInfo.SSR_Set_Count} / 80";
 
-        // UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToDictionary(entry => entry.Key, entry => entry.Value); // 유저가 지닌 캐릭터 풀 복사
-        UserInfo.UserCharDict_Copy = UserInfo.UserCharDict.ToList();
-        UserInfo.UserCharDict_Copy_2 = UserInfo.UserCharDict.ToList();
+        // 원본 Dictionary 복사
+        foreach(var character in UserInfo.UserCharDict)
+        {
+            UserInfo.UserCharDict_Copy.Add(new KeyValuePair<string, Character>(character.Key, character.Value));
+            UserInfo.UserCharDict_Copy_2.Add(new KeyValuePair<string, Character>(character.Key, character.Value));
+        }
       
         // 장착된 캐릭터는 캐릭터 리스트에 추가하지 않기 위해 제거
         for (int i = 0; i < UserInfo.Equip_Characters.Count; i++)
@@ -322,21 +338,24 @@ public class Gacha_Manager : MonoBehaviour
         Character character = Character_List.SSR_Char[RandomSSR];
 
         Gacha_Characters.Add(character);
-        // Debug.Log(character.Get_CharName);
 
         // SSR 캐릭터가 없다면
-        //if (!UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName))
         if (!UserInfo.UserCharDict.ContainsKey(character.Get_CharName))
         {
+            // 새로운 캐릭터를 뽑았기 때문에 해당 Index의 New이미지를 켜준다.
             Gacha_New_Images[Gacha_Num].SetActive(true);
-            //UserInfo.UserCharDict.Add(Character_List.SSR_Char[RandomSSR].Get_CharName, character);
+            // UserInfo의 캐릭터 리스트 원본에 저장
             UserInfo.UserCharDict.Add(character.Get_CharName, character);
+            // UserInfo.UserCharDict[character.Get_CharName]의 최대 성장 레벨을 20으로 만든다.
             UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20;
 
+            // 도감에서 SSR 슬롯 항목의 크기만큼 반복
             for (int i = 0; i < DictionaryCtrl_Ref.SSR_Slot.Count; i++)
             {
+                // 만약 i번째 슬롯의 캐릭터 이름이 뽑은 캐릭터와 이름이 동일하다면
                 if (DictionaryCtrl_Ref.SSR_Slot[i].Get_Slot_Char.Get_CharName == character.Get_CharName)
                 {
+                    // UI에서 Lock된 이미지들을 비활성화시키기 위한 함수
                     DictionaryCtrl_Ref.SSR_Slot[i].Set_UI_Refresh(true);
                     break;
                 }
@@ -346,25 +365,30 @@ public class Gacha_Manager : MonoBehaviour
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar < 5) 
         {
             New_PopUp_Active();
+            // 한계돌파 증가
             UserInfo.UserCharDict[character.Get_CharName].Get_CharStar++;
+            // 한계돌파 1단계 당 10레벨 추가 성장 가능 최대 70레벨까지 성장 가능
             UserInfo.UserCharDict[character.Get_CharName].Get_Max_Lv = 20 + (10 * UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
-            // Debug.Log(UserInfo.UserCharDict[character.Get_CharName].Get_CharName + " : " + UserInfo.UserCharDict[character.Get_CharName].Get_CharStar);
         }
         // 등급이 다 올랐다면
         else if (UserInfo.UserCharDict.ContainsKey(Character_List.SSR_Char[RandomSSR].Get_CharName) && UserInfo.UserCharDict[character.Get_CharName].Get_CharStar >= 5)
         {
             New_PopUp_Active();
+            // 소환서 이미지 활성화
             Book_PopUp_Active(Books[2]);
 
+            // Item_List.Spend_Item_List의 카운트만큼 반복
             for (int i = 0; i < Item_List.Spend_Item_List.Count; i++)
             {
-                if(Item_List.Spend_Item_List[i].Get_Item_Name == "고급 소환서")
+                // 스프레드 시트에서 받아올 때 만든 Item_List의 Spend_Item_List에서 i번째에 "고급 소환서"가 있다면
+                if (Item_List.Spend_Item_List[i].Get_Item_Name == "고급 소환서")
                 {
+                    // Item_List.Spend_Item_List[i](고급 소환서) 아이템을 인벤토리에 추가한다.
                     UserInfo.Add_Inventory_Item(Item_List.Spend_Item_List[i]);
                     break;
                 }
             }
-
+            // 고급 소환서를 획득했으니 인벤토리 Refresh
             InventoryUI_Ref.Spend_Slot_Refresh();
         }  
     }
