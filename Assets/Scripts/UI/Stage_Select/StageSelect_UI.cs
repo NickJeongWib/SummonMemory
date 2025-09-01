@@ -78,15 +78,10 @@ public class StageSelect_UI : MonoBehaviour
             UserInfo.Pos_Index[i] = -1;
         }
 
-        //for(int i = 0; i < UserInfo.Pos_Index.Length; i++)
-        //{
-        //    Debug.Log(UserInfo.Pos_Index[i]);
-        //}
-
         // 기존 장착한 캐릭터 프리펩 전체 삭제
         for(int i = 0; i < StandCharacters.Length; i++)
         {
-            // 아무거도 없으면 그냥 끝내기
+            // 아무것도 없으면 그냥 끝내기
             if (StandCharacters[i] == null)
                 break;
             Destroy(StandCharacters[i]);
