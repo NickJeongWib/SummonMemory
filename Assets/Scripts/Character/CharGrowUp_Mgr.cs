@@ -301,33 +301,8 @@ public class CharGrowUp_Mgr : MonoBehaviour
         // 슬라이더 변화에 따라 호출되는 함수
         UseCount = Mathf.RoundToInt(SlimeMaxCount * Slime_Use_Slider.value);
         Exp_Sum = Use_Exp[selectNum] * UseCount;
-        // Debug.Log("0 " + Exp_Sum);
 
-        // 만약 사용할 수 있는 슬라임의 최대치를 입력했다면
-        //if (Character_List.Cumulative_Exp[maxLv - 2] <= Exp_Sum)
-        //{
-        //    // 사용횟수를 초기화
-        //    UseCount = Exp_Sum / Use_Exp[selectNum];
-        //    // 사용된 exp 다시 계산하기 위해 0
-        //    Exp_Sum = 0;
-
-        //    // 사용된 값만큼 반복
-        //    for (int i = 0; i < UseCount; i++)
-        //    {
-        //        // 다시 총합 계산
-        //        Exp_Sum += Use_Exp[selectNum];
-        //        Debug.Log("1 " + Exp_Sum);
-        //        if (Character_List.Cumulative_Exp[maxLv - 2] <= Exp_Sum)
-        //        {
-        //            // 사용개수 초기화
-        //            UseCount = i + 1;
-        //            // 슬라이더 값 초기화
-        //            Slime_Use_Slider.value = (float)UseCount / (float)SlimeMaxCount;
-        //            break;
-        //        }
-        //    }
-        //}
-        
+        // maxLv의 누적 경험치량보다 지금 현재 캐릭터의 누적 경험치 + 슬라임의 경험치가 더 많을 시(최대 레벨 달성하고도 경험치가 남는다면)
         if (Character_List.Cumulative_Exp[maxLv - 2] <= GameManager.Inst.Get_SelectChar.Get_Cumulative_Exp + Exp_Sum)
         {
             // 사용횟수를 초기화
@@ -345,18 +320,19 @@ public class CharGrowUp_Mgr : MonoBehaviour
                 // 다시 총합 계산
                 Exp_Sum += Use_Exp[selectNum];
 
+                // 초기화 시켜 슬라임 요구치의 최대치로 설정하기 위해
                 if (Character_List.Cumulative_Exp[maxLv - 2] <= GameManager.Inst.Get_SelectChar.Get_Cumulative_Exp + Exp_Sum)
                 {
-                    //Debug.Log("2 " + GameManager.Instance.Get_SelectChar.Get_Cumulative_Exp + " / " + Exp_Sum);
                     // 사용개수 초기화
                     UseCount = i + 1;
-                    //Debug.Log("Use : " + UseCount);
                     // 슬라이더 값 초기화
                     Set_Level = 70;
 
+                    // 최대레벨 도달했으니 EXP 경험치바는 100%로
                     ExpSlider.value = 1;
                     Exp_Percent.text = $"100%";
 
+                    // UI 계산
                     Level_Text.text = $"LV.{maxLv}" +
                        $"<sprite=0><color=orange>{maxLv}</color>";
                     GameManager.Inst.Get_SelectChar.Calculate_State(70, HP_Value_Text, ATK_Value_Text, DEF_Value_Text, CRIR_Value_Text, CRID_Value_Text);

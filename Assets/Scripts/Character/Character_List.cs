@@ -77,8 +77,7 @@ public class Character_List : MonoBehaviour
                GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PROFILE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_WHITE_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_PIXEL_IMAGE,
                GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ICON_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_BG_IMAGE, GoogleSheetSORef.Character_Image_AddressList[i].CHAR_ILLUST_SQUARE);
 
-            Node.Load_Growing_State(GoogleSheetSORef.Character_Growing_StateList[i].LINEAR_FACTOR, GoogleSheetSORef.Character_Growing_StateList[i].EXP_FACTOR, GoogleSheetSORef.Character_Growing_StateList[i].EXP_MULTIPLIER,
-                 GoogleSheetSORef.Character_Growing_StateList[i].TRANSITION_LEVEL);
+            Node.Load_Growing_State(GoogleSheetSORef.Character_Growing_StateList[i].LINEAR_FACTOR, GoogleSheetSORef.Character_Growing_StateList[i].TRANSITION_LEVEL);
 
             // 캐릭터에 스킬 데이터 넘겨주기
             Node.SkillData = SkillData_List[i];

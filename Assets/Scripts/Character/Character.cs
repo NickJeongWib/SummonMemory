@@ -79,11 +79,11 @@ public class Character
     [SerializeField] float linearFactor;     // 선형 성장 계수
     public float Get_linearFactor { get => linearFactor; }
 
-    [SerializeField] float expFactor;        // 지수 성장 계수
-    public float Get_expFactor { get => expFactor; }
+    //[SerializeField] float expFactor;        // 지수 성장 계수
+    //public float Get_expFactor { get => expFactor; }
 
-    [SerializeField] float expMultiplier;    // 지수 성장 가중치
-    public float Get_expMultiplier { get => expMultiplier; }
+    //[SerializeField] float expMultiplier;    // 지수 성장 가중치
+    //public float Get_expMultiplier { get => expMultiplier; }
 
     [SerializeField] int transitionLevel;  // 성장 방식 전환 레벨
     public int Get_transitionLevel { get => transitionLevel; }
@@ -247,12 +247,12 @@ public class Character
     #endregion
 
     #region Load_Growing_State
-    public void Load_Growing_State(float _linearFactor, float _expFactor, float _expMultiplier, int _transitionLevel)
+    public void Load_Growing_State(float _linearFactor, int _transitionLevel)
     {
         linearFactor = (_linearFactor * 100);
-        expFactor = (_expFactor * 100);
-        expMultiplier = (_expMultiplier * 100);
         transitionLevel = _transitionLevel;
+        //expFactor = (_expFactor * 100);
+        //expMultiplier = (_expMultiplier * 100);
     }
     #endregion
 
@@ -276,13 +276,14 @@ public class Character
             level = 70; // 최대 레벨 제한
         }
 
-        // 초반: 선형 성장
+        // 선형 성장
         attack = (BaseAtk - Before_Atk) + (level * linearFactor);
         def = (BaseDef - Before_Def) + (level * linearFactor);
         hp = (BaseHP - Before_Hp)+ (level * linearFactor);
         criR = (BaseCRIR - Before_criR) + ((level * linearFactor) / 1500);
         criD = (BaseCRID - Before_criD) + ((level * linearFactor) / 200);
 
+        // 최대 성장치가 아니라면 성장 시 변화 값 출력
         if (level != Character_Lv)
         {
             _hpText.text = $"{GameManager.Inst.Get_SelectChar.BaseHP}<sprite=0><color=#389D37>{(hp - Before_Hp).ToString("N0")}</color>";
@@ -291,6 +292,7 @@ public class Character
             _criRText.text = $"{(GameManager.Inst.Get_SelectChar.BaseCRIR * 100).ToString("N1")}%<sprite=0><color=#389D37>{((criR - Before_criR) * 100).ToString("N1")}%</color>";
             _criDText.text = $"{(GameManager.Inst.Get_SelectChar.BaseCRID * 100).ToString("N1")}%<sprite=0><color=#389D37>{((criD - Before_criD) * 100).ToString("N1")}%</color>";
         }
+        // 최대 레벨 일 시 최대 레벨의 능력치 값만 출력
         else
         {
             _hpText.text = $"{GameManager.Inst.Get_SelectChar.BaseHP.ToString("N0")}";
@@ -406,8 +408,10 @@ public class Character
     public void EquipmentOption_State_Calc(EQUIPMENT_OPTION _equipOption, int _num, Item _item, bool _isEquip)
     {
         #region ATK_INT
+        // 계산 해야할 옵션이 공격력이면
         if (_equipOption == EQUIPMENT_OPTION.ATK_INT)
         {
+            // isEquip = true면 장착하는 것이기 때문에 능력치 더해주기
             if (_isEquip)
             {
                 CharATK += _item.Get_OptionValue[_num];
@@ -419,9 +423,12 @@ public class Character
         }
         #endregion
         #region ATK_Percent
+        // 계산 해야할 옵션이 공격력% 이면
         if (_equipOption == EQUIPMENT_OPTION.ATK_PERCENT)
         {
+            // 기본 공격력의 비율만큼 계산
             float rate = BaseAtk * _item.Get_OptionValue[_num];
+            // isEquip = true면 장착하는 것이기 때문에 능력치 더해주기
             if (_isEquip)
             {
                 CharATK += rate;
@@ -433,8 +440,10 @@ public class Character
         }
         #endregion
         #region DEF_INT
+        // 계산 해야할 옵션이 방어력이면
         if (_equipOption == EQUIPMENT_OPTION.DEF_INT)
         {
+            // isEquip = true면 장착하는 것이기 때문에 능력치 더해주기
             if (_isEquip)
             {
                 CharDEF += _item.Get_OptionValue[_num];
@@ -446,9 +455,12 @@ public class Character
         }
         #endregion
         #region DEF_Percent
+        // 계산 해야할 옵션이 방어력%이면
         if (_equipOption == EQUIPMENT_OPTION.DEF_PERCENT)
         {
+            // 기본 방어력의 비율만큼 계산
             float rate = BaseDef * _item.Get_OptionValue[_num];
+            // isEquip = true면 장착하는 것이기 때문에 능력치 더해주기
             if (_isEquip)
             {
                 CharDEF += rate;
@@ -460,8 +472,10 @@ public class Character
         }
         #endregion
         #region HP_INT
+        // 계산 해야할 옵션이 체력이면
         if (_equipOption == EQUIPMENT_OPTION.HP_INT)
         {
+            // isEquip = true면 장착하는 것이기 때문에 능력치 더해주기
             if (_isEquip)
             {
                 CharHP += _item.Get_OptionValue[_num];
@@ -473,9 +487,12 @@ public class Character
         }
         #endregion
         #region HP_Percent
+        // 계산 해야할 옵션이 체력% 이면
         if (_equipOption == EQUIPMENT_OPTION.HP_PERCENT)
         {
+            // 기본 체력의 비율만큼 계산
             float rate = BaseHP * _item.Get_OptionValue[_num];
+            // isEquip = true면 장착하는 것이기 때문에 능력치 더해주기
             if (_isEquip)
             {
                 CharHP += rate;
@@ -487,8 +504,10 @@ public class Character
         }
         #endregion
         #region CRIR
+        // 계산 해야할 옵션이 크리티컬 확률이면
         if (_equipOption == EQUIPMENT_OPTION.CRIR_PERCENT)
         {
+            // isEquip = true면 장착하는 것이기 때문에 능력치 더해주기
             if (_isEquip)
             {
                 Char_CRT_RATE += _item.Get_OptionValue[_num];
@@ -496,15 +515,18 @@ public class Character
             else
             {
                 Char_CRT_RATE -= _item.Get_OptionValue[_num];
-
+                
+                // 기본 수치보다 내려가면 기본수치로 고정
                 if (BaseCRIR > Char_CRT_RATE)
                     Char_CRT_RATE = BaseCRIR;
             }
         }
         #endregion
         #region CRID
+        // 계산 해야할 옵션이 크리티컬 데미지라면
         if (_equipOption == EQUIPMENT_OPTION.CRID_PERCENT)
         {
+            // isEquip = true면 장착하는 것이기 때문에 능력치 더해주기
             if (_isEquip)
             {
                 Char_CRT_DAMAGE += _item.Get_OptionValue[_num];
@@ -513,13 +535,12 @@ public class Character
             {
                 Char_CRT_DAMAGE -= _item.Get_OptionValue[_num];
 
+                // 기본 수치보다 내려가면 기본수치로 고정
                 if (BaseCRID > Char_CRT_DAMAGE)
                     Char_CRT_DAMAGE = BaseCRID;
             }
         }
         #endregion
-
-        // TestState();
     }
     #endregion
 
@@ -589,9 +610,9 @@ public class Character
     {
         // 성장 수치
         linearFactor = _linearFactor;
-        expFactor = _expFactor;
-        expMultiplier = _expMultiplier;
         transitionLevel = _transitionLevel;
+        //expFactor = _expFactor;
+        //expMultiplier = _expMultiplier;
 
         // 계산된 스탯
         CharHP = _CalHP;

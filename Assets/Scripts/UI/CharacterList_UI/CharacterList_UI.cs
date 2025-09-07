@@ -361,7 +361,7 @@ public class CharacterList_UI : MonoBehaviour
         CharImg_Anim_Ref.R_SR_Image_Change(CharImg_Anim_Ref.Get_ImageIndex);
 
         // 장착한 캐릭터에 따라 이미지 교체 함수
-        CharImg_Anim_Ref.CharImage_ChangeAnimF();
+        CharImg_Anim_Ref.PlayCheck_ChangeAnim();
 
         // 캐릭터 리스트 리셋
         Refresh_CharacterList(false);

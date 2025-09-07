@@ -654,146 +654,98 @@
   "Character_Growing_State": [
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.02,
-      "EXP_FACTOR": 0.012,
-      "EXP_MULTIPLIER": 0.005,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.04,
-      "EXP_FACTOR": 0.02,
-      "EXP_MULTIPLIER": 0.007,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.04,
-      "EXP_FACTOR": 0.02,
-      "EXP_MULTIPLIER": 0.007,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.04,
-      "EXP_FACTOR": 0.02,
-      "EXP_MULTIPLIER": 0.007,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.04,
-      "EXP_FACTOR": 0.02,
-      "EXP_MULTIPLIER": 0.007,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.04,
-      "EXP_FACTOR": 0.02,
-      "EXP_MULTIPLIER": 0.007,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.04,
-      "EXP_FACTOR": 0.02,
-      "EXP_MULTIPLIER": 0.007,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.04,
-      "EXP_FACTOR": 0.02,
-      "EXP_MULTIPLIER": 0.007,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.04,
-      "EXP_FACTOR": 0.02,
-      "EXP_MULTIPLIER": 0.007,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.07,
-      "EXP_FACTOR": 0.03,
-      "EXP_MULTIPLIER": 0.009,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.07,
-      "EXP_FACTOR": 0.03,
-      "EXP_MULTIPLIER": 0.009,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.07,
-      "EXP_FACTOR": 0.03,
-      "EXP_MULTIPLIER": 0.009,
       "TRANSITION_LEVEL": 30
     },
     {
       "LINEAR_FACTOR": 0.07,
-      "EXP_FACTOR": 0.03,
-      "EXP_MULTIPLIER": 0.009,
       "TRANSITION_LEVEL": 30
     }
   ],

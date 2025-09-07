@@ -268,17 +268,18 @@ public class Item
         }
     }
 
+    // 캐릭터가 장비의 강화 별 잠재 옵션 능력치 계산 
     public void EquipOption_Stat_Calc(bool _isEquip)
     {
         if (OwnCharacter == null)
             return;
 
-        //Debug.Log(OwnCharacter.Get_CharName);
+        // 3, 6, 9 마다 강화옵션이 붙기 때문에 반복 몇 번할 것인지 정하기
         int count = (int)(Item_Lv / 3);
 
         for (int i = 0; i < count; i++)
         {
-            //Debug.Log($"for{i}");
+            // 현재 이 아이템의 OwnCharacter의 능력치를 아이템의 EquipmentOption[i] 잠재 능력 수치를 빼거나 추가한다.
             OwnCharacter.EquipmentOption_State_Calc(EquipmentOption[i], i, this, _isEquip);
         }
     }

@@ -57,8 +57,6 @@ public class Character_Image_Address
 public class Character_Growing_State
 {
 	public float LINEAR_FACTOR;
-	public float EXP_FACTOR;
-	public float EXP_MULTIPLIER;
 	public int TRANSITION_LEVEL;
 }
 

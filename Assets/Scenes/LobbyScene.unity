@@ -3952,8 +3952,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -6349,8 +6347,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -7072,8 +7068,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -11316,8 +11310,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -11489,8 +11481,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -13408,8 +13398,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -15745,8 +15733,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -22990,8 +22976,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -24220,8 +24204,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -24785,8 +24767,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -29634,8 +29614,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -30521,8 +30499,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -39216,8 +39192,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -40535,8 +40509,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -46293,8 +46265,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -50188,8 +50158,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -50456,8 +50424,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -52331,8 +52297,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -52751,8 +52715,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -53036,8 +52998,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -55191,8 +55151,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -58155,8 +58113,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -61913,8 +61869,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -68310,8 +68264,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -68520,8 +68472,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -72265,8 +72215,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -82967,8 +82915,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -84219,8 +84165,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -86853,8 +86797,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -88608,8 +88550,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -89175,8 +89115,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -90740,8 +90678,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -91880,8 +91816,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -92622,8 +92556,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -95855,8 +95787,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -103258,8 +103188,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -103786,8 +103714,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -103901,8 +103827,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -105126,8 +105050,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -107558,8 +107480,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -110258,8 +110178,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -111890,8 +111808,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -112164,8 +112080,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -113064,8 +112978,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -113602,8 +113514,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -116372,8 +116282,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -118518,8 +118426,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -122015,8 +121921,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -123359,8 +123263,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -124374,8 +124276,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -126256,8 +126156,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -127919,8 +127817,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -128878,8 +128774,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -129899,8 +129793,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -131521,8 +131413,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 
@@ -137073,8 +136963,6 @@ MonoBehaviour:
     Char_CRT_RATE: 0
     CombatPower: 0
     linearFactor: 0
-    expFactor: 0
-    expMultiplier: 0
     transitionLevel: 0
     Prefab_Path: 
     UI_Prefab_Path: 

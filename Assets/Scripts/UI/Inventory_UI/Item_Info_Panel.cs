@@ -406,7 +406,7 @@ public class Item_Info_Panel : MonoBehaviour
 
         GameManager.Inst.Get_SelectChar.TestState();
 
-        // 장비타입에 맞는 장비가 하나도 없을 때 다른 장비타입의 정보가 남아있는걸 방지
+        // 장비 타입에 맞는 장비가 하나도 없을 때 다른 장비타입의 정보가 남아있는걸 방지
         for (int i = 0; i < Inventory_UI_Ref.Get_EquipSlot_List.Count; i++)
         {
             Inventory_UI_Ref.Get_EquipSlot_List[i].Get_SlotItemInfo = null;
@@ -458,7 +458,6 @@ public class Item_Info_Panel : MonoBehaviour
         CurrentItem = null;
         LobbyMangerRef.Refresh_User_CombatPower();
         // GameManager.Instance.Get_SelectChar.TestState();
-
     }
     #endregion
 
