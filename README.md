@@ -6,7 +6,7 @@
 플랫폼: 안드로이드, PC<br>
 유니티 버전: 2022.03.17f1<br>
 
-# 인게임 사진
+# 게임 이미지
 <p align="center">
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbInuh0%2FbtsQe5JUv4K%2FAAAAAAAAAAAAAAAAAAAAAMuana1BgngLJGxEAaZFNjRsm0AgSUyc7HE5a6Ul3h8m%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3D9cAUyWU6h67NXqTxy2yzBF9sDTk%253D" width="45%" />
     <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbsHhSf%2FbtsQfx0vxHe%2FAAAAAAAAAAAAAAAAAAAAAOzC-2HQTNQVVOgY1BgCA9AEGBJ-o9egTmOLZ17dfaAr%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3DvjrbBaW8CkIdLVGvN%252FBLX2gBXUY%253D" width="45%" />
