@@ -18,7 +18,7 @@
 </p>
 
 # :star:일정 관리 TODO 리스트
-일정 관리 주간 목표는 Trello를 사용해서 관리했습니다.
+일정 관리 주간 목표는 Trello를 사용해서 관리했습니다.<br>
 <a href="https://trello.com/b/kffmqhyS/summonmemory">TODO 리스트
   
 # :star:빌드 파일 Apk&Exe
