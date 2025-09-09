@@ -15,3 +15,6 @@
 ###
 체험용 아이디   123@naver.com<br>
 체험용 비밀번호 123123<br>
+
+# 기술 소개서
+<a href="https://rko6789.tistory.com/">게임 시스템 기술 소개서<br>
