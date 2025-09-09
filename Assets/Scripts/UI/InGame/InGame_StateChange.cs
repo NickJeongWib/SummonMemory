@@ -36,6 +36,5 @@ public class InGame_StateChange : MonoBehaviour
         {
             InGame_Mgr.Inst.Get_ObjPool.SkillIcon_List[InGame_Mgr.Inst.CurTurnCharIndex].On_Click_NoramlAtk();
         }
-       
     }
 }

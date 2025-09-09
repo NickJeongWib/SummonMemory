@@ -8,13 +8,13 @@ using static Define;
 public enum INGAME_STATE
 {
     READY,       // 게임 시작
-    TURN_START,  // 턴 시작
+    TURN_START,  // 내 턴 시작
     STANDBY,     // 대기
-    TURN_END,    // 턴 종료
+    TURN_END,    // 내 턴 종료
     STAGE_END,   // 스테이지 종료
     BATTLE,      // 전투
-    ENEMY_TURN,
-    ENEMY_TURN_END,
+    ENEMY_TURN,  // 적 턴
+    ENEMY_TURN_END, // 적 턴 종료
 }
 
 public class InGame_Mgr : MonoBehaviour

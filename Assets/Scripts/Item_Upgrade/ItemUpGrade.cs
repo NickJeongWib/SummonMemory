@@ -341,24 +341,10 @@ public class ItemUpGrade : MonoBehaviour
         }
 
         #region Data
-        // 체인업그레이드 시 중복 호출 방지
+        // 연속 업그레이드 시 중복 호출 방지
         if (ChainUpgrade_Panel.activeSelf == false)
         {
             // TODO ## ItemUpGrade 업그레이드 데이터 저장
-            //if (SelectItem.Get_isEquip)
-            //{
-            //    // 캐릭터 장착 중이라면
-            //    if (UserInfo.Equip_Characters.Contains(SelectItem.Get_OwnCharacter))
-            //    {
-            //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
-            //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_CHAR_LIST);
-            //    }
-            //    else
-            //    {
-            //        DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
-            //    }
-            //}
-            // 재료 저장
             DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
             DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
             DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
@@ -504,36 +490,45 @@ public class ItemUpGrade : MonoBehaviour
     {
         SoundManager.Inst.PlayUISound();
 
+        // 강화하고자 하는 아이템이 9강 이상이면 return
         if (SelectItem.Get_Item_Lv >= 9)
         {
             return;
         }
 
+        // 데이터 저장이 완료될 때까지 다른 작업하지 못하게 로딩 창 활성화
         LoadingPanel.Loading();
 
+        // 최대 비용 = 강화 비용 * 강화 시행 횟수
         MaxCost = Cost * Count;
 
-        // 아이템 강화 골드보다 보유골드가 적으면
+        // 최대 아이템 강화 비용보다 보유골드가 적으면
         if (MaxCost > UserInfo.Money)
         {
             return;
         }
 
         CostSum = 0;
+
+        // 연속 강화일 때 슬라이더나 버튼으로 정한 횟수만큼 반복
         for (int i = 0; i < Count; i++)
         {
+            // 사용한 총 비용 알기 위해 계산
             CostSum += Cost;
+            // 아이템 강화 함수 호출!
             On_Click_UpgradeBtn();
 
+            // 9강 도달하면 바로 break
             if (SelectItem.Get_Item_Lv >= 9)
             {
                 break;
             }
         }
 
+        // 로비Scene의 골드 수량 Text 수량 초기화해서 표시하는 함수 실행
         LobbyManager_Ref.Refresh_UI_Money();
 
-        // 재료 저장
+        // 데이터 저장
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
@@ -551,6 +546,7 @@ public class ItemUpGrade : MonoBehaviour
         if (OpValue_Locks[0] && OpValue_Locks[1] && OpValue_Locks[2])
             return;
 
+        // 테스트 모드 아닐 때 재화 소모 하기 위한
         if (!GameManager.Inst.TestMode)
         {
             if (UserInfo.Money < ResetOptionValue_Cost || !UserInfo.InventoryDict.ContainsKey("재련 가루") || UserInfo.InventoryDict["재련 가루"].Get_Amount < ResetOptionValue_Item_Cost)
@@ -575,12 +571,15 @@ public class ItemUpGrade : MonoBehaviour
 
         LoadingPanel.Loading();
 
-        // 재료 저장
+        // 옵션 재설정 함수
+        SelectItem.Set_ResetOptionValue(OpValue_Locks);
+
+        // 데이터 저장
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.CHARLIST);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.ITEM_INVENTORY);
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.EQUIP_ITEM_INVENTORY);
 
-        SelectItem.Set_ResetOptionValue(OpValue_Locks);
+        // Text 초기화
         Refresh_OptionText();
     }
     #endregion
