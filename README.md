@@ -6,6 +6,6 @@
 플랫폼: 안드로이드, PC<br>
 유니티 버전: 2022.03.17f1<br>
 
-#빌드 파일 Apk&Exe
+# 빌드 파일 Apk&Exe
 <a href="https://drive.google.com/file/d/1VKVxA4U2Cs_xwrHhfQldKNFBtEdNHe3R/view?usp=drive_link">서먼 메모리 Apk 빌드 파일 링크<br>
 <a href="https://drive.google.com/file/d/1rj_OZHZhMA82K0O6obkAYymTjwzH_kqF/view?usp=drive_link">서먼 메모리 Exe 빌드 파일 링크<br>
