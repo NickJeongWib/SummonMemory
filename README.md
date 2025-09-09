@@ -23,7 +23,7 @@
 <a href="https://drive.google.com/file/d/1VKVxA4U2Cs_xwrHhfQldKNFBtEdNHe3R/view?usp=drive_link">서먼 메모리 Apk 빌드 파일 링크<br>
 <a href="https://drive.google.com/file/d/1rj_OZHZhMA82K0O6obkAYymTjwzH_kqF/view?usp=drive_link">서먼 메모리 Exe 빌드 파일 링크<br>
 ###
-<color=red>초기에 소환서나 재련수정, 재련가루가 없어</color>
+<span style="color:red">초기에 소환서나 재련수정, 재련가루가 없어</span>
 체험용 아이디   123@naver.com<br>
 체험용 비밀번호 123123<br>
 
