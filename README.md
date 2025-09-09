@@ -1,4 +1,4 @@
-# :star:서먼메모리(SummonMemory)
+# :star:서먼 메모리(SummonMemory)
 
 <img src="https://raw.githubusercontent.com/NickJeongWib/Repo_Image/refs/heads/main/SummonMemory/MainImg.png"  width="600"/></a><br>
 장르: 수집형 턴제 RPG<br>
