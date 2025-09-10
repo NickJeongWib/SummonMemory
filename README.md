@@ -1,7 +1,7 @@
 # :star:서먼 메모리(SummonMemory)
 
 <img src="https://raw.githubusercontent.com/NickJeongWib/Repo_Image/refs/heads/main/SummonMemory/MainImg.png"  width="600"/></a><br>
-장르: 수집형 턴제 RPG<br>
+장르: 2D수집형 턴제 RPG<br>
 그래픽: 2D<br>
 플랫폼: 안드로이드, PC<br>
 유니티 버전: 2022.03.17f1<br>
