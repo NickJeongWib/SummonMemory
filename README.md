@@ -30,4 +30,4 @@
 체험용 비밀번호 123123<br>
 
 # :star:기술 소개서
-<a href="https://rko6789.tistory.com/">게임 시스템 기술 소개 블로그<br>
+<a href="https://rko6789.tistory.com/category/Unity_Porfolio/2D%20%EC%88%98%EC%A7%91%ED%98%95_%ED%84%B4%EC%A0%9C_RPG">게임 시스템 기술 소개 블로그<br>
