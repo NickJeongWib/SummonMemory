@@ -23,7 +23,7 @@
   
 # :star:빌드 파일 Apk&Exe
 <a href="https://drive.google.com/file/d/1sV0pZMJeBC_tZZAd180O-Va_Uzb6OJ5p/view?usp=drive_link">서먼 메모리 Apk 빌드 파일 링크<br>
-<a href="https://drive.google.com/file/d/1rj_OZHZhMA82K0O6obkAYymTjwzH_kqF/view?usp=drive_link">서먼 메모리 Exe 빌드 파일 링크<br>
+<a href="https://drive.google.com/file/d/1Sdzh9kwIXBsWxJwRJ6Roh7X71vzbnX6b/view?usp=drive_link">서먼 메모리 Exe 빌드 파일 링크<br>
 ###
 :fire:초기에 소환서나 재련수정, 재련가루가 없어 체험용 계정 사용을 추천합니다.</font><br>
 체험용 아이디   123@naver.com<br>
