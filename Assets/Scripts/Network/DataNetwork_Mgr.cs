@@ -62,46 +62,57 @@ public class DataNetwork_Mgr : MonoBehaviour
     {
         if (PacketBuff[0] == PACKETTYPE.CHARLIST)
         {
+            // 캐릭터 목록 업데이트
             UpdateCharListCo();
         }
         else if (PacketBuff[0] == PACKETTYPE.EQUIP_CHAR_LIST)
         {
+            // 장착 캐릭터 업데이트
             UpdateEquipCharCo();
         }
         else if (PacketBuff[0] == PACKETTYPE.CLEAR_EQUIP_CHAR)
         {
+            // 장착 캐릭터 초기화 업데이트
             UpdateClearEquipCharCo();
         }
         else if (PacketBuff[0] == PACKETTYPE.ITEM_INVENTORY)
         {
+            // 소모, 강화 아이템 인벤토리 업데이트
             UpdateItemInvenCo();
         }
         else if (PacketBuff[0] == PACKETTYPE.EQUIP_ITEM_INVENTORY)
         {
+            // 장비 아이템 인벤토리 업데이트
             UpdateEquipItemInvenCo();
         }
         else if (PacketBuff[0] == PACKETTYPE.DIA)
         {
+            // 다이아 업데이트
             UpdateDiaCo();
         }
         else if (PacketBuff[0] == PACKETTYPE.MONEY)
         {
+            // 골드 업데이트
             UpdateMoneyCo();
         }
         else if (PacketBuff[0] == PACKETTYPE.PROFILE_IMG)
         {
+            // 유저 프로필 업데이트
             UpdateProfileCo();
         }
         else if (PacketBuff[0] == PACKETTYPE.QUEST)
         {
+            // 퀘스트 데이터 업데이트
             UpdateQuestCo();
         }
         else if (PacketBuff[0] == PACKETTYPE.STAGE)
         {
+            // 스테이지 진행도 업데이트
             UpdateStageCo();
         }
         else if (PacketBuff[0] == PACKETTYPE.GACHA_COUNT)
         {
+            // 뽑기 카운트 업데이트
             UpdateGachaCountCo();
         }
         PacketBuff.RemoveAt(0);
@@ -313,20 +324,29 @@ public class DataNetwork_Mgr : MonoBehaviour
         if (UserInfo.UID == "")
             return;
 
+        // 장비 아이템 목록
         var allEntries = UserInfo.Equip_Inventory;
+        // 덩어리 사이즈
         int chunkSize = 10;
 
+        // 저장 시킬 덩어리 최대 반복 값
         int totalChunks = Mathf.CeilToInt(allEntries.Count / (float)chunkSize);
 
+        // totalChunks만큼 반복
         for (int i = 0; i < totalChunks; i++)
         {
+            // allEntries의 장비목록 리스트에서 10개씩 가지고 오기
             var chunk = allEntries.Skip(i * chunkSize).Take(chunkSize).ToList();
 
+            // chunk의 값을 json으로 변환 시키기 위해 EquipItemListWrapper사용
             var wrapper = new EquipItemListWrapper(chunk);
+            // json 변환
             string json = JsonUtility.ToJson(wrapper, true);
+            // 장비 아이템 PlayFab의 Key값
             string keyName = $"Equip_Inven_Part_{i + 1}";
             // Debug.Log(json);
 
+            // 요청 데이터 작성
             var request = new UpdateUserDataRequest
             {
                 Data = new Dictionary<string, string> {
@@ -336,8 +356,9 @@ public class DataNetwork_Mgr : MonoBehaviour
                 }
             }};
 
-            // NetWaitTime = 0.5f;
+            NetWaitTime = 0.5f;
 
+            // request의 데이터 API를 호출하여 데이터 저장 
             PlayFabClientAPI.UpdateUserData(request,
             (_result) =>
             {
@@ -505,76 +526,33 @@ public class DataNetwork_Mgr : MonoBehaviour
         if (UserInfo.UID == "")
             return;
 
+        // PlayFab에 저장시킬 데이터 <EquipChar_i, 캐릭터 이름>형식
         Dictionary<string, string> CharData = new Dictionary<string, string>();
+        // 장착 캐릭터 리스트
         List<Character> EquipChar_List;
+        // 장착 캐릭터 리스트는 UserInfo.Equip_Characters
         EquipChar_List = UserInfo.Equip_Characters;
 
+        // 장착 캐릭터만큼 반복
         for (int i = 0; i < EquipChar_List.Count; i++)
         {
             string Data = "";
+            // 데이터 값은 캐릭터 이름
             Data = $"{EquipChar_List[i].Get_CharName}";
-            #region Data_Save
-            // Info
-            //Data += $"{EquipChar_List[i].Get_CharacterID}|";          // 0
-            // 1
-            //Data += $"{EquipChar_List[i].Get_CharEngName}|";          // 2
-            //Data += $"{EquipChar_List[i].Get_CharGrade}|";            // 3
-            //Data += $"{EquipChar_List[i].Get_CharType}|";             // 4
-            //Data += $"{EquipChar_List[i].Get_CharElement}|";          // 5
-            //Data += $"{EquipChar_List[i].Get_CharStar}|";             // 6
-
-            //// Stat
-            //Data += $"{EquipChar_List[i].Get_BaseHP}|";               // 7
-            //Data += $"{EquipChar_List[i].Get_CharHP}|";               // 8
-            //Data += $"{EquipChar_List[i].Get_BaseAtk}|";              // 9
-            //Data += $"{EquipChar_List[i].Get_CharATK}|";              // 10
-            //Data += $"{EquipChar_List[i].Get_BaseDef}|";              // 11
-            //Data += $"{EquipChar_List[i].Get_CharDEF}|";              // 12
-            //Data += $"{EquipChar_List[i].Get_BaseCRID}|";             // 13
-            //Data += $"{EquipChar_List[i].Get_Char_CRT_Damage}|";      // 14
-            //Data += $"{EquipChar_List[i].Get_BaseCRIR}|";             // 15
-            //Data += $"{EquipChar_List[i].Get_Char_CRT_Rate}|";        // 16
-            //Data += $"{EquipChar_List[i].Get_CombatPower}|";          // 17
-
-            //// Growing
-            //Data += $"{EquipChar_List[i].Get_linearFactor}|";         // 18
-            //Data += $"{EquipChar_List[i].Get_expFactor}|";            // 19
-            //Data += $"{EquipChar_List[i].Get_expMultiplier}|";        // 20
-            //Data += $"{EquipChar_List[i].Get_transitionLevel}|";      // 21
-
-            //// Lv
-            //Data += $"{EquipChar_List[i].Get_Character_Lv}|";         // 22
-            //Data += $"{EquipChar_List[i].Get_Max_Lv}|";               // 23
-            //Data += $"{EquipChar_List[i].Get_CurrentExp}|";           // 24
-            //Data += $"{EquipChar_List[i].Get_Cumulative_Exp}|";       // 25
-
-            //// Path
-            //Data += $"{EquipChar_List[i].Get_Illust_Address}|";       // 26
-            //Data += $"{EquipChar_List[i].Get_Normal_Image_Address}|"; // 27
-            //Data += $"{EquipChar_List[i].Get_Grade_Up_Image_Address}|";// 28
-            //Data += $"{EquipChar_List[i].Get_Profile_Address}|";      // 29
-            //Data += $"{EquipChar_List[i].Get_White_Illust_Address}|"; // 30
-            //Data += $"{EquipChar_List[i].Get_Pixel_Illust_Address}|"; // 31
-
-            //if (EquipChar_List[i].Get_Square_Illust_Address == "null") // 32
-            //{
-            //    Data += $"NULL";
-            //}
-            //else
-            //{
-            //    Data += $"{EquipChar_List[i].Get_Square_Illust_Address}";
-            //}
-            #endregion
+            // 키 값은 EquipChar_i
             CharData.Add($"EquipChar_{i}", Data);
         }
 
+        // 요청할 데이터
         var request = new UpdateUserDataRequest()
         {
+            // UserData에 CharData 업로드
             Data = CharData
         };
 
         NetWaitTime = 1.0f;
 
+        // 위의 request를 UserData에 업데이트 시킬 API 호출 
         PlayFabClientAPI.UpdateUserData(request,
             (_result) =>
             {
@@ -591,30 +569,42 @@ public class DataNetwork_Mgr : MonoBehaviour
     #region Original_CharacterListUpdate_Network
     private void UpdateCharListCo()
     {
-        DataNetwork_Mgr.Inst.LoadingPanel.gameObject.SetActive(true);
-
         // UID가 없다면 return;
         if (UserInfo.UID == "")
             return;
 
-        var allEntries = UserInfo.UserCharDict.ToList(); // Dictionary → List<KeyValuePair>
-        int chunkSize = 10;
+        // 로딩창 켜주기
+        DataNetwork_Mgr.Inst.LoadingPanel.gameObject.SetActive(true);
 
+        // 캐릭터 보유 Dictionary List<KeyValuePair>형태로 원본 복사
+        var allEntries = UserInfo.UserCharDict.ToList();
+        // 한번에 저장할 수 있는 Json의 캐릭터 수 10개 
+        int chunkSize = 10;
+        // 현재 보유 캐릭터 10캐릭터씩 쪼개서 데이터를 저장시키기 위해 몇번 반복할지 반복값 설정
+        // ex) 보유캐릭터 17캐릭 2번 반복, 21캐릭 3번 반복
         int totalChunks = Mathf.CeilToInt(allEntries.Count / (float)chunkSize);
 
+        // totalChunks만큼 반복
         for (int i = 0; i < totalChunks; i++)
         {
+            // allEntries크기 중 chunkSize사이즈 만큼 잘라서 가져오기
+            // chunkSize보다 allEntries작으면 그냥 allEntries값 만큼만 가져옴 
             var chunk = allEntries.Skip(i * chunkSize).Take(chunkSize);
 
+            // Json으로 바꾸기 위한 Wrapper 객체 생성
             CharacterListWrapper wrapper = new CharacterListWrapper();
+            // CharacterListWrapper의 Characters에 추가
             foreach (var pair in chunk)
             {
                 wrapper.Characters.Add(new CharacterListPair { key = pair.Key, value = pair.Value });
             }
 
+            // 저장된 캐릭터 값 wrapper Json으로 변환
             string json = JsonUtility.ToJson(wrapper);
+            // 키 값은 CharData_Parti번째
             string keyName = $"CharData_Part{i + 1}";
 
+            // 요청 데이터 작성
             var request = new UpdateUserDataRequest
             {
                 Data = new Dictionary<string, string> {
@@ -624,9 +614,11 @@ public class DataNetwork_Mgr : MonoBehaviour
 
             NetWaitTime = 0.5f;
 
+            // request의 데이터 API를 호출하여 데이터 저장 
             PlayFabClientAPI.UpdateUserData(request,
             (_result) =>
             {
+                // 성공적으로 완료 되었다면 로딩창 꺼주기
                 if (LoadingPanel != null && LoadingPanel.gameObject.activeSelf)
                 {
                     LoadingPanel.StartCoroutine(LoadingPanel.LoadImage());

@@ -82,6 +82,7 @@ public class Title_Manager : MonoBehaviour
         // 로그인 성공 시 로딩창이 데이터가 모두 로딩 완료되면 사라지게
         if(LoadingPanel.activeSelf == true && !isCharLoad && !isInvenLoad && !isQuestLoad && !isStageLoad && !isEquipItemLoad)
         {
+            OnClick_GameStart();
             LoadingPanel.SetActive(false);
         }
     }
@@ -182,7 +183,6 @@ public class Title_Manager : MonoBehaviour
                 else if (eachData.Key.Contains("EquipChar_"))
                 {
                     string Data = eachData.Value.Value;
-                    //string[] strArr = Data.Split('|');
                     EquipCharNameData.Add(Data);
                 }
                 else if (eachData.Key.Contains("UserDia"))
@@ -235,7 +235,6 @@ public class Title_Manager : MonoBehaviour
             // 스테이지 클리어 정보 로드
             LoadStageClearList();
             #endregion
-
         }
         // 아이디 저장 토글 저장
         if (Save_ID_Toggle.isOn)
@@ -599,9 +598,11 @@ public class Title_Manager : MonoBehaviour
             {
                 if (result.Data.ContainsKey(key))
                 {
+                    // json Item값으로 변환
                     string json = result.Data[key].Value;
                     EquipItemListWrapper wrapper = JsonUtility.FromJson<EquipItemListWrapper>(json);
 
+                    // List형식으로 전체 추가
                     if (wrapper != null && wrapper.Items != null)
                         loadedList.AddRange(wrapper.Items);
                 }

@@ -364,6 +364,7 @@ public class CharacterList_UI : MonoBehaviour
         CharImg_Anim_Ref.PlayCheck_ChangeAnim();
 
         // 캐릭터 리스트 리셋
+        Debug.Log(2);
         Refresh_CharacterList(false);
         // 장착버튼 리셋
         Refresh_Equip_Btn();
@@ -420,6 +421,7 @@ public class CharacterList_UI : MonoBehaviour
         // 장착한 캐릭터에 따라 이미지 교체 함수
         CharImg_Anim_Ref.PlayCheck_ChangeAnim();
         // 장착 캐릭터 슬롯 초기화
+        Debug.Log(3);
         Refresh_CharacterList(false);
         Equip_Image_Refresh(true);
         Interact_EquipSlot_Btn();
@@ -547,6 +549,7 @@ public class CharacterList_UI : MonoBehaviour
         // 장착 캐릭터 슬롯 초기화
         Equip_Image_Refresh(true);
         Interact_EquipSlot_Btn();
+        Debug.Log(4);
         Refresh_CharacterList();
 
         // 장착해제 버튼 비활성화
@@ -740,6 +743,7 @@ public class CharacterList_UI : MonoBehaviour
         // 장착한 캐릭터에 따라 이미지 교체 함수
         CharImg_Anim_Ref.PlayCheck_ChangeAnim();
         // 캐릭터 리스트 리셋
+        Debug.Log(6);
         Refresh_CharacterList();
         // 장착칸 UI 리셋
         Equip_Image_Refresh(false);

@@ -21,6 +21,7 @@ public class InventoryDictWrapper
 [System.Serializable]
 public class CharacterListPair
 {
+    // UserInfo.UserDict를 Json으로 변경하기 위한
     public string key;
     public Character value;
 }
@@ -28,6 +29,7 @@ public class CharacterListPair
 [System.Serializable]
 public class CharacterListWrapper
 {
+    // Dictionary json으로 바꾸기위한 wrapper
     public List<CharacterListPair> Characters = new List<CharacterListPair>();
 }
 

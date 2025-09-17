@@ -268,8 +268,11 @@ public class Gacha_Manager : MonoBehaviour
 
         Gacha_Count_Text.text = $"{UserInfo.SSR_Set_Count} / 80";
 
+        UserInfo.UserCharDict_Copy.Clear();
+        UserInfo.UserCharDict_Copy_2.Clear();
+
         // 원본 Dictionary 복사
-        foreach(var character in UserInfo.UserCharDict)
+        foreach (var character in UserInfo.UserCharDict)
         {
             UserInfo.UserCharDict_Copy.Add(new KeyValuePair<string, Character>(character.Key, character.Value));
             UserInfo.UserCharDict_Copy_2.Add(new KeyValuePair<string, Character>(character.Key, character.Value));
@@ -294,7 +297,11 @@ public class Gacha_Manager : MonoBehaviour
         CharListRef.Refresh_CharacterList();
         Refresh_SummonTicket();
         // 바로 위 장착 캐릭터 예외 처리 후 저장이 필요함
-        UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
+        // UserInfo.Old_UserCharDict_Copy = UserInfo.UserCharDict_Copy.ToList();
+        for(int i = 0; i < UserInfo.UserCharDict_Copy.Count; i++)
+        {
+            UserInfo.Old_UserCharDict_Copy.Add(UserInfo.UserCharDict_Copy[i]);
+        }
 
         // 데이터 저장
         DataNetwork_Mgr.Inst.PushPacket(PACKETTYPE.GACHA_COUNT);
