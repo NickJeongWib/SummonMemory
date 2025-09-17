@@ -29,8 +29,8 @@
 
 ###
 :fire:초기에 소환서나 재련수정, 재련가루가 없어 체험용 계정 사용을 추천합니다.</font><br>
-체험용 아이디   123@naver.com<br>
-체험용 비밀번호 123123<br>
+체험용 아이디   : 123@naver.com<br>
+체험용 비밀번호 : 123123<br>
 
 # :star:기술 소개서
 <a href="https://rko6789.tistory.com/category/Unity_Porfolio/2D%20%EC%88%98%EC%A7%91%ED%98%95_%ED%84%B4%EC%A0%9C_RPG">게임 시스템 기술 소개 블로그<br>
