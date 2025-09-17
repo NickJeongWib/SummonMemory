@@ -32,3 +32,7 @@
 
 # :star:기술 소개서
 <a href="https://rko6789.tistory.com/category/Unity_Porfolio/2D%20%EC%88%98%EC%A7%91%ED%98%95_%ED%84%B4%EC%A0%9C_RPG">게임 시스템 기술 소개 블로그<br>
+
+# :star:플레이 영상
+<a href="https://youtu.be/zbgeSFF4XaE">서먼 메모리 플레이 영상<br>
+
