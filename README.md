@@ -23,7 +23,7 @@
   
 # :star:빌드 파일 Apk&Exe
 🔥2025.09.17 - 캐릭터 소환 시 리스트를 clear 후 담아야하는데 그냥 추가해서 에러 발생하는 현상 수정<br>
-🔥2025.09.18 - 노라 스킬 스프라이트 깨짐 현상 수정
+🔥2025.09.18 - 노라 스킬 스프라이트 깨짐 현상 수정<br>
 <a href="https://drive.google.com/file/d/1ZC1kKPSwGRs6pp35SIoj18IziPmurzEd/view?usp=sharing">서먼 메모리 Exe 빌드 파일 링크<br>
 <a href="https://drive.google.com/file/d/1RPikNawKufLPHsdV6U6wrQCln3q1ud8L/view?usp=sharing">서먼 메모리 Apk 빌드 파일 링크<br>
 
